@@ -1,0 +1,465 @@
+@dc:title="Mission Ontology"
+@dc:type="Foundation"
+@dc:^description="The Mission Ontology defines concepts and properties for describing missions in terms of their objectives, their constituent components, the functions those components perform, and the requirements that specify them."
+@dc:rights="Copyright 2019, by the California Institute of Technology. ALL RIGHTS RESERVED. United States Government Sponsorship acknowledged. Any commercial use must be negotiated with the Office of Technology Transfer at the California Institute of Technology.\n\nThis software may be subject to U.S. export control laws. By accepting this software, the user agrees to comply with all applicable U.S. export laws and regulations. User has the responsibility to obtain export licenses, or other export authority as may be required before exporting such information to foreign countries or providing access to foreign persons."
+@owl:versionInfo="$Revision$"
+@dc:creator="Jet Propulsion Laboratory"
+@dc:date="$Date$"
+open terminology <http://opencaesar.io/foundation/mission#> as mission {
+
+	extends <base.oml>
+
+	@dc:^description="A <classname>PerformingElement</classname> is an object that <property>performs</property> one or more <classname>Function</classname>s."
+	@rdfs:label="Performing Element"
+	aspect PerformingElement
+
+	@dc:^description="A <classname>PresentingElement</classname> <property>present</property>s zero or more <classname>Interface</classname>s that define its connections to the outside world."
+	@rdfs:label="Presenting Element"
+	aspect PresentingElement
+
+	@rdfs:label="Specified Element"
+	aspect SpecifiedElement
+
+	@dc:^description="A <classname>TraversingElement</classname> is any model element that  <property>traverses</property> an <classname>Interface</classname>."
+	@rdfs:label="Traversing Element"
+	aspect TraversingElement
+
+	@dc:^description="<para>A <classname>Component</classname> is a <classname>PerformingElement</classname> that is not a <classname>Mission</classname>. Example\n            <classname>Component</classname>s include launch vehicle, spacecraft, telecommunication subsystem,\n        flight software, attitude control software, and mission operations team.</para>"
+	@rdfs:label="Component"
+	concept Component specializes base:AggregatedElement, base:ContainedElement, base:Container, base:IdentifiedElement, PerformingElement, PresentingElement, SpecifiedElement {
+		restricts every base:aggregates to Component
+		restricts every base:isAggregatedIn to Component
+		restricts every base:contains to Component
+		restricts every base:isContainedIn to Component
+	}
+
+	@dc:^description="An <classname>Environment</classname> corresponds to a set of conditions in which a <classname>Component</classname> must <property>perform</property> its <classname>Function</classname>s.\nExample environments include low earth orbit, trans-Jupiter cruise, and Martian north polar surface."
+	@rdfs:label="Environment"
+	concept Environment specializes base:AggregatedElement, base:IdentifiedElement {
+		restricts every base:isAggregatedIn to Environment
+		restricts every base:aggregates to Environment
+	}
+
+	@dc:^description="A <classname>Flow</classname> represents a non-discrete transfer of matter or energy between <classname>Function</classname>s. Examples of <classname>Flow</classname> include electrical power, propellant, and heat."
+	@rdfs:label="Flow"
+	concept Flow specializes base:ContainedElement, base:Container, base:IdentifiedElement, TraversingElement {
+		restricts every base:isContainedIn to Flow
+		restricts every base:contains to Flow
+	}
+
+	@dc:^description="<para>A <classname>Function</classname> is an operation or activity performed by a\n            <classname>Component</classname> in the context of executing a\n            <classname>Mission</classname>. Every <classname>Function</classname> is a\n            <classname>SpecifiedElement</classname>, which implies that a\n            <classname>Requirement</classname> can <property>specify</property> a\n            <classname>Function</classname>. <classname>Function</classname>s, therefore,\n        represent intended <classname>Component</classname> behavior. Example\n            <classname>Function</classname>s include <emphasis role=\"italic\">search for life on\n            Mars</emphasis>, <emphasis role=\"italic\">insert into Martian orbit</emphasis>, and\n            <emphasis role=\"italic\">send instrument telemetry packet</emphasis>.</para>\n    <para><classname>Function</classname>s may <property>emit</property> or\n            <property>ingest</property>\n        <classname>Flow</classname>s representing non-discrete exchanges of matter or energy.\n            <classname>Function</classname>s may <property>send</property> or\n            <property>receive</property>\n        <classname>Item</classname>s representing discrete exchanges of matter or\n        information.</para>"
+	@rdfs:label="Function"
+	concept Function specializes base:IdentifiedElement {
+		restricts every isInvokedBy to Function
+		restricts every invokes to Function
+	}
+
+	@dc:^description="An <classname>Interchange</classname> represents the intended joint behavior of a pair of <classname>PerformingElement</classname>s. It indicates that a <classname>Flow</classname> or <classname>Item</classname> may be sent or emitted by one <classname>PerformingElement</classname> and received or ingested by another."
+	@rdfs:label="Interchange"
+	concept Interchange specializes base:IdentifiedElement
+
+	@rdfs:label="Interchange Point"
+	concept InterchangePoint specializes base:IdentifiedElement
+
+	@dc:^description="<para>An <classname>Interface</classname> represents a set of mechanical, electrical, signal, or\n        other properties that describe some aspect of a <classname>Component</classname>\'s\n        connection to or interaction with another <classname>Component</classname>.</para>\n    <para>It is important to distinguish between a <classname>Component</classname>, which is a\n        discrete thing, and an <classname>Interface</classname>, which is a collection of\n        properties. In the formulation phase, for example, we might model the launch vehicle and the\n        spacecraft as <classname>Component</classname>s. The properties that describe how the\n        spacecraft is designed to attach to the launch vehicle would be captured in one\n            <classname>Interface</classname> (and associated with the spacecraft using the\n            <property>presents</property> property). The properties that describe how the launch\n        vehicle is designed or configured to attach to the spacecraft would be captured in another\n            <classname>Interface</classname>. The fact that two (or more) interfaces mate with each other is conveyed the existence of an <classname>Junction</classname> that <property>joins</property> the <classname>Interface</classname>s.</para>\n    <para>This method of modeling interfaces allows us to capture the asymmetric aspect of\n        producer/consumer relationships, as well as providing a convenient method for associating\n        the sets of properties and characterize the interconnection of any pair of\n            <classname>Component</classname>s so that they can be analyzed for consistency.</para>"
+	@rdfs:label="Interface"
+	concept Interface specializes base:IdentifiedElement, PresentingElement
+
+	@dc:^description="An <classname>Item</classname> is a discrete unit of material or information exchanged between two <classname>Function</classname>s."
+	@rdfs:label="Item"
+	concept Item specializes base:ContainedElement, base:Container, base:IdentifiedElement, TraversingElement {
+		restricts every base:isContainedIn to Item
+		restricts every base:contains to Item
+	}
+
+	@dc:^description="<para>An <classname>Junction</classname> represents a set of mechanical, electrical, signal, or\n        other properties that are common to a set of mutually connected <classname>Interface</classname>s.</para>"
+	@rdfs:label="Junction"
+	concept Junction specializes base:ContainedElement, base:Container, base:IdentifiedElement {
+		restricts every base:isContainedIn to Junction
+		restricts every base:contains to Junction
+	}
+
+	@dc:^description="A <classname>MaterialItem</classname> is a discrete unit of material exchanged between two <classname>Function</classname>s. Example <classname>MaterialItem</classname>s include rock hammer and soil sample."
+	@rdfs:label="Material Item"
+	concept MaterialItem specializes Item {
+		restricts every base:contains to MaterialItem
+		restricts every base:isContainedIn to MaterialItem
+	}
+
+	@dc:^description="A <classname>Message</classname> is a discrete unit of information exchanged between two <classname>Function</classname>s. Example <classname>Message</classname>s include command, command response, and file contents."
+	@rdfs:label="Message"
+	concept Message specializes Item {
+		restricts every base:contains to Message
+		restricts every base:isContainedIn to Message
+	}
+
+	@dc:^description="<para>\nA <classname>Mission</classname> is a <classname>PerformingElement</classname> that <property>pursue</property>s <classname>Objectives</classname>.\n</para>\n<para>\nA <classname>Mission</classname> may\n<property>contain</property>\n<classname>Component</classname>s, but the preferred relationship is that a\n<classname>Mission</classname>\n<property>deploy</property>s its systems (which are <classname>Component</classname>s). This convention allows for a <classname>Mission</classname> to be associated with shared or external <classname>Component</classname>s that it does not strictly <property>contain</property>.\n</para>"
+	@rdfs:label="Mission"
+	concept Mission specializes base:IdentifiedElement, PerformingElement, PresentingElement, SpecifiedElement
+
+	@dc:^description="<para>An <classname>Objective</classname> represents a specific interest that one or more\n        stakeholders have in the successful execution of a mission. Example\n            <classname>Objective</classname>s include characterize the extent of the Europan ocean\n        and its relation to the deeper interior, characterize the Europan ice shell and any\n        subsurface water, including their heterogeneity, and the nature of surface-ice-ocean\n        exchange, and determine global Europan surface compositions and chemistry, especially as\n        related to habitability.</para>\n    <para><classname>Objective</classname>s differ from <classname>Requirement</classname>s in that\n        they are not the result of negotiated agreement between customer and supplier, they need not\n        be mutually consistent, and a <classname>Mission</classname>\n        <property>pursues</property> but need not completely achieve all its\n            <classname>Objective</classname>s. In a sense, the set of\n            <classname>Requirement</classname>s for a <classname>Mission</classname> represents the\n        minimum acceptable achievement of <classname>Objectives</classname> for a given cost,\n        schedule, and risk.</para>"
+	@rdfs:label="Objective"
+	concept Objective specializes base:AggregatedElement, base:IdentifiedElement {
+		restricts every base:aggregates to Objective
+		restricts every base:isAggregatedIn to Objective
+	}
+
+	@dc:^description="A <classname>Product</classname> is a tangible artifact that results from achievement of mission objectives, e.g., a science data product, a soil sample, etc."
+	@rdfs:label="Product"
+	concept Product specializes base:AggregatedElement, base:IdentifiedElement {
+		restricts every base:isAggregatedIn to base:AggregatedElement
+		restricts every base:aggregates to base:AggregatedElement
+	}
+
+	@dc:^description="<para>A <classname>Requirement</classname> specifies an assertion about a\n            <classname>SpecifiedElement</classname> (<classname>Component</classname>,\n            <classname>Function</classname>, or <classname>Interface</classname>) that must be true\n        for every acceptable realization of that element.</para>\n    <para>By definition, a <classname>Requirement</classname> that specifies a\n            <classname>Function</classname> is a <emphasis role=\"italic\">functional\n            requirement</emphasis>. A <classname>Requirement</classname> that specifies an\n            <classname>Interface</classname> is an <emphasis role=\"italic\">interface\n            requirement</emphasis>.  A <classname>Requirement</classname> that specifies a\n            <classname>Component</classname> is a <emphasis role=\"italic\">component\n            requirement</emphasis>.</para>"
+	@rdfs:label="Requirement"
+	concept Requirement specializes base:IdentifiedElement
+
+	@dc:^description="A\na <classname>Mission</classname> <replaceable>m</replaceable> \n<property>deploys</property>\n<classname>Component</classname> <replaceable>c</replaceable>\nif and only if <replaceable>m</replaceable> exploits or utilizes <replaceable>c</replaceable> in pursuit of  <classname>Objective</classname>s. Note that a given <classname>Mission</classname> may not <emphasis>own</emphasis> all the <classname>Component</classname>s it <property>deploys</property>; some <classname>Component</classname>s (e.g., ground system assets) may be shared with multiple missions."
+	@rdfs:label="Deploys"
+	reified relationship Deploys {
+		source Mission
+		target Component
+		@rdfs:label="deploys"
+		forward deploys
+		@rdfs:label="is deployed by"
+		inverse isDeployedBy
+		asymmetric
+		irreflexive
+	}
+
+	@dc:^description="A <classname>Function</classname> <replaceable>F</replaceable>\n<property>emits</property>\na <classname>Flow</classname> <replaceable>f</replaceable>\nif and only if <replaceable>F</replaceable> is the source of <replaceable>f</replaceable>."
+	@rdfs:label="Emits"
+	reified relationship Emits {
+		source InterchangePoint
+		target Flow
+		@rdfs:label="emits"
+		forward emits
+		@rdfs:label="is emitted by"
+		inverse isEmittedBy
+		inverseFunctional
+		asymmetric
+		irreflexive
+	}
+
+	@rdfs:label="Has Participant"
+	reified relationship HasParticipant {
+		source Interchange
+		target TraversingElement
+		@rdfs:label="has participant"
+		forward hasParticipant
+		@rdfs:label="participates in"
+		inverse participatesIn
+		asymmetric
+		irreflexive
+	}
+
+	@dc:^description="A\n<classname>Component</classname>\n<replaceable>c</replaceable>\n<property>induces</property>\nan\n<classname>Environment</classname>\n<replaceable>e</replaceable>\nif and only if\n<replaceable>c</replaceable>\ngenerates or contributes to the conditions described in\n<replaceable>e</replaceable>."
+	@rdfs:label="Induces"
+	reified relationship Induces {
+		source Component
+		target Environment
+		@rdfs:label="induces"
+		forward induces
+		@rdfs:label="is induced by"
+		inverse isInducedBy
+		asymmetric
+		irreflexive
+	}
+
+	@dc:^description="An\n<classname>Environment</classname>\n<replaceable>e</replaceable>\n<property>influences</property>\na\n<classname>Component</classname>\n<replaceable>c</replaceable>\nif and only if\n<replaceable>c</replaceable>\nis subject to the conditions that define\n<replaceable>e</replaceable>."
+	@rdfs:label="Influences"
+	reified relationship Influences {
+		source Environment
+		target Component
+		@rdfs:label="influences"
+		forward influences
+		@rdfs:label="is influenced by"
+		inverse isInfluencedBy
+		asymmetric
+		irreflexive
+	}
+
+	@dc:^description="An\n<classname>Function</classname>\n<replaceable>F</replaceable>\n<property>ingests</property>\na\n<classname>Flow</classname>\n<replaceable>f</replaceable>\nif and only if\n<replaceable>F</replaceable>\nconsumes or is otherwise the recipient of\n<replaceable>f</replaceable>."
+	@rdfs:label="Ingests"
+	reified relationship Ingests {
+		source InterchangePoint
+		target Flow
+		@rdfs:label="ingests"
+		forward ingests
+		@rdfs:label="is ingested by"
+		inverse isIngestedBy
+		inverseFunctional
+		asymmetric
+		irreflexive
+	}
+
+	@dc:^description="A <classname>PerformingElement</classname> <replaceable>p</replaceable> <property>interchangesThrough</property> an <classname>InterchangePoint</classname> <replaceable>i</replaceable> if and only if <replaceable>p</replaceable> has as a consequence of execution an interchange of matter or information with some other <classname>PerformingElement</classname> via <replaceable>i</replaceable>. Exactly one <classname>PerformingElement</classname> <property>interchangesThrough</property> each <classname>InterchangePoint\n</classname>."
+	@dc:^description="See <property>interchangesThrough</property>."
+	@rdfs:label="Interchanges Through"
+	reified relationship InterchangesThrough {
+		source Function
+		target InterchangePoint
+		@rdfs:label="interchanges through"
+		forward interchangesThrough
+		@rdfs:label="is interchange point for"
+		inverse isInterchangePointFor
+		inverseFunctional
+		asymmetric
+		irreflexive
+	}
+
+	@dc:^description="A\n<classname>Function</classname>\n<replaceable>f<subscript>1</subscript></replaceable>\n<property>invokes</property>\na\n<classname>Function</classname>\n<replaceable>f<subscript>2</subscript></replaceable>\nif and only if execution of \n<replaceable>f<subscript>1</subscript></replaceable>\nmay directly cause execution of\n<replaceable>f<subscript>2</subscript></replaceable>."
+	@rdfs:label="Invokes"
+	reified relationship Invokes {
+		source Function
+		target Function
+		@rdfs:label="invokes"
+		forward invokes
+		@rdfs:label="is invoked by"
+		inverse isInvokedBy
+	}
+
+	@dc:^description="<para>\nAn <classname>Interaction</classname>\n<replaceable>i</replaceable>\n<property>involves</property>\na pair of\n<classname>Function</classname>s\n{<replaceable>f<subscript>1</subscript></replaceable>}\nand\n{<replaceable>f<subscript>2</subscript></replaceable>}\nif and only if\n{<replaceable>f<subscript>1</subscript></replaceable>} \n<property>emits</property> a <classname>Flow</classname> or\n<property>sends</property> an <classname>Item</classname>\nthat\n{<replaceable>f<subscript>2</subscript></replaceable>} \n<property>ingests</property> or\n<property>receives</property>,\n</para>"
+	@rdfs:label="Involves"
+	reified relationship Involves {
+		source Interchange
+		target InterchangePoint
+		@rdfs:label="involves"
+		forward involves
+		@rdfs:label="is involved in"
+		inverse isInvolvedIn
+		asymmetric
+		irreflexive
+	}
+
+	@rdfs:label="Involves1"
+	reified relationship Involves1 specializes Involves {
+		source Interchange
+		target InterchangePoint
+		@rdfs:label="involves1"
+		forward involves1
+		@rdfs:label="is involved in1"
+		inverse isInvolvedIn1
+		functional
+		asymmetric
+		irreflexive
+	}
+
+	@rdfs:label="Involves2"
+	reified relationship Involves2 specializes Involves {
+		source Interchange
+		target InterchangePoint
+		@rdfs:label="involves2"
+		forward involves2
+		@rdfs:label="is involved in2"
+		inverse isInvolvedIn2
+		functional
+		asymmetric
+		irreflexive
+	}
+
+	@dc:^description="A <classname>TraversingElement</classname> <replaceable>e</replaceable>\n<property>traverses</property>\nan <classname>Junction</classname> <replaceable>j</replaceable>\nif and only if <replaceable>j</replaceable> provides a medium or channel for the transfer of <replaceable>e</replaceable>."
+	@rdfs:label="Is Traversed By"
+	reified relationship IsTraversedBy {
+		source Junction
+		target TraversingElement
+		@rdfs:label="is traversed by"
+		forward isTraversedBy
+		@rdfs:label="traverses"
+		inverse traverses
+		asymmetric
+		irreflexive
+	}
+
+	@dc:^description="<para>\nA <classname>Junction</classname>\n<replaceable>j</replaceable>\n<property>joins</property>\na pair of\n<classname>Interface</classname>s\n{<replaceable>i<subscript>1</subscript></replaceable>}\nand\n{<replaceable>i<subscript>2</subscript></replaceable>}\nif and only if\nthe set\n{<replaceable>i<subscript>k</subscript></replaceable>} share some type of connection and\n<replaceable>j</replaceable> represents properties common to all\n<classname>Interface</classname>s in\n{<replaceable>i<subscript>k</subscript></replaceable>} pertinent to that connection.\n</para>"
+	@rdfs:label="Joins"
+	reified relationship Joins {
+		source Junction
+		target Interface
+		@rdfs:label="joins"
+		forward joins
+		@rdfs:label="is joined in"
+		inverse isJoinedIn
+		asymmetric
+		irreflexive
+	}
+
+	@rdfs:label="Joins1"
+	reified relationship Joins1 specializes Joins {
+		source Junction
+		target Interface
+		@rdfs:label="joins1"
+		forward joins1
+		@rdfs:label="is joined in1"
+		inverse isJoinedIn1
+		asymmetric
+		irreflexive
+	}
+
+	@rdfs:label="Joins2"
+	reified relationship Joins2 specializes Joins {
+		source Junction
+		target Interface
+		@rdfs:label="joins2"
+		forward joins2
+		@rdfs:label="is joined in2"
+		inverse isJoinedIn2
+		asymmetric
+		irreflexive
+	}
+
+	@dc:^description="A\n<classname>Component</classname>\n<replaceable>c</replaceable>\n<property>performs</property>\na\n<classname>Function</classname>\n<replaceable>f</replaceable>\nif and only if\n<replaceable>c</replaceable>\nhas the sole responsibility for execution of\n<replaceable>f</replaceable>."
+	@rdfs:label="Performs"
+	reified relationship Performs specializes SpecifiedElement {
+		source PerformingElement
+		target Function
+		@rdfs:label="performs"
+		forward performs
+		@rdfs:label="is performed by"
+		inverse isPerformedBy
+		inverseFunctional
+		asymmetric
+		irreflexive
+	}
+
+	@dc:^description="A <classname>Component</classname> <replaceable>c</replaceable> <property>presents</property> an <classname>Interface</classname> <replaceable>i</replaceable> if and only if <replaceable>c</replaceable> has a direct electrical, mechanical, or logical connection to the outside via <replaceable>i</replaceable>. Exactly one <classname>Component</classname> <property>presents</property> each <classname>Interface</classname>."
+	@rdfs:label="Presents"
+	reified relationship Presents specializes SpecifiedElement {
+		source PresentingElement
+		target Interface
+		@rdfs:label="presents"
+		forward presents
+		@rdfs:label="is presented by"
+		inverse isPresentedBy
+		inverseFunctional
+		asymmetric
+		irreflexive
+	}
+
+	@dc:^description="See <property>produces</property>."
+	@dc:^description="A <classname>PerformingElement</classname>\n<replaceable>e</replaceable>\n<property>produces</property>\n<classname>Product</classname>\n<replaceable>p</replaceable>\nif and only if\n<replaceable>e</replaceable>\nis assigned sole responsbility, through performance of its allocated functions, for creation of\n<replaceable>p</replaceable>."
+	@rdfs:label="Produces"
+	reified relationship Produces specializes SpecifiedElement {
+		source PerformingElement
+		target Product
+		@rdfs:label="produces"
+		forward produces
+		@rdfs:label="is produced by"
+		inverse isProducedBy
+		inverseFunctional
+		asymmetric
+		irreflexive
+	}
+
+	@dc:^description="A <classname>Mission</classname> <replaceable>m</replaceable> <property>pursues</property> an <classname>Objective</classname> <replaceable>o</replaceable> if and only if the successful execution of <replaceable>m</replaceable> results in at least partial achievement of <replaceable>o</replaceable>."
+	@rdfs:label="Pursues"
+	reified relationship Pursues {
+		source Mission
+		target Objective
+		@rdfs:label="pursues"
+		forward pursues
+		@rdfs:label="is pursued by"
+		inverse isPursuedBy
+		asymmetric
+		irreflexive
+	}
+
+	@dc:^description="A <classname>Function</classname> <replaceable>F</replaceable>\n<property>receives</property>\nan <classname>Item</classname> <replaceable>i</replaceable>\nif and only if <replaceable>F</replaceable> consumes <replaceable>i</replaceable>."
+	@rdfs:label="Receives"
+	reified relationship Receives {
+		source InterchangePoint
+		target Item
+		@rdfs:label="receives"
+		forward receives
+		@rdfs:label="is received by"
+		inverse isReceivedBy
+		asymmetric
+		irreflexive
+	}
+
+	@dc:^description="A <classname>Requirement</classname> <replaceable>l</replaceable> <property>refines</property> a <classname>Requirement</classname> <replaceable>h</replaceable> if and only if satisfaction of <replaceable>l</replaceable> implies partial satisfaction of <replaceable>h</replaceable>."
+	@rdfs:label="Refines"
+	@rdfs:comment="Change the superclass from base-embedding:BinaryDependency to StandardProfileL2:Refine"
+	reified relationship Refines {
+		source Requirement
+		target Requirement
+		@rdfs:label="refines"
+		forward ^refines
+		@rdfs:label="is refined by"
+		inverse isRefinedBy
+		asymmetric
+		irreflexive
+	}
+
+	@dc:^description="A <classname>Function</classname> <replaceable>F</replaceable>\n<property>sends</property>\nan <classname>Item</classname> <replaceable>i</replaceable>\nif and only if <replaceable>F</replaceable> is the source for <replaceable>i</replaceable>."
+	@rdfs:label="Sends"
+	reified relationship Sends {
+		source InterchangePoint
+		target Item
+		@rdfs:label="sends"
+		forward sends
+		@rdfs:label="is sent by"
+		inverse isSentBy
+		inverseFunctional
+		asymmetric
+		irreflexive
+	}
+
+	@dc:^description="A <classname>Requirement</classname> <replaceable>r</replaceable> <property>specifies</property> a element <replaceable>e</replaceable> if and only if the properties of <replaceable>e</replaceable> are bound by <replaceable>r</replaceable>."
+	@rdfs:label="Specifies"
+	reified relationship Specifies {
+		source Requirement
+		target SpecifiedElement
+		@rdfs:label="specifies"
+		forward specifies
+		@rdfs:label="is specified by"
+		inverse isSpecifiedBy
+		functional
+		asymmetric
+		irreflexive
+	}
+
+	@dc:^description="An <classname>Interface</classname>\n<replaceable>i</replaceable>\n<property>transfers</property>\na\n<classname>TraversingElement</classname>\n<replaceable>e</replaceable>\nif and only if\n<replaceable>i</replaceable>\nis the access point by which\n<replaceable>e</replaceable>\nenters or leaves a <classname>Component</classname>\nthat\n<property>presents</property>\n<replaceable>i</replaceable>."
+	@rdfs:label="Transfers"
+	reified relationship Transfers {
+		source Interface
+		target TraversingElement
+		@rdfs:label="transfers"
+		forward transfers
+		asymmetric
+		irreflexive
+	}
+
+	@dc:^description="An <classname>Interface</classname>\n<replaceable>i</replaceable>\n<property>transfersOut</property>\na\n<classname>TraversingElement</classname>\n<replaceable>e</replaceable>\nif and only if\n<replaceable>i</replaceable>\nis the access point by which\n<replaceable>e</replaceable>\nleaves a <classname>Component</classname>\nthat\n<property>presents</property>\n<replaceable>i</replaceable>."
+	@rdfs:label="Transfers In"
+	reified relationship TransfersIn specializes Transfers, SpecifiedElement {
+		source Interface
+		target TraversingElement
+		@rdfs:label="transfers in"
+		forward transfersIn
+		asymmetric
+		irreflexive
+	}
+
+	@dc:^description="An <classname>Interface</classname>\n<replaceable>i</replaceable>\n<property>transfersOut</property>\na\n<classname>TraversingElement</classname>\n<replaceable>e</replaceable>\nif and only if\n<replaceable>i</replaceable>\nis the access point by which\n<replaceable>e</replaceable>\nleaves a <classname>Component</classname>\nthat\n<property>presents</property>\n<replaceable>i</replaceable>."
+	@rdfs:label="Transfers Out"
+	reified relationship TransfersOut specializes Transfers, SpecifiedElement {
+		source Interface
+		target TraversingElement
+		@rdfs:label="transfers out"
+		forward transfersOut
+		asymmetric
+		irreflexive
+	}
+
+	@dc:^description="A <property>rationale</property> explains why a <classname>Requirement</classname> exists and why it <property>specifies</property> what it does."
+	@rdfs:label="has rationale"
+	scalar property hasRationale {
+		domain Requirement
+		range xsd:^string
+		functional
+	}
+
+	ref reified relationship base:Contains specializes SpecifiedElement
+}
