@@ -1,10 +1,20 @@
+@dc:^description="RDF Schema provides a data-modelling vocabulary for RDF data. RDF Schema is an extension of the basic RDF vocabulary."
+@dc:publisher="https://www.w3.org"
+@dc:relation="https://www.w3.org/TR/rdf-schema"
+@dc:creator="World Wide Web Consortium"
 open terminology <http://www.w3.org/2000/01/rdf-schema#> as rdfs {
 
+	extends <../../../purl.org/dc/elements/1.1.oml>
+
+	@dc:^description="https://www.w3.org/TR/rdf-schema/#ch_comment"
 	annotation property comment
 
+	@dc:^description="https://www.w3.org/TR/rdf-schema/#ch_isdefinedby"
 	annotation property isDefinedBy
 
+	@dc:^description="https://www.w3.org/TR/rdf-schema/#ch_label"
 	annotation property label
 
+	@dc:^description="https://www.w3.org/TR/rdf-schema/#ch_seeAlso"
 	annotation property seeAlso
 }

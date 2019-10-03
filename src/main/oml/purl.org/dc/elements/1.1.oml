@@ -1,32 +1,51 @@
+@dc:^description="This document is an up-to-date specification of all metadata terms maintained by the Dublin Core Metadata Initiative, including properties, vocabulary encoding schemes, syntax encoding schemes, and classes."
+@dc:publisher="https://dublincore.org"
+@dc:relation="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/"
+@dc:creator="DCMI Usage Board"
 open terminology <http://purl.org/dc/elements/1.1/> as dc {
 
+	@dc:^description="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/2012-06-14/?v=elements#contributor"
 	annotation property contributor
 
+	@dc:^description="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/2012-06-14/?v=elements#coverage"
 	annotation property coverage
 
+	@dc:^description="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/2012-06-14/?v=elements#creator"
 	annotation property creator
 
+	@dc:^description="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/2012-06-14/?v=elements#date"
 	annotation property date
 
+	@dc:^description="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/2012-06-14/?v=elements#description"
 	annotation property ^description
 
+	@dc:^description="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/2012-06-14/?v=elements#format"
 	annotation property format
 
+	@dc:^description="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/2012-06-14/?v=elements#identifier"
 	annotation property identifier
 
+	@dc:^description="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/2012-06-14/?v=elements#language"
 	annotation property ^language
 
+	@dc:^description="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/2012-06-14/?v=elements#publisher"
 	annotation property publisher
 
+	@dc:^description="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/2012-06-14/?v=elements#relation"
 	annotation property relation
 
+	@dc:^description="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/2012-06-14/?v=elements#rights"
 	annotation property rights
 
+	@dc:^description="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/2012-06-14/?v=elements#source"
 	annotation property ^source
 
+	@dc:^description="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/2012-06-14/?v=elements#subject"
 	annotation property subject
 
+	@dc:^description="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/2012-06-14/?v=elements#title"
 	annotation property title
 
+	@dc:^description="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/2012-06-14/?v=elements#type"
 	annotation property type
 }
