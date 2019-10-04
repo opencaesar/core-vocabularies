@@ -101,8 +101,7 @@ open terminology <http://opencaesar.io/foundation/analysis#> as analysis {
 		irreflexive
 	}
 
-	@dc:^description="See <property>characterizes</property>."
-	@dc:^description="A\n<classname>Characterization</classname>\n<replaceable>c</replaceable>\n<property>characterizes</property>\na\n<classname>CharacterizedElement</classname>\n<replaceable>e</replaceable>\nif and only if\n<replaceable>c</replaceable>\ndescribes, delimits, or restricts\n<replaceable>e</replaceable>."
+	@dc:^description="A <classname>Characterization</classname> <replaceable>c</replaceable><property>characterizes</property> a <classname>CharacterizedElement</classname><replaceable>e</replaceable> if and only if <replaceable>c</replaceable> describes, delimits, or restricts <replaceable>e</replaceable>."
 	@rdfs:label="Characterizes"
 	reified relationship Characterizes specializes AnalyzedElement, CharacterizedElement, mission:SpecifiedElement {
 		source Characterization
@@ -126,7 +125,6 @@ open terminology <http://opencaesar.io/foundation/analysis#> as analysis {
 		irreflexive
 	}
 
-	@dc:^description="See <property>explains</property>."
 	@dc:^description="An <classname>Explanation</classname> <replaceable>a</replaceable> <property>explains</property> some <classname>SpecifiedElement</classname> <replaceable>e</replaceable> if and only if <replaceable>a</replaceable> provides a rationale or justification for some design aspect of <replaceable>e</replaceable>."
 	@rdfs:label="Explains"
 	reified relationship Explains specializes Characterizes, AnalyzedElement, CharacterizedElement {
@@ -140,7 +138,7 @@ open terminology <http://opencaesar.io/foundation/analysis#> as analysis {
 		irreflexive
 	}
 
-	@dc:^description="<para>A <classname>Metric</classname>\n        <replaceable>m</replaceable> <property>hasCriterion</property> some\n        <classname>Criterion</classname>\n        <replaceable>c</replaceable> if and only if <replaceable>c</replaceable> establishes a region of success for <replaceable>m</replaceable>.</para>"
+	@dc:^description="<para>A <classname>Metric</classname><replaceable>m</replaceable> <property>hasCriterion</property> some <classname>Criterion</classname><replaceable>c</replaceable> if and only if <replaceable>c</replaceable> establishes a region of success for <replaceable>m</replaceable>.</para>"
 	@rdfs:label="Has Criterion"
 	reified relationship HasCriterion specializes AnalyzedElement, CharacterizedElement {
 		source Metric
@@ -152,7 +150,7 @@ open terminology <http://opencaesar.io/foundation/analysis#> as analysis {
 		inverseFunctional
 	}
 
-	@dc:^description="<para>An <classname>Quantification</classname>\n        <replaceable>q</replaceable> <property>hasMetric</property> some\n            <classname>Metric</classname>\n        <replaceable>m</replaceable> if and only if <replaceable>q</replaceable> assigns a value to\n            <replaceable>m</replaceable> for some aspect of a design.</para>"
+	@dc:^description="<para>An <classname>Quantification</classname><replaceable>q</replaceable> <property>hasMetric</property> some <classname>Metric</classname><replaceable>m</replaceable> if and only if <replaceable>q</replaceable> assigns a value to <replaceable>m</replaceable> for some aspect of a design.</para>"
 	@rdfs:label="Has Metric"
 	reified relationship HasMetric specializes AnalyzedElement, CharacterizedElement {
 		source Quantity
