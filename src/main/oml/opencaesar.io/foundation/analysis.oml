@@ -1,7 +1,7 @@
 @dc:title="Analysis Ontology"
 @dc:type="Foundation"
 @dc:^description="The Analysis Ontology defines general concepts and properties for analyses (e.g., trade studies, driving requirements analysis, etc.). It provides a basis for specialization by domain experts."
-@dc:rights="Copyright 2019, by the California Institute of Technology. ALL RIGHTS RESERVED. United States Government Sponsorship acknowledged. Any commercial use must be negotiated with the Office of Technology Transfer at the California Institute of Technology.\n\nThis software may be subject to U.S. export control laws. By accepting this software, the user agrees to comply with all applicable U.S. export laws and regulations. User has the responsibility to obtain export licenses, or other export authority as may be required before exporting such information to foreign countries or providing access to foreign persons."
+@dc:rights="Copyright 2019, by the California Institute of Technology. ALL RIGHTS RESERVED. United States Government Sponsorship acknowledged. Any commercial use must be negotiated with the Office of Technology Transfer at the California Institute of Technology.This software may be subject to U.S. export control laws. By accepting this software, the user agrees to comply with all applicable U.S. export laws and regulations. User has the responsibility to obtain export licenses, or other export authority as may be required before exporting such information to foreign countries or providing access to foreign persons."
 @owl:versionInfo="$Revision$"
 @dc:creator="Jet Propulsion Laboratory"
 @dc:date="$Date$"
@@ -15,7 +15,7 @@ open terminology <http://opencaesar.io/foundation/analysis#> as analysis {
 
 	aspect ConstrainedElement specializes AnalyzedElement, CharacterizedElement
 
-	@dc:^description="<para>A <classname>MeasuredElement</classname> is a model element that may be measured by one or\n        more associated <classname>Metric</classname>s. Both <classname>Objective</classname>s and\n            <classname>Requirement</classname>s</para>\n    <para>are <classname>MeasuredElement</classname>s.</para>"
+	@dc:^description="<p>A <classname>MeasuredElement</classname> is a model element that may be measured by one or        more associated <classname>Metric</classname>s. Both <classname>Objective</classname>s and            <classname>Requirement</classname>s</p>    <p>are <classname>MeasuredElement</classname>s.</p>"
 	@rdfs:label="Measured Element"
 	aspect MeasuredElement specializes AnalyzedElement, CharacterizedElement
 
@@ -39,7 +39,7 @@ open terminology <http://opencaesar.io/foundation/analysis#> as analysis {
 	@rdfs:label="Cost Estimate"
 	concept CostEstimate specializes Analysis
 
-	@dc:^description="<para>A <classname>Criterion</classname> establishes a region for some\n            <classname>Metric</classname> that corresponds to success for some <classname>MeasuredElement</classname>.</para>\n    <para>A <classname>Criterion</classname> for the <classname>Metric</classname>\n        <emphasis role=\"italic\">sample mass in kg</emphasis> might be <emphasis role=\"italic\">at\n            least 10 kg</emphasis>.</para>"
+	@dc:^description="<p>A <classname>Criterion</classname> establishes a region for some            <classname>Metric</classname> that corresponds to success for some <classname>MeasuredElement</classname>.</p>    <p>A <classname>Criterion</classname> for the <classname>Metric</classname>        <emphasis role=\"italic\">sample mass in kg</emphasis> might be <emphasis role=\"italic\">at            least 10 kg</emphasis>.</p>"
 	@rdfs:label="Criterion"
 	concept Criterion specializes AnalyzedElement, CharacterizedElement, base:IdentifiedElement
 
@@ -53,7 +53,7 @@ open terminology <http://opencaesar.io/foundation/analysis#> as analysis {
 		restricts every explains to mission:Requirement
 	}
 
-	@dc:^description="<para>An <classname>Explanation</classname> is a product that captures or summarizes the results of\n        an analysis activity and relates it to one or more other model elements. It may\n        contain narrative prose directly or provide a reference to external products.</para>\n    <para>Driving requirements analyses, trade studies, and cost estimates are all examples of\n            <classname>Explanation</classname>.</para>"
+	@dc:^description="<p>An <classname>Explanation</classname> is a product that captures or summarizes the results of        an analysis activity and relates it to one or more other model elements. It may        contain narrative prose directly or provide a reference to external products.</p>    <p>Driving requirements analyses, trade studies, and cost estimates are all examples of            <classname>Explanation</classname>.</p>"
 	@rdfs:label="Explanation"
 	concept Explanation specializes Characterization, base:AggregatedElement
 
@@ -71,11 +71,11 @@ open terminology <http://opencaesar.io/foundation/analysis#> as analysis {
 		restricts every explains to mission:Requirement
 	}
 
-	@dc:^description="<para>A <classname>Metric</classname> establishes a method for quantifying achievement or\n        satisfaction of one or more <classname>MeasuredElement</classname>s. Note that the\n        relationship is many to many: a given <classname>Metric</classname> may jointly quantify\n        multiple <classname>MeasuredElement</classname>s. Likewise, a\n            <classname>MeasuredElement</classname> may be quantified by multiple\n            <classname>Metric</classname>s.</para>\n    <para>Appropriate <classname>Metric</classname>s for the <classname>Objective</classname>\n        <emphasis role=\"italic\">image Martian north polar region</emphasis> might include data\n        volumes at specified wavelength and resolution.</para>"
+	@dc:^description="<p>A <classname>Metric</classname> establishes a method for quantifying achievement or        satisfaction of one or more <classname>MeasuredElement</classname>s. Note that the        relationship is many to many: a given <classname>Metric</classname> may jointly quantify        multiple <classname>MeasuredElement</classname>s. Likewise, a            <classname>MeasuredElement</classname> may be quantified by multiple            <classname>Metric</classname>s.</p>    <p>Appropriate <classname>Metric</classname>s for the <classname>Objective</classname>        <emphasis role=\"italic\">image Martian north polar region</emphasis> might include data        volumes at specified wavelength and resolution.</p>"
 	@rdfs:label="Metric"
 	concept Metric specializes AnalyzedElement, CharacterizedElement, base:IdentifiedElement
 
-	@dc:^description="<para>A <classname>Quantity</classname> attaches a value for some\n            <classname>Metric</classname> to one or more <classname>SpecifiedElement</classname>s.\n        That is, it evaluates some aspect of a design by assigning a definite value to a specific\n            <classname>Metric</classname>.</para>"
+	@dc:^description="<p>A <classname>Quantity</classname> attaches a value for some            <classname>Metric</classname> to one or more <classname>SpecifiedElement</classname>s.        That is, it evaluates some aspect of a design by assigning a definite value to a specific            <classname>Metric</classname>.</p>"
 	@rdfs:comment="TODO: analysis:Quantification subclass of qudv:Quantity"
 	@rdfs:label="Quantity"
 	concept Quantity specializes Characterization
@@ -138,7 +138,7 @@ open terminology <http://opencaesar.io/foundation/analysis#> as analysis {
 		irreflexive
 	}
 
-	@dc:^description="<para>A <classname>Metric</classname><replaceable>m</replaceable> <property>hasCriterion</property> some <classname>Criterion</classname><replaceable>c</replaceable> if and only if <replaceable>c</replaceable> establishes a region of success for <replaceable>m</replaceable>.</para>"
+	@dc:^description="<p>A <classname>Metric</classname><replaceable>m</replaceable> <property>hasCriterion</property> some <classname>Criterion</classname><replaceable>c</replaceable> if and only if <replaceable>c</replaceable> establishes a region of success for <replaceable>m</replaceable>.</p>"
 	@rdfs:label="Has Criterion"
 	reified relationship HasCriterion specializes AnalyzedElement, CharacterizedElement {
 		source Metric
@@ -150,7 +150,7 @@ open terminology <http://opencaesar.io/foundation/analysis#> as analysis {
 		inverseFunctional
 	}
 
-	@dc:^description="<para>An <classname>Quantification</classname><replaceable>q</replaceable> <property>hasMetric</property> some <classname>Metric</classname><replaceable>m</replaceable> if and only if <replaceable>q</replaceable> assigns a value to <replaceable>m</replaceable> for some aspect of a design.</para>"
+	@dc:^description="<p>An <classname>Quantification</classname><replaceable>q</replaceable> <property>hasMetric</property> some <classname>Metric</classname><replaceable>m</replaceable> if and only if <replaceable>q</replaceable> assigns a value to <replaceable>m</replaceable> for some aspect of a design.</p>"
 	@rdfs:label="Has Metric"
 	reified relationship HasMetric specializes AnalyzedElement, CharacterizedElement {
 		source Quantity
@@ -175,7 +175,7 @@ open terminology <http://opencaesar.io/foundation/analysis#> as analysis {
 
 	@dc:^description="See <property>limits</property>."
 	@rdfs:label="Limits"
-	@rdfs:comment="An\n<classname>Assumption</classname>\n<replaceable>a</replaceable>\n<property>limits</property>\na\n<classname>CharacterizedElement</classname>\n<replaceable>e</replaceable>\nif and only if\n<replaceable>a</replaceable>\nis restricted in some fashion by\n<replaceable>e</replaceable>."
+	@rdfs:comment="An<classname>Assumption</classname><replaceable>a</replaceable><property>limits</property>a<classname>CharacterizedElement</classname><replaceable>e</replaceable>if and only if<replaceable>a</replaceable>is restricted in some fashion by<replaceable>e</replaceable>."
 	reified relationship Limits specializes Characterizes, AnalyzedElement, CharacterizedElement {
 		source Assumption
 		target CharacterizedElement
@@ -187,7 +187,7 @@ open terminology <http://opencaesar.io/foundation/analysis#> as analysis {
 		irreflexive
 	}
 
-	@dc:^description="<para>A <classname>Criterion</classname>\n        <replaceable>c</replaceable>\n        <property>measures</property> some <classname>MeasuredElement</classname>\n        <replaceable>e</replaceable> if and only if <replaceable>c</replaceable> defines a region for some <classname>Metric</classname> that corresponds to success\nfor <replaceable>e</replaceable>.</para>"
+	@dc:^description="<p>A <classname>Criterion</classname>        <replaceable>c</replaceable>        <property>measures</property> some <classname>MeasuredElement</classname>        <replaceable>e</replaceable> if and only if <replaceable>c</replaceable> defines a region for some <classname>Metric</classname> that corresponds to successfor <replaceable>e</replaceable>.</p>"
 	@rdfs:label="Measures"
 	reified relationship Measures specializes AnalyzedElement, CharacterizedElement {
 		source Criterion
@@ -200,7 +200,7 @@ open terminology <http://opencaesar.io/foundation/analysis#> as analysis {
 		irreflexive
 	}
 
-	@dc:^description="<para>A <classname>Quantification</classname>\n        <replaceable>q</replaceable>\n        <property>quantifies</property> some <classname>SpecifiedElement</classname>\n        <replaceable>e</replaceable> if and only if <replaceable>q</replaceable> assigns a value to\n        some <classname>Metric</classname>  for <replaceable>e</replaceable>.</para>"
+	@dc:^description="<p>A <classname>Quantification</classname>        <replaceable>q</replaceable>        <property>quantifies</property> some <classname>SpecifiedElement</classname>        <replaceable>e</replaceable> if and only if <replaceable>q</replaceable> assigns a value to        some <classname>Metric</classname>  for <replaceable>e</replaceable>.</p>"
 	@rdfs:label="Quantifies"
 	reified relationship Quantifies specializes AnalyzedElement, CharacterizedElement {
 		source Quantity

@@ -29,7 +29,7 @@ open terminology <http://opencaesar.io/foundation/project#> as project {
 	@rdfs:label="Authority"
 	concept Authority specializes base:Package
 
-	@dc:^description="<para>A <classname>Concern</classname> represents a specific interest that one or more stakeholders have in the successful completion of a <classname>Project</classname> or <classname>Program</classname> and its <classname>Mission</classname>s. </para>"
+	@dc:^description="<p>A <classname>Concern</classname> represents a specific interest that one or more stakeholders have in the successful completion of a <classname>Project</classname> or <classname>Program</classname> and its <classname>Mission</classname>s. </p>"
 	@rdfs:label="Concern"
 	concept Concern specializes analysis:MeasuredElement, base:AggregatedElement, base:IdentifiedElement {
 		restricts every base:aggregates to Concern
