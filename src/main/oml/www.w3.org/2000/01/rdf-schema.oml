@@ -1,4 +1,4 @@
-@dc:^description="RDF Schema provides a data-modelling vocabulary for RDF data. RDF Schema is an extension of the basic RDF vocabulary."
+@dc:^description="<p>RDF Schema provides a data-modelling vocabulary for RDF data. RDF Schema is an extension of the basic RDF vocabulary.</p><p>This subset reflects some annotation useful properties. Full documentation available at [https://www.w3.org/TR/rdf-schema](https://www.w3.org/TR/rdf-schema)</p>"
 @dc:publisher="https://www.w3.org"
 @dc:relation="https://www.w3.org/TR/rdf-schema"
 @dc:creator="World Wide Web Consortium"

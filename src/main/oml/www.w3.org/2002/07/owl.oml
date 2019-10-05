@@ -1,13 +1,10 @@
-@dc:^description="<p>The Web Ontology Language OWL is a semantic markup language for publishing and sharing ontologies on the World Wide Web. OWL is developed as a vocabulary extension of RDF (the Resource Description Framework) and is derived from the DAML+OIL Web Ontology Language. This document contains a structured informal description of the full set of OWL language constructs and is meant to serve as a reference for OWL users who want to construct OWL ontologies.</p><p>This specific subset references a few value types defined in owl as extensions to XMLSchema.</p>"
+@dc:^description="<p>The Web Ontology Language OWL is a semantic markup language for publishing and sharing ontologies on the World Wide Web. OWL is developed as a vocabulary extension of RDF (the Resource Description Framework) and is derived from the DAML+OIL Web Ontology Language. This document contains a structured informal description of the full set of OWL language constructs and is meant to serve as a reference for OWL users who want to construct OWL ontologies.</p><p>This specific subset references a few value types defined in owl as extensions to XMLSchema. Full documentation is available at [https://www.w3.org/TR/owl-ref](https://www.w3.org/TR/owl-ref)</p>"
 @dc:publisher="https://www.w3.org"
 @dc:relation="https://www.w3.org/TR/owl-ref"
 @dc:creator="World Wide Web Consortium"
 open terminology <http://www.w3.org/2002/07/owl#> as owl {
 
-	extends <../../../purl.org/dc/elements/1.1.oml>
-
 	extends <../../1999/02/22-rdf-syntax-ns.oml>
-
 	extends <../../2000/01/rdf-schema.oml>
 
 	@dc:^description="https://www.w3.org/TR/owl2-syntax/#Annotation_Properties"

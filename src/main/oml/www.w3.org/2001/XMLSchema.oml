@@ -1,11 +1,11 @@
 
-@dc:^description="XML Schema: Datatypes is part 2 of the specification of the XML Schema language. It defines facilities for defining datatypes to be used in XML Schemas as well as other XML specifications. The datatype language, which is itself represented in XML 1.0, provides a superset of the capabilities found in XML 1.0 document type definitions (DTDs) for specifying datatypes on elements and attributes."
+@dc:^description="<p>XML Schema: Datatypes is part 2 of the specification of the XML Schema language. It defines facilities for defining datatypes to be used in XML Schemas as well as other XML specifications. The datatype language, which is itself represented in XML 1.0, provides a superset of the capabilities found in XML 1.0 document type definitions (DTDs) for specifying datatypes on elements and attributes.</p><p>This subset reflects some of the more commonly used value types that are imported into OML. For full documentation see [https://www.w3.org/TR/xmlschema11-2](https://www.w3.org/TR/xmlschema11-2) </p>"
 @dc:publisher="https://www.w3.org"
 @dc:relation="https://www.w3.org/TR/xmlschema11-2"
 @dc:creator="World Wide Web Consortium"
 open terminology <http://www.w3.org/2001/XMLSchema#> as xsd {
 
-  extends <../../purl.org/dc/elements/1.1.oml>
+    extends <../../purl.org/dc/elements/1.1.oml>
 
 	@dc:^description="https://www.w3.org/TR/xmlschema11-2#anyAtomicType"
 	scalar anyAtomicType
