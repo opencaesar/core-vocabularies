@@ -9,7 +9,7 @@ open terminology <http://www.w3.org/1999/02/22-rdf-syntax-ns#> as rdf {
 	@dc:^description="https://www.w3.org/TR/rdf-syntax-grammar/#aboutAttr"
 	annotation property about
 
-	@dc:^description="not sure what this is"
+	@dc:^description="https://www.w3.org/TR/rdf-syntax-grammar/#section-literal-node"
 	scalar PlainLiteral
 
 	@dc:^description="https://www.w3.org/TR/rdf-syntax-grammar/#section-Syntax-XML-literals"
