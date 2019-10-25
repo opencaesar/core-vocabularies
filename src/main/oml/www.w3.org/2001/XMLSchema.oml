@@ -1,4 +1,5 @@
 
+@dc:title="XML Schema"
 @dc:^description="<p>XML Schema: Datatypes is part 2 of the specification of the XML Schema language. It defines facilities for defining datatypes to be used in XML Schemas as well as other XML specifications. The datatype language, which is itself represented in XML 1.0, provides a superset of the capabilities found in XML 1.0 document type definitions (DTDs) for specifying datatypes on elements and attributes.</p><p>This subset reflects some of the more commonly used value types that are imported into OML.</p><p>For full documentation see [https://www.w3.org/TR/xmlschema11-2](https://www.w3.org/TR/xmlschema11-2) </p>"
 @dc:publisher="https://www.w3.org"
 @dc:relation="https://www.w3.org/TR/xmlschema11-2"

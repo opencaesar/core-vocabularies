@@ -1,3 +1,4 @@
+@dc:title="RDF Syntax"
 @dc:^description="<p>This document defines an XML syntax for RDF called RDF/XML in terms of Namespaces in XML, the XML Information Set and XML Base.</p><p>This reflects just a subset of annotation properties and value types from RDF. Full documentation can be found at [https://www.w3.org/TR/rdf-syntax-grammar](https://www.w3.org/TR/rdf-syntax-grammar)</p>"
 @dc:publisher="https://www.w3.org"
 @dc:relation="https://www.w3.org/TR/rdf-syntax-grammar"

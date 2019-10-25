@@ -1,3 +1,4 @@
+@dc:title="Dublin Core Metadata"
 @dc:^description="This document is an up-to-date specification of all metadata terms maintained by the Dublin Core Metadata Initiative, including properties, vocabulary encoding schemes, syntax encoding schemes, and classes."
 @dc:publisher="https://dublincore.org"
 @dc:relation="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/"
