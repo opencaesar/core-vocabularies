@@ -1,3 +1,9 @@
+@dc:title "RDF"
+@dc:description "The RDF vocabulary is a subset of the vocabulary maintained by the W3C."
+@dc:rights "Copyright 1999 W3C."
+@dc:hasVersion "1999/02/22"
+@dc:creator "W3C"
+@dc:date "1999-02-22"
 vocabulary <http://www.w3.org/1999/02/22-rdf-syntax-ns> with # as rdf {
 
 	extends <../../2001/XMLSchema.oml>

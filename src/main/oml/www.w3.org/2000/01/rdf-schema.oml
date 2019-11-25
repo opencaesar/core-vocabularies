@@ -1,4 +1,12 @@
+@dc:title "RDFS"
+@dc:description "The RDFS vocabulary is a subset of the vocabulary maintained by the W3C."
+@dc:rights "Copyright 2001 W3C."
+@dc:hasVersion "2000/01"
+@dc:creator "W3C"
+@dc:date "2001-01"
 vocabulary <http://www.w3.org/2000/01/rdf-schema> with # as rdfs {
+
+	extends <../../../purl.org/dc/elements/1.1.oml>
 
 	annotation property comment
 
