@@ -1,4 +1,4 @@
-open terminology <http://www.w3.org/2000/01/rdf-schema#> as rdfs {
+vocabulary <http://www.w3.org/2000/01/rdf-schema> with # as rdfs {
 
 	annotation property comment
 

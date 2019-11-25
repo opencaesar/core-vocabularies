@@ -1,4 +1,4 @@
-open terminology <http://purl.org/dc/elements/1.1/> as dc {
+vocabulary <http://purl.org/dc/elements/1.1> with / as dc {
 
 	annotation property contributor
 
@@ -18,7 +18,7 @@ open terminology <http://purl.org/dc/elements/1.1/> as dc {
 
 	annotation property publisher
 
-	annotation property relation
+	annotation property ^relation
 
 	annotation property rights
 
