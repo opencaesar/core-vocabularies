@@ -1,130 +1,131 @@
-@dc:title="Base Ontology"
-@dc:type="Foundation"
-@dc:^description="The Base Ontology defines foundation concepts that are common to multiple specialized ontologies."
-@dc:rights="Copyright 2019, by the California Institute of Technology. ALL RIGHTS RESERVED. United States Government Sponsorship acknowledged. Any commercial use must be negotiated with the Office of Technology Transfer at the California Institute of Technology.\n\nThis software may be subject to U.S. export control laws. By accepting this software, the user agrees to comply with all applicable U.S. export laws and regulations. User has the responsibility to obtain export licenses, or other export authority as may be required before exporting such information to foreign countries or providing access to foreign persons."
-@owl:versionInfo="$Revision$"
-@dc:creator="Jet Propulsion Laboratory"
-@dc:date="$Date$"
-open terminology <http://opencaesar.io/foundation/base#> as base {
+@dc:title "Base Ontology"
+@dc:type "Foundation"
+@dc:description "The Base Ontology defines foundation concepts that are common to multiple specialized ontologies."
+@dc:rights "Copyright 2019, by the California Institute of Technology. ALL RIGHTS RESERVED. United States Government Sponsorship acknowledged. Any commercial use must be negotiated with the Office of Technology Transfer at the California Institute of Technology.\n\nThis software may be subject to U.S. export control laws. By accepting this software, the user agrees to comply with all applicable U.S. export laws and regulations. User has the responsibility to obtain export licenses, or other export authority as may be required before exporting such information to foreign countries or providing access to foreign persons."
+@owl:versionInfo "@Revision@"
+@dc:creator "Jet Propulsion Laboratory"
+@dc:date "@Date@"
+vocabulary <http://opencaesar.io/foundation/base> with # as base {
 
 	extends <../../www.w3.org/2002/07/owl.oml>
+
 	extends <../../purl.org/dc/elements/1.1.oml>
 
-	@dc:^description="<para>An <classname>AggregatedElement</classname> is any model element that may have the <property>isAggregatedIn</property> property with some other model element.\n</para><para>\nAggregation is a non-hierarchical relationship appropriate for elements such as <classname>mission:Environment</classname>s, <classname>mission:Objective</classname>s, and <classname>project:Product</classname>s.\n</para>"
-	@rdfs:label="Aggregated Element"
+	@dc:description "<para>An <classname>AggregatedElement</classname> is any model element that may have the <property>isAggregatedIn</property> property with some other model element.\n</para><para>\nAggregation is a non-hierarchical relationship appropriate for elements such as <classname>mission:Environment</classname>s, <classname>mission:Objective</classname>s, and <classname>project:Product</classname>s.\n</para>"
+	@rdfs:label "Aggregated Element"
 	aspect AggregatedElement
 
-	@dc:^description="A <classname>ContainedElement</classname> is an object that may be contained in a single <classname>Container</classname>."
-	@rdfs:label="Contained Element"
+	@dc:description "A <classname>ContainedElement</classname> is an object that may be contained in a single <classname>Container</classname>."
+	@rdfs:label "Contained Element"
 	aspect ContainedElement
 
-	@dc:^description="A <classname>Container</classname> is an element that may contain zero or more <classname>ContainedElement</classname>. The notion of <emphasis>containment</emphasis> is general; it is specialized for more particular applications in other ontologies."
-	@rdfs:label="Container"
+	@dc:description "A <classname>Container</classname> is an element that may contain zero or more <classname>ContainedElement</classname>. The notion of <emphasis>containment</emphasis> is general; it is specialized for more particular applications in other ontologies."
+	@rdfs:label "Container"
 	aspect Container
 
-	@dc:^description="A <classname>IdentifiedElement</classname> is an object that has a\n\t    unique identifier and a canonical name. In addition, the object may have multiple alternate names, abbreviations, and index entries."
-	@rdfs:label="Identified Element"
+	@dc:description "A <classname>IdentifiedElement</classname> is an object that has a\n\t    unique identifier and a canonical name. In addition, the object may have multiple alternate names, abbreviations, and index entries."
+	@rdfs:label "Identified Element"
 	aspect IdentifiedElement
 
-	@dc:^description="A <classname>Package</classname> groups an arbitrary collection of model elements."
-	@rdfs:label="Package"
-	concept Package specializes IdentifiedElement
+	@dc:description "A <classname>Package</classname> groups an arbitrary collection of model elements."
+	@rdfs:label "Package"
+	concept Package :> IdentifiedElement
 
-	@dc:^description="An <classname>AggregatedElement</classname> <replaceable>e</replaceable> <property>aggregates</property> zero or more elements of compatible type if and only if <replaceable>e</replaceable> references or subsumes  those other elements."
-	@dc:^description="See <property>aggregates</property>."
-	@rdfs:label="Aggregates"
-	reified relationship Aggregates {
-		source AggregatedElement
-		target AggregatedElement
-		@rdfs:label="aggregates"
+	@dc:description "An <classname>AggregatedElement</classname> <replaceable>e</replaceable> <property>aggregates</property> zero or more elements of compatible type if and only if <replaceable>e</replaceable> references or subsumes  those other elements."
+	@dc:description "See <property>aggregates</property>."
+	@rdfs:label "Aggregates"
+	relation entity Aggregates [
+		from AggregatedElement
+		to AggregatedElement
+		@rdfs:label "aggregates"
 		forward aggregates
-		@rdfs:label="is aggregated in"
+		@rdfs:label "is aggregated in"
 		inverse isAggregatedIn
 		asymmetric
 		irreflexive
-	}
+	]
 
-	@dc:^description="The <property>isContainedIn</property> property is used to relate classes that can be composed into a strict hierarchy. An element <property>isContainedIn</property> at most one parent element."
-	@dc:^description="A\n<classname>Container</classname>\n<replaceable>c<subscript>1</subscript></replaceable>\n<property>contains</property>\nanother\n<classname>ContainedElement</classname>\n<replaceable>e<subscript>2</subscript></replaceable>\nif and only if\n<classname>ContainedElement</classname>\n<replaceable>e<subscript>2</subscript></replaceable>\nis incorporated within or otherwise a part of\n<classname>Container</classname>\n<replaceable>c<subscript>1</subscript></replaceable>\nand no (directly) any other <classname>Container</classname>."
-	@rdfs:label="Contains"
-	reified relationship Contains {
-		source Container
-		target ContainedElement
-		@rdfs:label="contains"
+	@dc:description "The <property>isContainedIn</property> property is used to relate classes that can be composed into a strict hierarchy. An element <property>isContainedIn</property> at most one parent element."
+	@dc:description "A\n<classname>Container</classname>\n<replaceable>c<subscript>1</subscript></replaceable>\n<property>contains</property>\nanother\n<classname>ContainedElement</classname>\n<replaceable>e<subscript>2</subscript></replaceable>\nif and only if\n<classname>ContainedElement</classname>\n<replaceable>e<subscript>2</subscript></replaceable>\nis incorporated within or otherwise a part of\n<classname>Container</classname>\n<replaceable>c<subscript>1</subscript></replaceable>\nand no (directly) any other <classname>Container</classname>."
+	@rdfs:label "Contains"
+	relation entity Contains [
+		from Container
+		to ContainedElement
+		@rdfs:label "contains"
 		forward contains
-		@rdfs:label="is contained in"
+		@rdfs:label "is contained in"
 		inverse isContainedIn
-		inverseFunctional
+		inverse functional
 		asymmetric
 		irreflexive
-	}
+	]
 
-	@dc:^description="The <property>hasAlternateName</property> property relates an <classname>IdentifiedElement</classname> to zero or more alternate names. Alternate names need not be unique."
-	@rdfs:label="has alternate name"
-	scalar property hasAlternateName {
+	@dc:description "The <property>hasAlternateName</property> property relates an <classname>IdentifiedElement</classname> to zero or more alternate names. Alternate names need not be unique."
+	@rdfs:label "has alternate name"
+	scalar property hasAlternateName [
 		domain IdentifiedElement
-		range xsd:^string
-	}
+		range xsd:string
+	]
 
-	@dc:^description="The <property>hasCanonicalName</property> property relates an <classname>IdentifiedElement</classname> to zero or one canonical names. Canonical names need not be unique."
-	@rdfs:label="has canonical name"
-	scalar property hasCanonicalName {
+	@dc:description "The <property>hasCanonicalName</property> property relates an <classname>IdentifiedElement</classname> to zero or one canonical names. Canonical names need not be unique."
+	@rdfs:label "has canonical name"
+	scalar property hasCanonicalName [
 		domain IdentifiedElement
-		range xsd:^string
+		range xsd:string
 		functional
-	}
+	]
 
-	@dc:^description="The <property>hasContainmentIndex</property> indicates the unique position of a <classname>ContainedElement</classname> in a tree of <property>contains</property> relationships."
-	@rdfs:label="has containment index"
-	scalar property hasContainmentIndex {
+	@dc:description "The <property>hasContainmentIndex</property> indicates the unique position of a <classname>ContainedElement</classname> in a tree of <property>contains</property> relationships."
+	@rdfs:label "has containment index"
+	scalar property hasContainmentIndex [
 		domain ContainedElement
-		range xsd:^string
+		range xsd:string
 		functional
-	}
+	]
 
-	@dc:^description="The <property>hasDescription</property> property relates an <classname>IdentifiedElement</classname> to zero or one text descriptions."
-	@rdfs:label="has description"
-	scalar property hasDescription {
+	@dc:description "The <property>hasDescription</property> property relates an <classname>IdentifiedElement</classname> to zero or one text descriptions."
+	@rdfs:label "has description"
+	scalar property hasDescription [
 		domain IdentifiedElement
-		range xsd:^string
+		range xsd:string
 		functional
-	}
+	]
 
-	@dc:^description="The <property>hasIdentifier</property> property relates an <classname>IdentifiedElement</classname> to zero or more identifiers. An identifier should belong uniquely to an <classname>IdentifiedElement</classname> in some context."
-	@rdfs:label="has identifier"
-	scalar property hasIdentifier {
+	@dc:description "The <property>hasIdentifier</property> property relates an <classname>IdentifiedElement</classname> to zero or more identifiers. An identifier should belong uniquely to an <classname>IdentifiedElement</classname> in some context."
+	@rdfs:label "has identifier"
+	scalar property hasIdentifier [
 		domain IdentifiedElement
-		range xsd:^string
-	}
+		range xsd:string
+	]
 
-	@dc:^description="The <property>hasIndexEntry</property> property relates an <classname>IdentifiedElement</classname> to zero or one terms under which it would be indexed in a document."
-	@rdfs:label="has index entry"
-	scalar property hasIndexEntry {
+	@dc:description "The <property>hasIndexEntry</property> property relates an <classname>IdentifiedElement</classname> to zero or one terms under which it would be indexed in a document."
+	@rdfs:label "has index entry"
+	scalar property hasIndexEntry [
 		domain IdentifiedElement
-		range xsd:^string
-	}
+		range xsd:string
+	]
 
-	@dc:^description="The <property>hasShortName</property> property relates an <classname>IdentifiedElement</classname> to zero or more short names. Short names need not be unique."
-	@rdfs:label="has short name"
-	scalar property hasShortName {
+	@dc:description "The <property>hasShortName</property> property relates an <classname>IdentifiedElement</classname> to zero or more short names. Short names need not be unique."
+	@rdfs:label "has short name"
+	scalar property hasShortName [
 		domain IdentifiedElement
-		range xsd:^string
+		range xsd:string
 		functional
-	}
+	]
 
-	@dc:^description="The <property>hasSortKey</property> property relates an <classname>IdentifiedElement</classname> to zero or one string-valued keys that may be used to establish its order in a sorted collection."
-	@rdfs:label="has sort key"
-	scalar property hasSortKey {
+	@dc:description "The <property>hasSortKey</property> property relates an <classname>IdentifiedElement</classname> to zero or one string-valued keys that may be used to establish its order in a sorted collection."
+	@rdfs:label "has sort key"
+	scalar property hasSortKey [
 		domain IdentifiedElement
-		range xsd:^string
+		range xsd:string
 		functional
-	}
+	]
 
-	@dc:^description="The <property>hasUuid</property> property relates an <classname>IdentifiedElement</classname> to zero or one Universally Unique Identifier as defined by RFC 4122, expressed as a string."
-	@rdfs:label="has uuid"
-	scalar property hasUuid {
+	@dc:description "The <property>hasUuid</property> property relates an <classname>IdentifiedElement</classname> to zero or one Universally Unique Identifier as defined by RFC 4122, expressed as a string."
+	@rdfs:label "has uuid"
+	scalar property hasUuid [
 		domain IdentifiedElement
-		range xsd:^string
+		range xsd:string
 		functional
-	}
+	]
 }

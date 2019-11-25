@@ -1,4 +1,4 @@
-open terminology <http://www.w3.org/2001/XMLSchema#> as xsd {
+vocabulary <http://www.w3.org/2001/XMLSchema> with # as xsd {
 
 	scalar anyAtomicType
 
@@ -16,133 +16,133 @@ open terminology <http://www.w3.org/2001/XMLSchema#> as xsd {
 
 	scalar decimal
 
-	scalar ^string
+	scalar string
 
-	numeric scalar byte specializes short {
+	scalar byte :> short [
 		minInclusive -128
 		maxInclusive 127
-	}
+	]
 
-	numeric scalar int specializes long {
+	scalar int :> long [
 		minInclusive -2147483648
 		maxInclusive 2147483647
-	}
+	]
 
-	numeric scalar long specializes integer {
-		minInclusive -9223372036854775808
-		maxInclusive 9223372036854775807
-	}
+	scalar long :> integer [
+		minInclusive "-9223372036854775808"^^long
+		maxInclusive "9223372036854775807"^^long
+	]
 
-	numeric scalar negativeInteger specializes nonPositiveInteger {
+	scalar negativeInteger :> nonPositiveInteger [
 		maxInclusive -1
-	}
+	]
 
-	numeric scalar nonNegativeInteger specializes integer {
+	scalar nonNegativeInteger :> integer [
 		minInclusive 0
-	}
+	]
 
-	numeric scalar nonPositiveInteger specializes integer {
+	scalar nonPositiveInteger :> integer [
 		maxInclusive 0
-	}
+	]
 
-	numeric scalar positiveInteger specializes nonNegativeInteger {
+	scalar positiveInteger :> nonNegativeInteger [
 		minInclusive 1
-	}
+	]
 
-	numeric scalar short specializes int {
+	scalar short :> int [
 		minInclusive -32768
 		maxInclusive 32767
-	}
+	]
 
-	numeric scalar unsignedByte specializes unsignedShort {
+	scalar unsignedByte :> unsignedShort [
 		maxInclusive 255
-	}
+	]
 
-	numeric scalar unsignedInt specializes unsignedLong {
-		maxInclusive 4294967295
-	}
+	scalar unsignedInt :> unsignedLong [
+		maxInclusive "4294967295"^^unsignedInt
+	]
 
-	numeric scalar unsignedLong specializes nonNegativeInteger {
-		maxInclusive 18446744073709551615
-	}
+	scalar unsignedLong :> nonNegativeInteger [
+		maxInclusive "18446744073709551615"^^unsignedLong
+	]
 
-	numeric scalar unsignedShort specializes unsignedInt {
+	scalar unsignedShort :> unsignedInt [
 		maxInclusive 65535
-	}
+	]
 
-	string scalar NCName specializes name {
-		pattern "[\\i\\c*&&[\\i-[:]][\\c-[:]]*]"
-	}
+	scalar NCName :> name [
+		pattern "[\i\c*&&[\i-[:]][\c-[:]]*]"
+	]
 
-	string scalar NMTOKEN specializes token {
-		pattern "\\c+"
-	}
+	scalar NMTOKEN :> token [
+		pattern "\c+"
+	]
 
-	string scalar dayTimeDuration specializes duration {
+	scalar dayTimeDuration :> duration [
 		pattern "[^YM]*(T.*)?"
-	}
+	]
 
-	string scalar double specializes anyAtomicType {
-		pattern "(\\+|\\-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)([Ee](\\+|\\-)?[0-9]+)?|(\\+|\\-)?INF|NaN"
-	}
+	scalar double :> anyAtomicType [
+		pattern "(\+|\-)?([0-9]+(\.[0-9]*)?|\.[0-9]+)([Ee](\+|\-)?[0-9]+)?|(\+|\-)?INF|NaN"
+	]
 
-	string scalar duration specializes anyAtomicType {
-		pattern "-?P((([0-9]+Y([0-9]+M)?([0-9]+D)?|([0-9]+M)([0-9]+D)?|([0-9]+D))(T(([0-9]+H)([0-9]+M)?([0-9]+(\\.[0-9]+)?S)?|([0-9]+M)([0-9]+(\\.[0-9]+)?S)?|([0-9]+(\\.[0-9]+)?S)))?)|(T(([0-9]+H)([0-9]+M)?([0-9]+(\\.[0-9]+)?S)?|([0-9]+M)([0-9]+(\\.[0-9]+)?S)?|([0-9]+(\\.[0-9]+)?S))))"
-	}
+	scalar duration :> anyAtomicType [
+		pattern "-?P((([0-9]+Y([0-9]+M)?([0-9]+D)?|([0-9]+M)([0-9]+D)?|([0-9]+D))(T(([0-9]+H)([0-9]+M)?([0-9]+(\.[0-9]+)?S)?|([0-9]+M)([0-9]+(\.[0-9]+)?S)?|([0-9]+(\.[0-9]+)?S)))?)|(T(([0-9]+H)([0-9]+M)?([0-9]+(\.[0-9]+)?S)?|([0-9]+M)([0-9]+(\.[0-9]+)?S)?|([0-9]+(\.[0-9]+)?S))))"
+	]
 
-	string scalar float specializes anyAtomicType {
-		pattern "(\\+|\\-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)([Ee](\\+|\\-)?[0-9]+)?|(\\+|\\-)?INF|NaN"
-	}
+	scalar float :> anyAtomicType [
+		pattern "(\+|\-)?([0-9]+(\.[0-9]*)?|\.[0-9]+)([Ee](\+|\-)?[0-9]+)?|(\+|\-)?INF|NaN"
+	]
 
-	string scalar gDay specializes anyAtomicType {
-		pattern "---(0[1-9]|[12][0-9]|3[01])(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?"
-	}
+	scalar gDay :> anyAtomicType [
+		pattern "---(0[1-9]|[12][0-9]|3[01])(Z|(\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?"
+	]
 
-	string scalar gMonth specializes anyAtomicType {
-		pattern "--(0[1-9]|1[0-2])(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?"
-	}
+	scalar gMonth :> anyAtomicType [
+		pattern "--(0[1-9]|1[0-2])(Z|(\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?"
+	]
 
-	string scalar gMonthDay specializes anyAtomicType {
-		pattern "--(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?"
-	}
+	scalar gMonthDay :> anyAtomicType [
+		pattern "--(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])(Z|(\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?"
+	]
 
-	string scalar gYear specializes anyAtomicType {
-		pattern "-?([1-9][0-9]{3,}|0[0-9]{3})(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?"
-	}
+	scalar gYear :> anyAtomicType [
+		pattern "-?([1-9][0-9]{3,}|0[0-9]{3})(Z|(\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?"
+	]
 
-	string scalar gYearMonth specializes anyAtomicType {
-		pattern "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?"
-	}
+	scalar gYearMonth :> anyAtomicType [
+		pattern "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])(Z|(\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?"
+	]
 
-	string scalar hexBinary specializes anyAtomicType {
+	scalar hexBinary :> anyAtomicType [
 		pattern "([0-9a-fA-F]{2})*"
-	}
+	]
 
-	string scalar integer specializes decimal {
-		pattern "[\\-+]?[0-9]+"
-	}
+	scalar integer :> decimal [
+		pattern "[\-+]?[0-9]+"
+	]
 
-	string scalar ^language specializes token {
+	scalar ^language :> token [
 		pattern "[a-zA-Z]{1,8}(-[a-zA-Z0-9]{1,8})*"
-	}
+	]
 
-	string scalar name specializes token {
-		pattern "\\i\\c*"
-	}
+	scalar name :> token [
+		pattern "\i\c*"
+	]
 
-	string scalar normalizedString specializes ^string {
-		pattern "[^\\n\\r\\t]"
-	}
+	scalar normalizedString :> string [
+		pattern "[^\n\r\t]"
+	]
 
-	string scalar ^time specializes anyAtomicType {
-		pattern "(([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\\.[0-9]+)?|(24:00:00(\\.0+)?))(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?"
-	}
+	scalar time :> anyAtomicType [
+		pattern "(([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\.[0-9]+)?|(24:00:00(\.0+)?))(Z|(\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?"
+	]
 
-	string scalar token specializes normalizedString {
-		pattern "\\S[\\S[ ]{0,2}]\\S"
-	}
+	scalar token :> normalizedString [
+		pattern "\S[\S[ ]{0,2}]\S"
+	]
 
-	string scalar yearMonthDuration specializes duration {
+	scalar yearMonthDuration :> duration [
 		pattern "[^DT]*"
-	}
+	]
 }

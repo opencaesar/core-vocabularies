@@ -1,4 +1,4 @@
-open terminology <http://www.w3.org/2002/07/owl#> as owl {
+vocabulary <http://www.w3.org/2002/07/owl> with # as owl {
 
 	extends <../../1999/02/22-rdf-syntax-ns.oml>
 
@@ -14,9 +14,9 @@ open terminology <http://www.w3.org/2002/07/owl#> as owl {
 
 	annotation property versionInfo
 
-	string scalar rational specializes real {
-		pattern "[\\-+]?[0-9]+\\\\/[1-9][0-9]*"
-	}
+	scalar rational :> real [
+		pattern "[\-+]?[0-9]+\\/[1-9][0-9]*"
+	]
 
-	string scalar real specializes xsd:anyAtomicType
+	scalar real :> xsd:anyAtomicType
 }
