@@ -1,0 +1,12 @@
+@dc:title "ISO-80000-5"
+@dc:description "The ISO 80000 Part 5 vocabulary is a subset of the vocabulary maintained by the International Organization for Standards."
+@dc:rights "Copyright 2019 ISO."
+@dc:hasVersion "2019"
+@dc:creator "ISO"
+@dc:date "2019-08"
+vocabulary <http://iso.org/iso-80000-5> with # as iso-80000-5 {
+
+	extends <iso-80000-4.oml>
+
+	scalar degreeCelsius :> xsd:double
+}

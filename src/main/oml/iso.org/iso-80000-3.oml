@@ -1,0 +1,16 @@
+@dc:title "ISO-80000-3"
+@dc:description "The ISO 80000 Part 3 vocabulary is a subset of the vocabulary maintained by the International Organization for Standards."
+@dc:rights "Copyright 2019 ISO."
+@dc:hasVersion "2019"
+@dc:creator "ISO"
+@dc:date "2019-08"
+vocabulary <http://iso.org/iso-80000-3> with # as iso-80000-3 {
+
+	extends <iso-80000-2.oml>
+
+	scalar hertz :> xsd:double
+
+	scalar metre :> xsd:double
+
+	scalar millisecond :> xsd:double
+}

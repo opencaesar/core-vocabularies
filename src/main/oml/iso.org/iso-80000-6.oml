@@ -1,0 +1,16 @@
+@dc:title "ISO-80000-6"
+@dc:description "The ISO 80000 Part 6 vocabulary is a subset of the vocabulary maintained by the International Organization for Standards."
+@dc:rights "Copyright 2019 ISO."
+@dc:hasVersion "2019"
+@dc:creator "ISO"
+@dc:date "2019-08"
+vocabulary <http://iso.org/iso-80000-6> with # as iso-80000-6 {
+
+	extends <iso-80000-4.oml>
+
+	scalar ampere :> xsd:double
+
+	scalar ohm :> xsd:double
+
+	scalar volt :> xsd:double
+}
