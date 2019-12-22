@@ -1,6 +1,6 @@
 # OML Vocabularies
 
-This is a set of example vocabulary ontologies expressed in [OML](https://github.com/opencaesar/oml-server) v0.5.0
+This is a set of example vocabulary ontologies expressed in [OML](https://github.com/opencaesar/oml) 0.5.0
 
 ## Clone
 ```
