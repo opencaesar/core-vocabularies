@@ -5,7 +5,7 @@
 @owl:versionInfo "0.5.0"
 @dc:creator "Jet Propulsion Laboratory"
 @dc:date "2019-11-25"
-vocabulary <http://opencaesar.io/foundation/project> with # as project {
+vocabulary <http://imce.jpl.nasa.gov/foundation/project> with # as project {
 
 	extends <analysis.oml>
 
