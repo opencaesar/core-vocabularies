@@ -10,6 +10,6 @@ This is a set of example vocabulary ontologies expressed in [OML](https://github
 
 Replace \<version\> by the version, e.g., 0.5.0
 ```
-  git tag -a v<version> -m "v<version>"
-  git push origin v<version>
+  git tag -a <version> -m "<version>"
+  git push origin <version>
 ```
