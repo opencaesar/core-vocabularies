@@ -25,10 +25,12 @@ cd ..
 # Clean out existing contents
 rm -rf publish/**/* || exit 0
 
-find ${CURRENT_PATH}/src/main/bikeshed-gen -name '*.html' -exec cp --parents {} ./publish/ \;
+cd ${CURRENT_PATH}/src/main/bikeshed-gen
+find . -name '*.html' -exec cp --parents {} ./publish/ \;
 #cp ${CURRENT_PATH}/src/main/bikeshed-gen/index.html ./publish/
 #mkdir -p ./publish/images
 #cp ${CURRENT_PATH}/src-gen/images/oml.svg ./publish/images
+cd ${CURRENT_PATH}
 
 # Now let's go have some fun with the cloned repo
 cd publish
