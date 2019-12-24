@@ -16,6 +16,7 @@ install:
 
 script:
   - ./gradlew generateBikeshed
+  - chmod +x ./src/main/bikeshed-gen/publish.sh
   - ./src/main/bikeshed-gen/publish.sh
 
 deploy:
