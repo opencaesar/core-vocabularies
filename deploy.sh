@@ -26,7 +26,7 @@ cd ..
 rm -rf publish/**/* || exit 0
 
 cd ${CURRENT_PATH}/src/main/bikeshed-gen
-find . -name '*.html' -exec cp --parents {} ./publish/ \;
+find . -name '*.html' -exec cp --parents {} ${CURRENT_PATH}/publish/ \;
 #cp ${CURRENT_PATH}/src/main/bikeshed-gen/index.html ./publish/
 #mkdir -p ./publish/images
 #cp ${CURRENT_PATH}/src-gen/images/oml.svg ./publish/images
