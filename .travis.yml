@@ -19,6 +19,11 @@ script:
   - chmod +x ./src/main/bikeshed-gen/publish.sh
   - ./src/main/bikeshed-gen/publish.sh
 
+env:
+  global:
+  - ENCRYPTION_LABEL: "26c87bd483ba"
+  - COMMIT_AUTHOR_EMAIL: "melaasar@gmail.com"
+
 deploy:
   - provider: script
     script: ./deploy.sh
