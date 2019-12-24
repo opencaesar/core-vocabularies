@@ -1,2 +1,8 @@
+.idea
 .DS_Store
-owl-gen
+bin
+xtend-gen
+build
+.gradle
+.launch
+bikeshed-gen

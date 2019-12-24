@@ -1,0 +1,23 @@
+buildscript {
+	repositories {
+		mavenLocal()
+		maven { url 'https://dl.bintray.com/opencaesar/oml-bikeshed' }
+		maven { url 'https://dl.bintray.com/opencaesar/oml' }
+		jcenter()
+	}
+	dependencies {
+		classpath 'io.opencaesar.bikeshed:oml2bikeshed:+'
+	}
+}
+
+apply plugin: 'io.opencaesar.oml2bikeshed'
+
+oml2bikeshed {
+	inputPath = 'src/main/oml'
+	outputPath = 'src/main/bikeshed-gen'
+	url = 'https://opencaesar.github.io/vocabularies/'
+}
+
+task clean(type: Delete) {
+	delete 'src/main/bikeshed-gen'
+}

@@ -1,0 +1,27 @@
+language: java
+install: true
+
+jdk:
+  - openjdk8
+
+services:
+  - xvfb
+
+before_install:
+  - sudo apt-get install graphviz
+
+install:
+  - git clone https://github.com/tabatkins/bikeshed.git
+  - pip install --editable bikeshed --user
+
+script:
+  - ./gradlew generateBikeshed
+  - ./src/main/bikeshed-gen/publish.sh
+
+deploy:
+  - provider: script
+    script: ./deploy.sh
+    skip_cleanup: true
+    dry-run: false
+    on:
+      branch: master
