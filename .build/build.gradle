@@ -13,11 +13,11 @@ buildscript {
 apply plugin: 'io.opencaesar.oml2bikeshed'
 
 oml2bikeshed {
-	inputPath = 'src/main/oml'
-	outputPath = 'src/main/bikeshed-gen'
+	inputPath = '../src'
+	outputPath = '../bikeshed-gen'
 	url = 'https://opencaesar.github.io/vocabularies/'
 }
 
 task clean(type: Delete) {
-	delete 'src/main/bikeshed-gen'
+	delete '../bikeshed-gen'
 }

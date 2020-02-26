@@ -15,9 +15,10 @@ install:
   - pip install --editable bikeshed --user
 
 script:
+  - cd .build
   - ./gradlew generateBikeshed
-  - chmod +x ./src/main/bikeshed-gen/publish.sh
-  - ./src/main/bikeshed-gen/publish.sh
+  - chmod +x ../bikeshed-gen/publish.sh
+  - ../bikeshed-gen/publish.sh
 
 env:
   global:
