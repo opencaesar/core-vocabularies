@@ -112,14 +112,14 @@ vocabulary <http://opencaesar.io/foundation/metrology> with # as metrology {
     @dc:source "SystemOfQuantities [https://www.omg.org/spec/SysML/1.6/PDF E.5.2.15, p. 288]"
     concept SystemOfQuantities :> MetrologicalEntity
 
-    relation entity HasQuantityKind [
+    relation entity SystemHasQuantityKind [
         from SystemOfQuantities
         to UnitaryQuantityKind
-        forward hasQuantityKind
+        forward systemHasQuantityKind
     ]
 
     scalar property IsBaseQuantityKind [
-        domain HasQuantityKind
+        domain SystemHasQuantityKind
         range xsd:boolean
     ]
 
