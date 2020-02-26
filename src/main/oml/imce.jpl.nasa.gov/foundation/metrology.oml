@@ -17,7 +17,7 @@ the representation of metrology in OML or in SysMLv2 becomes a difference of con
 @owl:versionInfo "0.0.1"
 @dc:creator "Jet Propulsion Laboratory, in collaboration with the SysMLv2 SST metrology group"
 @dc:date "2019-12-15"
-vocabulary <http://opencaesar.io/foundation/metrology> with # as metrology {
+vocabulary <http://imce.jpl.nasa.gov/foundation/metrology> with # as metrology {
 
     extends <../../www.w3.org/2002/07/owl.oml>
 
