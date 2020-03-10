@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/opencaesar/vocabularies.svg?branch=master)](https://travis-ci.org/opencaesar/vocabularies)
 
-This is a set of example vocabulary ontologies expressed in [OML](https://github.com/opencaesar/oml) 0.5.0
+This is a set of vocabularies from various authorities expressed in [OML](https://github.com/opencaesar/oml) 0.5.0
 
 ## Clone
 ```
