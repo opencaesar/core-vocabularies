@@ -6,7 +6,7 @@ This is a set of example vocabulary ontologies expressed in [OML](https://github
 
 ## Clone
 ```
-  git clone https://github.com/opencaesar/oml-vocabularies.git
+  git clone https://github.com/opencaesar/vocabularies.git
 ```
 ## Release
 
