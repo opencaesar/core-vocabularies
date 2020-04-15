@@ -6,7 +6,7 @@
 @dc:date "2014-10-15"
 vocabulary <http://www.w3.org/2001/XMLSchema> with # as xsd {
 
-	extends <../../purl.org/dc/elements/1.1.oml>
+	extends <http://purl.org/dc/elements/1.1>
 
 	scalar anyAtomicType
 

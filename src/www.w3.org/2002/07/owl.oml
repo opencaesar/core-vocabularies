@@ -6,9 +6,9 @@
 @dc:date "2002-07"
 vocabulary <http://www.w3.org/2002/07/owl> with # as owl {
 
-	extends <../../1999/02/22-rdf-syntax-ns.oml>
+	extends <http://www.w3.org/1999/02/22-rdf-syntax-ns>
 
-	extends <../../2000/01/rdf-schema.oml>
+	extends <http://www.w3.org/2000/01/rdf-schema>
 
 	annotation property backwardCompatibleWith
 

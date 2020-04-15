@@ -6,7 +6,7 @@
 @dc:date "2019-08"
 vocabulary <http://iso.org/iso-80000-4> with # as iso-80000-4 {
 
-	extends <iso-80000-3.oml>
+	extends <http://iso.org/iso-80000-3>
 
 	scalar kilogram :> xsd:double
 

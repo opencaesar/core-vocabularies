@@ -19,7 +19,7 @@ the representation of metrology in OML or in SysMLv2 becomes a difference of con
 @dc:date "2019-12-15"
 vocabulary <http://imce.jpl.nasa.gov/foundation/metrology> with # as metrology {
 
-    extends <../../www.w3.org/2002/07/owl.oml>
+    extends <http://www.w3.org/2002/07/owl>
 
     @dc:description "metrology:Thing is the root of the taxonomy of OML entities involved in metrological modeling.
 

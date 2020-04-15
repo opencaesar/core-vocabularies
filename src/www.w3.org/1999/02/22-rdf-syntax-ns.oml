@@ -6,7 +6,7 @@
 @dc:date "1999-02-22"
 vocabulary <http://www.w3.org/1999/02/22-rdf-syntax-ns> with # as rdf {
 
-	extends <../../2001/XMLSchema.oml>
+	extends <http://www.w3.org/2001/XMLSchema>
 
 	annotation property about
 
