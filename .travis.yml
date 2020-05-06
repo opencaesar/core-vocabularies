@@ -15,9 +15,9 @@ install:
 
 script:
   - cd .build
-  - ./gradlew generateBikeshed
-  - chmod +x ../bikeshed-gen/publish.sh
-  - ../bikeshed-gen/publish.sh
+  - ./gradlew build
+  - chmod +x ../bs-gen/publish.sh
+  - ../bs-gen/publish.sh
 
 env:
   global:

@@ -5,4 +5,5 @@ xtend-gen
 build
 .gradle
 .launch
-bikeshed-gen
+bs-gen
+owl-gen
