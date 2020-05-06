@@ -1,6 +1,6 @@
 @dc:title "Metrology"
 @dc:type "Foundation"
-@dc:description "The Metology vocabulary defines the concepts of metrology according to VIM3.
+@dc:^description "The Metology vocabulary defines the concepts of metrology according to VIM3.
 See https://jcgm.bipm.org/vim/en/index.html
 See https://www.bipm.org/utils/common/documents/jcgm/JCGM_200_2012.pdf
 
@@ -21,13 +21,13 @@ vocabulary <http://imce.jpl.nasa.gov/foundation/metrology> with # as metrology {
 
     extends <http://www.w3.org/2002/07/owl>
 
-    @dc:description "metrology:Thing is the root of the taxonomy of OML entities involved in metrological modeling.
+    @dc:^description "metrology:Thing is the root of the taxonomy of OML entities involved in metrological modeling.
 
     metrology:Thing is defined as an OML aspect with the intent that it should be the disjoint union
     of the toplevel categories of entities involved in metrological modeling."
     aspect Thing
 
-    @dc:description "metrology:MetrologicalEntity is the root of the toplevel category of OML concepts corresponding to VIM3 definitions.
+    @dc:^description "metrology:MetrologicalEntity is the root of the toplevel category of OML concepts corresponding to VIM3 definitions.
     
     Note: The SysML 1.4 QUDV library is sufficiently expressive to cover VIM3 chapter 1
     (See: http://www.omg.org/cgi-bin/doc?syseng/2014-03-08). Even though the QUDV constructs
@@ -36,7 +36,7 @@ vocabulary <http://imce.jpl.nasa.gov/foundation/metrology> with # as metrology {
     as specializations of mbase:MetrologicalEntity."
     concept MetrologicalEntity :> Thing
 
-    @dc:description "metrology:Component is the root of the taxonomy of OML entities corresponding to a phenomenon, body or substance that
+    @dc:^description "metrology:Component is the root of the taxonomy of OML entities corresponding to a phenomenon, body or substance that
     can be the subject of:
     - metrological characterizations via quantity properties 
     - metrological measurement processes for obtaining quantity values for such quantity properties."
@@ -44,7 +44,7 @@ vocabulary <http://imce.jpl.nasa.gov/foundation/metrology> with # as metrology {
     @dc:source "component [https://iupac.org/wp-content/uploads/2016/01/ontology-on-Property-Division-VII.pdf, 3.4, p. 39]"
     aspect Component :> Thing
 
-    @dc:description "metrology:Number is the root of the taxonomy of OML entities corresponding to a representation of the numerical value of a quantity [VIM3-1.20].
+    @dc:^description "metrology:Number is the root of the taxonomy of OML entities corresponding to a representation of the numerical value of a quantity [VIM3-1.20].
     A numerical quantity value is an OML entity instead of an OML datatype because it can be referenced in the context of a numerical value equation [VIM3-1.25].
     
     Note: The representation of the numerical quantity value is deliberately left open to be specified in library extensions.
@@ -54,16 +54,16 @@ vocabulary <http://imce.jpl.nasa.gov/foundation/metrology> with # as metrology {
     @dc:source "numerical quantity value [https://jcgm.bipm.org/vim/en/1.20.html]"
     concept Number :> Thing
 
-    @dc:description "common defining aspect of mutually comparable properties having a magnitude."
+    @dc:^description "common defining aspect of mutually comparable properties having a magnitude."
     @dc:source "kind of quantity [https://jcgm.bipm.org/vim/en/1.2.html]"
     @dc:source "kind-of-quantity [https://iupac.org/wp-content/uploads/2016/01/ontology-on-Property-Division-VII.pdf, 13.3.1, p. 125 and 13.4.1, p. 126]"
     concept QuantityKind :> MetrologicalEntity
 
-    @dc:description "A QuantityKind for Quantities that are rankable by magnitude, but are neither subtractive nor divisible."
+    @dc:^description "A QuantityKind for Quantities that are rankable by magnitude, but are neither subtractive nor divisible."
     @dc:source "ordinal kind-of-quantity [https://iupac.org/wp-content/uploads/2016/01/ontology-on-Property-Division-VII.pdf, 13.3.2, p. 125]"
     concept OrdinalQuantityKind :> QuantityKind
 
-    @dc:description "A QuantityKind for Quantities with magnitudes expressed as a measurement unit multiplied by a number."
+    @dc:^description "A QuantityKind for Quantities with magnitudes expressed as a measurement unit multiplied by a number."
     @dc:source "unitary kind-of-quantity [https://iupac.org/wp-content/uploads/2016/01/ontology-on-Property-Division-VII.pdf, 13.3.3, p. 125]"
     @dc:source "QuantityKind [https://www.omg.org/spec/SysML/1.6/PDF E.5.2.10, p. 286]"
     concept UnitaryQuantityKind :> QuantityKind
@@ -78,14 +78,14 @@ vocabulary <http://imce.jpl.nasa.gov/foundation/metrology> with # as metrology {
         irreflexive
     ]
 
-    @dc:description "A BaseQuantityKind is a QuantityKind that is defined independently of any other UnitaryQuantityKind."
+    @dc:^description "A BaseQuantityKind is a QuantityKind that is defined independently of any other UnitaryQuantityKind."
     @dc:source "implicit as a quantity that is not a derived quantity [https://jcgm.bipm.org/vim/en/1.5.html]"
     @dc:source "SimpleQuantityKind [https://www.omg.org/spec/SysML/1.6/PDF E.5.2.13, p. 288]"
     @dc:source "base unitary kind-of-quantity [https://iupac.org/wp-content/uploads/2016/01/ontology-on-Property-Division-VII.pdf, 13.9, p. 130]"
     @dc:source "SimpleQuantityKind [https://www.omg.org/spec/SysML/1.6/PDF E.5.2.13, p. 288]"
     concept BaseQuantityKind :> UnitaryQuantityKind
 
-    @dc:description "A DerivedQuantityKind is a UnitaryQuantityKind defined as the product of powers of UnitaryQuantityKinds."
+    @dc:^description "A DerivedQuantityKind is a UnitaryQuantityKind defined as the product of powers of UnitaryQuantityKinds."
     @dc:source "derived quantity [https://jcgm.bipm.org/vim/en/1.5.html]"
     @dc:source "derived unitary kind-of-quantity [https://iupac.org/wp-content/uploads/2016/01/ontology-on-Property-Division-VII.pdf, 13.11, p. 130-1]"
     @dc:source "DerivedQuantityKind [https://www.omg.org/spec/SysML/1.6/PDF E.5.2.3, p. 282]"
@@ -103,7 +103,7 @@ vocabulary <http://imce.jpl.nasa.gov/foundation/metrology> with # as metrology {
         range xsd:int
     ]
 
-    @dc:description "A SystemOfQuantities is a collection of UnitaryQuantityKinds that can be partitioned into two groups:
+    @dc:^description "A SystemOfQuantities is a collection of UnitaryQuantityKinds that can be partitioned into two groups:
     base and derived quantity kinds. Note that this partitioning is independent of how the UnitaryQuantityKinds are defined.
     For example, a BaseQuantityKind may be a base quantity kind for one SystemOfQuantities and a derived quantity kind for another one.
     Similarly, a DerivedQuantityKind may be a base quantity kind for one SystemOfQuantities and a derived quantity kind for another one."
@@ -137,12 +137,12 @@ vocabulary <http://imce.jpl.nasa.gov/foundation/metrology> with # as metrology {
     @dc:source "metrological unit, measurement unit [https://iupac.org/wp-content/uploads/2016/01/ontology-on-Property-Division-VII.pdf, 18.12, p 189]"
     concept MeasurementUnit :> Reference
 
-    @dc:description "A SimpleMeasurementUnit is a MeasurementUnit that is defined independently of any other MeasurementUnits."
+    @dc:^description "A SimpleMeasurementUnit is a MeasurementUnit that is defined independently of any other MeasurementUnits."
     @dc:source "base unit [https://jcgm.bipm.org/vim/en/1.10.html]"
     @dc:source "base metrological unit, base unit [https://iupac.org/wp-content/uploads/2016/01/ontology-on-Property-Division-VII.pdf, 18.15, p 190-1]"
     concept SimpleMeasurementUnit :> MeasurementUnit
 
-    @dc:description "A DerivedMeasurementUnit is a MeasurementUnit that is defined as the product of powers of other MeasurementUnits."
+    @dc:^description "A DerivedMeasurementUnit is a MeasurementUnit that is defined as the product of powers of other MeasurementUnits."
     @dc:source "derived unit [https://jcgm.bipm.org/vim/en/1.11.html]"
     @dc:source "derived metrological unit, derived unit [https://iupac.org/wp-content/uploads/2016/01/ontology-on-Property-Division-VII.pdf, 18.17, p 192]"
     concept DerivedMeasurementUnit :> MeasurementUnit

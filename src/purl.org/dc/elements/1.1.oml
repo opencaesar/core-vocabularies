@@ -1,5 +1,5 @@
 @dc:title "DC"
-@dc:description "The DC vocabulary is a subset of the vocabulary maintained by the Dublin Core Metadata Initiative."
+@dc:^description "The DC vocabulary is a subset of the vocabulary maintained by the Dublin Core Metadata Initiative."
 @dc:rights "Copyright 1995-2019 DCMI."
 @dc:hasVersion "1.1"
 @dc:creator "DCMI Usage Board"

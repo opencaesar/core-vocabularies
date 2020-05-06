@@ -1,5 +1,5 @@
 @dc:title "RDFS"
-@dc:description "The RDFS vocabulary is a subset of the vocabulary maintained by the W3C."
+@dc:^description "The RDFS vocabulary is a subset of the vocabulary maintained by the W3C."
 @dc:rights "Copyright 2001 W3C."
 @dc:hasVersion "2000/01"
 @dc:creator "W3C"

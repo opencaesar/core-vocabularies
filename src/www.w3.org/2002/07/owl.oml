@@ -1,5 +1,5 @@
 @dc:title "OWL2"
-@dc:description "The OWL2 vocabulary is a subset of the vocabulary maintained by the W3C."
+@dc:^description "The OWL2 vocabulary is a subset of the vocabulary maintained by the W3C."
 @dc:rights "Copyright 2002 W3C."
 @dc:hasVersion "2002/07"
 @dc:creator "W3C"
