@@ -1,7 +1,9 @@
 @dc:title "Analysis"
 @dc:type "Foundation"
-@dc:^description "The Analysis vocabulary defines general concepts and properties for analyses (e.g., trade studies, driving requirements analysis, etc.). It provides a basis for specialization by domain experts."
-@dc:rights "Copyright 2019, by the California Institute of Technology. ALL RIGHTS RESERVED. United States Government Sponsorship acknowledged. Any commercial use must be negotiated with the Office of Technology Transfer at the California Institute of Technology.\n\nThis software may be subject to U.S. export control laws. By accepting this software, the user agrees to comply with all applicable U.S. export laws and regulations. User has the responsibility to obtain export licenses, or other export authority as may be required before exporting such information to foreign countries or providing access to foreign persons."
+@dc:^description "The Analysis Ontology defines general concepts and properties for analyses (e.g., trade studies, driving requirements analysis, etc.). It provides a basis for specialization by domain experts."
+@dc:rights """Copyright 2010-2014, by the California Institute of Technology. ALL RIGHTS RESERVED. United States Government Sponsorship acknowledged. Any commercial use must be negotiated with the Office of Technology Transfer at the California Institute of Technology.
+
+This software may be subject to U.S. export control laws. By accepting this software, the user agrees to comply with all applicable U.S. export laws and regulations. User has the responsibility to obtain export licenses, or other export authority as may be required before exporting such information to foreign countries or providing access to foreign persons."""
 @owl:versionInfo "0.6.0"
 @dc:creator "Jet Propulsion Laboratory"
 @dc:date "2019-11-25"
@@ -15,7 +17,8 @@ vocabulary <http://imce.jpl.nasa.gov/foundation/analysis> with # as analysis {
 
 	aspect ConstrainedElement :> AnalyzedElement, CharacterizedElement
 
-	@dc:^description "<para>A <classname>MeasuredElement</classname> is a model element that may be measured by one or\n        more associated <classname>Metric</classname>s. Both <classname>Objective</classname>s and\n            <classname>Requirement</classname>s</para>\n    <para>are <classname>MeasuredElement</classname>s.</para>"
+	@dc:^description """<para>A <classname>MeasuredElement</classname> is a model element that may be measured by one or more associated <classname>Metric</classname>s. Both <classname>Objective</classname>s and
+    <classname>Requirement</classname>s</para> <para>are <classname>MeasuredElement</classname>s.</para>"""
 	@rdfs:label "Measured Element"
 	aspect MeasuredElement :> AnalyzedElement, CharacterizedElement
 
@@ -27,11 +30,12 @@ vocabulary <http://imce.jpl.nasa.gov/foundation/analysis> with # as analysis {
 	@rdfs:label "Assumption"
 	concept Assumption :> Characterization
 
-	@dc:^description "A <classname>Characterization</classname> is an element that provides a parametric or other characterization of another model element. The canonical example of a <classname>Characterization</classname> is a set of name/value pairs, but other characterizations (e.g., classification) are possible."
+	@dc:^description "A <classname>Characterization</classname> is an element that provides a parametric or other characterization of another model element. The canonical example of a <classname>Characterization</classname> 
+    is a set of name/value pairs, but other characterizations (e.g., classification) are possible."
 	@rdfs:label "Characterization"
 	concept Characterization :> AnalyzedElement, CharacterizedElement, base:IdentifiedElement
 
-	@dc:^description "A <classname>Constaint</classname> is a container for one or more mathematical expressions asserting constraints on values."
+	@dc:^description "A <classname>Constraint</classname> is a container for one or more mathematical expressions asserting constraints on values."
 	@rdfs:label "Constraint"
 	concept Constraint :> AnalyzedElement, CharacterizedElement
 
@@ -39,7 +43,8 @@ vocabulary <http://imce.jpl.nasa.gov/foundation/analysis> with # as analysis {
 	@rdfs:label "Cost Estimate"
 	concept CostEstimate :> Analysis
 
-	@dc:^description "<para>A <classname>Criterion</classname> establishes a region for some\n            <classname>Metric</classname> that corresponds to success for some <classname>MeasuredElement</classname>.</para>\n    <para>A <classname>Criterion</classname> for the <classname>Metric</classname>\n        <emphasis role=\"italic\">sample mass in kg</emphasis> might be <emphasis role=\"italic\">at\n            least 10 kg</emphasis>.</para>"
+	@dc:^description """<para>A <classname>Criterion</classname> establishes a region for some <classname>Metric</classname> that corresponds to success for some <classname>MeasuredElement</classname>.</para>
+    <para>A <classname>Criterion</classname> for the <classname>Metric</classname> <emphasis role="italic">sample mass in kg</emphasis> might be <emphasis role="italic">at least 10 kg</emphasis>.</para>"""
 	@rdfs:label "Criterion"
 	concept Criterion :> AnalyzedElement, CharacterizedElement, base:IdentifiedElement
 
@@ -47,13 +52,16 @@ vocabulary <http://imce.jpl.nasa.gov/foundation/analysis> with # as analysis {
 	@rdfs:label "Driving Requirements Analysis"
 	concept DrivingRequirementsAnalysis :> DrivingRequirementsExplanation
 
-	@dc:^description "A <classname>DrivingRequirementsAnalysis</classname> provides the rationale for designating a set of <classname>Requirement</classname>s as <emphasis>driving</emphasis>, and makes the designation via the <property>explains</property> property."
+	@dc:^description "A <classname>DrivingRequirementsAnalysis</classname> provides the rationale for designating a set of <classname>Requirement</classname>s as <emphasis>driving</emphasis>, and makes the 
+    designation via the <property>explains</property> property."
 	@rdfs:label "Driving Requirements Explanation"
 	concept DrivingRequirementsExplanation :> Analysis [
 		restricts all relation explains to mission:Requirement
 	]
 
-	@dc:^description "<para>An <classname>Explanation</classname> is a product that captures or summarizes the results of\n        an analysis activity and relates it to one or more other model elements. It may\n        contain narrative prose directly or provide a reference to external products.</para>\n    <para>Driving requirements analyses, trade studies, and cost estimates are all examples of\n            <classname>Explanation</classname>.</para>"
+	@dc:^description """<para>An <classname>Explanation</classname> is a product that captures or summarizes the results of an analysis activity and relates it to one or more other model elements. It may
+    contain narrative prose directly or provide a reference to external products.</para> <para>Driving requirements analyses, trade studies, and cost estimates are all examples of
+    <classname>Explanation</classname>.</para>"""
 	@rdfs:label "Explanation"
 	concept Explanation :> Characterization, base:AggregatedElement
 
@@ -61,21 +69,30 @@ vocabulary <http://imce.jpl.nasa.gov/foundation/analysis> with # as analysis {
 	@rdfs:label "Fact"
 	concept Fact :> Assumption
 
+	@dc:^description "<classname>GlossaryEntry</classname> is a <classname>Characterization</classname> that associates a term with a definition."
+	@rdfs:label "GlossaryEntry"
+	concept GlossaryEntry :> Characterization
+
 	@dc:^description "<classname>KeyRequirementsAnalysis</classname> is a deprecated synonym for <classname>KeyRequirementsExplanation</classname>."
 	@rdfs:label "Key Requirements Analysis"
 	concept KeyRequirementsAnalysis :> KeyRequirementsExplanation
 
-	@dc:^description "A <classname>KeyRequirementsAnalysis</classname> provides the rationale for designating a set of <classname>Requirement</classname>s as <emphasis>key</emphasis>, and makes the designation via the <property>explains</property> property."
+	@dc:^description "A <classname>KeyRequirementsAnalysis</classname> provides the rationale for designating a set of <classname>Requirement</classname>s 
+    as <emphasis>key</emphasis>, and makes the designation via the <property>explains</property> property."
 	@rdfs:label "Key Requirements Explanation"
 	concept KeyRequirementsExplanation :> Analysis [
 		restricts all relation explains to mission:Requirement
 	]
 
-	@dc:^description "<para>A <classname>Metric</classname> establishes a method for quantifying achievement or\n        satisfaction of one or more <classname>MeasuredElement</classname>s. Note that the\n        relationship is many to many: a given <classname>Metric</classname> may jointly quantify\n        multiple <classname>MeasuredElement</classname>s. Likewise, a\n            <classname>MeasuredElement</classname> may be quantified by multiple\n            <classname>Metric</classname>s.</para>\n    <para>Appropriate <classname>Metric</classname>s for the <classname>Objective</classname>\n        <emphasis role=\"italic\">image Martian north polar region</emphasis> might include data\n        volumes at specified wavelength and resolution.</para>"
+	@dc:^description """<para>A <classname>Metric</classname> establishes a method for quantifying achievement or satisfaction of one or more <classname>MeasuredElement</classname>s. Note that the
+    relationship is many to many: a given <classname>Metric</classname> may jointly quantify multiple <classname>MeasuredElement</classname>s. Likewise, a <classname>MeasuredElement</classname> may be quantified by multiple
+    <classname>Metric</classname>s.</para> <para>Appropriate <classname>Metric</classname>s for the <classname>Objective</classname> <emphasis role="italic">image Martian north polar region</emphasis> might include data
+    volumes at specified wavelength and resolution.</para>"""
 	@rdfs:label "Metric"
 	concept Metric :> AnalyzedElement, CharacterizedElement, base:IdentifiedElement
 
-	@dc:^description "<para>A <classname>Quantity</classname> attaches a value for some\n            <classname>Metric</classname> to one or more <classname>SpecifiedElement</classname>s.\n        That is, it evaluates some aspect of a design by assigning a definite value to a specific\n            <classname>Metric</classname>.</para>"
+	@dc:^description """<para>A <classname>Quantity</classname> attaches a value for some <classname>Metric</classname> to one or more <classname>SpecifiedElement</classname>s.
+    That is, it evaluates some aspect of a design by assigning a definite value to a specific <classname>Metric</classname>.</para>"""
 	@rdfs:comment "TODO: analysis:Quantification subclass of qudv:Quantity"
 	@rdfs:label "Quantity"
 	concept Quantity :> Characterization
@@ -88,11 +105,12 @@ vocabulary <http://imce.jpl.nasa.gov/foundation/analysis> with # as analysis {
 	@rdfs:label "Trade Study"
 	concept TradeStudy :> Analysis
 
-	@dc:^description "An <classname>Explanation</classname> <replaceable>a</replaceable> <property>analyzes</property> some <classname>IdentifiedElement</classname> <replaceable>e</replaceable> if and only if <replaceable>a</replaceable> considers or otherwise takes account of <replaceable>e</replaceable>."
 	@rdfs:label "Analyzes"
 	relation entity Analyzes :> AnalyzedElement, CharacterizedElement [
 		from Explanation
 		to AnalyzedElement
+		@dc:^description "An <classname>Explanation</classname> <replaceable>a</replaceable> <property>analyzes</property> some <classname>IdentifiedElement</classname> <replaceable>e</replaceable> 
+        if and only if <replaceable>a</replaceable> considers or otherwise takes account of <replaceable>e</replaceable>."
 		@rdfs:label "analyzes"
 		forward analyzes
 		@rdfs:label "is analyzed by"
@@ -101,50 +119,54 @@ vocabulary <http://imce.jpl.nasa.gov/foundation/analysis> with # as analysis {
 		irreflexive
 	]
 
-	@dc:^description "See <property>characterizes</property>."
-	@dc:^description "A\n<classname>Characterization</classname>\n<replaceable>c</replaceable>\n<property>characterizes</property>\na\n<classname>CharacterizedElement</classname>\n<replaceable>e</replaceable>\nif and only if\n<replaceable>c</replaceable>\ndescribes, delimits, or restricts\n<replaceable>e</replaceable>."
 	@rdfs:label "Characterizes"
 	relation entity Characterizes :> AnalyzedElement, CharacterizedElement, mission:SpecifiedElement [
 		from Characterization
 		to CharacterizedElement
+		@dc:^description """A <classname>Characterization</classname> <replaceable>c</replaceable> <property>characterizes</property> a <classname>CharacterizedElement</classname> <replaceable>e</replaceable>
+        if and only if <replaceable>c</replaceable> describes, delimits, or restricts <replaceable>e</replaceable>."""
 		@rdfs:label "characterizes"
 		forward characterizes
+		@dc:^description "See <property>characterizes</property>."
 		@rdfs:label "is characterized by"
 		reverse isCharacterizedBy
 		asymmetric
 		irreflexive
 	]
 
-	@dc:^description "A <classname>Constraint</classname> <replaceable>c</replaceable> <property>constrains</property> some <classname>ConstrainedElement</classname> <replaceable>e</replaceable> if and only if <replaceable>c</replaceable> imposes restrictions on one or more properties of  <replaceable>e</replaceable>."
 	@rdfs:label "Constrains"
 	relation entity Constrains :> AnalyzedElement, CharacterizedElement [
 		from Constraint
 		to ConstrainedElement
+		@dc:^description "A <classname>Constraint</classname> <replaceable>c</replaceable> <property>constrains</property> some <classname>ConstrainedElement</classname> <replaceable>e</replaceable> 
+        if and only if <replaceable>c</replaceable> imposes restrictions on one or more properties of  <replaceable>e</replaceable>."
 		@rdfs:label "constrains"
 		forward constrains
 		asymmetric
 		irreflexive
 	]
 
-	@dc:^description "See <property>explains</property>."
-	@dc:^description "An <classname>Explanation</classname> <replaceable>a</replaceable> <property>explains</property> some <classname>SpecifiedElement</classname> <replaceable>e</replaceable> if and only if <replaceable>a</replaceable> provides a rationale or justification for some design aspect of <replaceable>e</replaceable>."
 	@rdfs:label "Explains"
 	relation entity Explains :> Characterizes, AnalyzedElement, CharacterizedElement [
 		from Explanation
 		to CharacterizedElement
+		@dc:^description "An <classname>Explanation</classname> <replaceable>a</replaceable> <property>explains</property> some <classname>SpecifiedElement</classname> <replaceable>e</replaceable> 
+        if and only if <replaceable>a</replaceable> provides a rationale or justification for some design aspect of <replaceable>e</replaceable>."
 		@rdfs:label "explains"
 		forward explains
+		@dc:^description "See <property>explains</property>."
 		@rdfs:label "is explained by"
 		reverse isExplainedBy
 		asymmetric
 		irreflexive
 	]
 
-	@dc:^description "<para>A <classname>Metric</classname>\n        <replaceable>m</replaceable> <property>hasCriterion</property> some\n        <classname>Criterion</classname>\n        <replaceable>c</replaceable> if and only if <replaceable>c</replaceable> establishes a region of success for <replaceable>m</replaceable>.</para>"
 	@rdfs:label "Has Criterion"
 	relation entity HasCriterion :> AnalyzedElement, CharacterizedElement [
 		from Metric
 		to Criterion
+		@dc:^description """<para>A <classname>Metric</classname> <replaceable>m</replaceable> <property>hasCriterion</property> some <classname>Criterion</classname>
+        <replaceable>c</replaceable> if and only if <replaceable>c</replaceable> establishes a region of success for <replaceable>m</replaceable>.</para>"""
 		@rdfs:label "has criterion"
 		forward hasCriterion
 		@rdfs:label "is criterion for"
@@ -152,11 +174,12 @@ vocabulary <http://imce.jpl.nasa.gov/foundation/analysis> with # as analysis {
 		inverse functional
 	]
 
-	@dc:^description "<para>An <classname>Quantification</classname>\n        <replaceable>q</replaceable> <property>hasMetric</property> some\n            <classname>Metric</classname>\n        <replaceable>m</replaceable> if and only if <replaceable>q</replaceable> assigns a value to\n            <replaceable>m</replaceable> for some aspect of a design.</para>"
 	@rdfs:label "Has Metric"
 	relation entity HasMetric :> AnalyzedElement, CharacterizedElement [
 		from Quantity
 		to Metric
+		@dc:^description """<para>An <classname>Quantification</classname> <replaceable>q</replaceable> <property>hasMetric</property> some <classname>Metric</classname>
+        <replaceable>m</replaceable> if and only if <replaceable>q</replaceable> assigns a value to <replaceable>m</replaceable> for some aspect of a design.</para>"""
 		@rdfs:label "has metric"
 		forward hasMetric
 		functional
@@ -175,25 +198,27 @@ vocabulary <http://imce.jpl.nasa.gov/foundation/analysis> with # as analysis {
 		irreflexive
 	]
 
-	@dc:^description "See <property>limits</property>."
 	@rdfs:label "Limits"
-	@rdfs:comment "An\n<classname>Assumption</classname>\n<replaceable>a</replaceable>\n<property>limits</property>\na\n<classname>CharacterizedElement</classname>\n<replaceable>e</replaceable>\nif and only if\n<replaceable>a</replaceable>\nis restricted in some fashion by\n<replaceable>e</replaceable>."
 	relation entity Limits :> Characterizes, AnalyzedElement, CharacterizedElement [
 		from Assumption
 		to CharacterizedElement
 		@rdfs:label "limits"
+		@rdfs:comment """An <classname>Assumption</classname> <replaceable>a</replaceable> <property>limits</property> a <classname>CharacterizedElement</classname> <replaceable>e</replaceable>
+        if and only if <replaceable>a</replaceable> is restricted in some fashion by <replaceable>e</replaceable>."""
 		forward limits
+		@dc:^description "See <property>limits</property>."
 		@rdfs:label "is limited by"
 		reverse isLimitedBy
 		asymmetric
 		irreflexive
 	]
 
-	@dc:^description "<para>A <classname>Criterion</classname>\n        <replaceable>c</replaceable>\n        <property>measures</property> some <classname>MeasuredElement</classname>\n        <replaceable>e</replaceable> if and only if <replaceable>c</replaceable> defines a region for some <classname>Metric</classname> that corresponds to success\nfor <replaceable>e</replaceable>.</para>"
 	@rdfs:label "Measures"
 	relation entity Measures :> AnalyzedElement, CharacterizedElement [
 		from Criterion
 		to MeasuredElement
+		@dc:^description """<para>A <classname>Criterion</classname> <replaceable>c</replaceable> <property>measures</property> some <classname>MeasuredElement</classname>
+        <replaceable>e</replaceable> if and only if <replaceable>c</replaceable> defines a region for some <classname>Metric</classname> that corresponds to succes for <replaceable>e</replaceable>.</para>"""
 		@rdfs:label "measures"
 		forward measures
 		@rdfs:label "is measured by"
@@ -202,11 +227,12 @@ vocabulary <http://imce.jpl.nasa.gov/foundation/analysis> with # as analysis {
 		irreflexive
 	]
 
-	@dc:^description "<para>A <classname>Quantification</classname>\n        <replaceable>q</replaceable>\n        <property>quantifies</property> some <classname>SpecifiedElement</classname>\n        <replaceable>e</replaceable> if and only if <replaceable>q</replaceable> assigns a value to\n        some <classname>Metric</classname>  for <replaceable>e</replaceable>.</para>"
 	@rdfs:label "Quantifies"
 	relation entity Quantifies :> AnalyzedElement, CharacterizedElement [
 		from Quantity
 		to mission:SpecifiedElement
+		@dc:^description """<para>A <classname>Quantification</classname> <replaceable>q</replaceable> <property>quantifies</property> some <classname>SpecifiedElement</classname>
+        <replaceable>e</replaceable> if and only if <replaceable>q</replaceable> assigns a value to some <classname>Metric</classname>  for <replaceable>e</replaceable>.</para>"""
 		@rdfs:label "quantifies"
 		forward quantifies
 		@rdfs:label "is quantified by"
@@ -215,18 +241,31 @@ vocabulary <http://imce.jpl.nasa.gov/foundation/analysis> with # as analysis {
 		irreflexive
 	]
 
-	@dc:^description "An <classname>Explanation</classname> <replaceable>a</replaceable> <property>validates</property> some <classname>SpecifiedElement</classname> <replaceable>e</replaceable> if and only if <replaceable>a</replaceable> provides a definitive, determinative explanation for some design aspect of <replaceable>e</replaceable>."
-	@dc:^description "See <property>validates</property>."
 	@rdfs:label "Validates"
 	relation entity Validates :> Explains, AnalyzedElement, CharacterizedElement [
 		from Explanation
 		to CharacterizedElement
+		@dc:^description "An <classname>Explanation</classname> <replaceable>a</replaceable> <property>validates</property> some <classname>SpecifiedElement</classname> <replaceable>e</replaceable> 
+        if and only if <replaceable>a</replaceable> provides a definitive, determinative explanation for some design aspect of <replaceable>e</replaceable>."
 		@rdfs:label "validates"
 		forward validates
+		@dc:^description "See <property>validates</property>."
 		@rdfs:label "is validated by"
 		reverse isValidatedBy
 		asymmetric
 		irreflexive
+	]
+
+	@rdfs:label "has glossary definition"
+	scalar property hasGlossaryDefinition :> base:hasDescription [
+		domain GlossaryEntry
+		range xsd:string
+	]
+
+	@rdfs:label "has glossary term"
+	scalar property hasGlossaryTerm :> base:hasCanonicalName [
+		domain GlossaryEntry
+		range xsd:string
 	]
 
 	ref aspect base:AggregatedElement :> AnalyzedElement, CharacterizedElement
