@@ -117,7 +117,7 @@ vocabulary <http://imce.jpl.nasa.gov/foundation/project> with # as project {
 		@rdfs:label "approves"
 		forward approves
 		@rdfs:label "is approved by"
-		inverse isApprovedBy
+		reverse isApprovedBy
 		asymmetric
 		irreflexive
 	]
@@ -151,7 +151,7 @@ vocabulary <http://imce.jpl.nasa.gov/foundation/project> with # as project {
 		@rdfs:label "binds"
 		forward binds
 		@rdfs:label "is bound by"
-		inverse isBoundBy
+		reverse isBoundBy
 		asymmetric
 		irreflexive
 	]
@@ -163,7 +163,7 @@ vocabulary <http://imce.jpl.nasa.gov/foundation/project> with # as project {
 		@rdfs:label "concurs"
 		forward concurs
 		@rdfs:label "is concurred by"
-		inverse isConcurredBy
+		reverse isConcurredBy
 		asymmetric
 		irreflexive
 	]
@@ -177,7 +177,7 @@ vocabulary <http://imce.jpl.nasa.gov/foundation/project> with # as project {
 		@rdfs:label "delegates to"
 		forward delegatesTo
 		@rdfs:label "is delegate of"
-		inverse isDelegateOf
+		reverse isDelegateOf
 		inverse functional
 		asymmetric
 		irreflexive
@@ -192,7 +192,7 @@ vocabulary <http://imce.jpl.nasa.gov/foundation/project> with # as project {
 		@rdfs:label "delivers"
 		forward delivers
 		@rdfs:label "is delivered by"
-		inverse isDeliveredBy
+		reverse isDeliveredBy
 		inverse functional
 		asymmetric
 		irreflexive
@@ -207,7 +207,7 @@ vocabulary <http://imce.jpl.nasa.gov/foundation/project> with # as project {
 		@rdfs:label "describes"
 		forward describes
 		@rdfs:label "is described by"
-		inverse isDescribedBy
+		reverse isDescribedBy
 		asymmetric
 		irreflexive
 	]
@@ -221,7 +221,7 @@ vocabulary <http://imce.jpl.nasa.gov/foundation/project> with # as project {
 		@rdfs:label "executes"
 		forward executes
 		@rdfs:label "is executed by"
-		inverse isExecutedBy
+		reverse isExecutedBy
 		inverse functional
 		asymmetric
 		irreflexive
@@ -236,7 +236,7 @@ vocabulary <http://imce.jpl.nasa.gov/foundation/project> with # as project {
 		@rdfs:label "has assignment"
 		forward hasAssignment
 		@rdfs:label "is assigned to"
-		inverse isAssignedTo
+		reverse isAssignedTo
 		asymmetric
 		irreflexive
 	]
@@ -248,7 +248,7 @@ vocabulary <http://imce.jpl.nasa.gov/foundation/project> with # as project {
 		@rdfs:label "has participant"
 		forward hasParticipant
 		@rdfs:label "participates in"
-		inverse participatesIn
+		reverse participatesIn
 		asymmetric
 		irreflexive
 	]
@@ -262,7 +262,7 @@ vocabulary <http://imce.jpl.nasa.gov/foundation/project> with # as project {
 		@rdfs:label "has responsibility for"
 		forward hasResponsibilityFor
 		@rdfs:label "is responsibility of"
-		inverse isResponsibilityOf
+		reverse isResponsibilityOf
 		inverse functional
 	]
 
@@ -275,7 +275,7 @@ vocabulary <http://imce.jpl.nasa.gov/foundation/project> with # as project {
 		@rdfs:label "has role"
 		forward hasRole
 		@rdfs:label "is role of"
-		inverse isRoleOf
+		reverse isRoleOf
 		inverse functional
 		asymmetric
 		irreflexive
@@ -288,7 +288,7 @@ vocabulary <http://imce.jpl.nasa.gov/foundation/project> with # as project {
 		@rdfs:label "interchanges through"
 		forward interchangesThrough
 		@rdfs:label "is interchange point for"
-		inverse isInterchangePointFor
+		reverse isInterchangePointFor
 		inverse functional
 		asymmetric
 		irreflexive
@@ -303,7 +303,7 @@ vocabulary <http://imce.jpl.nasa.gov/foundation/project> with # as project {
 		@rdfs:label "invokes"
 		forward invokes
 		@rdfs:label "is invoked by"
-		inverse isInvokedBy
+		reverse isInvokedBy
 		irreflexive
 	]
 
@@ -314,7 +314,7 @@ vocabulary <http://imce.jpl.nasa.gov/foundation/project> with # as project {
 		@rdfs:label "involves"
 		forward involves
 		@rdfs:label "is involved in"
-		inverse isInvolvedIn
+		reverse isInvolvedIn
 		asymmetric
 		irreflexive
 	]
@@ -326,7 +326,7 @@ vocabulary <http://imce.jpl.nasa.gov/foundation/project> with # as project {
 		@rdfs:label "involves1"
 		forward involves1
 		@rdfs:label "is involved in1"
-		inverse isInvolvedIn1
+		reverse isInvolvedIn1
 		functional
 		asymmetric
 		irreflexive
@@ -339,7 +339,7 @@ vocabulary <http://imce.jpl.nasa.gov/foundation/project> with # as project {
 		@rdfs:label "involves2"
 		forward involves2
 		@rdfs:label "is involved in2"
-		inverse isInvolvedIn2
+		reverse isInvolvedIn2
 		functional
 		asymmetric
 		irreflexive
@@ -354,7 +354,7 @@ vocabulary <http://imce.jpl.nasa.gov/foundation/project> with # as project {
 		@rdfs:label "manifests"
 		forward manifests
 		@rdfs:label "is manfested by"
-		inverse isManfestedBy
+		reverse isManfestedBy
 		inverse functional
 		asymmetric
 		irreflexive
@@ -367,7 +367,7 @@ vocabulary <http://imce.jpl.nasa.gov/foundation/project> with # as project {
 		@rdfs:label "prepares"
 		forward prepares
 		@rdfs:label "is prepared by"
-		inverse isPreparedBy
+		reverse isPreparedBy
 		asymmetric
 		irreflexive
 	]
@@ -383,7 +383,7 @@ vocabulary <http://imce.jpl.nasa.gov/foundation/project> with # as project {
 		@rdfs:label "produces"
 		forward produces
 		@rdfs:label "is produced by"
-		inverse isProducedBy
+		reverse isProducedBy
 		inverse functional
 		asymmetric
 		irreflexive
@@ -398,7 +398,7 @@ vocabulary <http://imce.jpl.nasa.gov/foundation/project> with # as project {
 		@rdfs:label "realizes"
 		forward realizes
 		@rdfs:label "is realized by"
-		inverse isRealizedBy
+		reverse isRealizedBy
 		asymmetric
 		irreflexive
 	]
@@ -412,7 +412,7 @@ vocabulary <http://imce.jpl.nasa.gov/foundation/project> with # as project {
 		@rdfs:label "receives"
 		forward receives
 		@rdfs:label "is received by"
-		inverse isReceivedBy
+		reverse isReceivedBy
 		asymmetric
 		irreflexive
 	]
@@ -424,7 +424,7 @@ vocabulary <http://imce.jpl.nasa.gov/foundation/project> with # as project {
 		@rdfs:label "relies on"
 		forward reliesOn
 		@rdfs:label "is relied on by"
-		inverse isReliedOnBy
+		reverse isReliedOnBy
 		asymmetric
 		irreflexive
 	]
@@ -438,7 +438,7 @@ vocabulary <http://imce.jpl.nasa.gov/foundation/project> with # as project {
 		@rdfs:label "represents"
 		forward represents
 		@rdfs:label "is represented by"
-		inverse isRepresentedBy
+		reverse isRepresentedBy
 		asymmetric
 		irreflexive
 	]
@@ -452,7 +452,7 @@ vocabulary <http://imce.jpl.nasa.gov/foundation/project> with # as project {
 		@rdfs:label "supplies"
 		forward supplies
 		@rdfs:label "is supplied by"
-		inverse isSuppliedBy
+		reverse isSuppliedBy
 		inverse functional
 		asymmetric
 		irreflexive

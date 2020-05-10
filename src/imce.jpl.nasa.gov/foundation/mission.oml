@@ -123,7 +123,7 @@ vocabulary <http://imce.jpl.nasa.gov/foundation/mission> with # as mission {
 		@rdfs:label "deploys"
 		forward deploys
 		@rdfs:label "is deployed by"
-		inverse isDeployedBy
+		reverse isDeployedBy
 		asymmetric
 		irreflexive
 	]
@@ -136,7 +136,7 @@ vocabulary <http://imce.jpl.nasa.gov/foundation/mission> with # as mission {
 		@rdfs:label "emits"
 		forward emits
 		@rdfs:label "is emitted by"
-		inverse isEmittedBy
+		reverse isEmittedBy
 		inverse functional
 		asymmetric
 		irreflexive
@@ -149,7 +149,7 @@ vocabulary <http://imce.jpl.nasa.gov/foundation/mission> with # as mission {
 		@rdfs:label "has participant"
 		forward hasParticipant
 		@rdfs:label "participates in"
-		inverse participatesIn
+		reverse participatesIn
 		asymmetric
 		irreflexive
 	]
@@ -162,7 +162,7 @@ vocabulary <http://imce.jpl.nasa.gov/foundation/mission> with # as mission {
 		@rdfs:label "induces"
 		forward induces
 		@rdfs:label "is induced by"
-		inverse isInducedBy
+		reverse isInducedBy
 		asymmetric
 		irreflexive
 	]
@@ -175,7 +175,7 @@ vocabulary <http://imce.jpl.nasa.gov/foundation/mission> with # as mission {
 		@rdfs:label "influences"
 		forward influences
 		@rdfs:label "is influenced by"
-		inverse isInfluencedBy
+		reverse isInfluencedBy
 		asymmetric
 		irreflexive
 	]
@@ -188,7 +188,7 @@ vocabulary <http://imce.jpl.nasa.gov/foundation/mission> with # as mission {
 		@rdfs:label "ingests"
 		forward ingests
 		@rdfs:label "is ingested by"
-		inverse isIngestedBy
+		reverse isIngestedBy
 		inverse functional
 		asymmetric
 		irreflexive
@@ -203,7 +203,7 @@ vocabulary <http://imce.jpl.nasa.gov/foundation/mission> with # as mission {
 		@rdfs:label "interchanges through"
 		forward interchangesThrough
 		@rdfs:label "is interchange point for"
-		inverse isInterchangePointFor
+		reverse isInterchangePointFor
 		inverse functional
 		asymmetric
 		irreflexive
@@ -217,7 +217,7 @@ vocabulary <http://imce.jpl.nasa.gov/foundation/mission> with # as mission {
 		@rdfs:label "invokes"
 		forward invokes
 		@rdfs:label "is invoked by"
-		inverse isInvokedBy
+		reverse isInvokedBy
 	]
 
 	@dc:^description "<para>\nAn <classname>Interaction</classname>\n<replaceable>i</replaceable>\n<property>involves</property>\na pair of\n<classname>Function</classname>s\n[<replaceable>f<subscript>1</subscript></replaceable>]\nand\n[<replaceable>f<subscript>2</subscript></replaceable>]\nif and only if\n[<replaceable>f<subscript>1</subscript></replaceable>] \n<property>emits</property> a <classname>Flow</classname> or\n<property>sends</property> an <classname>Item</classname>\nthat\n[<replaceable>f<subscript>2</subscript></replaceable>] \n<property>ingests</property> or\n<property>receives</property>,\n</para>"
@@ -228,7 +228,7 @@ vocabulary <http://imce.jpl.nasa.gov/foundation/mission> with # as mission {
 		@rdfs:label "involves"
 		forward involves
 		@rdfs:label "is involved in"
-		inverse isInvolvedIn
+		reverse isInvolvedIn
 		asymmetric
 		irreflexive
 	]
@@ -240,7 +240,7 @@ vocabulary <http://imce.jpl.nasa.gov/foundation/mission> with # as mission {
 		@rdfs:label "involves1"
 		forward involves1
 		@rdfs:label "is involved in1"
-		inverse isInvolvedIn1
+		reverse isInvolvedIn1
 		functional
 		asymmetric
 		irreflexive
@@ -253,7 +253,7 @@ vocabulary <http://imce.jpl.nasa.gov/foundation/mission> with # as mission {
 		@rdfs:label "involves2"
 		forward involves2
 		@rdfs:label "is involved in2"
-		inverse isInvolvedIn2
+		reverse isInvolvedIn2
 		functional
 		asymmetric
 		irreflexive
@@ -267,7 +267,7 @@ vocabulary <http://imce.jpl.nasa.gov/foundation/mission> with # as mission {
 		@rdfs:label "is traversed by"
 		forward isTraversedBy
 		@rdfs:label "traverses"
-		inverse traverses
+		reverse traverses
 		asymmetric
 		irreflexive
 	]
@@ -280,7 +280,7 @@ vocabulary <http://imce.jpl.nasa.gov/foundation/mission> with # as mission {
 		@rdfs:label "joins"
 		forward joins
 		@rdfs:label "is joined in"
-		inverse isJoinedIn
+		reverse isJoinedIn
 		asymmetric
 		irreflexive
 	]
@@ -292,7 +292,7 @@ vocabulary <http://imce.jpl.nasa.gov/foundation/mission> with # as mission {
 		@rdfs:label "joins1"
 		forward joins1
 		@rdfs:label "is joined in1"
-		inverse isJoinedIn1
+		reverse isJoinedIn1
 		asymmetric
 		irreflexive
 	]
@@ -304,7 +304,7 @@ vocabulary <http://imce.jpl.nasa.gov/foundation/mission> with # as mission {
 		@rdfs:label "joins2"
 		forward joins2
 		@rdfs:label "is joined in2"
-		inverse isJoinedIn2
+		reverse isJoinedIn2
 		asymmetric
 		irreflexive
 	]
@@ -317,7 +317,7 @@ vocabulary <http://imce.jpl.nasa.gov/foundation/mission> with # as mission {
 		@rdfs:label "performs"
 		forward performs
 		@rdfs:label "is performed by"
-		inverse isPerformedBy
+		reverse isPerformedBy
 		inverse functional
 		asymmetric
 		irreflexive
@@ -331,7 +331,7 @@ vocabulary <http://imce.jpl.nasa.gov/foundation/mission> with # as mission {
 		@rdfs:label "presents"
 		forward presents
 		@rdfs:label "is presented by"
-		inverse isPresentedBy
+		reverse isPresentedBy
 		inverse functional
 		asymmetric
 		irreflexive
@@ -346,7 +346,7 @@ vocabulary <http://imce.jpl.nasa.gov/foundation/mission> with # as mission {
 		@rdfs:label "produces"
 		forward produces
 		@rdfs:label "is produced by"
-		inverse isProducedBy
+		reverse isProducedBy
 		inverse functional
 		asymmetric
 		irreflexive
@@ -360,7 +360,7 @@ vocabulary <http://imce.jpl.nasa.gov/foundation/mission> with # as mission {
 		@rdfs:label "pursues"
 		forward pursues
 		@rdfs:label "is pursued by"
-		inverse isPursuedBy
+		reverse isPursuedBy
 		asymmetric
 		irreflexive
 	]
@@ -373,7 +373,7 @@ vocabulary <http://imce.jpl.nasa.gov/foundation/mission> with # as mission {
 		@rdfs:label "receives"
 		forward receives
 		@rdfs:label "is received by"
-		inverse isReceivedBy
+		reverse isReceivedBy
 		asymmetric
 		irreflexive
 	]
@@ -387,7 +387,7 @@ vocabulary <http://imce.jpl.nasa.gov/foundation/mission> with # as mission {
 		@rdfs:label "refines"
 		forward ^refines
 		@rdfs:label "is refined by"
-		inverse isRefinedBy
+		reverse isRefinedBy
 		asymmetric
 		irreflexive
 	]
@@ -400,7 +400,7 @@ vocabulary <http://imce.jpl.nasa.gov/foundation/mission> with # as mission {
 		@rdfs:label "sends"
 		forward sends
 		@rdfs:label "is sent by"
-		inverse isSentBy
+		reverse isSentBy
 		inverse functional
 		asymmetric
 		irreflexive
@@ -414,7 +414,7 @@ vocabulary <http://imce.jpl.nasa.gov/foundation/mission> with # as mission {
 		@rdfs:label "specifies"
 		forward specifies
 		@rdfs:label "is specified by"
-		inverse isSpecifiedBy
+		reverse isSpecifiedBy
 		functional
 		asymmetric
 		irreflexive

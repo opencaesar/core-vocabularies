@@ -38,7 +38,7 @@ vocabulary <http://imce.jpl.nasa.gov/foundation/base> with # as base {
 		@rdfs:label "aggregates"
 		forward aggregates
 		@rdfs:label "is aggregated in"
-		inverse isAggregatedIn
+		reverse isAggregatedIn
 		asymmetric
 		irreflexive
 	]
@@ -52,7 +52,7 @@ vocabulary <http://imce.jpl.nasa.gov/foundation/base> with # as base {
 		@rdfs:label "contains"
 		forward contains
 		@rdfs:label "is contained in"
-		inverse isContainedIn
+		reverse isContainedIn
 		inverse functional
 		asymmetric
 		irreflexive

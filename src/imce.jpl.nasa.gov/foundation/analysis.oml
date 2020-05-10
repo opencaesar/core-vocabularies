@@ -96,7 +96,7 @@ vocabulary <http://imce.jpl.nasa.gov/foundation/analysis> with # as analysis {
 		@rdfs:label "analyzes"
 		forward analyzes
 		@rdfs:label "is analyzed by"
-		inverse isAnalyzedBy
+		reverse isAnalyzedBy
 		asymmetric
 		irreflexive
 	]
@@ -110,7 +110,7 @@ vocabulary <http://imce.jpl.nasa.gov/foundation/analysis> with # as analysis {
 		@rdfs:label "characterizes"
 		forward characterizes
 		@rdfs:label "is characterized by"
-		inverse isCharacterizedBy
+		reverse isCharacterizedBy
 		asymmetric
 		irreflexive
 	]
@@ -135,7 +135,7 @@ vocabulary <http://imce.jpl.nasa.gov/foundation/analysis> with # as analysis {
 		@rdfs:label "explains"
 		forward explains
 		@rdfs:label "is explained by"
-		inverse isExplainedBy
+		reverse isExplainedBy
 		asymmetric
 		irreflexive
 	]
@@ -148,7 +148,7 @@ vocabulary <http://imce.jpl.nasa.gov/foundation/analysis> with # as analysis {
 		@rdfs:label "has criterion"
 		forward hasCriterion
 		@rdfs:label "is criterion for"
-		inverse isCriterionFor
+		reverse isCriterionFor
 		inverse functional
 	]
 
@@ -184,7 +184,7 @@ vocabulary <http://imce.jpl.nasa.gov/foundation/analysis> with # as analysis {
 		@rdfs:label "limits"
 		forward limits
 		@rdfs:label "is limited by"
-		inverse isLimitedBy
+		reverse isLimitedBy
 		asymmetric
 		irreflexive
 	]
@@ -197,7 +197,7 @@ vocabulary <http://imce.jpl.nasa.gov/foundation/analysis> with # as analysis {
 		@rdfs:label "measures"
 		forward measures
 		@rdfs:label "is measured by"
-		inverse isMeasuredBy
+		reverse isMeasuredBy
 		asymmetric
 		irreflexive
 	]
@@ -210,7 +210,7 @@ vocabulary <http://imce.jpl.nasa.gov/foundation/analysis> with # as analysis {
 		@rdfs:label "quantifies"
 		forward quantifies
 		@rdfs:label "is quantified by"
-		inverse isQuantifiedBy
+		reverse isQuantifiedBy
 		asymmetric
 		irreflexive
 	]
@@ -224,7 +224,7 @@ vocabulary <http://imce.jpl.nasa.gov/foundation/analysis> with # as analysis {
 		@rdfs:label "validates"
 		forward validates
 		@rdfs:label "is validated by"
-		inverse isValidatedBy
+		reverse isValidatedBy
 		asymmetric
 		irreflexive
 	]
