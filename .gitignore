@@ -1,9 +1,4 @@
-.idea
-.DS_Store
-bin
-xtend-gen
-build
 .gradle
-.launch
-bs-gen
-owl-gen
+build
+.DS_Store
+.idea

@@ -1,5 +1,7 @@
 sudo: false
+
 language: python
+
 python:
   - "3.7"
 
@@ -14,10 +16,7 @@ install:
   - pip install --editable bikeshed
 
 script:
-  - cd .build
   - ./gradlew build
-  - chmod +x ../bs-gen/publish.sh
-  - ../bs-gen/publish.sh
 
 env:
   global:
@@ -26,8 +25,16 @@ env:
 
 deploy:
   - provider: script
-    script: ./deploy.sh
+    script: .deploy/deploy.sh
     skip_cleanup: true
     dry-run: false
     on:
+      branch: master
+  - provider: script
+    script: ./gradlew bintrayUpload
+    skip_cleanup: true
+    dry-run: false
+    on:
+      tags: true
+      repo: opencaesar/vocabularies
       branch: master
