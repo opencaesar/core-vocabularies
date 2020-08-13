@@ -28,7 +28,7 @@ You must first have Bikeshed installed from [here](https://tabatkins.github.io/b
 ./gradlew bikeshed2html
 ```
 
-## Publish Sources to Maven Local
+## Publish to Maven Local
 ```
 ./gradlew publishToMavenLocal
 ```
