@@ -28,7 +28,7 @@ deploy:
     skip_cleanup: true
     dry-run: false
     on:
-      tags: false
+      tags: true
       branch: master
   - provider: script
     script: ./gradlew bintrayUpload
