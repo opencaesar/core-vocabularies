@@ -1,5 +1,5 @@
 @dc:title "foundation-bundle"
-vocabulary bundle <http://imce.jpl.nasa.gov/foundation/bundle> with # as foundation {
+vocabulary bundle <http://imce.jpl.nasa.gov/foundation/bundle> with # as foundation-bundle {
 	includes <http://imce.jpl.nasa.gov/foundation/project>
 	includes <http://imce.jpl.nasa.gov/foundation/metrology>
 }
