@@ -391,7 +391,7 @@ vocabulary <http://imce.jpl.nasa.gov/foundation/project> with # as project {
 	]
 
 	@rdfs:label "Produces"
-	relation entity Produces :> Supplies, analysis:AnalyzedElement, analysis:CharacterizedElement [
+	relation entity Produces :> analysis:AnalyzedElement, analysis:CharacterizedElement [
 		from Authority
 		to Product
 		@dc:^description "A <classname>WorkPackage</classname> <replaceable>w</replaceable> <property>produces</property> a <classname>Product</classname> <replaceable>p</replaceable> 
