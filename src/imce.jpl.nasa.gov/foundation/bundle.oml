@@ -2,4 +2,6 @@
 vocabulary bundle <http://imce.jpl.nasa.gov/foundation/bundle> with # as foundation-bundle {
 	includes <http://imce.jpl.nasa.gov/foundation/project>
 	includes <http://imce.jpl.nasa.gov/foundation/metrology>
+	includes <http://iso.org/iso-80000-5>
+	includes <http://iso.org/iso-80000-6>
 }
