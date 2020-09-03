@@ -3,7 +3,7 @@
  */
 description='The set of openCAESAR vocabulary ontologies'
 group = 'io.opencaesar.ontologies'
-version = '1.0.1'
+version = '1.0.2'
 
 /* 
  * The Gradle task dependencies 
@@ -63,6 +63,8 @@ task oml2bikeshed(type: io.opencaesar.oml.bikeshed.Oml2BikeshedTask) {
 	inputCatalogPath = file('catalog.xml')
 	// OWL folder
 	outputFolderPath = file('build/bikeshed')
+	// Root ontology IRI
+	rootOntologyIri='http://imce.jpl.nasa.gov/foundation/bundle'
 	// Publish URL
 	publishUrl = 'https://opencaesar.github.io/vocabularies/'
 }
