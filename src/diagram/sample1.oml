@@ -59,4 +59,5 @@ vocabulary <http://imce.jpl.nasa.gov/foundation/base/diagram1> with # as diagram
     // @diagram:hierarchy "all"
     ref concept base:Package
 
+    concept concept0
 }

@@ -7,20 +7,22 @@ vocabulary <http://imce.jpl.nasa.gov/foundation/metrology/quantityKinds> with # 
     extends <http://imce.jpl.nasa.gov/foundation/metrology>
     extends <http://imce.jpl.nasa.gov/foundation/mission>
 
-    @diagram:include
- 	@diagram:relateTo "metrology:QuantityKind"
- 	@diagram:relateToHops 3
-    ref concept metrology:SystemOfQuantities
+
+    @diagram:exclude
+    ref concept metrology:MetrologicalEntity
+    
+    // @diagram:include
+    // ref concept metrology:SystemOfQuantities
 
     @diagram:include
  	@diagram:relateTo "metrology:SystemOfQuantities"
- 	@diagram:relateToHops 3
-    @diagram:hierarchy "specialization"
+ 	@diagram:relateToHops 2
+    // @diagram:hierarchy "specialization"
     ref concept metrology:QuantityKind
 
-    @diagram:include
- 	@diagram:relateTo "metrology:QuantityKind"
- 	@diagram:relateToHops 3
-    ref concept metrology:MeasurementUnit
+    // @diagram:include
+ 	// // @diagram:relateTo "metrology:QuantityKind"
+ 	// // @diagram:relateToHops 3
+    // ref concept  metrology:MeasurementUnit
 
 }

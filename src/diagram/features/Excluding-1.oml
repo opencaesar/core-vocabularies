@@ -1,0 +1,12 @@
+@diagram:specifier
+vocabulary <http://imce.jpl.nasa.gov/foundation/base/diagram1> with # as diagram1 {
+
+    extends <http://imce.jpl.nasa.gov/foundation/diagram>
+    extends <http://imce.jpl.nasa.gov/foundation/base>
+    extends <http://imce.jpl.nasa.gov/foundation/mission>
+
+    @diagram:include
+    @diagram:include "properties"
+    ref aspect base:IdentifiedElement
+
+}
