@@ -1,0 +1,62 @@
+@diagram:specifier
+// @diagram:exclude "compartment"
+// @diagram:exclude "aspects"
+// @diagram:exclude "concepts"
+// @diagram:include "properties"
+vocabulary <http://imce.jpl.nasa.gov/foundation/base/diagram1> with # as diagram1 {
+
+    extends <http://imce.jpl.nasa.gov/foundation/diagram>
+    extends <http://imce.jpl.nasa.gov/foundation/base>
+    extends <http://imce.jpl.nasa.gov/foundation/mission>
+
+    // @diagram:exclude
+    @diagram:include
+    @diagram:id "1"
+    ref aspect base:Container
+
+    @diagram:include
+    @diagram:id "2"
+    ref aspect base:Container
+
+    @diagram:include
+    // @diagram:id
+    @diagram:include "properties"
+    ref aspect base:ContainedElement
+
+    @diagram:id "1"
+    @diagram:include
+    ref aspect base:AggregatedElement
+
+    @diagram:id "2"
+    @diagram:include
+    ref aspect base:AggregatedElement
+
+    @diagram:source "1"
+    @diagram:target "1"
+    @diagram:include
+    ref relation entity base:Aggregates
+
+    // @diagram:exclude "base:hasCanonicalName"
+    // @diagram:exclude "compartment"
+    @diagram:include
+    @diagram:id "1"
+    // @diagram:include "properties"
+    ref aspect base:IdentifiedElement
+
+    @diagram:include
+    @diagram:id "2"
+    @diagram:include "properties"
+    ref aspect base:IdentifiedElement
+
+    @diagram:exclude
+    // @diagram:source "1"
+    ref scalar property base:hasAlternateName
+
+    @diagram:include
+    aspect ThisThingHasASuperLongNameManWow
+
+    @diagram:include
+    // @diagram:hierarchy "all"
+    ref concept base:Package
+
+}
