@@ -13,20 +13,20 @@ This is a set of vocabulary ontologies from various authorities expressed in [OM
 ```
 
 ## Build
-Run reasoner, generate docs, and archive sources
+Equivalent to owlReason task
 ```
 ./gradlew build
 ```
 
 ## Run Reasoner
 ```
-./gradlew owlreason
+./gradlew owlReason
 ```
 
 ## Generate Docs
-You must first have Bikeshed installed from [here](https://tabatkins.github.io/bikeshed/#installing)
+You must first have Bikeshed (the app itself) installed from [here](https://tabatkins.github.io/bikeshed/#install-final)
 ```
-./gradlew bikeshed2html
+./gradlew generateDocs
 ```
 
 ## Publish to Maven Local
