@@ -1,0 +1,34 @@
+// Goal: show all the relationships among the 4 entities below up to 2 hops.
+
+@diagram:specifier
+vocabulary <http://imce.jpl.nasa.gov/foundation/metrology/top> with # as top {
+
+    extends <http://imce.jpl.nasa.gov/foundation/diagram>
+    extends <http://imce.jpl.nasa.gov/foundation/metrology>
+    extends <http://imce.jpl.nasa.gov/foundation/mission>
+
+    @diagram:include
+ 	@diagram:relateTo "metrology:QuantityKind"
+ 	@diagram:relateToHops 3
+    ref concept metrology:SystemOfQuantities
+
+    @diagram:include
+ 	@diagram:relateTo "metrology:MeasurementUnit"
+ 	@diagram:relateToHops 3
+    ref concept metrology:SystemOfUnits
+
+    @diagram:include
+ 	@diagram:relateTo "metrology:MeasurementUnit"
+ 	@diagram:relateToHops 3
+ 	@diagram:relateTo "metrology:SystemOfQuantities"
+ 	@diagram:relateToHops 3
+    ref concept metrology:QuantityKind
+
+    @diagram:include
+ 	@diagram:relateTo "metrology:QuantityKind"
+ 	@diagram:relateToHops 3
+ 	@diagram:relateTo "metrology:SystemOfUnits"
+ 	@diagram:relateToHops 3
+    ref concept metrology:MeasurementUnit
+
+}
