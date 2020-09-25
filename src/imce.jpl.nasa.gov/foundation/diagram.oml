@@ -24,21 +24,27 @@ vocabulary <http://imce.jpl.nasa.gov/foundation/diagram> with # as diagram {
     annotation property target
     
     @dc:^description """Specify all the elements in an element's specialization hiararchy. Toggle directions with 'specialization' or 'generalization'"""
+    @dc:source "/io.opencaesar.oml.dsl.ide.server/src/io/opencaesar/oml/dsl/ide/diagram/OmlDiagramGenerator.xtend renderHierarchy"
     annotation property hierarchy
 
     @dc:^description """Constrain a hierarchy annotation to a number of hops"""
+    @dc:source "/io.opencaesar.oml.dsl.ide.server/src/io/opencaesar/oml/dsl/ide/diagram/OmlDiagramGenerator.xtend renderHierarchy"
     annotation property hierarchyHops
 
     @dc:^description """Given another element's `URI`, specifcy all paths between the annotated element and the given element"""
+    @dc:source "/io.opencaesar.oml.dsl.ide.server/src/io/opencaesar/oml/dsl/ide/diagram/OmlDiagramGenerator.xtend renderRelated"
     annotation property relateTo
 
     @dc:^description """Constrain the relateTo specifier to a given number of hops"""
+    @dc:source "/io.opencaesar.oml.dsl.ide.server/src/io/opencaesar/oml/dsl/ide/diagram/OmlDiagramGenerator.xtend renderRelated"
     annotation property relateToHops
 
     @dc:^description """Given another element's `URI`, render the shortest path between the annotated element and the given element"""
+    @dc:source "/io.opencaesar.oml.dsl.ide.server/src/io/opencaesar/oml/dsl/ide/diagram/OmlDiagramGenerator.xtend renderShortestPath"
     annotation property shortestPath
 
     @dc:^description """Constrain the shortestPath specifier to a given number of hops"""
+    @dc:source "/io.opencaesar.oml.dsl.ide.server/src/io/opencaesar/oml/dsl/ide/diagram/OmlDiagramGenerator.xtend renderShortestPath"
     annotation property shortestPathHops
 
 }
