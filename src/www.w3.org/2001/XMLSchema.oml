@@ -1,8 +1,8 @@
 @dc:title "XSD"
 @dc:^description "The XSD vocabulary is a subset of the corresponding vocabulary maintained by the W3C."
 @dc:rights "Copyright 2014 W3C."
-@dc:hasVersion "1.1"
 @dc:creator "W3C"
+@dc:hasVersion "1.1"
 @dc:date "2014-10-15"
 vocabulary <http://www.w3.org/2001/XMLSchema> with # as xsd {
 
