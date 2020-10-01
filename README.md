@@ -18,11 +18,6 @@ Equivalent to owlReason task
 ./gradlew build
 ```
 
-## Run Reasoner
-```
-./gradlew owlReason
-```
-
 ## Generate Docs
 You must first have Bikeshed (the app itself) installed from [here](https://tabatkins.github.io/bikeshed/#install-final)
 ```
