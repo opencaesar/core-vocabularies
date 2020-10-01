@@ -6,3 +6,4 @@
 
 # deploy keys are binary
 deploy_key.enc binary
+*.jar binary
