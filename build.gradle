@@ -1,7 +1,7 @@
 /* 
  * The Maven coordinates for the project artifact
  */
-description='The set of openCAESAR vocabulary ontologies'
+description='The set of core vocabularies'
 group = 'io.opencaesar.ontologies'
 version = '1.1.0'
 
@@ -12,13 +12,11 @@ buildscript {
 	repositories {
 		mavenLocal()
 		maven { url 'https://dl.bintray.com/opencaesar/owl-adapter' }
-		maven { url 'https://dl.bintray.com/opencaesar/owl-tools' }
 		maven { url 'https://dl.bintray.com/opencaesar/oml-tools' }
 		maven { url 'https://dl.bintray.com/opencaesar/oml' }
 		jcenter()
 	}
 	dependencies {
-		classpath 'io.opencaesar.owl:owl-reason-gradle:+'
 		classpath 'io.opencaesar.owl:oml2owl-gradle:+'
 		classpath 'io.opencaesar.oml:oml-bikeshed-gradle:+'
 		classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.+'
@@ -35,8 +33,6 @@ task omlToBikeshed(type: io.opencaesar.oml.bikeshed.Oml2BikeshedTask) {
 	inputCatalogPath = file('catalog.xml')
 	// OWL folder
 	outputFolderPath = file('build/bikeshed')
-	// Root ontology IRI
-	rootOntologyIri='http://imce.jpl.nasa.gov/foundation/bundle'
 	// Publish URL
 	publishUrl = 'https://opencaesar.github.io/vocabularies/'
 }
@@ -44,10 +40,15 @@ task omlToBikeshed(type: io.opencaesar.oml.bikeshed.Oml2BikeshedTask) {
 /*
  * A task to generate the Bikeshed documentations in HTML
  */
+import org.gradle.internal.os.OperatingSystem
 task generateDocs(dependsOn: omlToBikeshed) {
 	doLast {
-		exec { commandLine 'chmod', '+x', 'build/bikeshed/publish.sh' }
-		exec { commandLine 'build/bikeshed/publish.sh' }
+		if (OperatingSystem.current().isWindows()) {
+			exec { commandLine 'build/bikeshed/publish.bat' }
+		} else {
+			exec { commandLine 'chmod', '+x', 'build/bikeshed/publish.sh' }
+			exec { commandLine 'build/bikeshed/publish.sh' }
+		}
 	}
 }
 
@@ -62,28 +63,10 @@ task omlToOwl(type:io.opencaesar.oml2owl.Oml2OwlTask) {
 }
 
 /*
- * A task to run the Openllet reasoner on the OWL catalog
- */
-task owlReason(type:io.opencaesar.owl.reason.OwlReasonTask, dependsOn: omlToOwl) {
-	// OWL catalog
-	catalogPath = file('build/owl/catalog.xml')
-	// Input ontology IRI to reason on
-	inputOntologyIri = 'http://imce.jpl.nasa.gov/foundation/bundle'
-	// Entailment statements to generate and the ontologies to persist them in
-	specs = [
-		'http://imce.jpl.nasa.gov/foundation/bundle/classes = ALL_SUBCLASS',
-		'http://imce.jpl.nasa.gov/foundation/bundle/properties = INVERSE_PROPERTY | ALL_SUBPROPERTY',
-		'http://imce.jpl.nasa.gov/foundation/bundle/individuals = ALL_INSTANCE | DATA_PROPERTY_VALUE | OBJECT_PROPERTY_VALUE | SAME_AS'
-	]
-	// Junit error report
-	reportPath = file('build/reports/reasoning.xml')
-}
-
-/*
  * A task to build the project, which executes several tasks together
  */
 task build() {
-	dependsOn owlReason
+	dependsOn omlToOwl
 }
 
 /*
@@ -99,7 +82,8 @@ task clean(type: Delete) {
 apply plugin: 'maven-publish'
 
 task omlZip(type: Zip) {
-	from file('src')
+	from file('src/oml')
+	include "**/*.oml"
 	destinationDir(file('build/libs'))
 	archiveBaseName = project.name
 	archiveVersion = project.version
@@ -111,16 +95,6 @@ publishing {
     publications {
         maven(MavenPublication) {
             artifact omlZip
-			pom.withXml {
-                def dependencies = asNode().appendNode('dependencies')
-                // Uncomment if this project has oml dependencies 
-                /*configurations.oml.allDependencies.stream().each {
-                    def dependency = dependencies.appendNode('dependency')
-                    dependency.appendNode('groupId', it.group)
-                    dependency.appendNode('artifactId', it.name)
-                    dependency.appendNode('version', it.version)
-                }*/
-            }
         }
     }
 }
