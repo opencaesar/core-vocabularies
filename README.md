@@ -13,7 +13,7 @@ This is a set of vocabulary ontologies from various authorities expressed in [OM
 ```
 
 ## Build
-Equivalent to owlReason task
+Equivalent to omlToOwl task
 ```
 ./gradlew build
 ```
