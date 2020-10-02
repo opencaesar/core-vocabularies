@@ -108,7 +108,7 @@ apply plugin: 'com.jfrog.bintray'
 ext.gh = [
 	dep: 'https://github.com',
 	org: 'opencaesar',
-	rep: 'vocabularies'
+	rep: 'ontologies'
 ]
 
 bintray {
