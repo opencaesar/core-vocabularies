@@ -3,6 +3,7 @@
 [![Gitpod](https://img.shields.io/badge/gitpod-open-blue?logo=gitpod)](https://gitpod.io/#https://github.com/opencaesar/vocabularies) 
 [![Build Status](https://travis-ci.org/opencaesar/vocabularies.svg?branch=master)](https://travis-ci.org/opencaesar/vocabularies)
 [ ![Download](https://api.bintray.com/packages/opencaesar/ontologies/vocabularies/images/download.svg) ](https://bintray.com/opencaesar/ontologies/vocabularies/_latestVersion)
+[![Documentation](https://img.shields.io/badge/Documentation-HTML-orange)](https://opencaesar.github.io/vocabularies/) 
 
 This is a set of vocabulary ontologies from various authorities expressed in [OML](https://github.com/opencaesar/oml)
 
