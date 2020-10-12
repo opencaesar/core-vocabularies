@@ -1,0 +1,173 @@
+@dc:source "ISO 80000-3:2019(en)"
+@dc:source "https://www.iso.org/obp/ui/#iso:std:iso:80000:-3:ed-2:v1:en"
+vocabulary <http://iso.org/80000-3-kindsOfQuantities> with # as 80000-3-kindsOfQuantities {
+    extends <http://iso.org/80000-3-units>
+
+    @dc:source "3-1.1"
+    concept ^length :> metrology:IndependentUnitaryKindOfQuantity [
+        restricts all relation  metrology:forQuantitiesOfTheSameUnitaryKindOfQuantity to 80000-3-units:Metre
+    ]
+    
+    @dc:source "3-1.2"
+    concept width :> ^length
+
+    @dc:source "3-1.2"
+    concept breadth :> width
+
+    @dc:source "3-1.3"
+    concept height :> ^length
+
+    @dc:source "3-1.3"
+    concept depth :> height
+
+    @dc:source "3-1.3"
+    concept altitude :> height
+
+    @dc:source "3-1.4"
+    concept thickness :> ^length
+
+    @dc:source "3-1.5"
+    concept diameter :> ^length
+
+    @dc:source "3-1.6"
+    concept radius :> ^length
+
+    @dc:source "3-1.7"
+    concept path-length :> ^length
+
+    @dc:source "3-1.7"
+    concept arc-length :> path-length
+
+    @dc:source "3-1.8"
+    concept distance :> ^length
+
+    @dc:source "3-1.9"
+    concept radial-distance :> ^length
+
+    @dc:source "3-1.10"
+    concept position-vector :> ^length
+
+    @dc:source "3-1.11"
+    concept displacement :> ^length
+
+    @dc:source "3-1.12"
+    concept radius-of-curvature :> ^length
+
+    @dc:source "3-5"
+    concept angular-measure :> metrology:DerivedUnitaryKindOfQuantity [
+        restricts all relation metrology:forQuantitiesOfTheSameUnitaryKindOfQuantity to 80000-3-units:radian
+    ]
+
+    relation entity angular-measure-of-arc-length :> metrology:HasFactorForUnitaryKindOfQuantity [
+        from angular-measure
+        to arc-length
+        forward angular-measure-of-arc-length-forward
+        functional
+        restricts scalar property metrology:exponent to "1/1"^^owl:rational
+    ]
+
+    relation entity angular-measure-of-radius :> metrology:HasFactorForUnitaryKindOfQuantity [
+        from angular-measure
+        to radius
+        forward angular-measure-of-radius-forward
+        functional
+        restricts scalar property metrology:exponent to "-1/1"^^owl:rational
+    ]
+
+    @dc:source "3-6"
+    concept rotational-displacement :> metrology:DerivedUnitaryKindOfQuantity [
+        restricts all relation metrology:forQuantitiesOfTheSameUnitaryKindOfQuantity to 80000-3-units:radian
+    ]
+
+    relation entity rotational-displacement-of-path-length :> metrology:HasFactorForUnitaryKindOfQuantity [
+        from rotational-displacement
+        to path-length
+        forward rotational-displacement-of-path-length-forward
+        functional
+        restricts scalar property metrology:exponent to "1/1"^^owl:rational
+    ]
+
+    relation entity rotational-displacement-of-distance :> metrology:HasFactorForUnitaryKindOfQuantity [
+        from rotational-displacement
+        to distance
+        forward rotational-displacement-of-radius-forward
+        functional
+        restricts scalar property metrology:exponent to "-1/1"^^owl:rational
+    ]
+
+    @dc:source "3-9"
+    concept duration :> metrology:IndependentUnitaryKindOfQuantity [
+        restricts all relation metrology:forQuantitiesOfTheSameUnitaryKindOfQuantity to 80000-3-units:Second
+    ]
+
+    @dc:source "3-10.1"
+    concept velocity :> metrology:DerivedUnitaryKindOfQuantity [
+        restricts all relation metrology:forQuantitiesOfTheSameUnitaryKindOfQuantity to 80000-3-units:Metre-per-Second
+    ]
+
+    relation entity velocity-of-position-vector :> metrology:HasFactorForUnitaryKindOfQuantity [
+        from velocity
+        to position-vector
+        forward velocity-of-position-vector-forward
+        functional
+        restricts scalar property metrology:exponent to "1/1"^^owl:rational
+    ]
+
+    relation entity velocity-of-duration :> metrology:HasFactorForUnitaryKindOfQuantity [
+        from velocity
+        to duration
+        forward velocity-of-duration-forward
+        functional
+        restricts scalar property metrology:exponent to "-1/1"^^owl:rational
+    ]
+
+    @dc:source "3-14"
+    concept period-duration :> duration
+
+    @dc:source "3-16"
+    concept rotation :> metrology:DerivedUnitaryKindOfQuantity [
+        restricts all relation metrology:forQuantitiesOfTheSameUnitaryKindOfQuantity to 80000-3-units:revolutions
+    ]
+
+    relation entity rotation-of-rotational-displacement :> metrology:HasFactorForUnitaryKindOfQuantity [
+        from rotation
+        to rotational-displacement
+        forward rotation-of-rotational-displacement-forward
+        functional
+        restricts scalar property metrology:exponent to "1/1"^^owl:rational
+    ]
+
+    @dc:source "3-17.1"
+    concept frequency :> metrology:DerivedUnitaryKindOfQuantity [
+        restricts all relation metrology:forQuantitiesOfTheSameUnitaryKindOfQuantity to 80000-3-units:Hertz
+    ]
+
+    relation entity frequency-of-period-duration :> metrology:HasFactorForUnitaryKindOfQuantity [
+        from frequency
+        to period-duration
+        forward frequency-of-period-duration-forward
+        functional
+        restricts scalar property metrology:exponent to "-1/1"^^owl:rational
+    ]
+
+    @dc:source "3-17.2"
+    concept rotational-frequency :> metrology:DerivedUnitaryKindOfQuantity [
+        restricts all relation metrology:forQuantitiesOfTheSameUnitaryKindOfQuantity to 80000-3-units:Hertz
+    ]
+
+    relation entity rotational-frequency-of-rotation :> metrology:HasFactorForUnitaryKindOfQuantity [
+        from rotational-frequency
+        to rotation
+        forward rotational-frequency-of-rotation-forward
+        functional
+        restricts scalar property metrology:exponent to "1/1"^^owl:rational
+    ]
+
+    relation entity rotational-frequency-of-duration :> metrology:HasFactorForUnitaryKindOfQuantity [
+        from rotational-frequency
+        to duration
+        forward rotational-frequency-of-duration-forward
+        functional
+        restricts scalar property metrology:exponent to "-1/1"^^owl:rational
+    ]
+}

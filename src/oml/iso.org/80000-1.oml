@@ -1,0 +1,64 @@
+description <http://iso.org/80000-1> with # as 80000-1 {
+    uses <http://ontology.iupac.org/metrology>
+
+    @dc:^description "10^24"
+    ci yotta : metrology:Number
+
+    @dc:^description "10^21"
+    ci zetta : metrology:Number
+
+    @dc:^description "10^18"
+    ci exa : metrology:Number
+
+    @dc:^description "10^15"
+    ci peta : metrology:Number
+
+    @dc:^description "10^12"
+    ci tera : metrology:Number
+
+    @dc:^description "10^9"
+    ci giga : metrology:Number
+
+    @dc:^description "10^6"
+    ci mega : metrology:Number
+
+    @dc:^description "10^3"
+    ci kilo : metrology:Number
+
+    @dc:^description "10^2"
+    ci hecto : metrology:Number
+
+    @dc:^description "10^1"
+    ci deca : metrology:Number
+
+    @dc:^description "10^-1"
+    ci deci : metrology:Number
+
+    @dc:^description "10^-2"
+    ci centi : metrology:Number
+
+    @dc:^description "10^-3"
+    ci milli : metrology:Number
+
+    @dc:^description "10^-6"
+    ci micro : metrology:Number
+
+    @dc:^description "10^-9"
+    ci nano : metrology:Number
+
+    @dc:^description "10^-12"
+    ci pico : metrology:Number
+
+    @dc:^description "10^-15"
+    ci femto : metrology:Number
+
+    @dc:^description "10^-18"
+    ci atto : metrology:Number
+
+    @dc:^description "10^-21"
+    ci zepto : metrology:Number
+
+    @dc:^description "10^-24"
+    ci yocto : metrology:Number
+
+}

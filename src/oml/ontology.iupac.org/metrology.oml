@@ -1,0 +1,311 @@
+@dc:title "An Ontology on Property"
+@dc:source "https://ontology.iupac.org/"
+@dc:source "https://iupac.org/wp-content/uploads/2016/01/ontology-on-Property-Division-VII.pdf"
+@dc:^description "This vocabulary is a partial account of Prof. Rene Dybkaer's 'An Ontology of Property'.
+
+See the rationale behind the 3rd revision of the Vocabulary of International Metrology, VIM3,
+for references to Prof. Dybkaer's influential work: https://www.bipm.org/en/publications/guides/rationale-vim3.html
+
+Where possible, correspondences to VIM3 definitions will be referenced from https://jcgm.bipm.org/vim/en/index.html
+The VIM3 is available in document PDF here: https://www.bipm.org/utils/common/documents/jcgm/JCGM_200_2012.pdf
+
+References to definitions in the ontology are indicated via a reference 
+in parentheses with a chapter and section and a page number;
+for example, (S.2.23, p. 33) refers to the definition of 'object' on page 33.
+"
+@dc:rights "Copyright 2019, by the California Institute of Technology. ALL RIGHTS RESERVED. United States Government Sponsorship acknowledged. Any commercial use must be negotiated with the Office of Technology Transfer at the California Institute of Technology.\n\nThis software may be subject to U.S. export control laws. By accepting this software, the user agrees to comply with all applicable U.S. export laws and regulations. User has the responsibility to obtain export licenses, or other export authority as may be required before exporting such information to foreign countries or providing access to foreign persons."
+@dc:creator "Jet Propulsion Laboratory, California Institute of Technology"
+@dc:hasVersion "1.1.0"
+@dc:date "2020-10-08"
+vocabulary <http://ontology.iupac.org/metrology> with # as metrology {
+
+    extends <http://www.w3.org/2002/07/owl>
+
+    @dc:^description "metrology:Thing is the root of the taxonomy of OML entities involved in metrological modeling either as an object
+    or a metrological characterization of an object."
+    aspect Thing
+
+    @dc:^description "metrology:MetrologicalEntity is the root of the taxonomy of OML entities involved in the vocabulary
+    for metrological characterization of an object."
+    aspect MetrologicalEntity :> Thing
+
+    aspect ExponentFactor :> Thing
+
+    scalar property exponent [
+        domain ExponentFactor
+        range owl:rational
+        functional
+    ]
+
+    // Definitions from Chapter 2: Terminology and 3: "System" and "Component"
+
+    @dc:^description "A metrology:Object is anything perceivable or conceivable.
+
+    A metrology:Object serves two purposes:
+    1) Specify the subject of a metrology:Quantity relationship with a metrology:QuantityValue.
+    2) Provide a reference for elaborating a rich description elsewhere using an appropriate vocabulary.
+
+    Note: Dybkaer's ontology defines additional vocabulary about 'object' (S.2.24) with the subconcepts of 
+    'system' (S.3.3) and 'component' (S.3.4), which are further divided in terms of
+    'element', 'relationship',  and 'process' (see Figure 3.5, p. 41).
+
+    Since none of the subconcepts of 'object' (S.2.24) provide any additional semantics to the metrology vocabulary,
+    they are omitted here. This ommision simplifies the task of establishing correspondences between metrology:Object
+    in this vocabulary and rich descriptions elsewhere constructed using an appropriate vocabulary.
+    "
+    @dc:source "object [https://www.iso.org/obp/ui/#iso:std:iso:1087:ed-2:v1:en, 3.1.1]"
+    @dc:source "object [https://iupac.org/wp-content/uploads/2016/01/ontology-on-Property-Division-VII.pdf, 2.23, p. 33]"
+    concept Object :> Thing
+ 
+    // Definitions from Chapter 4: Current measing of "quantity".
+
+    @dc:^description "A reference can be a measurement unit, a measurement procedure, or a reference material,
+    or a combination of such."
+    @dc:source "[https://iupac.org/wp-content/uploads/2016/01/ontology-on-Property-Division-VII.pdf, 4.10, p. 44]"
+    aspect Reference :> MetrologicalEntity
+
+    // Definitions from Chapter 5: "Property", "examinand", and "measurand".
+
+    @dc:source "reference material [https://jcgm.bipm.org/vim/en/5.13.html]"
+    @dc:source "reference material [https://iupac.org/wp-content/uploads/2016/01/ontology-on-Property-Division-VII.pdf, 5.1, p 47]"
+    aspect ReferenceMaterial :> Reference
+
+    // Definitions from Chapters 6,7,8,9,10,11: None
+
+    // Definitions from Chapter 12: Generic concept system on <property> and <quantity>
+
+    @dc:^description "A metrology:Quantity is an inherent state- or process-descriptive feature
+    of a metrological:Object that has a magnitude expressed as a metrological:QuantityValue.
+
+    This definition is adapted from the expanded definition of 'quantity' (S.12.13, S.12.14).
+    "
+    @dc:source "quantity [https://jcgm.bipm.org/vim/en/1.1.html]"
+    @dc:source "quantity [https://iupac.org/wp-content/uploads/2016/01/ontology-on-Property-Division-VII.pdf, 12.13, p 115]"
+    relation entity Quantity [
+        from Object
+        to QuantityValue
+        forward quantity
+    ]
+
+    @dc:^description "A metrology:OrdinalQuantity is a metrology:Quantity defined by a measurement procedure (S.14.4.4)
+    that can be stated only to be lesser than, equal to, or greater than another quantity of the same metrology:KindOfQuantity.
+    "
+    @dc:source "ordinal quantity [https://iupac.org/wp-content/uploads/2016/01/ontology-on-Property-Division-VII.pdf, 12.16, p 116]"
+    relation entity OrdinalQuantity :> Quantity [
+        from Object
+        to OrdinalQuantityValue
+        forward ordinalQuantity
+        restricts all relation hasQuantityKind to OrdinalKindOfQuantity
+    ]
+
+    @dc:^description "A metrology:UnitaryQuantity is a metrology:Quantity with a magnitude expressed as a reference quantity 
+    multiplied by a number.
+    "
+    @dc:source "unitary quantity [https://iupac.org/wp-content/uploads/2016/01/ontology-on-Property-Division-VII.pdf, 12.17, p 116-7]"
+    relation entity UnitaryQuantity :> Quantity [
+        from Object
+        to UnitaryQuantityValue
+        forward unitaryQuantity
+        restricts all relation hasQuantityKind to UnitaryKindOfQuantity
+    ]
+
+    // Definitions from Chapter 13: Generic concept system on <kind-of-property> including <kind-of-quantity>.
+
+    @dc:^description "common defining aspect of mutually comparable properties having a magnitude."
+    @dc:source "kind of quantity [https://jcgm.bipm.org/vim/en/1.2.html]"
+    @dc:source "kind-of-quantity [https://iupac.org/wp-content/uploads/2016/01/ontology-on-Property-Division-VII.pdf, 13.3.1, p. 125 and 13.4.1, p. 126]"
+    concept KindOfQuantity :> MetrologicalEntity
+
+    @dc:^description "A QuantityKind for Quantities that are rankable by magnitude, but are neither subtractive nor divisible."
+    @dc:source "ordinal kind-of-quantity [https://iupac.org/wp-content/uploads/2016/01/ontology-on-Property-Division-VII.pdf, 13.3.2, p. 125]"
+    concept OrdinalKindOfQuantity :> KindOfQuantity
+
+    @dc:^description "A QuantityKind for Quantities with magnitudes expressed as a measurement unit multiplied by a number."
+    @dc:source "unitary kind-of-quantity [https://iupac.org/wp-content/uploads/2016/01/ontology-on-Property-Division-VII.pdf, 13.3.3, p. 125]"
+    concept UnitaryKindOfQuantity :> KindOfQuantity
+
+    @dc:^description "An IndependentUnitaryKindOfQuantity is a UnitaryKindOfQuantity defined independently of any other UnitaryKindOfQuantity."
+    @dc:source "implicit as a quantity that is not a derived quantity [https://jcgm.bipm.org/vim/en/1.5.html]"
+    @dc:source "base unitary kind-of-quantity [https://iupac.org/wp-content/uploads/2016/01/ontology-on-Property-Division-VII.pdf, 13.9, p. 130]"
+    concept IndependentUnitaryKindOfQuantity :> UnitaryKindOfQuantity
+
+    @dc:^description "A DerivedUnitaryKindOfQuantity is a UnitaryKindOfQuantity defined as the product of powers of UnitaryKindOfQuantity."
+    @dc:source "derived quantity [https://jcgm.bipm.org/vim/en/1.5.html]"
+    @dc:source "derived unitary kind-of-quantity [https://iupac.org/wp-content/uploads/2016/01/ontology-on-Property-Division-VII.pdf, 13.11, p. 130-1]"
+    concept DerivedUnitaryKindOfQuantity :> UnitaryKindOfQuantity
+
+    relation entity HasFactorForUnitaryKindOfQuantity :> ExponentFactor [
+        from DerivedUnitaryKindOfQuantity
+        to UnitaryKindOfQuantity
+        forward hasFactorForUnitaryKindOfQuantity
+        irreflexive
+    ]
+
+    @dc:^description "A SystemOfUnitaryQuantityKinds is a collection of UnitaryQuantityKinds that can be partitioned into two groups:
+    base and derived quantity kinds. Note that this partitioning is independent of how the algebraic definition of the UnitaryQuantityKinds
+    (i.e IndependentUnitaryQuantityKind or DerivedUnitaryQuantityKind)."
+    @dc:source "system of quantities [https://jcgm.bipm.org/vim/en/1.3.html]"
+    @dc:source "system of unitary kinds-of-quantity [https://iupac.org/wp-content/uploads/2016/01/ontology-on-Property-Division-VII.pdf, 13.7, p 129]"
+    concept SystemOfUnitaryQuantityKinds :> MetrologicalEntity
+
+    relation entity SystemHasUnitaryQuantityKind [
+        from SystemOfUnitaryQuantityKinds
+        to UnitaryKindOfQuantity
+        forward systemHasUnitaryQuantityKind
+    ]
+
+    scalar property IsBaseQuantityKind [
+        domain SystemHasUnitaryQuantityKind
+        range xsd:boolean
+        functional
+    ]
+
+
+    // Definitions from Chapter 14: Generic concept system on <examination procedure>, <measurement procedure>, <examination method>, and <examination principle>.
+
+    @dc:source "measurement procedure [https://jcgm.bipm.org/vim/en/2.6.html]"
+    @dc:source "measurement procedure [https://iupac.org/wp-content/uploads/2016/01/ontology-on-Property-Division-VII.pdf, 14.4.3, p 139]"
+    aspect MeasurementProcedure :> Reference
+
+    // Definitions from Chapter 15: Generic concept system on <examination>, <measurement>; quantification.
+
+
+    // Definitions from Chapter 16: Generic concept system on <property value>, <quantity value> and allied concepts.
+
+    @dc:^description "metrology:QuantityValue is the magnitude of a metrology:Quantity represented by a number and a reference."
+    @dc:source "quantity value [https://jcgm.bipm.org/vim/en/1.19.html]"
+    @dc:source "quantity value [https://iupac.org/wp-content/uploads/2016/01/ontology-on-Property-Division-VII.pdf, 16.7 and 16.8, p 162]"
+    concept QuantityValue :> MetrologicalEntity
+    
+    relation entity HasNumber [
+        from QuantityValue
+        to Number
+        forward hasNumber
+        functional
+    ]
+
+    relation entity HasReference [
+        from QuantityValue
+        to Reference
+        forward hasReference
+        functional
+    ]
+
+    @dc:^description "metrology:Number is the root of the taxonomy of OML entities corresponding to the representation of the number of a metrology:QuantityValue.
+
+    A numerical quantity value is an OML entity instead of an OML datatype because it can be referenced in the context of a numerical value equation [VIM3-1.25].
+    
+    Note: The representation of the numerical quantity value is deliberately left open to be specified in library extensions.
+    This strategy provides ample latitude for choosing suitable datatypes for representing a numerical quantity value
+    optionally with additional information such as measurement precision [VIM3-2.15].
+    "
+    @dc:source "numerical quantity value [https://jcgm.bipm.org/vim/en/1.20.html]"
+    concept Number :> Thing
+
+    @dc:source "ordinal quantity value [https://iupac.org/wp-content/uploads/2016/01/ontology-on-Property-Division-VII.pdf, 16.9, p 163]"
+    concept OrdinalQuantityValue :> QuantityValue [
+        restricts all relation hasReference to MeasurementProcedure
+    ]
+
+    @dc:source "unitary quantity value [https://iupac.org/wp-content/uploads/2016/01/ontology-on-Property-Division-VII.pdf, 16.10, p 163]"
+    concept UnitaryQuantityValue :> QuantityValue [
+        restricts all relation hasReference to MeasurementUnit
+    ]
+
+    relation entity HasQuantityKind [
+        from Quantity
+        to KindOfQuantity
+        forward hasQuantityKind
+        functional
+    ]
+
+    // Definitions from Chapter 17: None
+
+    // Definitions from Chapter 18: Mixed concept system on <metrological unit> and <system of metrological units>; the metrological unit "one" and SI units revisited.
+
+    @dc:^description "A UnitaryQuantityKind uses a MeasurementUnit as a reference for expressing the magnitude of quantities of this UnitaryQuantityKind."
+    @dc:source "metrological unit [https://iupac.org/wp-content/uploads/2016/01/ontology-on-Property-Division-VII.pdf, 18.2, p. 189]"
+    relation entity ForQuantitiesOfTheSameUnitaryKindOfQuantity [
+        from UnitaryKindOfQuantity
+        to MeasurementUnit 
+        forward forQuantitiesOfTheSameUnitaryKindOfQuantity
+    ]
+
+    @dc:source "measurement unit [https://jcgm.bipm.org/vim/en/1.9.html]"
+    @dc:source "metrological unit, measurement unit [https://iupac.org/wp-content/uploads/2016/01/ontology-on-Property-Division-VII.pdf, 18.12, p 189]"
+    aspect MeasurementUnit :> Reference
+
+    @dc:^description "An NonCoherentDerivedMeasurementUnit is a MeasurementUnit that has a proportionality factor different than one with respect to another MeasurementUnit (that it must specialize)."
+    @dc:source "non-coherent derived measurement unit [https://iupac.org/wp-content/uploads/2016/01/ontology-on-Property-Division-VII.pdf, 18.20, p 194]"
+    concept NonCoherentDerivedMeasurementUnit :> MeasurementUnit
+
+    scalar property nonCoherentRelationship [
+        domain NonCoherentDerivedMeasurementUnit
+        range xsd:string
+        functional
+    ]
+
+    @dc:^description "An PrefixedMeasurementUnit is a MeasurementUnit defined by multiplication of another MeasurementUnit (that it must specialize) and a prefix."
+    @dc:source "multiple of a unit 3.17, submultiple of a unit 3.18 [https://www.iso.org/obp/ui/#iso:std:iso:80000:-1:ed-1:v1:en]"
+    concept PrefixedMeasurementUnit :> MeasurementUnit
+
+    relation entity HasPrefixNumber [
+        from PrefixedMeasurementUnit
+        to Number
+        forward hasPrefixNumber
+        functional
+    ]
+
+    @dc:^description "A CoherentMeasurementUnit is a MeasurementUnit that has a proportionality factor of one and may have a dimension of one."
+    @dc:source "coherent derived metrological unit [https://iupac.org/wp-content/uploads/2016/01/ontology-on-Property-Division-VII.pdf, 18.19, p 193]"
+    aspect CoherentMeasurementUnit :> MeasurementUnit
+
+    @dc:^description "A CoherentMeasurementUnit specifies whether its definition simplifies to the dimension 'one',
+    either intrisically as an IndependentMeasurementUnit or extrinsically as a DerivedMeasurementUnit as a product of other CoherentMeasurementUnits whose factors simplify to 'one'."
+    scalar property hasDimensionOne [
+        domain CoherentMeasurementUnit
+        range xsd:boolean
+        functional
+    ]
+
+    @dc:^description "An IndependentMeasurementUnit is a CoherentMeasurementUnit defined independently of any other MeasurementUnits."
+    @dc:source "base unit [https://jcgm.bipm.org/vim/en/1.10.html]"
+    @dc:source "base metrological unit, base unit [https://iupac.org/wp-content/uploads/2016/01/ontology-on-Property-Division-VII.pdf, 18.15, p 190-1]"
+    concept IndependentMeasurementUnit :> CoherentMeasurementUnit
+
+    @dc:^description "A DerivedMeasurementUnit is a CoherentMeasurementUnit defined as the product of powers of other MeasurementUnits.
+    If a DerivedMeasurementUnit has dimension '1', then the factors simplify to one but must retain the provenance of the derived unit
+    to other CoherentMeasurementUnits. 
+    "
+    @dc:source "derived unit [https://jcgm.bipm.org/vim/en/1.11.html]"
+    @dc:source "derived metrological unit, derived unit [https://iupac.org/wp-content/uploads/2016/01/ontology-on-Property-Division-VII.pdf, 18.17, p 192]"
+    concept DerivedMeasurementUnit :> CoherentMeasurementUnit
+
+    relation entity HasFactorForMeasurementUnit :> ExponentFactor [
+        from DerivedMeasurementUnit
+        to MeasurementUnit
+        forward hasFactorForMeasurementUnit
+        irreflexive
+    ]
+
+    @dc:^description "A SystemOfMetrologicalUnits is a collection of MeasurementUnits that can be partitioned into two groups:
+    base and derived measurement units. Note that this partitioning is independent of how the algebraic definition of the MeasurementUnits
+    (i.e IndependentMeasurementUnit or DerivedMeasurementUnit)."
+    @dc:source "system of units [https://jcgm.bipm.org/vim/en/1.13.html]"
+    @dc:source "system of metrological units [https://iupac.org/wp-content/uploads/2016/01/ontology-on-Property-Division-VII.pdf, 18.25, p 195]"
+    concept SystemOfMetrologicalUnits :> MetrologicalEntity
+
+    relation entity SystemHasMetrologicalUnit [
+        from SystemOfMetrologicalUnits
+        to MeasurementUnit
+        forward systemHasMetrologicalUnit
+    ]
+
+    scalar property IsBaseMetrologicalUnit [
+        domain SystemHasMetrologicalUnit
+        range xsd:boolean
+        functional
+    ]
+
+
+}

@@ -1,0 +1,79 @@
+@dc:source "ISO 80000-4:2019(en)"
+@dc:source "https://www.iso.org/obp/ui/#iso:std:iso:80000:-4:ed-2:v1:en"
+vocabulary <http://iso.org/80000-4-units> with # as 80000-4-units {
+    extends <http://iso.org/80000-3-units>
+
+    @dc:source "4-1"
+    aspect Gram :> metrology:CoherentMeasurementUnit [
+        restricts scalar property metrology:hasDimensionOne to false^^xsd:boolean
+    ]
+
+    concept gram :> Gram, metrology:IndependentMeasurementUnit
+
+    concept kilogram :> Gram, metrology:PrefixedMeasurementUnit [
+        restricts relation metrology:hasPrefixNumber to 80000-1:kilo
+    ]
+
+    @dc:source "4-8"
+    aspect Kilogram-Metre-per-Second :> metrology:CoherentMeasurementUnit [
+        restricts scalar property metrology:hasDimensionOne to false^^xsd:boolean
+    ]
+
+    concept kilogram-metre-per-second :> Kilogram-Metre-per-Second, metrology:DerivedMeasurementUnit
+
+    relation entity kilogram-metre-per-second-of-kilogram :> metrology:HasFactorForMeasurementUnit [
+        from kilogram-metre-per-second
+        to kilogram
+        forward kilogram-metre-per-second-of-kilogram-factor
+        restricts scalar property metrology:exponent to "1/1"^^owl:rational
+    ]
+
+    relation entity kilogram-metre-per-second-of-metre-per-second :> metrology:HasFactorForMeasurementUnit [
+        from kilogram-metre-per-second
+        to 80000-3-units:metre-per-second
+        forward kilogram-metre-per-second-of-metre-per-second-factor
+        restricts scalar property metrology:exponent to "-1/1"^^owl:rational
+    ]
+
+    @dc:source "4-9"
+    aspect Newton :> metrology:CoherentMeasurementUnit [
+        restricts scalar property metrology:hasDimensionOne to false^^xsd:boolean
+    ]
+
+    concept newton :> Newton, metrology:DerivedMeasurementUnit
+
+    relation entity newton-of-kilogram :> metrology:HasFactorForMeasurementUnit [
+        from newton
+        to kilogram
+        forward newton-of-kilogram-factor
+        restricts scalar property metrology:exponent to "1/1"^^owl:rational
+    ]
+
+    relation entity newton-of-metre-per-second :> metrology:HasFactorForMeasurementUnit [
+        from newton
+        to 80000-3-units:metre-per-second
+        forward newton-of-metre-per-second-factor
+        restricts scalar property metrology:exponent to "-1/1"^^owl:rational
+    ]
+
+    @dc:source "4-27"
+    aspect Watt :> metrology:CoherentMeasurementUnit [
+        restricts scalar property metrology:hasDimensionOne to false^^xsd:boolean
+    ]
+
+    concept watt :> Watt, metrology:DerivedMeasurementUnit
+
+    relation entity watt-of-newton :> metrology:HasFactorForMeasurementUnit [
+        from watt
+        to newton
+        forward watt-of-newton-factor
+        restricts scalar property metrology:exponent to "1/1"^^owl:rational
+    ]
+
+    relation entity watt-of-metre-per-second :> metrology:HasFactorForMeasurementUnit [
+        from watt
+        to 80000-3-units:metre-per-second
+        forward watt-of-metre-per-second-factor
+        restricts scalar property metrology:exponent to "1/1"^^owl:rational
+    ]
+}
