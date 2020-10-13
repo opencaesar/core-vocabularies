@@ -5,18 +5,18 @@ vocabulary <http://iso.org/80000-4-units> with # as 80000-4-units {
 
     @dc:source "4-1"
     aspect Gram :> metrology:CoherentMeasurementUnit [
-        restricts scalar property metrology:hasDimensionOne to false^^xsd:boolean
+        restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
     ]
 
     concept gram :> Gram, metrology:IndependentMeasurementUnit
 
     concept kilogram :> Gram, metrology:PrefixedMeasurementUnit [
-        restricts relation metrology:hasPrefixNumber to 80000-1:kilo
+        restricts relation metrology:hasPrefix to 80000-1:kilo
     ]
 
     @dc:source "4-8"
     aspect Kilogram-Metre-per-Second :> metrology:CoherentMeasurementUnit [
-        restricts scalar property metrology:hasDimensionOne to false^^xsd:boolean
+        restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
     ]
 
     concept kilogram-metre-per-second :> Kilogram-Metre-per-Second, metrology:DerivedMeasurementUnit
@@ -37,7 +37,7 @@ vocabulary <http://iso.org/80000-4-units> with # as 80000-4-units {
 
     @dc:source "4-9"
     aspect Newton :> metrology:CoherentMeasurementUnit [
-        restricts scalar property metrology:hasDimensionOne to false^^xsd:boolean
+        restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
     ]
 
     concept newton :> Newton, metrology:DerivedMeasurementUnit
@@ -58,7 +58,7 @@ vocabulary <http://iso.org/80000-4-units> with # as 80000-4-units {
 
     @dc:source "4-27"
     aspect Watt :> metrology:CoherentMeasurementUnit [
-        restricts scalar property metrology:hasDimensionOne to false^^xsd:boolean
+        restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
     ]
 
     concept watt :> Watt, metrology:DerivedMeasurementUnit

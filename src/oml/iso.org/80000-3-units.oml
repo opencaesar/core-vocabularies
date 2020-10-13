@@ -6,18 +6,18 @@ vocabulary <http://iso.org/80000-3-units> with # as 80000-3-units {
 
     @dc:source "3-1"
     aspect Metre :> metrology:CoherentMeasurementUnit [
-        restricts scalar property metrology:hasDimensionOne to false^^xsd:boolean
+        restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
     ]
 
     concept metre :> Metre, metrology:IndependentMeasurementUnit
 
     concept kilometre :> Metre, metrology:PrefixedMeasurementUnit [
-        restricts relation metrology:hasPrefixNumber to 80000-1:kilo
+        restricts relation metrology:hasPrefix to 80000-1:kilo
     ]
 
     @dc:source "3-5"
     concept radian :> metrology:DerivedMeasurementUnit [
-        restricts scalar property metrology:hasDimensionOne to true^^xsd:boolean
+        restricts scalar property metrology:isDimensionlessMeasurementUnit to true^^xsd:boolean
     ]
 
     relation entity radian-of-numerator :> metrology:HasFactorForMeasurementUnit [
@@ -36,7 +36,7 @@ vocabulary <http://iso.org/80000-3-units> with # as 80000-3-units {
 
     @dc:source "3-9"
     aspect Second :> metrology:CoherentMeasurementUnit [
-        restricts scalar property metrology:hasDimensionOne to false^^xsd:boolean
+        restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
     ]
 
     concept second :> Second, metrology:IndependentMeasurementUnit
@@ -54,7 +54,7 @@ vocabulary <http://iso.org/80000-3-units> with # as 80000-3-units {
 
     @dc:source "3-10"
     aspect Metre-per-Second :> metrology:CoherentMeasurementUnit [
-        restricts scalar property metrology:hasDimensionOne to false^^xsd:boolean
+        restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
     ]
 
     concept metre-per-second :> Metre-per-Second, metrology:DerivedMeasurementUnit
@@ -91,7 +91,7 @@ vocabulary <http://iso.org/80000-3-units> with # as 80000-3-units {
 
     @dc:source "3-16"
     concept revolutions :> metrology:DerivedMeasurementUnit [
-        restricts scalar property metrology:hasDimensionOne to true^^xsd:boolean
+        restricts scalar property metrology:isDimensionlessMeasurementUnit to true^^xsd:boolean
     ]
 
     relation entity revolutions-of-radian :> metrology:HasFactorForMeasurementUnit [
@@ -103,7 +103,7 @@ vocabulary <http://iso.org/80000-3-units> with # as 80000-3-units {
 
     @dc:source "3-17"
     aspect Hertz :> metrology:CoherentMeasurementUnit [
-        restricts scalar property metrology:hasDimensionOne to false^^xsd:boolean
+        restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
     ]
 
     concept hertz :> Hertz, metrology:DerivedMeasurementUnit

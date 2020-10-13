@@ -6,11 +6,13 @@ vocabulary <http://iso.org/80000-5-kindsOfQuantities> with # as 80000-5-kindsOfQ
 
     @dc:source "5-1"
     concept thermodynamic-temperature :> metrology:IndependentUnitaryKindOfQuantity [
+        restricts scalar property metrology:isDimensionlessKindOfQuantity to false^^xsd:boolean
         restricts all relation  metrology:forQuantitiesOfTheSameUnitaryKindOfQuantity to 80000-5-units:Kelvin
     ]
 
     @dc:source "5-2"
     concept celcius-temperature :> metrology:DerivedUnitaryKindOfQuantity [
+        restricts scalar property metrology:isDimensionlessKindOfQuantity to false^^xsd:boolean
         restricts all relation  metrology:forQuantitiesOfTheSameUnitaryKindOfQuantity to 80000-5-units:DegreeCelcius
     ]
 

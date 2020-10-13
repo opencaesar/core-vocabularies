@@ -6,11 +6,13 @@ vocabulary <http://iso.org/80000-4-kindsOfQuantities> with # as 80000-4-kindsOfQ
 
     @dc:source "4-1"
     concept mass :> metrology:IndependentUnitaryKindOfQuantity [
+        restricts scalar property metrology:isDimensionlessKindOfQuantity to false^^xsd:boolean
         restricts all relation  metrology:forQuantitiesOfTheSameUnitaryKindOfQuantity to 80000-4-units:Gram
     ]
 
     @dc:source "4-8"
     concept momentum :> metrology:DerivedUnitaryKindOfQuantity [
+        restricts scalar property metrology:isDimensionlessKindOfQuantity to false^^xsd:boolean
         restricts all relation  metrology:forQuantitiesOfTheSameUnitaryKindOfQuantity to 80000-4-units:Kilogram-Metre-per-Second
     ]
     
@@ -32,6 +34,7 @@ vocabulary <http://iso.org/80000-4-kindsOfQuantities> with # as 80000-4-kindsOfQ
 
     @dc:source "4-9"
     concept force :> metrology:DerivedUnitaryKindOfQuantity [
+        restricts scalar property metrology:isDimensionlessKindOfQuantity to false^^xsd:boolean
         restricts all relation  metrology:forQuantitiesOfTheSameUnitaryKindOfQuantity to 80000-4-units:Newton
     ]
     
@@ -53,6 +56,7 @@ vocabulary <http://iso.org/80000-4-kindsOfQuantities> with # as 80000-4-kindsOfQ
 
     @dc:source "4-27"
     concept power :> metrology:DerivedUnitaryKindOfQuantity [
+        restricts scalar property metrology:isDimensionlessKindOfQuantity to false^^xsd:boolean
         restricts all relation  metrology:forQuantitiesOfTheSameUnitaryKindOfQuantity to 80000-4-units:Watt
     ]
     

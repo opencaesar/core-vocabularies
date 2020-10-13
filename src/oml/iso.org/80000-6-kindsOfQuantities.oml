@@ -6,11 +6,13 @@ vocabulary <http://iso.org/80000-6-kindsOfQuantities> with # as 80000-6-kindsOfQ
 
     @dc:source "6-1"
     concept electric-current :> metrology:IndependentUnitaryKindOfQuantity [
+        restricts scalar property metrology:isDimensionlessKindOfQuantity to false^^xsd:boolean
         restricts all relation  metrology:forQuantitiesOfTheSameUnitaryKindOfQuantity to 80000-6-units:Ampere
     ]
 
     @dc:source "6-2"
     concept electric-charge :> metrology:DerivedUnitaryKindOfQuantity [
+        restricts scalar property metrology:isDimensionlessKindOfQuantity to false^^xsd:boolean
         restricts all relation  metrology:forQuantitiesOfTheSameUnitaryKindOfQuantity to 80000-6-units:Coulomb
     ]
 
@@ -32,6 +34,7 @@ vocabulary <http://iso.org/80000-6-kindsOfQuantities> with # as 80000-6-kindsOfQ
 
     @dc:source "6-10"
     concept electric-field-strength :> metrology:DerivedUnitaryKindOfQuantity [
+        restricts scalar property metrology:isDimensionlessKindOfQuantity to false^^xsd:boolean
         restricts all relation  metrology:forQuantitiesOfTheSameUnitaryKindOfQuantity to 80000-6-units:Newton-per-Coulomb
     ]
 
@@ -53,6 +56,7 @@ vocabulary <http://iso.org/80000-6-kindsOfQuantities> with # as 80000-6-kindsOfQ
 
     @dc:source "6-11"
     concept electric-potential :> metrology:DerivedUnitaryKindOfQuantity [
+        restricts scalar property metrology:isDimensionlessKindOfQuantity to false^^xsd:boolean
         restricts all relation  metrology:forQuantitiesOfTheSameUnitaryKindOfQuantity to 80000-6-units:Volt
     ]
 
@@ -74,6 +78,7 @@ vocabulary <http://iso.org/80000-6-kindsOfQuantities> with # as 80000-6-kindsOfQ
 
     @dc:source "6-46"
     concept resistance :> metrology:DerivedUnitaryKindOfQuantity [
+        restricts scalar property metrology:isDimensionlessKindOfQuantity to false^^xsd:boolean
         restricts all relation  metrology:forQuantitiesOfTheSameUnitaryKindOfQuantity to 80000-6-units:Ohm
     ]
 

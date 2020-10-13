@@ -5,14 +5,14 @@ vocabulary <http://iso.org/80000-6-units> with # as 80000-6-units {
 
     @dc:source "6-1"
     aspect Ampere :> metrology:CoherentMeasurementUnit [
-        restricts scalar property metrology:hasDimensionOne to false^^xsd:boolean
+        restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
     ]
 
     concept ampere :> Ampere, metrology:IndependentMeasurementUnit
 
     @dc:source "6-2"
     aspect Coulomb :> metrology:CoherentMeasurementUnit [
-        restricts scalar property metrology:hasDimensionOne to false^^xsd:boolean
+        restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
     ]
 
     concept coulomb :> Coulomb, metrology:DerivedMeasurementUnit
@@ -33,7 +33,7 @@ vocabulary <http://iso.org/80000-6-units> with # as 80000-6-units {
 
     @dc:source "6-10"
     aspect Newton-per-Coulomb :> metrology:CoherentMeasurementUnit [
-        restricts scalar property metrology:hasDimensionOne to false^^xsd:boolean
+        restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
     ]
 
     concept newton-per-coulomb :> Newton-per-Coulomb, metrology:DerivedMeasurementUnit
@@ -54,7 +54,7 @@ vocabulary <http://iso.org/80000-6-units> with # as 80000-6-units {
 
     @dc:source "6-11"
     aspect Volt :> metrology:CoherentMeasurementUnit [
-        restricts scalar property metrology:hasDimensionOne to false^^xsd:boolean
+        restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
     ]
 
     concept volt :> Volt, metrology:DerivedMeasurementUnit
@@ -75,7 +75,7 @@ vocabulary <http://iso.org/80000-6-units> with # as 80000-6-units {
 
     @dc:source "6-46"
     aspect Ohm :> metrology:CoherentMeasurementUnit [
-        restricts scalar property metrology:hasDimensionOne to false^^xsd:boolean
+        restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
     ]
 
     concept ohm :> Ohm, metrology:DerivedMeasurementUnit

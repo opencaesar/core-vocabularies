@@ -5,6 +5,7 @@ vocabulary <http://iso.org/80000-3-kindsOfQuantities> with # as 80000-3-kindsOfQ
 
     @dc:source "3-1.1"
     concept ^length :> metrology:IndependentUnitaryKindOfQuantity [
+        restricts scalar property metrology:isDimensionlessKindOfQuantity to false^^xsd:boolean
         restricts all relation  metrology:forQuantitiesOfTheSameUnitaryKindOfQuantity to 80000-3-units:Metre
     ]
     
@@ -55,6 +56,7 @@ vocabulary <http://iso.org/80000-3-kindsOfQuantities> with # as 80000-3-kindsOfQ
 
     @dc:source "3-5"
     concept angular-measure :> metrology:DerivedUnitaryKindOfQuantity [
+        restricts scalar property metrology:isDimensionlessKindOfQuantity to true^^xsd:boolean
         restricts all relation metrology:forQuantitiesOfTheSameUnitaryKindOfQuantity to 80000-3-units:radian
     ]
 
@@ -76,6 +78,7 @@ vocabulary <http://iso.org/80000-3-kindsOfQuantities> with # as 80000-3-kindsOfQ
 
     @dc:source "3-6"
     concept rotational-displacement :> metrology:DerivedUnitaryKindOfQuantity [
+        restricts scalar property metrology:isDimensionlessKindOfQuantity to true^^xsd:boolean
         restricts all relation metrology:forQuantitiesOfTheSameUnitaryKindOfQuantity to 80000-3-units:radian
     ]
 
@@ -97,11 +100,13 @@ vocabulary <http://iso.org/80000-3-kindsOfQuantities> with # as 80000-3-kindsOfQ
 
     @dc:source "3-9"
     concept duration :> metrology:IndependentUnitaryKindOfQuantity [
+        restricts scalar property metrology:isDimensionlessKindOfQuantity to false^^xsd:boolean
         restricts all relation metrology:forQuantitiesOfTheSameUnitaryKindOfQuantity to 80000-3-units:Second
     ]
 
     @dc:source "3-10.1"
     concept velocity :> metrology:DerivedUnitaryKindOfQuantity [
+        restricts scalar property metrology:isDimensionlessKindOfQuantity to false^^xsd:boolean
         restricts all relation metrology:forQuantitiesOfTheSameUnitaryKindOfQuantity to 80000-3-units:Metre-per-Second
     ]
 
@@ -126,6 +131,7 @@ vocabulary <http://iso.org/80000-3-kindsOfQuantities> with # as 80000-3-kindsOfQ
 
     @dc:source "3-16"
     concept rotation :> metrology:DerivedUnitaryKindOfQuantity [
+        restricts scalar property metrology:isDimensionlessKindOfQuantity to true^^xsd:boolean
         restricts all relation metrology:forQuantitiesOfTheSameUnitaryKindOfQuantity to 80000-3-units:revolutions
     ]
 
@@ -139,6 +145,7 @@ vocabulary <http://iso.org/80000-3-kindsOfQuantities> with # as 80000-3-kindsOfQ
 
     @dc:source "3-17.1"
     concept frequency :> metrology:DerivedUnitaryKindOfQuantity [
+        restricts scalar property metrology:isDimensionlessKindOfQuantity to false^^xsd:boolean
         restricts all relation metrology:forQuantitiesOfTheSameUnitaryKindOfQuantity to 80000-3-units:Hertz
     ]
 
@@ -152,6 +159,7 @@ vocabulary <http://iso.org/80000-3-kindsOfQuantities> with # as 80000-3-kindsOfQ
 
     @dc:source "3-17.2"
     concept rotational-frequency :> metrology:DerivedUnitaryKindOfQuantity [
+        restricts scalar property metrology:isDimensionlessKindOfQuantity to false^^xsd:boolean
         restricts all relation metrology:forQuantitiesOfTheSameUnitaryKindOfQuantity to 80000-3-units:Hertz
     ]
 
