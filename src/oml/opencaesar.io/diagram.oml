@@ -1,0 +1,14 @@
+vocabulary <http://opencaesar.io/diagram> with # as diagram {
+
+    extends <http://www.w3.org/2002/07/owl>
+
+    @dc:^description """Designate the ontology as a diagram specifier"""
+    annotation property specifier
+
+    @dc:^description """Render the compartments of all specified nodes and include all properties"""
+    annotation property compartments
+
+    @dc:^description """Include the annotated element in the diagram"""
+    annotation property include
+
+}

@@ -1,0 +1,35 @@
+@diagram:specifier
+vocabulary <http://ontology.iupac.org/metrology/diagams/quantities> with # as quantities {
+    extends <http://opencaesar.io/diagram>
+    extends <http://ontology.iupac.org/metrology>
+
+    @diagram:include
+    ref relation entity metrology:HasKindOfQuantity
+    
+    @diagram:include
+    @diagram:include "properties"
+    ref concept metrology:QuantityValue
+
+    @diagram:include
+    ref concept metrology:OrdinalQuantityValue
+
+    @diagram:include
+    ref concept metrology:UnitaryQuantityValue
+
+    @diagram:include
+    ref concept metrology:Quantity
+
+    @diagram:include
+    ref relation entity metrology:IsQuantityOf
+
+    @diagram:include
+    ref relation entity metrology:HasMagnitude
+
+    @diagram:include
+    ref relation entity metrology:HasReference
+    
+
+    @diagram:include
+    ref concept metrology:KindOfQuantity
+    
+}
