@@ -1,7 +1,7 @@
 <!doctype html><html lang="en">
  <head>
   <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-  <title>XSD</title>
+  <title>80000-6-kindsOfQuantities</title>
   <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
 <style data-fill-with="stylesheet">/******************************************************************************
  *                   Style sheet for the W3C specifications                   *
@@ -1322,7 +1322,7 @@ Possible extra rowspan handling
 	}
 </style>
   <meta content="Bikeshed version 89ebb6ab, updated Fri Oct 9 15:32:07 2020 -0700" name="generator">
-  <link href="https://opencaesar.github.io/vocabularies//src/oml/www.w3.org/2001/XMLSchema" rel="canonical">
+  <link href="https://opencaesar.github.io/vocabularies//src/oml/iso.org/80000-6-kindsOfQuantities" rel="canonical">
   <meta content="1afde4e8c809f3ba3f80df849873f1dc0de53c24" name="document-revision">
 <style>
 a[data-link-type=biblio] {
@@ -1528,6 +1528,47 @@ figcaption {
 figcaption:not(.no-marker)::before {
     content: "Figure " counter(figure) " ";
 }</style>
+<style>/* style-dfn-panel */
+
+:root {
+    --dfnpanel-bg: #ddd;
+    --dfnpanel-text: var(--text);
+}
+.dfn-panel {
+    position: absolute;
+    z-index: 35;
+    height: auto;
+    width: -webkit-fit-content;
+    width: fit-content;
+    max-width: 300px;
+    max-height: 500px;
+    overflow: auto;
+    padding: 0.5em 0.75em;
+    font: small Helvetica Neue, sans-serif, Droid Sans Fallback;
+    background: var(--dfnpanel-bg);
+    color: var(--dfnpanel-text);
+    border: outset 0.2em;
+}
+.dfn-panel:not(.on) { display: none; }
+.dfn-panel * { margin: 0; padding: 0; text-indent: 0; }
+.dfn-panel > b { display: block; }
+.dfn-panel a { color: var(--dfnpanel-text); }
+.dfn-panel a:not(:hover) { text-decoration: none !important; border-bottom: none !important; }
+.dfn-panel > b + b { margin-top: 0.25em; }
+.dfn-panel ul { padding: 0; }
+.dfn-panel li { list-style: inside; }
+.dfn-panel.activated {
+    display: inline-block;
+    position: fixed;
+    left: .5em;
+    bottom: 2em;
+    margin: 0 auto;
+    max-width: calc(100vw - 1.5em - .4em - .5em);
+    max-height: 30vh;
+}
+
+.dfn-paneled { cursor: pointer; }
+</style>
 <style>/* style-md-lists */
 
 /* This is a weird hack for me not yet following the commonmark spec
@@ -1703,20 +1744,26 @@ dfn > a.self-link::before      { content: "#"; }
         --selflink-hover-text: white;
     }
 }
-</style>
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --dfnpanel-bg: #222;
+        --dfnpanel-text: var(--text);
+    }
+}</style>
  <body class="h-entry">
   <div class="head">
    <p data-fill-with="logo"><a class="logo" href="https://www.openapis.org/"><img alt="OpenAPI Initiative" height="48" src="https://opencaesar.github.io/oml/images/oml.svg"></a></p>
-   <h1 class="p-name no-ref allcaps" id="title">XSD</h1>
+   <h1 class="p-name no-ref" id="title">80000-6-kindsOfQuantities</h1>
    <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2020-10-14">14 October 2020</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
-     <dd><a class="u-url" href="https://opencaesar.github.io/vocabularies//src/oml/www.w3.org/2001/XMLSchema">https://opencaesar.github.io/vocabularies//src/oml/www.w3.org/2001/XMLSchema</a>
+     <dd><a class="u-url" href="https://opencaesar.github.io/vocabularies//src/oml/iso.org/80000-6-kindsOfQuantities">https://opencaesar.github.io/vocabularies//src/oml/iso.org/80000-6-kindsOfQuantities</a>
      <dt class="editor">Editor:
-     <dd class="editor p-author h-card vcard"><span class="p-name fn">W3C</span>
+     <dd class="editor p-author h-card vcard"><span class="p-name fn">Unknown</span>
      <dt>Copyright:
-     <dd>Copyright 2014 W3C.
+     <dd>
     </dl>
    </div>
    <div data-fill-with="warning"></div>
@@ -1724,7 +1771,6 @@ dfn > a.self-link::before      { content: "#"; }
   </div>
   <div class="p-summary" data-fill-with="abstract">
    <h2 class="no-num no-toc no-ref heading settled" id="abstract"><span class="content">Abstract</span></h2>
-   <p>The XSD vocabulary is a subset of the corresponding vocabulary maintained by the W3C.</p>
   </div>
   <div data-fill-with="at-risk"></div>
   <nav data-fill-with="table-of-contents" id="toc">
@@ -1733,53 +1779,31 @@ dfn > a.self-link::before      { content: "#"; }
     <li><a href="#Namespace"><span class="secno">1</span> <span class="content">Namespace</span></a>
     <li><a href="#Extensions"><span class="secno">2</span> <span class="content">Imports</span></a>
     <li>
-     <a href="#Scalars"><span class="secno">3</span> <span class="content">Scalars</span></a>
+     <a href="#concepts"><span class="secno">3</span> <span class="content">Concepts</span></a>
      <ol class="toc">
-      <li><a href="#AnyAtomicType"><span class="secno">3.1</span> <span class="content"><span>anyAtomicType</span></span></a>
-      <li><a href="#AnyURI"><span class="secno">3.2</span> <span class="content"><span>anyURI</span></span></a>
-      <li><a href="#Base64Binary"><span class="secno">3.3</span> <span class="content"><span>base64Binary</span></span></a>
-      <li><a href="#Boolean"><span class="secno">3.4</span> <span class="content"><span>boolean</span></span></a>
-      <li><a href="#Date"><span class="secno">3.5</span> <span class="content"><span>date</span></span></a>
-      <li><a href="#DateTime"><span class="secno">3.6</span> <span class="content"><span>dateTime</span></span></a>
-      <li><a href="#DateTimeStamp"><span class="secno">3.7</span> <span class="content"><span>dateTimeStamp</span></span></a>
-      <li><a href="#Decimal"><span class="secno">3.8</span> <span class="content"><span>decimal</span></span></a>
-      <li><a href="#String"><span class="secno">3.9</span> <span class="content"><span>string</span></span></a>
-      <li><a href="#Byte"><span class="secno">3.10</span> <span class="content"><span>byte</span></span></a>
-      <li><a href="#Int"><span class="secno">3.11</span> <span class="content"><span>int</span></span></a>
-      <li><a href="#Long"><span class="secno">3.12</span> <span class="content"><span>long</span></span></a>
-      <li><a href="#NegativeInteger"><span class="secno">3.13</span> <span class="content"><span>negativeInteger</span></span></a>
-      <li><a href="#NonNegativeInteger"><span class="secno">3.14</span> <span class="content"><span>nonNegativeInteger</span></span></a>
-      <li><a href="#NonPositiveInteger"><span class="secno">3.15</span> <span class="content"><span>nonPositiveInteger</span></span></a>
-      <li><a href="#PositiveInteger"><span class="secno">3.16</span> <span class="content"><span>positiveInteger</span></span></a>
-      <li><a href="#Short"><span class="secno">3.17</span> <span class="content"><span>short</span></span></a>
-      <li><a href="#UnsignedByte"><span class="secno">3.18</span> <span class="content"><span>unsignedByte</span></span></a>
-      <li><a href="#UnsignedInt"><span class="secno">3.19</span> <span class="content"><span>unsignedInt</span></span></a>
-      <li><a href="#UnsignedLong"><span class="secno">3.20</span> <span class="content"><span>unsignedLong</span></span></a>
-      <li><a href="#UnsignedShort"><span class="secno">3.21</span> <span class="content"><span>unsignedShort</span></span></a>
-      <li><a href="#NCName"><span class="secno">3.22</span> <span class="content"><span>NCName</span></span></a>
-      <li><a href="#NMTOKEN"><span class="secno">3.23</span> <span class="content"><span>NMTOKEN</span></span></a>
-      <li><a href="#DayTimeDuration"><span class="secno">3.24</span> <span class="content"><span>dayTimeDuration</span></span></a>
-      <li><a href="#Double"><span class="secno">3.25</span> <span class="content"><span>double</span></span></a>
-      <li><a href="#Duration"><span class="secno">3.26</span> <span class="content"><span>duration</span></span></a>
-      <li><a href="#Float"><span class="secno">3.27</span> <span class="content"><span>float</span></span></a>
-      <li><a href="#GDay"><span class="secno">3.28</span> <span class="content"><span>gDay</span></span></a>
-      <li><a href="#GMonth"><span class="secno">3.29</span> <span class="content"><span>gMonth</span></span></a>
-      <li><a href="#GMonthDay"><span class="secno">3.30</span> <span class="content"><span>gMonthDay</span></span></a>
-      <li><a href="#GYear"><span class="secno">3.31</span> <span class="content"><span>gYear</span></span></a>
-      <li><a href="#GYearMonth"><span class="secno">3.32</span> <span class="content"><span>gYearMonth</span></span></a>
-      <li><a href="#HexBinary"><span class="secno">3.33</span> <span class="content"><span>hexBinary</span></span></a>
-      <li><a href="#Integer"><span class="secno">3.34</span> <span class="content"><span>integer</span></span></a>
-      <li><a href="#Language"><span class="secno">3.35</span> <span class="content"><span>language</span></span></a>
-      <li><a href="#Name"><span class="secno">3.36</span> <span class="content"><span>name</span></span></a>
-      <li><a href="#NormalizedString"><span class="secno">3.37</span> <span class="content"><span>normalizedString</span></span></a>
-      <li><a href="#Time"><span class="secno">3.38</span> <span class="content"><span>time</span></span></a>
-      <li><a href="#Token"><span class="secno">3.39</span> <span class="content"><span>token</span></span></a>
-      <li><a href="#YearMonthDuration"><span class="secno">3.40</span> <span class="content"><span>yearMonthDuration</span></span></a>
+      <li><a href="#Electric-current"><span class="secno">3.1</span> <span class="content"><span>electric-current</span></span></a>
+      <li><a href="#Electric-charge"><span class="secno">3.2</span> <span class="content"><span>electric-charge</span></span></a>
+      <li><a href="#Electric-field-strength"><span class="secno">3.3</span> <span class="content"><span>electric-field-strength</span></span></a>
+      <li><a href="#Electric-potential"><span class="secno">3.4</span> <span class="content"><span>electric-potential</span></span></a>
+      <li><a href="#Resistance"><span class="secno">3.5</span> <span class="content"><span>resistance</span></span></a>
+     </ol>
+    <li>
+     <a href="#Relations"><span class="secno">4</span> <span class="content">Relation Entities</span></a>
+     <ol class="toc">
+      <li><a href="#Electric-charge-of-electric-current"><span class="secno">4.1</span> <span class="content"><span>electric-charge-of-electric-current</span></span></a>
+      <li><a href="#Electric-charge-of-duration"><span class="secno">4.2</span> <span class="content"><span>electric-charge-of-duration</span></span></a>
+      <li><a href="#Electric-field-strength-of-force"><span class="secno">4.3</span> <span class="content"><span>electric-field-strength-of-force</span></span></a>
+      <li><a href="#Electric-field-strength-of-electric-charge"><span class="secno">4.4</span> <span class="content"><span>electric-field-strength-of-electric-charge</span></span></a>
+      <li><a href="#Electric-potential-of-electric-field-strength"><span class="secno">4.5</span> <span class="content"><span>electric-potential-of-electric-field-strength</span></span></a>
+      <li><a href="#Electric-potential-of-path-length"><span class="secno">4.6</span> <span class="content"><span>electric-potential-of-path-length</span></span></a>
+      <li><a href="#Resistance-of-electric-potential"><span class="secno">4.7</span> <span class="content"><span>resistance-of-electric-potential</span></span></a>
+      <li><a href="#Resistance-of-electric-current"><span class="secno">4.8</span> <span class="content"><span>resistance-of-electric-current</span></span></a>
      </ol>
     <li>
      <a href="#index"><span class="secno"></span> <span class="content">Index</span></a>
      <ol class="toc">
       <li><a href="#index-defined-here"><span class="secno"></span> <span class="content">Terms defined by this specification</span></a>
+      <li><a href="#index-defined-elsewhere"><span class="secno"></span> <span class="content">Terms defined by reference</span></a>
      </ol>
    </ol>
   </nav>
@@ -1788,85 +1812,151 @@ dfn > a.self-link::before      { content: "#"; }
     <h2 class="heading settled" data-level="1" id="Namespace"><span class="secno">1. </span><span class="content">Namespace</span><a class="self-link" href="#Namespace"></a></h2>
     <ul>
      <li data-md>
-      <p>xsd: <a href="XMLSchema.html">http://www.w3.org/2001/XMLSchema</a></p>
+      <p>80000-6-kindsOfQuantities: <a href="80000-6-kindsOfQuantities.html">http://iso.org/80000-6-kindsOfQuantities</a></p>
     </ul>
     <h2 class="heading settled" data-level="2" id="Extensions"><span class="secno">2. </span><span class="content">Imports</span><a class="self-link" href="#Extensions"></a></h2>
     <ul>
      <li data-md>
-      <p>dc: <a href="http://purl.org/dc/elements/1.html">http://purl.org/dc/elements/1.1</a></p>
+      <p>80000-6-units: <a href="http://iso.org/80000-6-units.html">http://iso.org/80000-6-units</a></p>
+     <li data-md>
+      <p>80000-5-kindsOfQuantities: <a href="http://iso.org/80000-5-kindsOfQuantities.html">http://iso.org/80000-5-kindsOfQuantities</a></p>
     </ul>
-    <h2 class="heading settled" data-level="3" id="Scalars"><span class="secno">3. </span><span class="content">Scalars</span><a class="self-link" href="#Scalars"></a></h2>
-    <h3 class="heading settled" data-level="3.1" id="AnyAtomicType"><span class="secno">3.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="anyatomictype">anyAtomicType<a class="self-link" href="#anyatomictype"></a></dfn></span><a class="self-link" href="#AnyAtomicType"></a></h3>
-    <h3 class="heading settled" data-level="3.2" id="AnyURI"><span class="secno">3.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="anyuri">anyURI<a class="self-link" href="#anyuri"></a></dfn></span><a class="self-link" href="#AnyURI"></a></h3>
-    <h3 class="heading settled" data-level="3.3" id="Base64Binary"><span class="secno">3.3. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="base64binary">base64Binary<a class="self-link" href="#base64binary"></a></dfn></span><a class="self-link" href="#Base64Binary"></a></h3>
-    <h3 class="heading settled" data-level="3.4" id="Boolean"><span class="secno">3.4. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="boolean">boolean<a class="self-link" href="#boolean"></a></dfn></span><a class="self-link" href="#Boolean"></a></h3>
-    <h3 class="heading settled" data-level="3.5" id="Date"><span class="secno">3.5. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="date">date<a class="self-link" href="#date"></a></dfn></span><a class="self-link" href="#Date"></a></h3>
-    <h3 class="heading settled" data-level="3.6" id="DateTime"><span class="secno">3.6. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="datetime">dateTime<a class="self-link" href="#datetime"></a></dfn></span><a class="self-link" href="#DateTime"></a></h3>
-    <h3 class="heading settled" data-level="3.7" id="DateTimeStamp"><span class="secno">3.7. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="datetimestamp">dateTimeStamp<a class="self-link" href="#datetimestamp"></a></dfn></span><a class="self-link" href="#DateTimeStamp"></a></h3>
-    <h3 class="heading settled" data-level="3.8" id="Decimal"><span class="secno">3.8. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="decimal">decimal<a class="self-link" href="#decimal"></a></dfn></span><a class="self-link" href="#Decimal"></a></h3>
-    <h3 class="heading settled" data-level="3.9" id="String"><span class="secno">3.9. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="string">string<a class="self-link" href="#string"></a></dfn></span><a class="self-link" href="#String"></a></h3>
-    <h3 class="heading settled" data-level="3.10" id="Byte"><span class="secno">3.10. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="byte">byte<a class="self-link" href="#byte"></a></dfn></span><a class="self-link" href="#Byte"></a></h3>
-    <p><em>min inclusive:</em> -128 <em>max inclusive:</em> 127</p>
-    <h3 class="heading settled" data-level="3.11" id="Int"><span class="secno">3.11. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="int">int<a class="self-link" href="#int"></a></dfn></span><a class="self-link" href="#Int"></a></h3>
-    <p><em>min inclusive:</em> -2147483648 <em>max inclusive:</em> 2147483647</p>
-    <h3 class="heading settled" data-level="3.12" id="Long"><span class="secno">3.12. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="long">long<a class="self-link" href="#long"></a></dfn></span><a class="self-link" href="#Long"></a></h3>
-    <p><em>min inclusive:</em> -9223372036854775808 <em>max inclusive:</em> 9223372036854775807</p>
-    <h3 class="heading settled" data-level="3.13" id="NegativeInteger"><span class="secno">3.13. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="negativeinteger">negativeInteger<a class="self-link" href="#negativeinteger"></a></dfn></span><a class="self-link" href="#NegativeInteger"></a></h3>
-    <p><em>max inclusive:</em> -1</p>
-    <h3 class="heading settled" data-level="3.14" id="NonNegativeInteger"><span class="secno">3.14. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="nonnegativeinteger">nonNegativeInteger<a class="self-link" href="#nonnegativeinteger"></a></dfn></span><a class="self-link" href="#NonNegativeInteger"></a></h3>
-    <p><em>min inclusive:</em> 0</p>
-    <h3 class="heading settled" data-level="3.15" id="NonPositiveInteger"><span class="secno">3.15. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="nonpositiveinteger">nonPositiveInteger<a class="self-link" href="#nonpositiveinteger"></a></dfn></span><a class="self-link" href="#NonPositiveInteger"></a></h3>
-    <p><em>max inclusive:</em> 0</p>
-    <h3 class="heading settled" data-level="3.16" id="PositiveInteger"><span class="secno">3.16. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="positiveinteger">positiveInteger<a class="self-link" href="#positiveinteger"></a></dfn></span><a class="self-link" href="#PositiveInteger"></a></h3>
-    <p><em>min inclusive:</em> 1</p>
-    <h3 class="heading settled" data-level="3.17" id="Short"><span class="secno">3.17. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="short">short<a class="self-link" href="#short"></a></dfn></span><a class="self-link" href="#Short"></a></h3>
-    <p><em>min inclusive:</em> -32768 <em>max inclusive:</em> 32767</p>
-    <h3 class="heading settled" data-level="3.18" id="UnsignedByte"><span class="secno">3.18. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="unsignedbyte">unsignedByte<a class="self-link" href="#unsignedbyte"></a></dfn></span><a class="self-link" href="#UnsignedByte"></a></h3>
-    <p><em>max inclusive:</em> 255</p>
-    <h3 class="heading settled" data-level="3.19" id="UnsignedInt"><span class="secno">3.19. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="unsignedint">unsignedInt<a class="self-link" href="#unsignedint"></a></dfn></span><a class="self-link" href="#UnsignedInt"></a></h3>
-    <p><em>max inclusive:</em> 4294967295</p>
-    <h3 class="heading settled" data-level="3.20" id="UnsignedLong"><span class="secno">3.20. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="unsignedlong">unsignedLong<a class="self-link" href="#unsignedlong"></a></dfn></span><a class="self-link" href="#UnsignedLong"></a></h3>
-    <p><em>max inclusive:</em> 18446744073709551615</p>
-    <h3 class="heading settled" data-level="3.21" id="UnsignedShort"><span class="secno">3.21. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="unsignedshort">unsignedShort<a class="self-link" href="#unsignedshort"></a></dfn></span><a class="self-link" href="#UnsignedShort"></a></h3>
-    <p><em>max inclusive:</em> 65535</p>
-    <h3 class="heading settled" data-level="3.22" id="NCName"><span class="secno">3.22. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="ncname">NCName<a class="self-link" href="#ncname"></a></dfn></span><a class="self-link" href="#NCName"></a></h3>
-    <p><em>pattern:</em> [\i\c<em>&amp;&amp;[\i-[:]][\c-[:]]</em>]</p>
-    <h3 class="heading settled" data-level="3.23" id="NMTOKEN"><span class="secno">3.23. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="nmtoken">NMTOKEN<a class="self-link" href="#nmtoken"></a></dfn></span><a class="self-link" href="#NMTOKEN"></a></h3>
-    <p><em>pattern:</em> \c+</p>
-    <h3 class="heading settled" data-level="3.24" id="DayTimeDuration"><span class="secno">3.24. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="daytimeduration">dayTimeDuration<a class="self-link" href="#daytimeduration"></a></dfn></span><a class="self-link" href="#DayTimeDuration"></a></h3>
-    <p><em>pattern:</em> [^YM]<em>(T.</em>)?</p>
-    <h3 class="heading settled" data-level="3.25" id="Double"><span class="secno">3.25. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="double">double<a class="self-link" href="#double"></a></dfn></span><a class="self-link" href="#Double"></a></h3>
-    <p><em>pattern:</em> (\+|\-)?([0-9]+(\.[0-9]*)?|\.[0-9]+)(<a href="\+|\-">Ee</a>?[0-9]+)?|(\+|\-)?INF|NaN</p>
-    <h3 class="heading settled" data-level="3.26" id="Duration"><span class="secno">3.26. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="duration">duration<a class="self-link" href="#duration"></a></dfn></span><a class="self-link" href="#Duration"></a></h3>
-    <p><em>pattern:</em> -?P((([0-9]+Y([0-9]+M)?([0-9]+D)?|([0-9]+M)([0-9]+D)?|([0-9]+D))(T(([0-9]+H)([0-9]+M)?([0-9]+(\.[0-9]+)?S)?|([0-9]+M)([0-9]+(\.[0-9]+)?S)?|([0-9]+(\.[0-9]+)?S)))?)|(T(([0-9]+H)([0-9]+M)?([0-9]+(\.[0-9]+)?S)?|([0-9]+M)([0-9]+(\.[0-9]+)?S)?|([0-9]+(\.[0-9]+)?S))))</p>
-    <h3 class="heading settled" data-level="3.27" id="Float"><span class="secno">3.27. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="float">float<a class="self-link" href="#float"></a></dfn></span><a class="self-link" href="#Float"></a></h3>
-    <p><em>pattern:</em> (\+|\-)?([0-9]+(\.[0-9]*)?|\.[0-9]+)(<a href="\+|\-">Ee</a>?[0-9]+)?|(\+|\-)?INF|NaN</p>
-    <h3 class="heading settled" data-level="3.28" id="GDay"><span class="secno">3.28. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="gday">gDay<a class="self-link" href="#gday"></a></dfn></span><a class="self-link" href="#GDay"></a></h3>
-    <p><em>pattern:</em> ---(0[1-9]|[12][0-9]|3[01])(Z|(\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?</p>
-    <h3 class="heading settled" data-level="3.29" id="GMonth"><span class="secno">3.29. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="gmonth">gMonth<a class="self-link" href="#gmonth"></a></dfn></span><a class="self-link" href="#GMonth"></a></h3>
-    <p><em>pattern:</em> --(0[1-9]|1[0-2])(Z|(\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?</p>
-    <h3 class="heading settled" data-level="3.30" id="GMonthDay"><span class="secno">3.30. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="gmonthday">gMonthDay<a class="self-link" href="#gmonthday"></a></dfn></span><a class="self-link" href="#GMonthDay"></a></h3>
-    <p><em>pattern:</em> --(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])(Z|(\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?</p>
-    <h3 class="heading settled" data-level="3.31" id="GYear"><span class="secno">3.31. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="gyear">gYear<a class="self-link" href="#gyear"></a></dfn></span><a class="self-link" href="#GYear"></a></h3>
-    <p><em>pattern:</em> -?([1-9][0-9]{3,}|0[0-9]{3})(Z|(\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?</p>
-    <h3 class="heading settled" data-level="3.32" id="GYearMonth"><span class="secno">3.32. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="gyearmonth">gYearMonth<a class="self-link" href="#gyearmonth"></a></dfn></span><a class="self-link" href="#GYearMonth"></a></h3>
-    <p><em>pattern:</em> -?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])(Z|(\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?</p>
-    <h3 class="heading settled" data-level="3.33" id="HexBinary"><span class="secno">3.33. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="hexbinary">hexBinary<a class="self-link" href="#hexbinary"></a></dfn></span><a class="self-link" href="#HexBinary"></a></h3>
-    <p><em>pattern:</em> ([0-9a-fA-F]{2})*</p>
-    <h3 class="heading settled" data-level="3.34" id="Integer"><span class="secno">3.34. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="integer">integer<a class="self-link" href="#integer"></a></dfn></span><a class="self-link" href="#Integer"></a></h3>
-    <p><em>pattern:</em> [\-+]?[0-9]+</p>
-    <h3 class="heading settled" data-level="3.35" id="Language"><span class="secno">3.35. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="language">language<a class="self-link" href="#language"></a></dfn></span><a class="self-link" href="#Language"></a></h3>
-    <p><em>pattern:</em> [a-zA-Z]{1,8}(-[a-zA-Z0-9]{1,8})*</p>
-    <h3 class="heading settled" data-level="3.36" id="Name"><span class="secno">3.36. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="name">name<a class="self-link" href="#name"></a></dfn></span><a class="self-link" href="#Name"></a></h3>
-    <p><em>pattern:</em> \i\c*</p>
-    <h3 class="heading settled" data-level="3.37" id="NormalizedString"><span class="secno">3.37. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="normalizedstring">normalizedString<a class="self-link" href="#normalizedstring"></a></dfn></span><a class="self-link" href="#NormalizedString"></a></h3>
-    <p><em>pattern:</em> [^\n\r\t]</p>
-    <h3 class="heading settled" data-level="3.38" id="Time"><span class="secno">3.38. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="time">time<a class="self-link" href="#time"></a></dfn></span><a class="self-link" href="#Time"></a></h3>
-    <p><em>pattern:</em> (([01][0-9]|2[0-3]):[0-5][0-9]:[0-5]<a href="\.[0-9]+">0-9</a>?|(24:00:00(\.0+)?))(Z|(\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?</p>
-    <h3 class="heading settled" data-level="3.39" id="Token"><span class="secno">3.39. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="token">token<a class="self-link" href="#token"></a></dfn></span><a class="self-link" href="#Token"></a></h3>
-    <p><em>pattern:</em> \S[\S[ ]{0,2}]\S</p>
-    <h3 class="heading settled" data-level="3.40" id="YearMonthDuration"><span class="secno">3.40. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="yearmonthduration">yearMonthDuration<a class="self-link" href="#yearmonthduration"></a></dfn></span><a class="self-link" href="#YearMonthDuration"></a></h3>
-    <p><em>pattern:</em> [^DT]*</p>
+    <h2 class="heading settled" data-level="3" id="concepts"><span class="secno">3. </span><span class="content">Concepts</span><a class="self-link" href="#concepts"></a></h2>
+    <h3 class="heading settled" data-level="3.1" id="Electric-current"><span class="secno">3.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="electric-current">electric-current<a class="self-link" href="#electric-current"></a></dfn></span><a class="self-link" href="#Electric-current"></a></h3>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../ontology.iupac.org/metrology.html#independentunitarykindofquantity" id="ref-for-independentunitarykindofquantity">metrology:IndependentUnitaryKindOfQuantity</a></p>
+    <p><em>Properties with domain:</em> <a data-link-type="dfn">metrology:isDimensionlessKindOfQuantity</a> (must have value false)</p>
+    <p><em>Relations with domain:</em></p>
+    <ul>
+     <li data-md>
+      <p>electric-current <a data-link-type="dfn" href="../ontology.iupac.org/metrology.html#forquantitiesofthesameunitarykindofquantity" id="ref-for-forquantitiesofthesameunitarykindofquantity">metrology:forQuantitiesOfTheSameUnitaryKindOfQuantity</a> <a data-link-type="dfn" href="80000-6-units.html#ampere" id="ref-for-ampere">80000-6-units:Ampere</a></p>
+    </ul>
+    <p><em>Relations with range:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="80000-6-kindsOfQuantities.html#electric-charge" id="ref-for-electric-charge">electric-charge</a> <a data-link-type="dfn" href="80000-6-kindsOfQuantities.html#electric-charge-of-electric-current-forward" id="ref-for-electric-charge-of-electric-current-forward">electric-charge-of-electric-current-forward</a> electric-current</p>
+     <li data-md>
+      <p><a data-link-type="dfn" href="80000-6-kindsOfQuantities.html#resistance" id="ref-for-resistance">resistance</a> <a data-link-type="dfn" href="80000-6-kindsOfQuantities.html#resistance-of-electric-current-forward" id="ref-for-resistance-of-electric-current-forward">resistance-of-electric-current-forward</a> electric-current</p>
+    </ul>
+    <h3 class="heading settled" data-level="3.2" id="Electric-charge"><span class="secno">3.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="electric-charge">electric-charge<a class="self-link" href="#electric-charge"></a></dfn></span><a class="self-link" href="#Electric-charge"></a></h3>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../ontology.iupac.org/metrology.html#derivedunitarykindofquantity" id="ref-for-derivedunitarykindofquantity">metrology:DerivedUnitaryKindOfQuantity</a></p>
+    <p><em>Properties with domain:</em> <a data-link-type="dfn">metrology:isDimensionlessKindOfQuantity</a> (must have value false)</p>
+    <p><em>Relations with domain:</em></p>
+    <ul>
+     <li data-md>
+      <p>electric-charge <a data-link-type="dfn" href="../ontology.iupac.org/metrology.html#forquantitiesofthesameunitarykindofquantity" id="ref-for-forquantitiesofthesameunitarykindofquantity①">metrology:forQuantitiesOfTheSameUnitaryKindOfQuantity</a> <a data-link-type="dfn" href="80000-6-units.html#coulomb" id="ref-for-coulomb">80000-6-units:Coulomb</a></p>
+     <li data-md>
+      <p>electric-charge <a data-link-type="dfn" href="80000-6-kindsOfQuantities.html#electric-charge-of-duration-forward" id="ref-for-electric-charge-of-duration-forward">electric-charge-of-duration-forward</a> <a data-link-type="dfn" href="80000-3-kindsOfQuantities.html#duration" id="ref-for-duration">80000-3-kindsOfQuantities:duration</a></p>
+     <li data-md>
+      <p>electric-charge <a data-link-type="dfn" href="80000-6-kindsOfQuantities.html#electric-charge-of-electric-current-forward" id="ref-for-electric-charge-of-electric-current-forward①">electric-charge-of-electric-current-forward</a> <a data-link-type="dfn" href="80000-6-kindsOfQuantities.html#electric-current" id="ref-for-electric-current">electric-current</a></p>
+    </ul>
+    <p><em>Relations with range:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="80000-6-kindsOfQuantities.html#electric-field-strength" id="ref-for-electric-field-strength">electric-field-strength</a> <a data-link-type="dfn" href="80000-6-kindsOfQuantities.html#electric-field-strength-of-electric-charge-forward" id="ref-for-electric-field-strength-of-electric-charge-forward">electric-field-strength-of-electric-charge-forward</a> electric-charge</p>
+    </ul>
+    <h3 class="heading settled" data-level="3.3" id="Electric-field-strength"><span class="secno">3.3. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="electric-field-strength">electric-field-strength<a class="self-link" href="#electric-field-strength"></a></dfn></span><a class="self-link" href="#Electric-field-strength"></a></h3>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../ontology.iupac.org/metrology.html#derivedunitarykindofquantity" id="ref-for-derivedunitarykindofquantity①">metrology:DerivedUnitaryKindOfQuantity</a></p>
+    <p><em>Properties with domain:</em> <a data-link-type="dfn">metrology:isDimensionlessKindOfQuantity</a> (must have value false)</p>
+    <p><em>Relations with domain:</em></p>
+    <ul>
+     <li data-md>
+      <p>electric-field-strength <a data-link-type="dfn" href="../ontology.iupac.org/metrology.html#forquantitiesofthesameunitarykindofquantity" id="ref-for-forquantitiesofthesameunitarykindofquantity②">metrology:forQuantitiesOfTheSameUnitaryKindOfQuantity</a> <a data-link-type="dfn" href="80000-6-units.html#newton-per-coulomb" id="ref-for-newton-per-coulomb">80000-6-units:Newton-per-Coulomb</a></p>
+     <li data-md>
+      <p>electric-field-strength <a data-link-type="dfn" href="80000-6-kindsOfQuantities.html#electric-field-strength-of-electric-charge-forward" id="ref-for-electric-field-strength-of-electric-charge-forward①">electric-field-strength-of-electric-charge-forward</a> <a data-link-type="dfn" href="80000-6-kindsOfQuantities.html#electric-charge" id="ref-for-electric-charge①">electric-charge</a></p>
+     <li data-md>
+      <p>electric-field-strength <a data-link-type="dfn" href="80000-6-kindsOfQuantities.html#electric-field-strength-of-force-forward" id="ref-for-electric-field-strength-of-force-forward">electric-field-strength-of-force-forward</a> <a data-link-type="dfn" href="80000-4-kindsOfQuantities.html#force" id="ref-for-force">80000-4-kindsOfQuantities:force</a></p>
+    </ul>
+    <p><em>Relations with range:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="80000-6-kindsOfQuantities.html#electric-potential" id="ref-for-electric-potential">electric-potential</a> <a data-link-type="dfn" href="80000-6-kindsOfQuantities.html#electric-potential-of-electric-field-strength-forward" id="ref-for-electric-potential-of-electric-field-strength-forward">electric-potential-of-electric-field-strength-forward</a> electric-field-strength</p>
+    </ul>
+    <h3 class="heading settled" data-level="3.4" id="Electric-potential"><span class="secno">3.4. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="electric-potential">electric-potential<a class="self-link" href="#electric-potential"></a></dfn></span><a class="self-link" href="#Electric-potential"></a></h3>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../ontology.iupac.org/metrology.html#derivedunitarykindofquantity" id="ref-for-derivedunitarykindofquantity②">metrology:DerivedUnitaryKindOfQuantity</a></p>
+    <p><em>Properties with domain:</em> <a data-link-type="dfn">metrology:isDimensionlessKindOfQuantity</a> (must have value false)</p>
+    <p><em>Relations with domain:</em></p>
+    <ul>
+     <li data-md>
+      <p>electric-potential <a data-link-type="dfn" href="../ontology.iupac.org/metrology.html#forquantitiesofthesameunitarykindofquantity" id="ref-for-forquantitiesofthesameunitarykindofquantity③">metrology:forQuantitiesOfTheSameUnitaryKindOfQuantity</a> <a data-link-type="dfn" href="80000-6-units.html#volt" id="ref-for-volt">80000-6-units:Volt</a></p>
+     <li data-md>
+      <p>electric-potential <a data-link-type="dfn" href="80000-6-kindsOfQuantities.html#electric-potential-of-electric-field-strength-forward" id="ref-for-electric-potential-of-electric-field-strength-forward①">electric-potential-of-electric-field-strength-forward</a> <a data-link-type="dfn" href="80000-6-kindsOfQuantities.html#electric-field-strength" id="ref-for-electric-field-strength①">electric-field-strength</a></p>
+     <li data-md>
+      <p>electric-potential <a data-link-type="dfn" href="80000-6-kindsOfQuantities.html#electric-potential-of-path-length-forward" id="ref-for-electric-potential-of-path-length-forward">electric-potential-of-path-length-forward</a> <a data-link-type="dfn" href="80000-3-kindsOfQuantities.html#path-length" id="ref-for-path-length">80000-3-kindsOfQuantities:path-length</a></p>
+    </ul>
+    <p><em>Relations with range:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="80000-6-kindsOfQuantities.html#resistance" id="ref-for-resistance①">resistance</a> <a data-link-type="dfn" href="80000-6-kindsOfQuantities.html#resistance-of-electric-potential-forward" id="ref-for-resistance-of-electric-potential-forward">resistance-of-electric-potential-forward</a> electric-potential</p>
+    </ul>
+    <h3 class="heading settled" data-level="3.5" id="Resistance"><span class="secno">3.5. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="resistance">resistance<a class="self-link" href="#resistance"></a></dfn></span><a class="self-link" href="#Resistance"></a></h3>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../ontology.iupac.org/metrology.html#derivedunitarykindofquantity" id="ref-for-derivedunitarykindofquantity③">metrology:DerivedUnitaryKindOfQuantity</a></p>
+    <p><em>Properties with domain:</em> <a data-link-type="dfn">metrology:isDimensionlessKindOfQuantity</a> (must have value false)</p>
+    <p><em>Relations with domain:</em></p>
+    <ul>
+     <li data-md>
+      <p>resistance <a data-link-type="dfn" href="../ontology.iupac.org/metrology.html#forquantitiesofthesameunitarykindofquantity" id="ref-for-forquantitiesofthesameunitarykindofquantity④">metrology:forQuantitiesOfTheSameUnitaryKindOfQuantity</a> <a data-link-type="dfn" href="80000-6-units.html#ohm" id="ref-for-ohm">80000-6-units:Ohm</a></p>
+     <li data-md>
+      <p>resistance <a data-link-type="dfn" href="80000-6-kindsOfQuantities.html#resistance-of-electric-current-forward" id="ref-for-resistance-of-electric-current-forward①">resistance-of-electric-current-forward</a> <a data-link-type="dfn" href="80000-6-kindsOfQuantities.html#electric-current" id="ref-for-electric-current①">electric-current</a></p>
+     <li data-md>
+      <p>resistance <a data-link-type="dfn" href="80000-6-kindsOfQuantities.html#resistance-of-electric-potential-forward" id="ref-for-resistance-of-electric-potential-forward①">resistance-of-electric-potential-forward</a> <a data-link-type="dfn" href="80000-6-kindsOfQuantities.html#electric-potential" id="ref-for-electric-potential①">electric-potential</a></p>
+    </ul>
+    <h2 class="heading settled" data-level="4" id="Relations"><span class="secno">4. </span><span class="content">Relation Entities</span><a class="self-link" href="#Relations"></a></h2>
+    <h3 class="heading settled" data-level="4.1" id="Electric-charge-of-electric-current"><span class="secno">4.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="electric-charge-of-electric-current">electric-charge-of-electric-current<a class="self-link" href="#electric-charge-of-electric-current"></a></dfn></span><a class="self-link" href="#Electric-charge-of-electric-current"></a></h3>
+    <p><em>Attributes:</em> Functional</p>
+    <p><em>Source:</em> <a data-link-type="dfn" href="80000-6-kindsOfQuantities.html#electric-charge" id="ref-for-electric-charge②">electric-charge</a></p>
+    <p><em>Target:</em> <a data-link-type="dfn" href="80000-6-kindsOfQuantities.html#electric-current" id="ref-for-electric-current②">electric-current</a></p>
+    <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="electric-charge-of-electric-current" data-dfn-type="attribute" data-export id="dom-electric-charge-of-electric-current-electric-charge-of-electric-current-forward"><code>electric-charge-of-electric-current-forward</code><a class="self-link" href="#dom-electric-charge-of-electric-current-electric-charge-of-electric-current-forward"></a></dfn></p>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../ontology.iupac.org/metrology.html#hasfactorforunitarykindofquantity" id="ref-for-hasfactorforunitarykindofquantity">metrology:HasFactorForUnitaryKindOfQuantity</a></p>
+    <p><em>Properties with domain:</em> <a data-link-type="dfn">metrology:exponent</a> (must have value 1/1)</p>
+    <h3 class="heading settled" data-level="4.2" id="Electric-charge-of-duration"><span class="secno">4.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="electric-charge-of-duration">electric-charge-of-duration<a class="self-link" href="#electric-charge-of-duration"></a></dfn></span><a class="self-link" href="#Electric-charge-of-duration"></a></h3>
+    <p><em>Attributes:</em> Functional</p>
+    <p><em>Source:</em> <a data-link-type="dfn" href="80000-6-kindsOfQuantities.html#electric-charge" id="ref-for-electric-charge③">electric-charge</a></p>
+    <p><em>Target:</em> <a data-link-type="dfn" href="80000-3-kindsOfQuantities.html#duration" id="ref-for-duration①">80000-3-kindsOfQuantities:duration</a></p>
+    <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="electric-charge-of-duration" data-dfn-type="attribute" data-export id="dom-electric-charge-of-duration-electric-charge-of-duration-forward"><code>electric-charge-of-duration-forward</code><a class="self-link" href="#dom-electric-charge-of-duration-electric-charge-of-duration-forward"></a></dfn></p>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../ontology.iupac.org/metrology.html#hasfactorforunitarykindofquantity" id="ref-for-hasfactorforunitarykindofquantity①">metrology:HasFactorForUnitaryKindOfQuantity</a></p>
+    <p><em>Properties with domain:</em> <a data-link-type="dfn">metrology:exponent</a> (must have value 1/1)</p>
+    <h3 class="heading settled" data-level="4.3" id="Electric-field-strength-of-force"><span class="secno">4.3. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="electric-field-strength-of-force">electric-field-strength-of-force<a class="self-link" href="#electric-field-strength-of-force"></a></dfn></span><a class="self-link" href="#Electric-field-strength-of-force"></a></h3>
+    <p><em>Attributes:</em> Functional</p>
+    <p><em>Source:</em> <a data-link-type="dfn" href="80000-6-kindsOfQuantities.html#electric-field-strength" id="ref-for-electric-field-strength②">electric-field-strength</a></p>
+    <p><em>Target:</em> <a data-link-type="dfn" href="80000-4-kindsOfQuantities.html#force" id="ref-for-force①">80000-4-kindsOfQuantities:force</a></p>
+    <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="electric-field-strength-of-force" data-dfn-type="attribute" data-export id="dom-electric-field-strength-of-force-electric-field-strength-of-force-forward"><code>electric-field-strength-of-force-forward</code><a class="self-link" href="#dom-electric-field-strength-of-force-electric-field-strength-of-force-forward"></a></dfn></p>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../ontology.iupac.org/metrology.html#hasfactorforunitarykindofquantity" id="ref-for-hasfactorforunitarykindofquantity②">metrology:HasFactorForUnitaryKindOfQuantity</a></p>
+    <p><em>Properties with domain:</em> <a data-link-type="dfn">metrology:exponent</a> (must have value 1/1)</p>
+    <h3 class="heading settled" data-level="4.4" id="Electric-field-strength-of-electric-charge"><span class="secno">4.4. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="electric-field-strength-of-electric-charge">electric-field-strength-of-electric-charge<a class="self-link" href="#electric-field-strength-of-electric-charge"></a></dfn></span><a class="self-link" href="#Electric-field-strength-of-electric-charge"></a></h3>
+    <p><em>Attributes:</em> Functional</p>
+    <p><em>Source:</em> <a data-link-type="dfn" href="80000-6-kindsOfQuantities.html#electric-field-strength" id="ref-for-electric-field-strength③">electric-field-strength</a></p>
+    <p><em>Target:</em> <a data-link-type="dfn" href="80000-6-kindsOfQuantities.html#electric-charge" id="ref-for-electric-charge④">electric-charge</a></p>
+    <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="electric-field-strength-of-electric-charge" data-dfn-type="attribute" data-export id="dom-electric-field-strength-of-electric-charge-electric-field-strength-of-electric-charge-forward"><code>electric-field-strength-of-electric-charge-forward</code><a class="self-link" href="#dom-electric-field-strength-of-electric-charge-electric-field-strength-of-electric-charge-forward"></a></dfn></p>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../ontology.iupac.org/metrology.html#hasfactorforunitarykindofquantity" id="ref-for-hasfactorforunitarykindofquantity③">metrology:HasFactorForUnitaryKindOfQuantity</a></p>
+    <p><em>Properties with domain:</em> <a data-link-type="dfn">metrology:exponent</a> (must have value -1/1)</p>
+    <h3 class="heading settled" data-level="4.5" id="Electric-potential-of-electric-field-strength"><span class="secno">4.5. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="electric-potential-of-electric-field-strength">electric-potential-of-electric-field-strength<a class="self-link" href="#electric-potential-of-electric-field-strength"></a></dfn></span><a class="self-link" href="#Electric-potential-of-electric-field-strength"></a></h3>
+    <p><em>Attributes:</em> Functional</p>
+    <p><em>Source:</em> <a data-link-type="dfn" href="80000-6-kindsOfQuantities.html#electric-potential" id="ref-for-electric-potential②">electric-potential</a></p>
+    <p><em>Target:</em> <a data-link-type="dfn" href="80000-6-kindsOfQuantities.html#electric-field-strength" id="ref-for-electric-field-strength④">electric-field-strength</a></p>
+    <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="electric-potential-of-electric-field-strength" data-dfn-type="attribute" data-export id="dom-electric-potential-of-electric-field-strength-electric-potential-of-electric-field-strength-forward"><code>electric-potential-of-electric-field-strength-forward</code><a class="self-link" href="#dom-electric-potential-of-electric-field-strength-electric-potential-of-electric-field-strength-forward"></a></dfn></p>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../ontology.iupac.org/metrology.html#hasfactorforunitarykindofquantity" id="ref-for-hasfactorforunitarykindofquantity④">metrology:HasFactorForUnitaryKindOfQuantity</a></p>
+    <p><em>Properties with domain:</em> <a data-link-type="dfn">metrology:exponent</a> (must have value 1/1)</p>
+    <h3 class="heading settled" data-level="4.6" id="Electric-potential-of-path-length"><span class="secno">4.6. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="electric-potential-of-path-length">electric-potential-of-path-length<a class="self-link" href="#electric-potential-of-path-length"></a></dfn></span><a class="self-link" href="#Electric-potential-of-path-length"></a></h3>
+    <p><em>Attributes:</em> Functional</p>
+    <p><em>Source:</em> <a data-link-type="dfn" href="80000-6-kindsOfQuantities.html#electric-potential" id="ref-for-electric-potential③">electric-potential</a></p>
+    <p><em>Target:</em> <a data-link-type="dfn" href="80000-3-kindsOfQuantities.html#path-length" id="ref-for-path-length①">80000-3-kindsOfQuantities:path-length</a></p>
+    <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="electric-potential-of-path-length" data-dfn-type="attribute" data-export id="dom-electric-potential-of-path-length-electric-potential-of-path-length-forward"><code>electric-potential-of-path-length-forward</code><a class="self-link" href="#dom-electric-potential-of-path-length-electric-potential-of-path-length-forward"></a></dfn></p>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../ontology.iupac.org/metrology.html#hasfactorforunitarykindofquantity" id="ref-for-hasfactorforunitarykindofquantity⑤">metrology:HasFactorForUnitaryKindOfQuantity</a></p>
+    <p><em>Properties with domain:</em> <a data-link-type="dfn">metrology:exponent</a> (must have value 1/1)</p>
+    <h3 class="heading settled" data-level="4.7" id="Resistance-of-electric-potential"><span class="secno">4.7. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="resistance-of-electric-potential">resistance-of-electric-potential<a class="self-link" href="#resistance-of-electric-potential"></a></dfn></span><a class="self-link" href="#Resistance-of-electric-potential"></a></h3>
+    <p><em>Attributes:</em> Functional</p>
+    <p><em>Source:</em> <a data-link-type="dfn" href="80000-6-kindsOfQuantities.html#resistance" id="ref-for-resistance②">resistance</a></p>
+    <p><em>Target:</em> <a data-link-type="dfn" href="80000-6-kindsOfQuantities.html#electric-potential" id="ref-for-electric-potential④">electric-potential</a></p>
+    <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="resistance-of-electric-potential" data-dfn-type="attribute" data-export id="dom-resistance-of-electric-potential-resistance-of-electric-potential-forward"><code>resistance-of-electric-potential-forward</code><a class="self-link" href="#dom-resistance-of-electric-potential-resistance-of-electric-potential-forward"></a></dfn></p>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../ontology.iupac.org/metrology.html#hasfactorforunitarykindofquantity" id="ref-for-hasfactorforunitarykindofquantity⑥">metrology:HasFactorForUnitaryKindOfQuantity</a></p>
+    <p><em>Properties with domain:</em> <a data-link-type="dfn">metrology:exponent</a> (must have value 1/1)</p>
+    <h3 class="heading settled" data-level="4.8" id="Resistance-of-electric-current"><span class="secno">4.8. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="resistance-of-electric-current">resistance-of-electric-current<a class="self-link" href="#resistance-of-electric-current"></a></dfn></span><a class="self-link" href="#Resistance-of-electric-current"></a></h3>
+    <p><em>Attributes:</em> Functional</p>
+    <p><em>Source:</em> <a data-link-type="dfn" href="80000-6-kindsOfQuantities.html#resistance" id="ref-for-resistance③">resistance</a></p>
+    <p><em>Target:</em> <a data-link-type="dfn" href="80000-6-kindsOfQuantities.html#electric-current" id="ref-for-electric-current③">electric-current</a></p>
+    <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="resistance-of-electric-current" data-dfn-type="attribute" data-export id="dom-resistance-of-electric-current-resistance-of-electric-current-forward"><code>resistance-of-electric-current-forward</code><a class="self-link" href="#dom-resistance-of-electric-current-resistance-of-electric-current-forward"></a></dfn></p>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../ontology.iupac.org/metrology.html#hasfactorforunitarykindofquantity" id="ref-for-hasfactorforunitarykindofquantity⑦">metrology:HasFactorForUnitaryKindOfQuantity</a></p>
+    <p><em>Properties with domain:</em> <a data-link-type="dfn">metrology:exponent</a> (must have value -1/1)</p>
    </div>
   </main>
 <script>
@@ -2001,44 +2091,319 @@ dfn > a.self-link::before      { content: "#"; }
   <h2 class="no-num no-ref heading settled" id="index"><span class="content">Index</span><a class="self-link" href="#index"></a></h2>
   <h3 class="no-num no-ref heading settled" id="index-defined-here"><span class="content">Terms defined by this specification</span><a class="self-link" href="#index-defined-here"></a></h3>
   <ul class="index">
-   <li><a href="#anyatomictype">anyAtomicType</a><span>, in §3.1</span>
-   <li><a href="#anyuri">anyURI</a><span>, in §3.2</span>
-   <li><a href="#base64binary">base64Binary</a><span>, in §3.3</span>
-   <li><a href="#boolean">boolean</a><span>, in §3.4</span>
-   <li><a href="#byte">byte</a><span>, in §3.10</span>
-   <li><a href="#date">date</a><span>, in §3.5</span>
-   <li><a href="#datetime">dateTime</a><span>, in §3.6</span>
-   <li><a href="#datetimestamp">dateTimeStamp</a><span>, in §3.7</span>
-   <li><a href="#daytimeduration">dayTimeDuration</a><span>, in §3.24</span>
-   <li><a href="#decimal">decimal</a><span>, in §3.8</span>
-   <li><a href="#double">double</a><span>, in §3.25</span>
-   <li><a href="#duration">duration</a><span>, in §3.26</span>
-   <li><a href="#float">float</a><span>, in §3.27</span>
-   <li><a href="#gday">gDay</a><span>, in §3.28</span>
-   <li><a href="#gmonth">gMonth</a><span>, in §3.29</span>
-   <li><a href="#gmonthday">gMonthDay</a><span>, in §3.30</span>
-   <li><a href="#gyear">gYear</a><span>, in §3.31</span>
-   <li><a href="#gyearmonth">gYearMonth</a><span>, in §3.32</span>
-   <li><a href="#hexbinary">hexBinary</a><span>, in §3.33</span>
-   <li><a href="#int">int</a><span>, in §3.11</span>
-   <li><a href="#integer">integer</a><span>, in §3.34</span>
-   <li><a href="#language">language</a><span>, in §3.35</span>
-   <li><a href="#long">long</a><span>, in §3.12</span>
-   <li><a href="#name">name</a><span>, in §3.36</span>
-   <li><a href="#ncname">NCName</a><span>, in §3.22</span>
-   <li><a href="#negativeinteger">negativeInteger</a><span>, in §3.13</span>
-   <li><a href="#nmtoken">NMTOKEN</a><span>, in §3.23</span>
-   <li><a href="#nonnegativeinteger">nonNegativeInteger</a><span>, in §3.14</span>
-   <li><a href="#nonpositiveinteger">nonPositiveInteger</a><span>, in §3.15</span>
-   <li><a href="#normalizedstring">normalizedString</a><span>, in §3.37</span>
-   <li><a href="#positiveinteger">positiveInteger</a><span>, in §3.16</span>
-   <li><a href="#short">short</a><span>, in §3.17</span>
-   <li><a href="#string">string</a><span>, in §3.9</span>
-   <li><a href="#time">time</a><span>, in §3.38</span>
-   <li><a href="#token">token</a><span>, in §3.39</span>
-   <li><a href="#unsignedbyte">unsignedByte</a><span>, in §3.18</span>
-   <li><a href="#unsignedint">unsignedInt</a><span>, in §3.19</span>
-   <li><a href="#unsignedlong">unsignedLong</a><span>, in §3.20</span>
-   <li><a href="#unsignedshort">unsignedShort</a><span>, in §3.21</span>
-   <li><a href="#yearmonthduration">yearMonthDuration</a><span>, in §3.40</span>
+   <li><a href="#electric-charge">electric-charge</a><span>, in §3.2</span>
+   <li><a href="#electric-charge-of-duration">electric-charge-of-duration</a><span>, in §4.2</span>
+   <li><a href="#dom-electric-charge-of-duration-electric-charge-of-duration-forward">electric-charge-of-duration-forward</a><span>, in §4.2</span>
+   <li><a href="#electric-charge-of-electric-current">electric-charge-of-electric-current</a><span>, in §4.1</span>
+   <li><a href="#dom-electric-charge-of-electric-current-electric-charge-of-electric-current-forward">electric-charge-of-electric-current-forward</a><span>, in §4.1</span>
+   <li><a href="#electric-current">electric-current</a><span>, in §3.1</span>
+   <li><a href="#electric-field-strength">electric-field-strength</a><span>, in §3.3</span>
+   <li><a href="#electric-field-strength-of-electric-charge">electric-field-strength-of-electric-charge</a><span>, in §4.4</span>
+   <li><a href="#dom-electric-field-strength-of-electric-charge-electric-field-strength-of-electric-charge-forward">electric-field-strength-of-electric-charge-forward</a><span>, in §4.4</span>
+   <li><a href="#electric-field-strength-of-force">electric-field-strength-of-force</a><span>, in §4.3</span>
+   <li><a href="#dom-electric-field-strength-of-force-electric-field-strength-of-force-forward">electric-field-strength-of-force-forward</a><span>, in §4.3</span>
+   <li><a href="#electric-potential">electric-potential</a><span>, in §3.4</span>
+   <li><a href="#electric-potential-of-electric-field-strength">electric-potential-of-electric-field-strength</a><span>, in §4.5</span>
+   <li><a href="#dom-electric-potential-of-electric-field-strength-electric-potential-of-electric-field-strength-forward">electric-potential-of-electric-field-strength-forward</a><span>, in §4.5</span>
+   <li><a href="#electric-potential-of-path-length">electric-potential-of-path-length</a><span>, in §4.6</span>
+   <li><a href="#dom-electric-potential-of-path-length-electric-potential-of-path-length-forward">electric-potential-of-path-length-forward</a><span>, in §4.6</span>
+   <li><a href="#resistance">resistance</a><span>, in §3.5</span>
+   <li><a href="#resistance-of-electric-current">resistance-of-electric-current</a><span>, in §4.8</span>
+   <li><a href="#dom-resistance-of-electric-current-resistance-of-electric-current-forward">resistance-of-electric-current-forward</a><span>, in §4.8</span>
+   <li><a href="#resistance-of-electric-potential">resistance-of-electric-potential</a><span>, in §4.7</span>
+   <li><a href="#dom-resistance-of-electric-potential-resistance-of-electric-potential-forward">resistance-of-electric-potential-forward</a><span>, in §4.7</span>
   </ul>
+  <aside class="dfn-panel" data-for="term-for-duration">
+   <a href="80000-3-kindsOfQuantities.html#duration">80000-3-kindsOfQuantities.html#duration</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-duration">3.2. electric-charge</a>
+    <li><a href="#ref-for-duration①">4.2. electric-charge-of-duration</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-path-length">
+   <a href="80000-3-kindsOfQuantities.html#path-length">80000-3-kindsOfQuantities.html#path-length</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-path-length">3.4. electric-potential</a>
+    <li><a href="#ref-for-path-length①">4.6. electric-potential-of-path-length</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-force">
+   <a href="80000-4-kindsOfQuantities.html#force">80000-4-kindsOfQuantities.html#force</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-force">3.3. electric-field-strength</a>
+    <li><a href="#ref-for-force①">4.3. electric-field-strength-of-force</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-electric-charge">
+   <a href="80000-6-kindsOfQuantities.html#electric-charge">80000-6-kindsOfQuantities.html#electric-charge</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-electric-charge">3.1. electric-current</a>
+    <li><a href="#ref-for-electric-charge①">3.3. electric-field-strength</a>
+    <li><a href="#ref-for-electric-charge②">4.1. electric-charge-of-electric-current</a>
+    <li><a href="#ref-for-electric-charge③">4.2. electric-charge-of-duration</a>
+    <li><a href="#ref-for-electric-charge④">4.4. electric-field-strength-of-electric-charge</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-electric-charge-of-duration-forward">
+   <a href="80000-6-kindsOfQuantities.html#electric-charge-of-duration-forward">80000-6-kindsOfQuantities.html#electric-charge-of-duration-forward</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-electric-charge-of-duration-forward">3.2. electric-charge</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-electric-charge-of-electric-current-forward">
+   <a href="80000-6-kindsOfQuantities.html#electric-charge-of-electric-current-forward">80000-6-kindsOfQuantities.html#electric-charge-of-electric-current-forward</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-electric-charge-of-electric-current-forward">3.1. electric-current</a>
+    <li><a href="#ref-for-electric-charge-of-electric-current-forward①">3.2. electric-charge</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-electric-current">
+   <a href="80000-6-kindsOfQuantities.html#electric-current">80000-6-kindsOfQuantities.html#electric-current</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-electric-current">3.2. electric-charge</a>
+    <li><a href="#ref-for-electric-current①">3.5. resistance</a>
+    <li><a href="#ref-for-electric-current②">4.1. electric-charge-of-electric-current</a>
+    <li><a href="#ref-for-electric-current③">4.8. resistance-of-electric-current</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-electric-field-strength">
+   <a href="80000-6-kindsOfQuantities.html#electric-field-strength">80000-6-kindsOfQuantities.html#electric-field-strength</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-electric-field-strength">3.2. electric-charge</a>
+    <li><a href="#ref-for-electric-field-strength①">3.4. electric-potential</a>
+    <li><a href="#ref-for-electric-field-strength②">4.3. electric-field-strength-of-force</a>
+    <li><a href="#ref-for-electric-field-strength③">4.4. electric-field-strength-of-electric-charge</a>
+    <li><a href="#ref-for-electric-field-strength④">4.5. electric-potential-of-electric-field-strength</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-electric-field-strength-of-electric-charge-forward">
+   <a href="80000-6-kindsOfQuantities.html#electric-field-strength-of-electric-charge-forward">80000-6-kindsOfQuantities.html#electric-field-strength-of-electric-charge-forward</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-electric-field-strength-of-electric-charge-forward">3.2. electric-charge</a>
+    <li><a href="#ref-for-electric-field-strength-of-electric-charge-forward①">3.3. electric-field-strength</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-electric-field-strength-of-force-forward">
+   <a href="80000-6-kindsOfQuantities.html#electric-field-strength-of-force-forward">80000-6-kindsOfQuantities.html#electric-field-strength-of-force-forward</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-electric-field-strength-of-force-forward">3.3. electric-field-strength</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-electric-potential">
+   <a href="80000-6-kindsOfQuantities.html#electric-potential">80000-6-kindsOfQuantities.html#electric-potential</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-electric-potential">3.3. electric-field-strength</a>
+    <li><a href="#ref-for-electric-potential①">3.5. resistance</a>
+    <li><a href="#ref-for-electric-potential②">4.5. electric-potential-of-electric-field-strength</a>
+    <li><a href="#ref-for-electric-potential③">4.6. electric-potential-of-path-length</a>
+    <li><a href="#ref-for-electric-potential④">4.7. resistance-of-electric-potential</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-electric-potential-of-electric-field-strength-forward">
+   <a href="80000-6-kindsOfQuantities.html#electric-potential-of-electric-field-strength-forward">80000-6-kindsOfQuantities.html#electric-potential-of-electric-field-strength-forward</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-electric-potential-of-electric-field-strength-forward">3.3. electric-field-strength</a>
+    <li><a href="#ref-for-electric-potential-of-electric-field-strength-forward①">3.4. electric-potential</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-electric-potential-of-path-length-forward">
+   <a href="80000-6-kindsOfQuantities.html#electric-potential-of-path-length-forward">80000-6-kindsOfQuantities.html#electric-potential-of-path-length-forward</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-electric-potential-of-path-length-forward">3.4. electric-potential</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-resistance">
+   <a href="80000-6-kindsOfQuantities.html#resistance">80000-6-kindsOfQuantities.html#resistance</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-resistance">3.1. electric-current</a>
+    <li><a href="#ref-for-resistance①">3.4. electric-potential</a>
+    <li><a href="#ref-for-resistance②">4.7. resistance-of-electric-potential</a>
+    <li><a href="#ref-for-resistance③">4.8. resistance-of-electric-current</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-resistance-of-electric-current-forward">
+   <a href="80000-6-kindsOfQuantities.html#resistance-of-electric-current-forward">80000-6-kindsOfQuantities.html#resistance-of-electric-current-forward</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-resistance-of-electric-current-forward">3.1. electric-current</a>
+    <li><a href="#ref-for-resistance-of-electric-current-forward①">3.5. resistance</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-resistance-of-electric-potential-forward">
+   <a href="80000-6-kindsOfQuantities.html#resistance-of-electric-potential-forward">80000-6-kindsOfQuantities.html#resistance-of-electric-potential-forward</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-resistance-of-electric-potential-forward">3.4. electric-potential</a>
+    <li><a href="#ref-for-resistance-of-electric-potential-forward①">3.5. resistance</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-ampere">
+   <a href="80000-6-units.html#ampere">80000-6-units.html#ampere</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-ampere">3.1. electric-current</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-coulomb">
+   <a href="80000-6-units.html#coulomb">80000-6-units.html#coulomb</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-coulomb">3.2. electric-charge</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-newton-per-coulomb">
+   <a href="80000-6-units.html#newton-per-coulomb">80000-6-units.html#newton-per-coulomb</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-newton-per-coulomb">3.3. electric-field-strength</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-ohm">
+   <a href="80000-6-units.html#ohm">80000-6-units.html#ohm</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-ohm">3.5. resistance</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-volt">
+   <a href="80000-6-units.html#volt">80000-6-units.html#volt</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-volt">3.4. electric-potential</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-derivedunitarykindofquantity">
+   <a href="../ontology.iupac.org/metrology.html#derivedunitarykindofquantity">../ontology.iupac.org/metrology.html#derivedunitarykindofquantity</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-derivedunitarykindofquantity">3.2. electric-charge</a>
+    <li><a href="#ref-for-derivedunitarykindofquantity①">3.3. electric-field-strength</a>
+    <li><a href="#ref-for-derivedunitarykindofquantity②">3.4. electric-potential</a>
+    <li><a href="#ref-for-derivedunitarykindofquantity③">3.5. resistance</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-forquantitiesofthesameunitarykindofquantity">
+   <a href="../ontology.iupac.org/metrology.html#forquantitiesofthesameunitarykindofquantity">../ontology.iupac.org/metrology.html#forquantitiesofthesameunitarykindofquantity</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-forquantitiesofthesameunitarykindofquantity">3.1. electric-current</a>
+    <li><a href="#ref-for-forquantitiesofthesameunitarykindofquantity①">3.2. electric-charge</a>
+    <li><a href="#ref-for-forquantitiesofthesameunitarykindofquantity②">3.3. electric-field-strength</a>
+    <li><a href="#ref-for-forquantitiesofthesameunitarykindofquantity③">3.4. electric-potential</a>
+    <li><a href="#ref-for-forquantitiesofthesameunitarykindofquantity④">3.5. resistance</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-hasfactorforunitarykindofquantity">
+   <a href="../ontology.iupac.org/metrology.html#hasfactorforunitarykindofquantity">../ontology.iupac.org/metrology.html#hasfactorforunitarykindofquantity</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-hasfactorforunitarykindofquantity">4.1. electric-charge-of-electric-current</a>
+    <li><a href="#ref-for-hasfactorforunitarykindofquantity①">4.2. electric-charge-of-duration</a>
+    <li><a href="#ref-for-hasfactorforunitarykindofquantity②">4.3. electric-field-strength-of-force</a>
+    <li><a href="#ref-for-hasfactorforunitarykindofquantity③">4.4. electric-field-strength-of-electric-charge</a>
+    <li><a href="#ref-for-hasfactorforunitarykindofquantity④">4.5. electric-potential-of-electric-field-strength</a>
+    <li><a href="#ref-for-hasfactorforunitarykindofquantity⑤">4.6. electric-potential-of-path-length</a>
+    <li><a href="#ref-for-hasfactorforunitarykindofquantity⑥">4.7. resistance-of-electric-potential</a>
+    <li><a href="#ref-for-hasfactorforunitarykindofquantity⑦">4.8. resistance-of-electric-current</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-independentunitarykindofquantity">
+   <a href="../ontology.iupac.org/metrology.html#independentunitarykindofquantity">../ontology.iupac.org/metrology.html#independentunitarykindofquantity</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-independentunitarykindofquantity">3.1. electric-current</a>
+   </ul>
+  </aside>
+  <h3 class="no-num no-ref heading settled" id="index-defined-elsewhere"><span class="content">Terms defined by reference</span><a class="self-link" href="#index-defined-elsewhere"></a></h3>
+  <ul class="index">
+   <li>
+    <a data-link-type="biblio">[http://iso.org/80000-3-kindsofquantities]</a> defines the following terms:
+    <ul>
+     <li><span class="dfn-paneled" id="term-for-duration">duration</span>
+     <li><span class="dfn-paneled" id="term-for-path-length">path-length</span>
+    </ul>
+   <li>
+    <a data-link-type="biblio">[http://iso.org/80000-4-kindsofquantities]</a> defines the following terms:
+    <ul>
+     <li><span class="dfn-paneled" id="term-for-force">force</span>
+    </ul>
+   <li>
+    <a data-link-type="biblio">[http://iso.org/80000-6-kindsofquantities]</a> defines the following terms:
+    <ul>
+     <li><span class="dfn-paneled" id="term-for-electric-charge">electric-charge</span>
+     <li><span class="dfn-paneled" id="term-for-electric-charge-of-duration-forward">electric-charge-of-duration-forward</span>
+     <li><span class="dfn-paneled" id="term-for-electric-charge-of-electric-current-forward">electric-charge-of-electric-current-forward</span>
+     <li><span class="dfn-paneled" id="term-for-electric-current">electric-current</span>
+     <li><span class="dfn-paneled" id="term-for-electric-field-strength">electric-field-strength</span>
+     <li><span class="dfn-paneled" id="term-for-electric-field-strength-of-electric-charge-forward">electric-field-strength-of-electric-charge-forward</span>
+     <li><span class="dfn-paneled" id="term-for-electric-field-strength-of-force-forward">electric-field-strength-of-force-forward</span>
+     <li><span class="dfn-paneled" id="term-for-electric-potential">electric-potential</span>
+     <li><span class="dfn-paneled" id="term-for-electric-potential-of-electric-field-strength-forward">electric-potential-of-electric-field-strength-forward</span>
+     <li><span class="dfn-paneled" id="term-for-electric-potential-of-path-length-forward">electric-potential-of-path-length-forward</span>
+     <li><span class="dfn-paneled" id="term-for-resistance">resistance</span>
+     <li><span class="dfn-paneled" id="term-for-resistance-of-electric-current-forward">resistance-of-electric-current-forward</span>
+     <li><span class="dfn-paneled" id="term-for-resistance-of-electric-potential-forward">resistance-of-electric-potential-forward</span>
+    </ul>
+   <li>
+    <a data-link-type="biblio">[http://iso.org/80000-6-units]</a> defines the following terms:
+    <ul>
+     <li><span class="dfn-paneled" id="term-for-ampere">ampere</span>
+     <li><span class="dfn-paneled" id="term-for-coulomb">coulomb</span>
+     <li><span class="dfn-paneled" id="term-for-newton-per-coulomb">newton-per-coulomb</span>
+     <li><span class="dfn-paneled" id="term-for-ohm">ohm</span>
+     <li><span class="dfn-paneled" id="term-for-volt">volt</span>
+    </ul>
+   <li>
+    <a data-link-type="biblio">[http://ontology.iupac.org/metrology]</a> defines the following terms:
+    <ul>
+     <li><span class="dfn-paneled" id="term-for-derivedunitarykindofquantity">derivedunitarykindofquantity</span>
+     <li><span class="dfn-paneled" id="term-for-forquantitiesofthesameunitarykindofquantity">forquantitiesofthesameunitarykindofquantity</span>
+     <li><span class="dfn-paneled" id="term-for-hasfactorforunitarykindofquantity">hasfactorforunitarykindofquantity</span>
+     <li><span class="dfn-paneled" id="term-for-independentunitarykindofquantity">independentunitarykindofquantity</span>
+    </ul>
+  </ul>
+<script>/* script-dfn-panel */
+
+document.body.addEventListener("click", function(e) {
+    var queryAll = function(sel) { return [].slice.call(document.querySelectorAll(sel)); }
+    // Find the dfn element or panel, if any, that was clicked on.
+    var el = e.target;
+    var target;
+    var hitALink = false;
+    while(el.parentElement) {
+        if(el.tagName == "A") {
+            // Clicking on a link in a <dfn> shouldn't summon the panel
+            hitALink = true;
+        }
+        if(el.classList.contains("dfn-paneled")) {
+            target = "dfn";
+            break;
+        }
+        if(el.classList.contains("dfn-panel")) {
+            target = "dfn-panel";
+            break;
+        }
+        el = el.parentElement;
+    }
+    if(target != "dfn-panel") {
+        // Turn off any currently "on" or "activated" panels.
+        queryAll(".dfn-panel.on, .dfn-panel.activated").forEach(function(el){
+            el.classList.remove("on");
+            el.classList.remove("activated");
+        });
+    }
+    if(target == "dfn" && !hitALink) {
+        // open the panel
+        var dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
+        if(dfnPanel) {
+            dfnPanel.classList.add("on");
+            var rect = el.getBoundingClientRect();
+            dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
+            dfnPanel.style.top = window.scrollY + rect.top + "px";
+            var panelRect = dfnPanel.getBoundingClientRect();
+            var panelWidth = panelRect.right - panelRect.left;
+            if(panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
+                // Reposition, because the panel is overflowing
+                dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
+            }
+        } else {
+            console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
+        }
+    } else if(target == "dfn-panel") {
+        // Switch it to "activated" state, which pins it.
+        el.classList.add("activated");
+        el.style.left = null;
+        el.style.top = null;
+    }
+
+});
+</script>
