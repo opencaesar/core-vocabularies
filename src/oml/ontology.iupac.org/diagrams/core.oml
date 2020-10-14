@@ -23,7 +23,7 @@ vocabulary <http://ontology.iupac.org/metrology/diagrams/core> with # as core {
     ref aspect metrology:ReferenceMaterial
 
     @diagram:include
-    ref concept metrology:Quantity
+    ref aspect metrology:Quantity
 
     @diagram:include
     ref relation entity metrology:IsQuantityOf

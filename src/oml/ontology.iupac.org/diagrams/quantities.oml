@@ -17,7 +17,7 @@ vocabulary <http://ontology.iupac.org/metrology/diagams/quantities> with # as qu
     ref concept metrology:UnitaryQuantityValue
 
     @diagram:include
-    ref concept metrology:Quantity
+    ref aspect metrology:Quantity
 
     @diagram:include
     ref relation entity metrology:IsQuantityOf

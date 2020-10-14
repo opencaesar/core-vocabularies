@@ -83,19 +83,18 @@ vocabulary <http://ontology.iupac.org/metrology> with # as metrology {
     This definition is adapted from the expanded definition of 'quantity' (S.12.13, S.12.14).
 
     In principle, metrology:Quantity could be defined in two ways:
-    - A concept as is currently done with two separate relations to a metrology:Object and a metrology:QuantityValue.
+    - An aspect as is currently done with two separate relations to a metrology:Object and a metrology:QuantityValue.
     - A relation from a metrology:Object to a metrology:QuantityValue.
 
-    The latter is more concise than the former; however, the former provides an important advantage compared to the latter.
-    The former is practically more restrictive than the latter because the former requires every definition of 
-    a metrology:Quantity to specify explicitly a particular metrology:Object and metrology:QuantityValue whereas with the latter,
-    the metrology:Object and metrology:QuantityValue can be specified explicitly or implicitly via axioms constraining
-    the relations metrology:isQuantityOf and metrology:hasQuantityValue respectively. 
-    This vocabulary retains the latter definition as a relation for pragmatic reasons.
+    The latter is more concise than the former; however, it is practically more restrictive than the former because 
+    it requires every definition of a metrology:Quantity to specify explicitly a particular metrology:Object and metrology:QuantityValue.
+    With the former, the metrology:Object and metrology:QuantityValue can be specified explicitly or implicitly via axioms constraining
+    the relations metrology:isQuantityOf and metrology:hasQuantityValue respectively. Furthermore, the former allows
+    defining a metrology:Quantity as a relation, thereby subsuming the latter.
     "
 	@dc:source "quantity [https://jcgm.bipm.org/vim/en/1.1.html]"
 	@dc:source "quantity [https://iupac.org/wp-content/uploads/2016/01/ontology-on-Property-Division-VII.pdf, 12.13, p 115]"
-	concept Quantity :> MetrologicalEntity
+	aspect Quantity :> MetrologicalEntity
 
 	@dc:^description "Specifies the metrology:Object that the metrology:Quantity is a feature of.
     Although every metrology:Quantity must have exactly one metrology:Object as its metrology:isQuantityOf,
@@ -128,7 +127,7 @@ vocabulary <http://ontology.iupac.org/metrology> with # as metrology {
     that can be stated only to be lesser than, equal to, or greater than another quantity of the same metrology:KindOfQuantity.
     "
 	@dc:source "ordinal quantity [https://iupac.org/wp-content/uploads/2016/01/ontology-on-Property-Division-VII.pdf, 12.16, p 116]"
-	concept OrdinalQuantity :> Quantity [
+	aspect OrdinalQuantity :> Quantity [
 		restricts all relation hasKindOfQuantity to OrdinalKindOfQuantity
 	]
 
@@ -136,7 +135,7 @@ vocabulary <http://ontology.iupac.org/metrology> with # as metrology {
     multiplied by a number.
     "
 	@dc:source "unitary quantity [https://iupac.org/wp-content/uploads/2016/01/ontology-on-Property-Division-VII.pdf, 12.17, p 116-7]"
-	concept UnitaryQuantity :> Quantity [
+	aspect UnitaryQuantity :> Quantity [
 		restricts all relation hasKindOfQuantity to UnitaryKindOfQuantity
 	]
 
