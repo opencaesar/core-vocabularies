@@ -1,0 +1,17 @@
+description <http://iso.org/80000-4-instances> with # as 80000-4-instances {
+  uses <http://iso.org/80000-4-units>
+
+  @dc:source "4-1"
+  ci gram : 80000-4-units:gram
+
+  ci kilogram : 80000-4-units:kilogram
+
+  @dc:source "4-8"
+  ci kilogram-metre-per-second : 80000-4-units:kilogram-metre-per-second
+
+  @dc:source "4-9"
+  ci newton : 80000-4-units:newton
+
+  @dc:source "4-27"
+  ci watt : 80000-4-units:watt
+}

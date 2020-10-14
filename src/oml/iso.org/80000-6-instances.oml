@@ -1,0 +1,18 @@
+description <http://iso.org/80000-6-instances> with # as 80000-6-instances {
+  uses <http://iso.org/80000-6-units>
+
+  @dc:source "6-1"
+  ci ampere : 80000-6-units:ampere
+
+  @dc:source "6-2"
+  ci coulomb : 80000-6-units:coulomb
+
+  @dc:source "6-10"
+  ci newton-per-coulomb : 80000-6-units:newton-per-coulomb
+
+  @dc:source "6-11"
+  ci volt : 80000-6-units:volt
+
+  @dc:source "6-46"
+  ci ohm : 80000-6-units:ohm
+}

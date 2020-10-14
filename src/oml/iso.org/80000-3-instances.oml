@@ -1,0 +1,31 @@
+description <http://iso.org/80000-3-instances> with # as 80000-3-instances {
+  uses <http://iso.org/80000-3-units>
+
+  @dc:source "3-1"
+  ci metre : 80000-3-units:metre
+ 
+  ci kilometre : 80000-3-units:kilometre
+
+  @dc:source "3-5"
+  ci radian : 80000-3-units:radian
+ 
+  @dc:source "3-9"
+  ci second : 80000-3-units:second
+ 
+  ci millisecond : 80000-3-units:millisecond
+
+  ci minute : 80000-3-units:minute
+
+  ci hour : 80000-3-units:hour
+
+  @dc:source "3-10"
+  ci metre-per-second : 80000-3-units:metre-per-second
+
+  ci kilometre-per-second : 80000-3-units:kilometre-per-second
+
+  @dc:source "3-16"
+  ci revolutions : 80000-3-units:revolutions
+
+  @dc:source "3-17"
+  ci hertz : 80000-3-units:hertz
+}
