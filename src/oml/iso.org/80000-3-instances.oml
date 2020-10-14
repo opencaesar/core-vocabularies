@@ -1,15 +1,37 @@
 description <http://iso.org/80000-3-instances> with # as 80000-3-instances {
-  uses <http://iso.org/80000-3-units>
+  uses <http://iso.org/80000-3-kindsOfQuantities>
 
   @dc:source "3-1"
+  ci ^length : 80000-3-kindsOfQuantities:^length
+  ci width : 80000-3-kindsOfQuantities:width
+  ci breadth : 80000-3-kindsOfQuantities:breadth
+  ci height : 80000-3-kindsOfQuantities:height
+  ci depth : 80000-3-kindsOfQuantities:depth
+  ci altitude : 80000-3-kindsOfQuantities:altitude
+  ci thickness : 80000-3-kindsOfQuantities:thickness
+  ci diameter : 80000-3-kindsOfQuantities:diameter
+  ci radius : 80000-3-kindsOfQuantities:radius
+  ci path-length : 80000-3-kindsOfQuantities:path-length
+  ci arc-length : 80000-3-kindsOfQuantities:arc-length
+  ci distance : 80000-3-kindsOfQuantities:distance
+  ci radial-distance : 80000-3-kindsOfQuantities:radial-distance
+  ci position-vector : 80000-3-kindsOfQuantities:position-vector
+  ci displacement : 80000-3-kindsOfQuantities:displacement
+  ci radius-of-curvature : 80000-3-kindsOfQuantities:radius-of-curvature
   ci metre : 80000-3-units:metre
  
   ci kilometre : 80000-3-units:kilometre
 
   @dc:source "3-5"
+  ci angular-measure : 80000-3-kindsOfQuantities:angular-measure
   ci radian : 80000-3-units:radian
  
+
+  @dc:source "3-6"
+  ci rotational-displacement : 80000-3-kindsOfQuantities:rotational-displacement
+  
   @dc:source "3-9"
+  ci duration : 80000-3-kindsOfQuantities:duration
   ci second : 80000-3-units:second
  
   ci millisecond : 80000-3-units:millisecond
@@ -19,13 +41,20 @@ description <http://iso.org/80000-3-instances> with # as 80000-3-instances {
   ci hour : 80000-3-units:hour
 
   @dc:source "3-10"
+  ci velocity : 80000-3-kindsOfQuantities:velocity
   ci metre-per-second : 80000-3-units:metre-per-second
 
   ci kilometre-per-second : 80000-3-units:kilometre-per-second
 
+  @dc:source "3-14"
+  ci period-duration : 80000-3-kindsOfQuantities:period-duration
+
   @dc:source "3-16"
+  ci rotation : 80000-3-kindsOfQuantities:rotation
   ci revolutions : 80000-3-units:revolutions
 
   @dc:source "3-17"
+  ci frequency : 80000-3-kindsOfQuantities:frequency
+  ci rotational-frequency : 80000-3-kindsOfQuantities:rotational-frequency
   ci hertz : 80000-3-units:hertz
 }
