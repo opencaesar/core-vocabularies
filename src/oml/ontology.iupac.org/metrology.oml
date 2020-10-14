@@ -82,15 +82,12 @@ vocabulary <http://ontology.iupac.org/metrology> with # as metrology {
 
     This definition is adapted from the expanded definition of 'quantity' (S.12.13, S.12.14).
 
-    In principle, metrology:Quantity could be defined in two ways:
-    - An aspect as is currently done with two separate relations to a metrology:Object and a metrology:QuantityValue.
-    - A relation from a metrology:Object to a metrology:QuantityValue.
-
-    The latter is more concise than the former; however, it is practically more restrictive than the former because 
-    it requires every definition of a metrology:Quantity to specify explicitly a particular metrology:Object and metrology:QuantityValue.
-    With the former, the metrology:Object and metrology:QuantityValue can be specified explicitly or implicitly via axioms constraining
-    the relations metrology:isQuantityOf and metrology:hasQuantityValue respectively. Furthermore, the former allows
-    defining a metrology:Quantity as a relation, thereby subsuming the latter.
+    The definition of metrology:Quantity as an OML aspect provides significant flexibility for modeling.
+    1) The relationship metrology:IsQuantityOf between a metrology:Quantity and a metrology:Object can be specified
+    explicitly (i.e., asserted) or implicitly via axioms contraining metrology:isQuantityOf.
+    2) The relationship metrology:HasMagnitude between a metrology:Quantity and a metrology:QuantityValue can be
+    specified explicitly (i.e., asserted) or implicitly via axioms constraining metrology:hasMagnitude.
+    3) metrology:Quantity and metrology:QuantityValue can be modeled as distinct entities or the same entity.
     "
 	@dc:source "quantity [https://jcgm.bipm.org/vim/en/1.1.html]"
 	@dc:source "quantity [https://iupac.org/wp-content/uploads/2016/01/ontology-on-Property-Division-VII.pdf, 12.13, p 115]"
@@ -139,7 +136,7 @@ vocabulary <http://ontology.iupac.org/metrology> with # as metrology {
 		restricts all relation hasKindOfQuantity to UnitaryKindOfQuantity
 	]
 
-  @dc:^description "metrology:HasKindOfQuantity establishes the associative relationship between the concepts of metrology:Quantity and metrology:KindOfQuantity.
+	@dc:^description "metrology:HasKindOfQuantity establishes the associative relationship between the concepts of metrology:Quantity and metrology:KindOfQuantity.
   There concepts differ in two fundamental ways:
   1) The concept of metrology:Quantity is intrinsically tied to a metrology:Object for which it is a metrology:isQuantityOf; 
   there is no corresponding capability for metrology:KindOfQuantity.
@@ -179,7 +176,7 @@ vocabulary <http://ontology.iupac.org/metrology> with # as metrology {
 	@dc:source "derived unitary kind-of-quantity [https://iupac.org/wp-content/uploads/2016/01/ontology-on-Property-Division-VII.pdf, 13.11, p. 130-1]"
 	concept DerivedUnitaryKindOfQuantity :> UnitaryKindOfQuantity
 
-  @dc:^description "In dimensional calculus, a metrology:DerivedUnitaryKindOfQuantity algebraically depends on a metrology:UnitaryKindOfQuantity as a product factor raised to a rational exponent."
+	@dc:^description "In dimensional calculus, a metrology:DerivedUnitaryKindOfQuantity algebraically depends on a metrology:UnitaryKindOfQuantity as a product factor raised to a rational exponent."
 	@dc:source "derived quantity [https://jcgm.bipm.org/vim/en/1.5.html]"
 	@dc:source "derived unitary kind-of-quantity [https://iupac.org/wp-content/uploads/2016/01/ontology-on-Property-Division-VII.pdf, 13.11, p. 130-1]"
 	relation entity HasFactorForUnitaryKindOfQuantity :> ExponentFactor [
@@ -212,7 +209,7 @@ vocabulary <http://ontology.iupac.org/metrology> with # as metrology {
 	@dc:source "system of unitary kinds-of-quantity [https://iupac.org/wp-content/uploads/2016/01/ontology-on-Property-Division-VII.pdf, 13.7, p 129]"
 	concept SystemOfUnitaryKindsOfQuantities :> MetrologicalEntity
 
-  @dc:^description "A metrology:SystemHasUnitaryKindOfQuantity specifies that a metrology:SystemOfUnitaryKindsOfQuantities includes a metrology:UnitaryKindOfQuantity."
+	@dc:^description "A metrology:SystemHasUnitaryKindOfQuantity specifies that a metrology:SystemOfUnitaryKindsOfQuantities includes a metrology:UnitaryKindOfQuantity."
 	@dc:source "system of quantities [https://jcgm.bipm.org/vim/en/1.3.html]"
 	@dc:source "system of unitary kinds-of-quantity [https://iupac.org/wp-content/uploads/2016/01/ontology-on-Property-Division-VII.pdf, 13.7, p 129]"
 	relation entity SystemHasUnitaryKindOfQuantity [
@@ -221,7 +218,7 @@ vocabulary <http://ontology.iupac.org/metrology> with # as metrology {
 		forward systemHasUnitaryKindOfQuantity
 	]
 
-  @dc:^description "It is a property of a metrology:SystemOfUnitaryKindsOfQuantities to select of a subset of metrology:UnitaryKindOfQuantity 
+	@dc:^description "It is a property of a metrology:SystemOfUnitaryKindsOfQuantities to select of a subset of metrology:UnitaryKindOfQuantity 
   as being functionally independent of each other as its base metrology:UnitaryKindOfQuantity
   such that the other metrology:UnitaryKindOfQuantity in the system can be algebraically derived from the base metrology:UnitaryKindOfQuantity.
   
@@ -241,12 +238,17 @@ vocabulary <http://ontology.iupac.org/metrology> with # as metrology {
 
 	// Definitions from Chapter 15: Generic concept system on <examination>, <measurement>; quantification.
 	// Definitions from Chapter 16: Generic concept system on <property value>, <quantity value> and allied concepts.
-	@dc:^description "metrology:QuantityValue is the magnitude of a metrology:Quantity represented by a number and a reference."
+	@dc:^description "metrology:QuantityValue is the magnitude of a metrology:Quantity represented by a number and a reference.
+  
+    The definition of metrology:QuantityValue as an OML aspect provides significant flexibility for modeling.
+    1) The relationship metrology:HasMagnitude between a metrology:Quantity and a metrology:QuantityValue can be
+    specified explicitly (i.e., asserted) or implicitly via axioms constraining metrology:hasMagnitude.
+    2) metrology:Quantity and metrology:QuantityValue can be modeled as distinct entities or the same entity."
 	@dc:source "quantity value [https://jcgm.bipm.org/vim/en/1.19.html]"
 	@dc:source "quantity value [https://iupac.org/wp-content/uploads/2016/01/ontology-on-Property-Division-VII.pdf, 16.7 and 16.8, p 162]"
-	concept QuantityValue :> MetrologicalEntity
+	aspect QuantityValue :> MetrologicalEntity
 
-  @dc:^description "metrology:hasDoubleNumber provides the capability to specify the number of a metrology:QuantityValue as an IEEE 64-bit floating-point number.
+	@dc:^description "metrology:hasDoubleNumber provides the capability to specify the number of a metrology:QuantityValue as an IEEE 64-bit floating-point number.
   If this capability is inadequate, the metrology vocabulary can be extended with additional properties for an alternate representation of a number."
 	scalar property hasDoubleNumber [
 		domain QuantityValue
@@ -254,7 +256,7 @@ vocabulary <http://ontology.iupac.org/metrology> with # as metrology {
 		functional
 	]
 
-  @dc:^description "metrology:HasReference provides the capability to specify the reference involved in measuring the magnitue of a metrology:Quantity."
+	@dc:^description "metrology:HasReference provides the capability to specify the reference involved in measuring the magnitue of a metrology:Quantity."
 	relation entity HasReference [
 		from QuantityValue
 		to Reference
@@ -263,12 +265,12 @@ vocabulary <http://ontology.iupac.org/metrology> with # as metrology {
 	]
 
 	@dc:source "ordinal quantity value [https://iupac.org/wp-content/uploads/2016/01/ontology-on-Property-Division-VII.pdf, 16.9, p 163]"
-	concept OrdinalQuantityValue :> QuantityValue [
+	aspect OrdinalQuantityValue :> QuantityValue [
 		restricts all relation hasReference to MeasurementProcedure
 	]
 
 	@dc:source "unitary quantity value [https://iupac.org/wp-content/uploads/2016/01/ontology-on-Property-Division-VII.pdf, 16.10, p 163]"
-	concept UnitaryQuantityValue :> QuantityValue [
+	aspect UnitaryQuantityValue :> QuantityValue [
 		restricts all relation hasReference to MeasurementUnit
 	]
 
@@ -345,7 +347,7 @@ vocabulary <http://ontology.iupac.org/metrology> with # as metrology {
 	@dc:source "derived metrological unit, derived unit [https://iupac.org/wp-content/uploads/2016/01/ontology-on-Property-Division-VII.pdf, 18.17, p 192]"
 	concept DerivedMeasurementUnit :> CoherentMeasurementUnit
 
-  @dc:^description "In dimensional calculus, a metrology:DerivedMeasurementUnit algebraically depends on a metrology:MeasurementUnit as a product factor raised to a rational exponent."
+	@dc:^description "In dimensional calculus, a metrology:DerivedMeasurementUnit algebraically depends on a metrology:MeasurementUnit as a product factor raised to a rational exponent."
 	@dc:source "derived unit [https://jcgm.bipm.org/vim/en/1.11.html]"
 	@dc:source "derived metrological unit, derived unit [https://iupac.org/wp-content/uploads/2016/01/ontology-on-Property-Division-VII.pdf, 18.17, p 192]"
 	relation entity HasFactorForMeasurementUnit :> ExponentFactor [
@@ -362,7 +364,7 @@ vocabulary <http://ontology.iupac.org/metrology> with # as metrology {
 	@dc:source "system of metrological units [https://iupac.org/wp-content/uploads/2016/01/ontology-on-Property-Division-VII.pdf, 18.25, p 195]"
 	concept SystemOfMetrologicalUnits :> MetrologicalEntity
 
-  @dc:^description "A metrology:SystemHasMetrologicalUnit specifies that a metrology:SystemOfMetrologicalUnits includes a metrology:MeasurementUnit."
+	@dc:^description "A metrology:SystemHasMetrologicalUnit specifies that a metrology:SystemOfMetrologicalUnits includes a metrology:MeasurementUnit."
 	@dc:source "system of units [https://jcgm.bipm.org/vim/en/1.13.html]"
 	@dc:source "system of metrological units [https://iupac.org/wp-content/uploads/2016/01/ontology-on-Property-Division-VII.pdf, 18.25, p 195]"
 	relation entity SystemHasMetrologicalUnit [
@@ -371,7 +373,7 @@ vocabulary <http://ontology.iupac.org/metrology> with # as metrology {
 		forward systemHasMetrologicalUnit
 	]
 
-  @dc:^description "It is a property of a metrology:SystemOfMetrologicalUnits to select of a subset of metrology:MeasurementUnit 
+	@dc:^description "It is a property of a metrology:SystemOfMetrologicalUnits to select of a subset of metrology:MeasurementUnit 
   as being functionally independent of each other as its base metrology:MeasurementUnit(s)
   such that the other metrology:MeasurementUnit(s) in the system can be algebraically derived from the base metrology:MeasurementUnit(s).
   

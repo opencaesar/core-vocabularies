@@ -8,13 +8,13 @@ vocabulary <http://ontology.iupac.org/metrology/diagams/quantities> with # as qu
     
     @diagram:include
     @diagram:include "properties"
-    ref concept metrology:QuantityValue
+    ref aspect metrology:QuantityValue
 
     @diagram:include
-    ref concept metrology:OrdinalQuantityValue
+    ref aspect metrology:OrdinalQuantityValue
 
     @diagram:include
-    ref concept metrology:UnitaryQuantityValue
+    ref aspect metrology:UnitaryQuantityValue
 
     @diagram:include
     ref aspect metrology:Quantity
@@ -28,7 +28,6 @@ vocabulary <http://ontology.iupac.org/metrology/diagams/quantities> with # as qu
     @diagram:include
     ref relation entity metrology:HasReference
     
-
     @diagram:include
     ref concept metrology:KindOfQuantity
     
