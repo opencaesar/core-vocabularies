@@ -42,14 +42,17 @@ vocabulary <http://iso.org/80000-3-units> with # as 80000-3-units {
     concept second :> Second, metrology:IndependentMeasurementUnit
 
     concept millisecond :> Second, metrology:PrefixedMeasurementUnit [
-        
-    ]
-    concept minute :> Second, metrology:NonCoherentDerivedMeasurementUnit [
-        restricts scalar property metrology:nonCoherentRelationship to "1 minute = 60 seconds"
+        restricts relation metrology:hasPrefix to 80000-1:milli
     ]
 
-    concept hour :> minute, metrology:NonCoherentDerivedMeasurementUnit [
+    concept minute :> metrology:NonCoherentDerivedMeasurementUnit [
+        restricts scalar property metrology:nonCoherentRelationship to "1 minute = 60 seconds"^^xsd:string
+        restricts all relation metrology:nonCoherentDerivedMeasurementUnitOf to second
+    ]
+
+    concept hour :> metrology:NonCoherentDerivedMeasurementUnit [
         restricts scalar property metrology:nonCoherentRelationship to "1 hour = 60 minutes"
+        restricts all relation metrology:nonCoherentDerivedMeasurementUnitOf to minute
     ]
 
     @dc:source "3-10"

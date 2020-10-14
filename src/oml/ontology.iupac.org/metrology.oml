@@ -289,10 +289,23 @@ vocabulary <http://ontology.iupac.org/metrology> with # as metrology {
 	aspect MeasurementUnit :> Reference
 
 	@dc:^description "A metrology:NonCoherentDerivedMeasurementUnit is a metrology:MeasurementUnit 
-  that has a proportionality factor different than one with respect to another metrology:MeasurementUnit (that it must specialize)."
+  that has a proportionality factor different than one with respect to another metrology:MeasurementUnit."
 	@dc:source "non-coherent derived measurement unit [https://iupac.org/wp-content/uploads/2016/01/ontology-on-Property-Division-VII.pdf, 18.20, p 194]"
-	concept NonCoherentDerivedMeasurementUnit :> MeasurementUnit
+	concept NonCoherentDerivedMeasurementUnit :> MeasurementUnit 
+  
+  @dc:^description "metrology:NonCoherentDerivedMeasurementUnitOf specifies the metrology:MeasurementUnit that a metrology:NonCoherentDerivedMeasurementUnit derives from."
+	@dc:source "non-coherent derived measurement unit [https://iupac.org/wp-content/uploads/2016/01/ontology-on-Property-Division-VII.pdf, 18.20, p 194]"
+  relation entity NonCoherentDerivedMeasurementUnitOf [
+    from NonCoherentDerivedMeasurementUnit
+    to MeasurementUnit
+    forward nonCoherentDerivedMeasurementUnitOf
+    irreflexive
+    functional
+  ]
 
+  @dc:^description "metrology:nonCoherentRelationship specifies the non-coherent derivation relationship between a metrology:NonCoherentDerivedMeasurementUnit 
+  and a metrology:MeasurementUnit that it is a metrology:nonCoherentDerivedMeasurementUnitOf"
+	@dc:source "non-coherent derived measurement unit [https://iupac.org/wp-content/uploads/2016/01/ontology-on-Property-Division-VII.pdf, 18.20, p 194]"
 	scalar property nonCoherentRelationship [
 		domain NonCoherentDerivedMeasurementUnit
 		range xsd:string

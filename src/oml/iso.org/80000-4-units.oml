@@ -2,6 +2,7 @@
 @dc:source "https://www.iso.org/obp/ui/#iso:std:iso:80000:-4:ed-2:v1:en"
 vocabulary <http://iso.org/80000-4-units> with # as 80000-4-units {
     extends <http://iso.org/80000-3-units>
+    uses <http://iso.org/80000-1>
 
     @dc:source "4-1"
     aspect Gram :> metrology:CoherentMeasurementUnit [
