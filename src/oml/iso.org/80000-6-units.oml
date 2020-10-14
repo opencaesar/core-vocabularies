@@ -1,0 +1,97 @@
+@dc:source "IEC 80000-6:2008"
+@dc:source "https://www.iso.org/standard/31891.html"
+vocabulary <http://iso.org/80000-6-units> with # as 80000-6-units {
+    extends <http://iso.org/80000-5-units>
+
+    @dc:source "6-1"
+    aspect Ampere :> metrology:CoherentMeasurementUnit [
+        restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
+    ]
+
+    concept ampere :> Ampere, metrology:IndependentMeasurementUnit
+
+    @dc:source "6-2"
+    aspect Coulomb :> metrology:CoherentMeasurementUnit [
+        restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
+    ]
+
+    concept coulomb :> Coulomb, metrology:DerivedMeasurementUnit
+
+    relation entity coulomb-of-ampere :> metrology:HasFactorForMeasurementUnit [
+        from coulomb
+        to ampere
+        forward coulomb-of-ampere-factor
+        restricts scalar property metrology:exponent to "1/1"^^owl:rational
+    ]
+
+    relation entity coulomb-of-second :> metrology:HasFactorForMeasurementUnit [
+        from coulomb
+        to 80000-3-units:second
+        forward coulomb-of-second-factor
+        restricts scalar property metrology:exponent to "1/1"^^owl:rational
+    ]
+
+    @dc:source "6-10"
+    aspect Newton-per-Coulomb :> metrology:CoherentMeasurementUnit [
+        restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
+    ]
+
+    concept newton-per-coulomb :> Newton-per-Coulomb, metrology:DerivedMeasurementUnit
+
+    relation entity newton-per-coulomb-of-newton :> metrology:HasFactorForMeasurementUnit [
+        from newton-per-coulomb
+        to 80000-4-units:newton
+        forward newton-per-coulomb-of-newton-factor
+        restricts scalar property metrology:exponent to "1/1"^^owl:rational
+    ]
+
+    relation entity newton-per-coulomb-of-coulomb :> metrology:HasFactorForMeasurementUnit [
+        from newton-per-coulomb
+        to coulomb
+        forward newton-per-coulomb-of-coulomb-factor
+        restricts scalar property metrology:exponent to "-1/1"^^owl:rational
+    ]
+
+    @dc:source "6-11"
+    aspect Volt :> metrology:CoherentMeasurementUnit [
+        restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
+    ]
+
+    concept volt :> Volt, metrology:DerivedMeasurementUnit
+
+    relation entity volt-of-newton-per-coulomb :> metrology:HasFactorForMeasurementUnit [
+        from volt
+        to newton-per-coulomb
+        forward volt-of-newton-per-coulomb-factor
+        restricts scalar property metrology:exponent to "1/1"^^owl:rational
+    ]
+
+    relation entity volt-of-metre :> metrology:HasFactorForMeasurementUnit [
+        from volt
+        to 80000-3-units:metre
+        forward volt-of-metre-factor
+        restricts scalar property metrology:exponent to "1/1"^^owl:rational
+    ]
+
+    @dc:source "6-46"
+    aspect Ohm :> metrology:CoherentMeasurementUnit [
+        restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
+    ]
+
+    concept ohm :> Ohm, metrology:DerivedMeasurementUnit
+
+    relation entity ohm-of-volt :> metrology:HasFactorForMeasurementUnit [
+        from ohm
+        to volt
+        forward ohm-of-volt-factor
+        restricts scalar property metrology:exponent to "1/1"^^owl:rational
+    ]
+
+    relation entity ohm-of-ampere :> metrology:HasFactorForMeasurementUnit [
+        from ohm
+        to ampere
+        forward ohm-of-ampere-factor
+        restricts scalar property metrology:exponent to "-1/1"^^owl:rational
+    ]
+}
+

@@ -1,0 +1,64 @@
+description <http://iso.org/80000-1> with # as 80000-1 {
+    uses <http://iso.org/80000-1-decimalPrefix>
+
+    @dc:^description "10^24"
+    ci yotta : 80000-1-decimalPrefix:DecimalPrefix
+
+    @dc:^description "10^21"
+    ci zetta : 80000-1-decimalPrefix:DecimalPrefix
+
+    @dc:^description "10^18"
+    ci exa : 80000-1-decimalPrefix:DecimalPrefix
+
+    @dc:^description "10^15"
+    ci peta : 80000-1-decimalPrefix:DecimalPrefix
+
+    @dc:^description "10^12"
+    ci tera : 80000-1-decimalPrefix:DecimalPrefix
+
+    @dc:^description "10^9"
+    ci giga : 80000-1-decimalPrefix:DecimalPrefix
+
+    @dc:^description "10^6"
+    ci mega : 80000-1-decimalPrefix:DecimalPrefix
+
+    @dc:^description "10^3"
+    ci kilo : 80000-1-decimalPrefix:DecimalPrefix
+
+    @dc:^description "10^2"
+    ci hecto : 80000-1-decimalPrefix:DecimalPrefix
+
+    @dc:^description "10^1"
+    ci deca : 80000-1-decimalPrefix:DecimalPrefix
+
+    @dc:^description "10^-1"
+    ci deci : 80000-1-decimalPrefix:DecimalPrefix
+
+    @dc:^description "10^-2"
+    ci centi : 80000-1-decimalPrefix:DecimalPrefix
+
+    @dc:^description "10^-3"
+    ci milli : 80000-1-decimalPrefix:DecimalPrefix
+
+    @dc:^description "10^-6"
+    ci micro : 80000-1-decimalPrefix:DecimalPrefix
+
+    @dc:^description "10^-9"
+    ci nano : 80000-1-decimalPrefix:DecimalPrefix
+
+    @dc:^description "10^-12"
+    ci pico : 80000-1-decimalPrefix:DecimalPrefix
+
+    @dc:^description "10^-15"
+    ci femto : 80000-1-decimalPrefix:DecimalPrefix
+
+    @dc:^description "10^-18"
+    ci atto : 80000-1-decimalPrefix:DecimalPrefix
+
+    @dc:^description "10^-21"
+    ci zepto : 80000-1-decimalPrefix:DecimalPrefix
+
+    @dc:^description "10^-24"
+    ci yocto : 80000-1-decimalPrefix:DecimalPrefix
+
+}

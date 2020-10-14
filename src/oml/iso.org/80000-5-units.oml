@@ -1,0 +1,27 @@
+@dc:source "ISO 80000-5:2019(en)"
+@dc:source "https://www.iso.org/obp/ui/#iso:std:iso:80000:-5:ed-2:v1:en"
+vocabulary <http://iso.org/80000-5-units> with # as 80000-5-units {
+    extends <http://iso.org/80000-4-units>
+
+    @dc:source "5-1"
+    aspect Kelvin :> metrology:CoherentMeasurementUnit [
+        restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
+    ]
+
+    concept kelvin :> Kelvin, metrology:IndependentMeasurementUnit
+
+    @dc:source "5-2"
+    aspect DegreeCelcius :> metrology:CoherentMeasurementUnit [
+        restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
+    ]
+
+    concept degreeCelcius :> DegreeCelcius, metrology:DerivedMeasurementUnit
+
+    relation entity degreeCelcius-of-kelvin :> metrology:HasFactorForMeasurementUnit [
+        from degreeCelcius
+        to kelvin
+        forward degreeCelcius-of-kelvin-factor
+        restricts scalar property metrology:exponent to "1/1"^^owl:rational
+    ]
+
+}

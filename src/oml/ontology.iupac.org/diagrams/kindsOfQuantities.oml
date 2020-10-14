@@ -1,0 +1,23 @@
+@diagram:specifier
+vocabulary <http://ontology.iupac.org/metrology/diagrams/kindsOfQuantities> with # as kindsOfQuantities {
+    extends <http://opencaesar.io/diagram>
+    extends <http://ontology.iupac.org/metrology>
+
+    @diagram:include
+    ref concept metrology:KindOfQuantity
+
+    @diagram:include
+    @diagram:include "properties"
+    ref concept metrology:UnitaryKindOfQuantity
+
+    @diagram:include
+    @diagram:include "properties"
+    ref relation entity metrology:SystemHasUnitaryKindOfQuantity
+
+    @diagram:include
+    @diagram:include "properties"
+    ref relation entity metrology:HasFactorForUnitaryKindOfQuantity
+
+    @diagram:include
+    ref relation entity metrology:ForQuantitiesOfTheSameUnitaryKindOfQuantity
+}

@@ -1,0 +1,101 @@
+@dc:source "IEC 80000-6:2008"
+@dc:source "https://www.iso.org/standard/31891.html"
+vocabulary <http://iso.org/80000-6-kindsOfQuantities> with # as 80000-6-kindsOfQuantities {
+    extends <http://iso.org/80000-6-units>
+    extends <http://iso.org/80000-5-kindsOfQuantities>
+
+    @dc:source "6-1"
+    concept electric-current :> metrology:IndependentUnitaryKindOfQuantity [
+        restricts scalar property metrology:isDimensionlessKindOfQuantity to false^^xsd:boolean
+        restricts all relation  metrology:forQuantitiesOfTheSameUnitaryKindOfQuantity to 80000-6-units:Ampere
+    ]
+
+    @dc:source "6-2"
+    concept electric-charge :> metrology:DerivedUnitaryKindOfQuantity [
+        restricts scalar property metrology:isDimensionlessKindOfQuantity to false^^xsd:boolean
+        restricts all relation  metrology:forQuantitiesOfTheSameUnitaryKindOfQuantity to 80000-6-units:Coulomb
+    ]
+
+    relation entity electric-charge-of-electric-current :> metrology:HasFactorForUnitaryKindOfQuantity [
+        from electric-charge
+        to electric-current
+        forward electric-charge-of-electric-current-forward
+        functional
+        restricts scalar property metrology:exponent to "1/1"^^owl:rational
+    ]
+
+    relation entity electric-charge-of-duration :> metrology:HasFactorForUnitaryKindOfQuantity [
+        from electric-charge
+        to 80000-3-kindsOfQuantities:duration
+        forward electric-charge-of-duration-forward
+        functional
+        restricts scalar property metrology:exponent to "1/1"^^owl:rational
+    ]
+
+    @dc:source "6-10"
+    concept electric-field-strength :> metrology:DerivedUnitaryKindOfQuantity [
+        restricts scalar property metrology:isDimensionlessKindOfQuantity to false^^xsd:boolean
+        restricts all relation  metrology:forQuantitiesOfTheSameUnitaryKindOfQuantity to 80000-6-units:Newton-per-Coulomb
+    ]
+
+    relation entity electric-field-strength-of-force :> metrology:HasFactorForUnitaryKindOfQuantity [
+        from electric-field-strength
+        to 80000-4-kindsOfQuantities:force
+        forward electric-field-strength-of-force-forward
+        functional
+        restricts scalar property metrology:exponent to "1/1"^^owl:rational
+    ]
+
+    relation entity electric-field-strength-of-electric-charge :> metrology:HasFactorForUnitaryKindOfQuantity [
+        from electric-field-strength
+        to electric-charge
+        forward electric-field-strength-of-electric-charge-forward
+        functional
+        restricts scalar property metrology:exponent to "-1/1"^^owl:rational
+    ]
+
+    @dc:source "6-11"
+    concept electric-potential :> metrology:DerivedUnitaryKindOfQuantity [
+        restricts scalar property metrology:isDimensionlessKindOfQuantity to false^^xsd:boolean
+        restricts all relation  metrology:forQuantitiesOfTheSameUnitaryKindOfQuantity to 80000-6-units:Volt
+    ]
+
+    relation entity electric-potential-of-electric-field-strength :> metrology:HasFactorForUnitaryKindOfQuantity [
+        from electric-potential
+        to electric-field-strength
+        forward electric-potential-of-electric-field-strength-forward
+        functional
+        restricts scalar property metrology:exponent to "1/1"^^owl:rational
+    ]
+
+    relation entity electric-potential-of-path-length :> metrology:HasFactorForUnitaryKindOfQuantity [
+        from electric-potential
+        to 80000-3-kindsOfQuantities:path-length
+        forward electric-potential-of-path-length-forward
+        functional
+        restricts scalar property metrology:exponent to "1/1"^^owl:rational
+    ]
+
+    @dc:source "6-46"
+    concept resistance :> metrology:DerivedUnitaryKindOfQuantity [
+        restricts scalar property metrology:isDimensionlessKindOfQuantity to false^^xsd:boolean
+        restricts all relation  metrology:forQuantitiesOfTheSameUnitaryKindOfQuantity to 80000-6-units:Ohm
+    ]
+
+    relation entity resistance-of-electric-potential :> metrology:HasFactorForUnitaryKindOfQuantity [
+        from resistance
+        to electric-potential
+        forward resistance-of-electric-potential-forward
+        functional
+        restricts scalar property metrology:exponent to "1/1"^^owl:rational
+    ]
+
+    relation entity resistance-of-electric-current :> metrology:HasFactorForUnitaryKindOfQuantity [
+        from resistance
+        to electric-current
+        forward resistance-of-electric-current-forward
+        functional
+        restricts scalar property metrology:exponent to "-1/1"^^owl:rational
+    ]
+
+}

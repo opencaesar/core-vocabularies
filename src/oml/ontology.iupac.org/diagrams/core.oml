@@ -1,0 +1,45 @@
+@diagram:specifier
+vocabulary <http://ontology.iupac.org/metrology/diagrams/core> with # as core {
+    extends <http://opencaesar.io/diagram>
+    extends <http://ontology.iupac.org/metrology>
+
+    @diagram:include
+    ref aspect metrology:Thing
+
+    @diagram:include
+    ref aspect metrology:MetrologicalEntity
+
+    @diagram:include
+    @diagram:include "properties"
+    ref aspect metrology:ExponentFactor
+
+    @diagram:include
+    ref aspect metrology:Object
+
+    @diagram:include
+    ref aspect metrology:Reference
+
+    @diagram:include
+    ref aspect metrology:ReferenceMaterial
+
+    @diagram:include
+    ref aspect metrology:Quantity
+
+    @diagram:include
+    ref relation entity metrology:IsQuantityOf
+
+    @diagram:include
+    ref relation entity metrology:HasMagnitude
+
+    @diagram:include
+    ref relation entity metrology:HasKindOfQuantity
+
+    @diagram:include
+    ref concept metrology:KindOfQuantity
+
+    @diagram:include
+    ref aspect metrology:MeasurementProcedure
+
+    @diagram:include
+    ref aspect metrology:MeasurementUnit
+}

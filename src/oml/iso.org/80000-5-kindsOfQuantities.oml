@@ -1,0 +1,27 @@
+@dc:source "ISO 80000-5:2019(en)"
+@dc:source "https://www.iso.org/obp/ui/#iso:std:iso:80000:-5:ed-2:v1:en"
+vocabulary <http://iso.org/80000-5-kindsOfQuantities> with # as 80000-5-kindsOfQuantities {
+    extends <http://iso.org/80000-5-units>
+    extends <http://iso.org/80000-4-kindsOfQuantities>
+
+    @dc:source "5-1"
+    concept thermodynamic-temperature :> metrology:IndependentUnitaryKindOfQuantity [
+        restricts scalar property metrology:isDimensionlessKindOfQuantity to false^^xsd:boolean
+        restricts all relation  metrology:forQuantitiesOfTheSameUnitaryKindOfQuantity to 80000-5-units:Kelvin
+    ]
+
+    @dc:source "5-2"
+    concept celcius-temperature :> metrology:DerivedUnitaryKindOfQuantity [
+        restricts scalar property metrology:isDimensionlessKindOfQuantity to false^^xsd:boolean
+        restricts all relation  metrology:forQuantitiesOfTheSameUnitaryKindOfQuantity to 80000-5-units:DegreeCelcius
+    ]
+
+    relation entity celcius-temperature-of-thermodynamic-temperature :> metrology:HasFactorForUnitaryKindOfQuantity [
+        from celcius-temperature
+        to thermodynamic-temperature
+        forward celcius-temperature-of-thermodynamic-temperature-forward
+        functional
+        restricts scalar property metrology:exponent to "1/1"^^owl:rational
+    ]
+
+}
