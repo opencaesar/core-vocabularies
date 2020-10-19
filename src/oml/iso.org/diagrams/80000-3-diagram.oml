@@ -1,22 +1,10 @@
-@diagram:specifier
 vocabulary <http://iso.org/diagrams/80000-3> with # as 80000-3 {
-    extends <http://opencaesar.io/diagram>
     extends <http://iso.org/80000-3-kindsOfQuantities>
 
-    @diagram:include
-    @diagram:include "properties"
     ref concept 80000-3-kindsOfQuantities:^length
 
-    @diagram:include
-    @diagram:include "properties"
-    ref aspect 80000-3-units:Metre
-
-    @diagram:include
-    @diagram:include "properties"
     ref concept 80000-3-units:metre
 
-    @diagram:include
-    @diagram:include "properties"
     ref concept 80000-3-units:kilometre
 
 }

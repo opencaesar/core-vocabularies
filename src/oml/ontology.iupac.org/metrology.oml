@@ -53,11 +53,11 @@ vocabulary <http://ontology.iupac.org/metrology> with # as metrology {
     1) Specify the subject of a metrology:Quantity relationship with a metrology:QuantityValue.
     2) Provide a reference for elaborating a rich description elsewhere using an appropriate vocabulary.
 
-    Note: Dybkaer's ontology defines additional vocabulary about 'object' (S.2.24) with the subconcepts of 
-    'system' (S.3.3) and 'component' (S.3.4), which are further divided in terms of
-    'element', 'relationship',  and 'process' (see Figure 3.5, p. 41).
+    Note: Dybkaer's ontology defines additional vocabulary about *object* (S.2.24) with the subconcepts of 
+    *system* (S.3.3) and *component* (S.3.4), which are further divided in terms of
+    *element*, *relationship*,  and *process* (see Figure 3.5, p. 41).
 
-    Since none of the subconcepts of 'object' (S.2.23) provide any additional semantics to the metrology vocabulary,
+    Since none of the subconcepts of *object* (S.2.23) provide any additional semantics to the metrology vocabulary,
     they are omitted here. This ommision simplifies the task of establishing correspondences between metrology:Object
     in this vocabulary and rich descriptions elsewhere constructed using an appropriate vocabulary.
     "

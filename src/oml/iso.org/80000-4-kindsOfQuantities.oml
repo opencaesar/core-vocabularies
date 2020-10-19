@@ -7,13 +7,13 @@ vocabulary <http://iso.org/80000-4-kindsOfQuantities> with # as 80000-4-kindsOfQ
     @dc:source "4-1"
     concept mass :> metrology:IndependentUnitaryKindOfQuantity [
         restricts scalar property metrology:isDimensionlessKindOfQuantity to false^^xsd:boolean
-        restricts all relation  metrology:forQuantitiesOfTheSameUnitaryKindOfQuantity to 80000-4-units:Gram
+        restricts all relation  metrology:forQuantitiesOfTheSameUnitaryKindOfQuantity to 80000-4-units:UnitOfMass
     ]
 
     @dc:source "4-8"
     concept momentum :> metrology:DerivedUnitaryKindOfQuantity [
         restricts scalar property metrology:isDimensionlessKindOfQuantity to false^^xsd:boolean
-        restricts all relation  metrology:forQuantitiesOfTheSameUnitaryKindOfQuantity to 80000-4-units:Kilogram-Metre-per-Second
+        restricts all relation  metrology:forQuantitiesOfTheSameUnitaryKindOfQuantity to 80000-4-units:UnitOfMomentum
     ]
     
     relation entity momentum-of-mass :> metrology:HasFactorForUnitaryKindOfQuantity [
@@ -35,7 +35,7 @@ vocabulary <http://iso.org/80000-4-kindsOfQuantities> with # as 80000-4-kindsOfQ
     @dc:source "4-9"
     concept force :> metrology:DerivedUnitaryKindOfQuantity [
         restricts scalar property metrology:isDimensionlessKindOfQuantity to false^^xsd:boolean
-        restricts all relation  metrology:forQuantitiesOfTheSameUnitaryKindOfQuantity to 80000-4-units:Newton
+        restricts all relation  metrology:forQuantitiesOfTheSameUnitaryKindOfQuantity to 80000-4-units:UnitOfForce
     ]
     
     relation entity force-of-momentum :> metrology:HasFactorForUnitaryKindOfQuantity [
@@ -57,7 +57,7 @@ vocabulary <http://iso.org/80000-4-kindsOfQuantities> with # as 80000-4-kindsOfQ
     @dc:source "4-27"
     concept power :> metrology:DerivedUnitaryKindOfQuantity [
         restricts scalar property metrology:isDimensionlessKindOfQuantity to false^^xsd:boolean
-        restricts all relation  metrology:forQuantitiesOfTheSameUnitaryKindOfQuantity to 80000-4-units:Watt
+        restricts all relation  metrology:forQuantitiesOfTheSameUnitaryKindOfQuantity to 80000-4-units:UnitOfPower
     ]
     
     relation entity power-of-force :> metrology:HasFactorForUnitaryKindOfQuantity [

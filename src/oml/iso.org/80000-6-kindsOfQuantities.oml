@@ -7,13 +7,13 @@ vocabulary <http://iso.org/80000-6-kindsOfQuantities> with # as 80000-6-kindsOfQ
     @dc:source "6-1"
     concept electric-current :> metrology:IndependentUnitaryKindOfQuantity [
         restricts scalar property metrology:isDimensionlessKindOfQuantity to false^^xsd:boolean
-        restricts all relation  metrology:forQuantitiesOfTheSameUnitaryKindOfQuantity to 80000-6-units:Ampere
+        restricts all relation  metrology:forQuantitiesOfTheSameUnitaryKindOfQuantity to 80000-6-units:UnitOfElectricCurrent
     ]
 
     @dc:source "6-2"
     concept electric-charge :> metrology:DerivedUnitaryKindOfQuantity [
         restricts scalar property metrology:isDimensionlessKindOfQuantity to false^^xsd:boolean
-        restricts all relation  metrology:forQuantitiesOfTheSameUnitaryKindOfQuantity to 80000-6-units:Coulomb
+        restricts all relation  metrology:forQuantitiesOfTheSameUnitaryKindOfQuantity to 80000-6-units:UnitOfElectricCharge
     ]
 
     relation entity electric-charge-of-electric-current :> metrology:HasFactorForUnitaryKindOfQuantity [
@@ -35,7 +35,7 @@ vocabulary <http://iso.org/80000-6-kindsOfQuantities> with # as 80000-6-kindsOfQ
     @dc:source "6-10"
     concept electric-field-strength :> metrology:DerivedUnitaryKindOfQuantity [
         restricts scalar property metrology:isDimensionlessKindOfQuantity to false^^xsd:boolean
-        restricts all relation  metrology:forQuantitiesOfTheSameUnitaryKindOfQuantity to 80000-6-units:Newton-per-Coulomb
+        restricts all relation  metrology:forQuantitiesOfTheSameUnitaryKindOfQuantity to 80000-6-units:UnitOfElectricFieldStrength
     ]
 
     relation entity electric-field-strength-of-force :> metrology:HasFactorForUnitaryKindOfQuantity [
@@ -57,7 +57,7 @@ vocabulary <http://iso.org/80000-6-kindsOfQuantities> with # as 80000-6-kindsOfQ
     @dc:source "6-11"
     concept electric-potential :> metrology:DerivedUnitaryKindOfQuantity [
         restricts scalar property metrology:isDimensionlessKindOfQuantity to false^^xsd:boolean
-        restricts all relation  metrology:forQuantitiesOfTheSameUnitaryKindOfQuantity to 80000-6-units:Volt
+        restricts all relation  metrology:forQuantitiesOfTheSameUnitaryKindOfQuantity to 80000-6-units:UnitOfElectricPotential
     ]
 
     relation entity electric-potential-of-electric-field-strength :> metrology:HasFactorForUnitaryKindOfQuantity [
@@ -79,7 +79,7 @@ vocabulary <http://iso.org/80000-6-kindsOfQuantities> with # as 80000-6-kindsOfQ
     @dc:source "6-46"
     concept resistance :> metrology:DerivedUnitaryKindOfQuantity [
         restricts scalar property metrology:isDimensionlessKindOfQuantity to false^^xsd:boolean
-        restricts all relation  metrology:forQuantitiesOfTheSameUnitaryKindOfQuantity to 80000-6-units:Ohm
+        restricts all relation  metrology:forQuantitiesOfTheSameUnitaryKindOfQuantity to 80000-6-units:UnitOfResistance
     ]
 
     relation entity resistance-of-electric-potential :> metrology:HasFactorForUnitaryKindOfQuantity [

@@ -1,34 +1,21 @@
-@diagram:specifier
 vocabulary <http://ontology.iupac.org/metrology/diagrams/units> with # as units {
-    extends <http://opencaesar.io/diagram>
     extends <http://ontology.iupac.org/metrology>
 
-    @diagram:include
-    @diagram:include "properties"
     ref concept metrology:NonCoherentDerivedMeasurementUnit
 
-    @diagram:include
     ref concept metrology:IndependentMeasurementUnit
     
-    @diagram:include
     ref concept metrology:DerivedMeasurementUnit
 
-    @diagram:include
-    @diagram:include "properties"
     ref aspect metrology:CoherentMeasurementUnit
 
-    @diagram:include
     ref concept metrology:PrefixedMeasurementUnit
 
-    @diagram:include
     ref relation entity metrology:HasPrefix
 
-    @diagram:include
-    @diagram:include "properties"
     ref relation entity metrology:SystemHasMetrologicalUnit
 
-    @diagram:include
-    @diagram:include "properties"
     ref relation entity metrology:HasFactorForMeasurementUnit
 
+    ref relation entity metrology:ForQuantitiesOfTheSameUnitaryKindOfQuantity
 }
