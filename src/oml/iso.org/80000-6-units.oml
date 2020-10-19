@@ -4,18 +4,18 @@ vocabulary <http://iso.org/80000-6-units> with # as 80000-6-units {
     extends <http://iso.org/80000-5-units>
 
     @dc:source "6-1"
-    aspect Ampere :> metrology:CoherentMeasurementUnit [
+    aspect UnitOfElectricCurrent :> metrology:CoherentMeasurementUnit [
         restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
     ]
 
-    concept ampere :> Ampere, metrology:IndependentMeasurementUnit
+    concept ampere :> UnitOfElectricCurrent, metrology:IndependentMeasurementUnit
 
     @dc:source "6-2"
-    aspect Coulomb :> metrology:CoherentMeasurementUnit [
+    aspect UnitOfElectricCharge :> metrology:CoherentMeasurementUnit [
         restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
     ]
 
-    concept coulomb :> Coulomb, metrology:DerivedMeasurementUnit
+    concept coulomb :> UnitOfElectricCharge, metrology:DerivedMeasurementUnit
 
     relation entity coulomb-of-ampere :> metrology:HasFactorForMeasurementUnit [
         from coulomb
@@ -32,11 +32,11 @@ vocabulary <http://iso.org/80000-6-units> with # as 80000-6-units {
     ]
 
     @dc:source "6-10"
-    aspect Newton-per-Coulomb :> metrology:CoherentMeasurementUnit [
+    aspect UnitOfElectricFieldStrength :> metrology:CoherentMeasurementUnit [
         restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
     ]
 
-    concept newton-per-coulomb :> Newton-per-Coulomb, metrology:DerivedMeasurementUnit
+    concept newton-per-coulomb :> UnitOfElectricFieldStrength, metrology:DerivedMeasurementUnit
 
     relation entity newton-per-coulomb-of-newton :> metrology:HasFactorForMeasurementUnit [
         from newton-per-coulomb
@@ -53,11 +53,11 @@ vocabulary <http://iso.org/80000-6-units> with # as 80000-6-units {
     ]
 
     @dc:source "6-11"
-    aspect Volt :> metrology:CoherentMeasurementUnit [
+    aspect UnitOfElectricPotential :> metrology:CoherentMeasurementUnit [
         restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
     ]
 
-    concept volt :> Volt, metrology:DerivedMeasurementUnit
+    concept volt :> UnitOfElectricPotential, metrology:DerivedMeasurementUnit
 
     relation entity volt-of-newton-per-coulomb :> metrology:HasFactorForMeasurementUnit [
         from volt
@@ -74,11 +74,11 @@ vocabulary <http://iso.org/80000-6-units> with # as 80000-6-units {
     ]
 
     @dc:source "6-46"
-    aspect Ohm :> metrology:CoherentMeasurementUnit [
+    aspect UnitOfResistance :> metrology:CoherentMeasurementUnit [
         restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
     ]
 
-    concept ohm :> Ohm, metrology:DerivedMeasurementUnit
+    concept ohm :> UnitOfResistance, metrology:DerivedMeasurementUnit
 
     relation entity ohm-of-volt :> metrology:HasFactorForMeasurementUnit [
         from ohm

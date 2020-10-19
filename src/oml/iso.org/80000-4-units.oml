@@ -5,22 +5,22 @@ vocabulary <http://iso.org/80000-4-units> with # as 80000-4-units {
     uses <http://iso.org/80000-1>
 
     @dc:source "4-1"
-    aspect Gram :> metrology:CoherentMeasurementUnit [
+    aspect UnitOfMass :> metrology:CoherentMeasurementUnit [
         restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
     ]
 
-    concept gram :> Gram, metrology:IndependentMeasurementUnit
+    concept gram :> UnitOfMass, metrology:IndependentMeasurementUnit
 
-    concept kilogram :> Gram, metrology:PrefixedMeasurementUnit [
+    concept kilogram :> UnitOfMass, metrology:PrefixedMeasurementUnit [
         restricts relation metrology:hasPrefix to 80000-1:kilo
     ]
 
     @dc:source "4-8"
-    aspect Kilogram-Metre-per-Second :> metrology:CoherentMeasurementUnit [
+    aspect UnitOfMomentum :> metrology:CoherentMeasurementUnit [
         restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
     ]
 
-    concept kilogram-metre-per-second :> Kilogram-Metre-per-Second, metrology:DerivedMeasurementUnit
+    concept kilogram-metre-per-second :> UnitOfMomentum, metrology:DerivedMeasurementUnit
 
     relation entity kilogram-metre-per-second-of-kilogram :> metrology:HasFactorForMeasurementUnit [
         from kilogram-metre-per-second
@@ -37,11 +37,11 @@ vocabulary <http://iso.org/80000-4-units> with # as 80000-4-units {
     ]
 
     @dc:source "4-9"
-    aspect Newton :> metrology:CoherentMeasurementUnit [
+    aspect UnitOfForce :> metrology:CoherentMeasurementUnit [
         restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
     ]
 
-    concept newton :> Newton, metrology:DerivedMeasurementUnit
+    concept newton :> UnitOfForce, metrology:DerivedMeasurementUnit
 
     relation entity newton-of-kilogram :> metrology:HasFactorForMeasurementUnit [
         from newton
@@ -58,11 +58,11 @@ vocabulary <http://iso.org/80000-4-units> with # as 80000-4-units {
     ]
 
     @dc:source "4-27"
-    aspect Watt :> metrology:CoherentMeasurementUnit [
+    aspect UnitOfPower :> metrology:CoherentMeasurementUnit [
         restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
     ]
 
-    concept watt :> Watt, metrology:DerivedMeasurementUnit
+    concept watt :> UnitOfPower, metrology:DerivedMeasurementUnit
 
     relation entity watt-of-newton :> metrology:HasFactorForMeasurementUnit [
         from watt

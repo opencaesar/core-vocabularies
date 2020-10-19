@@ -4,18 +4,18 @@ vocabulary <http://iso.org/80000-5-units> with # as 80000-5-units {
     extends <http://iso.org/80000-4-units>
 
     @dc:source "5-1"
-    aspect Kelvin :> metrology:CoherentMeasurementUnit [
+    aspect UnitOfThermodynamicTemperature :> metrology:CoherentMeasurementUnit [
         restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
     ]
 
-    concept kelvin :> Kelvin, metrology:IndependentMeasurementUnit
+    concept kelvin :> UnitOfThermodynamicTemperature, metrology:IndependentMeasurementUnit
 
     @dc:source "5-2"
-    aspect DegreeCelcius :> metrology:CoherentMeasurementUnit [
+    aspect UnitOfCelciusTemperature :> metrology:CoherentMeasurementUnit [
         restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
     ]
 
-    concept degreeCelcius :> DegreeCelcius, metrology:DerivedMeasurementUnit
+    concept degreeCelcius :> UnitOfCelciusTemperature, metrology:DerivedMeasurementUnit
 
     relation entity degreeCelcius-of-kelvin :> metrology:HasFactorForMeasurementUnit [
         from degreeCelcius
