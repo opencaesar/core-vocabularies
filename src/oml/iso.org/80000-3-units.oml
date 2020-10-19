@@ -5,13 +5,13 @@ vocabulary <http://iso.org/80000-3-units> with # as 80000-3-units {
     uses <http://iso.org/80000-1>
 
     @dc:source "3-1"
-    aspect Metre :> metrology:CoherentMeasurementUnit [
+    aspect UnitOfLength :> metrology:CoherentMeasurementUnit [
         restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
     ]
 
-    concept metre :> Metre, metrology:IndependentMeasurementUnit
+    concept metre :> UnitOfLength, metrology:IndependentMeasurementUnit
 
-    concept kilometre :> Metre, metrology:PrefixedMeasurementUnit [
+    concept kilometre :> UnitOfLength, metrology:PrefixedMeasurementUnit [
         restricts relation metrology:hasPrefix to 80000-1:kilo
     ]
 

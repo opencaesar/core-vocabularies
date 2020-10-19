@@ -2,13 +2,17 @@ vocabulary <http://opencaesar.io/diagram> with # as diagram {
 
     extends <http://www.w3.org/2002/07/owl>
 
-    @dc:^description """Designate the ontology as a diagram specifier"""
-    annotation property specifier
-
-    @dc:^description """Render the compartments of all specified nodes and include all properties"""
-    annotation property compartments
-
-    @dc:^description """Include the annotated element in the diagram"""
-    annotation property include
+    @dc:^description """Hide
+    
+    There are 3 possible uses of this annotation:
+    1) at an element level, without an annotation value: 
+       hide the annotated element such that it will not be shown in a diagram.
+    2) at an element level, with an annotation value as the name of a diagram notation feature: 
+       show the annotated element in a diagram without the named notation feature.
+       Currently supported diagram notation features: compartment
+    3) at an ontology level, with an annotation value as the name of a diagram notation feature: 
+       Same as (2) for all elements in scope of the ontology.
+    """
+    annotation property hide
 
 }

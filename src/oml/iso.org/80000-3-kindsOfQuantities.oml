@@ -6,7 +6,7 @@ vocabulary <http://iso.org/80000-3-kindsOfQuantities> with # as 80000-3-kindsOfQ
     @dc:source "3-1.1"
     concept ^length :> metrology:IndependentUnitaryKindOfQuantity [
         restricts scalar property metrology:isDimensionlessKindOfQuantity to false^^xsd:boolean
-        restricts all relation  metrology:forQuantitiesOfTheSameUnitaryKindOfQuantity to 80000-3-units:Metre
+        restricts all relation  metrology:forQuantitiesOfTheSameUnitaryKindOfQuantity to 80000-3-units:UnitOfLength
     ]
     
     @dc:source "3-1.2"
