@@ -1323,7 +1323,7 @@ Possible extra rowspan handling
 </style>
   <meta content="Bikeshed version 89ebb6ab, updated Fri Oct 9 15:32:07 2020 -0700" name="generator">
   <link href="https://opencaesar.github.io/vocabularies//src/oml/opencaesar.io/diagram" rel="canonical">
-  <meta content="2377381cc28de85e457ef64087c1d00b21754b12" name="document-revision">
+  <meta content="d4357781c93d5a20d2ad299aaae334d268328856" name="document-revision">
 <style>
 a[data-link-type=biblio] {
     white-space: pre-wrap;
@@ -1708,7 +1708,7 @@ dfn > a.self-link::before      { content: "#"; }
   <div class="head">
    <p data-fill-with="logo"><a class="logo" href="https://www.openapis.org/"><img alt="OpenAPI Initiative" height="48" src="https://opencaesar.github.io/oml/images/oml.svg"></a></p>
    <h1 class="p-name no-ref" id="title">diagram</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2020-10-14">14 October 2020</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2020-10-20">20 October 2020</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -1734,9 +1734,7 @@ dfn > a.self-link::before      { content: "#"; }
     <li>
      <a href="#AnnotationProperties"><span class="secno">3</span> <span class="content">Annotation Properties</span></a>
      <ol class="toc">
-      <li><a href="#Specifier"><span class="secno">3.1</span> <span class="content"><span>specifier</span></span></a>
-      <li><a href="#Compartments"><span class="secno">3.2</span> <span class="content"><span>compartments</span></span></a>
-      <li><a href="#Include"><span class="secno">3.3</span> <span class="content"><span>include</span></span></a>
+      <li><a href="#Hide"><span class="secno">3.1</span> <span class="content"><span>hide</span></span></a>
      </ol>
     <li>
      <a href="#index"><span class="secno"></span> <span class="content">Index</span></a>
@@ -1758,12 +1756,16 @@ dfn > a.self-link::before      { content: "#"; }
       <p>owl: <a href="http://www.w3.org/2002/07/owl.html">http://www.w3.org/2002/07/owl</a></p>
     </ul>
     <h2 class="heading settled" data-level="3" id="AnnotationProperties"><span class="secno">3. </span><span class="content">Annotation Properties</span><a class="self-link" href="#AnnotationProperties"></a></h2>
-    <h3 class="heading settled" data-level="3.1" id="Specifier"><span class="secno">3.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="specifier">specifier<a class="self-link" href="#specifier"></a></dfn></span><a class="self-link" href="#Specifier"></a></h3>
-    <p>Designate the ontology as a diagram specifier</p>
-    <h3 class="heading settled" data-level="3.2" id="Compartments"><span class="secno">3.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="compartments">compartments<a class="self-link" href="#compartments"></a></dfn></span><a class="self-link" href="#Compartments"></a></h3>
-    <p>Render the compartments of all specified nodes and include all properties</p>
-    <h3 class="heading settled" data-level="3.3" id="Include"><span class="secno">3.3. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="include">include<a class="self-link" href="#include"></a></dfn></span><a class="self-link" href="#Include"></a></h3>
-    <p>Include the annotated element in the diagram</p>
+    <h3 class="heading settled" data-level="3.1" id="Hide"><span class="secno">3.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="hide">hide<a class="self-link" href="#hide"></a></dfn></span><a class="self-link" href="#Hide"></a></h3>
+    <p>Hide</p>
+    <p>There are 3 possible uses of this annotation:
+    1) at an element level, without an annotation value: 
+       hide the annotated element such that it will not be shown in a diagram.
+    2) at an element level, with an annotation value as the name of a diagram notation feature: 
+       show the annotated element in a diagram without the named notation feature.
+       Currently supported diagram notation features: compartment
+    3) at an ontology level, with an annotation value as the name of a diagram notation feature: 
+       Same as (2) for all elements in scope of the ontology.</p>
    </div>
   </main>
 <script>
@@ -1898,7 +1900,5 @@ dfn > a.self-link::before      { content: "#"; }
   <h2 class="no-num no-ref heading settled" id="index"><span class="content">Index</span><a class="self-link" href="#index"></a></h2>
   <h3 class="no-num no-ref heading settled" id="index-defined-here"><span class="content">Terms defined by this specification</span><a class="self-link" href="#index-defined-here"></a></h3>
   <ul class="index">
-   <li><a href="#compartments">compartments</a><span>, in §3.2</span>
-   <li><a href="#include">include</a><span>, in §3.3</span>
-   <li><a href="#specifier">specifier</a><span>, in §3.1</span>
+   <li><a href="#hide">hide</a><span>, in §3.1</span>
   </ul>
