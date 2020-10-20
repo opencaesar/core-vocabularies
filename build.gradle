@@ -35,7 +35,7 @@ task omlToBikeshed(type: io.opencaesar.oml.bikeshed.Oml2BikeshedTask) {
 	// OWL folder
 	outputFolderPath = file('build/bikeshed')
 	// Publish URL
-	publishUrl = 'https://opencaesar.github.io/vocabularies/'
+	publishUrl = 'https://opencaesar.github.io/core-vocabularies/'
 }
 
 /*
