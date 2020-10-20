@@ -3,7 +3,7 @@
  */
 description='The set of core vocabularies'
 group = 'io.opencaesar.ontologies'
-version = '1.2.1'
+version = '1.2.2'
 
 /* 
  * The Gradle task dependencies 
@@ -85,7 +85,7 @@ apply plugin: 'maven-publish'
 task omlZip(type: Zip) {
 	from file('src/oml')
 	include "**/*.oml"
-	destinationDir(file('build/libs'))
+	destinationDirectory = file('build/libs')
 	archiveBaseName = project.name
 	archiveVersion = project.version
 }
