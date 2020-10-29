@@ -27,6 +27,6 @@ vocabulary <http://ontology.iupac.org/metrology/diagams/quantities> with # as qu
 
     ref relation entity metrology:HasReference
     
-    ref concept metrology:KindOfQuantity
+    ref aspect metrology:KindOfQuantity
     
 }
