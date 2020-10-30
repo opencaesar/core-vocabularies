@@ -1,16 +1,16 @@
-@dc:source "IEC 80000-6:2008"
-@dc:source "https://www.iso.org/standard/31891.html"
+@dc:^source "IEC 80000-6:2008"
+@dc:^source "https://www.iso.org/standard/31891.html"
 vocabulary <http://iso.org/80000-6-units> with # as 80000-6-units {
     extends <http://iso.org/80000-5-units>
 
-    @dc:source "6-1"
+    @dc:^source "6-1"
     aspect UnitOfElectricCurrent :> metrology:CoherentMeasurementUnit [
         restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
     ]
 
     concept ampere :> UnitOfElectricCurrent, metrology:IndependentMeasurementUnit
 
-    @dc:source "6-2"
+    @dc:^source "6-2"
     aspect UnitOfElectricCharge :> metrology:CoherentMeasurementUnit [
         restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
     ]
@@ -31,7 +31,7 @@ vocabulary <http://iso.org/80000-6-units> with # as 80000-6-units {
         restricts scalar property metrology:exponent to "1/1"^^owl:rational
     ]
 
-    @dc:source "6-10"
+    @dc:^source "6-10"
     aspect UnitOfElectricFieldStrength :> metrology:CoherentMeasurementUnit [
         restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
     ]
@@ -52,7 +52,7 @@ vocabulary <http://iso.org/80000-6-units> with # as 80000-6-units {
         restricts scalar property metrology:exponent to "-1/1"^^owl:rational
     ]
 
-    @dc:source "6-11"
+    @dc:^source "6-11"
     aspect UnitOfElectricPotential :> metrology:CoherentMeasurementUnit [
         restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
     ]
@@ -73,7 +73,7 @@ vocabulary <http://iso.org/80000-6-units> with # as 80000-6-units {
         restricts scalar property metrology:exponent to "1/1"^^owl:rational
     ]
 
-    @dc:source "6-46"
+    @dc:^source "6-46"
     aspect UnitOfResistance :> metrology:CoherentMeasurementUnit [
         restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
     ]

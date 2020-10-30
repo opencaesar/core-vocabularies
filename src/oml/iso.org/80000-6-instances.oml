@@ -1,23 +1,23 @@
 description <http://iso.org/80000-6-instances> with # as 80000-6-instances {
   uses <http://iso.org/80000-6-kindsOfQuantities>
 
-  @dc:source "6-1"
+  @dc:^source "6-1"
   ci electric-current : 80000-6-kindsOfQuantities:electric-current
   ci ampere : 80000-6-units:ampere
 
-  @dc:source "6-2"
+  @dc:^source "6-2"
   ci electric-charge : 80000-6-kindsOfQuantities:electric-charge
   ci coulomb : 80000-6-units:coulomb
 
-  @dc:source "6-10"
+  @dc:^source "6-10"
   ci electric-field-strength : 80000-6-kindsOfQuantities:electric-field-strength
   ci newton-per-coulomb : 80000-6-units:newton-per-coulomb
 
-  @dc:source "6-11"
+  @dc:^source "6-11"
   ci electric-potential : 80000-6-kindsOfQuantities:electric-potential
   ci volt : 80000-6-units:volt
 
-  @dc:source "6-46"
+  @dc:^source "6-46"
   ci resistance : 80000-6-kindsOfQuantities:resistance
   ci ohm : 80000-6-units:ohm
 }

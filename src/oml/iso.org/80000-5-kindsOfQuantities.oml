@@ -1,16 +1,16 @@
-@dc:source "ISO 80000-5:2019(en)"
-@dc:source "https://www.iso.org/obp/ui/#iso:std:iso:80000:-5:ed-2:v1:en"
+@dc:^source "ISO 80000-5:2019(en)"
+@dc:^source "https://www.iso.org/obp/ui/#iso:std:iso:80000:-5:ed-2:v1:en"
 vocabulary <http://iso.org/80000-5-kindsOfQuantities> with # as 80000-5-kindsOfQuantities {
     extends <http://iso.org/80000-5-units>
     extends <http://iso.org/80000-4-kindsOfQuantities>
 
-    @dc:source "5-1"
+    @dc:^source "5-1"
     concept thermodynamic-temperature :> metrology:IndependentUnitaryKindOfQuantity [
         restricts scalar property metrology:isDimensionlessKindOfQuantity to false^^xsd:boolean
         restricts all relation  metrology:forQuantitiesOfTheSameUnitaryKindOfQuantity to 80000-5-units:UnitOfThermodynamicTemperature
     ]
 
-    @dc:source "5-2"
+    @dc:^source "5-2"
     concept celcius-temperature :> metrology:DerivedUnitaryKindOfQuantity [
         restricts scalar property metrology:isDimensionlessKindOfQuantity to false^^xsd:boolean
         restricts all relation  metrology:forQuantitiesOfTheSameUnitaryKindOfQuantity to 80000-5-units:UnitOfCelciusTemperature

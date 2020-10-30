@@ -1,16 +1,16 @@
-@dc:source "ISO 80000-4:2019(en)"
-@dc:source "https://www.iso.org/obp/ui/#iso:std:iso:80000:-4:ed-2:v1:en"
+@dc:^source "ISO 80000-4:2019(en)"
+@dc:^source "https://www.iso.org/obp/ui/#iso:std:iso:80000:-4:ed-2:v1:en"
 vocabulary <http://iso.org/80000-4-kindsOfQuantities> with # as 80000-4-kindsOfQuantities {
     extends <http://iso.org/80000-4-units>
     extends <http://iso.org/80000-3-kindsOfQuantities>
 
-    @dc:source "4-1"
+    @dc:^source "4-1"
     concept mass :> metrology:IndependentUnitaryKindOfQuantity [
         restricts scalar property metrology:isDimensionlessKindOfQuantity to false^^xsd:boolean
         restricts all relation  metrology:forQuantitiesOfTheSameUnitaryKindOfQuantity to 80000-4-units:UnitOfMass
     ]
 
-    @dc:source "4-8"
+    @dc:^source "4-8"
     concept momentum :> metrology:DerivedUnitaryKindOfQuantity [
         restricts scalar property metrology:isDimensionlessKindOfQuantity to false^^xsd:boolean
         restricts all relation  metrology:forQuantitiesOfTheSameUnitaryKindOfQuantity to 80000-4-units:UnitOfMomentum
@@ -32,7 +32,7 @@ vocabulary <http://iso.org/80000-4-kindsOfQuantities> with # as 80000-4-kindsOfQ
         restricts scalar property metrology:exponent to "-1/1"^^owl:rational
     ]
 
-    @dc:source "4-9"
+    @dc:^source "4-9"
     concept force :> metrology:DerivedUnitaryKindOfQuantity [
         restricts scalar property metrology:isDimensionlessKindOfQuantity to false^^xsd:boolean
         restricts all relation  metrology:forQuantitiesOfTheSameUnitaryKindOfQuantity to 80000-4-units:UnitOfForce
@@ -54,7 +54,7 @@ vocabulary <http://iso.org/80000-4-kindsOfQuantities> with # as 80000-4-kindsOfQ
         restricts scalar property metrology:exponent to "1/1"^^owl:rational
     ]
 
-    @dc:source "4-27"
+    @dc:^source "4-27"
     concept power :> metrology:DerivedUnitaryKindOfQuantity [
         restricts scalar property metrology:isDimensionlessKindOfQuantity to false^^xsd:boolean
         restricts all relation  metrology:forQuantitiesOfTheSameUnitaryKindOfQuantity to 80000-4-units:UnitOfPower

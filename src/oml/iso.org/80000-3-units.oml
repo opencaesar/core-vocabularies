@@ -1,10 +1,10 @@
-@dc:source "ISO 80000-3:2019(en)"
-@dc:source "https://www.iso.org/obp/ui/#iso:std:iso:80000:-3:ed-2:v1:en"
+@dc:^source "ISO 80000-3:2019(en)"
+@dc:^source "https://www.iso.org/obp/ui/#iso:std:iso:80000:-3:ed-2:v1:en"
 vocabulary <http://iso.org/80000-3-units> with # as 80000-3-units {
     extends <http://ontology.iupac.org/metrology>
     uses <http://iso.org/80000-1>
 
-    @dc:source "3-1"
+    @dc:^source "3-1"
     aspect UnitOfLength :> metrology:CoherentMeasurementUnit [
         restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
     ]
@@ -15,7 +15,7 @@ vocabulary <http://iso.org/80000-3-units> with # as 80000-3-units {
         restricts relation metrology:hasPrefix to 80000-1:kilo
     ]
 
-    @dc:source "3-5"
+    @dc:^source "3-5"
     aspect UnitOfAngularMeasure :> metrology:CoherentMeasurementUnit [
         restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
     ]
@@ -36,7 +36,7 @@ vocabulary <http://iso.org/80000-3-units> with # as 80000-3-units {
         restricts scalar property metrology:exponent to "-1/1"^^owl:rational
     ]
 
-    @dc:source "3-9"
+    @dc:^source "3-9"
     aspect UnitOfTime :> metrology:CoherentMeasurementUnit [
         restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
     ]
@@ -57,7 +57,7 @@ vocabulary <http://iso.org/80000-3-units> with # as 80000-3-units {
         restricts all relation metrology:nonCoherentDerivedMeasurementUnitOf to minute
     ]
 
-    @dc:source "3-10"
+    @dc:^source "3-10"
     aspect UnitOfVelocity :> metrology:CoherentMeasurementUnit [
         restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
     ]
@@ -94,7 +94,7 @@ vocabulary <http://iso.org/80000-3-units> with # as 80000-3-units {
         restricts scalar property metrology:exponent to "-1/1"^^owl:rational
     ]
 
-    @dc:source "3-16"
+    @dc:^source "3-16"
     aspect UnitOfRotation :> metrology:CoherentMeasurementUnit [
         restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
     ]
@@ -108,7 +108,7 @@ vocabulary <http://iso.org/80000-3-units> with # as 80000-3-units {
         restricts scalar property metrology:exponent to "1/1"^^owl:rational
     ]
 
-    @dc:source "3-17"
+    @dc:^source "3-17"
     aspect UnitOfFrequency :> metrology:CoherentMeasurementUnit [
         restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
     ]

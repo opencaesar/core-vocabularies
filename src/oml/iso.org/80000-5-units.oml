@@ -1,16 +1,16 @@
-@dc:source "ISO 80000-5:2019(en)"
-@dc:source "https://www.iso.org/obp/ui/#iso:std:iso:80000:-5:ed-2:v1:en"
+@dc:^source "ISO 80000-5:2019(en)"
+@dc:^source "https://www.iso.org/obp/ui/#iso:std:iso:80000:-5:ed-2:v1:en"
 vocabulary <http://iso.org/80000-5-units> with # as 80000-5-units {
     extends <http://iso.org/80000-4-units>
 
-    @dc:source "5-1"
+    @dc:^source "5-1"
     aspect UnitOfThermodynamicTemperature :> metrology:CoherentMeasurementUnit [
         restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
     ]
 
     concept kelvin :> UnitOfThermodynamicTemperature, metrology:IndependentMeasurementUnit
 
-    @dc:source "5-2"
+    @dc:^source "5-2"
     aspect UnitOfCelciusTemperature :> metrology:CoherentMeasurementUnit [
         restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
     ]

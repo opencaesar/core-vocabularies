@@ -1,16 +1,16 @@
-@dc:source "IEC 80000-6:2008"
-@dc:source "https://www.iso.org/standard/31891.html"
+@dc:^source "IEC 80000-6:2008"
+@dc:^source "https://www.iso.org/standard/31891.html"
 vocabulary <http://iso.org/80000-6-kindsOfQuantities> with # as 80000-6-kindsOfQuantities {
     extends <http://iso.org/80000-6-units>
     extends <http://iso.org/80000-5-kindsOfQuantities>
 
-    @dc:source "6-1"
+    @dc:^source "6-1"
     concept electric-current :> metrology:IndependentUnitaryKindOfQuantity [
         restricts scalar property metrology:isDimensionlessKindOfQuantity to false^^xsd:boolean
         restricts all relation  metrology:forQuantitiesOfTheSameUnitaryKindOfQuantity to 80000-6-units:UnitOfElectricCurrent
     ]
 
-    @dc:source "6-2"
+    @dc:^source "6-2"
     concept electric-charge :> metrology:DerivedUnitaryKindOfQuantity [
         restricts scalar property metrology:isDimensionlessKindOfQuantity to false^^xsd:boolean
         restricts all relation  metrology:forQuantitiesOfTheSameUnitaryKindOfQuantity to 80000-6-units:UnitOfElectricCharge
@@ -32,7 +32,7 @@ vocabulary <http://iso.org/80000-6-kindsOfQuantities> with # as 80000-6-kindsOfQ
         restricts scalar property metrology:exponent to "1/1"^^owl:rational
     ]
 
-    @dc:source "6-10"
+    @dc:^source "6-10"
     concept electric-field-strength :> metrology:DerivedUnitaryKindOfQuantity [
         restricts scalar property metrology:isDimensionlessKindOfQuantity to false^^xsd:boolean
         restricts all relation  metrology:forQuantitiesOfTheSameUnitaryKindOfQuantity to 80000-6-units:UnitOfElectricFieldStrength
@@ -54,7 +54,7 @@ vocabulary <http://iso.org/80000-6-kindsOfQuantities> with # as 80000-6-kindsOfQ
         restricts scalar property metrology:exponent to "-1/1"^^owl:rational
     ]
 
-    @dc:source "6-11"
+    @dc:^source "6-11"
     concept electric-potential :> metrology:DerivedUnitaryKindOfQuantity [
         restricts scalar property metrology:isDimensionlessKindOfQuantity to false^^xsd:boolean
         restricts all relation  metrology:forQuantitiesOfTheSameUnitaryKindOfQuantity to 80000-6-units:UnitOfElectricPotential
@@ -76,7 +76,7 @@ vocabulary <http://iso.org/80000-6-kindsOfQuantities> with # as 80000-6-kindsOfQ
         restricts scalar property metrology:exponent to "1/1"^^owl:rational
     ]
 
-    @dc:source "6-46"
+    @dc:^source "6-46"
     concept resistance :> metrology:DerivedUnitaryKindOfQuantity [
         restricts scalar property metrology:isDimensionlessKindOfQuantity to false^^xsd:boolean
         restricts all relation  metrology:forQuantitiesOfTheSameUnitaryKindOfQuantity to 80000-6-units:UnitOfResistance

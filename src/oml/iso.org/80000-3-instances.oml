@@ -1,7 +1,7 @@
 description <http://iso.org/80000-3-instances> with # as 80000-3-instances {
   uses <http://iso.org/80000-3-kindsOfQuantities>
 
-  @dc:source "3-1"
+  @dc:^source "3-1"
   ci ^length : 80000-3-kindsOfQuantities:^length
   ci width : 80000-3-kindsOfQuantities:width
   ci breadth : 80000-3-kindsOfQuantities:breadth
@@ -22,15 +22,15 @@ description <http://iso.org/80000-3-instances> with # as 80000-3-instances {
  
   ci kilometre : 80000-3-units:kilometre
 
-  @dc:source "3-5"
+  @dc:^source "3-5"
   ci angular-measure : 80000-3-kindsOfQuantities:angular-measure
   ci radian : 80000-3-units:radian
  
 
-  @dc:source "3-6"
+  @dc:^source "3-6"
   ci rotational-displacement : 80000-3-kindsOfQuantities:rotational-displacement
   
-  @dc:source "3-9"
+  @dc:^source "3-9"
   ci duration : 80000-3-kindsOfQuantities:duration
   ci second : 80000-3-units:second
  
@@ -40,20 +40,20 @@ description <http://iso.org/80000-3-instances> with # as 80000-3-instances {
 
   ci hour : 80000-3-units:hour
 
-  @dc:source "3-10"
+  @dc:^source "3-10"
   ci velocity : 80000-3-kindsOfQuantities:velocity
   ci metre-per-second : 80000-3-units:metre-per-second
 
   ci kilometre-per-second : 80000-3-units:kilometre-per-second
 
-  @dc:source "3-14"
+  @dc:^source "3-14"
   ci period-duration : 80000-3-kindsOfQuantities:period-duration
 
-  @dc:source "3-16"
+  @dc:^source "3-16"
   ci rotation : 80000-3-kindsOfQuantities:rotation
   ci revolutions : 80000-3-units:revolutions
 
-  @dc:source "3-17"
+  @dc:^source "3-17"
   ci frequency : 80000-3-kindsOfQuantities:frequency
   ci rotational-frequency : 80000-3-kindsOfQuantities:rotational-frequency
   ci hertz : 80000-3-units:hertz
