@@ -1,0 +1,31 @@
+
+@dc:^description "This vocabulary provides convenience specializations of metrology:UnitaryQuantityValue
+as concepts for every metrology:MeasurementUnit defined in http://iso.org/80000-6-units.
+
+Note that this vocabulary reflects an opinionated usage of metrology:UnitaryQuantityValue
+as an OML concept and does not exclude in any way other possible usages."
+vocabulary <http://iso.org/80000-6-quantityValues> with # as 80000-6-quantityValues {
+  extends <http://iso.org/80000-concepts>
+  extends <http://iso.org/80000-6-units>
+  uses <http://iso.org/80000-6-instances>
+
+  concept ampere :> metrology:UnitaryQuantityValue, 80000-concepts:QuantityValue [
+     restricts relation metrology:hasReference to 80000-6-instances:ampere
+  ]
+
+  concept coulomb :> metrology:UnitaryQuantityValue, 80000-concepts:QuantityValue [
+     restricts relation metrology:hasReference to 80000-6-instances:coulomb
+  ]
+
+  concept newton-per-coulomb :> metrology:UnitaryQuantityValue, 80000-concepts:QuantityValue [
+     restricts relation metrology:hasReference to 80000-6-instances:newton-per-coulomb
+  ]
+
+  concept volt :> metrology:UnitaryQuantityValue, 80000-concepts:QuantityValue [
+     restricts relation metrology:hasReference to 80000-6-instances:volt
+  ]
+  
+  concept ohm :> metrology:UnitaryQuantityValue, 80000-concepts:QuantityValue [
+     restricts relation metrology:hasReference to 80000-6-instances:ohm
+  ]
+}

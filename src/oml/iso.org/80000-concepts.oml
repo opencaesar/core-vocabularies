@@ -1,0 +1,18 @@
+@dc:^description "This vocabulary defines three concepts, 80000-concepts:KindOfQuantity, 80000-concepts:QuantityValue,
+and 80000-concepts:Unit, intended to be the root of the taxonomy of all definitions of 
+metrology:UnitaryKindOfQuantity, metrology:UnitaryQuantityValue and metrology:MeasurementUnit respectively. 
+
+The bundle closure over this vocabulary and a set of ISO 80K vocabularies will effectively
+force all definitions to be mutually disjoint. Extending the bundle closure to include other vocabularies
+will result in compact disjointness axioms whose size will be independent of the number of ISO 80K
+definitions in scope of the closure because the disjointness axioms will be asserted in 
+terms of 80000-concepts:KindOfQuantity, 80000-concepts:QuantityValue and 80000-concepts:Unit instead of all their specializations."
+vocabulary <http://iso.org/80000-concepts> with # as 80000-concepts {
+  extends <http://ontology.iupac.org/metrology>
+
+  concept KindOfQuantity :> metrology:UnitaryKindOfQuantity
+
+  concept QuantityValue :> metrology:UnitaryQuantityValue
+
+  concept Unit :> metrology:MeasurementUnit
+}

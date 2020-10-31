@@ -1,0 +1,31 @@
+@dc:^description "This vocabulary provides convenience specializations of metrology:UnitaryQuantityValue
+as concepts for every metrology:MeasurementUnit defined in http://iso.org/80000-4-units.
+
+Note that this vocabulary reflects an opinionated usage of metrology:UnitaryQuantityValue
+as an OML concept and does not exclude in any way other possible usages."
+vocabulary <http://iso.org/80000-4-quantityValues> with # as 80000-4-quantityValues {
+  extends <http://iso.org/80000-concepts>
+  extends <http://iso.org/80000-4-units>
+  uses <http://iso.org/80000-4-instances>
+
+  concept gram :> metrology:UnitaryQuantityValue, 80000-concepts:QuantityValue [
+     restricts relation metrology:hasReference to 80000-4-instances:gram
+  ]
+
+  concept kilogram :> metrology:UnitaryQuantityValue, 80000-concepts:QuantityValue [
+     restricts relation metrology:hasReference to 80000-4-instances:kilogram
+  ]
+
+  concept kilogram-metre-per-second :> metrology:UnitaryQuantityValue, 80000-concepts:QuantityValue [
+     restricts relation metrology:hasReference to 80000-4-instances:kilogram-metre-per-second
+  ]
+
+  concept newton :> metrology:UnitaryQuantityValue, 80000-concepts:QuantityValue [
+     restricts relation metrology:hasReference to 80000-4-instances:newton
+  ]
+
+  concept watt :> metrology:UnitaryQuantityValue, 80000-concepts:QuantityValue [
+     restricts relation metrology:hasReference to 80000-4-instances:watt
+  ]
+
+}

@@ -1,0 +1,18 @@
+@dc:^description "This vocabulary provides convenience specializations of metrology:UnitaryQuantityValue
+as concepts for every metrology:MeasurementUnit defined in http://iso.org/80000-5-units.
+
+Note that this vocabulary reflects an opinionated usage of metrology:UnitaryQuantityValue
+as an OML concept and does not exclude in any way other possible usages."
+vocabulary <http://iso.org/80000-5-quantityValues> with # as 80000-5-quantityValues {
+  extends <http://iso.org/80000-concepts>
+  extends <http://iso.org/80000-5-units>
+  uses <http://iso.org/80000-5-instances>
+
+  concept kelvin :> metrology:UnitaryQuantityValue, 80000-concepts:QuantityValue [
+     restricts relation metrology:hasReference to 80000-5-instances:kelvin
+  ]
+
+  concept degreeCelcius :> metrology:UnitaryQuantityValue, 80000-concepts:QuantityValue [
+     restricts relation metrology:hasReference to 80000-5-instances:degreeCelcius
+  ]
+}

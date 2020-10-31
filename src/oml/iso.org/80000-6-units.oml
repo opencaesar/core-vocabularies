@@ -8,14 +8,14 @@ vocabulary <http://iso.org/80000-6-units> with # as 80000-6-units {
         restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
     ]
 
-    concept ampere :> UnitOfElectricCurrent, metrology:IndependentMeasurementUnit
+    concept ampere :> UnitOfElectricCurrent, metrology:IndependentMeasurementUnit, 80000-concepts:Unit 
 
     @dc:^source "6-2"
     aspect UnitOfElectricCharge :> metrology:CoherentMeasurementUnit [
         restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
     ]
 
-    concept coulomb :> UnitOfElectricCharge, metrology:DerivedMeasurementUnit
+    concept coulomb :> UnitOfElectricCharge, metrology:DerivedMeasurementUnit, 80000-concepts:Unit 
 
     relation entity coulomb-of-ampere :> metrology:HasFactorForMeasurementUnit [
         from coulomb
@@ -36,7 +36,7 @@ vocabulary <http://iso.org/80000-6-units> with # as 80000-6-units {
         restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
     ]
 
-    concept newton-per-coulomb :> UnitOfElectricFieldStrength, metrology:DerivedMeasurementUnit
+    concept newton-per-coulomb :> UnitOfElectricFieldStrength, metrology:DerivedMeasurementUnit, 80000-concepts:Unit 
 
     relation entity newton-per-coulomb-of-newton :> metrology:HasFactorForMeasurementUnit [
         from newton-per-coulomb
@@ -57,7 +57,7 @@ vocabulary <http://iso.org/80000-6-units> with # as 80000-6-units {
         restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
     ]
 
-    concept volt :> UnitOfElectricPotential, metrology:DerivedMeasurementUnit
+    concept volt :> UnitOfElectricPotential, metrology:DerivedMeasurementUnit, 80000-concepts:Unit 
 
     relation entity volt-of-newton-per-coulomb :> metrology:HasFactorForMeasurementUnit [
         from volt
@@ -78,7 +78,7 @@ vocabulary <http://iso.org/80000-6-units> with # as 80000-6-units {
         restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
     ]
 
-    concept ohm :> UnitOfResistance, metrology:DerivedMeasurementUnit
+    concept ohm :> UnitOfResistance, metrology:DerivedMeasurementUnit, 80000-concepts:Unit 
 
     relation entity ohm-of-volt :> metrology:HasFactorForMeasurementUnit [
         from ohm
