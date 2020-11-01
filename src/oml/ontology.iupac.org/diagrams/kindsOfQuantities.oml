@@ -1,7 +1,7 @@
 vocabulary <http://ontology.iupac.org/metrology/diagrams/kindsOfQuantities> with # as kindsOfQuantities {
     extends <http://ontology.iupac.org/metrology>
 
-    ref aspect metrology:KindOfQuantity
+    ref concept metrology:KindOfQuantity
 
     ref relation entity metrology:SystemHasUnitaryKindOfQuantity
 
@@ -9,7 +9,7 @@ vocabulary <http://ontology.iupac.org/metrology/diagrams/kindsOfQuantities> with
 
     ref relation entity metrology:ForQuantitiesOfTheSameUnitaryKindOfQuantity
 
-    ref aspect metrology:OrdinalKindOfQuantity
+    ref concept metrology:OrdinalKindOfQuantity
 
-    ref aspect metrology:IndependentUnitaryKindOfQuantity
+    ref concept metrology:IndependentUnitaryKindOfQuantity
 }

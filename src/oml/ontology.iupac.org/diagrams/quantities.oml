@@ -3,11 +3,11 @@ vocabulary <http://ontology.iupac.org/metrology/diagams/quantities> with # as qu
 
     ref relation entity metrology:HasKindOfQuantity
     
-    ref aspect metrology:QuantityValue
+    ref concept metrology:QuantityValue
 
-    ref aspect metrology:OrdinalQuantityValue
+    ref concept metrology:OrdinalQuantityValue
 
-    ref aspect metrology:UnitaryQuantityValue
+    ref concept metrology:UnitaryQuantityValue
 
     ref aspect metrology:ReferenceMaterial
 
@@ -15,11 +15,11 @@ vocabulary <http://ontology.iupac.org/metrology/diagams/quantities> with # as qu
 
     ref aspect metrology:MeasurementUnit
 
-    ref aspect metrology:Quantity
+    ref concept metrology:Quantity
 
-    ref aspect metrology:OrdinalQuantity
+    ref concept metrology:OrdinalQuantity
 
-    ref aspect metrology:UnitaryQuantity
+    ref concept metrology:UnitaryQuantity
 
     ref relation entity metrology:IsQuantityOf
 
@@ -27,6 +27,6 @@ vocabulary <http://ontology.iupac.org/metrology/diagams/quantities> with # as qu
 
     ref relation entity metrology:HasReference
     
-    ref aspect metrology:KindOfQuantity
+    ref concept metrology:KindOfQuantity
     
 }
