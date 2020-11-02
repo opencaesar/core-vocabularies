@@ -9,9 +9,9 @@ vocabulary <http://iso.org/80000-3-units> with # as 80000-3-units {
         restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
     ]
 
-    concept metre :> UnitOfLength, metrology:IndependentMeasurementUnit, 80000-concepts:Unit
+    concept metre :> UnitOfLength, metrology:IndependentMeasurementUnit, 80000-concepts:MeasurementUnit
 
-    concept kilometre :> UnitOfLength, metrology:PrefixedMeasurementUnit, 80000-concepts:Unit [
+    concept kilometre :> UnitOfLength, metrology:PrefixedMeasurementUnit, 80000-concepts:MeasurementUnit [
         restricts relation metrology:hasPrefix to 80000-1:kilo
     ]
 
@@ -20,7 +20,7 @@ vocabulary <http://iso.org/80000-3-units> with # as 80000-3-units {
         restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
     ]
 
-    concept radian :> UnitOfAngularMeasure, metrology:DerivedMeasurementUnit, 80000-concepts:Unit 
+    concept radian :> UnitOfAngularMeasure, metrology:DerivedMeasurementUnit, 80000-concepts:MeasurementUnit 
 
     relation entity radian-of-numerator :> metrology:HasFactorForMeasurementUnit [
         from radian
@@ -41,18 +41,18 @@ vocabulary <http://iso.org/80000-3-units> with # as 80000-3-units {
         restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
     ]
 
-    concept second :> UnitOfTime, metrology:IndependentMeasurementUnit, 80000-concepts:Unit
+    concept second :> UnitOfTime, metrology:IndependentMeasurementUnit, 80000-concepts:MeasurementUnit
 
     concept millisecond :> UnitOfTime, metrology:PrefixedMeasurementUnit [
         restricts relation metrology:hasPrefix to 80000-1:milli
     ]
 
-    concept minute :> metrology:NonCoherentDerivedMeasurementUnit, 80000-concepts:Unit [
+    concept minute :> metrology:NonCoherentDerivedMeasurementUnit, 80000-concepts:MeasurementUnit [
         restricts scalar property metrology:nonCoherentRelationship to "1 minute = 60 seconds"^^xsd:string
         restricts all relation metrology:nonCoherentDerivedMeasurementUnitOf to second
     ]
 
-    concept hour :> metrology:NonCoherentDerivedMeasurementUnit, 80000-concepts:Unit [
+    concept hour :> metrology:NonCoherentDerivedMeasurementUnit, 80000-concepts:MeasurementUnit [
         restricts scalar property metrology:nonCoherentRelationship to "1 hour = 60 minutes"
         restricts all relation metrology:nonCoherentDerivedMeasurementUnitOf to minute
     ]
@@ -62,7 +62,7 @@ vocabulary <http://iso.org/80000-3-units> with # as 80000-3-units {
         restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
     ]
 
-    concept metre-per-second :> UnitOfVelocity, metrology:DerivedMeasurementUnit, 80000-concepts:Unit
+    concept metre-per-second :> UnitOfVelocity, metrology:DerivedMeasurementUnit, 80000-concepts:MeasurementUnit
 
     relation entity metre-per-second_of_metre :>  metrology:HasFactorForMeasurementUnit [
         from metre-per-second
@@ -78,7 +78,7 @@ vocabulary <http://iso.org/80000-3-units> with # as 80000-3-units {
         restricts scalar property metrology:exponent to "-1/1"^^owl:rational
     ]
 
-    concept kilometre-per-second :> UnitOfVelocity, metrology:DerivedMeasurementUnit, 80000-concepts:Unit
+    concept kilometre-per-second :> UnitOfVelocity, metrology:DerivedMeasurementUnit, 80000-concepts:MeasurementUnit
 
     relation entity kilometre-per-second_of_metre :>  metrology:HasFactorForMeasurementUnit [
         from metre-per-second
@@ -99,7 +99,7 @@ vocabulary <http://iso.org/80000-3-units> with # as 80000-3-units {
         restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
     ]
 
-    concept revolutions :> UnitOfRotation, metrology:DerivedMeasurementUnit, 80000-concepts:Unit
+    concept revolutions :> UnitOfRotation, metrology:DerivedMeasurementUnit, 80000-concepts:MeasurementUnit
 
     relation entity revolutions-of-radian :> metrology:HasFactorForMeasurementUnit [
         from revolutions
@@ -113,7 +113,7 @@ vocabulary <http://iso.org/80000-3-units> with # as 80000-3-units {
         restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
     ]
 
-    concept hertz :> UnitOfFrequency, metrology:DerivedMeasurementUnit, 80000-concepts:Unit
+    concept hertz :> UnitOfFrequency, metrology:DerivedMeasurementUnit, 80000-concepts:MeasurementUnit
 
     relation entity hertz_of_second :> metrology:HasFactorForMeasurementUnit [
         from hertz

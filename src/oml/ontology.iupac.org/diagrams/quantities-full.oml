@@ -1,13 +1,13 @@
-vocabulary <http://ontology.iupac.org/metrology/diagams/quantities> with # as quantities {
+vocabulary <http://ontology.iupac.org/metrology/diagams/quantities-full> with # as quantities-full {
     extends <http://ontology.iupac.org/metrology>
 
     ref relation entity metrology:HasKindOfQuantity
     
-    ref concept metrology:QuantityValue
+    ref aspect metrology:QuantityValue
 
-    ref concept metrology:OrdinalQuantityValue
+    ref aspect metrology:OrdinalQuantityValue
 
-    ref concept metrology:UnitaryQuantityValue
+    ref aspect metrology:UnitaryQuantityValue
 
     ref aspect metrology:ReferenceMaterial
 

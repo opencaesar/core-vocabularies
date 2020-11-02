@@ -8,11 +8,17 @@ vocabulary <http://iso.org/80000-5-quantityValues> with # as 80000-5-quantityVal
   extends <http://iso.org/80000-5-units>
   uses <http://iso.org/80000-5-instances>
 
-  concept kelvin :> metrology:UnitaryQuantityValue, 80000-concepts:QuantityValue [
+  relation entity kelvin :> metrology:UnitaryQuantityValue, 80000-concepts:UnitaryQuantityValue [
+     from metrology:UnitaryQuantity
+     to kelvin
+     forward hasKelvinMagnitude
      restricts relation metrology:hasReference to 80000-5-instances:kelvin
   ]
 
-  concept degreeCelcius :> metrology:UnitaryQuantityValue, 80000-concepts:QuantityValue [
+  relation entity degreeCelcius :> metrology:UnitaryQuantityValue, 80000-concepts:UnitaryQuantityValue [
+     from metrology:UnitaryQuantity
+     to degreeCelcius
+     forward hasDegreeCelciusMagnitude
      restricts relation metrology:hasReference to 80000-5-instances:degreeCelcius
   ]
 }

@@ -9,7 +9,7 @@ vocabulary <http://iso.org/80000-4-units> with # as 80000-4-units {
         restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
     ]
 
-    concept gram :> UnitOfMass, metrology:IndependentMeasurementUnit, 80000-concepts:Unit 
+    concept gram :> UnitOfMass, metrology:IndependentMeasurementUnit, 80000-concepts:MeasurementUnit 
 
     concept kilogram :> UnitOfMass, metrology:PrefixedMeasurementUnit [
         restricts relation metrology:hasPrefix to 80000-1:kilo
@@ -20,7 +20,7 @@ vocabulary <http://iso.org/80000-4-units> with # as 80000-4-units {
         restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
     ]
 
-    concept kilogram-metre-per-second :> UnitOfMomentum, metrology:DerivedMeasurementUnit, 80000-concepts:Unit 
+    concept kilogram-metre-per-second :> UnitOfMomentum, metrology:DerivedMeasurementUnit, 80000-concepts:MeasurementUnit 
 
     relation entity kilogram-metre-per-second-of-kilogram :> metrology:HasFactorForMeasurementUnit [
         from kilogram-metre-per-second
@@ -41,7 +41,7 @@ vocabulary <http://iso.org/80000-4-units> with # as 80000-4-units {
         restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
     ]
 
-    concept newton :> UnitOfForce, metrology:DerivedMeasurementUnit, 80000-concepts:Unit 
+    concept newton :> UnitOfForce, metrology:DerivedMeasurementUnit, 80000-concepts:MeasurementUnit 
 
     relation entity newton-of-kilogram :> metrology:HasFactorForMeasurementUnit [
         from newton
@@ -62,7 +62,7 @@ vocabulary <http://iso.org/80000-4-units> with # as 80000-4-units {
         restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
     ]
 
-    concept watt :> UnitOfPower, metrology:DerivedMeasurementUnit, 80000-concepts:Unit 
+    concept watt :> UnitOfPower, metrology:DerivedMeasurementUnit, 80000-concepts:MeasurementUnit 
 
     relation entity watt-of-newton :> metrology:HasFactorForMeasurementUnit [
         from watt
