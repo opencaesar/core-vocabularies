@@ -3,7 +3,7 @@
  */
 description='The set of core vocabularies'
 group = 'io.opencaesar.ontologies'
-version = '1.3.0'
+version = '1.4.0'
 
 /* 
  * The Gradle task dependencies 
@@ -18,8 +18,8 @@ buildscript {
 		jcenter()
 	}
 	dependencies {
-		classpath 'io.opencaesar.owl:oml2owl-gradle:+'
-		classpath 'io.opencaesar.oml:oml-bikeshed-gradle:+'
+		classpath 'io.opencaesar.owl:oml2owl-gradle:0.7.+'
+		classpath 'io.opencaesar.oml:oml-bikeshed-gradle:0.7.+'
 		classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.+'
 		// needed since gradle bintray brings an old version of xerces
 		configurations.classpath.exclude group: 'xerces', module: 'xercesImpl'
