@@ -14,15 +14,5 @@ vocabulary <http://iso.org/80000-concepts> with # as 80000-concepts {
     forward unitaryQuantityHasMagnitude
   ]
 
-  rule UnitaryQuantityValueOf1 [
-    unitaryQuantityHasMagnitude(q, qv) ->
-    UnitaryQuantityValue(q, qv, qv)
-  ]
-
-  rule UnitaryQuantityValueOf2 [
-    UnitaryQuantityValue(q, qv, qv) ->
-    unitaryQuantityHasMagnitude(q, qv)
-  ]
-
   concept MeasurementUnit :> metrology:MeasurementUnit
 }

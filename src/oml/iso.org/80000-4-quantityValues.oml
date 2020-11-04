@@ -8,7 +8,7 @@ vocabulary <http://iso.org/80000-4-quantityValues> with # as 80000-4-quantityVal
   extends <http://iso.org/80000-4-units>
   uses <http://iso.org/80000-4-instances>
 
-  relation entity gram :> metrology:UnitaryQuantityValue, 80000-concepts:UnitaryQuantityValue [
+  relation entity gram :> 80000-concepts:UnitaryQuantityValue [
      from metrology:UnitaryQuantity
      to gram
      forward hasGramMagnitude
@@ -16,28 +16,28 @@ vocabulary <http://iso.org/80000-4-quantityValues> with # as 80000-4-quantityVal
      restricts relation metrology:hasReference to 80000-4-instances:gram
   ]
 
-  relation entity kilogram :> metrology:UnitaryQuantityValue, 80000-concepts:UnitaryQuantityValue [
+  relation entity kilogram :> 80000-concepts:UnitaryQuantityValue [
      from metrology:UnitaryQuantity
      to kilogram
      forward hasKilogramMagnitude
      restricts relation metrology:hasReference to 80000-4-instances:kilogram
   ]
 
-  relation entity kilogram-metre-per-second :> metrology:UnitaryQuantityValue, 80000-concepts:UnitaryQuantityValue [
+  relation entity kilogram-metre-per-second :> 80000-concepts:UnitaryQuantityValue [
      from metrology:UnitaryQuantity
      to kilogram-metre-per-second
      forward hasKilogramMetrePerSecondMagnitude
      restricts relation metrology:hasReference to 80000-4-instances:kilogram-metre-per-second
   ]
 
-  relation entity newton :> metrology:UnitaryQuantityValue, 80000-concepts:UnitaryQuantityValue [
+  relation entity newton :> 80000-concepts:UnitaryQuantityValue [
      from metrology:UnitaryQuantity
      to newton
      forward hasNewtonMagnitude
      restricts relation metrology:hasReference to 80000-4-instances:newton
   ]
 
-  relation entity watt :> metrology:UnitaryQuantityValue, 80000-concepts:UnitaryQuantityValue [
+  relation entity watt :> 80000-concepts:UnitaryQuantityValue [
      from metrology:UnitaryQuantity
      to watt
      forward hasWattMagnitude

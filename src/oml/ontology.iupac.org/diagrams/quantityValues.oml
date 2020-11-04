@@ -1,0 +1,17 @@
+vocabulary <http://ontology.iupac.org/metrology/diagrams/quantityValues> with # as quantityValues {
+    extends <http://ontology.iupac.org/metrology>
+
+  ref relation entity metrology:HasMagnitude
+
+  ref aspect metrology:QuantityValue
+
+  ref relation entity metrology:HasReference
+
+  ref aspect metrology:ReferenceMaterial
+  ref aspect metrology:MeasurementProcedure
+
+  ref aspect metrology:OrdinalQuantityValue 
+  ref aspect metrology:UnitaryQuantityValue
+
+  ref aspect metrology:MeasurementUnit
+}

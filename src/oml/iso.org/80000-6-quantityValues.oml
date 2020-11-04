@@ -9,35 +9,35 @@ vocabulary <http://iso.org/80000-6-quantityValues> with # as 80000-6-quantityVal
   extends <http://iso.org/80000-6-units>
   uses <http://iso.org/80000-6-instances>
 
-  relation entity ampere :> metrology:UnitaryQuantityValue, 80000-concepts:UnitaryQuantityValue [
+  relation entity ampere :> 80000-concepts:UnitaryQuantityValue [
      from metrology:UnitaryQuantity
      to ampere
      forward hasAmpereMagnitude
      restricts relation metrology:hasReference to 80000-6-instances:ampere
   ]
 
-  relation entity coulomb :> metrology:UnitaryQuantityValue, 80000-concepts:UnitaryQuantityValue [
+  relation entity coulomb :> 80000-concepts:UnitaryQuantityValue [
      from metrology:UnitaryQuantity
      to coulomb
      forward hasCoulombMagnitude
      restricts relation metrology:hasReference to 80000-6-instances:coulomb
   ]
 
-  relation entity newton-per-coulomb :> metrology:UnitaryQuantityValue, 80000-concepts:UnitaryQuantityValue [
+  relation entity newton-per-coulomb :> 80000-concepts:UnitaryQuantityValue [
      from metrology:UnitaryQuantity
      to newton-per-coulomb
      forward hasNewtonPerCoulombMagnitude
      restricts relation metrology:hasReference to 80000-6-instances:newton-per-coulomb
   ]
 
-  relation entity volt :> metrology:UnitaryQuantityValue, 80000-concepts:UnitaryQuantityValue [
+  relation entity volt :> 80000-concepts:UnitaryQuantityValue [
      from metrology:UnitaryQuantity
      to volt
      forward hasVoltMagnitude
      restricts relation metrology:hasReference to 80000-6-instances:volt
   ]
   
-  relation entity ohm :> metrology:UnitaryQuantityValue, 80000-concepts:UnitaryQuantityValue [
+  relation entity ohm :> 80000-concepts:UnitaryQuantityValue [
      from metrology:UnitaryQuantity
      to ohm
      forward hasOhmMagnitude
