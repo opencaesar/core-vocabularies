@@ -8,9 +8,9 @@ vocabulary <http://iso.org/80000-concepts> with # as 80000-concepts {
 
   concept UnitaryKindOfQuantity :> metrology:UnitaryKindOfQuantity
 
-  relation entity UnitaryQuantityValue :> metrology:HasMagnitude, metrology:UnitaryQuantityValue [
+  relation entity UnitaryQuantityMagnitude :> metrology:HasMagnitude, metrology:UnitaryQuantityValue [
     from metrology:UnitaryQuantity
-    to UnitaryQuantityValue
+    to UnitaryQuantityMagnitude
     forward unitaryQuantityHasMagnitude
   ]
 

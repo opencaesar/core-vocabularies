@@ -8,79 +8,79 @@ vocabulary <http://iso.org/80000-3-quantityValues> with # as 80000-3-quantityVal
   extends <http://iso.org/80000-3-units>
   uses <http://iso.org/80000-3-instances>
 
-  relation entity metre :> 80000-concepts:UnitaryQuantityValue [
+  relation entity metre-magnitude :> 80000-concepts:UnitaryQuantityMagnitude [
      from metrology:UnitaryQuantity
-     to metre
+     to metre-magnitude
      forward hasMetreMagnitude
      restricts relation metrology:hasReference to 80000-3-instances:metre
   ]
 
-  relation entity  kilometre :> 80000-concepts:UnitaryQuantityValue [
+  relation entity kilometre-magnitude :> 80000-concepts:UnitaryQuantityMagnitude [
      from metrology:UnitaryQuantity
-     to kilometre
+     to kilometre-magnitude
      forward hasKilometreMagnitude
      restricts relation metrology:hasReference to 80000-3-instances:kilometre
   ]
 
-  relation entity  radian :> 80000-concepts:UnitaryQuantityValue [
+  relation entity radian-magnitude :> 80000-concepts:UnitaryQuantityMagnitude [
      from metrology:UnitaryQuantity
-     to radian
+     to radian-magnitude
      forward hasRadianMagnitude
      restricts relation metrology:hasReference to 80000-3-instances:radian
   ]
 
-  relation entity  second :> 80000-concepts:UnitaryQuantityValue [
+  relation entity second-magnitude :> 80000-concepts:UnitaryQuantityMagnitude [
      from metrology:UnitaryQuantity
-     to second
+     to second-magnitude
      forward hasSecondMagnitude
      restricts relation metrology:hasReference to 80000-3-instances:second
   ]
 
-  relation entity  millisecond :> 80000-concepts:UnitaryQuantityValue [
+  relation entity millisecond-magnitude :> 80000-concepts:UnitaryQuantityMagnitude [
      from metrology:UnitaryQuantity
-     to millisecond
+     to millisecond-magnitude
      forward hasMillisecondMagnitude
      restricts relation metrology:hasReference to 80000-3-instances:millisecond
   ]
 
-  relation entity  minute :> 80000-concepts:UnitaryQuantityValue [
+  relation entity minute-magnitude :> 80000-concepts:UnitaryQuantityMagnitude [
      from metrology:UnitaryQuantity
-     to minute
+     to minute-magnitude
      forward hasMinuteMagnitude
      restricts relation metrology:hasReference to 80000-3-instances:minute
   ]
 
-  relation entity  hour :> 80000-concepts:UnitaryQuantityValue [
+  relation entity hour-magnitude :> 80000-concepts:UnitaryQuantityMagnitude [
      from metrology:UnitaryQuantity
-     to hour
+     to hour-magnitude
      forward hasHourMagnitude
      restricts relation metrology:hasReference to 80000-3-instances:hour
   ]
 
-  relation entity  metre-per-second :> 80000-concepts:UnitaryQuantityValue [
+  relation entity metre-per-second-magnitude :> 80000-concepts:UnitaryQuantityMagnitude [
      from metrology:UnitaryQuantity
-     to metre-per-second
+     to metre-per-second-magnitude
      forward hasMetrePer-SecondMagnitude
      restricts relation metrology:hasReference to 80000-3-instances:metre-per-second
   ]
 
-  relation entity  kilometre-per-second :> 80000-concepts:UnitaryQuantityValue [
+  relation entity kilometre-per-second-magnitude :> 80000-concepts:UnitaryQuantityMagnitude [
      from metrology:UnitaryQuantity
-     to kilometre-per-second
+     to kilometre-per-second-magnitude
      forward hasKilometrePerSecondMagnitude
      restricts relation metrology:hasReference to 80000-3-instances:kilometre-per-second
   ]
 
-  relation entity  revolutions :> 80000-concepts:UnitaryQuantityValue [
+  relation entity revolutions-magnitude :> 80000-concepts:UnitaryQuantityMagnitude [
      from metrology:UnitaryQuantity
-     to revolutions
+     to revolutions-magnitude
      forward hasRevolutionsMagnitude
      restricts relation metrology:hasReference to 80000-3-instances:revolutions
   ]
 
-  relation entity  hertz :> 80000-concepts:UnitaryQuantityValue [
+  relation entity hertz-magnitude :> 80000-concepts:UnitaryQuantityMagnitude [
      from metrology:UnitaryQuantity
-     to hertz
+     to hertz-magnitude
      forward hasHertzMagnitude
      restricts relation metrology:hasReference to 80000-3-instances:hertz
   ]
