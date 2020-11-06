@@ -1,7 +1,7 @@
 vocabulary <http://iso.org/diagrams/80000-3> with # as 80000-3 {
-    extends <http://iso.org/80000-3-kindsOfQuantities>
+    extends <http://iso.org/80000-3-quantities>
 
-    ref concept 80000-3-kindsOfQuantities:^length
+    ref concept 80000-3-quantities:^length
 
     ref concept 80000-3-units:metre
 

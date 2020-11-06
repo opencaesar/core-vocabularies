@@ -9,6 +9,10 @@ vocabulary <http://iso.org/80000-3-units> with # as 80000-3-units {
         restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
     ]
 
+    aspect UnitOfLengthValue :> metrology:UnitaryQuantityValue [
+        restricts all relation metrology:hasReference to UnitOfLength
+    ]
+    
     concept metre :> UnitOfLength, metrology:IndependentMeasurementUnit, 80000-concepts:MeasurementUnit
 
     concept kilometre :> UnitOfLength, metrology:PrefixedMeasurementUnit, 80000-concepts:MeasurementUnit [
@@ -18,6 +22,10 @@ vocabulary <http://iso.org/80000-3-units> with # as 80000-3-units {
     @dc:^source "3-5"
     aspect UnitOfAngularMeasure :> metrology:CoherentMeasurementUnit [
         restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
+    ]
+
+    aspect UnitOfAngularMeasureValue :> metrology:UnitaryQuantityValue [
+        restricts all relation metrology:hasReference to UnitOfAngularMeasure
     ]
 
     concept radian :> UnitOfAngularMeasure, metrology:DerivedMeasurementUnit, 80000-concepts:MeasurementUnit 
@@ -41,6 +49,10 @@ vocabulary <http://iso.org/80000-3-units> with # as 80000-3-units {
         restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
     ]
 
+    aspect UnitOfTimeValue :> metrology:UnitaryQuantityValue [
+        restricts all relation metrology:hasReference to UnitOfTime
+    ]
+
     concept second :> UnitOfTime, metrology:IndependentMeasurementUnit, 80000-concepts:MeasurementUnit
 
     concept millisecond :> UnitOfTime, metrology:PrefixedMeasurementUnit [
@@ -60,6 +72,10 @@ vocabulary <http://iso.org/80000-3-units> with # as 80000-3-units {
     @dc:^source "3-10"
     aspect UnitOfVelocity :> metrology:CoherentMeasurementUnit [
         restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
+    ]
+
+    aspect UnitOfVelocityValue :> metrology:UnitaryQuantityValue [
+        restricts all relation metrology:hasReference to UnitOfVelocity
     ]
 
     concept metre-per-second :> UnitOfVelocity, metrology:DerivedMeasurementUnit, 80000-concepts:MeasurementUnit
@@ -99,6 +115,10 @@ vocabulary <http://iso.org/80000-3-units> with # as 80000-3-units {
         restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
     ]
 
+    aspect UnitOfRotationValue :> metrology:UnitaryQuantityValue [
+        restricts all relation metrology:hasReference to UnitOfRotation
+    ]
+
     concept revolutions :> UnitOfRotation, metrology:DerivedMeasurementUnit, 80000-concepts:MeasurementUnit
 
     relation entity revolutions-of-radian :> metrology:HasFactorForMeasurementUnit [
@@ -113,6 +133,10 @@ vocabulary <http://iso.org/80000-3-units> with # as 80000-3-units {
         restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
     ]
 
+    aspect UnitOfFrequencyValue :> metrology:UnitaryQuantityValue [
+        restricts all relation metrology:hasReference to UnitOfFrequency
+    ]
+    
     concept hertz :> UnitOfFrequency, metrology:DerivedMeasurementUnit, 80000-concepts:MeasurementUnit
 
     relation entity hertz_of_second :> metrology:HasFactorForMeasurementUnit [

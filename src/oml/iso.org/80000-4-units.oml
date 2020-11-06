@@ -9,6 +9,10 @@ vocabulary <http://iso.org/80000-4-units> with # as 80000-4-units {
         restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
     ]
 
+    aspect UnitOfMassValue :> metrology:UnitaryQuantityValue [
+        restricts all relation metrology:hasReference to UnitOfMass
+    ]
+
     concept gram :> UnitOfMass, metrology:IndependentMeasurementUnit, 80000-concepts:MeasurementUnit 
 
     concept kilogram :> UnitOfMass, metrology:PrefixedMeasurementUnit [
@@ -18,6 +22,10 @@ vocabulary <http://iso.org/80000-4-units> with # as 80000-4-units {
     @dc:^source "4-8"
     aspect UnitOfMomentum :> metrology:CoherentMeasurementUnit [
         restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
+    ]
+
+    aspect UnitOfMomentumValue :> metrology:UnitaryQuantityValue [
+        restricts all relation metrology:hasReference to UnitOfMomentum
     ]
 
     concept kilogram-metre-per-second :> UnitOfMomentum, metrology:DerivedMeasurementUnit, 80000-concepts:MeasurementUnit 
@@ -41,6 +49,10 @@ vocabulary <http://iso.org/80000-4-units> with # as 80000-4-units {
         restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
     ]
 
+    aspect UnitOfForceValue :> metrology:UnitaryQuantityValue [
+        restricts all relation metrology:hasReference to UnitOfForce
+    ]
+
     concept newton :> UnitOfForce, metrology:DerivedMeasurementUnit, 80000-concepts:MeasurementUnit 
 
     relation entity newton-of-kilogram :> metrology:HasFactorForMeasurementUnit [
@@ -62,6 +74,10 @@ vocabulary <http://iso.org/80000-4-units> with # as 80000-4-units {
         restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
     ]
 
+    aspect UnitOfPowerValue :> metrology:UnitaryQuantityValue [
+        restricts all relation metrology:hasReference to UnitOfPower
+    ]
+    
     concept watt :> UnitOfPower, metrology:DerivedMeasurementUnit, 80000-concepts:MeasurementUnit 
 
     relation entity watt-of-newton :> metrology:HasFactorForMeasurementUnit [

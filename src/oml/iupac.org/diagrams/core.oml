@@ -1,17 +1,15 @@
-vocabulary <http://ontology.iupac.org/metrology/diagrams/core> with # as core {
-    extends <http://ontology.iupac.org/metrology>
+vocabulary <http://iupac.org/metrology/diagrams/core> with # as core {
+    extends <http://iupac.org/metrology>
 
     ref aspect metrology:ExponentFactor
 
-    ref relation entity metrology:HasFactorForUnitaryKindOfQuantity
+    ref relation entity metrology:HasFactorForUnitaryQuantity
 
     ref relation entity metrology:HasFactorForMeasurementUnit
 
     ref relation entity metrology:IsQuantityOf
 
     ref relation entity metrology:HasMagnitude
-
-    ref relation entity metrology:HasKindOfQuantity
 
     ref aspect metrology:CoherentMeasurementUnit
 

@@ -8,6 +8,10 @@ vocabulary <http://iso.org/80000-5-units> with # as 80000-5-units {
         restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
     ]
 
+    aspect UnitOfThermodynamicTemperatureValue :> metrology:UnitaryQuantityValue [
+        restricts all relation metrology:hasReference to UnitOfThermodynamicTemperature
+    ]
+
     concept kelvin :> UnitOfThermodynamicTemperature, metrology:IndependentMeasurementUnit, 80000-concepts:MeasurementUnit 
 
     @dc:^source "5-2"
@@ -15,6 +19,10 @@ vocabulary <http://iso.org/80000-5-units> with # as 80000-5-units {
         restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
     ]
 
+    aspect UnitOfCelciusTemperatureValue :> metrology:UnitaryQuantityValue [
+        restricts all relation metrology:hasReference to UnitOfCelciusTemperature
+    ]
+    
     concept degreeCelcius :> UnitOfCelciusTemperature, metrology:DerivedMeasurementUnit, 80000-concepts:MeasurementUnit 
 
     relation entity degreeCelcius-of-kelvin :> metrology:HasFactorForMeasurementUnit [

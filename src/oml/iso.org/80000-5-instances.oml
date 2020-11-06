@@ -1,12 +1,12 @@
 description <http://iso.org/80000-5-instances> with # as 80000-5-instances {
-  uses <http://iso.org/80000-5-kindsOfQuantities>
+  uses <http://iso.org/80000-5-quantities>
 
   @dc:^source "5-1"
-  ci thermodynamic-temperature : 80000-5-kindsOfQuantities:thermodynamic-temperature
+  ci thermodynamic-temperature : 80000-5-quantities:thermodynamic-temperature
   ci kelvin : 80000-5-units:kelvin
 
   @dc:^source "5-2"
-  ci celcius-temperature : 80000-5-kindsOfQuantities:celcius-temperature
+  ci celcius-temperature : 80000-5-quantities:celcius-temperature
   ci degreeCelcius : 80000-5-units:degreeCelcius
 
 }

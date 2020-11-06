@@ -1,5 +1,5 @@
-vocabulary <http://ontology.iupac.org/metrology/diagrams/units> with # as units {
-    extends <http://ontology.iupac.org/metrology>
+vocabulary <http://iupac.org/metrology/diagrams/units> with # as units {
+    extends <http://iupac.org/metrology>
 
     ref concept metrology:NonCoherentDerivedMeasurementUnit
 
@@ -17,5 +17,4 @@ vocabulary <http://ontology.iupac.org/metrology/diagrams/units> with # as units 
 
     ref relation entity metrology:HasFactorForMeasurementUnit
 
-    ref relation entity metrology:ForQuantitiesOfTheSameUnitaryKindOfQuantity
 }

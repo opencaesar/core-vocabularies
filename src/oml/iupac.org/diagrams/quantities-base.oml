@@ -1,0 +1,15 @@
+vocabulary <http://iupac.org/metrology/diagams/quantities-base> with # as quantities-base {
+    extends <http://iupac.org/metrology>
+    
+    ref aspect metrology:QuantityValue
+
+    ref concept metrology:Quantity
+
+    ref relation entity metrology:IsQuantityOf
+
+    ref relation entity metrology:HasMagnitude
+
+    ref relation entity metrology:HasReference
+
+    
+}

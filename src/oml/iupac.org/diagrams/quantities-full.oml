@@ -1,7 +1,5 @@
-vocabulary <http://ontology.iupac.org/metrology/diagams/quantities-full> with # as quantities-full {
-    extends <http://ontology.iupac.org/metrology>
-
-    ref relation entity metrology:HasKindOfQuantity
+vocabulary <http://iupac.org/metrology/diagams/quantities-full> with # as quantities-full {
+    extends <http://iupac.org/metrology>
     
     ref aspect metrology:QuantityValue
 
@@ -26,7 +24,5 @@ vocabulary <http://ontology.iupac.org/metrology/diagams/quantities-full> with # 
     ref relation entity metrology:HasMagnitude
 
     ref relation entity metrology:HasReference
-    
-    ref concept metrology:KindOfQuantity
-    
+        
 }

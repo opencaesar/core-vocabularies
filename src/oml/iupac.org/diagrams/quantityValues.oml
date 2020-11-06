@@ -1,5 +1,5 @@
-vocabulary <http://ontology.iupac.org/metrology/diagrams/quantityValues> with # as quantityValues {
-    extends <http://ontology.iupac.org/metrology>
+vocabulary <http://iupac.org/metrology/diagrams/quantityValues> with # as quantityValues {
+    extends <http://iupac.org/metrology>
 
   ref relation entity metrology:HasMagnitude
 
