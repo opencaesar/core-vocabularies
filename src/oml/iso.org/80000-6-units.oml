@@ -3,24 +3,22 @@
 vocabulary <http://iso.org/80000-6-units> with # as 80000-6-units {
     extends <http://iso.org/80000-5-units>
 
-    @dc:^source "6-1"
-    aspect UnitOfElectricCurrent :> metrology:CoherentMeasurementUnit [
-        restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
-    ]
-
     aspect UnitOfElectricCurrentValue :> metrology:UnitaryQuantityValue [
         restricts all relation metrology:hasReference to UnitOfElectricCurrent
+    ]
+    @dc:^source "6-1"
+    concept UnitOfElectricCurrent :> metrology:CoherentMeasurementUnit [
+        restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
     ]
 
     concept ampere :> UnitOfElectricCurrent, metrology:IndependentMeasurementUnit, 80000-concepts:MeasurementUnit 
 
-    @dc:^source "6-2"
-    aspect UnitOfElectricCharge :> metrology:CoherentMeasurementUnit [
-        restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
-    ]
-
     aspect UnitOfElectricChargeValue :> metrology:UnitaryQuantityValue [
         restricts all relation metrology:hasReference to UnitOfElectricCharge
+    ]
+    @dc:^source "6-2"
+    concept UnitOfElectricCharge :> metrology:CoherentMeasurementUnit [
+        restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
     ]
 
     concept coulomb :> UnitOfElectricCharge, metrology:DerivedMeasurementUnit, 80000-concepts:MeasurementUnit 
@@ -39,13 +37,12 @@ vocabulary <http://iso.org/80000-6-units> with # as 80000-6-units {
         restricts scalar property metrology:exponent to "1/1"^^owl:rational
     ]
 
-    @dc:^source "6-10"
-    aspect UnitOfElectricFieldStrength :> metrology:CoherentMeasurementUnit [
-        restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
-    ]
-
     aspect UnitOfElectricFieldStrengthValue :> metrology:UnitaryQuantityValue [
         restricts all relation metrology:hasReference to UnitOfElectricFieldStrength
+    ]
+    @dc:^source "6-10"
+    concept UnitOfElectricFieldStrength :> metrology:CoherentMeasurementUnit [
+        restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
     ]
 
     concept newton-per-coulomb :> UnitOfElectricFieldStrength, metrology:DerivedMeasurementUnit, 80000-concepts:MeasurementUnit 
@@ -64,13 +61,13 @@ vocabulary <http://iso.org/80000-6-units> with # as 80000-6-units {
         restricts scalar property metrology:exponent to "-1/1"^^owl:rational
     ]
 
-    @dc:^source "6-11"
-    aspect UnitOfElectricPotential :> metrology:CoherentMeasurementUnit [
-        restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
-    ]
-
     aspect UnitOfElectricPotentialValue :> metrology:UnitaryQuantityValue [
         restricts all relation metrology:hasReference to UnitOfElectricPotential
+    ]
+    
+    @dc:^source "6-11"
+    concept UnitOfElectricPotential :> metrology:CoherentMeasurementUnit [
+        restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
     ]
 
     concept volt :> UnitOfElectricPotential, metrology:DerivedMeasurementUnit, 80000-concepts:MeasurementUnit 
@@ -89,14 +86,14 @@ vocabulary <http://iso.org/80000-6-units> with # as 80000-6-units {
         restricts scalar property metrology:exponent to "1/1"^^owl:rational
     ]
 
-    @dc:^source "6-46"
-    aspect UnitOfResistance :> metrology:CoherentMeasurementUnit [
-        restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
-    ]
-
     aspect UnitOfResistanceValue :> metrology:UnitaryQuantityValue [
         restricts all relation metrology:hasReference to UnitOfResistance
     ]
+    @dc:^source "6-46"
+    concept UnitOfResistance :> metrology:CoherentMeasurementUnit [
+        restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
+    ]
+
     
     concept ohm :> UnitOfResistance, metrology:DerivedMeasurementUnit, 80000-concepts:MeasurementUnit 
 

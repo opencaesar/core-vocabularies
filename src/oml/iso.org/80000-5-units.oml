@@ -3,26 +3,25 @@
 vocabulary <http://iso.org/80000-5-units> with # as 80000-5-units {
     extends <http://iso.org/80000-4-units>
 
-    @dc:^source "5-1"
-    aspect UnitOfThermodynamicTemperature :> metrology:CoherentMeasurementUnit [
-        restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
-    ]
-
     aspect UnitOfThermodynamicTemperatureValue :> metrology:UnitaryQuantityValue [
         restricts all relation metrology:hasReference to UnitOfThermodynamicTemperature
+    ]
+    
+    @dc:^source "5-1"
+    concept UnitOfThermodynamicTemperature :> metrology:CoherentMeasurementUnit [
+        restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
     ]
 
     concept kelvin :> UnitOfThermodynamicTemperature, metrology:IndependentMeasurementUnit, 80000-concepts:MeasurementUnit 
 
-    @dc:^source "5-2"
-    aspect UnitOfCelciusTemperature :> metrology:CoherentMeasurementUnit [
-        restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
-    ]
-
     aspect UnitOfCelciusTemperatureValue :> metrology:UnitaryQuantityValue [
         restricts all relation metrology:hasReference to UnitOfCelciusTemperature
     ]
-    
+    @dc:^source "5-2"
+    concept UnitOfCelciusTemperature :> metrology:CoherentMeasurementUnit [
+        restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
+    ]
+
     concept degreeCelcius :> UnitOfCelciusTemperature, metrology:DerivedMeasurementUnit, 80000-concepts:MeasurementUnit 
 
     relation entity degreeCelcius-of-kelvin :> metrology:HasFactorForMeasurementUnit [

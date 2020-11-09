@@ -4,13 +4,12 @@ vocabulary <http://iso.org/80000-4-units> with # as 80000-4-units {
     extends <http://iso.org/80000-3-units>
     uses <http://iso.org/80000-1>
 
-    @dc:^source "4-1"
-    aspect UnitOfMass :> metrology:CoherentMeasurementUnit [
-        restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
-    ]
-
     aspect UnitOfMassValue :> metrology:UnitaryQuantityValue [
         restricts all relation metrology:hasReference to UnitOfMass
+    ]
+    @dc:^source "4-1"
+    concept UnitOfMass :> metrology:CoherentMeasurementUnit [
+        restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
     ]
 
     concept gram :> UnitOfMass, metrology:IndependentMeasurementUnit, 80000-concepts:MeasurementUnit 
@@ -19,13 +18,13 @@ vocabulary <http://iso.org/80000-4-units> with # as 80000-4-units {
         restricts relation metrology:hasPrefix to 80000-1:kilo
     ]
 
-    @dc:^source "4-8"
-    aspect UnitOfMomentum :> metrology:CoherentMeasurementUnit [
-        restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
-    ]
-
     aspect UnitOfMomentumValue :> metrology:UnitaryQuantityValue [
         restricts all relation metrology:hasReference to UnitOfMomentum
+    ]
+
+    @dc:^source "4-8"
+    concept UnitOfMomentum :> metrology:CoherentMeasurementUnit [
+        restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
     ]
 
     concept kilogram-metre-per-second :> UnitOfMomentum, metrology:DerivedMeasurementUnit, 80000-concepts:MeasurementUnit 
@@ -44,13 +43,13 @@ vocabulary <http://iso.org/80000-4-units> with # as 80000-4-units {
         restricts scalar property metrology:exponent to "-1/1"^^owl:rational
     ]
 
-    @dc:^source "4-9"
-    aspect UnitOfForce :> metrology:CoherentMeasurementUnit [
-        restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
-    ]
-
     aspect UnitOfForceValue :> metrology:UnitaryQuantityValue [
         restricts all relation metrology:hasReference to UnitOfForce
+    ]
+    
+    @dc:^source "4-9"
+    concept UnitOfForce :> metrology:CoherentMeasurementUnit [
+        restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
     ]
 
     concept newton :> UnitOfForce, metrology:DerivedMeasurementUnit, 80000-concepts:MeasurementUnit 
@@ -69,15 +68,14 @@ vocabulary <http://iso.org/80000-4-units> with # as 80000-4-units {
         restricts scalar property metrology:exponent to "-1/1"^^owl:rational
     ]
 
-    @dc:^source "4-27"
-    aspect UnitOfPower :> metrology:CoherentMeasurementUnit [
-        restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
-    ]
-
     aspect UnitOfPowerValue :> metrology:UnitaryQuantityValue [
         restricts all relation metrology:hasReference to UnitOfPower
     ]
-    
+    @dc:^source "4-27"
+    concept UnitOfPower :> metrology:CoherentMeasurementUnit [
+        restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
+    ]
+
     concept watt :> UnitOfPower, metrology:DerivedMeasurementUnit, 80000-concepts:MeasurementUnit 
 
     relation entity watt-of-newton :> metrology:HasFactorForMeasurementUnit [
