@@ -25,7 +25,7 @@ By accepting this software, the user agrees to comply with all applicable U.S. e
 User has the responsibility to obtain export licenses, or other export authority as may be required before exporting such information to foreign countries or providing access to foreign persons."
 @dc:creator "Jet Propulsion Laboratory, California Institute of Technology"
 @dc:hasVersion "2.0.0"
-@dc:date "2020-11-05"
+@dc:date "2020-11-09"
 vocabulary <http://iupac.org/metrology> with # as metrology {
 
 	extends <http://www.w3.org/2002/07/owl>
@@ -90,7 +90,11 @@ vocabulary <http://iupac.org/metrology> with # as metrology {
 		whereas an instance of metrology:Quantity corresponds to Dybkaer's Quantity per S.12.13 and S.12.14.
 		
 		Note that Dybkaer's associative relation between Quantity and KindOfQuantity corresponds to the classification
-		relationship between, respectively, an instance of metrology:Quantity and a specialization of metrology:Quantity."
+		relationship between, respectively, an instance of metrology:Quantity and a specialization of metrology:Quantity.
+		
+		Defining metrology:Quantity as an OML Concept instead of an OML Aspect or Relation, enables the bundle closure 
+		algorithm to infer disjunctions for specializations of metrology:Quantity such as the ISO 80000 libraries
+		or user-defined vocabularies."
 	@dc:^source "quantity [https://jcgm.bipm.org/vim/en/1.1.html]"
 	@dc:^source "quantity [https://iupac.org/wp-content/uploads/2016/01/ontology-on-Property-Division-VII.pdf, 12.13, p 115]"
 	@dc:^source "kind of quantity [https://jcgm.bipm.org/vim/en/1.2.html]"
@@ -254,9 +258,12 @@ vocabulary <http://iupac.org/metrology> with # as metrology {
 	// Definitions from Chapter 17: None
 	// Definitions from Chapter 18: Mixed concept system on <metrological unit> and <system of metrological units>; the metrological unit "one" and SI units revisited.
 
+	@dc:^description "Defining metrology:MeasurementUnit as an OML Concept instead of an OML Aspect or Relation, enables the bundle closure 
+		algorithm to infer disjunctions for specializations of metrology:MeasurementUnit such as the ISO 80000 libraries
+		or user-defined vocabularies."
 	@dc:^source "measurement unit [https://jcgm.bipm.org/vim/en/1.9.html]"
 	@dc:^source "metrological unit, measurement unit [https://iupac.org/wp-content/uploads/2016/01/ontology-on-Property-Division-VII.pdf, 18.12, p 189]"
-	aspect MeasurementUnit :> Reference
+	concept MeasurementUnit :> Reference
 
 	@dc:^description "A metrology:NonCoherentDerivedMeasurementUnit is a metrology:MeasurementUnit 
   that has a proportionality factor different than one with respect to another metrology:MeasurementUnit."
@@ -302,7 +309,7 @@ vocabulary <http://iupac.org/metrology> with # as metrology {
 
 	@dc:^description "A metrology:CoherentMeasurementUnit is a metrology:MeasurementUnit that has a proportionality factor of one and may have a dimension of one."
 	@dc:^source "coherent derived metrological unit [https://iupac.org/wp-content/uploads/2016/01/ontology-on-Property-Division-VII.pdf, 18.19, p 193]"
-	aspect CoherentMeasurementUnit :> MeasurementUnit
+	concept CoherentMeasurementUnit :> MeasurementUnit
 
 	@dc:^description "metrology:isDimensionlessMeasurementUnit specifies whether the definition of a metrology:CoherentMeasurementUnit has dimension 'one',
     either intrisically as an metrology:IndependentMeasurementUnit 

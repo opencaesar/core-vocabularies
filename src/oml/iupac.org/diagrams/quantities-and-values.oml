@@ -1,6 +1,6 @@
-vocabulary <http://iupac.org/metrology/diagams/quantities-full> with # as quantities-full {
+vocabulary <http://iupac.org/metrology/diagams/quantities-and-values> with # as quantities-and-values {
     extends <http://iupac.org/metrology>
-    
+   
     ref aspect metrology:QuantityValue
 
     ref aspect metrology:OrdinalQuantityValue
@@ -11,7 +11,7 @@ vocabulary <http://iupac.org/metrology/diagams/quantities-full> with # as quanti
 
     ref aspect metrology:MeasurementProcedure
 
-    ref aspect metrology:MeasurementUnit
+    ref concept metrology:MeasurementUnit
 
     ref concept metrology:Quantity
 
@@ -24,5 +24,4 @@ vocabulary <http://iupac.org/metrology/diagams/quantities-full> with # as quanti
     ref relation entity metrology:HasMagnitude
 
     ref relation entity metrology:HasReference
-        
 }

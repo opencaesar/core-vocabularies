@@ -1,0 +1,11 @@
+vocabulary <http://iupac.org/metrology/diagrams/system-of-units> with # as system-of-units {
+    extends <http://iupac.org/metrology>
+
+  ref relation entity metrology:SystemHasMetrologicalUnit
+
+  ref relation entity metrology:HasFactorForMeasurementUnit
+
+  ref concept metrology:CoherentMeasurementUnit
+
+  ref concept metrology:IndependentMeasurementUnit
+}
