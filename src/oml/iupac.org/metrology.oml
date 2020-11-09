@@ -91,8 +91,8 @@ vocabulary <http://iupac.org/metrology> with # as metrology {
 		
 		Note that Dybkaer's associative relation between Quantity and KindOfQuantity corresponds to the classification
 		relationship between, respectively, an instance of metrology:Quantity and a specialization of metrology:Quantity."
-	@dc:source "quantity [https://jcgm.bipm.org/vim/en/1.1.html]"
-	@dc:source "quantity [https://iupac.org/wp-content/uploads/2016/01/ontology-on-Property-Division-VII.pdf, 12.13, p 115]"
+	@dc:^source "quantity [https://jcgm.bipm.org/vim/en/1.1.html]"
+	@dc:^source "quantity [https://iupac.org/wp-content/uploads/2016/01/ontology-on-Property-Division-VII.pdf, 12.13, p 115]"
 	@dc:^source "kind of quantity [https://jcgm.bipm.org/vim/en/1.2.html]"
 	@dc:^source "kind-of-quantity [https://iupac.org/wp-content/uploads/2016/01/ontology-on-Property-Division-VII.pdf, 13.3.1, p. 125 and 13.4.1, p. 126]"
 	@dc:^source "[https://iupac.org/wp-content/uploads/2016/01/ontology-on-Property-Division-VII.pdf, 12.13, p 115]"
@@ -131,8 +131,8 @@ vocabulary <http://iupac.org/metrology> with # as metrology {
     that can be stated only to be lesser than, equal to, or greater than another quantity of the same metrology:KindOfQuantity.
 	
 	As a class, metrology:OrdinalQuantity classifies metrology:Quantity(ies) that are rankable by magnitude, but are neither subtractive nor divisible (S.13.3.2)."
-	@dc:source "ordinal quantity [https://iupac.org/wp-content/uploads/2016/01/ontology-on-Property-Division-VII.pdf, 12.16, p 116]"
-	@dc:source "ordinal kind-of-quantity [https://iupac.org/wp-content/uploads/2016/01/ontology-on-Property-Division-VII.pdf, 13.3.2, p. 125]"
+	@dc:^source "ordinal quantity [https://iupac.org/wp-content/uploads/2016/01/ontology-on-Property-Division-VII.pdf, 12.16, p 116]"
+	@dc:^source "ordinal kind-of-quantity [https://iupac.org/wp-content/uploads/2016/01/ontology-on-Property-Division-VII.pdf, 13.3.2, p. 125]"
   concept OrdinalQuantity :> Quantity [
 		restricts all relation hasMagnitude to OrdinalQuantityValue
 	]
@@ -142,7 +142,7 @@ vocabulary <http://iupac.org/metrology> with # as metrology {
 
 		As a class, of metrology:UnitaryQuantity classifies metrology:Quantity(ies) with magnitudes expressed as a measurement unit multiplied by a number (S.13.3.3).
     "
-	@dc:source "unitary quantity [https://iupac.org/wp-content/uploads/2016/01/ontology-on-Property-Division-VII.pdf, 12.17, p 116-7]"
+	@dc:^source "unitary quantity [https://iupac.org/wp-content/uploads/2016/01/ontology-on-Property-Division-VII.pdf, 12.17, p 116-7]"
 	@dc:^source "unitary kind-of-quantity [https://iupac.org/wp-content/uploads/2016/01/ontology-on-Property-Division-VII.pdf, 13.3.3, p. 125]"
   concept UnitaryQuantity :> Quantity [
 		restricts all relation hasMagnitude to UnitaryQuantityValue
@@ -221,8 +221,8 @@ vocabulary <http://iupac.org/metrology> with # as metrology {
 	// Definitions from Chapter 15: Generic concept system on <examination>, <measurement>; quantification.
 	// Definitions from Chapter 16: Generic concept system on <property value>, <quantity value> and allied concepts.
 	@dc:^description "metrology:QuantityValue is the magnitude of a metrology:Quantity represented by a number and a reference."
-	@dc:source "quantity value [https://jcgm.bipm.org/vim/en/1.19.html]"
-	@dc:source "quantity value [https://iupac.org/wp-content/uploads/2016/01/ontology-on-Property-Division-VII.pdf, 16.7 and 16.8, p 162]"
+	@dc:^source "quantity value [https://jcgm.bipm.org/vim/en/1.19.html]"
+	@dc:^source "quantity value [https://iupac.org/wp-content/uploads/2016/01/ontology-on-Property-Division-VII.pdf, 16.7 and 16.8, p 162]"
 	aspect QuantityValue :> MetrologicalEntity
 
 	@dc:^description "metrology:hasDoubleNumber provides the capability to specify the number of a metrology:QuantityValue as an IEEE 64-bit floating-point number.

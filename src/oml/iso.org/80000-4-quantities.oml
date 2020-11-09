@@ -4,13 +4,13 @@ vocabulary <http://iso.org/80000-4-quantities> with # as 80000-4-quantities {
     extends <http://iso.org/80000-4-units>
     extends <http://iso.org/80000-3-quantities>
 
-    @dc:source "4-1"
+    @dc:^source "4-1"
     concept mass :> metrology:IndependentUnitaryQuantity [
         restricts scalar property metrology:isDimensionlessQuantity to false^^xsd:boolean
         restricts all relation metrology:hasMagnitude to 80000-4-units:UnitOfMassValue
     ]
 
-    @dc:source "4-8"
+    @dc:^source "4-8"
     concept momentum :> metrology:DerivedUnitaryQuantity [
         restricts scalar property metrology:isDimensionlessQuantity to false^^xsd:boolean
         restricts all relation metrology:hasMagnitude to 80000-4-units:UnitOfMomentumValue
@@ -32,7 +32,7 @@ vocabulary <http://iso.org/80000-4-quantities> with # as 80000-4-quantities {
         restricts scalar property metrology:exponent to "-1/1"^^owl:rational
     ]
 
-    @dc:source "4-9"
+    @dc:^source "4-9"
     concept force :> metrology:DerivedUnitaryQuantity [
         restricts scalar property metrology:isDimensionlessQuantity to false^^xsd:boolean
         restricts all relation  metrology:hasMagnitude to 80000-4-units:UnitOfForceValue
@@ -54,7 +54,7 @@ vocabulary <http://iso.org/80000-4-quantities> with # as 80000-4-quantities {
         restricts scalar property metrology:exponent to "1/1"^^owl:rational
     ]
 
-    @dc:source "4-27"
+    @dc:^source "4-27"
     concept power :> metrology:DerivedUnitaryQuantity [
         restricts scalar property metrology:isDimensionlessQuantity to false^^xsd:boolean
         restricts all relation  metrology:hasMagnitude to 80000-4-units:UnitOfPowerValue
