@@ -1,0 +1,133 @@
+@dc:^description "Optional consistency rules to enforce that derived quantities are about the same object as the objects of their quantity factors."
+vocabulary <http://iso.org/80000-6-derivation-consistency> with # as 80000-6-derivation-consistency {
+  extends <http://iso.org/80000-6-quantities>
+
+  @dc:^description "
+  If an electric-charge, x, is derived from a electric-current, y, and a duration, z,
+  then x, y, and z must be quantities about the same object."
+  rule electric-charge-derivation-consistency [
+    // x is the electric-charge quantity of an object, xo.
+    metrology:Object(xo) ^
+    metrology:Quantity(x) ^
+    metrology:isQuantityOf(x,xo) ^
+    80000-6-quantities:electric-charge(x) ^
+
+    // y is the electric-current quantity of an object, yo.
+    metrology:Object(yo) ^
+    metrology:Quantity(y) ^
+    metrology:isQuantityOf(y,yo) ^
+    80000-6-quantities:electric-current(y) ^
+
+    // z is the duration quantity of an object, zo. 
+    metrology:Object(zo) ^
+    metrology:Quantity(z) ^
+    metrology:isQuantityOf(z,zo) ^
+    80000-3-quantities:duration(z) ^
+
+    // if there is a dimensional calculus constraint relating x as a derived from y and z
+    80000-6-quantities:electric-charge-of-electric-current-forward(x,y) ^
+    80000-6-quantities:electric-charge-of-duration-forward(x,z)
+  
+    ->
+
+    // then all the quantities must be about the same object.
+    sameAs(xo,yo) ^ sameAs(xo,yo)
+  ]
+
+  @dc:^description "
+  If an electric-field-strength, x, is derived from a force, y, and an electric-charge, z,
+  then x, y, and z must be quantities about the same object."
+  rule electric-field-strength-derivation-consistency [
+    // x is the electric-field-strength quantity of an object, xo.
+    metrology:Object(xo) ^
+    metrology:Quantity(x) ^
+    metrology:isQuantityOf(x,xo) ^
+    80000-6-quantities:electric-field-strength(x) ^
+
+    // y is the force quantity of an object, yo.
+    metrology:Object(yo) ^
+    metrology:Quantity(y) ^
+    metrology:isQuantityOf(y,yo) ^
+    80000-4-quantities:force(y) ^
+
+    // z is the electric-charge quantity of an object, zo. 
+    metrology:Object(zo) ^
+    metrology:Quantity(z) ^
+    metrology:isQuantityOf(z,zo) ^
+    80000-6-quantities:electric-charge(z) ^
+
+    // if there is a dimensional calculus constraint relating x as a derived from y and z
+    80000-6-quantities:electric-field-strength-of-force-forward(x,y) ^
+    80000-6-quantities:electric-field-strength-of-electric-charge-forward(x,z)
+  
+    ->
+
+    // then all the quantities must be about the same object.
+    sameAs(xo,yo) ^ sameAs(xo,yo)
+  ]
+
+  @dc:^description "
+  If an electric-potential, x, is derived from an electric-field-strength, y, and a path-length, z,
+  then x, y, and z must be quantities about the same object."
+  rule electric-potential-derivation-consistency [
+    // x is the electric-potential quantity of an object, xo.
+    metrology:Object(xo) ^
+    metrology:Quantity(x) ^
+    metrology:isQuantityOf(x,xo) ^
+    80000-6-quantities:electric-potential(x) ^
+
+    // y is the electric-field-strength quantity of an object, yo.
+    metrology:Object(yo) ^
+    metrology:Quantity(y) ^
+    metrology:isQuantityOf(y,yo) ^
+    80000-6-quantities:electric-field-strength(y) ^
+
+    // z is the path-length quantity of an object, zo. 
+    metrology:Object(zo) ^
+    metrology:Quantity(z) ^
+    metrology:isQuantityOf(z,zo) ^
+    80000-3-quantities:path-length(z) ^
+
+    // if there is a dimensional calculus constraint relating x as a derived from y and z
+    80000-6-quantities:electric-potential-of-electric-field-strength-forward(x,y) ^
+    80000-6-quantities:electric-potential-of-path-length-forward(x,z)
+  
+    ->
+
+    // then all the quantities must be about the same object.
+    sameAs(xo,yo) ^ sameAs(xo,yo)
+  ]
+
+  @dc:^description "
+  If a resistance, x, is derived from an electric-potential, y, and an electric-current, z,
+  then x, y, and z must be quantities about the same object."
+  rule resistance-derivation-consistency [
+    // x is the resistance quantity of an object, xo.
+    metrology:Object(xo) ^
+    metrology:Quantity(x) ^
+    metrology:isQuantityOf(x,xo) ^
+    80000-6-quantities:resistance(x) ^
+
+    // y is the electric-potential quantity of an object, yo.
+    metrology:Object(yo) ^
+    metrology:Quantity(y) ^
+    metrology:isQuantityOf(y,yo) ^
+    80000-6-quantities:electric-potential(y) ^
+
+    // z is the electric-current quantity of an object, zo. 
+    metrology:Object(zo) ^
+    metrology:Quantity(z) ^
+    metrology:isQuantityOf(z,zo) ^
+    80000-6-quantities:electric-current(z) ^
+
+    // if there is a dimensional calculus constraint relating x as a derived from y and z
+    80000-6-quantities:resistance-of-electric-potential-forward(x,y) ^
+    80000-6-quantities:resistance-of-electric-current-forward(x,z)
+  
+    ->
+
+    // then all the quantities must be about the same object.
+    sameAs(xo,yo) ^ sameAs(xo,yo)
+  ]
+
+}

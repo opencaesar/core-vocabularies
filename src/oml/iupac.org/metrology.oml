@@ -1,6 +1,6 @@
 @dc:title "Metrology vocabulary adapted from iupac.org"
-@dc:^source "https://iupac.org/"
-@dc:^source "https://iupac.org/wp-content/uploads/2016/01/ontology-on-Property-Division-VII.pdf"
+@dc:^source "https://ontology.iupac.org/"
+@dc:^source "https://ontology.iupac.org/wp-content/uploads/2016/01/ontology-on-Property-Division-VII.pdf"
 @dc:^description "This vocabulary is a partial account of Prof. Rene Dybkaer's 'An Ontology of Property' 
 focused on the concepts necessary for dimensional analysis of systems of metrological units and
 of systems of quantities based on the algebraic relationships involved in the

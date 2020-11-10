@@ -93,7 +93,7 @@ vocabulary <http://iso.org/80000-3-quantities> with # as 80000-3-quantities {
     relation entity rotational-displacement-of-distance :> metrology:HasFactorForUnitaryQuantity [
         from rotational-displacement
         to distance
-        forward rotational-displacement-of-radius-forward
+        forward rotational-displacement-of-distance-forward
         functional
         restricts scalar property metrology:exponent to "-1/1"^^owl:rational
     ]
