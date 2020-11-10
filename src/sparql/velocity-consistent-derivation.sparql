@@ -1,0 +1,37 @@
+# This is an example of a rule to find consistent instances of derived velocity.
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX metrology: <http://iupac.org/metrology#>
+PREFIX quantities: <http://iso.org/80000-3-quantities#>
+
+SELECT ?vo ?v ?po ?p ?do ?d ?g
+WHERE {
+  ?vo a metrology:Object .
+  ?v a metrology:Quantity .
+  ?v metrology:isQuantityOf ?vo .
+  ?v a quantities:velocity .
+  
+  ?po a metrology:Object .
+  ?p a metrology:Quantity .
+  ?p metrology:isQuantityOf ?po .
+  ?p a quantities:position-vector .
+  
+  ?do a metrology:Object .
+  ?d a metrology:Quantity .
+  ?d metrology:isQuantityOf ?do .
+  ?d a quantities:duration .
+  
+  graph ?g {
+    ?v quantities:velocity-of-position-vector-forward ?p .
+    ?v quantities:velocity-of-duration-forward ?d .
+  }
+  
+  # Exclude results from the individuals entailment graph.
+  FILTER (!strends(str(?g), "/individuals"))
+
+  # Find asserted object consistency.
+  FILTER (sameTerm(?vo,?po) && sameTerm(?po,?do))
+}
