@@ -54,6 +54,28 @@ vocabulary <http://iso.org/80000-4-quantities> with # as 80000-4-quantities {
         restricts scalar property metrology:exponent to "1/1"^^owl:rational
     ]
 
+    @dc:^source "4-10"
+    concept impulse :> metrology:DerivedUnitaryQuantity [
+        restricts scalar property metrology:isDimensionlessQuantity to false^^xsd:boolean
+        restricts all relation  metrology:hasMagnitude to 80000-4-units:UnitOfForceValue
+    ]
+    
+    relation entity impulse-of-force :> metrology:HasFactorForUnitaryQuantity [
+        from impulse
+        to force
+        forward impulse-of-force-forward
+        functional
+        restricts scalar property metrology:exponent to "1/1"^^owl:rational
+    ]
+
+    relation entity impulse-of-duration :> metrology:HasFactorForUnitaryQuantity [
+        from impulse
+        to 80000-3-quantities:duration
+        forward impulse-of-duration-forward
+        functional
+        restricts scalar property metrology:exponent to "1/1"^^owl:rational
+    ]
+
     @dc:^source "4-27"
     concept power :> metrology:DerivedUnitaryQuantity [
         restricts scalar property metrology:isDimensionlessQuantity to false^^xsd:boolean

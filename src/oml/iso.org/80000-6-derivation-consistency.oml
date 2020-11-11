@@ -1,6 +1,7 @@
 @dc:^description "Optional consistency rules to enforce that derived quantities are about the same object as the objects of their quantity factors."
 vocabulary <http://iso.org/80000-6-derivation-consistency> with # as 80000-6-derivation-consistency {
   extends <http://iso.org/80000-6-quantities>
+  extends <http://iso.org/80000-5-derivation-consistency>
 
   @dc:^description "
   If an electric-charge, x, is derived from a electric-current, y, and a duration, z,

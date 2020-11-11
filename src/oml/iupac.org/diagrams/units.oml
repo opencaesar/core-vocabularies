@@ -1,8 +1,6 @@
 vocabulary <http://iupac.org/metrology/diagrams/units> with # as units {
     extends <http://iupac.org/metrology>
 
-    ref concept metrology:NonCoherentDerivedMeasurementUnit
-
     ref concept metrology:IndependentMeasurementUnit
     
     ref concept metrology:DerivedMeasurementUnit
@@ -14,5 +12,7 @@ vocabulary <http://iupac.org/metrology/diagrams/units> with # as units {
     ref relation entity metrology:HasPrefix
 
     ref relation entity metrology:HasFactorForMeasurementUnit
+
+    ref relation entity metrology:NonCoherentDerivedMeasurementUnitOf
 
 }

@@ -1,21 +1,78 @@
 description <http://iso.org/80000-4-instances> with # as 80000-4-instances {
   uses <http://iso.org/80000-4-quantities>
+  extends <http://iso.org/80000-instances>
 
   @dc:^source "4-1"
   ci mass : 80000-4-quantities:mass
+
+  ri systemOfQuantities-mass : metrology:SystemHasUnitaryQuantity [
+    from 80000-instances:systemOfQuantities
+    to mass
+    metrology:isBaseQuantity "true"^^xsd:boolean
+  ]
+
+  @dc:^source "4-1"
   ci gram : 80000-4-units:gram
 
   ci kilogram : 80000-4-units:kilogram
 
+  ri systemOfUnits-kilogram : metrology:SystemHasMetrologicalUnit [
+    from 80000-instances:systemOfUnits
+    to kilogram
+    metrology:isBaseMetrologicalUnit "true"^^xsd:boolean
+  ]
+
   @dc:^source "4-8"
   ci momentum : 80000-4-quantities:momentum
+
+  ri systemOfQuantities-momentum : metrology:SystemHasUnitaryQuantity [
+    from 80000-instances:systemOfQuantities
+    to momentum
+    metrology:isBaseQuantity "false"^^xsd:boolean
+  ]
+
+  @dc:^source "4-8"
   ci kilogram-metre-per-second : 80000-4-units:kilogram-metre-per-second
+
+  ri systemOfUnits-kilogram-metre-per-second : metrology:SystemHasMetrologicalUnit [
+    from 80000-instances:systemOfUnits
+    to kilogram-metre-per-second
+    metrology:isBaseMetrologicalUnit "false"^^xsd:boolean
+  ]
 
   @dc:^source "4-9"
   ci force : 80000-4-quantities:force
+
+  ri systemOfQuantities-force : metrology:SystemHasUnitaryQuantity [
+    from 80000-instances:systemOfQuantities
+    to force
+    metrology:isBaseQuantity "false"^^xsd:boolean
+  ]
+
+  @dc:^source "4-9"
   ci newton : 80000-4-units:newton
+
+  ri systemOfUnits-newton : metrology:SystemHasMetrologicalUnit [
+    from 80000-instances:systemOfUnits
+    to newton
+    metrology:isBaseMetrologicalUnit "false"^^xsd:boolean
+  ]
 
   @dc:^source "4-27"
   ci power : 80000-4-quantities:power
+
+  ri systemOfQuantities-power : metrology:SystemHasUnitaryQuantity [
+    from 80000-instances:systemOfQuantities
+    to power
+    metrology:isBaseQuantity "false"^^xsd:boolean
+  ]
+
+  @dc:^source "4-27"
   ci watt : 80000-4-units:watt
+
+  ri systemOfUnits-watt : metrology:SystemHasMetrologicalUnit [
+    from 80000-instances:systemOfUnits
+    to watt
+    metrology:isBaseMetrologicalUnit "false"^^xsd:boolean
+  ]
 }
