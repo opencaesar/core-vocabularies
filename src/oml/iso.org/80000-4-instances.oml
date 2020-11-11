@@ -58,6 +58,32 @@ description <http://iso.org/80000-4-instances> with # as 80000-4-instances {
     metrology:isBaseMetrologicalUnit "false"^^xsd:boolean
   ]
 
+  @dc:^source "4-10"
+  ci impulse : 80000-4-quantities:impulse
+
+  ri systemOfQuantities-impulse : metrology:SystemHasUnitaryQuantity [
+    from 80000-instances:systemOfQuantities
+    to impulse
+    metrology:isBaseQuantity "false"^^xsd:boolean
+  ]
+
+  @dc:^source "4-10"
+  ci newton-second : 80000-4-units:newton-second
+
+  ri systemOfUnits-newton-second : metrology:SystemHasMetrologicalUnit [
+    from 80000-instances:systemOfUnits
+    to newton-second
+    metrology:isBaseMetrologicalUnit "false"^^xsd:boolean
+  ]
+
+  ci newton-millisecond : 80000-4-units:newton-millisecond
+
+  ri systemOfUnits-newton-millisecond : metrology:SystemHasMetrologicalUnit [
+    from 80000-instances:systemOfUnits
+    to newton-millisecond
+    metrology:isBaseMetrologicalUnit "false"^^xsd:boolean
+  ]
+
   @dc:^source "4-27"
   ci power : 80000-4-quantities:power
 

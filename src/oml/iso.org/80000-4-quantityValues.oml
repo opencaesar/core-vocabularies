@@ -37,6 +37,20 @@ vocabulary <http://iso.org/80000-4-quantityValues> with # as 80000-4-quantityVal
      restricts relation metrology:hasReference to 80000-4-instances:newton
   ]
 
+  relation entity newton-second-magnitude :> 80000-concepts:UnitaryQuantityMagnitude [
+     from metrology:UnitaryQuantity
+     to newton-second-magnitude
+     forward hasNewtonSecondMagnitude
+     restricts relation metrology:hasReference to 80000-4-instances:newton-second
+  ]
+
+  relation entity newton-millisecond-magnitude :> 80000-concepts:UnitaryQuantityMagnitude [
+     from metrology:UnitaryQuantity
+     to newton-millisecond-magnitude
+     forward hasNewtonMilliSecondMagnitude
+     restricts relation metrology:hasReference to 80000-4-instances:newton-second
+  ]
+
   relation entity watt-magnitude :> 80000-concepts:UnitaryQuantityMagnitude [
      from metrology:UnitaryQuantity
      to watt-magnitude
