@@ -57,7 +57,7 @@ vocabulary <http://iso.org/80000-4-quantities> with # as 80000-4-quantities {
     @dc:^source "4-10"
     concept impulse :> metrology:DerivedUnitaryQuantity [
         restricts scalar property metrology:isDimensionlessQuantity to false^^xsd:boolean
-        restricts all relation  metrology:hasMagnitude to 80000-4-units:UnitOfForceValue
+        restricts all relation  metrology:hasMagnitude to 80000-4-units:UnitOfImpulseValue
     ]
     
     relation entity impulse-of-force :> metrology:HasFactorForUnitaryQuantity [
