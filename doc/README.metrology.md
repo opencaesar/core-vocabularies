@@ -137,7 +137,7 @@ Use the following as an example from [src/oml/iso.org/80000-4-quantities.oml](..
 
 Given the following definition from [ISO 80000-4:2019](https://www.iso.org/obp/ui/#iso:std:iso:80000:-4:ed-2:v1:en):
 
-![](80000-4-impulse-neuton-second.png)
+![](80000-4-impulse-newton-second.png)
 
 Here is the corresponding definition using the metrology vocabulary.
 Notice the difference between the mathematical equation of impulse and 
@@ -352,7 +352,7 @@ Use the following as an example from [src/oml/iso.org/80000-4-units.oml](../src/
 
 Given the following definition from [ISO 80000-4:2019](https://www.iso.org/obp/ui/#iso:std:iso:80000:-4:ed-2:v1:en):
 
-![](80000-4-impulse-neuton-second.png)
+![](80000-4-impulse-newton-second.png)
 
 Here is the corresponding definition using the metrology vocabulary:
 
@@ -376,36 +376,36 @@ vocabulary <http://iso.org/80000-4-units> with # as 80000-4-units {
     ]
 
     -- step 3
-    concept neuton-second :> UnitOfImpulse, metrology:DerivedMeasurementUnit, 80000-concepts:MeasurementUnit 
+    concept newton-second :> UnitOfImpulse, metrology:DerivedMeasurementUnit, 80000-concepts:MeasurementUnit 
 
-    relation entity neuton-second-of-newton :> metrology:HasFactorForMeasurementUnit [
-        from neuton-second
+    relation entity newton-second-of-newton :> metrology:HasFactorForMeasurementUnit [
+        from newton-second
         to newton
-        forward neuton-second-of-newton-factor
+        forward newton-second-of-newton-factor
         restricts scalar property metrology:exponent to "1/1"^^owl:rational
     ]
 
-    relation entity neuton-second-of-second :> metrology:HasFactorForMeasurementUnit [
-        from neuton-second
+    relation entity newton-second-of-second :> metrology:HasFactorForMeasurementUnit [
+        from newton-second
         to 80000-3-units:metre-per-second
-        forward neuton-second-of-second-factor
+        forward newton-second-of-second-factor
         restricts scalar property metrology:exponent to "1/1"^^owl:rational
     ]
 
     -- step 4
-    concept neuton-millisecond :> UnitOfImpulse, metrology:DerivedMeasurementUnit, 80000-concepts:MeasurementUnit 
+    concept newton-millisecond :> UnitOfImpulse, metrology:DerivedMeasurementUnit, 80000-concepts:MeasurementUnit 
 
-    relation entity neuton-millisecond-of-newton :> metrology:HasFactorForMeasurementUnit [
-        from neuton-millisecond
+    relation entity newton-millisecond-of-newton :> metrology:HasFactorForMeasurementUnit [
+        from newton-millisecond
         to newton
-        forward neuton-millisecond-of-newton-factor
+        forward newton-millisecond-of-newton-factor
         restricts scalar property metrology:exponent to "1/1"^^owl:rational
     ]
 
-    relation entity neuton-millisecond-of-millisecond :> metrology:HasFactorForMeasurementUnit [
-        from neuton-millisecond
+    relation entity newton-millisecond-of-millisecond :> metrology:HasFactorForMeasurementUnit [
+        from newton-millisecond
         to 80000-3-units:millisecond
-        forward neuton-millisecond-of-millisecond-factor
+        forward newton-millisecond-of-millisecond-factor
         restricts scalar property metrology:exponent to "1/1"^^owl:rational
     ]
 
