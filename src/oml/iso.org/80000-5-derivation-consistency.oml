@@ -1,0 +1,32 @@
+@dc:^description "Optional consistency rules to enforce that derived quantities are about the same object as the objects of their quantity factors."
+vocabulary <http://iso.org/80000-5-derivation-consistency> with # as 80000-5-derivation-consistency {
+
+  extends <http://iso.org/80000-5-quantities>
+
+  extends <http://iso.org/80000-4-derivation-consistency>
+
+  @dc:^description "
+  If a celcius-temperature, x, is derived from a thermodynamic-temperature, y,
+  then x, y must be quantities of the same object."
+  rule celcius-temperature-derivation-consistency [
+    // x is the celcius-temperature quantity of an object, xo.
+    metrology:Object(xo) ^
+    metrology:Quantity(x) ^
+    metrology:isQuantityOf(x,xo) ^
+    80000-5-quantities:celcius-temperature(x) ^
+
+    // y is the thermodynamic-temperature quantity of an object, yo.
+    metrology:Object(yo) ^
+    metrology:Quantity(y) ^
+    metrology:isQuantityOf(y,yo) ^
+    80000-5-quantities:thermodynamic-temperature(y) ^
+
+    // if there is a dimensional calculus constraint relating x as a derived from y
+    80000-5-quantities:celcius-temperature-of-thermodynamic-temperature-forward(x,y) 
+  
+    ->
+
+    // then all the quantities must be of the same object.
+    sameAs(xo,yo)
+  ]
+}

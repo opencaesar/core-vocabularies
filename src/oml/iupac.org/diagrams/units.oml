@@ -1,0 +1,18 @@
+vocabulary <http://iupac.org/metrology/diagrams/units> with # as units {
+    extends <http://iupac.org/metrology>
+
+    ref concept metrology:IndependentMeasurementUnit
+    
+    ref concept metrology:DerivedMeasurementUnit
+
+    ref concept metrology:CoherentMeasurementUnit
+
+    ref concept metrology:PrefixedMeasurementUnit
+
+    ref relation entity metrology:HasPrefix
+
+    ref relation entity metrology:HasFactorForMeasurementUnit
+
+    ref relation entity metrology:NonCoherentDerivedMeasurementUnitOf
+
+}

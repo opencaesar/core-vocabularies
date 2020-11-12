@@ -1,12 +1,43 @@
 description <http://iso.org/80000-5-instances> with # as 80000-5-instances {
-  uses <http://iso.org/80000-5-kindsOfQuantities>
+
+  uses <http://iso.org/80000-5-quantities>
+
+  extends <http://iso.org/80000-instances>
 
   @dc:^source "5-1"
-  ci thermodynamic-temperature : 80000-5-kindsOfQuantities:thermodynamic-temperature
+  ci thermodynamic-temperature : 80000-5-quantities:thermodynamic-temperature
+
+  ri systemOfQuantities-thermodynamic-temperature : metrology:SystemHasUnitaryQuantity [
+    from 80000-instances:systemOfQuantities
+    to thermodynamic-temperature
+    metrology:isBaseQuantity "true"^^xsd:boolean
+  ]
+
+  @dc:^source "5-1"
   ci kelvin : 80000-5-units:kelvin
 
+  ri systemOfUnits-kelvin : metrology:SystemHasMetrologicalUnit [
+    from 80000-instances:systemOfUnits
+    to kelvin
+    metrology:isBaseMetrologicalUnit "true"^^xsd:boolean
+  ]
+
   @dc:^source "5-2"
-  ci celcius-temperature : 80000-5-kindsOfQuantities:celcius-temperature
+  ci celcius-temperature : 80000-5-quantities:celcius-temperature
+
+  ri systemOfQuantities-celcius-temperature : metrology:SystemHasUnitaryQuantity [
+    from 80000-instances:systemOfQuantities
+    to celcius-temperature
+    metrology:isBaseQuantity "false"^^xsd:boolean
+  ]
+
+  @dc:^source "5-2"
   ci degreeCelcius : 80000-5-units:degreeCelcius
+
+  ri systemOfUnits-degreeCelcius : metrology:SystemHasMetrologicalUnit [
+    from 80000-instances:systemOfUnits
+    to degreeCelcius
+    metrology:isBaseMetrologicalUnit "false"^^xsd:boolean
+  ]
 
 }

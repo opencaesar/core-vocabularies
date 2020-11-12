@@ -1,39 +1,209 @@
 description <http://iso.org/80000-3-instances> with # as 80000-3-instances {
-  uses <http://iso.org/80000-3-kindsOfQuantities>
+  
+  uses <http://iso.org/80000-3-quantities>
+  
+  extends <http://iso.org/80000-instances>
 
-  @dc:^source "3-1"
-  ci ^length : 80000-3-kindsOfQuantities:^length
-  ci width : 80000-3-kindsOfQuantities:width
-  ci breadth : 80000-3-kindsOfQuantities:breadth
-  ci height : 80000-3-kindsOfQuantities:height
-  ci depth : 80000-3-kindsOfQuantities:depth
-  ci altitude : 80000-3-kindsOfQuantities:altitude
-  ci thickness : 80000-3-kindsOfQuantities:thickness
-  ci diameter : 80000-3-kindsOfQuantities:diameter
-  ci radius : 80000-3-kindsOfQuantities:radius
-  ci path-length : 80000-3-kindsOfQuantities:path-length
-  ci arc-length : 80000-3-kindsOfQuantities:arc-length
-  ci distance : 80000-3-kindsOfQuantities:distance
-  ci radial-distance : 80000-3-kindsOfQuantities:radial-distance
-  ci position-vector : 80000-3-kindsOfQuantities:position-vector
-  ci displacement : 80000-3-kindsOfQuantities:displacement
-  ci radius-of-curvature : 80000-3-kindsOfQuantities:radius-of-curvature
+  @dc:^source "3-1.1"
+  ci ^length : 80000-3-quantities:^length
+
+  ri systemOfQuantities-length : metrology:SystemHasUnitaryQuantity [
+    from 80000-instances:systemOfQuantities
+    to ^length
+    metrology:isBaseQuantity "true"^^xsd:boolean
+  ]
+
+  @dc:^source "3-1.2"
+  ci width : 80000-3-quantities:width
+
+  ri systemOfQuantities-width : metrology:SystemHasUnitaryQuantity [
+    from 80000-instances:systemOfQuantities
+    to width
+    metrology:isBaseQuantity "false"^^xsd:boolean
+  ]
+
+  @dc:^source "3-1.2"
+  ci breadth : 80000-3-quantities:breadth
+
+  ri systemOfQuantities-breadth : metrology:SystemHasUnitaryQuantity [
+    from 80000-instances:systemOfQuantities
+    to breadth
+    metrology:isBaseQuantity "false"^^xsd:boolean
+  ]
+
+  @dc:^source "3-1.3"
+  ci height : 80000-3-quantities:height
+
+  ri systemOfQuantities-height : metrology:SystemHasUnitaryQuantity [
+    from 80000-instances:systemOfQuantities
+    to height
+    metrology:isBaseQuantity "false"^^xsd:boolean
+  ]
+
+  @dc:^source "3-1.3"
+  ci depth : 80000-3-quantities:depth
+
+  ri systemOfQuantities-depth : metrology:SystemHasUnitaryQuantity [
+    from 80000-instances:systemOfQuantities
+    to depth
+    metrology:isBaseQuantity "false"^^xsd:boolean
+  ]
+
+  @dc:^source "3-1.3"
+  ci altitude : 80000-3-quantities:altitude
+
+  ri systemOfQuantities-altitude : metrology:SystemHasUnitaryQuantity [
+    from 80000-instances:systemOfQuantities
+    to altitude
+    metrology:isBaseQuantity "false"^^xsd:boolean
+  ]
+
+  @dc:^source "3-1.4"
+  ci thickness : 80000-3-quantities:thickness
+
+  ri systemOfQuantities-thickness : metrology:SystemHasUnitaryQuantity [
+    from 80000-instances:systemOfQuantities
+    to thickness
+    metrology:isBaseQuantity "false"^^xsd:boolean
+  ]
+
+  @dc:^source "3-1.5"
+  ci diameter : 80000-3-quantities:diameter
+
+  ri systemOfQuantities-diameter : metrology:SystemHasUnitaryQuantity [
+    from 80000-instances:systemOfQuantities
+    to diameter
+    metrology:isBaseQuantity "false"^^xsd:boolean
+  ]
+
+  @dc:^source "3-1.6"
+  ci radius : 80000-3-quantities:radius
+
+  ri systemOfQuantities-radius : metrology:SystemHasUnitaryQuantity [
+    from 80000-instances:systemOfQuantities
+    to radius
+    metrology:isBaseQuantity "false"^^xsd:boolean
+  ]
+
+  @dc:^source "3-1.7"
+  ci path-length : 80000-3-quantities:path-length
+
+  ri systemOfQuantities-path-length : metrology:SystemHasUnitaryQuantity [
+    from 80000-instances:systemOfQuantities
+    to path-length
+    metrology:isBaseQuantity "false"^^xsd:boolean
+  ]
+
+  @dc:^source "3-1.7"
+  ci arc-length : 80000-3-quantities:arc-length
+
+  ri systemOfQuantities-arc-length : metrology:SystemHasUnitaryQuantity [
+    from 80000-instances:systemOfQuantities
+    to arc-length
+    metrology:isBaseQuantity "false"^^xsd:boolean
+  ]
+
+  @dc:^source "3-1.8"
+  ci distance : 80000-3-quantities:distance
+
+  ri systemOfQuantities-distance : metrology:SystemHasUnitaryQuantity [
+    from 80000-instances:systemOfQuantities
+    to distance
+    metrology:isBaseQuantity "false"^^xsd:boolean
+  ]
+
+  @dc:^source "3-1.9"
+  ci radial-distance : 80000-3-quantities:radial-distance
+
+  ri systemOfQuantities-radial-distance : metrology:SystemHasUnitaryQuantity [
+    from 80000-instances:systemOfQuantities
+    to radial-distance
+    metrology:isBaseQuantity "false"^^xsd:boolean
+  ]
+
+  @dc:^source "3-1.10"
+  ci position-vector : 80000-3-quantities:position-vector
+
+  ri systemOfQuantities-position-vector : metrology:SystemHasUnitaryQuantity [
+    from 80000-instances:systemOfQuantities
+    to position-vector
+    metrology:isBaseQuantity "false"^^xsd:boolean
+  ]
+
+  @dc:^source "3-1.11"
+  ci displacement : 80000-3-quantities:displacement
+
+  ri systemOfQuantities-displacement : metrology:SystemHasUnitaryQuantity [
+    from 80000-instances:systemOfQuantities
+    to displacement
+    metrology:isBaseQuantity "false"^^xsd:boolean
+  ]
+
+  @dc:^source "3-1.12"
+  ci radius-of-curvature : 80000-3-quantities:radius-of-curvature
+
+  ri systemOfQuantities-radius-of-curvature : metrology:SystemHasUnitaryQuantity [
+    from 80000-instances:systemOfQuantities
+    to radius-of-curvature
+    metrology:isBaseQuantity "false"^^xsd:boolean
+  ]
+
+  @dc:^source "3-1.1"
   ci metre : 80000-3-units:metre
  
+  ri systemOfUnits-metre : metrology:SystemHasMetrologicalUnit [
+    from 80000-instances:systemOfUnits
+    to metre
+    metrology:isBaseMetrologicalUnit "true"^^xsd:boolean
+  ]
+
   ci kilometre : 80000-3-units:kilometre
 
   @dc:^source "3-5"
-  ci angular-measure : 80000-3-kindsOfQuantities:angular-measure
+  ci angular-measure : 80000-3-quantities:angular-measure
+
+  ri systemOfQuantities-angular-measure : metrology:SystemHasUnitaryQuantity [
+    from 80000-instances:systemOfQuantities
+    to angular-measure
+    metrology:isBaseQuantity "false"^^xsd:boolean
+  ]
+
+  @dc:^source "3-5"
   ci radian : 80000-3-units:radian
  
+  ri systemOfUnits-radian : metrology:SystemHasMetrologicalUnit [
+    from 80000-instances:systemOfUnits
+    to radian
+    metrology:isBaseMetrologicalUnit "false"^^xsd:boolean
+  ]
 
   @dc:^source "3-6"
-  ci rotational-displacement : 80000-3-kindsOfQuantities:rotational-displacement
+  ci rotational-displacement : 80000-3-quantities:rotational-displacement
+
+  ri systemOfQuantities-rotational-displacement : metrology:SystemHasUnitaryQuantity [
+    from 80000-instances:systemOfQuantities
+    to rotational-displacement
+    metrology:isBaseQuantity "false"^^xsd:boolean
+  ]
   
   @dc:^source "3-9"
-  ci duration : 80000-3-kindsOfQuantities:duration
+  ci duration : 80000-3-quantities:duration
+
+  ri systemOfQuantities-duration : metrology:SystemHasUnitaryQuantity [
+    from 80000-instances:systemOfQuantities
+    to duration
+    metrology:isBaseQuantity "true"^^xsd:boolean
+  ]
+
+  @dc:^source "3-9"
   ci second : 80000-3-units:second
  
+  ri systemOfUnits-second : metrology:SystemHasMetrologicalUnit [
+    from 80000-instances:systemOfUnits
+    to second
+    metrology:isBaseMetrologicalUnit "true"^^xsd:boolean
+  ]
+
   ci millisecond : 80000-3-units:millisecond
 
   ci minute : 80000-3-units:minute
@@ -41,20 +211,77 @@ description <http://iso.org/80000-3-instances> with # as 80000-3-instances {
   ci hour : 80000-3-units:hour
 
   @dc:^source "3-10"
-  ci velocity : 80000-3-kindsOfQuantities:velocity
+  ci velocity : 80000-3-quantities:velocity
+
+  ri systemOfQuantities-velocity : metrology:SystemHasUnitaryQuantity [
+    from 80000-instances:systemOfQuantities
+    to velocity
+    metrology:isBaseQuantity "false"^^xsd:boolean
+  ]
+
+  @dc:^source "3-10"
   ci metre-per-second : 80000-3-units:metre-per-second
+
+  ri systemOfUnits-metre-per-second : metrology:SystemHasMetrologicalUnit [
+    from 80000-instances:systemOfUnits
+    to metre-per-second
+    metrology:isBaseMetrologicalUnit "false"^^xsd:boolean
+  ]
 
   ci kilometre-per-second : 80000-3-units:kilometre-per-second
 
   @dc:^source "3-14"
-  ci period-duration : 80000-3-kindsOfQuantities:period-duration
+  ci period-duration : 80000-3-quantities:period-duration
+
+  ri systemOfQuantities-period-duration : metrology:SystemHasUnitaryQuantity [
+    from 80000-instances:systemOfQuantities
+    to period-duration
+    metrology:isBaseQuantity "false"^^xsd:boolean
+  ]
 
   @dc:^source "3-16"
-  ci rotation : 80000-3-kindsOfQuantities:rotation
+  ci rotation : 80000-3-quantities:rotation
+
+  ri systemOfQuantities-rotation : metrology:SystemHasUnitaryQuantity [
+    from 80000-instances:systemOfQuantities
+    to rotation
+    metrology:isBaseQuantity "false"^^xsd:boolean
+  ]
+
+  @dc:^source "3-16"
   ci revolutions : 80000-3-units:revolutions
 
+  ri systemOfUnits-revolutions : metrology:SystemHasMetrologicalUnit [
+    from 80000-instances:systemOfUnits
+    to revolutions
+    metrology:isBaseMetrologicalUnit "false"^^xsd:boolean
+  ]
+
+  @dc:^source "3-17.1"
+  ci frequency : 80000-3-quantities:frequency
+
+  ri systemOfQuantities-frequency : metrology:SystemHasUnitaryQuantity [
+    from 80000-instances:systemOfQuantities
+    to frequency
+    metrology:isBaseQuantity "false"^^xsd:boolean
+  ]
+
+  @dc:^source "3-17.2"
+  ci rotational-frequency : 80000-3-quantities:rotational-frequency
+
+  ri systemOfQuantities-rotational-frequency : metrology:SystemHasUnitaryQuantity [
+    from 80000-instances:systemOfQuantities
+    to rotational-frequency
+    metrology:isBaseQuantity "false"^^xsd:boolean
+  ]
+
   @dc:^source "3-17"
-  ci frequency : 80000-3-kindsOfQuantities:frequency
-  ci rotational-frequency : 80000-3-kindsOfQuantities:rotational-frequency
   ci hertz : 80000-3-units:hertz
+
+  ri systemOfUnits-hertz : metrology:SystemHasMetrologicalUnit [
+    from 80000-instances:systemOfUnits
+    to hertz
+    metrology:isBaseMetrologicalUnit "false"^^xsd:boolean
+  ]
+
 }

@@ -1,0 +1,27 @@
+vocabulary <http://iupac.org/metrology/diagams/quantities-and-values> with # as quantities-and-values {
+    extends <http://iupac.org/metrology>
+   
+    ref aspect metrology:QuantityValue
+
+    ref aspect metrology:OrdinalQuantityValue
+
+    ref aspect metrology:UnitaryQuantityValue
+
+    ref aspect metrology:ReferenceMaterial
+
+    ref aspect metrology:MeasurementProcedure
+
+    ref concept metrology:MeasurementUnit
+
+    ref concept metrology:Quantity
+
+    ref concept metrology:OrdinalQuantity
+
+    ref concept metrology:UnitaryQuantity
+
+    ref relation entity metrology:IsQuantityOf
+
+    ref relation entity metrology:HasMagnitude
+
+    ref relation entity metrology:HasReference
+}

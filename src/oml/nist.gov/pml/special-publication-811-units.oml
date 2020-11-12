@@ -1,0 +1,53 @@
+@dc:^description "English Engineering Units defined in NIST PML Special Publication 811, Appendix B.8"
+@dc:^source "https://www.nist.gov/pml/special-publication-811/nist-guide-si-appendix-b-conversion-factors/nist-guide-si-appendix-b8"
+@dc:^source "https://en.wikipedia.org/wiki/English_Engineering_Units"
+vocabulary <http://nist.gov/pml/special-publication-811-units> with # as special-publication-811-units {
+  extends <http://iso.org/80000-5-units>
+
+  @dc:^description "1 foot = 3.048 E-01 metre"
+  @dc:^source "https://en.wikipedia.org/wiki/Foot_(unit)"
+  concept foot :> 80000-3-units:UnitOfLength, metrology:NonCoherentDerivedMeasurementUnit [
+    restricts all relation metrology:nonCoherentDerivedMeasurementUnitOf to 80000-3-units:metre
+  ]
+
+  @dc:^description "1 pound-mass = 4.535 923 7 E-01 kilogram"
+  @dc:^source "https://en.wikipedia.org/wiki/Pound_(mass)"
+  concept pound-mass :> 80000-4-units:UnitOfMass, metrology:NonCoherentDerivedMeasurementUnit [
+    restricts all relation metrology:nonCoherentDerivedMeasurementUnitOf to 80000-4-units:kilogram
+  ]
+
+  @dc:^description "1 pound-force = 4.448 221 615 260 5 E+00 newton"
+  @dc:^source "https://en.wikipedia.org/wiki/Pound_(force)"
+  concept pound-force :> 80000-4-units:UnitOfForce, metrology:NonCoherentDerivedMeasurementUnit [
+    restricts all relation metrology:nonCoherentDerivedMeasurementUnitOf to 80000-4-units:newton
+  ]
+
+  @dc:^description "1 pound-force-second = 4.448 221 615 260 5 E+00 newton-second"
+  concept pound-force-second :> 80000-4-units:UnitOfImpulse, metrology:DerivedMeasurementUnit 
+
+  relation entity pound-force-second-of-pound-force :> metrology:HasFactorForMeasurementUnit [
+      from pound-force-second
+      to pound-force
+      forward pound-force-second-of-pound-force-factor
+      restricts scalar property metrology:exponent to "1/1"^^owl:rational
+  ]
+
+  relation entity pound-force-second-of-second :> metrology:HasFactorForMeasurementUnit [
+      from pound-force-second
+      to 80000-3-units:second
+      forward pound-force-second-of-second-factor
+      restricts scalar property metrology:exponent to "1/1"^^owl:rational
+  ]
+
+  @dc:^description "t/°C = (t/°F - 32)/1.8"
+  @dc:^source "https://en.wikipedia.org/wiki/Fahrenheit"
+  concept degreeFahrenheit :> metrology:NonCoherentDerivedMeasurementUnit [
+    restricts all relation metrology:nonCoherentDerivedMeasurementUnitOf to 80000-5-units:degreeCelcius
+  ]
+
+  @dc:^description "T/K = (T/°R)/1.8"
+  @dc:^source "https://en.wikipedia.org/wiki/Rankine_scale"
+  concept degreeRankine :> metrology:NonCoherentDerivedMeasurementUnit [
+    restricts all relation metrology:nonCoherentDerivedMeasurementUnitOf to 80000-5-units:kelvin
+  ]
+}

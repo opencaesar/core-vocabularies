@@ -1,0 +1,102 @@
+@dc:^source "ISO 80000-4:2019(en)"
+@dc:^source "https://www.iso.org/obp/ui/#iso:std:iso:80000:-4:ed-2:v1:en"
+vocabulary <http://iso.org/80000-4-quantities> with # as 80000-4-quantities {
+
+    extends <http://iso.org/80000-4-units>
+
+    extends <http://iso.org/80000-3-quantities>
+
+    @dc:^source "4-1"
+    concept mass :> metrology:IndependentUnitaryQuantity [
+        restricts scalar property metrology:isDimensionlessQuantity to false^^xsd:boolean
+        restricts all relation metrology:hasMagnitude to 80000-4-units:UnitOfMassValue
+    ]
+
+    @dc:^source "4-8"
+    concept momentum :> metrology:DerivedUnitaryQuantity [
+        restricts scalar property metrology:isDimensionlessQuantity to false^^xsd:boolean
+        restricts all relation metrology:hasMagnitude to 80000-4-units:UnitOfMomentumValue
+    ]
+    
+    relation entity momentum-of-mass :> metrology:HasFactorForUnitaryQuantity [
+        from momentum
+        to mass
+        forward momentum-of-mass-forward
+        functional
+        restricts scalar property metrology:exponent to "1/1"^^owl:rational
+    ]
+
+    relation entity momentum-of-velocity :> metrology:HasFactorForUnitaryQuantity [
+        from momentum
+        to 80000-3-quantities:velocity
+        forward momentum-of-velocity-forward
+        functional
+        restricts scalar property metrology:exponent to "-1/1"^^owl:rational
+    ]
+
+    @dc:^source "4-9"
+    concept force :> metrology:DerivedUnitaryQuantity [
+        restricts scalar property metrology:isDimensionlessQuantity to false^^xsd:boolean
+        restricts all relation  metrology:hasMagnitude to 80000-4-units:UnitOfForceValue
+    ]
+    
+    relation entity force-of-momentum :> metrology:HasFactorForUnitaryQuantity [
+        from force
+        to momentum
+        forward force-of-momentum-forward
+        functional
+        restricts scalar property metrology:exponent to "1/1"^^owl:rational
+    ]
+
+    relation entity force-of-velocity :> metrology:HasFactorForUnitaryQuantity [
+        from force
+        to 80000-3-quantities:velocity
+        forward force-of-velocity-forward
+        functional
+        restricts scalar property metrology:exponent to "1/1"^^owl:rational
+    ]
+
+    @dc:^source "4-10"
+    concept impulse :> metrology:DerivedUnitaryQuantity [
+        restricts scalar property metrology:isDimensionlessQuantity to false^^xsd:boolean
+        restricts all relation  metrology:hasMagnitude to 80000-4-units:UnitOfImpulseValue
+    ]
+    
+    relation entity impulse-of-force :> metrology:HasFactorForUnitaryQuantity [
+        from impulse
+        to force
+        forward impulse-of-force-forward
+        functional
+        restricts scalar property metrology:exponent to "1/1"^^owl:rational
+    ]
+
+    relation entity impulse-of-duration :> metrology:HasFactorForUnitaryQuantity [
+        from impulse
+        to 80000-3-quantities:duration
+        forward impulse-of-duration-forward
+        functional
+        restricts scalar property metrology:exponent to "1/1"^^owl:rational
+    ]
+
+    @dc:^source "4-27"
+    concept power :> metrology:DerivedUnitaryQuantity [
+        restricts scalar property metrology:isDimensionlessQuantity to false^^xsd:boolean
+        restricts all relation  metrology:hasMagnitude to 80000-4-units:UnitOfPowerValue
+    ]
+    
+    relation entity power-of-force :> metrology:HasFactorForUnitaryQuantity [
+        from power
+        to force
+        forward power-of-force-forward
+        functional
+        restricts scalar property metrology:exponent to "1/1"^^owl:rational
+    ]
+
+    relation entity power-of-velocity :> metrology:HasFactorForUnitaryQuantity [
+        from power
+        to 80000-3-quantities:velocity
+        forward power-of-velocity-forward
+        functional
+        restricts scalar property metrology:exponent to "1/1"^^owl:rational
+    ]
+}

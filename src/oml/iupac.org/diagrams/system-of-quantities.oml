@@ -1,0 +1,10 @@
+vocabulary <http://iupac.org/metrology/diagams/system-of-quantities> with # as system-of-quantities {
+    extends <http://iupac.org/metrology>
+    
+  ref relation entity metrology:SystemHasUnitaryQuantity
+
+  ref relation entity metrology:HasFactorForUnitaryQuantity
+
+  ref concept metrology:IndependentUnitaryQuantity
+        
+}

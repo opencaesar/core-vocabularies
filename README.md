@@ -29,3 +29,5 @@ You must first have Bikeshed (the app itself) installed from [here](https://taba
 ```
 ./gradlew publishToMavenLocal
 ```
+
+## [Metrology vocabulary](doc/README.metrology.md)
