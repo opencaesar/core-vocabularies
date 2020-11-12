@@ -1,7 +1,9 @@
 @dc:^source "ISO 80000-5:2019(en)"
 @dc:^source "https://www.iso.org/obp/ui/#iso:std:iso:80000:-5:ed-2:v1:en"
 vocabulary <http://iso.org/80000-5-quantities> with # as 80000-5-quantities {
+
     extends <http://iso.org/80000-5-units>
+
     extends <http://iso.org/80000-4-quantities>
 
     @dc:^source "5-1"

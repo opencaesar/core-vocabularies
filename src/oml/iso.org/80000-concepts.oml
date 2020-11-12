@@ -4,6 +4,7 @@ intended to be the root of the taxonomy of all definitions of metrology:Unitary8
 The bundle closure over this vocabulary and a set of ISO 80K vocabularies will effectively
 force all definitions of 80000-concepts:Unitary80000-concepts:UnitaryQuantityValueQuantity and 80000-concepts:MeasurementUnit to be mutually disjoint."
 vocabulary <http://iso.org/80000-concepts> with # as 80000-concepts {
+
   extends <http://iupac.org/metrology>
 
   relation entity UnitaryQuantityMagnitude :> metrology:HasMagnitude, metrology:UnitaryQuantityValue [

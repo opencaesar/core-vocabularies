@@ -3,7 +3,7 @@
  */
 description='The set of core vocabularies'
 group = 'io.opencaesar.ontologies'
-version = '1.4.0'
+version = '1.5.0'
 
 /* 
  * The Gradle task dependencies 

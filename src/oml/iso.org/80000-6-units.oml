@@ -1,6 +1,7 @@
 @dc:^source "IEC 80000-6:2008"
 @dc:^source "https://www.iso.org/standard/31891.html"
 vocabulary <http://iso.org/80000-6-units> with # as 80000-6-units {
+ 
     extends <http://iso.org/80000-5-units>
 
     aspect UnitOfElectricCurrentValue :> metrology:UnitaryQuantityValue [

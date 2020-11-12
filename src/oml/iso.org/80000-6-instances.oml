@@ -1,5 +1,7 @@
 description <http://iso.org/80000-6-instances> with # as 80000-6-instances {
+
   uses <http://iso.org/80000-6-quantities>
+
   extends <http://iso.org/80000-instances>
 
   @dc:^source "6-1"

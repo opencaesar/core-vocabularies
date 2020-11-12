@@ -1,7 +1,9 @@
 @dc:^source "ISO 80000-3:2019(en)"
 @dc:^source "https://www.iso.org/obp/ui/#iso:std:iso:80000:-3:ed-2:v1:en"
 vocabulary <http://iso.org/80000-3-units> with # as 80000-3-units {
+
     extends <http://iso.org/80000-concepts>
+
     uses <http://iso.org/80000-1>
 
     aspect UnitOfLengthValue :> metrology:UnitaryQuantityValue [

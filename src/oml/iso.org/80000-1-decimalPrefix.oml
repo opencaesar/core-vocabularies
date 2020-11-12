@@ -1,5 +1,6 @@
 vocabulary <http://iso.org/80000-1-decimalPrefix> with # as 80000-1-decimalPrefix {
-    extends <http://iupac.org/metrology>
 
-    concept DecimalPrefix :> metrology:Prefix
+	extends <http://iupac.org/metrology>
+
+	concept DecimalPrefix :> metrology:Prefix
 }

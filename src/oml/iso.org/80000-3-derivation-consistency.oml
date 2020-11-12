@@ -1,5 +1,6 @@
 @dc:^description "Optional consistency rules to enforce that derived quantities are about the same object as the objects of their quantity factors."
 vocabulary <http://iso.org/80000-3-derivation-consistency> with # as 80000-3-derivation-consistency {
+  
   extends <http://iso.org/80000-3-quantities>
 
   @dc:^description "

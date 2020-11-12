@@ -1,7 +1,9 @@
 @dc:^source "IEC 80000-6:2008"
 @dc:^source "https://www.iso.org/standard/31891.html"
 vocabulary <http://iso.org/80000-6-quantities> with # as 80000-6-quantities {
+
     extends <http://iso.org/80000-6-units>
+
     extends <http://iso.org/80000-5-quantities>
 
     @dc:^source "6-1"

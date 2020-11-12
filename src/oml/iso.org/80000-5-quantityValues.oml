@@ -4,8 +4,11 @@ as concepts for every metrology:MeasurementUnit defined in http://iso.org/80000-
 Note that this vocabulary reflects an opinionated usage of metrology:UnitaryQuantityValue
 as an OML concept and does not exclude in any way other possible usages."
 vocabulary <http://iso.org/80000-5-quantityValues> with # as 80000-5-quantityValues {
+
   extends <http://iso.org/80000-concepts>
+
   extends <http://iso.org/80000-5-units>
+
   uses <http://iso.org/80000-5-instances>
 
   relation entity kelvin-magnitude :> 80000-concepts:UnitaryQuantityMagnitude [
