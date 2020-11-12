@@ -11,15 +11,14 @@ version = '1.4.0'
 buildscript {
 	repositories {
 		mavenLocal()
-		maven { url 'https://dl.bintray.com/opencaesar/owl-adapter' }
-		maven { url 'https://dl.bintray.com/opencaesar/owl-tools' }
+		maven { url 'https://dl.bintray.com/opencaesar/adapters' }
 		maven { url 'https://dl.bintray.com/opencaesar/oml-tools' }
 		maven { url 'https://dl.bintray.com/opencaesar/oml' }
 		jcenter()
 	}
 	dependencies {
-		classpath 'io.opencaesar.owl:oml2owl-gradle:0.7.+'
-		classpath 'io.opencaesar.oml:oml-bikeshed-gradle:0.7.+'
+		classpath 'io.opencaesar.adapters:oml2owl-gradle:0.8.+'
+		classpath 'io.opencaesar.oml:oml-bikeshed-gradle:0.8.+'
 		classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.+'
 		// needed since gradle bintray brings an old version of xerces
 		configurations.classpath.exclude group: 'xerces', module: 'xercesImpl'
@@ -132,5 +131,4 @@ bintray {
 			released  = new Date()
 		}
 	}
-
 }
