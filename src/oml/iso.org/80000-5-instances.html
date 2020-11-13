@@ -1323,7 +1323,7 @@ Possible extra rowspan handling
 </style>
   <meta content="Bikeshed version 89ebb6ab, updated Fri Oct 9 15:32:07 2020 -0700" name="generator">
   <link href="https://opencaesar.github.io/core-vocabularies//src/oml/iso.org/80000-5-instances" rel="canonical">
-  <meta content="abba896ba09b6a1418147cedc1142ac310e18f73" name="document-revision">
+  <meta content="016d25312624eba77cc9060e2b9fc3b359f0e606" name="document-revision">
 <style>
 a[data-link-type=biblio] {
     white-space: pre-wrap;
@@ -1755,7 +1755,7 @@ dfn > a.self-link::before      { content: "#"; }
   <div class="head">
    <p data-fill-with="logo"><a class="logo" href="https://www.openapis.org/"><img alt="OpenAPI Initiative" height="48" src="https://opencaesar.github.io/oml/images/oml.svg"></a></p>
    <h1 class="p-name no-ref" id="title">80000-5-instances</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2020-11-03">3 November 2020</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2020-11-13">13 November 2020</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -1777,14 +1777,23 @@ dfn > a.self-link::before      { content: "#"; }
    <h2 class="no-num no-toc no-ref" id="contents">Table of Contents</h2>
    <ol class="toc" role="directory">
     <li><a href="#Namespace"><span class="secno">1</span> <span class="content">Namespace</span></a>
-    <li><a href="#Iclusions"><span class="secno">2</span> <span class="content">Usages</span></a>
+    <li><a href="#Extensions"><span class="secno">2</span> <span class="content">Extensions</span></a>
+    <li><a href="#Iclusions"><span class="secno">3</span> <span class="content">Usages</span></a>
     <li>
-     <a href="#ConceptInstances"><span class="secno">3</span> <span class="content">Concept Instances</span></a>
+     <a href="#ConceptInstances"><span class="secno">4</span> <span class="content">Concept Instances</span></a>
      <ol class="toc">
-      <li><a href="#Thermodynamic-temperature"><span class="secno">3.1</span> <span class="content"><span>thermodynamic-temperature</span></span></a>
-      <li><a href="#Kelvin"><span class="secno">3.2</span> <span class="content"><span>kelvin</span></span></a>
-      <li><a href="#Celcius-temperature"><span class="secno">3.3</span> <span class="content"><span>celcius-temperature</span></span></a>
-      <li><a href="#DegreeCelcius"><span class="secno">3.4</span> <span class="content"><span>degreeCelcius</span></span></a>
+      <li><a href="#Celcius-temperature"><span class="secno">4.1</span> <span class="content"><span>celcius-temperature</span></span></a>
+      <li><a href="#DegreeCelcius"><span class="secno">4.2</span> <span class="content"><span>degreeCelcius</span></span></a>
+      <li><a href="#Kelvin"><span class="secno">4.3</span> <span class="content"><span>kelvin</span></span></a>
+      <li><a href="#Thermodynamic-temperature"><span class="secno">4.4</span> <span class="content"><span>thermodynamic-temperature</span></span></a>
+     </ol>
+    <li>
+     <a href="#RelationInstances"><span class="secno">5</span> <span class="content">Relation Instances</span></a>
+     <ol class="toc">
+      <li><a href="#SystemOfQuantities-celcius-temperature"><span class="secno">5.1</span> <span class="content"><span>systemOfQuantities-celcius-temperature</span></span></a>
+      <li><a href="#SystemOfQuantities-thermodynamic-temperature"><span class="secno">5.2</span> <span class="content"><span>systemOfQuantities-thermodynamic-temperature</span></span></a>
+      <li><a href="#SystemOfUnits-degreeCelcius"><span class="secno">5.3</span> <span class="content"><span>systemOfUnits-degreeCelcius</span></span></a>
+      <li><a href="#SystemOfUnits-kelvin"><span class="secno">5.4</span> <span class="content"><span>systemOfUnits-kelvin</span></span></a>
      </ol>
     <li>
      <a href="#index"><span class="secno"></span> <span class="content">Index</span></a>
@@ -1801,20 +1810,62 @@ dfn > a.self-link::before      { content: "#"; }
      <li data-md>
       <p>80000-5-instances: <a href="80000-5-instances.html">http://iso.org/80000-5-instances</a></p>
     </ul>
-    <h2 class="heading settled" data-level="2" id="Iclusions"><span class="secno">2. </span><span class="content">Usages</span><a class="self-link" href="#Iclusions"></a></h2>
+    <h2 class="heading settled" data-level="2" id="Extensions"><span class="secno">2. </span><span class="content">Extensions</span><a class="self-link" href="#Extensions"></a></h2>
     <ul>
      <li data-md>
-      <p>80000-5-kindsOfQuantities: <a href="http://iso.org/80000-5-kindsOfQuantities.html">http://iso.org/80000-5-kindsOfQuantities</a></p>
+      <p>80000-instances: <a href="http://iso.org/80000-instances.html">http://iso.org/80000-instances</a></p>
     </ul>
-    <h2 class="heading settled" data-level="3" id="ConceptInstances"><span class="secno">3. </span><span class="content">Concept Instances</span><a class="self-link" href="#ConceptInstances"></a></h2>
-    <h3 class="heading settled" data-level="3.1" id="Thermodynamic-temperature"><span class="secno">3.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="thermodynamic-temperature">thermodynamic-temperature<a class="self-link" href="#thermodynamic-temperature"></a></dfn></span><a class="self-link" href="#Thermodynamic-temperature"></a></h3>
-    <p><em>Types:</em> <a data-link-type="dfn" href="80000-5-kindsOfQuantities.html#thermodynamic-temperature" id="ref-for-thermodynamic-temperature">80000-5-kindsOfQuantities:thermodynamic-temperature</a></p>
-    <h3 class="heading settled" data-level="3.2" id="Kelvin"><span class="secno">3.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="kelvin">kelvin<a class="self-link" href="#kelvin"></a></dfn></span><a class="self-link" href="#Kelvin"></a></h3>
-    <p><em>Types:</em> <a data-link-type="dfn" href="80000-5-units.html#kelvin" id="ref-for-kelvin">80000-5-units:kelvin</a></p>
-    <h3 class="heading settled" data-level="3.3" id="Celcius-temperature"><span class="secno">3.3. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="celcius-temperature">celcius-temperature<a class="self-link" href="#celcius-temperature"></a></dfn></span><a class="self-link" href="#Celcius-temperature"></a></h3>
-    <p><em>Types:</em> <a data-link-type="dfn" href="80000-5-kindsOfQuantities.html#celcius-temperature" id="ref-for-celcius-temperature">80000-5-kindsOfQuantities:celcius-temperature</a></p>
-    <h3 class="heading settled" data-level="3.4" id="DegreeCelcius"><span class="secno">3.4. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="degreecelcius">degreeCelcius<a class="self-link" href="#degreecelcius"></a></dfn></span><a class="self-link" href="#DegreeCelcius"></a></h3>
+    <h2 class="heading settled" data-level="3" id="Iclusions"><span class="secno">3. </span><span class="content">Usages</span><a class="self-link" href="#Iclusions"></a></h2>
+    <ul>
+     <li data-md>
+      <p>80000-5-quantities: <a href="http://iso.org/80000-5-quantities.html">http://iso.org/80000-5-quantities</a></p>
+    </ul>
+    <h2 class="heading settled" data-level="4" id="ConceptInstances"><span class="secno">4. </span><span class="content">Concept Instances</span><a class="self-link" href="#ConceptInstances"></a></h2>
+    <h3 class="heading settled" data-level="4.1" id="Celcius-temperature"><span class="secno">4.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="celcius-temperature">celcius-temperature<a class="self-link" href="#celcius-temperature"></a></dfn></span><a class="self-link" href="#Celcius-temperature"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="80000-5-quantities.html#celcius-temperature" id="ref-for-celcius-temperature">80000-5-quantities:celcius-temperature</a></p>
+    <h3 class="heading settled" data-level="4.2" id="DegreeCelcius"><span class="secno">4.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="degreecelcius">degreeCelcius<a class="self-link" href="#degreecelcius"></a></dfn></span><a class="self-link" href="#DegreeCelcius"></a></h3>
     <p><em>Types:</em> <a data-link-type="dfn" href="80000-5-units.html#degreecelcius" id="ref-for-degreecelcius">80000-5-units:degreeCelcius</a></p>
+    <h3 class="heading settled" data-level="4.3" id="Kelvin"><span class="secno">4.3. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="kelvin">kelvin<a class="self-link" href="#kelvin"></a></dfn></span><a class="self-link" href="#Kelvin"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="80000-5-units.html#kelvin" id="ref-for-kelvin">80000-5-units:kelvin</a></p>
+    <h3 class="heading settled" data-level="4.4" id="Thermodynamic-temperature"><span class="secno">4.4. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="thermodynamic-temperature">thermodynamic-temperature<a class="self-link" href="#thermodynamic-temperature"></a></dfn></span><a class="self-link" href="#Thermodynamic-temperature"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="80000-5-quantities.html#thermodynamic-temperature" id="ref-for-thermodynamic-temperature">80000-5-quantities:thermodynamic-temperature</a></p>
+    <h2 class="heading settled" data-level="5" id="RelationInstances"><span class="secno">5. </span><span class="content">Relation Instances</span><a class="self-link" href="#RelationInstances"></a></h2>
+    <h3 class="heading settled" data-level="5.1" id="SystemOfQuantities-celcius-temperature"><span class="secno">5.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="systemofquantities-celcius-temperature">systemOfQuantities-celcius-temperature<a class="self-link" href="#systemofquantities-celcius-temperature"></a></dfn></span><a class="self-link" href="#SystemOfQuantities-celcius-temperature"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#systemhasunitaryquantity" id="ref-for-systemhasunitaryquantity">metrology:SystemHasUnitaryQuantity</a></p>
+    <p><em>Source:</em> <a data-link-type="dfn" href="80000-instances.html#systemofquantities" id="ref-for-systemofquantities">80000-instances:systemOfQuantities</a></p>
+    <p><em>Target:</em> <a data-link-type="dfn" href="80000-5-instances.html#celcius-temperature" id="ref-for-celcius-temperature①">celcius-temperature</a></p>
+    <p><em>Properties:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../iupac.org/metrology.html#isbasequantity" id="ref-for-isbasequantity">metrology:isBaseQuantity</a> false</p>
+    </ul>
+    <h3 class="heading settled" data-level="5.2" id="SystemOfQuantities-thermodynamic-temperature"><span class="secno">5.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="systemofquantities-thermodynamic-temperature">systemOfQuantities-thermodynamic-temperature<a class="self-link" href="#systemofquantities-thermodynamic-temperature"></a></dfn></span><a class="self-link" href="#SystemOfQuantities-thermodynamic-temperature"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#systemhasunitaryquantity" id="ref-for-systemhasunitaryquantity①">metrology:SystemHasUnitaryQuantity</a></p>
+    <p><em>Source:</em> <a data-link-type="dfn" href="80000-instances.html#systemofquantities" id="ref-for-systemofquantities①">80000-instances:systemOfQuantities</a></p>
+    <p><em>Target:</em> <a data-link-type="dfn" href="80000-5-instances.html#thermodynamic-temperature" id="ref-for-thermodynamic-temperature①">thermodynamic-temperature</a></p>
+    <p><em>Properties:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../iupac.org/metrology.html#isbasequantity" id="ref-for-isbasequantity①">metrology:isBaseQuantity</a> true</p>
+    </ul>
+    <h3 class="heading settled" data-level="5.3" id="SystemOfUnits-degreeCelcius"><span class="secno">5.3. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="systemofunits-degreecelcius">systemOfUnits-degreeCelcius<a class="self-link" href="#systemofunits-degreecelcius"></a></dfn></span><a class="self-link" href="#SystemOfUnits-degreeCelcius"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#systemhasmetrologicalunit" id="ref-for-systemhasmetrologicalunit">metrology:SystemHasMetrologicalUnit</a></p>
+    <p><em>Source:</em> <a data-link-type="dfn" href="80000-instances.html#systemofunits" id="ref-for-systemofunits">80000-instances:systemOfUnits</a></p>
+    <p><em>Target:</em> <a data-link-type="dfn" href="80000-5-instances.html#degreecelcius" id="ref-for-degreecelcius①">degreeCelcius</a></p>
+    <p><em>Properties:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../iupac.org/metrology.html#isbasemetrologicalunit" id="ref-for-isbasemetrologicalunit">metrology:isBaseMetrologicalUnit</a> false</p>
+    </ul>
+    <h3 class="heading settled" data-level="5.4" id="SystemOfUnits-kelvin"><span class="secno">5.4. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="systemofunits-kelvin">systemOfUnits-kelvin<a class="self-link" href="#systemofunits-kelvin"></a></dfn></span><a class="self-link" href="#SystemOfUnits-kelvin"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#systemhasmetrologicalunit" id="ref-for-systemhasmetrologicalunit①">metrology:SystemHasMetrologicalUnit</a></p>
+    <p><em>Source:</em> <a data-link-type="dfn" href="80000-instances.html#systemofunits" id="ref-for-systemofunits①">80000-instances:systemOfUnits</a></p>
+    <p><em>Target:</em> <a data-link-type="dfn" href="80000-5-instances.html#kelvin" id="ref-for-kelvin①">kelvin</a></p>
+    <p><em>Properties:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../iupac.org/metrology.html#isbasemetrologicalunit" id="ref-for-isbasemetrologicalunit①">metrology:isBaseMetrologicalUnit</a> true</p>
+    </ul>
    </div>
   </main>
 <script>
@@ -1949,48 +2000,140 @@ dfn > a.self-link::before      { content: "#"; }
   <h2 class="no-num no-ref heading settled" id="index"><span class="content">Index</span><a class="self-link" href="#index"></a></h2>
   <h3 class="no-num no-ref heading settled" id="index-defined-here"><span class="content">Terms defined by this specification</span><a class="self-link" href="#index-defined-here"></a></h3>
   <ul class="index">
-   <li><a href="#celcius-temperature">celcius-temperature</a><span>, in §3.3</span>
-   <li><a href="#degreecelcius">degreeCelcius</a><span>, in §3.4</span>
-   <li><a href="#kelvin">kelvin</a><span>, in §3.2</span>
-   <li><a href="#thermodynamic-temperature">thermodynamic-temperature</a><span>, in §3.1</span>
+   <li><a href="#celcius-temperature">celcius-temperature</a><span>, in §4.1</span>
+   <li><a href="#degreecelcius">degreeCelcius</a><span>, in §4.2</span>
+   <li><a href="#kelvin">kelvin</a><span>, in §4.3</span>
+   <li><a href="#systemofquantities-celcius-temperature">systemOfQuantities-celcius-temperature</a><span>, in §5.1</span>
+   <li><a href="#systemofquantities-thermodynamic-temperature">systemOfQuantities-thermodynamic-temperature</a><span>, in §5.2</span>
+   <li><a href="#systemofunits-degreecelcius">systemOfUnits-degreeCelcius</a><span>, in §5.3</span>
+   <li><a href="#systemofunits-kelvin">systemOfUnits-kelvin</a><span>, in §5.4</span>
+   <li><a href="#thermodynamic-temperature">thermodynamic-temperature</a><span>, in §4.4</span>
   </ul>
   <aside class="dfn-panel" data-for="term-for-celcius-temperature">
-   <a href="80000-5-kindsOfQuantities.html#celcius-temperature">80000-5-kindsOfQuantities.html#celcius-temperature</a><b>Referenced in:</b>
+   <a href="80000-5-instances.html#celcius-temperature">80000-5-instances.html#celcius-temperature</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-celcius-temperature">3.3. celcius-temperature</a>
+    <li><a href="#ref-for-celcius-temperature①">5.1. systemOfQuantities-celcius-temperature</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-degreecelcius">
+   <a href="80000-5-instances.html#degreecelcius">80000-5-instances.html#degreecelcius</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-degreecelcius①">5.3. systemOfUnits-degreeCelcius</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-kelvin">
+   <a href="80000-5-instances.html#kelvin">80000-5-instances.html#kelvin</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-kelvin①">5.4. systemOfUnits-kelvin</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-thermodynamic-temperature">
-   <a href="80000-5-kindsOfQuantities.html#thermodynamic-temperature">80000-5-kindsOfQuantities.html#thermodynamic-temperature</a><b>Referenced in:</b>
+   <a href="80000-5-instances.html#thermodynamic-temperature">80000-5-instances.html#thermodynamic-temperature</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-thermodynamic-temperature">3.1. thermodynamic-temperature</a>
+    <li><a href="#ref-for-thermodynamic-temperature①">5.2. systemOfQuantities-thermodynamic-temperature</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-celcius-temperature">
+   <a href="80000-5-quantities.html#celcius-temperature">80000-5-quantities.html#celcius-temperature</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-celcius-temperature">4.1. celcius-temperature</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-thermodynamic-temperature">
+   <a href="80000-5-quantities.html#thermodynamic-temperature">80000-5-quantities.html#thermodynamic-temperature</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-thermodynamic-temperature">4.4. thermodynamic-temperature</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-degreecelcius">
    <a href="80000-5-units.html#degreecelcius">80000-5-units.html#degreecelcius</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-degreecelcius">3.4. degreeCelcius</a>
+    <li><a href="#ref-for-degreecelcius">4.2. degreeCelcius</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-kelvin">
    <a href="80000-5-units.html#kelvin">80000-5-units.html#kelvin</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-kelvin">3.2. kelvin</a>
+    <li><a href="#ref-for-kelvin">4.3. kelvin</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-systemofquantities">
+   <a href="80000-instances.html#systemofquantities">80000-instances.html#systemofquantities</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-systemofquantities">5.1. systemOfQuantities-celcius-temperature</a>
+    <li><a href="#ref-for-systemofquantities①">5.2. systemOfQuantities-thermodynamic-temperature</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-systemofunits">
+   <a href="80000-instances.html#systemofunits">80000-instances.html#systemofunits</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-systemofunits">5.3. systemOfUnits-degreeCelcius</a>
+    <li><a href="#ref-for-systemofunits①">5.4. systemOfUnits-kelvin</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-isbasemetrologicalunit">
+   <a href="../iupac.org/metrology.html#isbasemetrologicalunit">../iupac.org/metrology.html#isbasemetrologicalunit</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-isbasemetrologicalunit">5.3. systemOfUnits-degreeCelcius</a>
+    <li><a href="#ref-for-isbasemetrologicalunit①">5.4. systemOfUnits-kelvin</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-isbasequantity">
+   <a href="../iupac.org/metrology.html#isbasequantity">../iupac.org/metrology.html#isbasequantity</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-isbasequantity">5.1. systemOfQuantities-celcius-temperature</a>
+    <li><a href="#ref-for-isbasequantity①">5.2. systemOfQuantities-thermodynamic-temperature</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-systemhasmetrologicalunit">
+   <a href="../iupac.org/metrology.html#systemhasmetrologicalunit">../iupac.org/metrology.html#systemhasmetrologicalunit</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-systemhasmetrologicalunit">5.3. systemOfUnits-degreeCelcius</a>
+    <li><a href="#ref-for-systemhasmetrologicalunit①">5.4. systemOfUnits-kelvin</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-systemhasunitaryquantity">
+   <a href="../iupac.org/metrology.html#systemhasunitaryquantity">../iupac.org/metrology.html#systemhasunitaryquantity</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-systemhasunitaryquantity">5.1. systemOfQuantities-celcius-temperature</a>
+    <li><a href="#ref-for-systemhasunitaryquantity①">5.2. systemOfQuantities-thermodynamic-temperature</a>
    </ul>
   </aside>
   <h3 class="no-num no-ref heading settled" id="index-defined-elsewhere"><span class="content">Terms defined by reference</span><a class="self-link" href="#index-defined-elsewhere"></a></h3>
   <ul class="index">
    <li>
-    <a data-link-type="biblio">[http://iso.org/80000-5-kindsofquantities]</a> defines the following terms:
+    <a data-link-type="biblio">[http://iso.org/80000-5-instances]</a> defines the following terms:
     <ul>
      <li><span class="dfn-paneled" id="term-for-celcius-temperature">celcius-temperature</span>
+     <li><span class="dfn-paneled" id="term-for-degreecelcius">degreecelcius</span>
+     <li><span class="dfn-paneled" id="term-for-kelvin">kelvin</span>
      <li><span class="dfn-paneled" id="term-for-thermodynamic-temperature">thermodynamic-temperature</span>
+    </ul>
+   <li>
+    <a data-link-type="biblio">[http://iso.org/80000-5-quantities]</a> defines the following terms:
+    <ul>
+     <li><span class="dfn-paneled" id="term-for-celcius-temperature①">celcius-temperature</span>
+     <li><span class="dfn-paneled" id="term-for-thermodynamic-temperature①">thermodynamic-temperature</span>
     </ul>
    <li>
     <a data-link-type="biblio">[http://iso.org/80000-5-units]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="term-for-degreecelcius">degreecelcius</span>
-     <li><span class="dfn-paneled" id="term-for-kelvin">kelvin</span>
+     <li><span class="dfn-paneled" id="term-for-degreecelcius①">degreecelcius</span>
+     <li><span class="dfn-paneled" id="term-for-kelvin①">kelvin</span>
+    </ul>
+   <li>
+    <a data-link-type="biblio">[http://iso.org/80000-instances]</a> defines the following terms:
+    <ul>
+     <li><span class="dfn-paneled" id="term-for-systemofquantities">systemofquantities</span>
+     <li><span class="dfn-paneled" id="term-for-systemofunits">systemofunits</span>
+    </ul>
+   <li>
+    <a data-link-type="biblio">[http://iupac.org/metrology]</a> defines the following terms:
+    <ul>
+     <li><span class="dfn-paneled" id="term-for-isbasemetrologicalunit">isbasemetrologicalunit</span>
+     <li><span class="dfn-paneled" id="term-for-isbasequantity">isbasequantity</span>
+     <li><span class="dfn-paneled" id="term-for-systemhasmetrologicalunit">systemhasmetrologicalunit</span>
+     <li><span class="dfn-paneled" id="term-for-systemhasunitaryquantity">systemhasunitaryquantity</span>
     </ul>
   </ul>
 <script>/* script-dfn-panel */

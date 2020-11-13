@@ -1323,7 +1323,7 @@ Possible extra rowspan handling
 </style>
   <meta content="Bikeshed version 89ebb6ab, updated Fri Oct 9 15:32:07 2020 -0700" name="generator">
   <link href="https://opencaesar.github.io/core-vocabularies//src/oml/iso.org/80000-3-instances" rel="canonical">
-  <meta content="abba896ba09b6a1418147cedc1142ac310e18f73" name="document-revision">
+  <meta content="016d25312624eba77cc9060e2b9fc3b359f0e606" name="document-revision">
 <style>
 a[data-link-type=biblio] {
     white-space: pre-wrap;
@@ -1755,7 +1755,7 @@ dfn > a.self-link::before      { content: "#"; }
   <div class="head">
    <p data-fill-with="logo"><a class="logo" href="https://www.openapis.org/"><img alt="OpenAPI Initiative" height="48" src="https://opencaesar.github.io/oml/images/oml.svg"></a></p>
    <h1 class="p-name no-ref" id="title">80000-3-instances</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2020-11-03">3 November 2020</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2020-11-13">13 November 2020</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -1777,45 +1777,80 @@ dfn > a.self-link::before      { content: "#"; }
    <h2 class="no-num no-toc no-ref" id="contents">Table of Contents</h2>
    <ol class="toc" role="directory">
     <li><a href="#Namespace"><span class="secno">1</span> <span class="content">Namespace</span></a>
-    <li><a href="#Iclusions"><span class="secno">2</span> <span class="content">Usages</span></a>
+    <li><a href="#Extensions"><span class="secno">2</span> <span class="content">Extensions</span></a>
+    <li><a href="#Iclusions"><span class="secno">3</span> <span class="content">Usages</span></a>
     <li>
-     <a href="#ConceptInstances"><span class="secno">3</span> <span class="content">Concept Instances</span></a>
+     <a href="#ConceptInstances"><span class="secno">4</span> <span class="content">Concept Instances</span></a>
      <ol class="toc">
-      <li><a href="#Length"><span class="secno">3.1</span> <span class="content"><span>length</span></span></a>
-      <li><a href="#Width"><span class="secno">3.2</span> <span class="content"><span>width</span></span></a>
-      <li><a href="#Breadth"><span class="secno">3.3</span> <span class="content"><span>breadth</span></span></a>
-      <li><a href="#Height"><span class="secno">3.4</span> <span class="content"><span>height</span></span></a>
-      <li><a href="#Depth"><span class="secno">3.5</span> <span class="content"><span>depth</span></span></a>
-      <li><a href="#Altitude"><span class="secno">3.6</span> <span class="content"><span>altitude</span></span></a>
-      <li><a href="#Thickness"><span class="secno">3.7</span> <span class="content"><span>thickness</span></span></a>
-      <li><a href="#Diameter"><span class="secno">3.8</span> <span class="content"><span>diameter</span></span></a>
-      <li><a href="#Radius"><span class="secno">3.9</span> <span class="content"><span>radius</span></span></a>
-      <li><a href="#Path-length"><span class="secno">3.10</span> <span class="content"><span>path-length</span></span></a>
-      <li><a href="#Arc-length"><span class="secno">3.11</span> <span class="content"><span>arc-length</span></span></a>
-      <li><a href="#Distance"><span class="secno">3.12</span> <span class="content"><span>distance</span></span></a>
-      <li><a href="#Radial-distance"><span class="secno">3.13</span> <span class="content"><span>radial-distance</span></span></a>
-      <li><a href="#Position-vector"><span class="secno">3.14</span> <span class="content"><span>position-vector</span></span></a>
-      <li><a href="#Displacement"><span class="secno">3.15</span> <span class="content"><span>displacement</span></span></a>
-      <li><a href="#Radius-of-curvature"><span class="secno">3.16</span> <span class="content"><span>radius-of-curvature</span></span></a>
-      <li><a href="#Metre"><span class="secno">3.17</span> <span class="content"><span>metre</span></span></a>
-      <li><a href="#Kilometre"><span class="secno">3.18</span> <span class="content"><span>kilometre</span></span></a>
-      <li><a href="#Angular-measure"><span class="secno">3.19</span> <span class="content"><span>angular-measure</span></span></a>
-      <li><a href="#Radian"><span class="secno">3.20</span> <span class="content"><span>radian</span></span></a>
-      <li><a href="#Rotational-displacement"><span class="secno">3.21</span> <span class="content"><span>rotational-displacement</span></span></a>
-      <li><a href="#Duration"><span class="secno">3.22</span> <span class="content"><span>duration</span></span></a>
-      <li><a href="#Second"><span class="secno">3.23</span> <span class="content"><span>second</span></span></a>
-      <li><a href="#Millisecond"><span class="secno">3.24</span> <span class="content"><span>millisecond</span></span></a>
-      <li><a href="#Minute"><span class="secno">3.25</span> <span class="content"><span>minute</span></span></a>
-      <li><a href="#Hour"><span class="secno">3.26</span> <span class="content"><span>hour</span></span></a>
-      <li><a href="#Velocity"><span class="secno">3.27</span> <span class="content"><span>velocity</span></span></a>
-      <li><a href="#Metre-per-second"><span class="secno">3.28</span> <span class="content"><span>metre-per-second</span></span></a>
-      <li><a href="#Kilometre-per-second"><span class="secno">3.29</span> <span class="content"><span>kilometre-per-second</span></span></a>
-      <li><a href="#Period-duration"><span class="secno">3.30</span> <span class="content"><span>period-duration</span></span></a>
-      <li><a href="#Rotation"><span class="secno">3.31</span> <span class="content"><span>rotation</span></span></a>
-      <li><a href="#Revolutions"><span class="secno">3.32</span> <span class="content"><span>revolutions</span></span></a>
-      <li><a href="#Frequency"><span class="secno">3.33</span> <span class="content"><span>frequency</span></span></a>
-      <li><a href="#Rotational-frequency"><span class="secno">3.34</span> <span class="content"><span>rotational-frequency</span></span></a>
-      <li><a href="#Hertz"><span class="secno">3.35</span> <span class="content"><span>hertz</span></span></a>
+      <li><a href="#Altitude"><span class="secno">4.1</span> <span class="content"><span>altitude</span></span></a>
+      <li><a href="#Angular-measure"><span class="secno">4.2</span> <span class="content"><span>angular-measure</span></span></a>
+      <li><a href="#Arc-length"><span class="secno">4.3</span> <span class="content"><span>arc-length</span></span></a>
+      <li><a href="#Breadth"><span class="secno">4.4</span> <span class="content"><span>breadth</span></span></a>
+      <li><a href="#Depth"><span class="secno">4.5</span> <span class="content"><span>depth</span></span></a>
+      <li><a href="#Diameter"><span class="secno">4.6</span> <span class="content"><span>diameter</span></span></a>
+      <li><a href="#Displacement"><span class="secno">4.7</span> <span class="content"><span>displacement</span></span></a>
+      <li><a href="#Distance"><span class="secno">4.8</span> <span class="content"><span>distance</span></span></a>
+      <li><a href="#Duration"><span class="secno">4.9</span> <span class="content"><span>duration</span></span></a>
+      <li><a href="#Frequency"><span class="secno">4.10</span> <span class="content"><span>frequency</span></span></a>
+      <li><a href="#Height"><span class="secno">4.11</span> <span class="content"><span>height</span></span></a>
+      <li><a href="#Hertz"><span class="secno">4.12</span> <span class="content"><span>hertz</span></span></a>
+      <li><a href="#Hour"><span class="secno">4.13</span> <span class="content"><span>hour</span></span></a>
+      <li><a href="#Kilometre"><span class="secno">4.14</span> <span class="content"><span>kilometre</span></span></a>
+      <li><a href="#Kilometre-per-second"><span class="secno">4.15</span> <span class="content"><span>kilometre-per-second</span></span></a>
+      <li><a href="#Length"><span class="secno">4.16</span> <span class="content"><span>length</span></span></a>
+      <li><a href="#Metre"><span class="secno">4.17</span> <span class="content"><span>metre</span></span></a>
+      <li><a href="#Metre-per-second"><span class="secno">4.18</span> <span class="content"><span>metre-per-second</span></span></a>
+      <li><a href="#Millisecond"><span class="secno">4.19</span> <span class="content"><span>millisecond</span></span></a>
+      <li><a href="#Minute"><span class="secno">4.20</span> <span class="content"><span>minute</span></span></a>
+      <li><a href="#Path-length"><span class="secno">4.21</span> <span class="content"><span>path-length</span></span></a>
+      <li><a href="#Period-duration"><span class="secno">4.22</span> <span class="content"><span>period-duration</span></span></a>
+      <li><a href="#Position-vector"><span class="secno">4.23</span> <span class="content"><span>position-vector</span></span></a>
+      <li><a href="#Radial-distance"><span class="secno">4.24</span> <span class="content"><span>radial-distance</span></span></a>
+      <li><a href="#Radian"><span class="secno">4.25</span> <span class="content"><span>radian</span></span></a>
+      <li><a href="#Radius"><span class="secno">4.26</span> <span class="content"><span>radius</span></span></a>
+      <li><a href="#Radius-of-curvature"><span class="secno">4.27</span> <span class="content"><span>radius-of-curvature</span></span></a>
+      <li><a href="#Revolutions"><span class="secno">4.28</span> <span class="content"><span>revolutions</span></span></a>
+      <li><a href="#Rotation"><span class="secno">4.29</span> <span class="content"><span>rotation</span></span></a>
+      <li><a href="#Rotational-displacement"><span class="secno">4.30</span> <span class="content"><span>rotational-displacement</span></span></a>
+      <li><a href="#Rotational-frequency"><span class="secno">4.31</span> <span class="content"><span>rotational-frequency</span></span></a>
+      <li><a href="#Second"><span class="secno">4.32</span> <span class="content"><span>second</span></span></a>
+      <li><a href="#Thickness"><span class="secno">4.33</span> <span class="content"><span>thickness</span></span></a>
+      <li><a href="#Velocity"><span class="secno">4.34</span> <span class="content"><span>velocity</span></span></a>
+      <li><a href="#Width"><span class="secno">4.35</span> <span class="content"><span>width</span></span></a>
+     </ol>
+    <li>
+     <a href="#RelationInstances"><span class="secno">5</span> <span class="content">Relation Instances</span></a>
+     <ol class="toc">
+      <li><a href="#SystemOfQuantities-altitude"><span class="secno">5.1</span> <span class="content"><span>systemOfQuantities-altitude</span></span></a>
+      <li><a href="#SystemOfQuantities-angular-measure"><span class="secno">5.2</span> <span class="content"><span>systemOfQuantities-angular-measure</span></span></a>
+      <li><a href="#SystemOfQuantities-arc-length"><span class="secno">5.3</span> <span class="content"><span>systemOfQuantities-arc-length</span></span></a>
+      <li><a href="#SystemOfQuantities-breadth"><span class="secno">5.4</span> <span class="content"><span>systemOfQuantities-breadth</span></span></a>
+      <li><a href="#SystemOfQuantities-depth"><span class="secno">5.5</span> <span class="content"><span>systemOfQuantities-depth</span></span></a>
+      <li><a href="#SystemOfQuantities-diameter"><span class="secno">5.6</span> <span class="content"><span>systemOfQuantities-diameter</span></span></a>
+      <li><a href="#SystemOfQuantities-displacement"><span class="secno">5.7</span> <span class="content"><span>systemOfQuantities-displacement</span></span></a>
+      <li><a href="#SystemOfQuantities-distance"><span class="secno">5.8</span> <span class="content"><span>systemOfQuantities-distance</span></span></a>
+      <li><a href="#SystemOfQuantities-duration"><span class="secno">5.9</span> <span class="content"><span>systemOfQuantities-duration</span></span></a>
+      <li><a href="#SystemOfQuantities-frequency"><span class="secno">5.10</span> <span class="content"><span>systemOfQuantities-frequency</span></span></a>
+      <li><a href="#SystemOfQuantities-height"><span class="secno">5.11</span> <span class="content"><span>systemOfQuantities-height</span></span></a>
+      <li><a href="#SystemOfQuantities-length"><span class="secno">5.12</span> <span class="content"><span>systemOfQuantities-length</span></span></a>
+      <li><a href="#SystemOfQuantities-path-length"><span class="secno">5.13</span> <span class="content"><span>systemOfQuantities-path-length</span></span></a>
+      <li><a href="#SystemOfQuantities-period-duration"><span class="secno">5.14</span> <span class="content"><span>systemOfQuantities-period-duration</span></span></a>
+      <li><a href="#SystemOfQuantities-position-vector"><span class="secno">5.15</span> <span class="content"><span>systemOfQuantities-position-vector</span></span></a>
+      <li><a href="#SystemOfQuantities-radial-distance"><span class="secno">5.16</span> <span class="content"><span>systemOfQuantities-radial-distance</span></span></a>
+      <li><a href="#SystemOfQuantities-radius"><span class="secno">5.17</span> <span class="content"><span>systemOfQuantities-radius</span></span></a>
+      <li><a href="#SystemOfQuantities-radius-of-curvature"><span class="secno">5.18</span> <span class="content"><span>systemOfQuantities-radius-of-curvature</span></span></a>
+      <li><a href="#SystemOfQuantities-rotation"><span class="secno">5.19</span> <span class="content"><span>systemOfQuantities-rotation</span></span></a>
+      <li><a href="#SystemOfQuantities-rotational-displacement"><span class="secno">5.20</span> <span class="content"><span>systemOfQuantities-rotational-displacement</span></span></a>
+      <li><a href="#SystemOfQuantities-rotational-frequency"><span class="secno">5.21</span> <span class="content"><span>systemOfQuantities-rotational-frequency</span></span></a>
+      <li><a href="#SystemOfQuantities-thickness"><span class="secno">5.22</span> <span class="content"><span>systemOfQuantities-thickness</span></span></a>
+      <li><a href="#SystemOfQuantities-velocity"><span class="secno">5.23</span> <span class="content"><span>systemOfQuantities-velocity</span></span></a>
+      <li><a href="#SystemOfQuantities-width"><span class="secno">5.24</span> <span class="content"><span>systemOfQuantities-width</span></span></a>
+      <li><a href="#SystemOfUnits-hertz"><span class="secno">5.25</span> <span class="content"><span>systemOfUnits-hertz</span></span></a>
+      <li><a href="#SystemOfUnits-metre"><span class="secno">5.26</span> <span class="content"><span>systemOfUnits-metre</span></span></a>
+      <li><a href="#SystemOfUnits-metre-per-second"><span class="secno">5.27</span> <span class="content"><span>systemOfUnits-metre-per-second</span></span></a>
+      <li><a href="#SystemOfUnits-radian"><span class="secno">5.28</span> <span class="content"><span>systemOfUnits-radian</span></span></a>
+      <li><a href="#SystemOfUnits-revolutions"><span class="secno">5.29</span> <span class="content"><span>systemOfUnits-revolutions</span></span></a>
+      <li><a href="#SystemOfUnits-second"><span class="secno">5.30</span> <span class="content"><span>systemOfUnits-second</span></span></a>
      </ol>
     <li>
      <a href="#index"><span class="secno"></span> <span class="content">Index</span></a>
@@ -1832,82 +1867,358 @@ dfn > a.self-link::before      { content: "#"; }
      <li data-md>
       <p>80000-3-instances: <a href="80000-3-instances.html">http://iso.org/80000-3-instances</a></p>
     </ul>
-    <h2 class="heading settled" data-level="2" id="Iclusions"><span class="secno">2. </span><span class="content">Usages</span><a class="self-link" href="#Iclusions"></a></h2>
+    <h2 class="heading settled" data-level="2" id="Extensions"><span class="secno">2. </span><span class="content">Extensions</span><a class="self-link" href="#Extensions"></a></h2>
     <ul>
      <li data-md>
-      <p>80000-3-kindsOfQuantities: <a href="http://iso.org/80000-3-kindsOfQuantities.html">http://iso.org/80000-3-kindsOfQuantities</a></p>
+      <p>80000-instances: <a href="http://iso.org/80000-instances.html">http://iso.org/80000-instances</a></p>
     </ul>
-    <h2 class="heading settled" data-level="3" id="ConceptInstances"><span class="secno">3. </span><span class="content">Concept Instances</span><a class="self-link" href="#ConceptInstances"></a></h2>
-    <h3 class="heading settled" data-level="3.1" id="Length"><span class="secno">3.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="length">length<a class="self-link" href="#length"></a></dfn></span><a class="self-link" href="#Length"></a></h3>
-    <p><em>Types:</em> <a data-link-type="dfn" href="80000-3-kindsOfQuantities.html#length" id="ref-for-length">80000-3-kindsOfQuantities:length</a></p>
-    <h3 class="heading settled" data-level="3.2" id="Width"><span class="secno">3.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="width">width<a class="self-link" href="#width"></a></dfn></span><a class="self-link" href="#Width"></a></h3>
-    <p><em>Types:</em> <a data-link-type="dfn" href="80000-3-kindsOfQuantities.html#width" id="ref-for-width">80000-3-kindsOfQuantities:width</a></p>
-    <h3 class="heading settled" data-level="3.3" id="Breadth"><span class="secno">3.3. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="breadth">breadth<a class="self-link" href="#breadth"></a></dfn></span><a class="self-link" href="#Breadth"></a></h3>
-    <p><em>Types:</em> <a data-link-type="dfn" href="80000-3-kindsOfQuantities.html#breadth" id="ref-for-breadth">80000-3-kindsOfQuantities:breadth</a></p>
-    <h3 class="heading settled" data-level="3.4" id="Height"><span class="secno">3.4. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="height">height<a class="self-link" href="#height"></a></dfn></span><a class="self-link" href="#Height"></a></h3>
-    <p><em>Types:</em> <a data-link-type="dfn" href="80000-3-kindsOfQuantities.html#height" id="ref-for-height">80000-3-kindsOfQuantities:height</a></p>
-    <h3 class="heading settled" data-level="3.5" id="Depth"><span class="secno">3.5. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="depth">depth<a class="self-link" href="#depth"></a></dfn></span><a class="self-link" href="#Depth"></a></h3>
-    <p><em>Types:</em> <a data-link-type="dfn" href="80000-3-kindsOfQuantities.html#depth" id="ref-for-depth">80000-3-kindsOfQuantities:depth</a></p>
-    <h3 class="heading settled" data-level="3.6" id="Altitude"><span class="secno">3.6. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="altitude">altitude<a class="self-link" href="#altitude"></a></dfn></span><a class="self-link" href="#Altitude"></a></h3>
-    <p><em>Types:</em> <a data-link-type="dfn" href="80000-3-kindsOfQuantities.html#altitude" id="ref-for-altitude">80000-3-kindsOfQuantities:altitude</a></p>
-    <h3 class="heading settled" data-level="3.7" id="Thickness"><span class="secno">3.7. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="thickness">thickness<a class="self-link" href="#thickness"></a></dfn></span><a class="self-link" href="#Thickness"></a></h3>
-    <p><em>Types:</em> <a data-link-type="dfn" href="80000-3-kindsOfQuantities.html#thickness" id="ref-for-thickness">80000-3-kindsOfQuantities:thickness</a></p>
-    <h3 class="heading settled" data-level="3.8" id="Diameter"><span class="secno">3.8. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="diameter">diameter<a class="self-link" href="#diameter"></a></dfn></span><a class="self-link" href="#Diameter"></a></h3>
-    <p><em>Types:</em> <a data-link-type="dfn" href="80000-3-kindsOfQuantities.html#diameter" id="ref-for-diameter">80000-3-kindsOfQuantities:diameter</a></p>
-    <h3 class="heading settled" data-level="3.9" id="Radius"><span class="secno">3.9. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="radius">radius<a class="self-link" href="#radius"></a></dfn></span><a class="self-link" href="#Radius"></a></h3>
-    <p><em>Types:</em> <a data-link-type="dfn" href="80000-3-kindsOfQuantities.html#radius" id="ref-for-radius">80000-3-kindsOfQuantities:radius</a></p>
-    <h3 class="heading settled" data-level="3.10" id="Path-length"><span class="secno">3.10. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="path-length">path-length<a class="self-link" href="#path-length"></a></dfn></span><a class="self-link" href="#Path-length"></a></h3>
-    <p><em>Types:</em> <a data-link-type="dfn" href="80000-3-kindsOfQuantities.html#path-length" id="ref-for-path-length">80000-3-kindsOfQuantities:path-length</a></p>
-    <h3 class="heading settled" data-level="3.11" id="Arc-length"><span class="secno">3.11. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="arc-length">arc-length<a class="self-link" href="#arc-length"></a></dfn></span><a class="self-link" href="#Arc-length"></a></h3>
-    <p><em>Types:</em> <a data-link-type="dfn" href="80000-3-kindsOfQuantities.html#arc-length" id="ref-for-arc-length">80000-3-kindsOfQuantities:arc-length</a></p>
-    <h3 class="heading settled" data-level="3.12" id="Distance"><span class="secno">3.12. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="distance">distance<a class="self-link" href="#distance"></a></dfn></span><a class="self-link" href="#Distance"></a></h3>
-    <p><em>Types:</em> <a data-link-type="dfn" href="80000-3-kindsOfQuantities.html#distance" id="ref-for-distance">80000-3-kindsOfQuantities:distance</a></p>
-    <h3 class="heading settled" data-level="3.13" id="Radial-distance"><span class="secno">3.13. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="radial-distance">radial-distance<a class="self-link" href="#radial-distance"></a></dfn></span><a class="self-link" href="#Radial-distance"></a></h3>
-    <p><em>Types:</em> <a data-link-type="dfn" href="80000-3-kindsOfQuantities.html#radial-distance" id="ref-for-radial-distance">80000-3-kindsOfQuantities:radial-distance</a></p>
-    <h3 class="heading settled" data-level="3.14" id="Position-vector"><span class="secno">3.14. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="position-vector">position-vector<a class="self-link" href="#position-vector"></a></dfn></span><a class="self-link" href="#Position-vector"></a></h3>
-    <p><em>Types:</em> <a data-link-type="dfn" href="80000-3-kindsOfQuantities.html#position-vector" id="ref-for-position-vector">80000-3-kindsOfQuantities:position-vector</a></p>
-    <h3 class="heading settled" data-level="3.15" id="Displacement"><span class="secno">3.15. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="displacement">displacement<a class="self-link" href="#displacement"></a></dfn></span><a class="self-link" href="#Displacement"></a></h3>
-    <p><em>Types:</em> <a data-link-type="dfn" href="80000-3-kindsOfQuantities.html#displacement" id="ref-for-displacement">80000-3-kindsOfQuantities:displacement</a></p>
-    <h3 class="heading settled" data-level="3.16" id="Radius-of-curvature"><span class="secno">3.16. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="radius-of-curvature">radius-of-curvature<a class="self-link" href="#radius-of-curvature"></a></dfn></span><a class="self-link" href="#Radius-of-curvature"></a></h3>
-    <p><em>Types:</em> <a data-link-type="dfn" href="80000-3-kindsOfQuantities.html#radius-of-curvature" id="ref-for-radius-of-curvature">80000-3-kindsOfQuantities:radius-of-curvature</a></p>
-    <h3 class="heading settled" data-level="3.17" id="Metre"><span class="secno">3.17. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="metre">metre<a class="self-link" href="#metre"></a></dfn></span><a class="self-link" href="#Metre"></a></h3>
-    <p><em>Types:</em> <a data-link-type="dfn" href="80000-3-units.html#metre" id="ref-for-metre">80000-3-units:metre</a></p>
-    <h3 class="heading settled" data-level="3.18" id="Kilometre"><span class="secno">3.18. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="kilometre">kilometre<a class="self-link" href="#kilometre"></a></dfn></span><a class="self-link" href="#Kilometre"></a></h3>
-    <p><em>Types:</em> <a data-link-type="dfn" href="80000-3-units.html#kilometre" id="ref-for-kilometre">80000-3-units:kilometre</a></p>
-    <h3 class="heading settled" data-level="3.19" id="Angular-measure"><span class="secno">3.19. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="angular-measure">angular-measure<a class="self-link" href="#angular-measure"></a></dfn></span><a class="self-link" href="#Angular-measure"></a></h3>
-    <p><em>Types:</em> <a data-link-type="dfn" href="80000-3-kindsOfQuantities.html#angular-measure" id="ref-for-angular-measure">80000-3-kindsOfQuantities:angular-measure</a></p>
-    <h3 class="heading settled" data-level="3.20" id="Radian"><span class="secno">3.20. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="radian">radian<a class="self-link" href="#radian"></a></dfn></span><a class="self-link" href="#Radian"></a></h3>
-    <p><em>Types:</em> <a data-link-type="dfn" href="80000-3-units.html#radian" id="ref-for-radian">80000-3-units:radian</a></p>
-    <h3 class="heading settled" data-level="3.21" id="Rotational-displacement"><span class="secno">3.21. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="rotational-displacement">rotational-displacement<a class="self-link" href="#rotational-displacement"></a></dfn></span><a class="self-link" href="#Rotational-displacement"></a></h3>
-    <p><em>Types:</em> <a data-link-type="dfn" href="80000-3-kindsOfQuantities.html#rotational-displacement" id="ref-for-rotational-displacement">80000-3-kindsOfQuantities:rotational-displacement</a></p>
-    <h3 class="heading settled" data-level="3.22" id="Duration"><span class="secno">3.22. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="duration">duration<a class="self-link" href="#duration"></a></dfn></span><a class="self-link" href="#Duration"></a></h3>
-    <p><em>Types:</em> <a data-link-type="dfn" href="80000-3-kindsOfQuantities.html#duration" id="ref-for-duration">80000-3-kindsOfQuantities:duration</a></p>
-    <h3 class="heading settled" data-level="3.23" id="Second"><span class="secno">3.23. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="second">second<a class="self-link" href="#second"></a></dfn></span><a class="self-link" href="#Second"></a></h3>
-    <p><em>Types:</em> <a data-link-type="dfn" href="80000-3-units.html#second" id="ref-for-second">80000-3-units:second</a></p>
-    <h3 class="heading settled" data-level="3.24" id="Millisecond"><span class="secno">3.24. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="millisecond">millisecond<a class="self-link" href="#millisecond"></a></dfn></span><a class="self-link" href="#Millisecond"></a></h3>
-    <p><em>Types:</em> <a data-link-type="dfn" href="80000-3-units.html#millisecond" id="ref-for-millisecond">80000-3-units:millisecond</a></p>
-    <h3 class="heading settled" data-level="3.25" id="Minute"><span class="secno">3.25. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="minute">minute<a class="self-link" href="#minute"></a></dfn></span><a class="self-link" href="#Minute"></a></h3>
-    <p><em>Types:</em> <a data-link-type="dfn" href="80000-3-units.html#minute" id="ref-for-minute">80000-3-units:minute</a></p>
-    <h3 class="heading settled" data-level="3.26" id="Hour"><span class="secno">3.26. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="hour">hour<a class="self-link" href="#hour"></a></dfn></span><a class="self-link" href="#Hour"></a></h3>
-    <p><em>Types:</em> <a data-link-type="dfn" href="80000-3-units.html#hour" id="ref-for-hour">80000-3-units:hour</a></p>
-    <h3 class="heading settled" data-level="3.27" id="Velocity"><span class="secno">3.27. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="velocity">velocity<a class="self-link" href="#velocity"></a></dfn></span><a class="self-link" href="#Velocity"></a></h3>
-    <p><em>Types:</em> <a data-link-type="dfn" href="80000-3-kindsOfQuantities.html#velocity" id="ref-for-velocity">80000-3-kindsOfQuantities:velocity</a></p>
-    <h3 class="heading settled" data-level="3.28" id="Metre-per-second"><span class="secno">3.28. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="metre-per-second">metre-per-second<a class="self-link" href="#metre-per-second"></a></dfn></span><a class="self-link" href="#Metre-per-second"></a></h3>
-    <p><em>Types:</em> <a data-link-type="dfn" href="80000-3-units.html#metre-per-second" id="ref-for-metre-per-second">80000-3-units:metre-per-second</a></p>
-    <h3 class="heading settled" data-level="3.29" id="Kilometre-per-second"><span class="secno">3.29. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="kilometre-per-second">kilometre-per-second<a class="self-link" href="#kilometre-per-second"></a></dfn></span><a class="self-link" href="#Kilometre-per-second"></a></h3>
-    <p><em>Types:</em> <a data-link-type="dfn" href="80000-3-units.html#kilometre-per-second" id="ref-for-kilometre-per-second">80000-3-units:kilometre-per-second</a></p>
-    <h3 class="heading settled" data-level="3.30" id="Period-duration"><span class="secno">3.30. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="period-duration">period-duration<a class="self-link" href="#period-duration"></a></dfn></span><a class="self-link" href="#Period-duration"></a></h3>
-    <p><em>Types:</em> <a data-link-type="dfn" href="80000-3-kindsOfQuantities.html#period-duration" id="ref-for-period-duration">80000-3-kindsOfQuantities:period-duration</a></p>
-    <h3 class="heading settled" data-level="3.31" id="Rotation"><span class="secno">3.31. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="rotation">rotation<a class="self-link" href="#rotation"></a></dfn></span><a class="self-link" href="#Rotation"></a></h3>
-    <p><em>Types:</em> <a data-link-type="dfn" href="80000-3-kindsOfQuantities.html#rotation" id="ref-for-rotation">80000-3-kindsOfQuantities:rotation</a></p>
-    <h3 class="heading settled" data-level="3.32" id="Revolutions"><span class="secno">3.32. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="revolutions">revolutions<a class="self-link" href="#revolutions"></a></dfn></span><a class="self-link" href="#Revolutions"></a></h3>
-    <p><em>Types:</em> <a data-link-type="dfn" href="80000-3-units.html#revolutions" id="ref-for-revolutions">80000-3-units:revolutions</a></p>
-    <h3 class="heading settled" data-level="3.33" id="Frequency"><span class="secno">3.33. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="frequency">frequency<a class="self-link" href="#frequency"></a></dfn></span><a class="self-link" href="#Frequency"></a></h3>
-    <p><em>Types:</em> <a data-link-type="dfn" href="80000-3-kindsOfQuantities.html#frequency" id="ref-for-frequency">80000-3-kindsOfQuantities:frequency</a></p>
-    <h3 class="heading settled" data-level="3.34" id="Rotational-frequency"><span class="secno">3.34. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="rotational-frequency">rotational-frequency<a class="self-link" href="#rotational-frequency"></a></dfn></span><a class="self-link" href="#Rotational-frequency"></a></h3>
-    <p><em>Types:</em> <a data-link-type="dfn" href="80000-3-kindsOfQuantities.html#rotational-frequency" id="ref-for-rotational-frequency">80000-3-kindsOfQuantities:rotational-frequency</a></p>
-    <h3 class="heading settled" data-level="3.35" id="Hertz"><span class="secno">3.35. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="hertz">hertz<a class="self-link" href="#hertz"></a></dfn></span><a class="self-link" href="#Hertz"></a></h3>
+    <h2 class="heading settled" data-level="3" id="Iclusions"><span class="secno">3. </span><span class="content">Usages</span><a class="self-link" href="#Iclusions"></a></h2>
+    <ul>
+     <li data-md>
+      <p>80000-3-quantities: <a href="http://iso.org/80000-3-quantities.html">http://iso.org/80000-3-quantities</a></p>
+    </ul>
+    <h2 class="heading settled" data-level="4" id="ConceptInstances"><span class="secno">4. </span><span class="content">Concept Instances</span><a class="self-link" href="#ConceptInstances"></a></h2>
+    <h3 class="heading settled" data-level="4.1" id="Altitude"><span class="secno">4.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="altitude">altitude<a class="self-link" href="#altitude"></a></dfn></span><a class="self-link" href="#Altitude"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="80000-3-quantities.html#altitude" id="ref-for-altitude">80000-3-quantities:altitude</a></p>
+    <h3 class="heading settled" data-level="4.2" id="Angular-measure"><span class="secno">4.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="angular-measure">angular-measure<a class="self-link" href="#angular-measure"></a></dfn></span><a class="self-link" href="#Angular-measure"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="80000-3-quantities.html#angular-measure" id="ref-for-angular-measure">80000-3-quantities:angular-measure</a></p>
+    <h3 class="heading settled" data-level="4.3" id="Arc-length"><span class="secno">4.3. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="arc-length">arc-length<a class="self-link" href="#arc-length"></a></dfn></span><a class="self-link" href="#Arc-length"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="80000-3-quantities.html#arc-length" id="ref-for-arc-length">80000-3-quantities:arc-length</a></p>
+    <h3 class="heading settled" data-level="4.4" id="Breadth"><span class="secno">4.4. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="breadth">breadth<a class="self-link" href="#breadth"></a></dfn></span><a class="self-link" href="#Breadth"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="80000-3-quantities.html#breadth" id="ref-for-breadth">80000-3-quantities:breadth</a></p>
+    <h3 class="heading settled" data-level="4.5" id="Depth"><span class="secno">4.5. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="depth">depth<a class="self-link" href="#depth"></a></dfn></span><a class="self-link" href="#Depth"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="80000-3-quantities.html#depth" id="ref-for-depth">80000-3-quantities:depth</a></p>
+    <h3 class="heading settled" data-level="4.6" id="Diameter"><span class="secno">4.6. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="diameter">diameter<a class="self-link" href="#diameter"></a></dfn></span><a class="self-link" href="#Diameter"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="80000-3-quantities.html#diameter" id="ref-for-diameter">80000-3-quantities:diameter</a></p>
+    <h3 class="heading settled" data-level="4.7" id="Displacement"><span class="secno">4.7. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="displacement">displacement<a class="self-link" href="#displacement"></a></dfn></span><a class="self-link" href="#Displacement"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="80000-3-quantities.html#displacement" id="ref-for-displacement">80000-3-quantities:displacement</a></p>
+    <h3 class="heading settled" data-level="4.8" id="Distance"><span class="secno">4.8. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="distance">distance<a class="self-link" href="#distance"></a></dfn></span><a class="self-link" href="#Distance"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="80000-3-quantities.html#distance" id="ref-for-distance">80000-3-quantities:distance</a></p>
+    <h3 class="heading settled" data-level="4.9" id="Duration"><span class="secno">4.9. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="duration">duration<a class="self-link" href="#duration"></a></dfn></span><a class="self-link" href="#Duration"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="80000-3-quantities.html#duration" id="ref-for-duration">80000-3-quantities:duration</a></p>
+    <h3 class="heading settled" data-level="4.10" id="Frequency"><span class="secno">4.10. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="frequency">frequency<a class="self-link" href="#frequency"></a></dfn></span><a class="self-link" href="#Frequency"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="80000-3-quantities.html#frequency" id="ref-for-frequency">80000-3-quantities:frequency</a></p>
+    <h3 class="heading settled" data-level="4.11" id="Height"><span class="secno">4.11. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="height">height<a class="self-link" href="#height"></a></dfn></span><a class="self-link" href="#Height"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="80000-3-quantities.html#height" id="ref-for-height">80000-3-quantities:height</a></p>
+    <h3 class="heading settled" data-level="4.12" id="Hertz"><span class="secno">4.12. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="hertz">hertz<a class="self-link" href="#hertz"></a></dfn></span><a class="self-link" href="#Hertz"></a></h3>
     <p><em>Types:</em> <a data-link-type="dfn" href="80000-3-units.html#hertz" id="ref-for-hertz">80000-3-units:hertz</a></p>
+    <h3 class="heading settled" data-level="4.13" id="Hour"><span class="secno">4.13. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="hour">hour<a class="self-link" href="#hour"></a></dfn></span><a class="self-link" href="#Hour"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="80000-3-units.html#hour" id="ref-for-hour">80000-3-units:hour</a></p>
+    <h3 class="heading settled" data-level="4.14" id="Kilometre"><span class="secno">4.14. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="kilometre">kilometre<a class="self-link" href="#kilometre"></a></dfn></span><a class="self-link" href="#Kilometre"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="80000-3-units.html#kilometre" id="ref-for-kilometre">80000-3-units:kilometre</a></p>
+    <h3 class="heading settled" data-level="4.15" id="Kilometre-per-second"><span class="secno">4.15. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="kilometre-per-second">kilometre-per-second<a class="self-link" href="#kilometre-per-second"></a></dfn></span><a class="self-link" href="#Kilometre-per-second"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="80000-3-units.html#kilometre-per-second" id="ref-for-kilometre-per-second">80000-3-units:kilometre-per-second</a></p>
+    <h3 class="heading settled" data-level="4.16" id="Length"><span class="secno">4.16. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="length">length<a class="self-link" href="#length"></a></dfn></span><a class="self-link" href="#Length"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="80000-3-quantities.html#length" id="ref-for-length">80000-3-quantities:length</a></p>
+    <h3 class="heading settled" data-level="4.17" id="Metre"><span class="secno">4.17. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="metre">metre<a class="self-link" href="#metre"></a></dfn></span><a class="self-link" href="#Metre"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="80000-3-units.html#metre" id="ref-for-metre">80000-3-units:metre</a></p>
+    <h3 class="heading settled" data-level="4.18" id="Metre-per-second"><span class="secno">4.18. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="metre-per-second">metre-per-second<a class="self-link" href="#metre-per-second"></a></dfn></span><a class="self-link" href="#Metre-per-second"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="80000-3-units.html#metre-per-second" id="ref-for-metre-per-second">80000-3-units:metre-per-second</a></p>
+    <h3 class="heading settled" data-level="4.19" id="Millisecond"><span class="secno">4.19. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="millisecond">millisecond<a class="self-link" href="#millisecond"></a></dfn></span><a class="self-link" href="#Millisecond"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="80000-3-units.html#millisecond" id="ref-for-millisecond">80000-3-units:millisecond</a></p>
+    <h3 class="heading settled" data-level="4.20" id="Minute"><span class="secno">4.20. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="minute">minute<a class="self-link" href="#minute"></a></dfn></span><a class="self-link" href="#Minute"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="80000-3-units.html#minute" id="ref-for-minute">80000-3-units:minute</a></p>
+    <h3 class="heading settled" data-level="4.21" id="Path-length"><span class="secno">4.21. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="path-length">path-length<a class="self-link" href="#path-length"></a></dfn></span><a class="self-link" href="#Path-length"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="80000-3-quantities.html#path-length" id="ref-for-path-length">80000-3-quantities:path-length</a></p>
+    <h3 class="heading settled" data-level="4.22" id="Period-duration"><span class="secno">4.22. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="period-duration">period-duration<a class="self-link" href="#period-duration"></a></dfn></span><a class="self-link" href="#Period-duration"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="80000-3-quantities.html#period-duration" id="ref-for-period-duration">80000-3-quantities:period-duration</a></p>
+    <h3 class="heading settled" data-level="4.23" id="Position-vector"><span class="secno">4.23. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="position-vector">position-vector<a class="self-link" href="#position-vector"></a></dfn></span><a class="self-link" href="#Position-vector"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="80000-3-quantities.html#position-vector" id="ref-for-position-vector">80000-3-quantities:position-vector</a></p>
+    <h3 class="heading settled" data-level="4.24" id="Radial-distance"><span class="secno">4.24. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="radial-distance">radial-distance<a class="self-link" href="#radial-distance"></a></dfn></span><a class="self-link" href="#Radial-distance"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="80000-3-quantities.html#radial-distance" id="ref-for-radial-distance">80000-3-quantities:radial-distance</a></p>
+    <h3 class="heading settled" data-level="4.25" id="Radian"><span class="secno">4.25. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="radian">radian<a class="self-link" href="#radian"></a></dfn></span><a class="self-link" href="#Radian"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="80000-3-units.html#radian" id="ref-for-radian">80000-3-units:radian</a></p>
+    <h3 class="heading settled" data-level="4.26" id="Radius"><span class="secno">4.26. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="radius">radius<a class="self-link" href="#radius"></a></dfn></span><a class="self-link" href="#Radius"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="80000-3-quantities.html#radius" id="ref-for-radius">80000-3-quantities:radius</a></p>
+    <h3 class="heading settled" data-level="4.27" id="Radius-of-curvature"><span class="secno">4.27. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="radius-of-curvature">radius-of-curvature<a class="self-link" href="#radius-of-curvature"></a></dfn></span><a class="self-link" href="#Radius-of-curvature"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="80000-3-quantities.html#radius-of-curvature" id="ref-for-radius-of-curvature">80000-3-quantities:radius-of-curvature</a></p>
+    <h3 class="heading settled" data-level="4.28" id="Revolutions"><span class="secno">4.28. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="revolutions">revolutions<a class="self-link" href="#revolutions"></a></dfn></span><a class="self-link" href="#Revolutions"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="80000-3-units.html#revolutions" id="ref-for-revolutions">80000-3-units:revolutions</a></p>
+    <h3 class="heading settled" data-level="4.29" id="Rotation"><span class="secno">4.29. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="rotation">rotation<a class="self-link" href="#rotation"></a></dfn></span><a class="self-link" href="#Rotation"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="80000-3-quantities.html#rotation" id="ref-for-rotation">80000-3-quantities:rotation</a></p>
+    <h3 class="heading settled" data-level="4.30" id="Rotational-displacement"><span class="secno">4.30. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="rotational-displacement">rotational-displacement<a class="self-link" href="#rotational-displacement"></a></dfn></span><a class="self-link" href="#Rotational-displacement"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="80000-3-quantities.html#rotational-displacement" id="ref-for-rotational-displacement">80000-3-quantities:rotational-displacement</a></p>
+    <h3 class="heading settled" data-level="4.31" id="Rotational-frequency"><span class="secno">4.31. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="rotational-frequency">rotational-frequency<a class="self-link" href="#rotational-frequency"></a></dfn></span><a class="self-link" href="#Rotational-frequency"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="80000-3-quantities.html#rotational-frequency" id="ref-for-rotational-frequency">80000-3-quantities:rotational-frequency</a></p>
+    <h3 class="heading settled" data-level="4.32" id="Second"><span class="secno">4.32. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="second">second<a class="self-link" href="#second"></a></dfn></span><a class="self-link" href="#Second"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="80000-3-units.html#second" id="ref-for-second">80000-3-units:second</a></p>
+    <h3 class="heading settled" data-level="4.33" id="Thickness"><span class="secno">4.33. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="thickness">thickness<a class="self-link" href="#thickness"></a></dfn></span><a class="self-link" href="#Thickness"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="80000-3-quantities.html#thickness" id="ref-for-thickness">80000-3-quantities:thickness</a></p>
+    <h3 class="heading settled" data-level="4.34" id="Velocity"><span class="secno">4.34. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="velocity">velocity<a class="self-link" href="#velocity"></a></dfn></span><a class="self-link" href="#Velocity"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="80000-3-quantities.html#velocity" id="ref-for-velocity">80000-3-quantities:velocity</a></p>
+    <h3 class="heading settled" data-level="4.35" id="Width"><span class="secno">4.35. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="width">width<a class="self-link" href="#width"></a></dfn></span><a class="self-link" href="#Width"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="80000-3-quantities.html#width" id="ref-for-width">80000-3-quantities:width</a></p>
+    <h2 class="heading settled" data-level="5" id="RelationInstances"><span class="secno">5. </span><span class="content">Relation Instances</span><a class="self-link" href="#RelationInstances"></a></h2>
+    <h3 class="heading settled" data-level="5.1" id="SystemOfQuantities-altitude"><span class="secno">5.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="systemofquantities-altitude">systemOfQuantities-altitude<a class="self-link" href="#systemofquantities-altitude"></a></dfn></span><a class="self-link" href="#SystemOfQuantities-altitude"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#systemhasunitaryquantity" id="ref-for-systemhasunitaryquantity">metrology:SystemHasUnitaryQuantity</a></p>
+    <p><em>Source:</em> <a data-link-type="dfn" href="80000-instances.html#systemofquantities" id="ref-for-systemofquantities">80000-instances:systemOfQuantities</a></p>
+    <p><em>Target:</em> <a data-link-type="dfn" href="80000-3-instances.html#altitude" id="ref-for-altitude①">altitude</a></p>
+    <p><em>Properties:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../iupac.org/metrology.html#isbasequantity" id="ref-for-isbasequantity">metrology:isBaseQuantity</a> false</p>
+    </ul>
+    <h3 class="heading settled" data-level="5.2" id="SystemOfQuantities-angular-measure"><span class="secno">5.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="systemofquantities-angular-measure">systemOfQuantities-angular-measure<a class="self-link" href="#systemofquantities-angular-measure"></a></dfn></span><a class="self-link" href="#SystemOfQuantities-angular-measure"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#systemhasunitaryquantity" id="ref-for-systemhasunitaryquantity①">metrology:SystemHasUnitaryQuantity</a></p>
+    <p><em>Source:</em> <a data-link-type="dfn" href="80000-instances.html#systemofquantities" id="ref-for-systemofquantities①">80000-instances:systemOfQuantities</a></p>
+    <p><em>Target:</em> <a data-link-type="dfn" href="80000-3-instances.html#angular-measure" id="ref-for-angular-measure①">angular-measure</a></p>
+    <p><em>Properties:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../iupac.org/metrology.html#isbasequantity" id="ref-for-isbasequantity①">metrology:isBaseQuantity</a> false</p>
+    </ul>
+    <h3 class="heading settled" data-level="5.3" id="SystemOfQuantities-arc-length"><span class="secno">5.3. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="systemofquantities-arc-length">systemOfQuantities-arc-length<a class="self-link" href="#systemofquantities-arc-length"></a></dfn></span><a class="self-link" href="#SystemOfQuantities-arc-length"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#systemhasunitaryquantity" id="ref-for-systemhasunitaryquantity②">metrology:SystemHasUnitaryQuantity</a></p>
+    <p><em>Source:</em> <a data-link-type="dfn" href="80000-instances.html#systemofquantities" id="ref-for-systemofquantities②">80000-instances:systemOfQuantities</a></p>
+    <p><em>Target:</em> <a data-link-type="dfn" href="80000-3-instances.html#arc-length" id="ref-for-arc-length①">arc-length</a></p>
+    <p><em>Properties:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../iupac.org/metrology.html#isbasequantity" id="ref-for-isbasequantity②">metrology:isBaseQuantity</a> false</p>
+    </ul>
+    <h3 class="heading settled" data-level="5.4" id="SystemOfQuantities-breadth"><span class="secno">5.4. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="systemofquantities-breadth">systemOfQuantities-breadth<a class="self-link" href="#systemofquantities-breadth"></a></dfn></span><a class="self-link" href="#SystemOfQuantities-breadth"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#systemhasunitaryquantity" id="ref-for-systemhasunitaryquantity③">metrology:SystemHasUnitaryQuantity</a></p>
+    <p><em>Source:</em> <a data-link-type="dfn" href="80000-instances.html#systemofquantities" id="ref-for-systemofquantities③">80000-instances:systemOfQuantities</a></p>
+    <p><em>Target:</em> <a data-link-type="dfn" href="80000-3-instances.html#breadth" id="ref-for-breadth①">breadth</a></p>
+    <p><em>Properties:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../iupac.org/metrology.html#isbasequantity" id="ref-for-isbasequantity③">metrology:isBaseQuantity</a> false</p>
+    </ul>
+    <h3 class="heading settled" data-level="5.5" id="SystemOfQuantities-depth"><span class="secno">5.5. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="systemofquantities-depth">systemOfQuantities-depth<a class="self-link" href="#systemofquantities-depth"></a></dfn></span><a class="self-link" href="#SystemOfQuantities-depth"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#systemhasunitaryquantity" id="ref-for-systemhasunitaryquantity④">metrology:SystemHasUnitaryQuantity</a></p>
+    <p><em>Source:</em> <a data-link-type="dfn" href="80000-instances.html#systemofquantities" id="ref-for-systemofquantities④">80000-instances:systemOfQuantities</a></p>
+    <p><em>Target:</em> <a data-link-type="dfn" href="80000-3-instances.html#depth" id="ref-for-depth①">depth</a></p>
+    <p><em>Properties:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../iupac.org/metrology.html#isbasequantity" id="ref-for-isbasequantity④">metrology:isBaseQuantity</a> false</p>
+    </ul>
+    <h3 class="heading settled" data-level="5.6" id="SystemOfQuantities-diameter"><span class="secno">5.6. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="systemofquantities-diameter">systemOfQuantities-diameter<a class="self-link" href="#systemofquantities-diameter"></a></dfn></span><a class="self-link" href="#SystemOfQuantities-diameter"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#systemhasunitaryquantity" id="ref-for-systemhasunitaryquantity⑤">metrology:SystemHasUnitaryQuantity</a></p>
+    <p><em>Source:</em> <a data-link-type="dfn" href="80000-instances.html#systemofquantities" id="ref-for-systemofquantities⑤">80000-instances:systemOfQuantities</a></p>
+    <p><em>Target:</em> <a data-link-type="dfn" href="80000-3-instances.html#diameter" id="ref-for-diameter①">diameter</a></p>
+    <p><em>Properties:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../iupac.org/metrology.html#isbasequantity" id="ref-for-isbasequantity⑤">metrology:isBaseQuantity</a> false</p>
+    </ul>
+    <h3 class="heading settled" data-level="5.7" id="SystemOfQuantities-displacement"><span class="secno">5.7. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="systemofquantities-displacement">systemOfQuantities-displacement<a class="self-link" href="#systemofquantities-displacement"></a></dfn></span><a class="self-link" href="#SystemOfQuantities-displacement"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#systemhasunitaryquantity" id="ref-for-systemhasunitaryquantity⑥">metrology:SystemHasUnitaryQuantity</a></p>
+    <p><em>Source:</em> <a data-link-type="dfn" href="80000-instances.html#systemofquantities" id="ref-for-systemofquantities⑥">80000-instances:systemOfQuantities</a></p>
+    <p><em>Target:</em> <a data-link-type="dfn" href="80000-3-instances.html#displacement" id="ref-for-displacement①">displacement</a></p>
+    <p><em>Properties:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../iupac.org/metrology.html#isbasequantity" id="ref-for-isbasequantity⑥">metrology:isBaseQuantity</a> false</p>
+    </ul>
+    <h3 class="heading settled" data-level="5.8" id="SystemOfQuantities-distance"><span class="secno">5.8. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="systemofquantities-distance">systemOfQuantities-distance<a class="self-link" href="#systemofquantities-distance"></a></dfn></span><a class="self-link" href="#SystemOfQuantities-distance"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#systemhasunitaryquantity" id="ref-for-systemhasunitaryquantity⑦">metrology:SystemHasUnitaryQuantity</a></p>
+    <p><em>Source:</em> <a data-link-type="dfn" href="80000-instances.html#systemofquantities" id="ref-for-systemofquantities⑦">80000-instances:systemOfQuantities</a></p>
+    <p><em>Target:</em> <a data-link-type="dfn" href="80000-3-instances.html#distance" id="ref-for-distance①">distance</a></p>
+    <p><em>Properties:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../iupac.org/metrology.html#isbasequantity" id="ref-for-isbasequantity⑦">metrology:isBaseQuantity</a> false</p>
+    </ul>
+    <h3 class="heading settled" data-level="5.9" id="SystemOfQuantities-duration"><span class="secno">5.9. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="systemofquantities-duration">systemOfQuantities-duration<a class="self-link" href="#systemofquantities-duration"></a></dfn></span><a class="self-link" href="#SystemOfQuantities-duration"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#systemhasunitaryquantity" id="ref-for-systemhasunitaryquantity⑧">metrology:SystemHasUnitaryQuantity</a></p>
+    <p><em>Source:</em> <a data-link-type="dfn" href="80000-instances.html#systemofquantities" id="ref-for-systemofquantities⑧">80000-instances:systemOfQuantities</a></p>
+    <p><em>Target:</em> <a data-link-type="dfn" href="80000-3-instances.html#duration" id="ref-for-duration①">duration</a></p>
+    <p><em>Properties:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../iupac.org/metrology.html#isbasequantity" id="ref-for-isbasequantity⑧">metrology:isBaseQuantity</a> true</p>
+    </ul>
+    <h3 class="heading settled" data-level="5.10" id="SystemOfQuantities-frequency"><span class="secno">5.10. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="systemofquantities-frequency">systemOfQuantities-frequency<a class="self-link" href="#systemofquantities-frequency"></a></dfn></span><a class="self-link" href="#SystemOfQuantities-frequency"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#systemhasunitaryquantity" id="ref-for-systemhasunitaryquantity⑨">metrology:SystemHasUnitaryQuantity</a></p>
+    <p><em>Source:</em> <a data-link-type="dfn" href="80000-instances.html#systemofquantities" id="ref-for-systemofquantities⑨">80000-instances:systemOfQuantities</a></p>
+    <p><em>Target:</em> <a data-link-type="dfn" href="80000-3-instances.html#frequency" id="ref-for-frequency①">frequency</a></p>
+    <p><em>Properties:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../iupac.org/metrology.html#isbasequantity" id="ref-for-isbasequantity⑨">metrology:isBaseQuantity</a> false</p>
+    </ul>
+    <h3 class="heading settled" data-level="5.11" id="SystemOfQuantities-height"><span class="secno">5.11. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="systemofquantities-height">systemOfQuantities-height<a class="self-link" href="#systemofquantities-height"></a></dfn></span><a class="self-link" href="#SystemOfQuantities-height"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#systemhasunitaryquantity" id="ref-for-systemhasunitaryquantity①⓪">metrology:SystemHasUnitaryQuantity</a></p>
+    <p><em>Source:</em> <a data-link-type="dfn" href="80000-instances.html#systemofquantities" id="ref-for-systemofquantities①⓪">80000-instances:systemOfQuantities</a></p>
+    <p><em>Target:</em> <a data-link-type="dfn" href="80000-3-instances.html#height" id="ref-for-height①">height</a></p>
+    <p><em>Properties:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../iupac.org/metrology.html#isbasequantity" id="ref-for-isbasequantity①⓪">metrology:isBaseQuantity</a> false</p>
+    </ul>
+    <h3 class="heading settled" data-level="5.12" id="SystemOfQuantities-length"><span class="secno">5.12. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="systemofquantities-length">systemOfQuantities-length<a class="self-link" href="#systemofquantities-length"></a></dfn></span><a class="self-link" href="#SystemOfQuantities-length"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#systemhasunitaryquantity" id="ref-for-systemhasunitaryquantity①①">metrology:SystemHasUnitaryQuantity</a></p>
+    <p><em>Source:</em> <a data-link-type="dfn" href="80000-instances.html#systemofquantities" id="ref-for-systemofquantities①①">80000-instances:systemOfQuantities</a></p>
+    <p><em>Target:</em> <a data-link-type="dfn" href="80000-3-instances.html#length" id="ref-for-length①">length</a></p>
+    <p><em>Properties:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../iupac.org/metrology.html#isbasequantity" id="ref-for-isbasequantity①①">metrology:isBaseQuantity</a> true</p>
+    </ul>
+    <h3 class="heading settled" data-level="5.13" id="SystemOfQuantities-path-length"><span class="secno">5.13. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="systemofquantities-path-length">systemOfQuantities-path-length<a class="self-link" href="#systemofquantities-path-length"></a></dfn></span><a class="self-link" href="#SystemOfQuantities-path-length"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#systemhasunitaryquantity" id="ref-for-systemhasunitaryquantity①②">metrology:SystemHasUnitaryQuantity</a></p>
+    <p><em>Source:</em> <a data-link-type="dfn" href="80000-instances.html#systemofquantities" id="ref-for-systemofquantities①②">80000-instances:systemOfQuantities</a></p>
+    <p><em>Target:</em> <a data-link-type="dfn" href="80000-3-instances.html#path-length" id="ref-for-path-length①">path-length</a></p>
+    <p><em>Properties:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../iupac.org/metrology.html#isbasequantity" id="ref-for-isbasequantity①②">metrology:isBaseQuantity</a> false</p>
+    </ul>
+    <h3 class="heading settled" data-level="5.14" id="SystemOfQuantities-period-duration"><span class="secno">5.14. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="systemofquantities-period-duration">systemOfQuantities-period-duration<a class="self-link" href="#systemofquantities-period-duration"></a></dfn></span><a class="self-link" href="#SystemOfQuantities-period-duration"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#systemhasunitaryquantity" id="ref-for-systemhasunitaryquantity①③">metrology:SystemHasUnitaryQuantity</a></p>
+    <p><em>Source:</em> <a data-link-type="dfn" href="80000-instances.html#systemofquantities" id="ref-for-systemofquantities①③">80000-instances:systemOfQuantities</a></p>
+    <p><em>Target:</em> <a data-link-type="dfn" href="80000-3-instances.html#period-duration" id="ref-for-period-duration①">period-duration</a></p>
+    <p><em>Properties:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../iupac.org/metrology.html#isbasequantity" id="ref-for-isbasequantity①③">metrology:isBaseQuantity</a> false</p>
+    </ul>
+    <h3 class="heading settled" data-level="5.15" id="SystemOfQuantities-position-vector"><span class="secno">5.15. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="systemofquantities-position-vector">systemOfQuantities-position-vector<a class="self-link" href="#systemofquantities-position-vector"></a></dfn></span><a class="self-link" href="#SystemOfQuantities-position-vector"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#systemhasunitaryquantity" id="ref-for-systemhasunitaryquantity①④">metrology:SystemHasUnitaryQuantity</a></p>
+    <p><em>Source:</em> <a data-link-type="dfn" href="80000-instances.html#systemofquantities" id="ref-for-systemofquantities①④">80000-instances:systemOfQuantities</a></p>
+    <p><em>Target:</em> <a data-link-type="dfn" href="80000-3-instances.html#position-vector" id="ref-for-position-vector①">position-vector</a></p>
+    <p><em>Properties:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../iupac.org/metrology.html#isbasequantity" id="ref-for-isbasequantity①④">metrology:isBaseQuantity</a> false</p>
+    </ul>
+    <h3 class="heading settled" data-level="5.16" id="SystemOfQuantities-radial-distance"><span class="secno">5.16. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="systemofquantities-radial-distance">systemOfQuantities-radial-distance<a class="self-link" href="#systemofquantities-radial-distance"></a></dfn></span><a class="self-link" href="#SystemOfQuantities-radial-distance"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#systemhasunitaryquantity" id="ref-for-systemhasunitaryquantity①⑤">metrology:SystemHasUnitaryQuantity</a></p>
+    <p><em>Source:</em> <a data-link-type="dfn" href="80000-instances.html#systemofquantities" id="ref-for-systemofquantities①⑤">80000-instances:systemOfQuantities</a></p>
+    <p><em>Target:</em> <a data-link-type="dfn" href="80000-3-instances.html#radial-distance" id="ref-for-radial-distance①">radial-distance</a></p>
+    <p><em>Properties:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../iupac.org/metrology.html#isbasequantity" id="ref-for-isbasequantity①⑤">metrology:isBaseQuantity</a> false</p>
+    </ul>
+    <h3 class="heading settled" data-level="5.17" id="SystemOfQuantities-radius"><span class="secno">5.17. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="systemofquantities-radius">systemOfQuantities-radius<a class="self-link" href="#systemofquantities-radius"></a></dfn></span><a class="self-link" href="#SystemOfQuantities-radius"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#systemhasunitaryquantity" id="ref-for-systemhasunitaryquantity①⑥">metrology:SystemHasUnitaryQuantity</a></p>
+    <p><em>Source:</em> <a data-link-type="dfn" href="80000-instances.html#systemofquantities" id="ref-for-systemofquantities①⑥">80000-instances:systemOfQuantities</a></p>
+    <p><em>Target:</em> <a data-link-type="dfn" href="80000-3-instances.html#radius" id="ref-for-radius①">radius</a></p>
+    <p><em>Properties:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../iupac.org/metrology.html#isbasequantity" id="ref-for-isbasequantity①⑥">metrology:isBaseQuantity</a> false</p>
+    </ul>
+    <h3 class="heading settled" data-level="5.18" id="SystemOfQuantities-radius-of-curvature"><span class="secno">5.18. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="systemofquantities-radius-of-curvature">systemOfQuantities-radius-of-curvature<a class="self-link" href="#systemofquantities-radius-of-curvature"></a></dfn></span><a class="self-link" href="#SystemOfQuantities-radius-of-curvature"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#systemhasunitaryquantity" id="ref-for-systemhasunitaryquantity①⑦">metrology:SystemHasUnitaryQuantity</a></p>
+    <p><em>Source:</em> <a data-link-type="dfn" href="80000-instances.html#systemofquantities" id="ref-for-systemofquantities①⑦">80000-instances:systemOfQuantities</a></p>
+    <p><em>Target:</em> <a data-link-type="dfn" href="80000-3-instances.html#radius-of-curvature" id="ref-for-radius-of-curvature①">radius-of-curvature</a></p>
+    <p><em>Properties:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../iupac.org/metrology.html#isbasequantity" id="ref-for-isbasequantity①⑦">metrology:isBaseQuantity</a> false</p>
+    </ul>
+    <h3 class="heading settled" data-level="5.19" id="SystemOfQuantities-rotation"><span class="secno">5.19. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="systemofquantities-rotation">systemOfQuantities-rotation<a class="self-link" href="#systemofquantities-rotation"></a></dfn></span><a class="self-link" href="#SystemOfQuantities-rotation"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#systemhasunitaryquantity" id="ref-for-systemhasunitaryquantity①⑧">metrology:SystemHasUnitaryQuantity</a></p>
+    <p><em>Source:</em> <a data-link-type="dfn" href="80000-instances.html#systemofquantities" id="ref-for-systemofquantities①⑧">80000-instances:systemOfQuantities</a></p>
+    <p><em>Target:</em> <a data-link-type="dfn" href="80000-3-instances.html#rotation" id="ref-for-rotation①">rotation</a></p>
+    <p><em>Properties:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../iupac.org/metrology.html#isbasequantity" id="ref-for-isbasequantity①⑧">metrology:isBaseQuantity</a> false</p>
+    </ul>
+    <h3 class="heading settled" data-level="5.20" id="SystemOfQuantities-rotational-displacement"><span class="secno">5.20. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="systemofquantities-rotational-displacement">systemOfQuantities-rotational-displacement<a class="self-link" href="#systemofquantities-rotational-displacement"></a></dfn></span><a class="self-link" href="#SystemOfQuantities-rotational-displacement"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#systemhasunitaryquantity" id="ref-for-systemhasunitaryquantity①⑨">metrology:SystemHasUnitaryQuantity</a></p>
+    <p><em>Source:</em> <a data-link-type="dfn" href="80000-instances.html#systemofquantities" id="ref-for-systemofquantities①⑨">80000-instances:systemOfQuantities</a></p>
+    <p><em>Target:</em> <a data-link-type="dfn" href="80000-3-instances.html#rotational-displacement" id="ref-for-rotational-displacement①">rotational-displacement</a></p>
+    <p><em>Properties:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../iupac.org/metrology.html#isbasequantity" id="ref-for-isbasequantity①⑨">metrology:isBaseQuantity</a> false</p>
+    </ul>
+    <h3 class="heading settled" data-level="5.21" id="SystemOfQuantities-rotational-frequency"><span class="secno">5.21. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="systemofquantities-rotational-frequency">systemOfQuantities-rotational-frequency<a class="self-link" href="#systemofquantities-rotational-frequency"></a></dfn></span><a class="self-link" href="#SystemOfQuantities-rotational-frequency"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#systemhasunitaryquantity" id="ref-for-systemhasunitaryquantity②⓪">metrology:SystemHasUnitaryQuantity</a></p>
+    <p><em>Source:</em> <a data-link-type="dfn" href="80000-instances.html#systemofquantities" id="ref-for-systemofquantities②⓪">80000-instances:systemOfQuantities</a></p>
+    <p><em>Target:</em> <a data-link-type="dfn" href="80000-3-instances.html#rotational-frequency" id="ref-for-rotational-frequency①">rotational-frequency</a></p>
+    <p><em>Properties:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../iupac.org/metrology.html#isbasequantity" id="ref-for-isbasequantity②⓪">metrology:isBaseQuantity</a> false</p>
+    </ul>
+    <h3 class="heading settled" data-level="5.22" id="SystemOfQuantities-thickness"><span class="secno">5.22. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="systemofquantities-thickness">systemOfQuantities-thickness<a class="self-link" href="#systemofquantities-thickness"></a></dfn></span><a class="self-link" href="#SystemOfQuantities-thickness"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#systemhasunitaryquantity" id="ref-for-systemhasunitaryquantity②①">metrology:SystemHasUnitaryQuantity</a></p>
+    <p><em>Source:</em> <a data-link-type="dfn" href="80000-instances.html#systemofquantities" id="ref-for-systemofquantities②①">80000-instances:systemOfQuantities</a></p>
+    <p><em>Target:</em> <a data-link-type="dfn" href="80000-3-instances.html#thickness" id="ref-for-thickness①">thickness</a></p>
+    <p><em>Properties:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../iupac.org/metrology.html#isbasequantity" id="ref-for-isbasequantity②①">metrology:isBaseQuantity</a> false</p>
+    </ul>
+    <h3 class="heading settled" data-level="5.23" id="SystemOfQuantities-velocity"><span class="secno">5.23. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="systemofquantities-velocity">systemOfQuantities-velocity<a class="self-link" href="#systemofquantities-velocity"></a></dfn></span><a class="self-link" href="#SystemOfQuantities-velocity"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#systemhasunitaryquantity" id="ref-for-systemhasunitaryquantity②②">metrology:SystemHasUnitaryQuantity</a></p>
+    <p><em>Source:</em> <a data-link-type="dfn" href="80000-instances.html#systemofquantities" id="ref-for-systemofquantities②②">80000-instances:systemOfQuantities</a></p>
+    <p><em>Target:</em> <a data-link-type="dfn" href="80000-3-instances.html#velocity" id="ref-for-velocity①">velocity</a></p>
+    <p><em>Properties:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../iupac.org/metrology.html#isbasequantity" id="ref-for-isbasequantity②②">metrology:isBaseQuantity</a> false</p>
+    </ul>
+    <h3 class="heading settled" data-level="5.24" id="SystemOfQuantities-width"><span class="secno">5.24. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="systemofquantities-width">systemOfQuantities-width<a class="self-link" href="#systemofquantities-width"></a></dfn></span><a class="self-link" href="#SystemOfQuantities-width"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#systemhasunitaryquantity" id="ref-for-systemhasunitaryquantity②③">metrology:SystemHasUnitaryQuantity</a></p>
+    <p><em>Source:</em> <a data-link-type="dfn" href="80000-instances.html#systemofquantities" id="ref-for-systemofquantities②③">80000-instances:systemOfQuantities</a></p>
+    <p><em>Target:</em> <a data-link-type="dfn" href="80000-3-instances.html#width" id="ref-for-width①">width</a></p>
+    <p><em>Properties:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../iupac.org/metrology.html#isbasequantity" id="ref-for-isbasequantity②③">metrology:isBaseQuantity</a> false</p>
+    </ul>
+    <h3 class="heading settled" data-level="5.25" id="SystemOfUnits-hertz"><span class="secno">5.25. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="systemofunits-hertz">systemOfUnits-hertz<a class="self-link" href="#systemofunits-hertz"></a></dfn></span><a class="self-link" href="#SystemOfUnits-hertz"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#systemhasmetrologicalunit" id="ref-for-systemhasmetrologicalunit">metrology:SystemHasMetrologicalUnit</a></p>
+    <p><em>Source:</em> <a data-link-type="dfn" href="80000-instances.html#systemofunits" id="ref-for-systemofunits">80000-instances:systemOfUnits</a></p>
+    <p><em>Target:</em> <a data-link-type="dfn" href="80000-3-instances.html#hertz" id="ref-for-hertz①">hertz</a></p>
+    <p><em>Properties:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../iupac.org/metrology.html#isbasemetrologicalunit" id="ref-for-isbasemetrologicalunit">metrology:isBaseMetrologicalUnit</a> false</p>
+    </ul>
+    <h3 class="heading settled" data-level="5.26" id="SystemOfUnits-metre"><span class="secno">5.26. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="systemofunits-metre">systemOfUnits-metre<a class="self-link" href="#systemofunits-metre"></a></dfn></span><a class="self-link" href="#SystemOfUnits-metre"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#systemhasmetrologicalunit" id="ref-for-systemhasmetrologicalunit①">metrology:SystemHasMetrologicalUnit</a></p>
+    <p><em>Source:</em> <a data-link-type="dfn" href="80000-instances.html#systemofunits" id="ref-for-systemofunits①">80000-instances:systemOfUnits</a></p>
+    <p><em>Target:</em> <a data-link-type="dfn" href="80000-3-instances.html#metre" id="ref-for-metre①">metre</a></p>
+    <p><em>Properties:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../iupac.org/metrology.html#isbasemetrologicalunit" id="ref-for-isbasemetrologicalunit①">metrology:isBaseMetrologicalUnit</a> true</p>
+    </ul>
+    <h3 class="heading settled" data-level="5.27" id="SystemOfUnits-metre-per-second"><span class="secno">5.27. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="systemofunits-metre-per-second">systemOfUnits-metre-per-second<a class="self-link" href="#systemofunits-metre-per-second"></a></dfn></span><a class="self-link" href="#SystemOfUnits-metre-per-second"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#systemhasmetrologicalunit" id="ref-for-systemhasmetrologicalunit②">metrology:SystemHasMetrologicalUnit</a></p>
+    <p><em>Source:</em> <a data-link-type="dfn" href="80000-instances.html#systemofunits" id="ref-for-systemofunits②">80000-instances:systemOfUnits</a></p>
+    <p><em>Target:</em> <a data-link-type="dfn" href="80000-3-instances.html#metre-per-second" id="ref-for-metre-per-second①">metre-per-second</a></p>
+    <p><em>Properties:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../iupac.org/metrology.html#isbasemetrologicalunit" id="ref-for-isbasemetrologicalunit②">metrology:isBaseMetrologicalUnit</a> false</p>
+    </ul>
+    <h3 class="heading settled" data-level="5.28" id="SystemOfUnits-radian"><span class="secno">5.28. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="systemofunits-radian">systemOfUnits-radian<a class="self-link" href="#systemofunits-radian"></a></dfn></span><a class="self-link" href="#SystemOfUnits-radian"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#systemhasmetrologicalunit" id="ref-for-systemhasmetrologicalunit③">metrology:SystemHasMetrologicalUnit</a></p>
+    <p><em>Source:</em> <a data-link-type="dfn" href="80000-instances.html#systemofunits" id="ref-for-systemofunits③">80000-instances:systemOfUnits</a></p>
+    <p><em>Target:</em> <a data-link-type="dfn" href="80000-3-instances.html#radian" id="ref-for-radian①">radian</a></p>
+    <p><em>Properties:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../iupac.org/metrology.html#isbasemetrologicalunit" id="ref-for-isbasemetrologicalunit③">metrology:isBaseMetrologicalUnit</a> false</p>
+    </ul>
+    <h3 class="heading settled" data-level="5.29" id="SystemOfUnits-revolutions"><span class="secno">5.29. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="systemofunits-revolutions">systemOfUnits-revolutions<a class="self-link" href="#systemofunits-revolutions"></a></dfn></span><a class="self-link" href="#SystemOfUnits-revolutions"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#systemhasmetrologicalunit" id="ref-for-systemhasmetrologicalunit④">metrology:SystemHasMetrologicalUnit</a></p>
+    <p><em>Source:</em> <a data-link-type="dfn" href="80000-instances.html#systemofunits" id="ref-for-systemofunits④">80000-instances:systemOfUnits</a></p>
+    <p><em>Target:</em> <a data-link-type="dfn" href="80000-3-instances.html#revolutions" id="ref-for-revolutions①">revolutions</a></p>
+    <p><em>Properties:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../iupac.org/metrology.html#isbasemetrologicalunit" id="ref-for-isbasemetrologicalunit④">metrology:isBaseMetrologicalUnit</a> false</p>
+    </ul>
+    <h3 class="heading settled" data-level="5.30" id="SystemOfUnits-second"><span class="secno">5.30. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="systemofunits-second">systemOfUnits-second<a class="self-link" href="#systemofunits-second"></a></dfn></span><a class="self-link" href="#SystemOfUnits-second"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#systemhasmetrologicalunit" id="ref-for-systemhasmetrologicalunit⑤">metrology:SystemHasMetrologicalUnit</a></p>
+    <p><em>Source:</em> <a data-link-type="dfn" href="80000-instances.html#systemofunits" id="ref-for-systemofunits⑤">80000-instances:systemOfUnits</a></p>
+    <p><em>Target:</em> <a data-link-type="dfn" href="80000-3-instances.html#second" id="ref-for-second①">second</a></p>
+    <p><em>Properties:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../iupac.org/metrology.html#isbasemetrologicalunit" id="ref-for-isbasemetrologicalunit⑤">metrology:isBaseMetrologicalUnit</a> true</p>
+    </ul>
    </div>
   </main>
 <script>
@@ -2042,256 +2353,586 @@ dfn > a.self-link::before      { content: "#"; }
   <h2 class="no-num no-ref heading settled" id="index"><span class="content">Index</span><a class="self-link" href="#index"></a></h2>
   <h3 class="no-num no-ref heading settled" id="index-defined-here"><span class="content">Terms defined by this specification</span><a class="self-link" href="#index-defined-here"></a></h3>
   <ul class="index">
-   <li><a href="#altitude">altitude</a><span>, in §3.6</span>
-   <li><a href="#angular-measure">angular-measure</a><span>, in §3.19</span>
-   <li><a href="#arc-length">arc-length</a><span>, in §3.11</span>
-   <li><a href="#breadth">breadth</a><span>, in §3.3</span>
-   <li><a href="#depth">depth</a><span>, in §3.5</span>
-   <li><a href="#diameter">diameter</a><span>, in §3.8</span>
-   <li><a href="#displacement">displacement</a><span>, in §3.15</span>
-   <li><a href="#distance">distance</a><span>, in §3.12</span>
-   <li><a href="#duration">duration</a><span>, in §3.22</span>
-   <li><a href="#frequency">frequency</a><span>, in §3.33</span>
-   <li><a href="#height">height</a><span>, in §3.4</span>
-   <li><a href="#hertz">hertz</a><span>, in §3.35</span>
-   <li><a href="#hour">hour</a><span>, in §3.26</span>
-   <li><a href="#kilometre">kilometre</a><span>, in §3.18</span>
-   <li><a href="#kilometre-per-second">kilometre-per-second</a><span>, in §3.29</span>
-   <li><a href="#length">length</a><span>, in §3.1</span>
-   <li><a href="#metre">metre</a><span>, in §3.17</span>
-   <li><a href="#metre-per-second">metre-per-second</a><span>, in §3.28</span>
-   <li><a href="#millisecond">millisecond</a><span>, in §3.24</span>
-   <li><a href="#minute">minute</a><span>, in §3.25</span>
-   <li><a href="#path-length">path-length</a><span>, in §3.10</span>
-   <li><a href="#period-duration">period-duration</a><span>, in §3.30</span>
-   <li><a href="#position-vector">position-vector</a><span>, in §3.14</span>
-   <li><a href="#radial-distance">radial-distance</a><span>, in §3.13</span>
-   <li><a href="#radian">radian</a><span>, in §3.20</span>
-   <li><a href="#radius">radius</a><span>, in §3.9</span>
-   <li><a href="#radius-of-curvature">radius-of-curvature</a><span>, in §3.16</span>
-   <li><a href="#revolutions">revolutions</a><span>, in §3.32</span>
-   <li><a href="#rotation">rotation</a><span>, in §3.31</span>
-   <li><a href="#rotational-displacement">rotational-displacement</a><span>, in §3.21</span>
-   <li><a href="#rotational-frequency">rotational-frequency</a><span>, in §3.34</span>
-   <li><a href="#second">second</a><span>, in §3.23</span>
-   <li><a href="#thickness">thickness</a><span>, in §3.7</span>
-   <li><a href="#velocity">velocity</a><span>, in §3.27</span>
-   <li><a href="#width">width</a><span>, in §3.2</span>
+   <li><a href="#altitude">altitude</a><span>, in §4.1</span>
+   <li><a href="#angular-measure">angular-measure</a><span>, in §4.2</span>
+   <li><a href="#arc-length">arc-length</a><span>, in §4.3</span>
+   <li><a href="#breadth">breadth</a><span>, in §4.4</span>
+   <li><a href="#depth">depth</a><span>, in §4.5</span>
+   <li><a href="#diameter">diameter</a><span>, in §4.6</span>
+   <li><a href="#displacement">displacement</a><span>, in §4.7</span>
+   <li><a href="#distance">distance</a><span>, in §4.8</span>
+   <li><a href="#duration">duration</a><span>, in §4.9</span>
+   <li><a href="#frequency">frequency</a><span>, in §4.10</span>
+   <li><a href="#height">height</a><span>, in §4.11</span>
+   <li><a href="#hertz">hertz</a><span>, in §4.12</span>
+   <li><a href="#hour">hour</a><span>, in §4.13</span>
+   <li><a href="#kilometre">kilometre</a><span>, in §4.14</span>
+   <li><a href="#kilometre-per-second">kilometre-per-second</a><span>, in §4.15</span>
+   <li><a href="#length">length</a><span>, in §4.16</span>
+   <li><a href="#metre">metre</a><span>, in §4.17</span>
+   <li><a href="#metre-per-second">metre-per-second</a><span>, in §4.18</span>
+   <li><a href="#millisecond">millisecond</a><span>, in §4.19</span>
+   <li><a href="#minute">minute</a><span>, in §4.20</span>
+   <li><a href="#path-length">path-length</a><span>, in §4.21</span>
+   <li><a href="#period-duration">period-duration</a><span>, in §4.22</span>
+   <li><a href="#position-vector">position-vector</a><span>, in §4.23</span>
+   <li><a href="#radial-distance">radial-distance</a><span>, in §4.24</span>
+   <li><a href="#radian">radian</a><span>, in §4.25</span>
+   <li><a href="#radius">radius</a><span>, in §4.26</span>
+   <li><a href="#radius-of-curvature">radius-of-curvature</a><span>, in §4.27</span>
+   <li><a href="#revolutions">revolutions</a><span>, in §4.28</span>
+   <li><a href="#rotation">rotation</a><span>, in §4.29</span>
+   <li><a href="#rotational-displacement">rotational-displacement</a><span>, in §4.30</span>
+   <li><a href="#rotational-frequency">rotational-frequency</a><span>, in §4.31</span>
+   <li><a href="#second">second</a><span>, in §4.32</span>
+   <li><a href="#systemofquantities-altitude">systemOfQuantities-altitude</a><span>, in §5.1</span>
+   <li><a href="#systemofquantities-angular-measure">systemOfQuantities-angular-measure</a><span>, in §5.2</span>
+   <li><a href="#systemofquantities-arc-length">systemOfQuantities-arc-length</a><span>, in §5.3</span>
+   <li><a href="#systemofquantities-breadth">systemOfQuantities-breadth</a><span>, in §5.4</span>
+   <li><a href="#systemofquantities-depth">systemOfQuantities-depth</a><span>, in §5.5</span>
+   <li><a href="#systemofquantities-diameter">systemOfQuantities-diameter</a><span>, in §5.6</span>
+   <li><a href="#systemofquantities-displacement">systemOfQuantities-displacement</a><span>, in §5.7</span>
+   <li><a href="#systemofquantities-distance">systemOfQuantities-distance</a><span>, in §5.8</span>
+   <li><a href="#systemofquantities-duration">systemOfQuantities-duration</a><span>, in §5.9</span>
+   <li><a href="#systemofquantities-frequency">systemOfQuantities-frequency</a><span>, in §5.10</span>
+   <li><a href="#systemofquantities-height">systemOfQuantities-height</a><span>, in §5.11</span>
+   <li><a href="#systemofquantities-length">systemOfQuantities-length</a><span>, in §5.12</span>
+   <li><a href="#systemofquantities-path-length">systemOfQuantities-path-length</a><span>, in §5.13</span>
+   <li><a href="#systemofquantities-period-duration">systemOfQuantities-period-duration</a><span>, in §5.14</span>
+   <li><a href="#systemofquantities-position-vector">systemOfQuantities-position-vector</a><span>, in §5.15</span>
+   <li><a href="#systemofquantities-radial-distance">systemOfQuantities-radial-distance</a><span>, in §5.16</span>
+   <li><a href="#systemofquantities-radius">systemOfQuantities-radius</a><span>, in §5.17</span>
+   <li><a href="#systemofquantities-radius-of-curvature">systemOfQuantities-radius-of-curvature</a><span>, in §5.18</span>
+   <li><a href="#systemofquantities-rotation">systemOfQuantities-rotation</a><span>, in §5.19</span>
+   <li><a href="#systemofquantities-rotational-displacement">systemOfQuantities-rotational-displacement</a><span>, in §5.20</span>
+   <li><a href="#systemofquantities-rotational-frequency">systemOfQuantities-rotational-frequency</a><span>, in §5.21</span>
+   <li><a href="#systemofquantities-thickness">systemOfQuantities-thickness</a><span>, in §5.22</span>
+   <li><a href="#systemofquantities-velocity">systemOfQuantities-velocity</a><span>, in §5.23</span>
+   <li><a href="#systemofquantities-width">systemOfQuantities-width</a><span>, in §5.24</span>
+   <li><a href="#systemofunits-hertz">systemOfUnits-hertz</a><span>, in §5.25</span>
+   <li><a href="#systemofunits-metre">systemOfUnits-metre</a><span>, in §5.26</span>
+   <li><a href="#systemofunits-metre-per-second">systemOfUnits-metre-per-second</a><span>, in §5.27</span>
+   <li><a href="#systemofunits-radian">systemOfUnits-radian</a><span>, in §5.28</span>
+   <li><a href="#systemofunits-revolutions">systemOfUnits-revolutions</a><span>, in §5.29</span>
+   <li><a href="#systemofunits-second">systemOfUnits-second</a><span>, in §5.30</span>
+   <li><a href="#thickness">thickness</a><span>, in §4.33</span>
+   <li><a href="#velocity">velocity</a><span>, in §4.34</span>
+   <li><a href="#width">width</a><span>, in §4.35</span>
   </ul>
   <aside class="dfn-panel" data-for="term-for-altitude">
-   <a href="80000-3-kindsOfQuantities.html#altitude">80000-3-kindsOfQuantities.html#altitude</a><b>Referenced in:</b>
+   <a href="80000-3-instances.html#altitude">80000-3-instances.html#altitude</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-altitude">3.6. altitude</a>
+    <li><a href="#ref-for-altitude①">5.1. systemOfQuantities-altitude</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-angular-measure">
-   <a href="80000-3-kindsOfQuantities.html#angular-measure">80000-3-kindsOfQuantities.html#angular-measure</a><b>Referenced in:</b>
+   <a href="80000-3-instances.html#angular-measure">80000-3-instances.html#angular-measure</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-angular-measure">3.19. angular-measure</a>
+    <li><a href="#ref-for-angular-measure①">5.2. systemOfQuantities-angular-measure</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-arc-length">
-   <a href="80000-3-kindsOfQuantities.html#arc-length">80000-3-kindsOfQuantities.html#arc-length</a><b>Referenced in:</b>
+   <a href="80000-3-instances.html#arc-length">80000-3-instances.html#arc-length</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-arc-length">3.11. arc-length</a>
+    <li><a href="#ref-for-arc-length①">5.3. systemOfQuantities-arc-length</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-breadth">
-   <a href="80000-3-kindsOfQuantities.html#breadth">80000-3-kindsOfQuantities.html#breadth</a><b>Referenced in:</b>
+   <a href="80000-3-instances.html#breadth">80000-3-instances.html#breadth</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-breadth">3.3. breadth</a>
+    <li><a href="#ref-for-breadth①">5.4. systemOfQuantities-breadth</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-depth">
-   <a href="80000-3-kindsOfQuantities.html#depth">80000-3-kindsOfQuantities.html#depth</a><b>Referenced in:</b>
+   <a href="80000-3-instances.html#depth">80000-3-instances.html#depth</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-depth">3.5. depth</a>
+    <li><a href="#ref-for-depth①">5.5. systemOfQuantities-depth</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-diameter">
-   <a href="80000-3-kindsOfQuantities.html#diameter">80000-3-kindsOfQuantities.html#diameter</a><b>Referenced in:</b>
+   <a href="80000-3-instances.html#diameter">80000-3-instances.html#diameter</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-diameter">3.8. diameter</a>
+    <li><a href="#ref-for-diameter①">5.6. systemOfQuantities-diameter</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-displacement">
-   <a href="80000-3-kindsOfQuantities.html#displacement">80000-3-kindsOfQuantities.html#displacement</a><b>Referenced in:</b>
+   <a href="80000-3-instances.html#displacement">80000-3-instances.html#displacement</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-displacement">3.15. displacement</a>
+    <li><a href="#ref-for-displacement①">5.7. systemOfQuantities-displacement</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-distance">
-   <a href="80000-3-kindsOfQuantities.html#distance">80000-3-kindsOfQuantities.html#distance</a><b>Referenced in:</b>
+   <a href="80000-3-instances.html#distance">80000-3-instances.html#distance</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-distance">3.12. distance</a>
+    <li><a href="#ref-for-distance①">5.8. systemOfQuantities-distance</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-duration">
-   <a href="80000-3-kindsOfQuantities.html#duration">80000-3-kindsOfQuantities.html#duration</a><b>Referenced in:</b>
+   <a href="80000-3-instances.html#duration">80000-3-instances.html#duration</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-duration">3.22. duration</a>
+    <li><a href="#ref-for-duration①">5.9. systemOfQuantities-duration</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-frequency">
-   <a href="80000-3-kindsOfQuantities.html#frequency">80000-3-kindsOfQuantities.html#frequency</a><b>Referenced in:</b>
+   <a href="80000-3-instances.html#frequency">80000-3-instances.html#frequency</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-frequency">3.33. frequency</a>
+    <li><a href="#ref-for-frequency①">5.10. systemOfQuantities-frequency</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-height">
-   <a href="80000-3-kindsOfQuantities.html#height">80000-3-kindsOfQuantities.html#height</a><b>Referenced in:</b>
+   <a href="80000-3-instances.html#height">80000-3-instances.html#height</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-height">3.4. height</a>
+    <li><a href="#ref-for-height①">5.11. systemOfQuantities-height</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-hertz">
+   <a href="80000-3-instances.html#hertz">80000-3-instances.html#hertz</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-hertz①">5.25. systemOfUnits-hertz</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-length">
-   <a href="80000-3-kindsOfQuantities.html#length">80000-3-kindsOfQuantities.html#length</a><b>Referenced in:</b>
+   <a href="80000-3-instances.html#length">80000-3-instances.html#length</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-length">3.1. length</a>
+    <li><a href="#ref-for-length①">5.12. systemOfQuantities-length</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-metre">
+   <a href="80000-3-instances.html#metre">80000-3-instances.html#metre</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-metre①">5.26. systemOfUnits-metre</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-metre-per-second">
+   <a href="80000-3-instances.html#metre-per-second">80000-3-instances.html#metre-per-second</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-metre-per-second①">5.27. systemOfUnits-metre-per-second</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-path-length">
-   <a href="80000-3-kindsOfQuantities.html#path-length">80000-3-kindsOfQuantities.html#path-length</a><b>Referenced in:</b>
+   <a href="80000-3-instances.html#path-length">80000-3-instances.html#path-length</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-path-length">3.10. path-length</a>
+    <li><a href="#ref-for-path-length①">5.13. systemOfQuantities-path-length</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-period-duration">
-   <a href="80000-3-kindsOfQuantities.html#period-duration">80000-3-kindsOfQuantities.html#period-duration</a><b>Referenced in:</b>
+   <a href="80000-3-instances.html#period-duration">80000-3-instances.html#period-duration</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-period-duration">3.30. period-duration</a>
+    <li><a href="#ref-for-period-duration①">5.14. systemOfQuantities-period-duration</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-position-vector">
-   <a href="80000-3-kindsOfQuantities.html#position-vector">80000-3-kindsOfQuantities.html#position-vector</a><b>Referenced in:</b>
+   <a href="80000-3-instances.html#position-vector">80000-3-instances.html#position-vector</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-position-vector">3.14. position-vector</a>
+    <li><a href="#ref-for-position-vector①">5.15. systemOfQuantities-position-vector</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-radial-distance">
-   <a href="80000-3-kindsOfQuantities.html#radial-distance">80000-3-kindsOfQuantities.html#radial-distance</a><b>Referenced in:</b>
+   <a href="80000-3-instances.html#radial-distance">80000-3-instances.html#radial-distance</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-radial-distance">3.13. radial-distance</a>
+    <li><a href="#ref-for-radial-distance①">5.16. systemOfQuantities-radial-distance</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-radian">
+   <a href="80000-3-instances.html#radian">80000-3-instances.html#radian</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-radian①">5.28. systemOfUnits-radian</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-radius">
-   <a href="80000-3-kindsOfQuantities.html#radius">80000-3-kindsOfQuantities.html#radius</a><b>Referenced in:</b>
+   <a href="80000-3-instances.html#radius">80000-3-instances.html#radius</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-radius">3.9. radius</a>
+    <li><a href="#ref-for-radius①">5.17. systemOfQuantities-radius</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-radius-of-curvature">
-   <a href="80000-3-kindsOfQuantities.html#radius-of-curvature">80000-3-kindsOfQuantities.html#radius-of-curvature</a><b>Referenced in:</b>
+   <a href="80000-3-instances.html#radius-of-curvature">80000-3-instances.html#radius-of-curvature</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-radius-of-curvature">3.16. radius-of-curvature</a>
+    <li><a href="#ref-for-radius-of-curvature①">5.18. systemOfQuantities-radius-of-curvature</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-revolutions">
+   <a href="80000-3-instances.html#revolutions">80000-3-instances.html#revolutions</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-revolutions①">5.29. systemOfUnits-revolutions</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-rotation">
-   <a href="80000-3-kindsOfQuantities.html#rotation">80000-3-kindsOfQuantities.html#rotation</a><b>Referenced in:</b>
+   <a href="80000-3-instances.html#rotation">80000-3-instances.html#rotation</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-rotation">3.31. rotation</a>
+    <li><a href="#ref-for-rotation①">5.19. systemOfQuantities-rotation</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-rotational-displacement">
-   <a href="80000-3-kindsOfQuantities.html#rotational-displacement">80000-3-kindsOfQuantities.html#rotational-displacement</a><b>Referenced in:</b>
+   <a href="80000-3-instances.html#rotational-displacement">80000-3-instances.html#rotational-displacement</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-rotational-displacement">3.21. rotational-displacement</a>
+    <li><a href="#ref-for-rotational-displacement①">5.20. systemOfQuantities-rotational-displacement</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-rotational-frequency">
-   <a href="80000-3-kindsOfQuantities.html#rotational-frequency">80000-3-kindsOfQuantities.html#rotational-frequency</a><b>Referenced in:</b>
+   <a href="80000-3-instances.html#rotational-frequency">80000-3-instances.html#rotational-frequency</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-rotational-frequency">3.34. rotational-frequency</a>
+    <li><a href="#ref-for-rotational-frequency①">5.21. systemOfQuantities-rotational-frequency</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-second">
+   <a href="80000-3-instances.html#second">80000-3-instances.html#second</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-second①">5.30. systemOfUnits-second</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-thickness">
-   <a href="80000-3-kindsOfQuantities.html#thickness">80000-3-kindsOfQuantities.html#thickness</a><b>Referenced in:</b>
+   <a href="80000-3-instances.html#thickness">80000-3-instances.html#thickness</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-thickness">3.7. thickness</a>
+    <li><a href="#ref-for-thickness①">5.22. systemOfQuantities-thickness</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-velocity">
-   <a href="80000-3-kindsOfQuantities.html#velocity">80000-3-kindsOfQuantities.html#velocity</a><b>Referenced in:</b>
+   <a href="80000-3-instances.html#velocity">80000-3-instances.html#velocity</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-velocity">3.27. velocity</a>
+    <li><a href="#ref-for-velocity①">5.23. systemOfQuantities-velocity</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-width">
-   <a href="80000-3-kindsOfQuantities.html#width">80000-3-kindsOfQuantities.html#width</a><b>Referenced in:</b>
+   <a href="80000-3-instances.html#width">80000-3-instances.html#width</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-width">3.2. width</a>
+    <li><a href="#ref-for-width①">5.24. systemOfQuantities-width</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-altitude">
+   <a href="80000-3-quantities.html#altitude">80000-3-quantities.html#altitude</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-altitude">4.1. altitude</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-angular-measure">
+   <a href="80000-3-quantities.html#angular-measure">80000-3-quantities.html#angular-measure</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-angular-measure">4.2. angular-measure</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-arc-length">
+   <a href="80000-3-quantities.html#arc-length">80000-3-quantities.html#arc-length</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-arc-length">4.3. arc-length</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-breadth">
+   <a href="80000-3-quantities.html#breadth">80000-3-quantities.html#breadth</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-breadth">4.4. breadth</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-depth">
+   <a href="80000-3-quantities.html#depth">80000-3-quantities.html#depth</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-depth">4.5. depth</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-diameter">
+   <a href="80000-3-quantities.html#diameter">80000-3-quantities.html#diameter</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-diameter">4.6. diameter</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-displacement">
+   <a href="80000-3-quantities.html#displacement">80000-3-quantities.html#displacement</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-displacement">4.7. displacement</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-distance">
+   <a href="80000-3-quantities.html#distance">80000-3-quantities.html#distance</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-distance">4.8. distance</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-duration">
+   <a href="80000-3-quantities.html#duration">80000-3-quantities.html#duration</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-duration">4.9. duration</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-frequency">
+   <a href="80000-3-quantities.html#frequency">80000-3-quantities.html#frequency</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-frequency">4.10. frequency</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-height">
+   <a href="80000-3-quantities.html#height">80000-3-quantities.html#height</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-height">4.11. height</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-length">
+   <a href="80000-3-quantities.html#length">80000-3-quantities.html#length</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-length">4.16. length</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-path-length">
+   <a href="80000-3-quantities.html#path-length">80000-3-quantities.html#path-length</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-path-length">4.21. path-length</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-period-duration">
+   <a href="80000-3-quantities.html#period-duration">80000-3-quantities.html#period-duration</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-period-duration">4.22. period-duration</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-position-vector">
+   <a href="80000-3-quantities.html#position-vector">80000-3-quantities.html#position-vector</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-position-vector">4.23. position-vector</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-radial-distance">
+   <a href="80000-3-quantities.html#radial-distance">80000-3-quantities.html#radial-distance</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-radial-distance">4.24. radial-distance</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-radius">
+   <a href="80000-3-quantities.html#radius">80000-3-quantities.html#radius</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-radius">4.26. radius</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-radius-of-curvature">
+   <a href="80000-3-quantities.html#radius-of-curvature">80000-3-quantities.html#radius-of-curvature</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-radius-of-curvature">4.27. radius-of-curvature</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-rotation">
+   <a href="80000-3-quantities.html#rotation">80000-3-quantities.html#rotation</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-rotation">4.29. rotation</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-rotational-displacement">
+   <a href="80000-3-quantities.html#rotational-displacement">80000-3-quantities.html#rotational-displacement</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-rotational-displacement">4.30. rotational-displacement</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-rotational-frequency">
+   <a href="80000-3-quantities.html#rotational-frequency">80000-3-quantities.html#rotational-frequency</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-rotational-frequency">4.31. rotational-frequency</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-thickness">
+   <a href="80000-3-quantities.html#thickness">80000-3-quantities.html#thickness</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-thickness">4.33. thickness</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-velocity">
+   <a href="80000-3-quantities.html#velocity">80000-3-quantities.html#velocity</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-velocity">4.34. velocity</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-width">
+   <a href="80000-3-quantities.html#width">80000-3-quantities.html#width</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-width">4.35. width</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-hertz">
    <a href="80000-3-units.html#hertz">80000-3-units.html#hertz</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-hertz">3.35. hertz</a>
+    <li><a href="#ref-for-hertz">4.12. hertz</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-hour">
    <a href="80000-3-units.html#hour">80000-3-units.html#hour</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-hour">3.26. hour</a>
+    <li><a href="#ref-for-hour">4.13. hour</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-kilometre">
    <a href="80000-3-units.html#kilometre">80000-3-units.html#kilometre</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-kilometre">3.18. kilometre</a>
+    <li><a href="#ref-for-kilometre">4.14. kilometre</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-kilometre-per-second">
    <a href="80000-3-units.html#kilometre-per-second">80000-3-units.html#kilometre-per-second</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-kilometre-per-second">3.29. kilometre-per-second</a>
+    <li><a href="#ref-for-kilometre-per-second">4.15. kilometre-per-second</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-metre">
    <a href="80000-3-units.html#metre">80000-3-units.html#metre</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-metre">3.17. metre</a>
+    <li><a href="#ref-for-metre">4.17. metre</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-metre-per-second">
    <a href="80000-3-units.html#metre-per-second">80000-3-units.html#metre-per-second</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-metre-per-second">3.28. metre-per-second</a>
+    <li><a href="#ref-for-metre-per-second">4.18. metre-per-second</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-millisecond">
    <a href="80000-3-units.html#millisecond">80000-3-units.html#millisecond</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-millisecond">3.24. millisecond</a>
+    <li><a href="#ref-for-millisecond">4.19. millisecond</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-minute">
    <a href="80000-3-units.html#minute">80000-3-units.html#minute</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-minute">3.25. minute</a>
+    <li><a href="#ref-for-minute">4.20. minute</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-radian">
    <a href="80000-3-units.html#radian">80000-3-units.html#radian</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-radian">3.20. radian</a>
+    <li><a href="#ref-for-radian">4.25. radian</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-revolutions">
    <a href="80000-3-units.html#revolutions">80000-3-units.html#revolutions</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-revolutions">3.32. revolutions</a>
+    <li><a href="#ref-for-revolutions">4.28. revolutions</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-second">
    <a href="80000-3-units.html#second">80000-3-units.html#second</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-second">3.23. second</a>
+    <li><a href="#ref-for-second">4.32. second</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-systemofquantities">
+   <a href="80000-instances.html#systemofquantities">80000-instances.html#systemofquantities</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-systemofquantities">5.1. systemOfQuantities-altitude</a>
+    <li><a href="#ref-for-systemofquantities①">5.2. systemOfQuantities-angular-measure</a>
+    <li><a href="#ref-for-systemofquantities②">5.3. systemOfQuantities-arc-length</a>
+    <li><a href="#ref-for-systemofquantities③">5.4. systemOfQuantities-breadth</a>
+    <li><a href="#ref-for-systemofquantities④">5.5. systemOfQuantities-depth</a>
+    <li><a href="#ref-for-systemofquantities⑤">5.6. systemOfQuantities-diameter</a>
+    <li><a href="#ref-for-systemofquantities⑥">5.7. systemOfQuantities-displacement</a>
+    <li><a href="#ref-for-systemofquantities⑦">5.8. systemOfQuantities-distance</a>
+    <li><a href="#ref-for-systemofquantities⑧">5.9. systemOfQuantities-duration</a>
+    <li><a href="#ref-for-systemofquantities⑨">5.10. systemOfQuantities-frequency</a>
+    <li><a href="#ref-for-systemofquantities①⓪">5.11. systemOfQuantities-height</a>
+    <li><a href="#ref-for-systemofquantities①①">5.12. systemOfQuantities-length</a>
+    <li><a href="#ref-for-systemofquantities①②">5.13. systemOfQuantities-path-length</a>
+    <li><a href="#ref-for-systemofquantities①③">5.14. systemOfQuantities-period-duration</a>
+    <li><a href="#ref-for-systemofquantities①④">5.15. systemOfQuantities-position-vector</a>
+    <li><a href="#ref-for-systemofquantities①⑤">5.16. systemOfQuantities-radial-distance</a>
+    <li><a href="#ref-for-systemofquantities①⑥">5.17. systemOfQuantities-radius</a>
+    <li><a href="#ref-for-systemofquantities①⑦">5.18. systemOfQuantities-radius-of-curvature</a>
+    <li><a href="#ref-for-systemofquantities①⑧">5.19. systemOfQuantities-rotation</a>
+    <li><a href="#ref-for-systemofquantities①⑨">5.20. systemOfQuantities-rotational-displacement</a>
+    <li><a href="#ref-for-systemofquantities②⓪">5.21. systemOfQuantities-rotational-frequency</a>
+    <li><a href="#ref-for-systemofquantities②①">5.22. systemOfQuantities-thickness</a>
+    <li><a href="#ref-for-systemofquantities②②">5.23. systemOfQuantities-velocity</a>
+    <li><a href="#ref-for-systemofquantities②③">5.24. systemOfQuantities-width</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-systemofunits">
+   <a href="80000-instances.html#systemofunits">80000-instances.html#systemofunits</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-systemofunits">5.25. systemOfUnits-hertz</a>
+    <li><a href="#ref-for-systemofunits①">5.26. systemOfUnits-metre</a>
+    <li><a href="#ref-for-systemofunits②">5.27. systemOfUnits-metre-per-second</a>
+    <li><a href="#ref-for-systemofunits③">5.28. systemOfUnits-radian</a>
+    <li><a href="#ref-for-systemofunits④">5.29. systemOfUnits-revolutions</a>
+    <li><a href="#ref-for-systemofunits⑤">5.30. systemOfUnits-second</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-isbasemetrologicalunit">
+   <a href="../iupac.org/metrology.html#isbasemetrologicalunit">../iupac.org/metrology.html#isbasemetrologicalunit</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-isbasemetrologicalunit">5.25. systemOfUnits-hertz</a>
+    <li><a href="#ref-for-isbasemetrologicalunit①">5.26. systemOfUnits-metre</a>
+    <li><a href="#ref-for-isbasemetrologicalunit②">5.27. systemOfUnits-metre-per-second</a>
+    <li><a href="#ref-for-isbasemetrologicalunit③">5.28. systemOfUnits-radian</a>
+    <li><a href="#ref-for-isbasemetrologicalunit④">5.29. systemOfUnits-revolutions</a>
+    <li><a href="#ref-for-isbasemetrologicalunit⑤">5.30. systemOfUnits-second</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-isbasequantity">
+   <a href="../iupac.org/metrology.html#isbasequantity">../iupac.org/metrology.html#isbasequantity</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-isbasequantity">5.1. systemOfQuantities-altitude</a>
+    <li><a href="#ref-for-isbasequantity①">5.2. systemOfQuantities-angular-measure</a>
+    <li><a href="#ref-for-isbasequantity②">5.3. systemOfQuantities-arc-length</a>
+    <li><a href="#ref-for-isbasequantity③">5.4. systemOfQuantities-breadth</a>
+    <li><a href="#ref-for-isbasequantity④">5.5. systemOfQuantities-depth</a>
+    <li><a href="#ref-for-isbasequantity⑤">5.6. systemOfQuantities-diameter</a>
+    <li><a href="#ref-for-isbasequantity⑥">5.7. systemOfQuantities-displacement</a>
+    <li><a href="#ref-for-isbasequantity⑦">5.8. systemOfQuantities-distance</a>
+    <li><a href="#ref-for-isbasequantity⑧">5.9. systemOfQuantities-duration</a>
+    <li><a href="#ref-for-isbasequantity⑨">5.10. systemOfQuantities-frequency</a>
+    <li><a href="#ref-for-isbasequantity①⓪">5.11. systemOfQuantities-height</a>
+    <li><a href="#ref-for-isbasequantity①①">5.12. systemOfQuantities-length</a>
+    <li><a href="#ref-for-isbasequantity①②">5.13. systemOfQuantities-path-length</a>
+    <li><a href="#ref-for-isbasequantity①③">5.14. systemOfQuantities-period-duration</a>
+    <li><a href="#ref-for-isbasequantity①④">5.15. systemOfQuantities-position-vector</a>
+    <li><a href="#ref-for-isbasequantity①⑤">5.16. systemOfQuantities-radial-distance</a>
+    <li><a href="#ref-for-isbasequantity①⑥">5.17. systemOfQuantities-radius</a>
+    <li><a href="#ref-for-isbasequantity①⑦">5.18. systemOfQuantities-radius-of-curvature</a>
+    <li><a href="#ref-for-isbasequantity①⑧">5.19. systemOfQuantities-rotation</a>
+    <li><a href="#ref-for-isbasequantity①⑨">5.20. systemOfQuantities-rotational-displacement</a>
+    <li><a href="#ref-for-isbasequantity②⓪">5.21. systemOfQuantities-rotational-frequency</a>
+    <li><a href="#ref-for-isbasequantity②①">5.22. systemOfQuantities-thickness</a>
+    <li><a href="#ref-for-isbasequantity②②">5.23. systemOfQuantities-velocity</a>
+    <li><a href="#ref-for-isbasequantity②③">5.24. systemOfQuantities-width</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-systemhasmetrologicalunit">
+   <a href="../iupac.org/metrology.html#systemhasmetrologicalunit">../iupac.org/metrology.html#systemhasmetrologicalunit</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-systemhasmetrologicalunit">5.25. systemOfUnits-hertz</a>
+    <li><a href="#ref-for-systemhasmetrologicalunit①">5.26. systemOfUnits-metre</a>
+    <li><a href="#ref-for-systemhasmetrologicalunit②">5.27. systemOfUnits-metre-per-second</a>
+    <li><a href="#ref-for-systemhasmetrologicalunit③">5.28. systemOfUnits-radian</a>
+    <li><a href="#ref-for-systemhasmetrologicalunit④">5.29. systemOfUnits-revolutions</a>
+    <li><a href="#ref-for-systemhasmetrologicalunit⑤">5.30. systemOfUnits-second</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-systemhasunitaryquantity">
+   <a href="../iupac.org/metrology.html#systemhasunitaryquantity">../iupac.org/metrology.html#systemhasunitaryquantity</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-systemhasunitaryquantity">5.1. systemOfQuantities-altitude</a>
+    <li><a href="#ref-for-systemhasunitaryquantity①">5.2. systemOfQuantities-angular-measure</a>
+    <li><a href="#ref-for-systemhasunitaryquantity②">5.3. systemOfQuantities-arc-length</a>
+    <li><a href="#ref-for-systemhasunitaryquantity③">5.4. systemOfQuantities-breadth</a>
+    <li><a href="#ref-for-systemhasunitaryquantity④">5.5. systemOfQuantities-depth</a>
+    <li><a href="#ref-for-systemhasunitaryquantity⑤">5.6. systemOfQuantities-diameter</a>
+    <li><a href="#ref-for-systemhasunitaryquantity⑥">5.7. systemOfQuantities-displacement</a>
+    <li><a href="#ref-for-systemhasunitaryquantity⑦">5.8. systemOfQuantities-distance</a>
+    <li><a href="#ref-for-systemhasunitaryquantity⑧">5.9. systemOfQuantities-duration</a>
+    <li><a href="#ref-for-systemhasunitaryquantity⑨">5.10. systemOfQuantities-frequency</a>
+    <li><a href="#ref-for-systemhasunitaryquantity①⓪">5.11. systemOfQuantities-height</a>
+    <li><a href="#ref-for-systemhasunitaryquantity①①">5.12. systemOfQuantities-length</a>
+    <li><a href="#ref-for-systemhasunitaryquantity①②">5.13. systemOfQuantities-path-length</a>
+    <li><a href="#ref-for-systemhasunitaryquantity①③">5.14. systemOfQuantities-period-duration</a>
+    <li><a href="#ref-for-systemhasunitaryquantity①④">5.15. systemOfQuantities-position-vector</a>
+    <li><a href="#ref-for-systemhasunitaryquantity①⑤">5.16. systemOfQuantities-radial-distance</a>
+    <li><a href="#ref-for-systemhasunitaryquantity①⑥">5.17. systemOfQuantities-radius</a>
+    <li><a href="#ref-for-systemhasunitaryquantity①⑦">5.18. systemOfQuantities-radius-of-curvature</a>
+    <li><a href="#ref-for-systemhasunitaryquantity①⑧">5.19. systemOfQuantities-rotation</a>
+    <li><a href="#ref-for-systemhasunitaryquantity①⑨">5.20. systemOfQuantities-rotational-displacement</a>
+    <li><a href="#ref-for-systemhasunitaryquantity②⓪">5.21. systemOfQuantities-rotational-frequency</a>
+    <li><a href="#ref-for-systemhasunitaryquantity②①">5.22. systemOfQuantities-thickness</a>
+    <li><a href="#ref-for-systemhasunitaryquantity②②">5.23. systemOfQuantities-velocity</a>
+    <li><a href="#ref-for-systemhasunitaryquantity②③">5.24. systemOfQuantities-width</a>
    </ul>
   </aside>
   <h3 class="no-num no-ref heading settled" id="index-defined-elsewhere"><span class="content">Terms defined by reference</span><a class="self-link" href="#index-defined-elsewhere"></a></h3>
   <ul class="index">
    <li>
-    <a data-link-type="biblio">[http://iso.org/80000-3-kindsofquantities]</a> defines the following terms:
+    <a data-link-type="biblio">[http://iso.org/80000-3-instances]</a> defines the following terms:
     <ul>
      <li><span class="dfn-paneled" id="term-for-altitude">altitude</span>
      <li><span class="dfn-paneled" id="term-for-angular-measure">angular-measure</span>
@@ -2304,34 +2945,82 @@ dfn > a.self-link::before      { content: "#"; }
      <li><span class="dfn-paneled" id="term-for-duration">duration</span>
      <li><span class="dfn-paneled" id="term-for-frequency">frequency</span>
      <li><span class="dfn-paneled" id="term-for-height">height</span>
+     <li><span class="dfn-paneled" id="term-for-hertz">hertz</span>
      <li><span class="dfn-paneled" id="term-for-length">length</span>
+     <li><span class="dfn-paneled" id="term-for-metre">metre</span>
+     <li><span class="dfn-paneled" id="term-for-metre-per-second">metre-per-second</span>
      <li><span class="dfn-paneled" id="term-for-path-length">path-length</span>
      <li><span class="dfn-paneled" id="term-for-period-duration">period-duration</span>
      <li><span class="dfn-paneled" id="term-for-position-vector">position-vector</span>
      <li><span class="dfn-paneled" id="term-for-radial-distance">radial-distance</span>
+     <li><span class="dfn-paneled" id="term-for-radian">radian</span>
      <li><span class="dfn-paneled" id="term-for-radius">radius</span>
      <li><span class="dfn-paneled" id="term-for-radius-of-curvature">radius-of-curvature</span>
+     <li><span class="dfn-paneled" id="term-for-revolutions">revolutions</span>
      <li><span class="dfn-paneled" id="term-for-rotation">rotation</span>
      <li><span class="dfn-paneled" id="term-for-rotational-displacement">rotational-displacement</span>
      <li><span class="dfn-paneled" id="term-for-rotational-frequency">rotational-frequency</span>
+     <li><span class="dfn-paneled" id="term-for-second">second</span>
      <li><span class="dfn-paneled" id="term-for-thickness">thickness</span>
      <li><span class="dfn-paneled" id="term-for-velocity">velocity</span>
      <li><span class="dfn-paneled" id="term-for-width">width</span>
     </ul>
    <li>
+    <a data-link-type="biblio">[http://iso.org/80000-3-quantities]</a> defines the following terms:
+    <ul>
+     <li><span class="dfn-paneled" id="term-for-altitude①">altitude</span>
+     <li><span class="dfn-paneled" id="term-for-angular-measure①">angular-measure</span>
+     <li><span class="dfn-paneled" id="term-for-arc-length①">arc-length</span>
+     <li><span class="dfn-paneled" id="term-for-breadth①">breadth</span>
+     <li><span class="dfn-paneled" id="term-for-depth①">depth</span>
+     <li><span class="dfn-paneled" id="term-for-diameter①">diameter</span>
+     <li><span class="dfn-paneled" id="term-for-displacement①">displacement</span>
+     <li><span class="dfn-paneled" id="term-for-distance①">distance</span>
+     <li><span class="dfn-paneled" id="term-for-duration①">duration</span>
+     <li><span class="dfn-paneled" id="term-for-frequency①">frequency</span>
+     <li><span class="dfn-paneled" id="term-for-height①">height</span>
+     <li><span class="dfn-paneled" id="term-for-length①">length</span>
+     <li><span class="dfn-paneled" id="term-for-path-length①">path-length</span>
+     <li><span class="dfn-paneled" id="term-for-period-duration①">period-duration</span>
+     <li><span class="dfn-paneled" id="term-for-position-vector①">position-vector</span>
+     <li><span class="dfn-paneled" id="term-for-radial-distance①">radial-distance</span>
+     <li><span class="dfn-paneled" id="term-for-radius①">radius</span>
+     <li><span class="dfn-paneled" id="term-for-radius-of-curvature①">radius-of-curvature</span>
+     <li><span class="dfn-paneled" id="term-for-rotation①">rotation</span>
+     <li><span class="dfn-paneled" id="term-for-rotational-displacement①">rotational-displacement</span>
+     <li><span class="dfn-paneled" id="term-for-rotational-frequency①">rotational-frequency</span>
+     <li><span class="dfn-paneled" id="term-for-thickness①">thickness</span>
+     <li><span class="dfn-paneled" id="term-for-velocity①">velocity</span>
+     <li><span class="dfn-paneled" id="term-for-width①">width</span>
+    </ul>
+   <li>
     <a data-link-type="biblio">[http://iso.org/80000-3-units]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="term-for-hertz">hertz</span>
+     <li><span class="dfn-paneled" id="term-for-hertz①">hertz</span>
      <li><span class="dfn-paneled" id="term-for-hour">hour</span>
      <li><span class="dfn-paneled" id="term-for-kilometre">kilometre</span>
      <li><span class="dfn-paneled" id="term-for-kilometre-per-second">kilometre-per-second</span>
-     <li><span class="dfn-paneled" id="term-for-metre">metre</span>
-     <li><span class="dfn-paneled" id="term-for-metre-per-second">metre-per-second</span>
+     <li><span class="dfn-paneled" id="term-for-metre①">metre</span>
+     <li><span class="dfn-paneled" id="term-for-metre-per-second①">metre-per-second</span>
      <li><span class="dfn-paneled" id="term-for-millisecond">millisecond</span>
      <li><span class="dfn-paneled" id="term-for-minute">minute</span>
-     <li><span class="dfn-paneled" id="term-for-radian">radian</span>
-     <li><span class="dfn-paneled" id="term-for-revolutions">revolutions</span>
-     <li><span class="dfn-paneled" id="term-for-second">second</span>
+     <li><span class="dfn-paneled" id="term-for-radian①">radian</span>
+     <li><span class="dfn-paneled" id="term-for-revolutions①">revolutions</span>
+     <li><span class="dfn-paneled" id="term-for-second①">second</span>
+    </ul>
+   <li>
+    <a data-link-type="biblio">[http://iso.org/80000-instances]</a> defines the following terms:
+    <ul>
+     <li><span class="dfn-paneled" id="term-for-systemofquantities">systemofquantities</span>
+     <li><span class="dfn-paneled" id="term-for-systemofunits">systemofunits</span>
+    </ul>
+   <li>
+    <a data-link-type="biblio">[http://iupac.org/metrology]</a> defines the following terms:
+    <ul>
+     <li><span class="dfn-paneled" id="term-for-isbasemetrologicalunit">isbasemetrologicalunit</span>
+     <li><span class="dfn-paneled" id="term-for-isbasequantity">isbasequantity</span>
+     <li><span class="dfn-paneled" id="term-for-systemhasmetrologicalunit">systemhasmetrologicalunit</span>
+     <li><span class="dfn-paneled" id="term-for-systemhasunitaryquantity">systemhasunitaryquantity</span>
     </ul>
   </ul>
 <script>/* script-dfn-panel */

@@ -1323,7 +1323,7 @@ Possible extra rowspan handling
 </style>
   <meta content="Bikeshed version 89ebb6ab, updated Fri Oct 9 15:32:07 2020 -0700" name="generator">
   <link href="https://opencaesar.github.io/core-vocabularies//src/oml/iso.org/80000-6-instances" rel="canonical">
-  <meta content="abba896ba09b6a1418147cedc1142ac310e18f73" name="document-revision">
+  <meta content="016d25312624eba77cc9060e2b9fc3b359f0e606" name="document-revision">
 <style>
 a[data-link-type=biblio] {
     white-space: pre-wrap;
@@ -1755,7 +1755,7 @@ dfn > a.self-link::before      { content: "#"; }
   <div class="head">
    <p data-fill-with="logo"><a class="logo" href="https://www.openapis.org/"><img alt="OpenAPI Initiative" height="48" src="https://opencaesar.github.io/oml/images/oml.svg"></a></p>
    <h1 class="p-name no-ref" id="title">80000-6-instances</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2020-11-03">3 November 2020</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2020-11-13">13 November 2020</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -1777,20 +1777,35 @@ dfn > a.self-link::before      { content: "#"; }
    <h2 class="no-num no-toc no-ref" id="contents">Table of Contents</h2>
    <ol class="toc" role="directory">
     <li><a href="#Namespace"><span class="secno">1</span> <span class="content">Namespace</span></a>
-    <li><a href="#Iclusions"><span class="secno">2</span> <span class="content">Usages</span></a>
+    <li><a href="#Extensions"><span class="secno">2</span> <span class="content">Extensions</span></a>
+    <li><a href="#Iclusions"><span class="secno">3</span> <span class="content">Usages</span></a>
     <li>
-     <a href="#ConceptInstances"><span class="secno">3</span> <span class="content">Concept Instances</span></a>
+     <a href="#ConceptInstances"><span class="secno">4</span> <span class="content">Concept Instances</span></a>
      <ol class="toc">
-      <li><a href="#Electric-current"><span class="secno">3.1</span> <span class="content"><span>electric-current</span></span></a>
-      <li><a href="#Ampere"><span class="secno">3.2</span> <span class="content"><span>ampere</span></span></a>
-      <li><a href="#Electric-charge"><span class="secno">3.3</span> <span class="content"><span>electric-charge</span></span></a>
-      <li><a href="#Coulomb"><span class="secno">3.4</span> <span class="content"><span>coulomb</span></span></a>
-      <li><a href="#Electric-field-strength"><span class="secno">3.5</span> <span class="content"><span>electric-field-strength</span></span></a>
-      <li><a href="#Newton-per-coulomb"><span class="secno">3.6</span> <span class="content"><span>newton-per-coulomb</span></span></a>
-      <li><a href="#Electric-potential"><span class="secno">3.7</span> <span class="content"><span>electric-potential</span></span></a>
-      <li><a href="#Volt"><span class="secno">3.8</span> <span class="content"><span>volt</span></span></a>
-      <li><a href="#Resistance"><span class="secno">3.9</span> <span class="content"><span>resistance</span></span></a>
-      <li><a href="#Ohm"><span class="secno">3.10</span> <span class="content"><span>ohm</span></span></a>
+      <li><a href="#Ampere"><span class="secno">4.1</span> <span class="content"><span>ampere</span></span></a>
+      <li><a href="#Coulomb"><span class="secno">4.2</span> <span class="content"><span>coulomb</span></span></a>
+      <li><a href="#Electric-charge"><span class="secno">4.3</span> <span class="content"><span>electric-charge</span></span></a>
+      <li><a href="#Electric-current"><span class="secno">4.4</span> <span class="content"><span>electric-current</span></span></a>
+      <li><a href="#Electric-field-strength"><span class="secno">4.5</span> <span class="content"><span>electric-field-strength</span></span></a>
+      <li><a href="#Electric-potential"><span class="secno">4.6</span> <span class="content"><span>electric-potential</span></span></a>
+      <li><a href="#Newton-per-coulomb"><span class="secno">4.7</span> <span class="content"><span>newton-per-coulomb</span></span></a>
+      <li><a href="#Ohm"><span class="secno">4.8</span> <span class="content"><span>ohm</span></span></a>
+      <li><a href="#Resistance"><span class="secno">4.9</span> <span class="content"><span>resistance</span></span></a>
+      <li><a href="#Volt"><span class="secno">4.10</span> <span class="content"><span>volt</span></span></a>
+     </ol>
+    <li>
+     <a href="#RelationInstances"><span class="secno">5</span> <span class="content">Relation Instances</span></a>
+     <ol class="toc">
+      <li><a href="#SystemOfQuantities-electric-charge"><span class="secno">5.1</span> <span class="content"><span>systemOfQuantities-electric-charge</span></span></a>
+      <li><a href="#SystemOfQuantities-electric-current"><span class="secno">5.2</span> <span class="content"><span>systemOfQuantities-electric-current</span></span></a>
+      <li><a href="#SystemOfQuantities-electric-field-strength"><span class="secno">5.3</span> <span class="content"><span>systemOfQuantities-electric-field-strength</span></span></a>
+      <li><a href="#SystemOfQuantities-electric-potential"><span class="secno">5.4</span> <span class="content"><span>systemOfQuantities-electric-potential</span></span></a>
+      <li><a href="#SystemOfQuantities-resistance"><span class="secno">5.5</span> <span class="content"><span>systemOfQuantities-resistance</span></span></a>
+      <li><a href="#SystemOfUnits-ampere"><span class="secno">5.6</span> <span class="content"><span>systemOfUnits-ampere</span></span></a>
+      <li><a href="#SystemOfUnits-coulomb"><span class="secno">5.7</span> <span class="content"><span>systemOfUnits-coulomb</span></span></a>
+      <li><a href="#SystemOfUnits-newton-per-coulomb"><span class="secno">5.8</span> <span class="content"><span>systemOfUnits-newton-per-coulomb</span></span></a>
+      <li><a href="#SystemOfUnits-ohm"><span class="secno">5.9</span> <span class="content"><span>systemOfUnits-ohm</span></span></a>
+      <li><a href="#SystemOfUnits-volt"><span class="secno">5.10</span> <span class="content"><span>systemOfUnits-volt</span></span></a>
      </ol>
     <li>
      <a href="#index"><span class="secno"></span> <span class="content">Index</span></a>
@@ -1807,32 +1822,128 @@ dfn > a.self-link::before      { content: "#"; }
      <li data-md>
       <p>80000-6-instances: <a href="80000-6-instances.html">http://iso.org/80000-6-instances</a></p>
     </ul>
-    <h2 class="heading settled" data-level="2" id="Iclusions"><span class="secno">2. </span><span class="content">Usages</span><a class="self-link" href="#Iclusions"></a></h2>
+    <h2 class="heading settled" data-level="2" id="Extensions"><span class="secno">2. </span><span class="content">Extensions</span><a class="self-link" href="#Extensions"></a></h2>
     <ul>
      <li data-md>
-      <p>80000-6-kindsOfQuantities: <a href="http://iso.org/80000-6-kindsOfQuantities.html">http://iso.org/80000-6-kindsOfQuantities</a></p>
+      <p>80000-instances: <a href="http://iso.org/80000-instances.html">http://iso.org/80000-instances</a></p>
     </ul>
-    <h2 class="heading settled" data-level="3" id="ConceptInstances"><span class="secno">3. </span><span class="content">Concept Instances</span><a class="self-link" href="#ConceptInstances"></a></h2>
-    <h3 class="heading settled" data-level="3.1" id="Electric-current"><span class="secno">3.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="electric-current">electric-current<a class="self-link" href="#electric-current"></a></dfn></span><a class="self-link" href="#Electric-current"></a></h3>
-    <p><em>Types:</em> <a data-link-type="dfn" href="80000-6-kindsOfQuantities.html#electric-current" id="ref-for-electric-current">80000-6-kindsOfQuantities:electric-current</a></p>
-    <h3 class="heading settled" data-level="3.2" id="Ampere"><span class="secno">3.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="ampere">ampere<a class="self-link" href="#ampere"></a></dfn></span><a class="self-link" href="#Ampere"></a></h3>
+    <h2 class="heading settled" data-level="3" id="Iclusions"><span class="secno">3. </span><span class="content">Usages</span><a class="self-link" href="#Iclusions"></a></h2>
+    <ul>
+     <li data-md>
+      <p>80000-6-quantities: <a href="http://iso.org/80000-6-quantities.html">http://iso.org/80000-6-quantities</a></p>
+    </ul>
+    <h2 class="heading settled" data-level="4" id="ConceptInstances"><span class="secno">4. </span><span class="content">Concept Instances</span><a class="self-link" href="#ConceptInstances"></a></h2>
+    <h3 class="heading settled" data-level="4.1" id="Ampere"><span class="secno">4.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="ampere">ampere<a class="self-link" href="#ampere"></a></dfn></span><a class="self-link" href="#Ampere"></a></h3>
     <p><em>Types:</em> <a data-link-type="dfn" href="80000-6-units.html#ampere" id="ref-for-ampere">80000-6-units:ampere</a></p>
-    <h3 class="heading settled" data-level="3.3" id="Electric-charge"><span class="secno">3.3. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="electric-charge">electric-charge<a class="self-link" href="#electric-charge"></a></dfn></span><a class="self-link" href="#Electric-charge"></a></h3>
-    <p><em>Types:</em> <a data-link-type="dfn" href="80000-6-kindsOfQuantities.html#electric-charge" id="ref-for-electric-charge">80000-6-kindsOfQuantities:electric-charge</a></p>
-    <h3 class="heading settled" data-level="3.4" id="Coulomb"><span class="secno">3.4. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="coulomb">coulomb<a class="self-link" href="#coulomb"></a></dfn></span><a class="self-link" href="#Coulomb"></a></h3>
+    <h3 class="heading settled" data-level="4.2" id="Coulomb"><span class="secno">4.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="coulomb">coulomb<a class="self-link" href="#coulomb"></a></dfn></span><a class="self-link" href="#Coulomb"></a></h3>
     <p><em>Types:</em> <a data-link-type="dfn" href="80000-6-units.html#coulomb" id="ref-for-coulomb">80000-6-units:coulomb</a></p>
-    <h3 class="heading settled" data-level="3.5" id="Electric-field-strength"><span class="secno">3.5. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="electric-field-strength">electric-field-strength<a class="self-link" href="#electric-field-strength"></a></dfn></span><a class="self-link" href="#Electric-field-strength"></a></h3>
-    <p><em>Types:</em> <a data-link-type="dfn" href="80000-6-kindsOfQuantities.html#electric-field-strength" id="ref-for-electric-field-strength">80000-6-kindsOfQuantities:electric-field-strength</a></p>
-    <h3 class="heading settled" data-level="3.6" id="Newton-per-coulomb"><span class="secno">3.6. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="newton-per-coulomb">newton-per-coulomb<a class="self-link" href="#newton-per-coulomb"></a></dfn></span><a class="self-link" href="#Newton-per-coulomb"></a></h3>
+    <h3 class="heading settled" data-level="4.3" id="Electric-charge"><span class="secno">4.3. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="electric-charge">electric-charge<a class="self-link" href="#electric-charge"></a></dfn></span><a class="self-link" href="#Electric-charge"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="80000-6-quantities.html#electric-charge" id="ref-for-electric-charge">80000-6-quantities:electric-charge</a></p>
+    <h3 class="heading settled" data-level="4.4" id="Electric-current"><span class="secno">4.4. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="electric-current">electric-current<a class="self-link" href="#electric-current"></a></dfn></span><a class="self-link" href="#Electric-current"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="80000-6-quantities.html#electric-current" id="ref-for-electric-current">80000-6-quantities:electric-current</a></p>
+    <h3 class="heading settled" data-level="4.5" id="Electric-field-strength"><span class="secno">4.5. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="electric-field-strength">electric-field-strength<a class="self-link" href="#electric-field-strength"></a></dfn></span><a class="self-link" href="#Electric-field-strength"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="80000-6-quantities.html#electric-field-strength" id="ref-for-electric-field-strength">80000-6-quantities:electric-field-strength</a></p>
+    <h3 class="heading settled" data-level="4.6" id="Electric-potential"><span class="secno">4.6. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="electric-potential">electric-potential<a class="self-link" href="#electric-potential"></a></dfn></span><a class="self-link" href="#Electric-potential"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="80000-6-quantities.html#electric-potential" id="ref-for-electric-potential">80000-6-quantities:electric-potential</a></p>
+    <h3 class="heading settled" data-level="4.7" id="Newton-per-coulomb"><span class="secno">4.7. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="newton-per-coulomb">newton-per-coulomb<a class="self-link" href="#newton-per-coulomb"></a></dfn></span><a class="self-link" href="#Newton-per-coulomb"></a></h3>
     <p><em>Types:</em> <a data-link-type="dfn" href="80000-6-units.html#newton-per-coulomb" id="ref-for-newton-per-coulomb">80000-6-units:newton-per-coulomb</a></p>
-    <h3 class="heading settled" data-level="3.7" id="Electric-potential"><span class="secno">3.7. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="electric-potential">electric-potential<a class="self-link" href="#electric-potential"></a></dfn></span><a class="self-link" href="#Electric-potential"></a></h3>
-    <p><em>Types:</em> <a data-link-type="dfn" href="80000-6-kindsOfQuantities.html#electric-potential" id="ref-for-electric-potential">80000-6-kindsOfQuantities:electric-potential</a></p>
-    <h3 class="heading settled" data-level="3.8" id="Volt"><span class="secno">3.8. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="volt">volt<a class="self-link" href="#volt"></a></dfn></span><a class="self-link" href="#Volt"></a></h3>
-    <p><em>Types:</em> <a data-link-type="dfn" href="80000-6-units.html#volt" id="ref-for-volt">80000-6-units:volt</a></p>
-    <h3 class="heading settled" data-level="3.9" id="Resistance"><span class="secno">3.9. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="resistance">resistance<a class="self-link" href="#resistance"></a></dfn></span><a class="self-link" href="#Resistance"></a></h3>
-    <p><em>Types:</em> <a data-link-type="dfn" href="80000-6-kindsOfQuantities.html#resistance" id="ref-for-resistance">80000-6-kindsOfQuantities:resistance</a></p>
-    <h3 class="heading settled" data-level="3.10" id="Ohm"><span class="secno">3.10. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="ohm">ohm<a class="self-link" href="#ohm"></a></dfn></span><a class="self-link" href="#Ohm"></a></h3>
+    <h3 class="heading settled" data-level="4.8" id="Ohm"><span class="secno">4.8. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="ohm">ohm<a class="self-link" href="#ohm"></a></dfn></span><a class="self-link" href="#Ohm"></a></h3>
     <p><em>Types:</em> <a data-link-type="dfn" href="80000-6-units.html#ohm" id="ref-for-ohm">80000-6-units:ohm</a></p>
+    <h3 class="heading settled" data-level="4.9" id="Resistance"><span class="secno">4.9. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="resistance">resistance<a class="self-link" href="#resistance"></a></dfn></span><a class="self-link" href="#Resistance"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="80000-6-quantities.html#resistance" id="ref-for-resistance">80000-6-quantities:resistance</a></p>
+    <h3 class="heading settled" data-level="4.10" id="Volt"><span class="secno">4.10. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="volt">volt<a class="self-link" href="#volt"></a></dfn></span><a class="self-link" href="#Volt"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="80000-6-units.html#volt" id="ref-for-volt">80000-6-units:volt</a></p>
+    <h2 class="heading settled" data-level="5" id="RelationInstances"><span class="secno">5. </span><span class="content">Relation Instances</span><a class="self-link" href="#RelationInstances"></a></h2>
+    <h3 class="heading settled" data-level="5.1" id="SystemOfQuantities-electric-charge"><span class="secno">5.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="systemofquantities-electric-charge">systemOfQuantities-electric-charge<a class="self-link" href="#systemofquantities-electric-charge"></a></dfn></span><a class="self-link" href="#SystemOfQuantities-electric-charge"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#systemhasunitaryquantity" id="ref-for-systemhasunitaryquantity">metrology:SystemHasUnitaryQuantity</a></p>
+    <p><em>Source:</em> <a data-link-type="dfn" href="80000-instances.html#systemofquantities" id="ref-for-systemofquantities">80000-instances:systemOfQuantities</a></p>
+    <p><em>Target:</em> <a data-link-type="dfn" href="80000-6-instances.html#electric-charge" id="ref-for-electric-charge①">electric-charge</a></p>
+    <p><em>Properties:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../iupac.org/metrology.html#isbasequantity" id="ref-for-isbasequantity">metrology:isBaseQuantity</a> false</p>
+    </ul>
+    <h3 class="heading settled" data-level="5.2" id="SystemOfQuantities-electric-current"><span class="secno">5.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="systemofquantities-electric-current">systemOfQuantities-electric-current<a class="self-link" href="#systemofquantities-electric-current"></a></dfn></span><a class="self-link" href="#SystemOfQuantities-electric-current"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#systemhasunitaryquantity" id="ref-for-systemhasunitaryquantity①">metrology:SystemHasUnitaryQuantity</a></p>
+    <p><em>Source:</em> <a data-link-type="dfn" href="80000-instances.html#systemofquantities" id="ref-for-systemofquantities①">80000-instances:systemOfQuantities</a></p>
+    <p><em>Target:</em> <a data-link-type="dfn" href="80000-6-instances.html#electric-current" id="ref-for-electric-current①">electric-current</a></p>
+    <p><em>Properties:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../iupac.org/metrology.html#isbasequantity" id="ref-for-isbasequantity①">metrology:isBaseQuantity</a> true</p>
+    </ul>
+    <h3 class="heading settled" data-level="5.3" id="SystemOfQuantities-electric-field-strength"><span class="secno">5.3. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="systemofquantities-electric-field-strength">systemOfQuantities-electric-field-strength<a class="self-link" href="#systemofquantities-electric-field-strength"></a></dfn></span><a class="self-link" href="#SystemOfQuantities-electric-field-strength"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#systemhasunitaryquantity" id="ref-for-systemhasunitaryquantity②">metrology:SystemHasUnitaryQuantity</a></p>
+    <p><em>Source:</em> <a data-link-type="dfn" href="80000-instances.html#systemofquantities" id="ref-for-systemofquantities②">80000-instances:systemOfQuantities</a></p>
+    <p><em>Target:</em> <a data-link-type="dfn" href="80000-6-instances.html#electric-field-strength" id="ref-for-electric-field-strength①">electric-field-strength</a></p>
+    <p><em>Properties:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../iupac.org/metrology.html#isbasequantity" id="ref-for-isbasequantity②">metrology:isBaseQuantity</a> false</p>
+    </ul>
+    <h3 class="heading settled" data-level="5.4" id="SystemOfQuantities-electric-potential"><span class="secno">5.4. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="systemofquantities-electric-potential">systemOfQuantities-electric-potential<a class="self-link" href="#systemofquantities-electric-potential"></a></dfn></span><a class="self-link" href="#SystemOfQuantities-electric-potential"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#systemhasunitaryquantity" id="ref-for-systemhasunitaryquantity③">metrology:SystemHasUnitaryQuantity</a></p>
+    <p><em>Source:</em> <a data-link-type="dfn" href="80000-instances.html#systemofquantities" id="ref-for-systemofquantities③">80000-instances:systemOfQuantities</a></p>
+    <p><em>Target:</em> <a data-link-type="dfn" href="80000-6-instances.html#electric-potential" id="ref-for-electric-potential①">electric-potential</a></p>
+    <p><em>Properties:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../iupac.org/metrology.html#isbasequantity" id="ref-for-isbasequantity③">metrology:isBaseQuantity</a> false</p>
+    </ul>
+    <h3 class="heading settled" data-level="5.5" id="SystemOfQuantities-resistance"><span class="secno">5.5. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="systemofquantities-resistance">systemOfQuantities-resistance<a class="self-link" href="#systemofquantities-resistance"></a></dfn></span><a class="self-link" href="#SystemOfQuantities-resistance"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#systemhasunitaryquantity" id="ref-for-systemhasunitaryquantity④">metrology:SystemHasUnitaryQuantity</a></p>
+    <p><em>Source:</em> <a data-link-type="dfn" href="80000-instances.html#systemofquantities" id="ref-for-systemofquantities④">80000-instances:systemOfQuantities</a></p>
+    <p><em>Target:</em> <a data-link-type="dfn" href="80000-6-instances.html#resistance" id="ref-for-resistance①">resistance</a></p>
+    <p><em>Properties:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../iupac.org/metrology.html#isbasequantity" id="ref-for-isbasequantity④">metrology:isBaseQuantity</a> false</p>
+    </ul>
+    <h3 class="heading settled" data-level="5.6" id="SystemOfUnits-ampere"><span class="secno">5.6. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="systemofunits-ampere">systemOfUnits-ampere<a class="self-link" href="#systemofunits-ampere"></a></dfn></span><a class="self-link" href="#SystemOfUnits-ampere"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#systemhasmetrologicalunit" id="ref-for-systemhasmetrologicalunit">metrology:SystemHasMetrologicalUnit</a></p>
+    <p><em>Source:</em> <a data-link-type="dfn" href="80000-instances.html#systemofunits" id="ref-for-systemofunits">80000-instances:systemOfUnits</a></p>
+    <p><em>Target:</em> <a data-link-type="dfn" href="80000-6-instances.html#ampere" id="ref-for-ampere①">ampere</a></p>
+    <p><em>Properties:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../iupac.org/metrology.html#isbasemetrologicalunit" id="ref-for-isbasemetrologicalunit">metrology:isBaseMetrologicalUnit</a> true</p>
+    </ul>
+    <h3 class="heading settled" data-level="5.7" id="SystemOfUnits-coulomb"><span class="secno">5.7. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="systemofunits-coulomb">systemOfUnits-coulomb<a class="self-link" href="#systemofunits-coulomb"></a></dfn></span><a class="self-link" href="#SystemOfUnits-coulomb"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#systemhasmetrologicalunit" id="ref-for-systemhasmetrologicalunit①">metrology:SystemHasMetrologicalUnit</a></p>
+    <p><em>Source:</em> <a data-link-type="dfn" href="80000-instances.html#systemofunits" id="ref-for-systemofunits①">80000-instances:systemOfUnits</a></p>
+    <p><em>Target:</em> <a data-link-type="dfn" href="80000-6-instances.html#coulomb" id="ref-for-coulomb①">coulomb</a></p>
+    <p><em>Properties:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../iupac.org/metrology.html#isbasemetrologicalunit" id="ref-for-isbasemetrologicalunit①">metrology:isBaseMetrologicalUnit</a> false</p>
+    </ul>
+    <h3 class="heading settled" data-level="5.8" id="SystemOfUnits-newton-per-coulomb"><span class="secno">5.8. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="systemofunits-newton-per-coulomb">systemOfUnits-newton-per-coulomb<a class="self-link" href="#systemofunits-newton-per-coulomb"></a></dfn></span><a class="self-link" href="#SystemOfUnits-newton-per-coulomb"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#systemhasmetrologicalunit" id="ref-for-systemhasmetrologicalunit②">metrology:SystemHasMetrologicalUnit</a></p>
+    <p><em>Source:</em> <a data-link-type="dfn" href="80000-instances.html#systemofunits" id="ref-for-systemofunits②">80000-instances:systemOfUnits</a></p>
+    <p><em>Target:</em> <a data-link-type="dfn" href="80000-6-instances.html#newton-per-coulomb" id="ref-for-newton-per-coulomb①">newton-per-coulomb</a></p>
+    <p><em>Properties:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../iupac.org/metrology.html#isbasemetrologicalunit" id="ref-for-isbasemetrologicalunit②">metrology:isBaseMetrologicalUnit</a> false</p>
+    </ul>
+    <h3 class="heading settled" data-level="5.9" id="SystemOfUnits-ohm"><span class="secno">5.9. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="systemofunits-ohm">systemOfUnits-ohm<a class="self-link" href="#systemofunits-ohm"></a></dfn></span><a class="self-link" href="#SystemOfUnits-ohm"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#systemhasmetrologicalunit" id="ref-for-systemhasmetrologicalunit③">metrology:SystemHasMetrologicalUnit</a></p>
+    <p><em>Source:</em> <a data-link-type="dfn" href="80000-instances.html#systemofunits" id="ref-for-systemofunits③">80000-instances:systemOfUnits</a></p>
+    <p><em>Target:</em> <a data-link-type="dfn" href="80000-6-instances.html#ohm" id="ref-for-ohm①">ohm</a></p>
+    <p><em>Properties:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../iupac.org/metrology.html#isbasemetrologicalunit" id="ref-for-isbasemetrologicalunit③">metrology:isBaseMetrologicalUnit</a> false</p>
+    </ul>
+    <h3 class="heading settled" data-level="5.10" id="SystemOfUnits-volt"><span class="secno">5.10. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="systemofunits-volt">systemOfUnits-volt<a class="self-link" href="#systemofunits-volt"></a></dfn></span><a class="self-link" href="#SystemOfUnits-volt"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#systemhasmetrologicalunit" id="ref-for-systemhasmetrologicalunit④">metrology:SystemHasMetrologicalUnit</a></p>
+    <p><em>Source:</em> <a data-link-type="dfn" href="80000-instances.html#systemofunits" id="ref-for-systemofunits④">80000-instances:systemOfUnits</a></p>
+    <p><em>Target:</em> <a data-link-type="dfn" href="80000-6-instances.html#volt" id="ref-for-volt①">volt</a></p>
+    <p><em>Properties:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../iupac.org/metrology.html#isbasemetrologicalunit" id="ref-for-isbasemetrologicalunit④">metrology:isBaseMetrologicalUnit</a> false</p>
+    </ul>
    </div>
   </main>
 <script>
@@ -1967,96 +2078,254 @@ dfn > a.self-link::before      { content: "#"; }
   <h2 class="no-num no-ref heading settled" id="index"><span class="content">Index</span><a class="self-link" href="#index"></a></h2>
   <h3 class="no-num no-ref heading settled" id="index-defined-here"><span class="content">Terms defined by this specification</span><a class="self-link" href="#index-defined-here"></a></h3>
   <ul class="index">
-   <li><a href="#ampere">ampere</a><span>, in §3.2</span>
-   <li><a href="#coulomb">coulomb</a><span>, in §3.4</span>
-   <li><a href="#electric-charge">electric-charge</a><span>, in §3.3</span>
-   <li><a href="#electric-current">electric-current</a><span>, in §3.1</span>
-   <li><a href="#electric-field-strength">electric-field-strength</a><span>, in §3.5</span>
-   <li><a href="#electric-potential">electric-potential</a><span>, in §3.7</span>
-   <li><a href="#newton-per-coulomb">newton-per-coulomb</a><span>, in §3.6</span>
-   <li><a href="#ohm">ohm</a><span>, in §3.10</span>
-   <li><a href="#resistance">resistance</a><span>, in §3.9</span>
-   <li><a href="#volt">volt</a><span>, in §3.8</span>
+   <li><a href="#ampere">ampere</a><span>, in §4.1</span>
+   <li><a href="#coulomb">coulomb</a><span>, in §4.2</span>
+   <li><a href="#electric-charge">electric-charge</a><span>, in §4.3</span>
+   <li><a href="#electric-current">electric-current</a><span>, in §4.4</span>
+   <li><a href="#electric-field-strength">electric-field-strength</a><span>, in §4.5</span>
+   <li><a href="#electric-potential">electric-potential</a><span>, in §4.6</span>
+   <li><a href="#newton-per-coulomb">newton-per-coulomb</a><span>, in §4.7</span>
+   <li><a href="#ohm">ohm</a><span>, in §4.8</span>
+   <li><a href="#resistance">resistance</a><span>, in §4.9</span>
+   <li><a href="#systemofquantities-electric-charge">systemOfQuantities-electric-charge</a><span>, in §5.1</span>
+   <li><a href="#systemofquantities-electric-current">systemOfQuantities-electric-current</a><span>, in §5.2</span>
+   <li><a href="#systemofquantities-electric-field-strength">systemOfQuantities-electric-field-strength</a><span>, in §5.3</span>
+   <li><a href="#systemofquantities-electric-potential">systemOfQuantities-electric-potential</a><span>, in §5.4</span>
+   <li><a href="#systemofquantities-resistance">systemOfQuantities-resistance</a><span>, in §5.5</span>
+   <li><a href="#systemofunits-ampere">systemOfUnits-ampere</a><span>, in §5.6</span>
+   <li><a href="#systemofunits-coulomb">systemOfUnits-coulomb</a><span>, in §5.7</span>
+   <li><a href="#systemofunits-newton-per-coulomb">systemOfUnits-newton-per-coulomb</a><span>, in §5.8</span>
+   <li><a href="#systemofunits-ohm">systemOfUnits-ohm</a><span>, in §5.9</span>
+   <li><a href="#systemofunits-volt">systemOfUnits-volt</a><span>, in §5.10</span>
+   <li><a href="#volt">volt</a><span>, in §4.10</span>
   </ul>
-  <aside class="dfn-panel" data-for="term-for-electric-charge">
-   <a href="80000-6-kindsOfQuantities.html#electric-charge">80000-6-kindsOfQuantities.html#electric-charge</a><b>Referenced in:</b>
+  <aside class="dfn-panel" data-for="term-for-ampere">
+   <a href="80000-6-instances.html#ampere">80000-6-instances.html#ampere</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-electric-charge">3.3. electric-charge</a>
+    <li><a href="#ref-for-ampere①">5.6. systemOfUnits-ampere</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-coulomb">
+   <a href="80000-6-instances.html#coulomb">80000-6-instances.html#coulomb</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-coulomb①">5.7. systemOfUnits-coulomb</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-electric-charge">
+   <a href="80000-6-instances.html#electric-charge">80000-6-instances.html#electric-charge</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-electric-charge①">5.1. systemOfQuantities-electric-charge</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-electric-current">
-   <a href="80000-6-kindsOfQuantities.html#electric-current">80000-6-kindsOfQuantities.html#electric-current</a><b>Referenced in:</b>
+   <a href="80000-6-instances.html#electric-current">80000-6-instances.html#electric-current</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-electric-current">3.1. electric-current</a>
+    <li><a href="#ref-for-electric-current①">5.2. systemOfQuantities-electric-current</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-electric-field-strength">
-   <a href="80000-6-kindsOfQuantities.html#electric-field-strength">80000-6-kindsOfQuantities.html#electric-field-strength</a><b>Referenced in:</b>
+   <a href="80000-6-instances.html#electric-field-strength">80000-6-instances.html#electric-field-strength</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-electric-field-strength">3.5. electric-field-strength</a>
+    <li><a href="#ref-for-electric-field-strength①">5.3. systemOfQuantities-electric-field-strength</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-electric-potential">
-   <a href="80000-6-kindsOfQuantities.html#electric-potential">80000-6-kindsOfQuantities.html#electric-potential</a><b>Referenced in:</b>
+   <a href="80000-6-instances.html#electric-potential">80000-6-instances.html#electric-potential</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-electric-potential">3.7. electric-potential</a>
+    <li><a href="#ref-for-electric-potential①">5.4. systemOfQuantities-electric-potential</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-newton-per-coulomb">
+   <a href="80000-6-instances.html#newton-per-coulomb">80000-6-instances.html#newton-per-coulomb</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-newton-per-coulomb①">5.8. systemOfUnits-newton-per-coulomb</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-ohm">
+   <a href="80000-6-instances.html#ohm">80000-6-instances.html#ohm</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-ohm①">5.9. systemOfUnits-ohm</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-resistance">
-   <a href="80000-6-kindsOfQuantities.html#resistance">80000-6-kindsOfQuantities.html#resistance</a><b>Referenced in:</b>
+   <a href="80000-6-instances.html#resistance">80000-6-instances.html#resistance</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-resistance">3.9. resistance</a>
+    <li><a href="#ref-for-resistance①">5.5. systemOfQuantities-resistance</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-volt">
+   <a href="80000-6-instances.html#volt">80000-6-instances.html#volt</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-volt①">5.10. systemOfUnits-volt</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-electric-charge">
+   <a href="80000-6-quantities.html#electric-charge">80000-6-quantities.html#electric-charge</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-electric-charge">4.3. electric-charge</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-electric-current">
+   <a href="80000-6-quantities.html#electric-current">80000-6-quantities.html#electric-current</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-electric-current">4.4. electric-current</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-electric-field-strength">
+   <a href="80000-6-quantities.html#electric-field-strength">80000-6-quantities.html#electric-field-strength</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-electric-field-strength">4.5. electric-field-strength</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-electric-potential">
+   <a href="80000-6-quantities.html#electric-potential">80000-6-quantities.html#electric-potential</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-electric-potential">4.6. electric-potential</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-resistance">
+   <a href="80000-6-quantities.html#resistance">80000-6-quantities.html#resistance</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-resistance">4.9. resistance</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-ampere">
    <a href="80000-6-units.html#ampere">80000-6-units.html#ampere</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-ampere">3.2. ampere</a>
+    <li><a href="#ref-for-ampere">4.1. ampere</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-coulomb">
    <a href="80000-6-units.html#coulomb">80000-6-units.html#coulomb</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-coulomb">3.4. coulomb</a>
+    <li><a href="#ref-for-coulomb">4.2. coulomb</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-newton-per-coulomb">
    <a href="80000-6-units.html#newton-per-coulomb">80000-6-units.html#newton-per-coulomb</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-newton-per-coulomb">3.6. newton-per-coulomb</a>
+    <li><a href="#ref-for-newton-per-coulomb">4.7. newton-per-coulomb</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-ohm">
    <a href="80000-6-units.html#ohm">80000-6-units.html#ohm</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-ohm">3.10. ohm</a>
+    <li><a href="#ref-for-ohm">4.8. ohm</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-volt">
    <a href="80000-6-units.html#volt">80000-6-units.html#volt</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-volt">3.8. volt</a>
+    <li><a href="#ref-for-volt">4.10. volt</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-systemofquantities">
+   <a href="80000-instances.html#systemofquantities">80000-instances.html#systemofquantities</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-systemofquantities">5.1. systemOfQuantities-electric-charge</a>
+    <li><a href="#ref-for-systemofquantities①">5.2. systemOfQuantities-electric-current</a>
+    <li><a href="#ref-for-systemofquantities②">5.3. systemOfQuantities-electric-field-strength</a>
+    <li><a href="#ref-for-systemofquantities③">5.4. systemOfQuantities-electric-potential</a>
+    <li><a href="#ref-for-systemofquantities④">5.5. systemOfQuantities-resistance</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-systemofunits">
+   <a href="80000-instances.html#systemofunits">80000-instances.html#systemofunits</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-systemofunits">5.6. systemOfUnits-ampere</a>
+    <li><a href="#ref-for-systemofunits①">5.7. systemOfUnits-coulomb</a>
+    <li><a href="#ref-for-systemofunits②">5.8. systemOfUnits-newton-per-coulomb</a>
+    <li><a href="#ref-for-systemofunits③">5.9. systemOfUnits-ohm</a>
+    <li><a href="#ref-for-systemofunits④">5.10. systemOfUnits-volt</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-isbasemetrologicalunit">
+   <a href="../iupac.org/metrology.html#isbasemetrologicalunit">../iupac.org/metrology.html#isbasemetrologicalunit</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-isbasemetrologicalunit">5.6. systemOfUnits-ampere</a>
+    <li><a href="#ref-for-isbasemetrologicalunit①">5.7. systemOfUnits-coulomb</a>
+    <li><a href="#ref-for-isbasemetrologicalunit②">5.8. systemOfUnits-newton-per-coulomb</a>
+    <li><a href="#ref-for-isbasemetrologicalunit③">5.9. systemOfUnits-ohm</a>
+    <li><a href="#ref-for-isbasemetrologicalunit④">5.10. systemOfUnits-volt</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-isbasequantity">
+   <a href="../iupac.org/metrology.html#isbasequantity">../iupac.org/metrology.html#isbasequantity</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-isbasequantity">5.1. systemOfQuantities-electric-charge</a>
+    <li><a href="#ref-for-isbasequantity①">5.2. systemOfQuantities-electric-current</a>
+    <li><a href="#ref-for-isbasequantity②">5.3. systemOfQuantities-electric-field-strength</a>
+    <li><a href="#ref-for-isbasequantity③">5.4. systemOfQuantities-electric-potential</a>
+    <li><a href="#ref-for-isbasequantity④">5.5. systemOfQuantities-resistance</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-systemhasmetrologicalunit">
+   <a href="../iupac.org/metrology.html#systemhasmetrologicalunit">../iupac.org/metrology.html#systemhasmetrologicalunit</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-systemhasmetrologicalunit">5.6. systemOfUnits-ampere</a>
+    <li><a href="#ref-for-systemhasmetrologicalunit①">5.7. systemOfUnits-coulomb</a>
+    <li><a href="#ref-for-systemhasmetrologicalunit②">5.8. systemOfUnits-newton-per-coulomb</a>
+    <li><a href="#ref-for-systemhasmetrologicalunit③">5.9. systemOfUnits-ohm</a>
+    <li><a href="#ref-for-systemhasmetrologicalunit④">5.10. systemOfUnits-volt</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-systemhasunitaryquantity">
+   <a href="../iupac.org/metrology.html#systemhasunitaryquantity">../iupac.org/metrology.html#systemhasunitaryquantity</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-systemhasunitaryquantity">5.1. systemOfQuantities-electric-charge</a>
+    <li><a href="#ref-for-systemhasunitaryquantity①">5.2. systemOfQuantities-electric-current</a>
+    <li><a href="#ref-for-systemhasunitaryquantity②">5.3. systemOfQuantities-electric-field-strength</a>
+    <li><a href="#ref-for-systemhasunitaryquantity③">5.4. systemOfQuantities-electric-potential</a>
+    <li><a href="#ref-for-systemhasunitaryquantity④">5.5. systemOfQuantities-resistance</a>
    </ul>
   </aside>
   <h3 class="no-num no-ref heading settled" id="index-defined-elsewhere"><span class="content">Terms defined by reference</span><a class="self-link" href="#index-defined-elsewhere"></a></h3>
   <ul class="index">
    <li>
-    <a data-link-type="biblio">[http://iso.org/80000-6-kindsofquantities]</a> defines the following terms:
+    <a data-link-type="biblio">[http://iso.org/80000-6-instances]</a> defines the following terms:
     <ul>
+     <li><span class="dfn-paneled" id="term-for-ampere">ampere</span>
+     <li><span class="dfn-paneled" id="term-for-coulomb">coulomb</span>
      <li><span class="dfn-paneled" id="term-for-electric-charge">electric-charge</span>
      <li><span class="dfn-paneled" id="term-for-electric-current">electric-current</span>
      <li><span class="dfn-paneled" id="term-for-electric-field-strength">electric-field-strength</span>
      <li><span class="dfn-paneled" id="term-for-electric-potential">electric-potential</span>
+     <li><span class="dfn-paneled" id="term-for-newton-per-coulomb">newton-per-coulomb</span>
+     <li><span class="dfn-paneled" id="term-for-ohm">ohm</span>
      <li><span class="dfn-paneled" id="term-for-resistance">resistance</span>
+     <li><span class="dfn-paneled" id="term-for-volt">volt</span>
+    </ul>
+   <li>
+    <a data-link-type="biblio">[http://iso.org/80000-6-quantities]</a> defines the following terms:
+    <ul>
+     <li><span class="dfn-paneled" id="term-for-electric-charge①">electric-charge</span>
+     <li><span class="dfn-paneled" id="term-for-electric-current①">electric-current</span>
+     <li><span class="dfn-paneled" id="term-for-electric-field-strength①">electric-field-strength</span>
+     <li><span class="dfn-paneled" id="term-for-electric-potential①">electric-potential</span>
+     <li><span class="dfn-paneled" id="term-for-resistance①">resistance</span>
     </ul>
    <li>
     <a data-link-type="biblio">[http://iso.org/80000-6-units]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="term-for-ampere">ampere</span>
-     <li><span class="dfn-paneled" id="term-for-coulomb">coulomb</span>
-     <li><span class="dfn-paneled" id="term-for-newton-per-coulomb">newton-per-coulomb</span>
-     <li><span class="dfn-paneled" id="term-for-ohm">ohm</span>
-     <li><span class="dfn-paneled" id="term-for-volt">volt</span>
+     <li><span class="dfn-paneled" id="term-for-ampere①">ampere</span>
+     <li><span class="dfn-paneled" id="term-for-coulomb①">coulomb</span>
+     <li><span class="dfn-paneled" id="term-for-newton-per-coulomb①">newton-per-coulomb</span>
+     <li><span class="dfn-paneled" id="term-for-ohm①">ohm</span>
+     <li><span class="dfn-paneled" id="term-for-volt①">volt</span>
+    </ul>
+   <li>
+    <a data-link-type="biblio">[http://iso.org/80000-instances]</a> defines the following terms:
+    <ul>
+     <li><span class="dfn-paneled" id="term-for-systemofquantities">systemofquantities</span>
+     <li><span class="dfn-paneled" id="term-for-systemofunits">systemofunits</span>
+    </ul>
+   <li>
+    <a data-link-type="biblio">[http://iupac.org/metrology]</a> defines the following terms:
+    <ul>
+     <li><span class="dfn-paneled" id="term-for-isbasemetrologicalunit">isbasemetrologicalunit</span>
+     <li><span class="dfn-paneled" id="term-for-isbasequantity">isbasequantity</span>
+     <li><span class="dfn-paneled" id="term-for-systemhasmetrologicalunit">systemhasmetrologicalunit</span>
+     <li><span class="dfn-paneled" id="term-for-systemhasunitaryquantity">systemhasunitaryquantity</span>
     </ul>
   </ul>
 <script>/* script-dfn-panel */

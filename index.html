@@ -1324,7 +1324,7 @@ Possible extra rowspan handling
   <meta content="Bikeshed version 89ebb6ab, updated Fri Oct 9 15:32:07 2020 -0700" name="generator">
   <link href="https://opencaesar.github.io/core-vocabularies/" rel="canonical">
   <link href="https://opencaesar.github.io/assets/img/oml.png" rel="icon">
-  <meta content="abba896ba09b6a1418147cedc1142ac310e18f73" name="document-revision">
+  <meta content="016d25312624eba77cc9060e2b9fc3b359f0e606" name="document-revision">
 <style>/* style-autolinks */
 
 .css.css, .property.property, .descriptor.descriptor {
@@ -1704,7 +1704,7 @@ dfn > a.self-link::before      { content: "#"; }
   <div class="head">
    <p data-fill-with="logo"><a class="logo" href="https://www.openapis.org/"><img alt="OpenAPI Initiative" height="48" src="https://opencaesar.github.io/oml/images/oml.svg"></a></p>
    <h1 class="p-name no-ref" id="title">OML Ontologies Index</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2020-11-03">3 November 2020</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2020-11-13">13 November 2020</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -1731,46 +1731,64 @@ dfn > a.self-link::before      { content: "#"; }
      <ol class="toc">
       <li><a href="#heading-80000-1-decimalPrefix-1"><span class="secno">1.1</span> <span class="content"><span>80000-1-decimalPrefix</span></span></a>
       <li><a href="#heading-80000-1-2"><span class="secno">1.2</span> <span class="content"><span>80000-1</span></span></a>
-      <li><a href="#heading-80000-3-instances-3"><span class="secno">1.3</span> <span class="content"><span>80000-3-instances</span></span></a>
-      <li><a href="#heading-80000-3-kindsOfQuantities-4"><span class="secno">1.4</span> <span class="content"><span>80000-3-kindsOfQuantities</span></span></a>
-      <li><a href="#heading-80000-3-units-5"><span class="secno">1.5</span> <span class="content"><span>80000-3-units</span></span></a>
-      <li><a href="#heading-80000-4-instances-6"><span class="secno">1.6</span> <span class="content"><span>80000-4-instances</span></span></a>
-      <li><a href="#heading-80000-4-kindsOfQuantities-7"><span class="secno">1.7</span> <span class="content"><span>80000-4-kindsOfQuantities</span></span></a>
-      <li><a href="#heading-80000-4-units-8"><span class="secno">1.8</span> <span class="content"><span>80000-4-units</span></span></a>
-      <li><a href="#heading-80000-5-instances-9"><span class="secno">1.9</span> <span class="content"><span>80000-5-instances</span></span></a>
-      <li><a href="#heading-80000-5-kindsOfQuantities-10"><span class="secno">1.10</span> <span class="content"><span>80000-5-kindsOfQuantities</span></span></a>
-      <li><a href="#heading-80000-5-units-11"><span class="secno">1.11</span> <span class="content"><span>80000-5-units</span></span></a>
-      <li><a href="#heading-80000-6-instances-12"><span class="secno">1.12</span> <span class="content"><span>80000-6-instances</span></span></a>
-      <li><a href="#heading-80000-6-kindsOfQuantities-13"><span class="secno">1.13</span> <span class="content"><span>80000-6-kindsOfQuantities</span></span></a>
-      <li><a href="#heading-80000-6-units-14"><span class="secno">1.14</span> <span class="content"><span>80000-6-units</span></span></a>
-      <li><a href="#heading-80000-3-15"><span class="secno">1.15</span> <span class="content"><span>80000-3</span></span></a>
+      <li><a href="#heading-80000-3-derivation-consistency-3"><span class="secno">1.3</span> <span class="content"><span>80000-3-derivation-consistency</span></span></a>
+      <li><a href="#heading-80000-3-instances-4"><span class="secno">1.4</span> <span class="content"><span>80000-3-instances</span></span></a>
+      <li><a href="#heading-80000-3-quantities-5"><span class="secno">1.5</span> <span class="content"><span>80000-3-quantities</span></span></a>
+      <li><a href="#heading-80000-3-quantityValues-6"><span class="secno">1.6</span> <span class="content"><span>80000-3-quantityValues</span></span></a>
+      <li><a href="#heading-80000-3-units-7"><span class="secno">1.7</span> <span class="content"><span>80000-3-units</span></span></a>
+      <li><a href="#heading-80000-4-derivation-consistency-8"><span class="secno">1.8</span> <span class="content"><span>80000-4-derivation-consistency</span></span></a>
+      <li><a href="#heading-80000-4-instances-9"><span class="secno">1.9</span> <span class="content"><span>80000-4-instances</span></span></a>
+      <li><a href="#heading-80000-4-quantities-10"><span class="secno">1.10</span> <span class="content"><span>80000-4-quantities</span></span></a>
+      <li><a href="#heading-80000-4-quantityValues-11"><span class="secno">1.11</span> <span class="content"><span>80000-4-quantityValues</span></span></a>
+      <li><a href="#heading-80000-4-units-12"><span class="secno">1.12</span> <span class="content"><span>80000-4-units</span></span></a>
+      <li><a href="#heading-80000-5-derivation-consistency-13"><span class="secno">1.13</span> <span class="content"><span>80000-5-derivation-consistency</span></span></a>
+      <li><a href="#heading-80000-5-instances-14"><span class="secno">1.14</span> <span class="content"><span>80000-5-instances</span></span></a>
+      <li><a href="#heading-80000-5-quantities-15"><span class="secno">1.15</span> <span class="content"><span>80000-5-quantities</span></span></a>
+      <li><a href="#heading-80000-5-quantityValues-16"><span class="secno">1.16</span> <span class="content"><span>80000-5-quantityValues</span></span></a>
+      <li><a href="#heading-80000-5-units-17"><span class="secno">1.17</span> <span class="content"><span>80000-5-units</span></span></a>
+      <li><a href="#heading-80000-6-derivation-consistency-18"><span class="secno">1.18</span> <span class="content"><span>80000-6-derivation-consistency</span></span></a>
+      <li><a href="#heading-80000-6-instances-19"><span class="secno">1.19</span> <span class="content"><span>80000-6-instances</span></span></a>
+      <li><a href="#heading-80000-6-quantities-20"><span class="secno">1.20</span> <span class="content"><span>80000-6-quantities</span></span></a>
+      <li><a href="#heading-80000-6-quantityValues-21"><span class="secno">1.21</span> <span class="content"><span>80000-6-quantityValues</span></span></a>
+      <li><a href="#heading-80000-6-units-22"><span class="secno">1.22</span> <span class="content"><span>80000-6-units</span></span></a>
+      <li><a href="#heading-80000-concepts-23"><span class="secno">1.23</span> <span class="content"><span>80000-concepts</span></span></a>
+      <li><a href="#heading-80000-instances-24"><span class="secno">1.24</span> <span class="content"><span>80000-instances</span></span></a>
+      <li><a href="#heading-80000-3-25"><span class="secno">1.25</span> <span class="content"><span>80000-3</span></span></a>
      </ol>
     <li>
-     <a href="#heading-domain-ontology.iupac.org"><span class="secno">2</span> <span class="content">ontology.iupac.org</span></a>
+     <a href="#heading-domain-iupac.org"><span class="secno">2</span> <span class="content">iupac.org</span></a>
      <ol class="toc">
-      <li><a href="#heading-core-16"><span class="secno">2.1</span> <span class="content"><span>core</span></span></a>
-      <li><a href="#heading-kindsOfQuantities-17"><span class="secno">2.2</span> <span class="content"><span>kindsOfQuantities</span></span></a>
-      <li><a href="#heading-quantities-18"><span class="secno">2.3</span> <span class="content"><span>quantities</span></span></a>
-      <li><a href="#heading-units-19"><span class="secno">2.4</span> <span class="content"><span>units</span></span></a>
-      <li><a href="#heading-metrology-20"><span class="secno">2.5</span> <span class="content"><span>An Ontology on Property</span></span></a>
+      <li><a href="#heading-core-26"><span class="secno">2.1</span> <span class="content"><span>core</span></span></a>
+      <li><a href="#heading-quantities-and-values-27"><span class="secno">2.2</span> <span class="content"><span>quantities-and-values</span></span></a>
+      <li><a href="#heading-system-of-quantities-28"><span class="secno">2.3</span> <span class="content"><span>system-of-quantities</span></span></a>
+      <li><a href="#heading-system-of-units-29"><span class="secno">2.4</span> <span class="content"><span>system-of-units</span></span></a>
+      <li><a href="#heading-units-30"><span class="secno">2.5</span> <span class="content"><span>units</span></span></a>
+      <li><a href="#heading-metrology-31"><span class="secno">2.6</span> <span class="content"><span>Metrology vocabulary adapted from iupac.org</span></span></a>
      </ol>
     <li>
-     <a href="#heading-domain-opencaesar.io"><span class="secno">3</span> <span class="content">opencaesar.io</span></a>
+     <a href="#heading-domain-nist.gov"><span class="secno">3</span> <span class="content">nist.gov</span></a>
      <ol class="toc">
-      <li><a href="#heading-diagram-21"><span class="secno">3.1</span> <span class="content"><span>diagram</span></span></a>
+      <li><a href="#heading-special-publication-811-instances-32"><span class="secno">3.1</span> <span class="content"><span>special-publication-811-instances</span></span></a>
+      <li><a href="#heading-special-publication-811-quantityValues-33"><span class="secno">3.2</span> <span class="content"><span>special-publication-811-quantityValues</span></span></a>
+      <li><a href="#heading-special-publication-811-units-34"><span class="secno">3.3</span> <span class="content"><span>special-publication-811-units</span></span></a>
      </ol>
     <li>
-     <a href="#heading-domain-purl.org"><span class="secno">4</span> <span class="content">purl.org</span></a>
+     <a href="#heading-domain-opencaesar.io"><span class="secno">4</span> <span class="content">opencaesar.io</span></a>
      <ol class="toc">
-      <li><a href="#heading-dc-22"><span class="secno">4.1</span> <span class="content"><span>DC</span></span></a>
+      <li><a href="#heading-diagram-35"><span class="secno">4.1</span> <span class="content"><span>diagram</span></span></a>
      </ol>
     <li>
-     <a href="#heading-domain-www.w3.org"><span class="secno">5</span> <span class="content">www.w3.org</span></a>
+     <a href="#heading-domain-purl.org"><span class="secno">5</span> <span class="content">purl.org</span></a>
      <ol class="toc">
-      <li><a href="#heading-rdf-23"><span class="secno">5.1</span> <span class="content"><span>RDF</span></span></a>
-      <li><a href="#heading-rdfs-24"><span class="secno">5.2</span> <span class="content"><span>RDFS</span></span></a>
-      <li><a href="#heading-xsd-25"><span class="secno">5.3</span> <span class="content"><span>XSD</span></span></a>
-      <li><a href="#heading-owl-26"><span class="secno">5.4</span> <span class="content"><span>OWL2</span></span></a>
+      <li><a href="#heading-dc-36"><span class="secno">5.1</span> <span class="content"><span>DC</span></span></a>
+     </ol>
+    <li>
+     <a href="#heading-domain-www.w3.org"><span class="secno">6</span> <span class="content">www.w3.org</span></a>
+     <ol class="toc">
+      <li><a href="#heading-rdf-37"><span class="secno">6.1</span> <span class="content"><span>RDF</span></span></a>
+      <li><a href="#heading-rdfs-38"><span class="secno">6.2</span> <span class="content"><span>RDFS</span></span></a>
+      <li><a href="#heading-xsd-39"><span class="secno">6.3</span> <span class="content"><span>XSD</span></span></a>
+      <li><a href="#heading-owl-40"><span class="secno">6.4</span> <span class="content"><span>OWL2</span></span></a>
      </ol>
    </ol>
   </nav>
@@ -1778,25 +1796,60 @@ dfn > a.self-link::before      { content: "#"; }
    <h2 class="heading settled" data-level="1" id="heading-domain-iso.org"><span class="secno">1. </span><span class="content">iso.org</span><a class="self-link" href="#heading-domain-iso.org"></a></h2>
    <h3 class="heading settled" data-level="1.1" id="heading-80000-1-decimalPrefix-1"><span class="secno">1.1. </span><span class="content"><a href="./src/oml/iso.org/80000-1-decimalPrefix.html">80000-1-decimalPrefix</a></span><a class="self-link" href="#heading-80000-1-decimalPrefix-1"></a></h3>
    <h3 class="heading settled" data-level="1.2" id="heading-80000-1-2"><span class="secno">1.2. </span><span class="content"><a href="./src/oml/iso.org/80000-1.html">80000-1</a></span><a class="self-link" href="#heading-80000-1-2"></a></h3>
-   <h3 class="heading settled" data-level="1.3" id="heading-80000-3-instances-3"><span class="secno">1.3. </span><span class="content"><a href="./src/oml/iso.org/80000-3-instances.html">80000-3-instances</a></span><a class="self-link" href="#heading-80000-3-instances-3"></a></h3>
-   <h3 class="heading settled" data-level="1.4" id="heading-80000-3-kindsOfQuantities-4"><span class="secno">1.4. </span><span class="content"><a href="./src/oml/iso.org/80000-3-kindsOfQuantities.html">80000-3-kindsOfQuantities</a></span><a class="self-link" href="#heading-80000-3-kindsOfQuantities-4"></a></h3>
-   <h3 class="heading settled" data-level="1.5" id="heading-80000-3-units-5"><span class="secno">1.5. </span><span class="content"><a href="./src/oml/iso.org/80000-3-units.html">80000-3-units</a></span><a class="self-link" href="#heading-80000-3-units-5"></a></h3>
-   <h3 class="heading settled" data-level="1.6" id="heading-80000-4-instances-6"><span class="secno">1.6. </span><span class="content"><a href="./src/oml/iso.org/80000-4-instances.html">80000-4-instances</a></span><a class="self-link" href="#heading-80000-4-instances-6"></a></h3>
-   <h3 class="heading settled" data-level="1.7" id="heading-80000-4-kindsOfQuantities-7"><span class="secno">1.7. </span><span class="content"><a href="./src/oml/iso.org/80000-4-kindsOfQuantities.html">80000-4-kindsOfQuantities</a></span><a class="self-link" href="#heading-80000-4-kindsOfQuantities-7"></a></h3>
-   <h3 class="heading settled" data-level="1.8" id="heading-80000-4-units-8"><span class="secno">1.8. </span><span class="content"><a href="./src/oml/iso.org/80000-4-units.html">80000-4-units</a></span><a class="self-link" href="#heading-80000-4-units-8"></a></h3>
-   <h3 class="heading settled" data-level="1.9" id="heading-80000-5-instances-9"><span class="secno">1.9. </span><span class="content"><a href="./src/oml/iso.org/80000-5-instances.html">80000-5-instances</a></span><a class="self-link" href="#heading-80000-5-instances-9"></a></h3>
-   <h3 class="heading settled" data-level="1.10" id="heading-80000-5-kindsOfQuantities-10"><span class="secno">1.10. </span><span class="content"><a href="./src/oml/iso.org/80000-5-kindsOfQuantities.html">80000-5-kindsOfQuantities</a></span><a class="self-link" href="#heading-80000-5-kindsOfQuantities-10"></a></h3>
-   <h3 class="heading settled" data-level="1.11" id="heading-80000-5-units-11"><span class="secno">1.11. </span><span class="content"><a href="./src/oml/iso.org/80000-5-units.html">80000-5-units</a></span><a class="self-link" href="#heading-80000-5-units-11"></a></h3>
-   <h3 class="heading settled" data-level="1.12" id="heading-80000-6-instances-12"><span class="secno">1.12. </span><span class="content"><a href="./src/oml/iso.org/80000-6-instances.html">80000-6-instances</a></span><a class="self-link" href="#heading-80000-6-instances-12"></a></h3>
-   <h3 class="heading settled" data-level="1.13" id="heading-80000-6-kindsOfQuantities-13"><span class="secno">1.13. </span><span class="content"><a href="./src/oml/iso.org/80000-6-kindsOfQuantities.html">80000-6-kindsOfQuantities</a></span><a class="self-link" href="#heading-80000-6-kindsOfQuantities-13"></a></h3>
-   <h3 class="heading settled" data-level="1.14" id="heading-80000-6-units-14"><span class="secno">1.14. </span><span class="content"><a href="./src/oml/iso.org/80000-6-units.html">80000-6-units</a></span><a class="self-link" href="#heading-80000-6-units-14"></a></h3>
-   <h3 class="heading settled" data-level="1.15" id="heading-80000-3-15"><span class="secno">1.15. </span><span class="content"><a href="./src/oml/iso.org/diagrams/80000-3-diagram.html">80000-3</a></span><a class="self-link" href="#heading-80000-3-15"></a></h3>
-   <h2 class="heading settled" data-level="2" id="heading-domain-ontology.iupac.org"><span class="secno">2. </span><span class="content">ontology.iupac.org</span><a class="self-link" href="#heading-domain-ontology.iupac.org"></a></h2>
-   <h3 class="heading settled" data-level="2.1" id="heading-core-16"><span class="secno">2.1. </span><span class="content"><a href="./src/oml/ontology.iupac.org/diagrams/core.html">core</a></span><a class="self-link" href="#heading-core-16"></a></h3>
-   <h3 class="heading settled" data-level="2.2" id="heading-kindsOfQuantities-17"><span class="secno">2.2. </span><span class="content"><a href="./src/oml/ontology.iupac.org/diagrams/kindsOfQuantities.html">kindsOfQuantities</a></span><a class="self-link" href="#heading-kindsOfQuantities-17"></a></h3>
-   <h3 class="heading settled" data-level="2.3" id="heading-quantities-18"><span class="secno">2.3. </span><span class="content"><a href="./src/oml/ontology.iupac.org/diagrams/quantities.html">quantities</a></span><a class="self-link" href="#heading-quantities-18"></a></h3>
-   <h3 class="heading settled" data-level="2.4" id="heading-units-19"><span class="secno">2.4. </span><span class="content"><a href="./src/oml/ontology.iupac.org/diagrams/units.html">units</a></span><a class="self-link" href="#heading-units-19"></a></h3>
-   <h3 class="heading settled" data-level="2.5" id="heading-metrology-20"><span class="secno">2.5. </span><span class="content"><a href="./src/oml/ontology.iupac.org/metrology.html">An Ontology on Property</a></span><a class="self-link" href="#heading-metrology-20"></a></h3>
+   <h3 class="heading settled" data-level="1.3" id="heading-80000-3-derivation-consistency-3"><span class="secno">1.3. </span><span class="content"><a href="./src/oml/iso.org/80000-3-derivation-consistency.html">80000-3-derivation-consistency</a></span><a class="self-link" href="#heading-80000-3-derivation-consistency-3"></a></h3>
+    Optional consistency rules to enforce that derived quantities are about the same object as the objects of their quantity factors. 
+   <h3 class="heading settled" data-level="1.4" id="heading-80000-3-instances-4"><span class="secno">1.4. </span><span class="content"><a href="./src/oml/iso.org/80000-3-instances.html">80000-3-instances</a></span><a class="self-link" href="#heading-80000-3-instances-4"></a></h3>
+   <h3 class="heading settled" data-level="1.5" id="heading-80000-3-quantities-5"><span class="secno">1.5. </span><span class="content"><a href="./src/oml/iso.org/80000-3-quantities.html">80000-3-quantities</a></span><a class="self-link" href="#heading-80000-3-quantities-5"></a></h3>
+   <h3 class="heading settled" data-level="1.6" id="heading-80000-3-quantityValues-6"><span class="secno">1.6. </span><span class="content"><a href="./src/oml/iso.org/80000-3-quantityValues.html">80000-3-quantityValues</a></span><a class="self-link" href="#heading-80000-3-quantityValues-6"></a></h3>
+    This vocabulary provides convenience specializations of metrology:UnitaryQuantityValue
+as concepts for every metrology:MeasurementUnit defined in http://iso.org/80000-3-units. 
+   <p>Note that this vocabulary reflects an opinionated usage of metrology:UnitaryQuantityValue
+as an OML concept and does not exclude in any way other possible usages.</p>
+   <h3 class="heading settled" data-level="1.7" id="heading-80000-3-units-7"><span class="secno">1.7. </span><span class="content"><a href="./src/oml/iso.org/80000-3-units.html">80000-3-units</a></span><a class="self-link" href="#heading-80000-3-units-7"></a></h3>
+   <h3 class="heading settled" data-level="1.8" id="heading-80000-4-derivation-consistency-8"><span class="secno">1.8. </span><span class="content"><a href="./src/oml/iso.org/80000-4-derivation-consistency.html">80000-4-derivation-consistency</a></span><a class="self-link" href="#heading-80000-4-derivation-consistency-8"></a></h3>
+    Optional consistency rules to enforce that derived quantities are about the same object as the objects of their quantity factors. 
+   <h3 class="heading settled" data-level="1.9" id="heading-80000-4-instances-9"><span class="secno">1.9. </span><span class="content"><a href="./src/oml/iso.org/80000-4-instances.html">80000-4-instances</a></span><a class="self-link" href="#heading-80000-4-instances-9"></a></h3>
+   <h3 class="heading settled" data-level="1.10" id="heading-80000-4-quantities-10"><span class="secno">1.10. </span><span class="content"><a href="./src/oml/iso.org/80000-4-quantities.html">80000-4-quantities</a></span><a class="self-link" href="#heading-80000-4-quantities-10"></a></h3>
+   <h3 class="heading settled" data-level="1.11" id="heading-80000-4-quantityValues-11"><span class="secno">1.11. </span><span class="content"><a href="./src/oml/iso.org/80000-4-quantityValues.html">80000-4-quantityValues</a></span><a class="self-link" href="#heading-80000-4-quantityValues-11"></a></h3>
+    This vocabulary provides convenience specializations of metrology:UnitaryQuantityValue
+as concepts for every metrology:MeasurementUnit defined in http://iso.org/80000-4-units. 
+   <p>Note that this vocabulary reflects an opinionated usage of metrology:UnitaryQuantityValue
+as an OML concept and does not exclude in any way other possible usages.</p>
+   <h3 class="heading settled" data-level="1.12" id="heading-80000-4-units-12"><span class="secno">1.12. </span><span class="content"><a href="./src/oml/iso.org/80000-4-units.html">80000-4-units</a></span><a class="self-link" href="#heading-80000-4-units-12"></a></h3>
+   <h3 class="heading settled" data-level="1.13" id="heading-80000-5-derivation-consistency-13"><span class="secno">1.13. </span><span class="content"><a href="./src/oml/iso.org/80000-5-derivation-consistency.html">80000-5-derivation-consistency</a></span><a class="self-link" href="#heading-80000-5-derivation-consistency-13"></a></h3>
+    Optional consistency rules to enforce that derived quantities are about the same object as the objects of their quantity factors. 
+   <h3 class="heading settled" data-level="1.14" id="heading-80000-5-instances-14"><span class="secno">1.14. </span><span class="content"><a href="./src/oml/iso.org/80000-5-instances.html">80000-5-instances</a></span><a class="self-link" href="#heading-80000-5-instances-14"></a></h3>
+   <h3 class="heading settled" data-level="1.15" id="heading-80000-5-quantities-15"><span class="secno">1.15. </span><span class="content"><a href="./src/oml/iso.org/80000-5-quantities.html">80000-5-quantities</a></span><a class="self-link" href="#heading-80000-5-quantities-15"></a></h3>
+   <h3 class="heading settled" data-level="1.16" id="heading-80000-5-quantityValues-16"><span class="secno">1.16. </span><span class="content"><a href="./src/oml/iso.org/80000-5-quantityValues.html">80000-5-quantityValues</a></span><a class="self-link" href="#heading-80000-5-quantityValues-16"></a></h3>
+    This vocabulary provides convenience specializations of metrology:UnitaryQuantityValue
+as concepts for every metrology:MeasurementUnit defined in http://iso.org/80000-5-units. 
+   <p>Note that this vocabulary reflects an opinionated usage of metrology:UnitaryQuantityValue
+as an OML concept and does not exclude in any way other possible usages.</p>
+   <h3 class="heading settled" data-level="1.17" id="heading-80000-5-units-17"><span class="secno">1.17. </span><span class="content"><a href="./src/oml/iso.org/80000-5-units.html">80000-5-units</a></span><a class="self-link" href="#heading-80000-5-units-17"></a></h3>
+   <h3 class="heading settled" data-level="1.18" id="heading-80000-6-derivation-consistency-18"><span class="secno">1.18. </span><span class="content"><a href="./src/oml/iso.org/80000-6-derivation-consistency.html">80000-6-derivation-consistency</a></span><a class="self-link" href="#heading-80000-6-derivation-consistency-18"></a></h3>
+    Optional consistency rules to enforce that derived quantities are about the same object as the objects of their quantity factors. 
+   <h3 class="heading settled" data-level="1.19" id="heading-80000-6-instances-19"><span class="secno">1.19. </span><span class="content"><a href="./src/oml/iso.org/80000-6-instances.html">80000-6-instances</a></span><a class="self-link" href="#heading-80000-6-instances-19"></a></h3>
+   <h3 class="heading settled" data-level="1.20" id="heading-80000-6-quantities-20"><span class="secno">1.20. </span><span class="content"><a href="./src/oml/iso.org/80000-6-quantities.html">80000-6-quantities</a></span><a class="self-link" href="#heading-80000-6-quantities-20"></a></h3>
+   <h3 class="heading settled" data-level="1.21" id="heading-80000-6-quantityValues-21"><span class="secno">1.21. </span><span class="content"><a href="./src/oml/iso.org/80000-6-quantityValues.html">80000-6-quantityValues</a></span><a class="self-link" href="#heading-80000-6-quantityValues-21"></a></h3>
+    This vocabulary provides convenience specializations of metrology:UnitaryQuantityValue
+as concepts for every metrology:MeasurementUnit defined in http://iso.org/80000-6-units. 
+   <p>Note that this vocabulary reflects an opinionated usage of metrology:UnitaryQuantityValue
+as an OML concept and does not exclude in any way other possible usages.</p>
+   <h3 class="heading settled" data-level="1.22" id="heading-80000-6-units-22"><span class="secno">1.22. </span><span class="content"><a href="./src/oml/iso.org/80000-6-units.html">80000-6-units</a></span><a class="self-link" href="#heading-80000-6-units-22"></a></h3>
+   <h3 class="heading settled" data-level="1.23" id="heading-80000-concepts-23"><span class="secno">1.23. </span><span class="content"><a href="./src/oml/iso.org/80000-concepts.html">80000-concepts</a></span><a class="self-link" href="#heading-80000-concepts-23"></a></h3>
+    This vocabulary defines two concepts, 80000-concepts:Unitary80000-concepts:UnitaryQuantityValueQuantity and 80000-concepts:MeasurementUnit, 
+intended to be the root of the taxonomy of all definitions of metrology:Unitary80000-concepts:UnitaryQuantityValueQuantity and metrology:MeasurementUnit respectively. 
+   <p>The bundle closure over this vocabulary and a set of ISO 80K vocabularies will effectively
+force all definitions of 80000-concepts:Unitary80000-concepts:UnitaryQuantityValueQuantity and 80000-concepts:MeasurementUnit to be mutually disjoint.</p>
+   <h3 class="heading settled" data-level="1.24" id="heading-80000-instances-24"><span class="secno">1.24. </span><span class="content"><a href="./src/oml/iso.org/80000-instances.html">80000-instances</a></span><a class="self-link" href="#heading-80000-instances-24"></a></h3>
+   <h3 class="heading settled" data-level="1.25" id="heading-80000-3-25"><span class="secno">1.25. </span><span class="content"><a href="./src/oml/iso.org/diagrams/80000-3-diagram.html">80000-3</a></span><a class="self-link" href="#heading-80000-3-25"></a></h3>
+   <h2 class="heading settled" data-level="2" id="heading-domain-iupac.org"><span class="secno">2. </span><span class="content">iupac.org</span><a class="self-link" href="#heading-domain-iupac.org"></a></h2>
+   <h3 class="heading settled" data-level="2.1" id="heading-core-26"><span class="secno">2.1. </span><span class="content"><a href="./src/oml/iupac.org/diagrams/core.html">core</a></span><a class="self-link" href="#heading-core-26"></a></h3>
+   <h3 class="heading settled" data-level="2.2" id="heading-quantities-and-values-27"><span class="secno">2.2. </span><span class="content"><a href="./src/oml/iupac.org/diagrams/quantities-and-values.html">quantities-and-values</a></span><a class="self-link" href="#heading-quantities-and-values-27"></a></h3>
+   <h3 class="heading settled" data-level="2.3" id="heading-system-of-quantities-28"><span class="secno">2.3. </span><span class="content"><a href="./src/oml/iupac.org/diagrams/system-of-quantities.html">system-of-quantities</a></span><a class="self-link" href="#heading-system-of-quantities-28"></a></h3>
+   <h3 class="heading settled" data-level="2.4" id="heading-system-of-units-29"><span class="secno">2.4. </span><span class="content"><a href="./src/oml/iupac.org/diagrams/system-of-units.html">system-of-units</a></span><a class="self-link" href="#heading-system-of-units-29"></a></h3>
+   <h3 class="heading settled" data-level="2.5" id="heading-units-30"><span class="secno">2.5. </span><span class="content"><a href="./src/oml/iupac.org/diagrams/units.html">units</a></span><a class="self-link" href="#heading-units-30"></a></h3>
+   <h3 class="heading settled" data-level="2.6" id="heading-metrology-31"><span class="secno">2.6. </span><span class="content"><a href="./src/oml/iupac.org/metrology.html">Metrology vocabulary adapted from iupac.org</a></span><a class="self-link" href="#heading-metrology-31"></a></h3>
     This vocabulary is a partial account of Prof. Rene Dybkaer’s 'An Ontology of Property' 
 focused on the concepts necessary for dimensional analysis of systems of metrological units and
 of systems of quantities based on the algebraic relationships involved in the
@@ -1808,19 +1861,25 @@ The VIM3 is available in document PDF here: https://www.bipm.org/utils/common/do
    <p>References to definitions in the ontology are indicated via a reference
 in parentheses with a chapter and section and a page number;
 for example, (S.2.23, p. 33) refers to the definition of 'object' on page 33.</p>
-   <h2 class="heading settled" data-level="3" id="heading-domain-opencaesar.io"><span class="secno">3. </span><span class="content">opencaesar.io</span><a class="self-link" href="#heading-domain-opencaesar.io"></a></h2>
-   <h3 class="heading settled" data-level="3.1" id="heading-diagram-21"><span class="secno">3.1. </span><span class="content"><a href="./src/oml/opencaesar.io/diagram.html">diagram</a></span><a class="self-link" href="#heading-diagram-21"></a></h3>
-   <h2 class="heading settled" data-level="4" id="heading-domain-purl.org"><span class="secno">4. </span><span class="content">purl.org</span><a class="self-link" href="#heading-domain-purl.org"></a></h2>
-   <h3 class="heading settled" data-level="4.1" id="heading-dc-22"><span class="secno">4.1. </span><span class="content"><a href="./src/oml/purl.org/dc/elements/1.1.html">DC</a></span><a class="self-link" href="#heading-dc-22"></a></h3>
+   <h2 class="heading settled" data-level="3" id="heading-domain-nist.gov"><span class="secno">3. </span><span class="content">nist.gov</span><a class="self-link" href="#heading-domain-nist.gov"></a></h2>
+   <h3 class="heading settled" data-level="3.1" id="heading-special-publication-811-instances-32"><span class="secno">3.1. </span><span class="content"><a href="./src/oml/nist.gov/pml/special-publication-811-instances.html">special-publication-811-instances</a></span><a class="self-link" href="#heading-special-publication-811-instances-32"></a></h3>
+    English Engineering Units defined in NIST PML Special Publication 811, Appendix B.8 
+   <h3 class="heading settled" data-level="3.2" id="heading-special-publication-811-quantityValues-33"><span class="secno">3.2. </span><span class="content"><a href="./src/oml/nist.gov/pml/special-publication-811-quantityValues.html">special-publication-811-quantityValues</a></span><a class="self-link" href="#heading-special-publication-811-quantityValues-33"></a></h3>
+   <h3 class="heading settled" data-level="3.3" id="heading-special-publication-811-units-34"><span class="secno">3.3. </span><span class="content"><a href="./src/oml/nist.gov/pml/special-publication-811-units.html">special-publication-811-units</a></span><a class="self-link" href="#heading-special-publication-811-units-34"></a></h3>
+    English Engineering Units defined in NIST PML Special Publication 811, Appendix B.8 
+   <h2 class="heading settled" data-level="4" id="heading-domain-opencaesar.io"><span class="secno">4. </span><span class="content">opencaesar.io</span><a class="self-link" href="#heading-domain-opencaesar.io"></a></h2>
+   <h3 class="heading settled" data-level="4.1" id="heading-diagram-35"><span class="secno">4.1. </span><span class="content"><a href="./src/oml/opencaesar.io/diagram.html">diagram</a></span><a class="self-link" href="#heading-diagram-35"></a></h3>
+   <h2 class="heading settled" data-level="5" id="heading-domain-purl.org"><span class="secno">5. </span><span class="content">purl.org</span><a class="self-link" href="#heading-domain-purl.org"></a></h2>
+   <h3 class="heading settled" data-level="5.1" id="heading-dc-36"><span class="secno">5.1. </span><span class="content"><a href="./src/oml/purl.org/dc/elements/1.1.html">DC</a></span><a class="self-link" href="#heading-dc-36"></a></h3>
     The DC vocabulary is a subset of the vocabulary maintained by the Dublin Core Metadata Initiative. 
-   <h2 class="heading settled" data-level="5" id="heading-domain-www.w3.org"><span class="secno">5. </span><span class="content">www.w3.org</span><a class="self-link" href="#heading-domain-www.w3.org"></a></h2>
-   <h3 class="heading settled" data-level="5.1" id="heading-rdf-23"><span class="secno">5.1. </span><span class="content"><a href="./src/oml/www.w3.org/1999/02/22-rdf-syntax-ns.html">RDF</a></span><a class="self-link" href="#heading-rdf-23"></a></h3>
+   <h2 class="heading settled" data-level="6" id="heading-domain-www.w3.org"><span class="secno">6. </span><span class="content">www.w3.org</span><a class="self-link" href="#heading-domain-www.w3.org"></a></h2>
+   <h3 class="heading settled" data-level="6.1" id="heading-rdf-37"><span class="secno">6.1. </span><span class="content"><a href="./src/oml/www.w3.org/1999/02/22-rdf-syntax-ns.html">RDF</a></span><a class="self-link" href="#heading-rdf-37"></a></h3>
     The RDF vocabulary is a subset of the vocabulary maintained by the W3C. 
-   <h3 class="heading settled" data-level="5.2" id="heading-rdfs-24"><span class="secno">5.2. </span><span class="content"><a href="./src/oml/www.w3.org/2000/01/rdf-schema.html">RDFS</a></span><a class="self-link" href="#heading-rdfs-24"></a></h3>
+   <h3 class="heading settled" data-level="6.2" id="heading-rdfs-38"><span class="secno">6.2. </span><span class="content"><a href="./src/oml/www.w3.org/2000/01/rdf-schema.html">RDFS</a></span><a class="self-link" href="#heading-rdfs-38"></a></h3>
     The RDFS vocabulary is a subset of the vocabulary maintained by the W3C. 
-   <h3 class="heading settled" data-level="5.3" id="heading-xsd-25"><span class="secno">5.3. </span><span class="content"><a href="./src/oml/www.w3.org/2001/XMLSchema.html">XSD</a></span><a class="self-link" href="#heading-xsd-25"></a></h3>
+   <h3 class="heading settled" data-level="6.3" id="heading-xsd-39"><span class="secno">6.3. </span><span class="content"><a href="./src/oml/www.w3.org/2001/XMLSchema.html">XSD</a></span><a class="self-link" href="#heading-xsd-39"></a></h3>
     The XSD vocabulary is a subset of the corresponding vocabulary maintained by the W3C. 
-   <h3 class="heading settled" data-level="5.4" id="heading-owl-26"><span class="secno">5.4. </span><span class="content"><a href="./src/oml/www.w3.org/2002/07/owl.html">OWL2</a></span><a class="self-link" href="#heading-owl-26"></a></h3>
+   <h3 class="heading settled" data-level="6.4" id="heading-owl-40"><span class="secno">6.4. </span><span class="content"><a href="./src/oml/www.w3.org/2002/07/owl.html">OWL2</a></span><a class="self-link" href="#heading-owl-40"></a></h3>
     The OWL2 vocabulary is a subset of the vocabulary maintained by the W3C. 
   </main>
 <script>

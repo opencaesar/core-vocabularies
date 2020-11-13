@@ -1,7 +1,7 @@
 <!doctype html><html lang="en">
  <head>
   <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-  <title>80000-5-units</title>
+  <title>80000-3-quantityValues</title>
   <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
 <style data-fill-with="stylesheet">/******************************************************************************
  *                   Style sheet for the W3C specifications                   *
@@ -1322,7 +1322,7 @@ Possible extra rowspan handling
 	}
 </style>
   <meta content="Bikeshed version 89ebb6ab, updated Fri Oct 9 15:32:07 2020 -0700" name="generator">
-  <link href="https://opencaesar.github.io/core-vocabularies//src/oml/iso.org/80000-5-units" rel="canonical">
+  <link href="https://opencaesar.github.io/core-vocabularies//src/oml/iso.org/80000-3-quantityValues" rel="canonical">
   <meta content="016d25312624eba77cc9060e2b9fc3b359f0e606" name="document-revision">
 <style>
 a[data-link-type=biblio] {
@@ -1754,12 +1754,12 @@ dfn > a.self-link::before      { content: "#"; }
  <body class="h-entry">
   <div class="head">
    <p data-fill-with="logo"><a class="logo" href="https://www.openapis.org/"><img alt="OpenAPI Initiative" height="48" src="https://opencaesar.github.io/oml/images/oml.svg"></a></p>
-   <h1 class="p-name no-ref" id="title">80000-5-units</h1>
+   <h1 class="p-name no-ref" id="title">80000-3-quantityValues</h1>
    <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2020-11-13">13 November 2020</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
-     <dd><a class="u-url" href="https://opencaesar.github.io/core-vocabularies//src/oml/iso.org/80000-5-units">https://opencaesar.github.io/core-vocabularies//src/oml/iso.org/80000-5-units</a>
+     <dd><a class="u-url" href="https://opencaesar.github.io/core-vocabularies//src/oml/iso.org/80000-3-quantityValues">https://opencaesar.github.io/core-vocabularies//src/oml/iso.org/80000-3-quantityValues</a>
      <dt class="editor">Editor:
      <dd class="editor p-author h-card vcard"><span class="p-name fn">Unknown</span>
      <dt>Copyright:
@@ -1771,6 +1771,12 @@ dfn > a.self-link::before      { content: "#"; }
   </div>
   <div class="p-summary" data-fill-with="abstract">
    <h2 class="no-num no-toc no-ref heading settled" id="abstract"><span class="content">Abstract</span></h2>
+   <p>This vocabulary provides convenience specializations of metrology:UnitaryQuantityValue
+
+ as concepts for every metrology:MeasurementUnit defined in http://iso.org/80000-3-units.</p>
+   <p>Note that this vocabulary reflects an opinionated usage of metrology:UnitaryQuantityValue
+
+ as an OML concept and does not exclude in any way other possible usages.</p>
   </div>
   <div data-fill-with="at-risk"></div>
   <nav data-fill-with="table-of-contents" id="toc">
@@ -1779,23 +1785,19 @@ dfn > a.self-link::before      { content: "#"; }
     <li><a href="#Namespace"><span class="secno">1</span> <span class="content">Namespace</span></a>
     <li><a href="#Extensions"><span class="secno">2</span> <span class="content">Imports</span></a>
     <li>
-     <a href="#Aspects"><span class="secno">3</span> <span class="content">Aspects</span></a>
+     <a href="#Relations"><span class="secno">3</span> <span class="content">Relation Entities</span></a>
      <ol class="toc">
-      <li><a href="#UnitOfCelciusTemperatureValue"><span class="secno">3.1</span> <span class="content"><span>UnitOfCelciusTemperatureValue</span></span></a>
-      <li><a href="#UnitOfThermodynamicTemperatureValue"><span class="secno">3.2</span> <span class="content"><span>UnitOfThermodynamicTemperatureValue</span></span></a>
-     </ol>
-    <li>
-     <a href="#concepts"><span class="secno">4</span> <span class="content">Concepts</span></a>
-     <ol class="toc">
-      <li><a href="#UnitOfCelciusTemperature"><span class="secno">4.1</span> <span class="content"><span>UnitOfCelciusTemperature</span></span></a>
-      <li><a href="#UnitOfThermodynamicTemperature"><span class="secno">4.2</span> <span class="content"><span>UnitOfThermodynamicTemperature</span></span></a>
-      <li><a href="#DegreeCelcius"><span class="secno">4.3</span> <span class="content"><span>degreeCelcius</span></span></a>
-      <li><a href="#Kelvin"><span class="secno">4.4</span> <span class="content"><span>kelvin</span></span></a>
-     </ol>
-    <li>
-     <a href="#Relations"><span class="secno">5</span> <span class="content">Relation Entities</span></a>
-     <ol class="toc">
-      <li><a href="#DegreeCelcius-of-kelvin"><span class="secno">5.1</span> <span class="content"><span>degreeCelcius-of-kelvin</span></span></a>
+      <li><a href="#Hertz-magnitude"><span class="secno">3.1</span> <span class="content"><span>hertz-magnitude</span></span></a>
+      <li><a href="#Hour-magnitude"><span class="secno">3.2</span> <span class="content"><span>hour-magnitude</span></span></a>
+      <li><a href="#Kilometre-magnitude"><span class="secno">3.3</span> <span class="content"><span>kilometre-magnitude</span></span></a>
+      <li><a href="#Kilometre-per-second-magnitude"><span class="secno">3.4</span> <span class="content"><span>kilometre-per-second-magnitude</span></span></a>
+      <li><a href="#Metre-magnitude"><span class="secno">3.5</span> <span class="content"><span>metre-magnitude</span></span></a>
+      <li><a href="#Metre-per-second-magnitude"><span class="secno">3.6</span> <span class="content"><span>metre-per-second-magnitude</span></span></a>
+      <li><a href="#Millisecond-magnitude"><span class="secno">3.7</span> <span class="content"><span>millisecond-magnitude</span></span></a>
+      <li><a href="#Minute-magnitude"><span class="secno">3.8</span> <span class="content"><span>minute-magnitude</span></span></a>
+      <li><a href="#Radian-magnitude"><span class="secno">3.9</span> <span class="content"><span>radian-magnitude</span></span></a>
+      <li><a href="#Revolutions-magnitude"><span class="secno">3.10</span> <span class="content"><span>revolutions-magnitude</span></span></a>
+      <li><a href="#Second-magnitude"><span class="secno">3.11</span> <span class="content"><span>second-magnitude</span></span></a>
      </ol>
     <li>
      <a href="#index"><span class="secno"></span> <span class="content">Index</span></a>
@@ -1810,70 +1812,191 @@ dfn > a.self-link::before      { content: "#"; }
     <h2 class="heading settled" data-level="1" id="Namespace"><span class="secno">1. </span><span class="content">Namespace</span><a class="self-link" href="#Namespace"></a></h2>
     <ul>
      <li data-md>
-      <p>80000-5-units: <a href="80000-5-units.html">http://iso.org/80000-5-units</a></p>
+      <p>80000-3-quantityValues: <a href="80000-3-quantityValues.html">http://iso.org/80000-3-quantityValues</a></p>
     </ul>
     <h2 class="heading settled" data-level="2" id="Extensions"><span class="secno">2. </span><span class="content">Imports</span><a class="self-link" href="#Extensions"></a></h2>
     <ul>
      <li data-md>
-      <p>80000-4-units: <a href="http://iso.org/80000-4-units.html">http://iso.org/80000-4-units</a></p>
+      <p>80000-concepts: <a href="http://iso.org/80000-concepts.html">http://iso.org/80000-concepts</a></p>
+     <li data-md>
+      <p>80000-3-units: <a href="http://iso.org/80000-3-units.html">http://iso.org/80000-3-units</a></p>
     </ul>
-    <h2 class="heading settled" data-level="3" id="Aspects"><span class="secno">3. </span><span class="content">Aspects</span><a class="self-link" href="#Aspects"></a></h2>
-    <h3 class="heading settled" data-level="3.1" id="UnitOfCelciusTemperatureValue"><span class="secno">3.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="unitofcelciustemperaturevalue">UnitOfCelciusTemperatureValue<a class="self-link" href="#unitofcelciustemperaturevalue"></a></dfn></span><a class="self-link" href="#UnitOfCelciusTemperatureValue"></a></h3>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#unitaryquantityvalue" id="ref-for-unitaryquantityvalue">metrology:UnitaryQuantityValue</a></p>
+    <h2 class="heading settled" data-level="3" id="Relations"><span class="secno">3. </span><span class="content">Relation Entities</span><a class="self-link" href="#Relations"></a></h2>
+    <h3 class="heading settled" data-level="3.1" id="Hertz-magnitude"><span class="secno">3.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="hertz-magnitude">hertz-magnitude<a class="self-link" href="#hertz-magnitude"></a></dfn></span><a class="self-link" href="#Hertz-magnitude"></a></h3>
+    <p><em>Attributes:</em></p>
+    <p><em>Source:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#unitaryquantity" id="ref-for-unitaryquantity">metrology:UnitaryQuantity</a></p>
+    <p><em>Target:</em> <a data-link-type="dfn" href="80000-3-quantityValues.html#hertz-magnitude" id="ref-for-hertz-magnitude">hertz-magnitude</a></p>
+    <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="hertz-magnitude" data-dfn-type="attribute" data-export id="dom-hertz-magnitude-hashertzmagnitude"><code>hasHertzMagnitude</code><a class="self-link" href="#dom-hertz-magnitude-hashertzmagnitude"></a></dfn></p>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="80000-3-units.html#unitoffrequencyvalue" id="ref-for-unitoffrequencyvalue">80000-3-units:UnitOfFrequencyValue</a>, <a data-link-type="dfn" href="80000-concepts.html#unitaryquantitymagnitude" id="ref-for-unitaryquantitymagnitude">80000-concepts:UnitaryQuantityMagnitude</a></p>
     <p><em>Relations with source:</em></p>
     <ul>
      <li data-md>
-      <p>UnitOfCelciusTemperatureValue ← <a data-link-type="dfn" href="../iupac.org/metrology.html#hasreference" id="ref-for-hasreference">metrology:HasReference</a> → <a data-link-type="dfn" href="80000-5-units.html#unitofcelciustemperature" id="ref-for-unitofcelciustemperature">UnitOfCelciusTemperature</a></p>
+      <p>hertz-magnitude ← <a data-link-type="dfn" href="../iupac.org/metrology.html#hasreference" id="ref-for-hasreference">metrology:HasReference</a> → <a data-link-type="dfn" href="../iupac.org/metrology.html#reference" id="ref-for-reference">metrology:Reference</a> (range restricted to instance <a data-link-type="dfn" href="80000-3-instances.html#hertz" id="ref-for-hertz">80000-3-instances:hertz</a>)</p>
     </ul>
-    <h3 class="heading settled" data-level="3.2" id="UnitOfThermodynamicTemperatureValue"><span class="secno">3.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="unitofthermodynamictemperaturevalue">UnitOfThermodynamicTemperatureValue<a class="self-link" href="#unitofthermodynamictemperaturevalue"></a></dfn></span><a class="self-link" href="#UnitOfThermodynamicTemperatureValue"></a></h3>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#unitaryquantityvalue" id="ref-for-unitaryquantityvalue①">metrology:UnitaryQuantityValue</a></p>
-    <p><em>Relations with source:</em></p>
-    <ul>
-     <li data-md>
-      <p>UnitOfThermodynamicTemperatureValue ← <a data-link-type="dfn" href="../iupac.org/metrology.html#hasreference" id="ref-for-hasreference①">metrology:HasReference</a> → <a data-link-type="dfn" href="80000-5-units.html#unitofthermodynamictemperature" id="ref-for-unitofthermodynamictemperature">UnitOfThermodynamicTemperature</a></p>
-    </ul>
-    <h2 class="heading settled" data-level="4" id="concepts"><span class="secno">4. </span><span class="content">Concepts</span><a class="self-link" href="#concepts"></a></h2>
-    <h3 class="heading settled" data-level="4.1" id="UnitOfCelciusTemperature"><span class="secno">4.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="unitofcelciustemperature">UnitOfCelciusTemperature<a class="self-link" href="#unitofcelciustemperature"></a></dfn></span><a class="self-link" href="#UnitOfCelciusTemperature"></a></h3>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#coherentmeasurementunit" id="ref-for-coherentmeasurementunit">metrology:CoherentMeasurementUnit</a></p>
-    <p><em>Subtypes:</em> <a data-link-type="dfn" href="80000-5-units.html#degreecelcius" id="ref-for-degreecelcius">degreeCelcius</a></p>
-    <p><em>Properties:</em></p>
-    <ul>
-     <li data-md>
-      <p><a data-link-type="dfn" href="../iupac.org/metrology.html#isdimensionlessmeasurementunit" id="ref-for-isdimensionlessmeasurementunit">metrology:isDimensionlessMeasurementUnit</a> (must have value false)</p>
-    </ul>
-    <h3 class="heading settled" data-level="4.2" id="UnitOfThermodynamicTemperature"><span class="secno">4.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="unitofthermodynamictemperature">UnitOfThermodynamicTemperature<a class="self-link" href="#unitofthermodynamictemperature"></a></dfn></span><a class="self-link" href="#UnitOfThermodynamicTemperature"></a></h3>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#coherentmeasurementunit" id="ref-for-coherentmeasurementunit①">metrology:CoherentMeasurementUnit</a></p>
-    <p><em>Subtypes:</em> <a data-link-type="dfn" href="80000-5-units.html#kelvin" id="ref-for-kelvin">kelvin</a></p>
-    <p><em>Properties:</em></p>
-    <ul>
-     <li data-md>
-      <p><a data-link-type="dfn" href="../iupac.org/metrology.html#isdimensionlessmeasurementunit" id="ref-for-isdimensionlessmeasurementunit①">metrology:isDimensionlessMeasurementUnit</a> (must have value false)</p>
-    </ul>
-    <h3 class="heading settled" data-level="4.3" id="DegreeCelcius"><span class="secno">4.3. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="degreecelcius">degreeCelcius<a class="self-link" href="#degreecelcius"></a></dfn></span><a class="self-link" href="#DegreeCelcius"></a></h3>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#derivedmeasurementunit" id="ref-for-derivedmeasurementunit">metrology:DerivedMeasurementUnit</a>, <a data-link-type="dfn" href="80000-concepts.html#measurementunit" id="ref-for-measurementunit">80000-concepts:MeasurementUnit</a>, <a data-link-type="dfn" href="80000-5-units.html#unitofcelciustemperature" id="ref-for-unitofcelciustemperature①">UnitOfCelciusTemperature</a></p>
-    <p><em>Relations with source:</em></p>
-    <ul>
-     <li data-md>
-      <p>degreeCelcius ← <a data-link-type="dfn" href="80000-5-units.html#degreecelcius-of-kelvin" id="ref-for-degreecelcius-of-kelvin">degreeCelcius-of-kelvin</a> → <a data-link-type="dfn" href="80000-5-units.html#kelvin" id="ref-for-kelvin①">kelvin</a></p>
-    </ul>
-    <h3 class="heading settled" data-level="4.4" id="Kelvin"><span class="secno">4.4. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="kelvin">kelvin<a class="self-link" href="#kelvin"></a></dfn></span><a class="self-link" href="#Kelvin"></a></h3>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#independentmeasurementunit" id="ref-for-independentmeasurementunit">metrology:IndependentMeasurementUnit</a>, <a data-link-type="dfn" href="80000-concepts.html#measurementunit" id="ref-for-measurementunit①">80000-concepts:MeasurementUnit</a>, <a data-link-type="dfn" href="80000-5-units.html#unitofthermodynamictemperature" id="ref-for-unitofthermodynamictemperature①">UnitOfThermodynamicTemperature</a></p>
     <p><em>Relations with target:</em></p>
     <ul>
      <li data-md>
-      <p><a data-link-type="dfn" href="80000-5-units.html#degreecelcius" id="ref-for-degreecelcius①">degreeCelcius</a> ← <a data-link-type="dfn" href="80000-5-units.html#degreecelcius-of-kelvin" id="ref-for-degreecelcius-of-kelvin①">degreeCelcius-of-kelvin</a> → kelvin</p>
+      <p><a data-link-type="dfn" href="../iupac.org/metrology.html#unitaryquantity" id="ref-for-unitaryquantity①">metrology:UnitaryQuantity</a> ← <a data-link-type="dfn" href="80000-3-quantityValues.html#hertz-magnitude" id="ref-for-hertz-magnitude①">hertz-magnitude</a> → hertz-magnitude</p>
     </ul>
-    <h2 class="heading settled" data-level="5" id="Relations"><span class="secno">5. </span><span class="content">Relation Entities</span><a class="self-link" href="#Relations"></a></h2>
-    <h3 class="heading settled" data-level="5.1" id="DegreeCelcius-of-kelvin"><span class="secno">5.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="degreecelcius-of-kelvin">degreeCelcius-of-kelvin<a class="self-link" href="#degreecelcius-of-kelvin"></a></dfn></span><a class="self-link" href="#DegreeCelcius-of-kelvin"></a></h3>
+    <h3 class="heading settled" data-level="3.2" id="Hour-magnitude"><span class="secno">3.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="hour-magnitude">hour-magnitude<a class="self-link" href="#hour-magnitude"></a></dfn></span><a class="self-link" href="#Hour-magnitude"></a></h3>
     <p><em>Attributes:</em></p>
-    <p><em>Source:</em> <a data-link-type="dfn" href="80000-5-units.html#degreecelcius" id="ref-for-degreecelcius②">degreeCelcius</a></p>
-    <p><em>Target:</em> <a data-link-type="dfn" href="80000-5-units.html#kelvin" id="ref-for-kelvin②">kelvin</a></p>
-    <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="degreeCelcius-of-kelvin" data-dfn-type="attribute" data-export id="dom-degreecelcius-of-kelvin-degreecelcius-of-kelvin-factor"><code>degreeCelcius-of-kelvin-factor</code><a class="self-link" href="#dom-degreecelcius-of-kelvin-degreecelcius-of-kelvin-factor"></a></dfn></p>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#hasfactorformeasurementunit" id="ref-for-hasfactorformeasurementunit">metrology:HasFactorForMeasurementUnit</a></p>
-    <p><em>Properties:</em></p>
+    <p><em>Source:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#unitaryquantity" id="ref-for-unitaryquantity②">metrology:UnitaryQuantity</a></p>
+    <p><em>Target:</em> <a data-link-type="dfn" href="80000-3-quantityValues.html#hour-magnitude" id="ref-for-hour-magnitude">hour-magnitude</a></p>
+    <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="hour-magnitude" data-dfn-type="attribute" data-export id="dom-hour-magnitude-hashourmagnitude"><code>hasHourMagnitude</code><a class="self-link" href="#dom-hour-magnitude-hashourmagnitude"></a></dfn></p>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="80000-3-units.html#unitoftimevalue" id="ref-for-unitoftimevalue">80000-3-units:UnitOfTimeValue</a>, <a data-link-type="dfn" href="80000-concepts.html#unitaryquantitymagnitude" id="ref-for-unitaryquantitymagnitude①">80000-concepts:UnitaryQuantityMagnitude</a></p>
+    <p><em>Relations with source:</em></p>
     <ul>
      <li data-md>
-      <p><a data-link-type="dfn" href="../iupac.org/metrology.html#exponent" id="ref-for-exponent">metrology:exponent</a> (must have value 1/1)</p>
+      <p>hour-magnitude ← <a data-link-type="dfn" href="../iupac.org/metrology.html#hasreference" id="ref-for-hasreference①">metrology:HasReference</a> → <a data-link-type="dfn" href="../iupac.org/metrology.html#reference" id="ref-for-reference①">metrology:Reference</a> (range restricted to instance <a data-link-type="dfn" href="80000-3-instances.html#hour" id="ref-for-hour">80000-3-instances:hour</a>)</p>
+    </ul>
+    <p><em>Relations with target:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../iupac.org/metrology.html#unitaryquantity" id="ref-for-unitaryquantity③">metrology:UnitaryQuantity</a> ← <a data-link-type="dfn" href="80000-3-quantityValues.html#hour-magnitude" id="ref-for-hour-magnitude①">hour-magnitude</a> → hour-magnitude</p>
+    </ul>
+    <h3 class="heading settled" data-level="3.3" id="Kilometre-magnitude"><span class="secno">3.3. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="kilometre-magnitude">kilometre-magnitude<a class="self-link" href="#kilometre-magnitude"></a></dfn></span><a class="self-link" href="#Kilometre-magnitude"></a></h3>
+    <p><em>Attributes:</em></p>
+    <p><em>Source:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#unitaryquantity" id="ref-for-unitaryquantity④">metrology:UnitaryQuantity</a></p>
+    <p><em>Target:</em> <a data-link-type="dfn" href="80000-3-quantityValues.html#kilometre-magnitude" id="ref-for-kilometre-magnitude">kilometre-magnitude</a></p>
+    <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="kilometre-magnitude" data-dfn-type="attribute" data-export id="dom-kilometre-magnitude-haskilometremagnitude"><code>hasKilometreMagnitude</code><a class="self-link" href="#dom-kilometre-magnitude-haskilometremagnitude"></a></dfn></p>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="80000-3-units.html#unitoflengthvalue" id="ref-for-unitoflengthvalue">80000-3-units:UnitOfLengthValue</a>, <a data-link-type="dfn" href="80000-concepts.html#unitaryquantitymagnitude" id="ref-for-unitaryquantitymagnitude②">80000-concepts:UnitaryQuantityMagnitude</a></p>
+    <p><em>Relations with source:</em></p>
+    <ul>
+     <li data-md>
+      <p>kilometre-magnitude ← <a data-link-type="dfn" href="../iupac.org/metrology.html#hasreference" id="ref-for-hasreference②">metrology:HasReference</a> → <a data-link-type="dfn" href="../iupac.org/metrology.html#reference" id="ref-for-reference②">metrology:Reference</a> (range restricted to instance <a data-link-type="dfn" href="80000-3-instances.html#kilometre" id="ref-for-kilometre">80000-3-instances:kilometre</a>)</p>
+    </ul>
+    <p><em>Relations with target:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../iupac.org/metrology.html#unitaryquantity" id="ref-for-unitaryquantity⑤">metrology:UnitaryQuantity</a> ← <a data-link-type="dfn" href="80000-3-quantityValues.html#kilometre-magnitude" id="ref-for-kilometre-magnitude①">kilometre-magnitude</a> → kilometre-magnitude</p>
+    </ul>
+    <h3 class="heading settled" data-level="3.4" id="Kilometre-per-second-magnitude"><span class="secno">3.4. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="kilometre-per-second-magnitude">kilometre-per-second-magnitude<a class="self-link" href="#kilometre-per-second-magnitude"></a></dfn></span><a class="self-link" href="#Kilometre-per-second-magnitude"></a></h3>
+    <p><em>Attributes:</em></p>
+    <p><em>Source:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#unitaryquantity" id="ref-for-unitaryquantity⑥">metrology:UnitaryQuantity</a></p>
+    <p><em>Target:</em> <a data-link-type="dfn" href="80000-3-quantityValues.html#kilometre-per-second-magnitude" id="ref-for-kilometre-per-second-magnitude">kilometre-per-second-magnitude</a></p>
+    <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="kilometre-per-second-magnitude" data-dfn-type="attribute" data-export id="dom-kilometre-per-second-magnitude-haskilometrepersecondmagnitude"><code>hasKilometrePerSecondMagnitude</code><a class="self-link" href="#dom-kilometre-per-second-magnitude-haskilometrepersecondmagnitude"></a></dfn></p>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="80000-3-units.html#unitofvelocityvalue" id="ref-for-unitofvelocityvalue">80000-3-units:UnitOfVelocityValue</a>, <a data-link-type="dfn" href="80000-concepts.html#unitaryquantitymagnitude" id="ref-for-unitaryquantitymagnitude③">80000-concepts:UnitaryQuantityMagnitude</a></p>
+    <p><em>Relations with source:</em></p>
+    <ul>
+     <li data-md>
+      <p>kilometre-per-second-magnitude ← <a data-link-type="dfn" href="../iupac.org/metrology.html#hasreference" id="ref-for-hasreference③">metrology:HasReference</a> → <a data-link-type="dfn" href="../iupac.org/metrology.html#reference" id="ref-for-reference③">metrology:Reference</a> (range restricted to instance <a data-link-type="dfn" href="80000-3-instances.html#kilometre-per-second" id="ref-for-kilometre-per-second">80000-3-instances:kilometre-per-second</a>)</p>
+    </ul>
+    <p><em>Relations with target:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../iupac.org/metrology.html#unitaryquantity" id="ref-for-unitaryquantity⑦">metrology:UnitaryQuantity</a> ← <a data-link-type="dfn" href="80000-3-quantityValues.html#kilometre-per-second-magnitude" id="ref-for-kilometre-per-second-magnitude①">kilometre-per-second-magnitude</a> → kilometre-per-second-magnitude</p>
+    </ul>
+    <h3 class="heading settled" data-level="3.5" id="Metre-magnitude"><span class="secno">3.5. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="metre-magnitude">metre-magnitude<a class="self-link" href="#metre-magnitude"></a></dfn></span><a class="self-link" href="#Metre-magnitude"></a></h3>
+    <p><em>Attributes:</em></p>
+    <p><em>Source:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#unitaryquantity" id="ref-for-unitaryquantity⑧">metrology:UnitaryQuantity</a></p>
+    <p><em>Target:</em> <a data-link-type="dfn" href="80000-3-quantityValues.html#metre-magnitude" id="ref-for-metre-magnitude">metre-magnitude</a></p>
+    <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="metre-magnitude" data-dfn-type="attribute" data-export id="dom-metre-magnitude-hasmetremagnitude"><code>hasMetreMagnitude</code><a class="self-link" href="#dom-metre-magnitude-hasmetremagnitude"></a></dfn></p>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="80000-3-units.html#unitoflengthvalue" id="ref-for-unitoflengthvalue①">80000-3-units:UnitOfLengthValue</a>, <a data-link-type="dfn" href="80000-concepts.html#unitaryquantitymagnitude" id="ref-for-unitaryquantitymagnitude④">80000-concepts:UnitaryQuantityMagnitude</a></p>
+    <p><em>Relations with source:</em></p>
+    <ul>
+     <li data-md>
+      <p>metre-magnitude ← <a data-link-type="dfn" href="../iupac.org/metrology.html#hasreference" id="ref-for-hasreference④">metrology:HasReference</a> → <a data-link-type="dfn" href="../iupac.org/metrology.html#reference" id="ref-for-reference④">metrology:Reference</a> (range restricted to instance <a data-link-type="dfn" href="80000-3-instances.html#metre" id="ref-for-metre">80000-3-instances:metre</a>)</p>
+    </ul>
+    <p><em>Relations with target:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../iupac.org/metrology.html#unitaryquantity" id="ref-for-unitaryquantity⑨">metrology:UnitaryQuantity</a> ← <a data-link-type="dfn" href="80000-3-quantityValues.html#metre-magnitude" id="ref-for-metre-magnitude①">metre-magnitude</a> → metre-magnitude</p>
+    </ul>
+    <h3 class="heading settled" data-level="3.6" id="Metre-per-second-magnitude"><span class="secno">3.6. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="metre-per-second-magnitude">metre-per-second-magnitude<a class="self-link" href="#metre-per-second-magnitude"></a></dfn></span><a class="self-link" href="#Metre-per-second-magnitude"></a></h3>
+    <p><em>Attributes:</em></p>
+    <p><em>Source:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#unitaryquantity" id="ref-for-unitaryquantity①⓪">metrology:UnitaryQuantity</a></p>
+    <p><em>Target:</em> <a data-link-type="dfn" href="80000-3-quantityValues.html#metre-per-second-magnitude" id="ref-for-metre-per-second-magnitude">metre-per-second-magnitude</a></p>
+    <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="metre-per-second-magnitude" data-dfn-type="attribute" data-export id="dom-metre-per-second-magnitude-hasmetreper-secondmagnitude"><code>hasMetrePer-SecondMagnitude</code><a class="self-link" href="#dom-metre-per-second-magnitude-hasmetreper-secondmagnitude"></a></dfn></p>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="80000-3-units.html#unitofvelocityvalue" id="ref-for-unitofvelocityvalue①">80000-3-units:UnitOfVelocityValue</a>, <a data-link-type="dfn" href="80000-concepts.html#unitaryquantitymagnitude" id="ref-for-unitaryquantitymagnitude⑤">80000-concepts:UnitaryQuantityMagnitude</a></p>
+    <p><em>Relations with source:</em></p>
+    <ul>
+     <li data-md>
+      <p>metre-per-second-magnitude ← <a data-link-type="dfn" href="../iupac.org/metrology.html#hasreference" id="ref-for-hasreference⑤">metrology:HasReference</a> → <a data-link-type="dfn" href="../iupac.org/metrology.html#reference" id="ref-for-reference⑤">metrology:Reference</a> (range restricted to instance <a data-link-type="dfn" href="80000-3-instances.html#metre-per-second" id="ref-for-metre-per-second">80000-3-instances:metre-per-second</a>)</p>
+    </ul>
+    <p><em>Relations with target:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../iupac.org/metrology.html#unitaryquantity" id="ref-for-unitaryquantity①①">metrology:UnitaryQuantity</a> ← <a data-link-type="dfn" href="80000-3-quantityValues.html#metre-per-second-magnitude" id="ref-for-metre-per-second-magnitude①">metre-per-second-magnitude</a> → metre-per-second-magnitude</p>
+    </ul>
+    <h3 class="heading settled" data-level="3.7" id="Millisecond-magnitude"><span class="secno">3.7. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="millisecond-magnitude">millisecond-magnitude<a class="self-link" href="#millisecond-magnitude"></a></dfn></span><a class="self-link" href="#Millisecond-magnitude"></a></h3>
+    <p><em>Attributes:</em></p>
+    <p><em>Source:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#unitaryquantity" id="ref-for-unitaryquantity①②">metrology:UnitaryQuantity</a></p>
+    <p><em>Target:</em> <a data-link-type="dfn" href="80000-3-quantityValues.html#millisecond-magnitude" id="ref-for-millisecond-magnitude">millisecond-magnitude</a></p>
+    <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="millisecond-magnitude" data-dfn-type="attribute" data-export id="dom-millisecond-magnitude-hasmillisecondmagnitude"><code>hasMillisecondMagnitude</code><a class="self-link" href="#dom-millisecond-magnitude-hasmillisecondmagnitude"></a></dfn></p>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="80000-3-units.html#unitoftimevalue" id="ref-for-unitoftimevalue①">80000-3-units:UnitOfTimeValue</a>, <a data-link-type="dfn" href="80000-concepts.html#unitaryquantitymagnitude" id="ref-for-unitaryquantitymagnitude⑥">80000-concepts:UnitaryQuantityMagnitude</a></p>
+    <p><em>Relations with source:</em></p>
+    <ul>
+     <li data-md>
+      <p>millisecond-magnitude ← <a data-link-type="dfn" href="../iupac.org/metrology.html#hasreference" id="ref-for-hasreference⑥">metrology:HasReference</a> → <a data-link-type="dfn" href="../iupac.org/metrology.html#reference" id="ref-for-reference⑥">metrology:Reference</a> (range restricted to instance <a data-link-type="dfn" href="80000-3-instances.html#millisecond" id="ref-for-millisecond">80000-3-instances:millisecond</a>)</p>
+    </ul>
+    <p><em>Relations with target:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../iupac.org/metrology.html#unitaryquantity" id="ref-for-unitaryquantity①③">metrology:UnitaryQuantity</a> ← <a data-link-type="dfn" href="80000-3-quantityValues.html#millisecond-magnitude" id="ref-for-millisecond-magnitude①">millisecond-magnitude</a> → millisecond-magnitude</p>
+    </ul>
+    <h3 class="heading settled" data-level="3.8" id="Minute-magnitude"><span class="secno">3.8. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="minute-magnitude">minute-magnitude<a class="self-link" href="#minute-magnitude"></a></dfn></span><a class="self-link" href="#Minute-magnitude"></a></h3>
+    <p><em>Attributes:</em></p>
+    <p><em>Source:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#unitaryquantity" id="ref-for-unitaryquantity①④">metrology:UnitaryQuantity</a></p>
+    <p><em>Target:</em> <a data-link-type="dfn" href="80000-3-quantityValues.html#minute-magnitude" id="ref-for-minute-magnitude">minute-magnitude</a></p>
+    <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="minute-magnitude" data-dfn-type="attribute" data-export id="dom-minute-magnitude-hasminutemagnitude"><code>hasMinuteMagnitude</code><a class="self-link" href="#dom-minute-magnitude-hasminutemagnitude"></a></dfn></p>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="80000-3-units.html#unitoftimevalue" id="ref-for-unitoftimevalue②">80000-3-units:UnitOfTimeValue</a>, <a data-link-type="dfn" href="80000-concepts.html#unitaryquantitymagnitude" id="ref-for-unitaryquantitymagnitude⑦">80000-concepts:UnitaryQuantityMagnitude</a></p>
+    <p><em>Relations with source:</em></p>
+    <ul>
+     <li data-md>
+      <p>minute-magnitude ← <a data-link-type="dfn" href="../iupac.org/metrology.html#hasreference" id="ref-for-hasreference⑦">metrology:HasReference</a> → <a data-link-type="dfn" href="../iupac.org/metrology.html#reference" id="ref-for-reference⑦">metrology:Reference</a> (range restricted to instance <a data-link-type="dfn" href="80000-3-instances.html#minute" id="ref-for-minute">80000-3-instances:minute</a>)</p>
+    </ul>
+    <p><em>Relations with target:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../iupac.org/metrology.html#unitaryquantity" id="ref-for-unitaryquantity①⑤">metrology:UnitaryQuantity</a> ← <a data-link-type="dfn" href="80000-3-quantityValues.html#minute-magnitude" id="ref-for-minute-magnitude①">minute-magnitude</a> → minute-magnitude</p>
+    </ul>
+    <h3 class="heading settled" data-level="3.9" id="Radian-magnitude"><span class="secno">3.9. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="radian-magnitude">radian-magnitude<a class="self-link" href="#radian-magnitude"></a></dfn></span><a class="self-link" href="#Radian-magnitude"></a></h3>
+    <p><em>Attributes:</em></p>
+    <p><em>Source:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#unitaryquantity" id="ref-for-unitaryquantity①⑥">metrology:UnitaryQuantity</a></p>
+    <p><em>Target:</em> <a data-link-type="dfn" href="80000-3-quantityValues.html#radian-magnitude" id="ref-for-radian-magnitude">radian-magnitude</a></p>
+    <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="radian-magnitude" data-dfn-type="attribute" data-export id="dom-radian-magnitude-hasradianmagnitude"><code>hasRadianMagnitude</code><a class="self-link" href="#dom-radian-magnitude-hasradianmagnitude"></a></dfn></p>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="80000-3-units.html#unitofangularmeasurevalue" id="ref-for-unitofangularmeasurevalue">80000-3-units:UnitOfAngularMeasureValue</a>, <a data-link-type="dfn" href="80000-concepts.html#unitaryquantitymagnitude" id="ref-for-unitaryquantitymagnitude⑧">80000-concepts:UnitaryQuantityMagnitude</a></p>
+    <p><em>Relations with source:</em></p>
+    <ul>
+     <li data-md>
+      <p>radian-magnitude ← <a data-link-type="dfn" href="../iupac.org/metrology.html#hasreference" id="ref-for-hasreference⑧">metrology:HasReference</a> → <a data-link-type="dfn" href="../iupac.org/metrology.html#reference" id="ref-for-reference⑧">metrology:Reference</a> (range restricted to instance <a data-link-type="dfn" href="80000-3-instances.html#radian" id="ref-for-radian">80000-3-instances:radian</a>)</p>
+    </ul>
+    <p><em>Relations with target:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../iupac.org/metrology.html#unitaryquantity" id="ref-for-unitaryquantity①⑦">metrology:UnitaryQuantity</a> ← <a data-link-type="dfn" href="80000-3-quantityValues.html#radian-magnitude" id="ref-for-radian-magnitude①">radian-magnitude</a> → radian-magnitude</p>
+    </ul>
+    <h3 class="heading settled" data-level="3.10" id="Revolutions-magnitude"><span class="secno">3.10. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="revolutions-magnitude">revolutions-magnitude<a class="self-link" href="#revolutions-magnitude"></a></dfn></span><a class="self-link" href="#Revolutions-magnitude"></a></h3>
+    <p><em>Attributes:</em></p>
+    <p><em>Source:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#unitaryquantity" id="ref-for-unitaryquantity①⑧">metrology:UnitaryQuantity</a></p>
+    <p><em>Target:</em> <a data-link-type="dfn" href="80000-3-quantityValues.html#revolutions-magnitude" id="ref-for-revolutions-magnitude">revolutions-magnitude</a></p>
+    <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="revolutions-magnitude" data-dfn-type="attribute" data-export id="dom-revolutions-magnitude-hasrevolutionsmagnitude"><code>hasRevolutionsMagnitude</code><a class="self-link" href="#dom-revolutions-magnitude-hasrevolutionsmagnitude"></a></dfn></p>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="80000-3-units.html#unitofrotationvalue" id="ref-for-unitofrotationvalue">80000-3-units:UnitOfRotationValue</a>, <a data-link-type="dfn" href="80000-concepts.html#unitaryquantitymagnitude" id="ref-for-unitaryquantitymagnitude⑨">80000-concepts:UnitaryQuantityMagnitude</a></p>
+    <p><em>Relations with source:</em></p>
+    <ul>
+     <li data-md>
+      <p>revolutions-magnitude ← <a data-link-type="dfn" href="../iupac.org/metrology.html#hasreference" id="ref-for-hasreference⑨">metrology:HasReference</a> → <a data-link-type="dfn" href="../iupac.org/metrology.html#reference" id="ref-for-reference⑨">metrology:Reference</a> (range restricted to instance <a data-link-type="dfn" href="80000-3-instances.html#revolutions" id="ref-for-revolutions">80000-3-instances:revolutions</a>)</p>
+    </ul>
+    <p><em>Relations with target:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../iupac.org/metrology.html#unitaryquantity" id="ref-for-unitaryquantity①⑨">metrology:UnitaryQuantity</a> ← <a data-link-type="dfn" href="80000-3-quantityValues.html#revolutions-magnitude" id="ref-for-revolutions-magnitude①">revolutions-magnitude</a> → revolutions-magnitude</p>
+    </ul>
+    <h3 class="heading settled" data-level="3.11" id="Second-magnitude"><span class="secno">3.11. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="second-magnitude">second-magnitude<a class="self-link" href="#second-magnitude"></a></dfn></span><a class="self-link" href="#Second-magnitude"></a></h3>
+    <p><em>Attributes:</em></p>
+    <p><em>Source:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#unitaryquantity" id="ref-for-unitaryquantity②⓪">metrology:UnitaryQuantity</a></p>
+    <p><em>Target:</em> <a data-link-type="dfn" href="80000-3-quantityValues.html#second-magnitude" id="ref-for-second-magnitude">second-magnitude</a></p>
+    <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="second-magnitude" data-dfn-type="attribute" data-export id="dom-second-magnitude-hassecondmagnitude"><code>hasSecondMagnitude</code><a class="self-link" href="#dom-second-magnitude-hassecondmagnitude"></a></dfn></p>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="80000-3-units.html#unitoftimevalue" id="ref-for-unitoftimevalue③">80000-3-units:UnitOfTimeValue</a>, <a data-link-type="dfn" href="80000-concepts.html#unitaryquantitymagnitude" id="ref-for-unitaryquantitymagnitude①⓪">80000-concepts:UnitaryQuantityMagnitude</a></p>
+    <p><em>Relations with source:</em></p>
+    <ul>
+     <li data-md>
+      <p>second-magnitude ← <a data-link-type="dfn" href="../iupac.org/metrology.html#hasreference" id="ref-for-hasreference①⓪">metrology:HasReference</a> → <a data-link-type="dfn" href="../iupac.org/metrology.html#reference" id="ref-for-reference①⓪">metrology:Reference</a> (range restricted to instance <a data-link-type="dfn" href="80000-3-instances.html#second" id="ref-for-second">80000-3-instances:second</a>)</p>
+    </ul>
+    <p><em>Relations with target:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../iupac.org/metrology.html#unitaryquantity" id="ref-for-unitaryquantity②①">metrology:UnitaryQuantity</a> ← <a data-link-type="dfn" href="80000-3-quantityValues.html#second-magnitude" id="ref-for-second-magnitude①">second-magnitude</a> → second-magnitude</p>
     </ul>
    </div>
   </main>
@@ -2009,138 +2132,319 @@ dfn > a.self-link::before      { content: "#"; }
   <h2 class="no-num no-ref heading settled" id="index"><span class="content">Index</span><a class="self-link" href="#index"></a></h2>
   <h3 class="no-num no-ref heading settled" id="index-defined-here"><span class="content">Terms defined by this specification</span><a class="self-link" href="#index-defined-here"></a></h3>
   <ul class="index">
-   <li><a href="#degreecelcius">degreeCelcius</a><span>, in §4.3</span>
-   <li><a href="#degreecelcius-of-kelvin">degreeCelcius-of-kelvin</a><span>, in §5.1</span>
-   <li><a href="#dom-degreecelcius-of-kelvin-degreecelcius-of-kelvin-factor">degreeCelcius-of-kelvin-factor</a><span>, in §5.1</span>
-   <li><a href="#kelvin">kelvin</a><span>, in §4.4</span>
-   <li><a href="#unitofcelciustemperature">UnitOfCelciusTemperature</a><span>, in §4.1</span>
-   <li><a href="#unitofcelciustemperaturevalue">UnitOfCelciusTemperatureValue</a><span>, in §3.1</span>
-   <li><a href="#unitofthermodynamictemperature">UnitOfThermodynamicTemperature</a><span>, in §4.2</span>
-   <li><a href="#unitofthermodynamictemperaturevalue">UnitOfThermodynamicTemperatureValue</a><span>, in §3.2</span>
+   <li><a href="#dom-hertz-magnitude-hashertzmagnitude">hasHertzMagnitude</a><span>, in §3.1</span>
+   <li><a href="#dom-hour-magnitude-hashourmagnitude">hasHourMagnitude</a><span>, in §3.2</span>
+   <li><a href="#dom-kilometre-magnitude-haskilometremagnitude">hasKilometreMagnitude</a><span>, in §3.3</span>
+   <li><a href="#dom-kilometre-per-second-magnitude-haskilometrepersecondmagnitude">hasKilometrePerSecondMagnitude</a><span>, in §3.4</span>
+   <li><a href="#dom-metre-magnitude-hasmetremagnitude">hasMetreMagnitude</a><span>, in §3.5</span>
+   <li><a href="#dom-metre-per-second-magnitude-hasmetreper-secondmagnitude">hasMetrePer-SecondMagnitude</a><span>, in §3.6</span>
+   <li><a href="#dom-millisecond-magnitude-hasmillisecondmagnitude">hasMillisecondMagnitude</a><span>, in §3.7</span>
+   <li><a href="#dom-minute-magnitude-hasminutemagnitude">hasMinuteMagnitude</a><span>, in §3.8</span>
+   <li><a href="#dom-radian-magnitude-hasradianmagnitude">hasRadianMagnitude</a><span>, in §3.9</span>
+   <li><a href="#dom-revolutions-magnitude-hasrevolutionsmagnitude">hasRevolutionsMagnitude</a><span>, in §3.10</span>
+   <li><a href="#dom-second-magnitude-hassecondmagnitude">hasSecondMagnitude</a><span>, in §3.11</span>
+   <li><a href="#hertz-magnitude">hertz-magnitude</a><span>, in §3.1</span>
+   <li><a href="#hour-magnitude">hour-magnitude</a><span>, in §3.2</span>
+   <li><a href="#kilometre-magnitude">kilometre-magnitude</a><span>, in §3.3</span>
+   <li><a href="#kilometre-per-second-magnitude">kilometre-per-second-magnitude</a><span>, in §3.4</span>
+   <li><a href="#metre-magnitude">metre-magnitude</a><span>, in §3.5</span>
+   <li><a href="#metre-per-second-magnitude">metre-per-second-magnitude</a><span>, in §3.6</span>
+   <li><a href="#millisecond-magnitude">millisecond-magnitude</a><span>, in §3.7</span>
+   <li><a href="#minute-magnitude">minute-magnitude</a><span>, in §3.8</span>
+   <li><a href="#radian-magnitude">radian-magnitude</a><span>, in §3.9</span>
+   <li><a href="#revolutions-magnitude">revolutions-magnitude</a><span>, in §3.10</span>
+   <li><a href="#second-magnitude">second-magnitude</a><span>, in §3.11</span>
   </ul>
-  <aside class="dfn-panel" data-for="term-for-degreecelcius">
-   <a href="80000-5-units.html#degreecelcius">80000-5-units.html#degreecelcius</a><b>Referenced in:</b>
+  <aside class="dfn-panel" data-for="term-for-hertz">
+   <a href="80000-3-instances.html#hertz">80000-3-instances.html#hertz</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-degreecelcius">4.1. UnitOfCelciusTemperature</a>
-    <li><a href="#ref-for-degreecelcius①">4.4. kelvin</a>
-    <li><a href="#ref-for-degreecelcius②">5.1. degreeCelcius-of-kelvin</a>
+    <li><a href="#ref-for-hertz">3.1. hertz-magnitude</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-degreecelcius-of-kelvin">
-   <a href="80000-5-units.html#degreecelcius-of-kelvin">80000-5-units.html#degreecelcius-of-kelvin</a><b>Referenced in:</b>
+  <aside class="dfn-panel" data-for="term-for-hour">
+   <a href="80000-3-instances.html#hour">80000-3-instances.html#hour</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-degreecelcius-of-kelvin">4.3. degreeCelcius</a>
-    <li><a href="#ref-for-degreecelcius-of-kelvin①">4.4. kelvin</a>
+    <li><a href="#ref-for-hour">3.2. hour-magnitude</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-kelvin">
-   <a href="80000-5-units.html#kelvin">80000-5-units.html#kelvin</a><b>Referenced in:</b>
+  <aside class="dfn-panel" data-for="term-for-kilometre">
+   <a href="80000-3-instances.html#kilometre">80000-3-instances.html#kilometre</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-kelvin">4.2. UnitOfThermodynamicTemperature</a>
-    <li><a href="#ref-for-kelvin①">4.3. degreeCelcius</a>
-    <li><a href="#ref-for-kelvin②">5.1. degreeCelcius-of-kelvin</a>
+    <li><a href="#ref-for-kilometre">3.3. kilometre-magnitude</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-unitofcelciustemperature">
-   <a href="80000-5-units.html#unitofcelciustemperature">80000-5-units.html#unitofcelciustemperature</a><b>Referenced in:</b>
+  <aside class="dfn-panel" data-for="term-for-kilometre-per-second">
+   <a href="80000-3-instances.html#kilometre-per-second">80000-3-instances.html#kilometre-per-second</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-unitofcelciustemperature">3.1. UnitOfCelciusTemperatureValue</a>
-    <li><a href="#ref-for-unitofcelciustemperature①">4.3. degreeCelcius</a>
+    <li><a href="#ref-for-kilometre-per-second">3.4. kilometre-per-second-magnitude</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-unitofthermodynamictemperature">
-   <a href="80000-5-units.html#unitofthermodynamictemperature">80000-5-units.html#unitofthermodynamictemperature</a><b>Referenced in:</b>
+  <aside class="dfn-panel" data-for="term-for-metre">
+   <a href="80000-3-instances.html#metre">80000-3-instances.html#metre</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-unitofthermodynamictemperature">3.2. UnitOfThermodynamicTemperatureValue</a>
-    <li><a href="#ref-for-unitofthermodynamictemperature①">4.4. kelvin</a>
+    <li><a href="#ref-for-metre">3.5. metre-magnitude</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-measurementunit">
-   <a href="80000-concepts.html#measurementunit">80000-concepts.html#measurementunit</a><b>Referenced in:</b>
+  <aside class="dfn-panel" data-for="term-for-metre-per-second">
+   <a href="80000-3-instances.html#metre-per-second">80000-3-instances.html#metre-per-second</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-measurementunit">4.3. degreeCelcius</a>
-    <li><a href="#ref-for-measurementunit①">4.4. kelvin</a>
+    <li><a href="#ref-for-metre-per-second">3.6. metre-per-second-magnitude</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-coherentmeasurementunit">
-   <a href="../iupac.org/metrology.html#coherentmeasurementunit">../iupac.org/metrology.html#coherentmeasurementunit</a><b>Referenced in:</b>
+  <aside class="dfn-panel" data-for="term-for-millisecond">
+   <a href="80000-3-instances.html#millisecond">80000-3-instances.html#millisecond</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-coherentmeasurementunit">4.1. UnitOfCelciusTemperature</a>
-    <li><a href="#ref-for-coherentmeasurementunit①">4.2. UnitOfThermodynamicTemperature</a>
+    <li><a href="#ref-for-millisecond">3.7. millisecond-magnitude</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-derivedmeasurementunit">
-   <a href="../iupac.org/metrology.html#derivedmeasurementunit">../iupac.org/metrology.html#derivedmeasurementunit</a><b>Referenced in:</b>
+  <aside class="dfn-panel" data-for="term-for-minute">
+   <a href="80000-3-instances.html#minute">80000-3-instances.html#minute</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-derivedmeasurementunit">4.3. degreeCelcius</a>
+    <li><a href="#ref-for-minute">3.8. minute-magnitude</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-exponent">
-   <a href="../iupac.org/metrology.html#exponent">../iupac.org/metrology.html#exponent</a><b>Referenced in:</b>
+  <aside class="dfn-panel" data-for="term-for-radian">
+   <a href="80000-3-instances.html#radian">80000-3-instances.html#radian</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-exponent">5.1. degreeCelcius-of-kelvin</a>
+    <li><a href="#ref-for-radian">3.9. radian-magnitude</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-hasfactorformeasurementunit">
-   <a href="../iupac.org/metrology.html#hasfactorformeasurementunit">../iupac.org/metrology.html#hasfactorformeasurementunit</a><b>Referenced in:</b>
+  <aside class="dfn-panel" data-for="term-for-revolutions">
+   <a href="80000-3-instances.html#revolutions">80000-3-instances.html#revolutions</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-hasfactorformeasurementunit">5.1. degreeCelcius-of-kelvin</a>
+    <li><a href="#ref-for-revolutions">3.10. revolutions-magnitude</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-second">
+   <a href="80000-3-instances.html#second">80000-3-instances.html#second</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-second">3.11. second-magnitude</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-hertz-magnitude">
+   <a href="80000-3-quantityValues.html#hertz-magnitude">80000-3-quantityValues.html#hertz-magnitude</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-hertz-magnitude">3.1. hertz-magnitude</a> <a href="#ref-for-hertz-magnitude①">(2)</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-hour-magnitude">
+   <a href="80000-3-quantityValues.html#hour-magnitude">80000-3-quantityValues.html#hour-magnitude</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-hour-magnitude">3.2. hour-magnitude</a> <a href="#ref-for-hour-magnitude①">(2)</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-kilometre-magnitude">
+   <a href="80000-3-quantityValues.html#kilometre-magnitude">80000-3-quantityValues.html#kilometre-magnitude</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-kilometre-magnitude">3.3. kilometre-magnitude</a> <a href="#ref-for-kilometre-magnitude①">(2)</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-kilometre-per-second-magnitude">
+   <a href="80000-3-quantityValues.html#kilometre-per-second-magnitude">80000-3-quantityValues.html#kilometre-per-second-magnitude</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-kilometre-per-second-magnitude">3.4. kilometre-per-second-magnitude</a> <a href="#ref-for-kilometre-per-second-magnitude①">(2)</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-metre-magnitude">
+   <a href="80000-3-quantityValues.html#metre-magnitude">80000-3-quantityValues.html#metre-magnitude</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-metre-magnitude">3.5. metre-magnitude</a> <a href="#ref-for-metre-magnitude①">(2)</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-metre-per-second-magnitude">
+   <a href="80000-3-quantityValues.html#metre-per-second-magnitude">80000-3-quantityValues.html#metre-per-second-magnitude</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-metre-per-second-magnitude">3.6. metre-per-second-magnitude</a> <a href="#ref-for-metre-per-second-magnitude①">(2)</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-millisecond-magnitude">
+   <a href="80000-3-quantityValues.html#millisecond-magnitude">80000-3-quantityValues.html#millisecond-magnitude</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-millisecond-magnitude">3.7. millisecond-magnitude</a> <a href="#ref-for-millisecond-magnitude①">(2)</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-minute-magnitude">
+   <a href="80000-3-quantityValues.html#minute-magnitude">80000-3-quantityValues.html#minute-magnitude</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-minute-magnitude">3.8. minute-magnitude</a> <a href="#ref-for-minute-magnitude①">(2)</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-radian-magnitude">
+   <a href="80000-3-quantityValues.html#radian-magnitude">80000-3-quantityValues.html#radian-magnitude</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-radian-magnitude">3.9. radian-magnitude</a> <a href="#ref-for-radian-magnitude①">(2)</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-revolutions-magnitude">
+   <a href="80000-3-quantityValues.html#revolutions-magnitude">80000-3-quantityValues.html#revolutions-magnitude</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-revolutions-magnitude">3.10. revolutions-magnitude</a> <a href="#ref-for-revolutions-magnitude①">(2)</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-second-magnitude">
+   <a href="80000-3-quantityValues.html#second-magnitude">80000-3-quantityValues.html#second-magnitude</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-second-magnitude">3.11. second-magnitude</a> <a href="#ref-for-second-magnitude①">(2)</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-unitofangularmeasurevalue">
+   <a href="80000-3-units.html#unitofangularmeasurevalue">80000-3-units.html#unitofangularmeasurevalue</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-unitofangularmeasurevalue">3.9. radian-magnitude</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-unitoffrequencyvalue">
+   <a href="80000-3-units.html#unitoffrequencyvalue">80000-3-units.html#unitoffrequencyvalue</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-unitoffrequencyvalue">3.1. hertz-magnitude</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-unitoflengthvalue">
+   <a href="80000-3-units.html#unitoflengthvalue">80000-3-units.html#unitoflengthvalue</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-unitoflengthvalue">3.3. kilometre-magnitude</a>
+    <li><a href="#ref-for-unitoflengthvalue①">3.5. metre-magnitude</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-unitofrotationvalue">
+   <a href="80000-3-units.html#unitofrotationvalue">80000-3-units.html#unitofrotationvalue</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-unitofrotationvalue">3.10. revolutions-magnitude</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-unitoftimevalue">
+   <a href="80000-3-units.html#unitoftimevalue">80000-3-units.html#unitoftimevalue</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-unitoftimevalue">3.2. hour-magnitude</a>
+    <li><a href="#ref-for-unitoftimevalue①">3.7. millisecond-magnitude</a>
+    <li><a href="#ref-for-unitoftimevalue②">3.8. minute-magnitude</a>
+    <li><a href="#ref-for-unitoftimevalue③">3.11. second-magnitude</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-unitofvelocityvalue">
+   <a href="80000-3-units.html#unitofvelocityvalue">80000-3-units.html#unitofvelocityvalue</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-unitofvelocityvalue">3.4. kilometre-per-second-magnitude</a>
+    <li><a href="#ref-for-unitofvelocityvalue①">3.6. metre-per-second-magnitude</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-unitaryquantitymagnitude">
+   <a href="80000-concepts.html#unitaryquantitymagnitude">80000-concepts.html#unitaryquantitymagnitude</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-unitaryquantitymagnitude">3.1. hertz-magnitude</a>
+    <li><a href="#ref-for-unitaryquantitymagnitude①">3.2. hour-magnitude</a>
+    <li><a href="#ref-for-unitaryquantitymagnitude②">3.3. kilometre-magnitude</a>
+    <li><a href="#ref-for-unitaryquantitymagnitude③">3.4. kilometre-per-second-magnitude</a>
+    <li><a href="#ref-for-unitaryquantitymagnitude④">3.5. metre-magnitude</a>
+    <li><a href="#ref-for-unitaryquantitymagnitude⑤">3.6. metre-per-second-magnitude</a>
+    <li><a href="#ref-for-unitaryquantitymagnitude⑥">3.7. millisecond-magnitude</a>
+    <li><a href="#ref-for-unitaryquantitymagnitude⑦">3.8. minute-magnitude</a>
+    <li><a href="#ref-for-unitaryquantitymagnitude⑧">3.9. radian-magnitude</a>
+    <li><a href="#ref-for-unitaryquantitymagnitude⑨">3.10. revolutions-magnitude</a>
+    <li><a href="#ref-for-unitaryquantitymagnitude①⓪">3.11. second-magnitude</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-hasreference">
    <a href="../iupac.org/metrology.html#hasreference">../iupac.org/metrology.html#hasreference</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-hasreference">3.1. UnitOfCelciusTemperatureValue</a>
-    <li><a href="#ref-for-hasreference①">3.2. UnitOfThermodynamicTemperatureValue</a>
+    <li><a href="#ref-for-hasreference">3.1. hertz-magnitude</a>
+    <li><a href="#ref-for-hasreference①">3.2. hour-magnitude</a>
+    <li><a href="#ref-for-hasreference②">3.3. kilometre-magnitude</a>
+    <li><a href="#ref-for-hasreference③">3.4. kilometre-per-second-magnitude</a>
+    <li><a href="#ref-for-hasreference④">3.5. metre-magnitude</a>
+    <li><a href="#ref-for-hasreference⑤">3.6. metre-per-second-magnitude</a>
+    <li><a href="#ref-for-hasreference⑥">3.7. millisecond-magnitude</a>
+    <li><a href="#ref-for-hasreference⑦">3.8. minute-magnitude</a>
+    <li><a href="#ref-for-hasreference⑧">3.9. radian-magnitude</a>
+    <li><a href="#ref-for-hasreference⑨">3.10. revolutions-magnitude</a>
+    <li><a href="#ref-for-hasreference①⓪">3.11. second-magnitude</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-independentmeasurementunit">
-   <a href="../iupac.org/metrology.html#independentmeasurementunit">../iupac.org/metrology.html#independentmeasurementunit</a><b>Referenced in:</b>
+  <aside class="dfn-panel" data-for="term-for-reference">
+   <a href="../iupac.org/metrology.html#reference">../iupac.org/metrology.html#reference</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-independentmeasurementunit">4.4. kelvin</a>
+    <li><a href="#ref-for-reference">3.1. hertz-magnitude</a>
+    <li><a href="#ref-for-reference①">3.2. hour-magnitude</a>
+    <li><a href="#ref-for-reference②">3.3. kilometre-magnitude</a>
+    <li><a href="#ref-for-reference③">3.4. kilometre-per-second-magnitude</a>
+    <li><a href="#ref-for-reference④">3.5. metre-magnitude</a>
+    <li><a href="#ref-for-reference⑤">3.6. metre-per-second-magnitude</a>
+    <li><a href="#ref-for-reference⑥">3.7. millisecond-magnitude</a>
+    <li><a href="#ref-for-reference⑦">3.8. minute-magnitude</a>
+    <li><a href="#ref-for-reference⑧">3.9. radian-magnitude</a>
+    <li><a href="#ref-for-reference⑨">3.10. revolutions-magnitude</a>
+    <li><a href="#ref-for-reference①⓪">3.11. second-magnitude</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-isdimensionlessmeasurementunit">
-   <a href="../iupac.org/metrology.html#isdimensionlessmeasurementunit">../iupac.org/metrology.html#isdimensionlessmeasurementunit</a><b>Referenced in:</b>
+  <aside class="dfn-panel" data-for="term-for-unitaryquantity">
+   <a href="../iupac.org/metrology.html#unitaryquantity">../iupac.org/metrology.html#unitaryquantity</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-isdimensionlessmeasurementunit">4.1. UnitOfCelciusTemperature</a>
-    <li><a href="#ref-for-isdimensionlessmeasurementunit①">4.2. UnitOfThermodynamicTemperature</a>
-   </ul>
-  </aside>
-  <aside class="dfn-panel" data-for="term-for-unitaryquantityvalue">
-   <a href="../iupac.org/metrology.html#unitaryquantityvalue">../iupac.org/metrology.html#unitaryquantityvalue</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-unitaryquantityvalue">3.1. UnitOfCelciusTemperatureValue</a>
-    <li><a href="#ref-for-unitaryquantityvalue①">3.2. UnitOfThermodynamicTemperatureValue</a>
+    <li><a href="#ref-for-unitaryquantity">3.1. hertz-magnitude</a> <a href="#ref-for-unitaryquantity①">(2)</a>
+    <li><a href="#ref-for-unitaryquantity②">3.2. hour-magnitude</a> <a href="#ref-for-unitaryquantity③">(2)</a>
+    <li><a href="#ref-for-unitaryquantity④">3.3. kilometre-magnitude</a> <a href="#ref-for-unitaryquantity⑤">(2)</a>
+    <li><a href="#ref-for-unitaryquantity⑥">3.4. kilometre-per-second-magnitude</a> <a href="#ref-for-unitaryquantity⑦">(2)</a>
+    <li><a href="#ref-for-unitaryquantity⑧">3.5. metre-magnitude</a> <a href="#ref-for-unitaryquantity⑨">(2)</a>
+    <li><a href="#ref-for-unitaryquantity①⓪">3.6. metre-per-second-magnitude</a> <a href="#ref-for-unitaryquantity①①">(2)</a>
+    <li><a href="#ref-for-unitaryquantity①②">3.7. millisecond-magnitude</a> <a href="#ref-for-unitaryquantity①③">(2)</a>
+    <li><a href="#ref-for-unitaryquantity①④">3.8. minute-magnitude</a> <a href="#ref-for-unitaryquantity①⑤">(2)</a>
+    <li><a href="#ref-for-unitaryquantity①⑥">3.9. radian-magnitude</a> <a href="#ref-for-unitaryquantity①⑦">(2)</a>
+    <li><a href="#ref-for-unitaryquantity①⑧">3.10. revolutions-magnitude</a> <a href="#ref-for-unitaryquantity①⑨">(2)</a>
+    <li><a href="#ref-for-unitaryquantity②⓪">3.11. second-magnitude</a> <a href="#ref-for-unitaryquantity②①">(2)</a>
    </ul>
   </aside>
   <h3 class="no-num no-ref heading settled" id="index-defined-elsewhere"><span class="content">Terms defined by reference</span><a class="self-link" href="#index-defined-elsewhere"></a></h3>
   <ul class="index">
    <li>
-    <a data-link-type="biblio">[http://iso.org/80000-5-units]</a> defines the following terms:
+    <a data-link-type="biblio">[http://iso.org/80000-3-instances]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="term-for-degreecelcius">degreecelcius</span>
-     <li><span class="dfn-paneled" id="term-for-degreecelcius-of-kelvin">degreecelcius-of-kelvin</span>
-     <li><span class="dfn-paneled" id="term-for-kelvin">kelvin</span>
-     <li><span class="dfn-paneled" id="term-for-unitofcelciustemperature">unitofcelciustemperature</span>
-     <li><span class="dfn-paneled" id="term-for-unitofthermodynamictemperature">unitofthermodynamictemperature</span>
+     <li><span class="dfn-paneled" id="term-for-hertz">hertz</span>
+     <li><span class="dfn-paneled" id="term-for-hour">hour</span>
+     <li><span class="dfn-paneled" id="term-for-kilometre">kilometre</span>
+     <li><span class="dfn-paneled" id="term-for-kilometre-per-second">kilometre-per-second</span>
+     <li><span class="dfn-paneled" id="term-for-metre">metre</span>
+     <li><span class="dfn-paneled" id="term-for-metre-per-second">metre-per-second</span>
+     <li><span class="dfn-paneled" id="term-for-millisecond">millisecond</span>
+     <li><span class="dfn-paneled" id="term-for-minute">minute</span>
+     <li><span class="dfn-paneled" id="term-for-radian">radian</span>
+     <li><span class="dfn-paneled" id="term-for-revolutions">revolutions</span>
+     <li><span class="dfn-paneled" id="term-for-second">second</span>
+    </ul>
+   <li>
+    <a data-link-type="biblio">[http://iso.org/80000-3-quantityvalues]</a> defines the following terms:
+    <ul>
+     <li><span class="dfn-paneled" id="term-for-hertz-magnitude">hertz-magnitude</span>
+     <li><span class="dfn-paneled" id="term-for-hour-magnitude">hour-magnitude</span>
+     <li><span class="dfn-paneled" id="term-for-kilometre-magnitude">kilometre-magnitude</span>
+     <li><span class="dfn-paneled" id="term-for-kilometre-per-second-magnitude">kilometre-per-second-magnitude</span>
+     <li><span class="dfn-paneled" id="term-for-metre-magnitude">metre-magnitude</span>
+     <li><span class="dfn-paneled" id="term-for-metre-per-second-magnitude">metre-per-second-magnitude</span>
+     <li><span class="dfn-paneled" id="term-for-millisecond-magnitude">millisecond-magnitude</span>
+     <li><span class="dfn-paneled" id="term-for-minute-magnitude">minute-magnitude</span>
+     <li><span class="dfn-paneled" id="term-for-radian-magnitude">radian-magnitude</span>
+     <li><span class="dfn-paneled" id="term-for-revolutions-magnitude">revolutions-magnitude</span>
+     <li><span class="dfn-paneled" id="term-for-second-magnitude">second-magnitude</span>
+    </ul>
+   <li>
+    <a data-link-type="biblio">[http://iso.org/80000-3-units]</a> defines the following terms:
+    <ul>
+     <li><span class="dfn-paneled" id="term-for-unitofangularmeasurevalue">unitofangularmeasurevalue</span>
+     <li><span class="dfn-paneled" id="term-for-unitoffrequencyvalue">unitoffrequencyvalue</span>
+     <li><span class="dfn-paneled" id="term-for-unitoflengthvalue">unitoflengthvalue</span>
+     <li><span class="dfn-paneled" id="term-for-unitofrotationvalue">unitofrotationvalue</span>
+     <li><span class="dfn-paneled" id="term-for-unitoftimevalue">unitoftimevalue</span>
+     <li><span class="dfn-paneled" id="term-for-unitofvelocityvalue">unitofvelocityvalue</span>
     </ul>
    <li>
     <a data-link-type="biblio">[http://iso.org/80000-concepts]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="term-for-measurementunit">measurementunit</span>
+     <li><span class="dfn-paneled" id="term-for-unitaryquantitymagnitude">unitaryquantitymagnitude</span>
     </ul>
    <li>
     <a data-link-type="biblio">[http://iupac.org/metrology]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="term-for-coherentmeasurementunit">coherentmeasurementunit</span>
-     <li><span class="dfn-paneled" id="term-for-derivedmeasurementunit">derivedmeasurementunit</span>
-     <li><span class="dfn-paneled" id="term-for-exponent">exponent</span>
-     <li><span class="dfn-paneled" id="term-for-hasfactorformeasurementunit">hasfactorformeasurementunit</span>
      <li><span class="dfn-paneled" id="term-for-hasreference">hasreference</span>
-     <li><span class="dfn-paneled" id="term-for-independentmeasurementunit">independentmeasurementunit</span>
-     <li><span class="dfn-paneled" id="term-for-isdimensionlessmeasurementunit">isdimensionlessmeasurementunit</span>
-     <li><span class="dfn-paneled" id="term-for-unitaryquantityvalue">unitaryquantityvalue</span>
+     <li><span class="dfn-paneled" id="term-for-reference">reference</span>
+     <li><span class="dfn-paneled" id="term-for-unitaryquantity">unitaryquantity</span>
     </ul>
   </ul>
 <script>/* script-dfn-panel */

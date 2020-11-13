@@ -1,7 +1,7 @@
 <!doctype html><html lang="en">
  <head>
   <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-  <title>80000-5-units</title>
+  <title>system-of-units</title>
   <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
 <style data-fill-with="stylesheet">/******************************************************************************
  *                   Style sheet for the W3C specifications                   *
@@ -1322,7 +1322,7 @@ Possible extra rowspan handling
 	}
 </style>
   <meta content="Bikeshed version 89ebb6ab, updated Fri Oct 9 15:32:07 2020 -0700" name="generator">
-  <link href="https://opencaesar.github.io/core-vocabularies//src/oml/iso.org/80000-5-units" rel="canonical">
+  <link href="https://opencaesar.github.io/core-vocabularies//src/oml/iupac.org/diagrams/system-of-units" rel="canonical">
   <meta content="016d25312624eba77cc9060e2b9fc3b359f0e606" name="document-revision">
 <style>
 a[data-link-type=biblio] {
@@ -1528,47 +1528,6 @@ figcaption {
 figcaption:not(.no-marker)::before {
     content: "Figure " counter(figure) " ";
 }</style>
-<style>/* style-dfn-panel */
-
-:root {
-    --dfnpanel-bg: #ddd;
-    --dfnpanel-text: var(--text);
-}
-.dfn-panel {
-    position: absolute;
-    z-index: 35;
-    height: auto;
-    width: -webkit-fit-content;
-    width: fit-content;
-    max-width: 300px;
-    max-height: 500px;
-    overflow: auto;
-    padding: 0.5em 0.75em;
-    font: small Helvetica Neue, sans-serif, Droid Sans Fallback;
-    background: var(--dfnpanel-bg);
-    color: var(--dfnpanel-text);
-    border: outset 0.2em;
-}
-.dfn-panel:not(.on) { display: none; }
-.dfn-panel * { margin: 0; padding: 0; text-indent: 0; }
-.dfn-panel > b { display: block; }
-.dfn-panel a { color: var(--dfnpanel-text); }
-.dfn-panel a:not(:hover) { text-decoration: none !important; border-bottom: none !important; }
-.dfn-panel > b + b { margin-top: 0.25em; }
-.dfn-panel ul { padding: 0; }
-.dfn-panel li { list-style: inside; }
-.dfn-panel.activated {
-    display: inline-block;
-    position: fixed;
-    left: .5em;
-    bottom: 2em;
-    margin: 0 auto;
-    max-width: calc(100vw - 1.5em - .4em - .5em);
-    max-height: 30vh;
-}
-
-.dfn-paneled { cursor: pointer; }
-</style>
 <style>/* style-md-lists */
 
 /* This is a weird hack for me not yet following the commonmark spec
@@ -1744,22 +1703,16 @@ dfn > a.self-link::before      { content: "#"; }
         --selflink-hover-text: white;
     }
 }
-
-@media (prefers-color-scheme: dark) {
-    :root {
-        --dfnpanel-bg: #222;
-        --dfnpanel-text: var(--text);
-    }
-}</style>
+</style>
  <body class="h-entry">
   <div class="head">
    <p data-fill-with="logo"><a class="logo" href="https://www.openapis.org/"><img alt="OpenAPI Initiative" height="48" src="https://opencaesar.github.io/oml/images/oml.svg"></a></p>
-   <h1 class="p-name no-ref" id="title">80000-5-units</h1>
+   <h1 class="p-name no-ref" id="title">system-of-units</h1>
    <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2020-11-13">13 November 2020</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
-     <dd><a class="u-url" href="https://opencaesar.github.io/core-vocabularies//src/oml/iso.org/80000-5-units">https://opencaesar.github.io/core-vocabularies//src/oml/iso.org/80000-5-units</a>
+     <dd><a class="u-url" href="https://opencaesar.github.io/core-vocabularies//src/oml/iupac.org/diagrams/system-of-units">https://opencaesar.github.io/core-vocabularies//src/oml/iupac.org/diagrams/system-of-units</a>
      <dt class="editor">Editor:
      <dd class="editor p-author h-card vcard"><span class="p-name fn">Unknown</span>
      <dt>Copyright:
@@ -1778,31 +1731,6 @@ dfn > a.self-link::before      { content: "#"; }
    <ol class="toc" role="directory">
     <li><a href="#Namespace"><span class="secno">1</span> <span class="content">Namespace</span></a>
     <li><a href="#Extensions"><span class="secno">2</span> <span class="content">Imports</span></a>
-    <li>
-     <a href="#Aspects"><span class="secno">3</span> <span class="content">Aspects</span></a>
-     <ol class="toc">
-      <li><a href="#UnitOfCelciusTemperatureValue"><span class="secno">3.1</span> <span class="content"><span>UnitOfCelciusTemperatureValue</span></span></a>
-      <li><a href="#UnitOfThermodynamicTemperatureValue"><span class="secno">3.2</span> <span class="content"><span>UnitOfThermodynamicTemperatureValue</span></span></a>
-     </ol>
-    <li>
-     <a href="#concepts"><span class="secno">4</span> <span class="content">Concepts</span></a>
-     <ol class="toc">
-      <li><a href="#UnitOfCelciusTemperature"><span class="secno">4.1</span> <span class="content"><span>UnitOfCelciusTemperature</span></span></a>
-      <li><a href="#UnitOfThermodynamicTemperature"><span class="secno">4.2</span> <span class="content"><span>UnitOfThermodynamicTemperature</span></span></a>
-      <li><a href="#DegreeCelcius"><span class="secno">4.3</span> <span class="content"><span>degreeCelcius</span></span></a>
-      <li><a href="#Kelvin"><span class="secno">4.4</span> <span class="content"><span>kelvin</span></span></a>
-     </ol>
-    <li>
-     <a href="#Relations"><span class="secno">5</span> <span class="content">Relation Entities</span></a>
-     <ol class="toc">
-      <li><a href="#DegreeCelcius-of-kelvin"><span class="secno">5.1</span> <span class="content"><span>degreeCelcius-of-kelvin</span></span></a>
-     </ol>
-    <li>
-     <a href="#index"><span class="secno"></span> <span class="content">Index</span></a>
-     <ol class="toc">
-      <li><a href="#index-defined-here"><span class="secno"></span> <span class="content">Terms defined by this specification</span></a>
-      <li><a href="#index-defined-elsewhere"><span class="secno"></span> <span class="content">Terms defined by reference</span></a>
-     </ol>
    </ol>
   </nav>
   <main>
@@ -1810,70 +1738,12 @@ dfn > a.self-link::before      { content: "#"; }
     <h2 class="heading settled" data-level="1" id="Namespace"><span class="secno">1. </span><span class="content">Namespace</span><a class="self-link" href="#Namespace"></a></h2>
     <ul>
      <li data-md>
-      <p>80000-5-units: <a href="80000-5-units.html">http://iso.org/80000-5-units</a></p>
+      <p>system-of-units: <a href="system-of-units.html">http://iupac.org/metrology/diagrams/system-of-units</a></p>
     </ul>
     <h2 class="heading settled" data-level="2" id="Extensions"><span class="secno">2. </span><span class="content">Imports</span><a class="self-link" href="#Extensions"></a></h2>
     <ul>
      <li data-md>
-      <p>80000-4-units: <a href="http://iso.org/80000-4-units.html">http://iso.org/80000-4-units</a></p>
-    </ul>
-    <h2 class="heading settled" data-level="3" id="Aspects"><span class="secno">3. </span><span class="content">Aspects</span><a class="self-link" href="#Aspects"></a></h2>
-    <h3 class="heading settled" data-level="3.1" id="UnitOfCelciusTemperatureValue"><span class="secno">3.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="unitofcelciustemperaturevalue">UnitOfCelciusTemperatureValue<a class="self-link" href="#unitofcelciustemperaturevalue"></a></dfn></span><a class="self-link" href="#UnitOfCelciusTemperatureValue"></a></h3>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#unitaryquantityvalue" id="ref-for-unitaryquantityvalue">metrology:UnitaryQuantityValue</a></p>
-    <p><em>Relations with source:</em></p>
-    <ul>
-     <li data-md>
-      <p>UnitOfCelciusTemperatureValue ← <a data-link-type="dfn" href="../iupac.org/metrology.html#hasreference" id="ref-for-hasreference">metrology:HasReference</a> → <a data-link-type="dfn" href="80000-5-units.html#unitofcelciustemperature" id="ref-for-unitofcelciustemperature">UnitOfCelciusTemperature</a></p>
-    </ul>
-    <h3 class="heading settled" data-level="3.2" id="UnitOfThermodynamicTemperatureValue"><span class="secno">3.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="unitofthermodynamictemperaturevalue">UnitOfThermodynamicTemperatureValue<a class="self-link" href="#unitofthermodynamictemperaturevalue"></a></dfn></span><a class="self-link" href="#UnitOfThermodynamicTemperatureValue"></a></h3>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#unitaryquantityvalue" id="ref-for-unitaryquantityvalue①">metrology:UnitaryQuantityValue</a></p>
-    <p><em>Relations with source:</em></p>
-    <ul>
-     <li data-md>
-      <p>UnitOfThermodynamicTemperatureValue ← <a data-link-type="dfn" href="../iupac.org/metrology.html#hasreference" id="ref-for-hasreference①">metrology:HasReference</a> → <a data-link-type="dfn" href="80000-5-units.html#unitofthermodynamictemperature" id="ref-for-unitofthermodynamictemperature">UnitOfThermodynamicTemperature</a></p>
-    </ul>
-    <h2 class="heading settled" data-level="4" id="concepts"><span class="secno">4. </span><span class="content">Concepts</span><a class="self-link" href="#concepts"></a></h2>
-    <h3 class="heading settled" data-level="4.1" id="UnitOfCelciusTemperature"><span class="secno">4.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="unitofcelciustemperature">UnitOfCelciusTemperature<a class="self-link" href="#unitofcelciustemperature"></a></dfn></span><a class="self-link" href="#UnitOfCelciusTemperature"></a></h3>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#coherentmeasurementunit" id="ref-for-coherentmeasurementunit">metrology:CoherentMeasurementUnit</a></p>
-    <p><em>Subtypes:</em> <a data-link-type="dfn" href="80000-5-units.html#degreecelcius" id="ref-for-degreecelcius">degreeCelcius</a></p>
-    <p><em>Properties:</em></p>
-    <ul>
-     <li data-md>
-      <p><a data-link-type="dfn" href="../iupac.org/metrology.html#isdimensionlessmeasurementunit" id="ref-for-isdimensionlessmeasurementunit">metrology:isDimensionlessMeasurementUnit</a> (must have value false)</p>
-    </ul>
-    <h3 class="heading settled" data-level="4.2" id="UnitOfThermodynamicTemperature"><span class="secno">4.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="unitofthermodynamictemperature">UnitOfThermodynamicTemperature<a class="self-link" href="#unitofthermodynamictemperature"></a></dfn></span><a class="self-link" href="#UnitOfThermodynamicTemperature"></a></h3>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#coherentmeasurementunit" id="ref-for-coherentmeasurementunit①">metrology:CoherentMeasurementUnit</a></p>
-    <p><em>Subtypes:</em> <a data-link-type="dfn" href="80000-5-units.html#kelvin" id="ref-for-kelvin">kelvin</a></p>
-    <p><em>Properties:</em></p>
-    <ul>
-     <li data-md>
-      <p><a data-link-type="dfn" href="../iupac.org/metrology.html#isdimensionlessmeasurementunit" id="ref-for-isdimensionlessmeasurementunit①">metrology:isDimensionlessMeasurementUnit</a> (must have value false)</p>
-    </ul>
-    <h3 class="heading settled" data-level="4.3" id="DegreeCelcius"><span class="secno">4.3. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="degreecelcius">degreeCelcius<a class="self-link" href="#degreecelcius"></a></dfn></span><a class="self-link" href="#DegreeCelcius"></a></h3>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#derivedmeasurementunit" id="ref-for-derivedmeasurementunit">metrology:DerivedMeasurementUnit</a>, <a data-link-type="dfn" href="80000-concepts.html#measurementunit" id="ref-for-measurementunit">80000-concepts:MeasurementUnit</a>, <a data-link-type="dfn" href="80000-5-units.html#unitofcelciustemperature" id="ref-for-unitofcelciustemperature①">UnitOfCelciusTemperature</a></p>
-    <p><em>Relations with source:</em></p>
-    <ul>
-     <li data-md>
-      <p>degreeCelcius ← <a data-link-type="dfn" href="80000-5-units.html#degreecelcius-of-kelvin" id="ref-for-degreecelcius-of-kelvin">degreeCelcius-of-kelvin</a> → <a data-link-type="dfn" href="80000-5-units.html#kelvin" id="ref-for-kelvin①">kelvin</a></p>
-    </ul>
-    <h3 class="heading settled" data-level="4.4" id="Kelvin"><span class="secno">4.4. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="kelvin">kelvin<a class="self-link" href="#kelvin"></a></dfn></span><a class="self-link" href="#Kelvin"></a></h3>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#independentmeasurementunit" id="ref-for-independentmeasurementunit">metrology:IndependentMeasurementUnit</a>, <a data-link-type="dfn" href="80000-concepts.html#measurementunit" id="ref-for-measurementunit①">80000-concepts:MeasurementUnit</a>, <a data-link-type="dfn" href="80000-5-units.html#unitofthermodynamictemperature" id="ref-for-unitofthermodynamictemperature①">UnitOfThermodynamicTemperature</a></p>
-    <p><em>Relations with target:</em></p>
-    <ul>
-     <li data-md>
-      <p><a data-link-type="dfn" href="80000-5-units.html#degreecelcius" id="ref-for-degreecelcius①">degreeCelcius</a> ← <a data-link-type="dfn" href="80000-5-units.html#degreecelcius-of-kelvin" id="ref-for-degreecelcius-of-kelvin①">degreeCelcius-of-kelvin</a> → kelvin</p>
-    </ul>
-    <h2 class="heading settled" data-level="5" id="Relations"><span class="secno">5. </span><span class="content">Relation Entities</span><a class="self-link" href="#Relations"></a></h2>
-    <h3 class="heading settled" data-level="5.1" id="DegreeCelcius-of-kelvin"><span class="secno">5.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="degreecelcius-of-kelvin">degreeCelcius-of-kelvin<a class="self-link" href="#degreecelcius-of-kelvin"></a></dfn></span><a class="self-link" href="#DegreeCelcius-of-kelvin"></a></h3>
-    <p><em>Attributes:</em></p>
-    <p><em>Source:</em> <a data-link-type="dfn" href="80000-5-units.html#degreecelcius" id="ref-for-degreecelcius②">degreeCelcius</a></p>
-    <p><em>Target:</em> <a data-link-type="dfn" href="80000-5-units.html#kelvin" id="ref-for-kelvin②">kelvin</a></p>
-    <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="degreeCelcius-of-kelvin" data-dfn-type="attribute" data-export id="dom-degreecelcius-of-kelvin-degreecelcius-of-kelvin-factor"><code>degreeCelcius-of-kelvin-factor</code><a class="self-link" href="#dom-degreecelcius-of-kelvin-degreecelcius-of-kelvin-factor"></a></dfn></p>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#hasfactorformeasurementunit" id="ref-for-hasfactorformeasurementunit">metrology:HasFactorForMeasurementUnit</a></p>
-    <p><em>Properties:</em></p>
-    <ul>
-     <li data-md>
-      <p><a data-link-type="dfn" href="../iupac.org/metrology.html#exponent" id="ref-for-exponent">metrology:exponent</a> (must have value 1/1)</p>
+      <p>metrology: <a href="http://iupac.org/metrology.html">http://iupac.org/metrology</a></p>
     </ul>
    </div>
   </main>
@@ -2005,197 +1875,4 @@ dfn > a.self-link::before      { content: "#"; }
   }
 
 })();
-</script>
-  <h2 class="no-num no-ref heading settled" id="index"><span class="content">Index</span><a class="self-link" href="#index"></a></h2>
-  <h3 class="no-num no-ref heading settled" id="index-defined-here"><span class="content">Terms defined by this specification</span><a class="self-link" href="#index-defined-here"></a></h3>
-  <ul class="index">
-   <li><a href="#degreecelcius">degreeCelcius</a><span>, in §4.3</span>
-   <li><a href="#degreecelcius-of-kelvin">degreeCelcius-of-kelvin</a><span>, in §5.1</span>
-   <li><a href="#dom-degreecelcius-of-kelvin-degreecelcius-of-kelvin-factor">degreeCelcius-of-kelvin-factor</a><span>, in §5.1</span>
-   <li><a href="#kelvin">kelvin</a><span>, in §4.4</span>
-   <li><a href="#unitofcelciustemperature">UnitOfCelciusTemperature</a><span>, in §4.1</span>
-   <li><a href="#unitofcelciustemperaturevalue">UnitOfCelciusTemperatureValue</a><span>, in §3.1</span>
-   <li><a href="#unitofthermodynamictemperature">UnitOfThermodynamicTemperature</a><span>, in §4.2</span>
-   <li><a href="#unitofthermodynamictemperaturevalue">UnitOfThermodynamicTemperatureValue</a><span>, in §3.2</span>
-  </ul>
-  <aside class="dfn-panel" data-for="term-for-degreecelcius">
-   <a href="80000-5-units.html#degreecelcius">80000-5-units.html#degreecelcius</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-degreecelcius">4.1. UnitOfCelciusTemperature</a>
-    <li><a href="#ref-for-degreecelcius①">4.4. kelvin</a>
-    <li><a href="#ref-for-degreecelcius②">5.1. degreeCelcius-of-kelvin</a>
-   </ul>
-  </aside>
-  <aside class="dfn-panel" data-for="term-for-degreecelcius-of-kelvin">
-   <a href="80000-5-units.html#degreecelcius-of-kelvin">80000-5-units.html#degreecelcius-of-kelvin</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-degreecelcius-of-kelvin">4.3. degreeCelcius</a>
-    <li><a href="#ref-for-degreecelcius-of-kelvin①">4.4. kelvin</a>
-   </ul>
-  </aside>
-  <aside class="dfn-panel" data-for="term-for-kelvin">
-   <a href="80000-5-units.html#kelvin">80000-5-units.html#kelvin</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-kelvin">4.2. UnitOfThermodynamicTemperature</a>
-    <li><a href="#ref-for-kelvin①">4.3. degreeCelcius</a>
-    <li><a href="#ref-for-kelvin②">5.1. degreeCelcius-of-kelvin</a>
-   </ul>
-  </aside>
-  <aside class="dfn-panel" data-for="term-for-unitofcelciustemperature">
-   <a href="80000-5-units.html#unitofcelciustemperature">80000-5-units.html#unitofcelciustemperature</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-unitofcelciustemperature">3.1. UnitOfCelciusTemperatureValue</a>
-    <li><a href="#ref-for-unitofcelciustemperature①">4.3. degreeCelcius</a>
-   </ul>
-  </aside>
-  <aside class="dfn-panel" data-for="term-for-unitofthermodynamictemperature">
-   <a href="80000-5-units.html#unitofthermodynamictemperature">80000-5-units.html#unitofthermodynamictemperature</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-unitofthermodynamictemperature">3.2. UnitOfThermodynamicTemperatureValue</a>
-    <li><a href="#ref-for-unitofthermodynamictemperature①">4.4. kelvin</a>
-   </ul>
-  </aside>
-  <aside class="dfn-panel" data-for="term-for-measurementunit">
-   <a href="80000-concepts.html#measurementunit">80000-concepts.html#measurementunit</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-measurementunit">4.3. degreeCelcius</a>
-    <li><a href="#ref-for-measurementunit①">4.4. kelvin</a>
-   </ul>
-  </aside>
-  <aside class="dfn-panel" data-for="term-for-coherentmeasurementunit">
-   <a href="../iupac.org/metrology.html#coherentmeasurementunit">../iupac.org/metrology.html#coherentmeasurementunit</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-coherentmeasurementunit">4.1. UnitOfCelciusTemperature</a>
-    <li><a href="#ref-for-coherentmeasurementunit①">4.2. UnitOfThermodynamicTemperature</a>
-   </ul>
-  </aside>
-  <aside class="dfn-panel" data-for="term-for-derivedmeasurementunit">
-   <a href="../iupac.org/metrology.html#derivedmeasurementunit">../iupac.org/metrology.html#derivedmeasurementunit</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-derivedmeasurementunit">4.3. degreeCelcius</a>
-   </ul>
-  </aside>
-  <aside class="dfn-panel" data-for="term-for-exponent">
-   <a href="../iupac.org/metrology.html#exponent">../iupac.org/metrology.html#exponent</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-exponent">5.1. degreeCelcius-of-kelvin</a>
-   </ul>
-  </aside>
-  <aside class="dfn-panel" data-for="term-for-hasfactorformeasurementunit">
-   <a href="../iupac.org/metrology.html#hasfactorformeasurementunit">../iupac.org/metrology.html#hasfactorformeasurementunit</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-hasfactorformeasurementunit">5.1. degreeCelcius-of-kelvin</a>
-   </ul>
-  </aside>
-  <aside class="dfn-panel" data-for="term-for-hasreference">
-   <a href="../iupac.org/metrology.html#hasreference">../iupac.org/metrology.html#hasreference</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-hasreference">3.1. UnitOfCelciusTemperatureValue</a>
-    <li><a href="#ref-for-hasreference①">3.2. UnitOfThermodynamicTemperatureValue</a>
-   </ul>
-  </aside>
-  <aside class="dfn-panel" data-for="term-for-independentmeasurementunit">
-   <a href="../iupac.org/metrology.html#independentmeasurementunit">../iupac.org/metrology.html#independentmeasurementunit</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-independentmeasurementunit">4.4. kelvin</a>
-   </ul>
-  </aside>
-  <aside class="dfn-panel" data-for="term-for-isdimensionlessmeasurementunit">
-   <a href="../iupac.org/metrology.html#isdimensionlessmeasurementunit">../iupac.org/metrology.html#isdimensionlessmeasurementunit</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-isdimensionlessmeasurementunit">4.1. UnitOfCelciusTemperature</a>
-    <li><a href="#ref-for-isdimensionlessmeasurementunit①">4.2. UnitOfThermodynamicTemperature</a>
-   </ul>
-  </aside>
-  <aside class="dfn-panel" data-for="term-for-unitaryquantityvalue">
-   <a href="../iupac.org/metrology.html#unitaryquantityvalue">../iupac.org/metrology.html#unitaryquantityvalue</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-unitaryquantityvalue">3.1. UnitOfCelciusTemperatureValue</a>
-    <li><a href="#ref-for-unitaryquantityvalue①">3.2. UnitOfThermodynamicTemperatureValue</a>
-   </ul>
-  </aside>
-  <h3 class="no-num no-ref heading settled" id="index-defined-elsewhere"><span class="content">Terms defined by reference</span><a class="self-link" href="#index-defined-elsewhere"></a></h3>
-  <ul class="index">
-   <li>
-    <a data-link-type="biblio">[http://iso.org/80000-5-units]</a> defines the following terms:
-    <ul>
-     <li><span class="dfn-paneled" id="term-for-degreecelcius">degreecelcius</span>
-     <li><span class="dfn-paneled" id="term-for-degreecelcius-of-kelvin">degreecelcius-of-kelvin</span>
-     <li><span class="dfn-paneled" id="term-for-kelvin">kelvin</span>
-     <li><span class="dfn-paneled" id="term-for-unitofcelciustemperature">unitofcelciustemperature</span>
-     <li><span class="dfn-paneled" id="term-for-unitofthermodynamictemperature">unitofthermodynamictemperature</span>
-    </ul>
-   <li>
-    <a data-link-type="biblio">[http://iso.org/80000-concepts]</a> defines the following terms:
-    <ul>
-     <li><span class="dfn-paneled" id="term-for-measurementunit">measurementunit</span>
-    </ul>
-   <li>
-    <a data-link-type="biblio">[http://iupac.org/metrology]</a> defines the following terms:
-    <ul>
-     <li><span class="dfn-paneled" id="term-for-coherentmeasurementunit">coherentmeasurementunit</span>
-     <li><span class="dfn-paneled" id="term-for-derivedmeasurementunit">derivedmeasurementunit</span>
-     <li><span class="dfn-paneled" id="term-for-exponent">exponent</span>
-     <li><span class="dfn-paneled" id="term-for-hasfactorformeasurementunit">hasfactorformeasurementunit</span>
-     <li><span class="dfn-paneled" id="term-for-hasreference">hasreference</span>
-     <li><span class="dfn-paneled" id="term-for-independentmeasurementunit">independentmeasurementunit</span>
-     <li><span class="dfn-paneled" id="term-for-isdimensionlessmeasurementunit">isdimensionlessmeasurementunit</span>
-     <li><span class="dfn-paneled" id="term-for-unitaryquantityvalue">unitaryquantityvalue</span>
-    </ul>
-  </ul>
-<script>/* script-dfn-panel */
-
-document.body.addEventListener("click", function(e) {
-    var queryAll = function(sel) { return [].slice.call(document.querySelectorAll(sel)); }
-    // Find the dfn element or panel, if any, that was clicked on.
-    var el = e.target;
-    var target;
-    var hitALink = false;
-    while(el.parentElement) {
-        if(el.tagName == "A") {
-            // Clicking on a link in a <dfn> shouldn't summon the panel
-            hitALink = true;
-        }
-        if(el.classList.contains("dfn-paneled")) {
-            target = "dfn";
-            break;
-        }
-        if(el.classList.contains("dfn-panel")) {
-            target = "dfn-panel";
-            break;
-        }
-        el = el.parentElement;
-    }
-    if(target != "dfn-panel") {
-        // Turn off any currently "on" or "activated" panels.
-        queryAll(".dfn-panel.on, .dfn-panel.activated").forEach(function(el){
-            el.classList.remove("on");
-            el.classList.remove("activated");
-        });
-    }
-    if(target == "dfn" && !hitALink) {
-        // open the panel
-        var dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
-        if(dfnPanel) {
-            dfnPanel.classList.add("on");
-            var rect = el.getBoundingClientRect();
-            dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
-            dfnPanel.style.top = window.scrollY + rect.top + "px";
-            var panelRect = dfnPanel.getBoundingClientRect();
-            var panelWidth = panelRect.right - panelRect.left;
-            if(panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
-                // Reposition, because the panel is overflowing
-                dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
-            }
-        } else {
-            console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
-        }
-    } else if(target == "dfn-panel") {
-        // Switch it to "activated" state, which pins it.
-        el.classList.add("activated");
-        el.style.left = null;
-        el.style.top = null;
-    }
-
-});
 </script>

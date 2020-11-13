@@ -1323,7 +1323,7 @@ Possible extra rowspan handling
 </style>
   <meta content="Bikeshed version 89ebb6ab, updated Fri Oct 9 15:32:07 2020 -0700" name="generator">
   <link href="https://opencaesar.github.io/core-vocabularies//src/oml/iso.org/80000-3-units" rel="canonical">
-  <meta content="abba896ba09b6a1418147cedc1142ac310e18f73" name="document-revision">
+  <meta content="016d25312624eba77cc9060e2b9fc3b359f0e606" name="document-revision">
 <style>
 a[data-link-type=biblio] {
     white-space: pre-wrap;
@@ -1755,7 +1755,7 @@ dfn > a.self-link::before      { content: "#"; }
   <div class="head">
    <p data-fill-with="logo"><a class="logo" href="https://www.openapis.org/"><img alt="OpenAPI Initiative" height="48" src="https://opencaesar.github.io/oml/images/oml.svg"></a></p>
    <h1 class="p-name no-ref" id="title">80000-3-units</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2020-11-03">3 November 2020</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2020-11-13">13 November 2020</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -1779,41 +1779,47 @@ dfn > a.self-link::before      { content: "#"; }
     <li><a href="#Namespace"><span class="secno">1</span> <span class="content">Namespace</span></a>
     <li><a href="#Extensions"><span class="secno">2</span> <span class="content">Imports</span></a>
     <li>
-     <a href="#concepts"><span class="secno">3</span> <span class="content">Concepts</span></a>
+     <a href="#Aspects"><span class="secno">3</span> <span class="content">Aspects</span></a>
      <ol class="toc">
-      <li><a href="#Metre"><span class="secno">3.1</span> <span class="content"><span>metre</span></span></a>
-      <li><a href="#Kilometre"><span class="secno">3.2</span> <span class="content"><span>kilometre</span></span></a>
-      <li><a href="#Radian"><span class="secno">3.3</span> <span class="content"><span>radian</span></span></a>
-      <li><a href="#Second"><span class="secno">3.4</span> <span class="content"><span>second</span></span></a>
-      <li><a href="#Millisecond"><span class="secno">3.5</span> <span class="content"><span>millisecond</span></span></a>
-      <li><a href="#Minute"><span class="secno">3.6</span> <span class="content"><span>minute</span></span></a>
-      <li><a href="#Hour"><span class="secno">3.7</span> <span class="content"><span>hour</span></span></a>
-      <li><a href="#Metre-per-second"><span class="secno">3.8</span> <span class="content"><span>metre-per-second</span></span></a>
-      <li><a href="#Kilometre-per-second"><span class="secno">3.9</span> <span class="content"><span>kilometre-per-second</span></span></a>
-      <li><a href="#Revolutions"><span class="secno">3.10</span> <span class="content"><span>revolutions</span></span></a>
-      <li><a href="#Hertz"><span class="secno">3.11</span> <span class="content"><span>hertz</span></span></a>
+      <li><a href="#UnitOfAngularMeasureValue"><span class="secno">3.1</span> <span class="content"><span>UnitOfAngularMeasureValue</span></span></a>
+      <li><a href="#UnitOfFrequencyValue"><span class="secno">3.2</span> <span class="content"><span>UnitOfFrequencyValue</span></span></a>
+      <li><a href="#UnitOfLengthValue"><span class="secno">3.3</span> <span class="content"><span>UnitOfLengthValue</span></span></a>
+      <li><a href="#UnitOfRotationValue"><span class="secno">3.4</span> <span class="content"><span>UnitOfRotationValue</span></span></a>
+      <li><a href="#UnitOfTimeValue"><span class="secno">3.5</span> <span class="content"><span>UnitOfTimeValue</span></span></a>
+      <li><a href="#UnitOfVelocityValue"><span class="secno">3.6</span> <span class="content"><span>UnitOfVelocityValue</span></span></a>
      </ol>
     <li>
-     <a href="#Aspects"><span class="secno">4</span> <span class="content">Aspects</span></a>
+     <a href="#concepts"><span class="secno">4</span> <span class="content">Concepts</span></a>
      <ol class="toc">
-      <li><a href="#UnitOfLength"><span class="secno">4.1</span> <span class="content"><span>UnitOfLength</span></span></a>
-      <li><a href="#UnitOfAngularMeasure"><span class="secno">4.2</span> <span class="content"><span>UnitOfAngularMeasure</span></span></a>
-      <li><a href="#UnitOfTime"><span class="secno">4.3</span> <span class="content"><span>UnitOfTime</span></span></a>
-      <li><a href="#UnitOfVelocity"><span class="secno">4.4</span> <span class="content"><span>UnitOfVelocity</span></span></a>
-      <li><a href="#UnitOfRotation"><span class="secno">4.5</span> <span class="content"><span>UnitOfRotation</span></span></a>
-      <li><a href="#UnitOfFrequency"><span class="secno">4.6</span> <span class="content"><span>UnitOfFrequency</span></span></a>
+      <li><a href="#UnitOfAngularMeasure"><span class="secno">4.1</span> <span class="content"><span>UnitOfAngularMeasure</span></span></a>
+      <li><a href="#UnitOfFrequency"><span class="secno">4.2</span> <span class="content"><span>UnitOfFrequency</span></span></a>
+      <li><a href="#UnitOfLength"><span class="secno">4.3</span> <span class="content"><span>UnitOfLength</span></span></a>
+      <li><a href="#UnitOfRotation"><span class="secno">4.4</span> <span class="content"><span>UnitOfRotation</span></span></a>
+      <li><a href="#UnitOfTime"><span class="secno">4.5</span> <span class="content"><span>UnitOfTime</span></span></a>
+      <li><a href="#UnitOfVelocity"><span class="secno">4.6</span> <span class="content"><span>UnitOfVelocity</span></span></a>
+      <li><a href="#Hertz"><span class="secno">4.7</span> <span class="content"><span>hertz</span></span></a>
+      <li><a href="#Hour"><span class="secno">4.8</span> <span class="content"><span>hour</span></span></a>
+      <li><a href="#Kilometre"><span class="secno">4.9</span> <span class="content"><span>kilometre</span></span></a>
+      <li><a href="#Kilometre-per-second"><span class="secno">4.10</span> <span class="content"><span>kilometre-per-second</span></span></a>
+      <li><a href="#Metre"><span class="secno">4.11</span> <span class="content"><span>metre</span></span></a>
+      <li><a href="#Metre-per-second"><span class="secno">4.12</span> <span class="content"><span>metre-per-second</span></span></a>
+      <li><a href="#Millisecond"><span class="secno">4.13</span> <span class="content"><span>millisecond</span></span></a>
+      <li><a href="#Minute"><span class="secno">4.14</span> <span class="content"><span>minute</span></span></a>
+      <li><a href="#Radian"><span class="secno">4.15</span> <span class="content"><span>radian</span></span></a>
+      <li><a href="#Revolutions"><span class="secno">4.16</span> <span class="content"><span>revolutions</span></span></a>
+      <li><a href="#Second"><span class="secno">4.17</span> <span class="content"><span>second</span></span></a>
      </ol>
     <li>
      <a href="#Relations"><span class="secno">5</span> <span class="content">Relation Entities</span></a>
      <ol class="toc">
-      <li><a href="#Radian-of-numerator"><span class="secno">5.1</span> <span class="content"><span>radian-of-numerator</span></span></a>
-      <li><a href="#Radian-of-denominator"><span class="secno">5.2</span> <span class="content"><span>radian-of-denominator</span></span></a>
-      <li><a href="#Metre-per-second_of_metre"><span class="secno">5.3</span> <span class="content"><span>metre-per-second_of_metre</span></span></a>
-      <li><a href="#Metre-per-second_of_second"><span class="secno">5.4</span> <span class="content"><span>metre-per-second_of_second</span></span></a>
-      <li><a href="#Kilometre-per-second_of_metre"><span class="secno">5.5</span> <span class="content"><span>kilometre-per-second_of_metre</span></span></a>
-      <li><a href="#Kilometre-per-second_of_second"><span class="secno">5.6</span> <span class="content"><span>kilometre-per-second_of_second</span></span></a>
-      <li><a href="#Revolutions-of-radian"><span class="secno">5.7</span> <span class="content"><span>revolutions-of-radian</span></span></a>
-      <li><a href="#Hertz_of_second"><span class="secno">5.8</span> <span class="content"><span>hertz_of_second</span></span></a>
+      <li><a href="#Hertz_of_second"><span class="secno">5.1</span> <span class="content"><span>hertz_of_second</span></span></a>
+      <li><a href="#Kilometre-per-second_of_metre"><span class="secno">5.2</span> <span class="content"><span>kilometre-per-second_of_metre</span></span></a>
+      <li><a href="#Kilometre-per-second_of_second"><span class="secno">5.3</span> <span class="content"><span>kilometre-per-second_of_second</span></span></a>
+      <li><a href="#Metre-per-second_of_metre"><span class="secno">5.4</span> <span class="content"><span>metre-per-second_of_metre</span></span></a>
+      <li><a href="#Metre-per-second_of_second"><span class="secno">5.5</span> <span class="content"><span>metre-per-second_of_second</span></span></a>
+      <li><a href="#Radian-of-denominator"><span class="secno">5.6</span> <span class="content"><span>radian-of-denominator</span></span></a>
+      <li><a href="#Radian-of-numerator"><span class="secno">5.7</span> <span class="content"><span>radian-of-numerator</span></span></a>
+      <li><a href="#Revolutions-of-radian"><span class="secno">5.8</span> <span class="content"><span>revolutions-of-radian</span></span></a>
      </ol>
     <li>
      <a href="#index"><span class="secno"></span> <span class="content">Index</span></a>
@@ -1833,204 +1839,325 @@ dfn > a.self-link::before      { content: "#"; }
     <h2 class="heading settled" data-level="2" id="Extensions"><span class="secno">2. </span><span class="content">Imports</span><a class="self-link" href="#Extensions"></a></h2>
     <ul>
      <li data-md>
-      <p>metrology: <a href="http://ontology.iupac.org/metrology.html">http://ontology.iupac.org/metrology</a></p>
+      <p>80000-concepts: <a href="http://iso.org/80000-concepts.html">http://iso.org/80000-concepts</a></p>
     </ul>
-    <h2 class="heading settled" data-level="3" id="concepts"><span class="secno">3. </span><span class="content">Concepts</span><a class="self-link" href="#concepts"></a></h2>
-    <h3 class="heading settled" data-level="3.1" id="Metre"><span class="secno">3.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="metre">metre<a class="self-link" href="#metre"></a></dfn></span><a class="self-link" href="#Metre"></a></h3>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../ontology.iupac.org/metrology.html#independentmeasurementunit" id="ref-for-independentmeasurementunit">metrology:IndependentMeasurementUnit</a>, <a data-link-type="dfn" href="80000-3-units.html#unitoflength" id="ref-for-unitoflength">UnitOfLength</a></p>
-    <p><em>Relations with range:</em></p>
+    <h2 class="heading settled" data-level="3" id="Aspects"><span class="secno">3. </span><span class="content">Aspects</span><a class="self-link" href="#Aspects"></a></h2>
+    <h3 class="heading settled" data-level="3.1" id="UnitOfAngularMeasureValue"><span class="secno">3.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="unitofangularmeasurevalue">UnitOfAngularMeasureValue<a class="self-link" href="#unitofangularmeasurevalue"></a></dfn></span><a class="self-link" href="#UnitOfAngularMeasureValue"></a></h3>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#unitaryquantityvalue" id="ref-for-unitaryquantityvalue">metrology:UnitaryQuantityValue</a></p>
+    <p><em>Subtypes:</em> <a data-link-type="dfn" href="80000-3-quantityValues.html#radian-magnitude" id="ref-for-radian-magnitude">80000-3-quantityValues:radian-magnitude</a></p>
+    <p><em>Relations with source:</em></p>
     <ul>
      <li data-md>
-      <p><a data-link-type="dfn" href="80000-3-units.html#metre-per-second" id="ref-for-metre-per-second">metre-per-second</a> <a data-link-type="dfn" href="80000-3-units.html#metre-per-second_of_metre-factor" id="ref-for-metre-per-second_of_metre-factor">metre-per-second_of_metre-factor</a> metre</p>
-     <li data-md>
-      <p><a data-link-type="dfn" href="80000-3-units.html#radian" id="ref-for-radian">radian</a> <a data-link-type="dfn" href="80000-3-units.html#radian-of-denominator-factor" id="ref-for-radian-of-denominator-factor">radian-of-denominator-factor</a> metre</p>
-     <li data-md>
-      <p><a data-link-type="dfn" href="80000-3-units.html#radian" id="ref-for-radian①">radian</a> <a data-link-type="dfn" href="80000-3-units.html#radian-of-numerator-factor" id="ref-for-radian-of-numerator-factor">radian-of-numerator-factor</a> metre</p>
-     <li data-md>
-      <p><a data-link-type="dfn" href="80000-6-units.html#volt" id="ref-for-volt">80000-6-units:volt</a> <a data-link-type="dfn" href="80000-6-units.html#volt-of-metre-factor" id="ref-for-volt-of-metre-factor">80000-6-units:volt-of-metre-factor</a> metre</p>
+      <p>UnitOfAngularMeasureValue ← <a data-link-type="dfn" href="../iupac.org/metrology.html#hasreference" id="ref-for-hasreference">metrology:HasReference</a> → <a data-link-type="dfn" href="80000-3-units.html#unitofangularmeasure" id="ref-for-unitofangularmeasure">UnitOfAngularMeasure</a></p>
     </ul>
-    <h3 class="heading settled" data-level="3.2" id="Kilometre"><span class="secno">3.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="kilometre">kilometre<a class="self-link" href="#kilometre"></a></dfn></span><a class="self-link" href="#Kilometre"></a></h3>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../ontology.iupac.org/metrology.html#prefixedmeasurementunit" id="ref-for-prefixedmeasurementunit">metrology:PrefixedMeasurementUnit</a>, <a data-link-type="dfn" href="80000-3-units.html#unitoflength" id="ref-for-unitoflength①">UnitOfLength</a></p>
-    <p><em>Relations with domain:</em></p>
+    <h3 class="heading settled" data-level="3.2" id="UnitOfFrequencyValue"><span class="secno">3.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="unitoffrequencyvalue">UnitOfFrequencyValue<a class="self-link" href="#unitoffrequencyvalue"></a></dfn></span><a class="self-link" href="#UnitOfFrequencyValue"></a></h3>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#unitaryquantityvalue" id="ref-for-unitaryquantityvalue①">metrology:UnitaryQuantityValue</a></p>
+    <p><em>Subtypes:</em> <a data-link-type="dfn" href="80000-3-quantityValues.html#hertz-magnitude" id="ref-for-hertz-magnitude">80000-3-quantityValues:hertz-magnitude</a></p>
+    <p><em>Relations with source:</em></p>
     <ul>
      <li data-md>
-      <p>kilometre <a data-link-type="dfn" href="../ontology.iupac.org/metrology.html#hasprefix" id="ref-for-hasprefix">metrology:hasPrefix</a> <a data-link-type="dfn" href="../ontology.iupac.org/metrology.html#prefix" id="ref-for-prefix">metrology:Prefix</a> (range restricted to instance <a data-link-type="dfn" href="80000-1.html#kilo" id="ref-for-kilo">80000-1:kilo</a>)</p>
+      <p>UnitOfFrequencyValue ← <a data-link-type="dfn" href="../iupac.org/metrology.html#hasreference" id="ref-for-hasreference①">metrology:HasReference</a> → <a data-link-type="dfn" href="80000-3-units.html#unitoffrequency" id="ref-for-unitoffrequency">UnitOfFrequency</a></p>
     </ul>
-    <p><em>Relations with range:</em></p>
+    <h3 class="heading settled" data-level="3.3" id="UnitOfLengthValue"><span class="secno">3.3. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="unitoflengthvalue">UnitOfLengthValue<a class="self-link" href="#unitoflengthvalue"></a></dfn></span><a class="self-link" href="#UnitOfLengthValue"></a></h3>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#unitaryquantityvalue" id="ref-for-unitaryquantityvalue②">metrology:UnitaryQuantityValue</a></p>
+    <p><em>Subtypes:</em> <a data-link-type="dfn" href="80000-3-quantityValues.html#kilometre-magnitude" id="ref-for-kilometre-magnitude">80000-3-quantityValues:kilometre-magnitude</a>, <a data-link-type="dfn" href="80000-3-quantityValues.html#metre-magnitude" id="ref-for-metre-magnitude">80000-3-quantityValues:metre-magnitude</a></p>
+    <p><em>Relations with source:</em></p>
     <ul>
      <li data-md>
-      <p><a data-link-type="dfn" href="80000-3-units.html#metre-per-second" id="ref-for-metre-per-second①">metre-per-second</a> <a data-link-type="dfn" href="80000-3-units.html#kilometre-per-second_of_metre-factor" id="ref-for-kilometre-per-second_of_metre-factor">kilometre-per-second_of_metre-factor</a> kilometre</p>
+      <p>UnitOfLengthValue ← <a data-link-type="dfn" href="../iupac.org/metrology.html#hasreference" id="ref-for-hasreference②">metrology:HasReference</a> → <a data-link-type="dfn" href="80000-3-units.html#unitoflength" id="ref-for-unitoflength">UnitOfLength</a></p>
     </ul>
-    <h3 class="heading settled" data-level="3.3" id="Radian"><span class="secno">3.3. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="radian">radian<a class="self-link" href="#radian"></a></dfn></span><a class="self-link" href="#Radian"></a></h3>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../ontology.iupac.org/metrology.html#derivedmeasurementunit" id="ref-for-derivedmeasurementunit">metrology:DerivedMeasurementUnit</a>, <a data-link-type="dfn" href="80000-3-units.html#unitofangularmeasure" id="ref-for-unitofangularmeasure">UnitOfAngularMeasure</a></p>
-    <p><em>Relations with domain:</em></p>
+    <h3 class="heading settled" data-level="3.4" id="UnitOfRotationValue"><span class="secno">3.4. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="unitofrotationvalue">UnitOfRotationValue<a class="self-link" href="#unitofrotationvalue"></a></dfn></span><a class="self-link" href="#UnitOfRotationValue"></a></h3>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#unitaryquantityvalue" id="ref-for-unitaryquantityvalue③">metrology:UnitaryQuantityValue</a></p>
+    <p><em>Subtypes:</em> <a data-link-type="dfn" href="80000-3-quantityValues.html#revolutions-magnitude" id="ref-for-revolutions-magnitude">80000-3-quantityValues:revolutions-magnitude</a></p>
+    <p><em>Relations with source:</em></p>
     <ul>
      <li data-md>
-      <p>radian <a data-link-type="dfn" href="80000-3-units.html#radian-of-denominator-factor" id="ref-for-radian-of-denominator-factor①">radian-of-denominator-factor</a> <a data-link-type="dfn" href="80000-3-units.html#metre" id="ref-for-metre">metre</a></p>
-     <li data-md>
-      <p>radian <a data-link-type="dfn" href="80000-3-units.html#radian-of-numerator-factor" id="ref-for-radian-of-numerator-factor①">radian-of-numerator-factor</a> <a data-link-type="dfn" href="80000-3-units.html#metre" id="ref-for-metre①">metre</a></p>
+      <p>UnitOfRotationValue ← <a data-link-type="dfn" href="../iupac.org/metrology.html#hasreference" id="ref-for-hasreference③">metrology:HasReference</a> → <a data-link-type="dfn" href="80000-3-units.html#unitofrotation" id="ref-for-unitofrotation">UnitOfRotation</a></p>
     </ul>
-    <p><em>Relations with range:</em></p>
+    <h3 class="heading settled" data-level="3.5" id="UnitOfTimeValue"><span class="secno">3.5. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="unitoftimevalue">UnitOfTimeValue<a class="self-link" href="#unitoftimevalue"></a></dfn></span><a class="self-link" href="#UnitOfTimeValue"></a></h3>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#unitaryquantityvalue" id="ref-for-unitaryquantityvalue④">metrology:UnitaryQuantityValue</a></p>
+    <p><em>Subtypes:</em> <a data-link-type="dfn" href="80000-3-quantityValues.html#hour-magnitude" id="ref-for-hour-magnitude">80000-3-quantityValues:hour-magnitude</a>, <a data-link-type="dfn" href="80000-3-quantityValues.html#millisecond-magnitude" id="ref-for-millisecond-magnitude">80000-3-quantityValues:millisecond-magnitude</a>, <a data-link-type="dfn" href="80000-3-quantityValues.html#minute-magnitude" id="ref-for-minute-magnitude">80000-3-quantityValues:minute-magnitude</a>, <a data-link-type="dfn" href="80000-3-quantityValues.html#second-magnitude" id="ref-for-second-magnitude">80000-3-quantityValues:second-magnitude</a></p>
+    <p><em>Relations with source:</em></p>
     <ul>
      <li data-md>
-      <p><a data-link-type="dfn" href="80000-3-units.html#revolutions" id="ref-for-revolutions">revolutions</a> <a data-link-type="dfn" href="80000-3-units.html#revolutions-of-radian-factor" id="ref-for-revolutions-of-radian-factor">revolutions-of-radian-factor</a> radian</p>
+      <p>UnitOfTimeValue ← <a data-link-type="dfn" href="../iupac.org/metrology.html#hasreference" id="ref-for-hasreference④">metrology:HasReference</a> → <a data-link-type="dfn" href="80000-3-units.html#unitoftime" id="ref-for-unitoftime">UnitOfTime</a></p>
     </ul>
-    <h3 class="heading settled" data-level="3.4" id="Second"><span class="secno">3.4. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="second">second<a class="self-link" href="#second"></a></dfn></span><a class="self-link" href="#Second"></a></h3>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../ontology.iupac.org/metrology.html#independentmeasurementunit" id="ref-for-independentmeasurementunit①">metrology:IndependentMeasurementUnit</a>, <a data-link-type="dfn" href="80000-3-units.html#unitoftime" id="ref-for-unitoftime">UnitOfTime</a></p>
-    <p><em>Relations with range:</em></p>
+    <h3 class="heading settled" data-level="3.6" id="UnitOfVelocityValue"><span class="secno">3.6. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="unitofvelocityvalue">UnitOfVelocityValue<a class="self-link" href="#unitofvelocityvalue"></a></dfn></span><a class="self-link" href="#UnitOfVelocityValue"></a></h3>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#unitaryquantityvalue" id="ref-for-unitaryquantityvalue⑤">metrology:UnitaryQuantityValue</a></p>
+    <p><em>Subtypes:</em> <a data-link-type="dfn" href="80000-3-quantityValues.html#kilometre-per-second-magnitude" id="ref-for-kilometre-per-second-magnitude">80000-3-quantityValues:kilometre-per-second-magnitude</a>, <a data-link-type="dfn" href="80000-3-quantityValues.html#metre-per-second-magnitude" id="ref-for-metre-per-second-magnitude">80000-3-quantityValues:metre-per-second-magnitude</a></p>
+    <p><em>Relations with source:</em></p>
     <ul>
      <li data-md>
-      <p><a data-link-type="dfn" href="80000-6-units.html#coulomb" id="ref-for-coulomb">80000-6-units:coulomb</a> <a data-link-type="dfn" href="80000-6-units.html#coulomb-of-second-factor" id="ref-for-coulomb-of-second-factor">80000-6-units:coulomb-of-second-factor</a> second</p>
-     <li data-md>
-      <p><a data-link-type="dfn" href="80000-3-units.html#hertz" id="ref-for-hertz">hertz</a> <a data-link-type="dfn" href="80000-3-units.html#hertz-of-second-factor" id="ref-for-hertz-of-second-factor">hertz-of-second-factor</a> second</p>
-     <li data-md>
-      <p><a data-link-type="dfn" href="80000-3-units.html#metre-per-second" id="ref-for-metre-per-second②">metre-per-second</a> <a data-link-type="dfn" href="80000-3-units.html#kilometre-per-second_of_second-factor" id="ref-for-kilometre-per-second_of_second-factor">kilometre-per-second_of_second-factor</a> second</p>
-     <li data-md>
-      <p><a data-link-type="dfn" href="80000-3-units.html#metre-per-second" id="ref-for-metre-per-second③">metre-per-second</a> <a data-link-type="dfn" href="80000-3-units.html#metre-per-second_of_second-factor" id="ref-for-metre-per-second_of_second-factor">metre-per-second_of_second-factor</a> second</p>
+      <p>UnitOfVelocityValue ← <a data-link-type="dfn" href="../iupac.org/metrology.html#hasreference" id="ref-for-hasreference⑤">metrology:HasReference</a> → <a data-link-type="dfn" href="80000-3-units.html#unitofvelocity" id="ref-for-unitofvelocity">UnitOfVelocity</a></p>
     </ul>
-    <h3 class="heading settled" data-level="3.5" id="Millisecond"><span class="secno">3.5. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="millisecond">millisecond<a class="self-link" href="#millisecond"></a></dfn></span><a class="self-link" href="#Millisecond"></a></h3>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../ontology.iupac.org/metrology.html#prefixedmeasurementunit" id="ref-for-prefixedmeasurementunit①">metrology:PrefixedMeasurementUnit</a>, <a data-link-type="dfn" href="80000-3-units.html#unitoftime" id="ref-for-unitoftime①">UnitOfTime</a></p>
-    <p><em>Relations with domain:</em></p>
+    <h2 class="heading settled" data-level="4" id="concepts"><span class="secno">4. </span><span class="content">Concepts</span><a class="self-link" href="#concepts"></a></h2>
+    <h3 class="heading settled" data-level="4.1" id="UnitOfAngularMeasure"><span class="secno">4.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="unitofangularmeasure">UnitOfAngularMeasure<a class="self-link" href="#unitofangularmeasure"></a></dfn></span><a class="self-link" href="#UnitOfAngularMeasure"></a></h3>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#coherentmeasurementunit" id="ref-for-coherentmeasurementunit">metrology:CoherentMeasurementUnit</a></p>
+    <p><em>Subtypes:</em> <a data-link-type="dfn" href="80000-3-units.html#radian" id="ref-for-radian">radian</a></p>
+    <p><em>Properties:</em></p>
     <ul>
      <li data-md>
-      <p>millisecond <a data-link-type="dfn" href="../ontology.iupac.org/metrology.html#hasprefix" id="ref-for-hasprefix①">metrology:hasPrefix</a> <a data-link-type="dfn" href="../ontology.iupac.org/metrology.html#prefix" id="ref-for-prefix①">metrology:Prefix</a> (range restricted to instance <a data-link-type="dfn" href="80000-1.html#milli" id="ref-for-milli">80000-1:milli</a>)</p>
+      <p><a data-link-type="dfn" href="../iupac.org/metrology.html#isdimensionlessmeasurementunit" id="ref-for-isdimensionlessmeasurementunit">metrology:isDimensionlessMeasurementUnit</a> (must have value false)</p>
     </ul>
-    <h3 class="heading settled" data-level="3.6" id="Minute"><span class="secno">3.6. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="minute">minute<a class="self-link" href="#minute"></a></dfn></span><a class="self-link" href="#Minute"></a></h3>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../ontology.iupac.org/metrology.html#noncoherentderivedmeasurementunit" id="ref-for-noncoherentderivedmeasurementunit">metrology:NonCoherentDerivedMeasurementUnit</a></p>
-    <p><em>Properties with domain:</em> <a data-link-type="dfn" href="../ontology.iupac.org/metrology.html#noncoherentrelationship" id="ref-for-noncoherentrelationship">metrology:nonCoherentRelationship</a> (must have value 1 minute = 60 seconds)</p>
-    <p><em>Relations with domain:</em></p>
+    <h3 class="heading settled" data-level="4.2" id="UnitOfFrequency"><span class="secno">4.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="unitoffrequency">UnitOfFrequency<a class="self-link" href="#unitoffrequency"></a></dfn></span><a class="self-link" href="#UnitOfFrequency"></a></h3>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#coherentmeasurementunit" id="ref-for-coherentmeasurementunit①">metrology:CoherentMeasurementUnit</a></p>
+    <p><em>Subtypes:</em> <a data-link-type="dfn" href="80000-3-units.html#hertz" id="ref-for-hertz">hertz</a></p>
+    <p><em>Properties:</em></p>
     <ul>
      <li data-md>
-      <p>minute <a data-link-type="dfn" href="../ontology.iupac.org/metrology.html#noncoherentderivedmeasurementunitof" id="ref-for-noncoherentderivedmeasurementunitof">metrology:nonCoherentDerivedMeasurementUnitOf</a> <a data-link-type="dfn" href="80000-3-units.html#second" id="ref-for-second">second</a></p>
+      <p><a data-link-type="dfn" href="../iupac.org/metrology.html#isdimensionlessmeasurementunit" id="ref-for-isdimensionlessmeasurementunit①">metrology:isDimensionlessMeasurementUnit</a> (must have value false)</p>
     </ul>
-    <h3 class="heading settled" data-level="3.7" id="Hour"><span class="secno">3.7. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="hour">hour<a class="self-link" href="#hour"></a></dfn></span><a class="self-link" href="#Hour"></a></h3>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../ontology.iupac.org/metrology.html#noncoherentderivedmeasurementunit" id="ref-for-noncoherentderivedmeasurementunit①">metrology:NonCoherentDerivedMeasurementUnit</a></p>
-    <p><em>Properties with domain:</em> <a data-link-type="dfn" href="../ontology.iupac.org/metrology.html#noncoherentrelationship" id="ref-for-noncoherentrelationship①">metrology:nonCoherentRelationship</a> (must have value 1 hour = 60 minutes)</p>
-    <p><em>Relations with domain:</em></p>
+    <h3 class="heading settled" data-level="4.3" id="UnitOfLength"><span class="secno">4.3. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="unitoflength">UnitOfLength<a class="self-link" href="#unitoflength"></a></dfn></span><a class="self-link" href="#UnitOfLength"></a></h3>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#coherentmeasurementunit" id="ref-for-coherentmeasurementunit②">metrology:CoherentMeasurementUnit</a></p>
+    <p><em>Subtypes:</em> <a data-link-type="dfn" href="../nist.gov/pml/special-publication-811-units.html#foot" id="ref-for-foot">special-publication-811-units:foot</a>, <a data-link-type="dfn" href="80000-3-units.html#kilometre" id="ref-for-kilometre">kilometre</a>, <a data-link-type="dfn" href="80000-3-units.html#metre" id="ref-for-metre">metre</a></p>
+    <p><em>Properties:</em></p>
     <ul>
      <li data-md>
-      <p>hour <a data-link-type="dfn" href="../ontology.iupac.org/metrology.html#noncoherentderivedmeasurementunitof" id="ref-for-noncoherentderivedmeasurementunitof①">metrology:nonCoherentDerivedMeasurementUnitOf</a> <a data-link-type="dfn" href="80000-3-units.html#minute" id="ref-for-minute">minute</a></p>
+      <p><a data-link-type="dfn" href="../iupac.org/metrology.html#isdimensionlessmeasurementunit" id="ref-for-isdimensionlessmeasurementunit②">metrology:isDimensionlessMeasurementUnit</a> (must have value false)</p>
     </ul>
-    <h3 class="heading settled" data-level="3.8" id="Metre-per-second"><span class="secno">3.8. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="metre-per-second">metre-per-second<a class="self-link" href="#metre-per-second"></a></dfn></span><a class="self-link" href="#Metre-per-second"></a></h3>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../ontology.iupac.org/metrology.html#derivedmeasurementunit" id="ref-for-derivedmeasurementunit①">metrology:DerivedMeasurementUnit</a>, <a data-link-type="dfn" href="80000-3-units.html#unitofvelocity" id="ref-for-unitofvelocity">UnitOfVelocity</a></p>
-    <p><em>Relations with domain:</em></p>
+    <h3 class="heading settled" data-level="4.4" id="UnitOfRotation"><span class="secno">4.4. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="unitofrotation">UnitOfRotation<a class="self-link" href="#unitofrotation"></a></dfn></span><a class="self-link" href="#UnitOfRotation"></a></h3>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#coherentmeasurementunit" id="ref-for-coherentmeasurementunit③">metrology:CoherentMeasurementUnit</a></p>
+    <p><em>Subtypes:</em> <a data-link-type="dfn" href="80000-3-units.html#revolutions" id="ref-for-revolutions">revolutions</a></p>
+    <p><em>Properties:</em></p>
     <ul>
      <li data-md>
-      <p>metre-per-second <a data-link-type="dfn" href="80000-3-units.html#kilometre-per-second_of_metre-factor" id="ref-for-kilometre-per-second_of_metre-factor①">kilometre-per-second_of_metre-factor</a> <a data-link-type="dfn" href="80000-3-units.html#kilometre" id="ref-for-kilometre">kilometre</a></p>
-     <li data-md>
-      <p>metre-per-second <a data-link-type="dfn" href="80000-3-units.html#kilometre-per-second_of_second-factor" id="ref-for-kilometre-per-second_of_second-factor①">kilometre-per-second_of_second-factor</a> <a data-link-type="dfn" href="80000-3-units.html#second" id="ref-for-second①">second</a></p>
-     <li data-md>
-      <p>metre-per-second <a data-link-type="dfn" href="80000-3-units.html#metre-per-second_of_metre-factor" id="ref-for-metre-per-second_of_metre-factor①">metre-per-second_of_metre-factor</a> <a data-link-type="dfn" href="80000-3-units.html#metre" id="ref-for-metre②">metre</a></p>
-     <li data-md>
-      <p>metre-per-second <a data-link-type="dfn" href="80000-3-units.html#metre-per-second_of_second-factor" id="ref-for-metre-per-second_of_second-factor①">metre-per-second_of_second-factor</a> <a data-link-type="dfn" href="80000-3-units.html#second" id="ref-for-second②">second</a></p>
+      <p><a data-link-type="dfn" href="../iupac.org/metrology.html#isdimensionlessmeasurementunit" id="ref-for-isdimensionlessmeasurementunit③">metrology:isDimensionlessMeasurementUnit</a> (must have value false)</p>
     </ul>
-    <p><em>Relations with range:</em></p>
+    <h3 class="heading settled" data-level="4.5" id="UnitOfTime"><span class="secno">4.5. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="unitoftime">UnitOfTime<a class="self-link" href="#unitoftime"></a></dfn></span><a class="self-link" href="#UnitOfTime"></a></h3>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#coherentmeasurementunit" id="ref-for-coherentmeasurementunit④">metrology:CoherentMeasurementUnit</a></p>
+    <p><em>Subtypes:</em> <a data-link-type="dfn" href="80000-3-units.html#hour" id="ref-for-hour">hour</a>, <a data-link-type="dfn" href="80000-3-units.html#millisecond" id="ref-for-millisecond">millisecond</a>, <a data-link-type="dfn" href="80000-3-units.html#minute" id="ref-for-minute">minute</a>, <a data-link-type="dfn" href="80000-3-units.html#second" id="ref-for-second">second</a></p>
+    <p><em>Properties:</em></p>
     <ul>
      <li data-md>
-      <p><a data-link-type="dfn" href="80000-4-units.html#kilogram-metre-per-second" id="ref-for-kilogram-metre-per-second">80000-4-units:kilogram-metre-per-second</a> <a data-link-type="dfn" href="80000-4-units.html#kilogram-metre-per-second-of-metre-per-second-factor" id="ref-for-kilogram-metre-per-second-of-metre-per-second-factor">80000-4-units:kilogram-metre-per-second-of-metre-per-second-factor</a> metre-per-second</p>
-     <li data-md>
-      <p><a data-link-type="dfn" href="80000-4-units.html#newton" id="ref-for-newton">80000-4-units:newton</a> <a data-link-type="dfn" href="80000-4-units.html#newton-of-metre-per-second-factor" id="ref-for-newton-of-metre-per-second-factor">80000-4-units:newton-of-metre-per-second-factor</a> metre-per-second</p>
-     <li data-md>
-      <p><a data-link-type="dfn" href="80000-4-units.html#watt" id="ref-for-watt">80000-4-units:watt</a> <a data-link-type="dfn" href="80000-4-units.html#watt-of-metre-per-second-factor" id="ref-for-watt-of-metre-per-second-factor">80000-4-units:watt-of-metre-per-second-factor</a> metre-per-second</p>
+      <p><a data-link-type="dfn" href="../iupac.org/metrology.html#isdimensionlessmeasurementunit" id="ref-for-isdimensionlessmeasurementunit④">metrology:isDimensionlessMeasurementUnit</a> (must have value false)</p>
     </ul>
-    <h3 class="heading settled" data-level="3.9" id="Kilometre-per-second"><span class="secno">3.9. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="kilometre-per-second">kilometre-per-second<a class="self-link" href="#kilometre-per-second"></a></dfn></span><a class="self-link" href="#Kilometre-per-second"></a></h3>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../ontology.iupac.org/metrology.html#derivedmeasurementunit" id="ref-for-derivedmeasurementunit②">metrology:DerivedMeasurementUnit</a>, <a data-link-type="dfn" href="80000-3-units.html#unitofvelocity" id="ref-for-unitofvelocity①">UnitOfVelocity</a></p>
-    <h3 class="heading settled" data-level="3.10" id="Revolutions"><span class="secno">3.10. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="revolutions">revolutions<a class="self-link" href="#revolutions"></a></dfn></span><a class="self-link" href="#Revolutions"></a></h3>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../ontology.iupac.org/metrology.html#derivedmeasurementunit" id="ref-for-derivedmeasurementunit③">metrology:DerivedMeasurementUnit</a>, <a data-link-type="dfn" href="80000-3-units.html#unitofrotation" id="ref-for-unitofrotation">UnitOfRotation</a></p>
-    <p><em>Relations with domain:</em></p>
+    <h3 class="heading settled" data-level="4.6" id="UnitOfVelocity"><span class="secno">4.6. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="unitofvelocity">UnitOfVelocity<a class="self-link" href="#unitofvelocity"></a></dfn></span><a class="self-link" href="#UnitOfVelocity"></a></h3>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#coherentmeasurementunit" id="ref-for-coherentmeasurementunit⑤">metrology:CoherentMeasurementUnit</a></p>
+    <p><em>Subtypes:</em> <a data-link-type="dfn" href="80000-3-units.html#kilometre-per-second" id="ref-for-kilometre-per-second">kilometre-per-second</a>, <a data-link-type="dfn" href="80000-3-units.html#metre-per-second" id="ref-for-metre-per-second">metre-per-second</a></p>
+    <p><em>Properties:</em></p>
     <ul>
      <li data-md>
-      <p>revolutions <a data-link-type="dfn" href="80000-3-units.html#revolutions-of-radian-factor" id="ref-for-revolutions-of-radian-factor①">revolutions-of-radian-factor</a> <a data-link-type="dfn" href="80000-3-units.html#radian" id="ref-for-radian②">radian</a></p>
+      <p><a data-link-type="dfn" href="../iupac.org/metrology.html#isdimensionlessmeasurementunit" id="ref-for-isdimensionlessmeasurementunit⑤">metrology:isDimensionlessMeasurementUnit</a> (must have value false)</p>
     </ul>
-    <h3 class="heading settled" data-level="3.11" id="Hertz"><span class="secno">3.11. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="hertz">hertz<a class="self-link" href="#hertz"></a></dfn></span><a class="self-link" href="#Hertz"></a></h3>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../ontology.iupac.org/metrology.html#derivedmeasurementunit" id="ref-for-derivedmeasurementunit④">metrology:DerivedMeasurementUnit</a>, <a data-link-type="dfn" href="80000-3-units.html#unitoffrequency" id="ref-for-unitoffrequency">UnitOfFrequency</a></p>
-    <p><em>Relations with domain:</em></p>
+    <h3 class="heading settled" data-level="4.7" id="Hertz"><span class="secno">4.7. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="hertz">hertz<a class="self-link" href="#hertz"></a></dfn></span><a class="self-link" href="#Hertz"></a></h3>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#derivedmeasurementunit" id="ref-for-derivedmeasurementunit">metrology:DerivedMeasurementUnit</a>, <a data-link-type="dfn" href="80000-concepts.html#measurementunit" id="ref-for-measurementunit">80000-concepts:MeasurementUnit</a>, <a data-link-type="dfn" href="80000-3-units.html#unitoffrequency" id="ref-for-unitoffrequency①">UnitOfFrequency</a></p>
+    <p><em>Relations with source:</em></p>
     <ul>
      <li data-md>
-      <p>hertz <a data-link-type="dfn" href="80000-3-units.html#hertz-of-second-factor" id="ref-for-hertz-of-second-factor①">hertz-of-second-factor</a> <a data-link-type="dfn" href="80000-3-units.html#second" id="ref-for-second③">second</a></p>
+      <p>hertz ← <a data-link-type="dfn" href="80000-3-units.html#hertz_of_second" id="ref-for-hertz_of_second">hertz_of_second</a> → <a data-link-type="dfn" href="80000-3-units.html#second" id="ref-for-second①">second</a></p>
     </ul>
-    <h2 class="heading settled" data-level="4" id="Aspects"><span class="secno">4. </span><span class="content">Aspects</span><a class="self-link" href="#Aspects"></a></h2>
-    <h3 class="heading settled" data-level="4.1" id="UnitOfLength"><span class="secno">4.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="unitoflength">UnitOfLength<a class="self-link" href="#unitoflength"></a></dfn></span><a class="self-link" href="#UnitOfLength"></a></h3>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../ontology.iupac.org/metrology.html#coherentmeasurementunit" id="ref-for-coherentmeasurementunit">metrology:CoherentMeasurementUnit</a></p>
-    <p><em>Subtypes:</em> <a data-link-type="dfn" href="80000-3-units.html#kilometre" id="ref-for-kilometre①">kilometre</a>, <a data-link-type="dfn" href="80000-3-units.html#metre" id="ref-for-metre③">metre</a></p>
-    <p><em>Properties with domain:</em> <a data-link-type="dfn" href="../ontology.iupac.org/metrology.html#isdimensionlessmeasurementunit" id="ref-for-isdimensionlessmeasurementunit">metrology:isDimensionlessMeasurementUnit</a> (must have value false)</p>
-    <h3 class="heading settled" data-level="4.2" id="UnitOfAngularMeasure"><span class="secno">4.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="unitofangularmeasure">UnitOfAngularMeasure<a class="self-link" href="#unitofangularmeasure"></a></dfn></span><a class="self-link" href="#UnitOfAngularMeasure"></a></h3>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../ontology.iupac.org/metrology.html#coherentmeasurementunit" id="ref-for-coherentmeasurementunit①">metrology:CoherentMeasurementUnit</a></p>
-    <p><em>Subtypes:</em> <a data-link-type="dfn" href="80000-3-units.html#radian" id="ref-for-radian③">radian</a></p>
-    <p><em>Properties with domain:</em> <a data-link-type="dfn" href="../ontology.iupac.org/metrology.html#isdimensionlessmeasurementunit" id="ref-for-isdimensionlessmeasurementunit①">metrology:isDimensionlessMeasurementUnit</a> (must have value false)</p>
-    <h3 class="heading settled" data-level="4.3" id="UnitOfTime"><span class="secno">4.3. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="unitoftime">UnitOfTime<a class="self-link" href="#unitoftime"></a></dfn></span><a class="self-link" href="#UnitOfTime"></a></h3>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../ontology.iupac.org/metrology.html#coherentmeasurementunit" id="ref-for-coherentmeasurementunit②">metrology:CoherentMeasurementUnit</a></p>
-    <p><em>Subtypes:</em> <a data-link-type="dfn" href="80000-3-units.html#millisecond" id="ref-for-millisecond">millisecond</a>, <a data-link-type="dfn" href="80000-3-units.html#second" id="ref-for-second④">second</a></p>
-    <p><em>Properties with domain:</em> <a data-link-type="dfn" href="../ontology.iupac.org/metrology.html#isdimensionlessmeasurementunit" id="ref-for-isdimensionlessmeasurementunit②">metrology:isDimensionlessMeasurementUnit</a> (must have value false)</p>
-    <h3 class="heading settled" data-level="4.4" id="UnitOfVelocity"><span class="secno">4.4. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="unitofvelocity">UnitOfVelocity<a class="self-link" href="#unitofvelocity"></a></dfn></span><a class="self-link" href="#UnitOfVelocity"></a></h3>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../ontology.iupac.org/metrology.html#coherentmeasurementunit" id="ref-for-coherentmeasurementunit③">metrology:CoherentMeasurementUnit</a></p>
-    <p><em>Subtypes:</em> <a data-link-type="dfn" href="80000-3-units.html#kilometre-per-second" id="ref-for-kilometre-per-second">kilometre-per-second</a>, <a data-link-type="dfn" href="80000-3-units.html#metre-per-second" id="ref-for-metre-per-second④">metre-per-second</a></p>
-    <p><em>Properties with domain:</em> <a data-link-type="dfn" href="../ontology.iupac.org/metrology.html#isdimensionlessmeasurementunit" id="ref-for-isdimensionlessmeasurementunit③">metrology:isDimensionlessMeasurementUnit</a> (must have value false)</p>
-    <h3 class="heading settled" data-level="4.5" id="UnitOfRotation"><span class="secno">4.5. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="unitofrotation">UnitOfRotation<a class="self-link" href="#unitofrotation"></a></dfn></span><a class="self-link" href="#UnitOfRotation"></a></h3>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../ontology.iupac.org/metrology.html#coherentmeasurementunit" id="ref-for-coherentmeasurementunit④">metrology:CoherentMeasurementUnit</a></p>
-    <p><em>Subtypes:</em> <a data-link-type="dfn" href="80000-3-units.html#revolutions" id="ref-for-revolutions①">revolutions</a></p>
-    <p><em>Properties with domain:</em> <a data-link-type="dfn" href="../ontology.iupac.org/metrology.html#isdimensionlessmeasurementunit" id="ref-for-isdimensionlessmeasurementunit④">metrology:isDimensionlessMeasurementUnit</a> (must have value false)</p>
-    <h3 class="heading settled" data-level="4.6" id="UnitOfFrequency"><span class="secno">4.6. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="unitoffrequency">UnitOfFrequency<a class="self-link" href="#unitoffrequency"></a></dfn></span><a class="self-link" href="#UnitOfFrequency"></a></h3>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../ontology.iupac.org/metrology.html#coherentmeasurementunit" id="ref-for-coherentmeasurementunit⑤">metrology:CoherentMeasurementUnit</a></p>
-    <p><em>Subtypes:</em> <a data-link-type="dfn" href="80000-3-units.html#hertz" id="ref-for-hertz①">hertz</a></p>
-    <p><em>Properties with domain:</em> <a data-link-type="dfn" href="../ontology.iupac.org/metrology.html#isdimensionlessmeasurementunit" id="ref-for-isdimensionlessmeasurementunit⑤">metrology:isDimensionlessMeasurementUnit</a> (must have value false)</p>
+    <h3 class="heading settled" data-level="4.8" id="Hour"><span class="secno">4.8. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="hour">hour<a class="self-link" href="#hour"></a></dfn></span><a class="self-link" href="#Hour"></a></h3>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="80000-concepts.html#measurementunit" id="ref-for-measurementunit①">80000-concepts:MeasurementUnit</a>, <a data-link-type="dfn" href="../iupac.org/metrology.html#noncoherentderivedmeasurementunit" id="ref-for-noncoherentderivedmeasurementunit">metrology:NonCoherentDerivedMeasurementUnit</a>, <a data-link-type="dfn" href="80000-3-units.html#unitoftime" id="ref-for-unitoftime①">UnitOfTime</a></p>
+    <p><em>Properties:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../iupac.org/metrology.html#noncoherentrelationship" id="ref-for-noncoherentrelationship">metrology:nonCoherentRelationship</a> (must have value 1 hour = 60 minutes)</p>
+    </ul>
+    <p><em>Relations with source:</em></p>
+    <ul>
+     <li data-md>
+      <p>hour ← <a data-link-type="dfn" href="../iupac.org/metrology.html#noncoherentderivedmeasurementunitof" id="ref-for-noncoherentderivedmeasurementunitof">metrology:NonCoherentDerivedMeasurementUnitOf</a> → <a data-link-type="dfn" href="80000-3-units.html#minute" id="ref-for-minute①">minute</a></p>
+    </ul>
+    <h3 class="heading settled" data-level="4.9" id="Kilometre"><span class="secno">4.9. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="kilometre">kilometre<a class="self-link" href="#kilometre"></a></dfn></span><a class="self-link" href="#Kilometre"></a></h3>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="80000-concepts.html#measurementunit" id="ref-for-measurementunit②">80000-concepts:MeasurementUnit</a>, <a data-link-type="dfn" href="../iupac.org/metrology.html#prefixedmeasurementunit" id="ref-for-prefixedmeasurementunit">metrology:PrefixedMeasurementUnit</a>, <a data-link-type="dfn" href="80000-3-units.html#unitoflength" id="ref-for-unitoflength①">UnitOfLength</a></p>
+    <p><em>Relations with source:</em></p>
+    <ul>
+     <li data-md>
+      <p>kilometre ← <a data-link-type="dfn" href="../iupac.org/metrology.html#hasprefix" id="ref-for-hasprefix">metrology:HasPrefix</a> → <a data-link-type="dfn" href="../iupac.org/metrology.html#prefix" id="ref-for-prefix">metrology:Prefix</a> (range restricted to instance <a data-link-type="dfn" href="80000-1.html#kilo" id="ref-for-kilo">80000-1:kilo</a>)</p>
+    </ul>
+    <p><em>Relations with target:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="80000-3-units.html#metre-per-second" id="ref-for-metre-per-second①">metre-per-second</a> ← <a data-link-type="dfn" href="80000-3-units.html#kilometre-per-second_of_metre" id="ref-for-kilometre-per-second_of_metre">kilometre-per-second_of_metre</a> → kilometre</p>
+    </ul>
+    <h3 class="heading settled" data-level="4.10" id="Kilometre-per-second"><span class="secno">4.10. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="kilometre-per-second">kilometre-per-second<a class="self-link" href="#kilometre-per-second"></a></dfn></span><a class="self-link" href="#Kilometre-per-second"></a></h3>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#derivedmeasurementunit" id="ref-for-derivedmeasurementunit①">metrology:DerivedMeasurementUnit</a>, <a data-link-type="dfn" href="80000-concepts.html#measurementunit" id="ref-for-measurementunit③">80000-concepts:MeasurementUnit</a>, <a data-link-type="dfn" href="80000-3-units.html#unitofvelocity" id="ref-for-unitofvelocity①">UnitOfVelocity</a></p>
+    <h3 class="heading settled" data-level="4.11" id="Metre"><span class="secno">4.11. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="metre">metre<a class="self-link" href="#metre"></a></dfn></span><a class="self-link" href="#Metre"></a></h3>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#independentmeasurementunit" id="ref-for-independentmeasurementunit">metrology:IndependentMeasurementUnit</a>, <a data-link-type="dfn" href="80000-concepts.html#measurementunit" id="ref-for-measurementunit④">80000-concepts:MeasurementUnit</a>, <a data-link-type="dfn" href="80000-3-units.html#unitoflength" id="ref-for-unitoflength②">UnitOfLength</a></p>
+    <p><em>Relations with target:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="80000-3-units.html#metre-per-second" id="ref-for-metre-per-second②">metre-per-second</a> ← <a data-link-type="dfn" href="80000-3-units.html#metre-per-second_of_metre" id="ref-for-metre-per-second_of_metre">metre-per-second_of_metre</a> → metre</p>
+     <li data-md>
+      <p><a data-link-type="dfn" href="80000-3-units.html#radian" id="ref-for-radian①">radian</a> ← <a data-link-type="dfn" href="80000-3-units.html#radian-of-denominator" id="ref-for-radian-of-denominator">radian-of-denominator</a> → metre</p>
+     <li data-md>
+      <p><a data-link-type="dfn" href="80000-3-units.html#radian" id="ref-for-radian②">radian</a> ← <a data-link-type="dfn" href="80000-3-units.html#radian-of-numerator" id="ref-for-radian-of-numerator">radian-of-numerator</a> → metre</p>
+     <li data-md>
+      <p><a data-link-type="dfn" href="80000-6-units.html#volt" id="ref-for-volt">80000-6-units:volt</a> ← <a data-link-type="dfn" href="80000-6-units.html#volt-of-metre" id="ref-for-volt-of-metre">80000-6-units:volt-of-metre</a> → metre</p>
+    </ul>
+    <h3 class="heading settled" data-level="4.12" id="Metre-per-second"><span class="secno">4.12. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="metre-per-second">metre-per-second<a class="self-link" href="#metre-per-second"></a></dfn></span><a class="self-link" href="#Metre-per-second"></a></h3>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#derivedmeasurementunit" id="ref-for-derivedmeasurementunit②">metrology:DerivedMeasurementUnit</a>, <a data-link-type="dfn" href="80000-concepts.html#measurementunit" id="ref-for-measurementunit⑤">80000-concepts:MeasurementUnit</a>, <a data-link-type="dfn" href="80000-3-units.html#unitofvelocity" id="ref-for-unitofvelocity②">UnitOfVelocity</a></p>
+    <p><em>Relations with source:</em></p>
+    <ul>
+     <li data-md>
+      <p>metre-per-second ← <a data-link-type="dfn" href="80000-3-units.html#kilometre-per-second_of_metre" id="ref-for-kilometre-per-second_of_metre①">kilometre-per-second_of_metre</a> → <a data-link-type="dfn" href="80000-3-units.html#kilometre" id="ref-for-kilometre①">kilometre</a></p>
+     <li data-md>
+      <p>metre-per-second ← <a data-link-type="dfn" href="80000-3-units.html#kilometre-per-second_of_second" id="ref-for-kilometre-per-second_of_second">kilometre-per-second_of_second</a> → <a data-link-type="dfn" href="80000-3-units.html#second" id="ref-for-second②">second</a></p>
+     <li data-md>
+      <p>metre-per-second ← <a data-link-type="dfn" href="80000-3-units.html#metre-per-second_of_metre" id="ref-for-metre-per-second_of_metre①">metre-per-second_of_metre</a> → <a data-link-type="dfn" href="80000-3-units.html#metre" id="ref-for-metre①">metre</a></p>
+     <li data-md>
+      <p>metre-per-second ← <a data-link-type="dfn" href="80000-3-units.html#metre-per-second_of_second" id="ref-for-metre-per-second_of_second">metre-per-second_of_second</a> → <a data-link-type="dfn" href="80000-3-units.html#second" id="ref-for-second③">second</a></p>
+    </ul>
+    <p><em>Relations with target:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="80000-4-units.html#kilogram-metre-per-second" id="ref-for-kilogram-metre-per-second">80000-4-units:kilogram-metre-per-second</a> ← <a data-link-type="dfn" href="80000-4-units.html#kilogram-metre-per-second-of-metre-per-second" id="ref-for-kilogram-metre-per-second-of-metre-per-second">80000-4-units:kilogram-metre-per-second-of-metre-per-second</a> → metre-per-second</p>
+     <li data-md>
+      <p><a data-link-type="dfn" href="80000-4-units.html#newton" id="ref-for-newton">80000-4-units:newton</a> ← <a data-link-type="dfn" href="80000-4-units.html#newton-of-metre-per-second" id="ref-for-newton-of-metre-per-second">80000-4-units:newton-of-metre-per-second</a> → metre-per-second</p>
+     <li data-md>
+      <p><a data-link-type="dfn" href="80000-4-units.html#watt" id="ref-for-watt">80000-4-units:watt</a> ← <a data-link-type="dfn" href="80000-4-units.html#watt-of-metre-per-second" id="ref-for-watt-of-metre-per-second">80000-4-units:watt-of-metre-per-second</a> → metre-per-second</p>
+    </ul>
+    <h3 class="heading settled" data-level="4.13" id="Millisecond"><span class="secno">4.13. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="millisecond">millisecond<a class="self-link" href="#millisecond"></a></dfn></span><a class="self-link" href="#Millisecond"></a></h3>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#prefixedmeasurementunit" id="ref-for-prefixedmeasurementunit①">metrology:PrefixedMeasurementUnit</a>, <a data-link-type="dfn" href="80000-3-units.html#unitoftime" id="ref-for-unitoftime②">UnitOfTime</a></p>
+    <p><em>Relations with source:</em></p>
+    <ul>
+     <li data-md>
+      <p>millisecond ← <a data-link-type="dfn" href="../iupac.org/metrology.html#hasprefix" id="ref-for-hasprefix①">metrology:HasPrefix</a> → <a data-link-type="dfn" href="../iupac.org/metrology.html#prefix" id="ref-for-prefix①">metrology:Prefix</a> (range restricted to instance <a data-link-type="dfn" href="80000-1.html#milli" id="ref-for-milli">80000-1:milli</a>)</p>
+    </ul>
+    <p><em>Relations with target:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="80000-4-units.html#newton-millisecond" id="ref-for-newton-millisecond">80000-4-units:newton-millisecond</a> ← <a data-link-type="dfn" href="80000-4-units.html#newton-millisecond-of-millisecond" id="ref-for-newton-millisecond-of-millisecond">80000-4-units:newton-millisecond-of-millisecond</a> → millisecond</p>
+    </ul>
+    <h3 class="heading settled" data-level="4.14" id="Minute"><span class="secno">4.14. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="minute">minute<a class="self-link" href="#minute"></a></dfn></span><a class="self-link" href="#Minute"></a></h3>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="80000-concepts.html#measurementunit" id="ref-for-measurementunit⑥">80000-concepts:MeasurementUnit</a>, <a data-link-type="dfn" href="../iupac.org/metrology.html#noncoherentderivedmeasurementunit" id="ref-for-noncoherentderivedmeasurementunit①">metrology:NonCoherentDerivedMeasurementUnit</a>, <a data-link-type="dfn" href="80000-3-units.html#unitoftime" id="ref-for-unitoftime③">UnitOfTime</a></p>
+    <p><em>Properties:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../iupac.org/metrology.html#noncoherentrelationship" id="ref-for-noncoherentrelationship①">metrology:nonCoherentRelationship</a> (must have value 1 minute = 60 seconds)</p>
+    </ul>
+    <p><em>Relations with source:</em></p>
+    <ul>
+     <li data-md>
+      <p>minute ← <a data-link-type="dfn" href="../iupac.org/metrology.html#noncoherentderivedmeasurementunitof" id="ref-for-noncoherentderivedmeasurementunitof①">metrology:NonCoherentDerivedMeasurementUnitOf</a> → <a data-link-type="dfn" href="80000-3-units.html#second" id="ref-for-second④">second</a></p>
+    </ul>
+    <h3 class="heading settled" data-level="4.15" id="Radian"><span class="secno">4.15. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="radian">radian<a class="self-link" href="#radian"></a></dfn></span><a class="self-link" href="#Radian"></a></h3>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#derivedmeasurementunit" id="ref-for-derivedmeasurementunit③">metrology:DerivedMeasurementUnit</a>, <a data-link-type="dfn" href="80000-concepts.html#measurementunit" id="ref-for-measurementunit⑦">80000-concepts:MeasurementUnit</a>, <a data-link-type="dfn" href="80000-3-units.html#unitofangularmeasure" id="ref-for-unitofangularmeasure①">UnitOfAngularMeasure</a></p>
+    <p><em>Relations with source:</em></p>
+    <ul>
+     <li data-md>
+      <p>radian ← <a data-link-type="dfn" href="80000-3-units.html#radian-of-denominator" id="ref-for-radian-of-denominator①">radian-of-denominator</a> → <a data-link-type="dfn" href="80000-3-units.html#metre" id="ref-for-metre②">metre</a></p>
+     <li data-md>
+      <p>radian ← <a data-link-type="dfn" href="80000-3-units.html#radian-of-numerator" id="ref-for-radian-of-numerator①">radian-of-numerator</a> → <a data-link-type="dfn" href="80000-3-units.html#metre" id="ref-for-metre③">metre</a></p>
+    </ul>
+    <p><em>Relations with target:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="80000-3-units.html#revolutions" id="ref-for-revolutions①">revolutions</a> ← <a data-link-type="dfn" href="80000-3-units.html#revolutions-of-radian" id="ref-for-revolutions-of-radian">revolutions-of-radian</a> → radian</p>
+    </ul>
+    <h3 class="heading settled" data-level="4.16" id="Revolutions"><span class="secno">4.16. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="revolutions">revolutions<a class="self-link" href="#revolutions"></a></dfn></span><a class="self-link" href="#Revolutions"></a></h3>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#derivedmeasurementunit" id="ref-for-derivedmeasurementunit④">metrology:DerivedMeasurementUnit</a>, <a data-link-type="dfn" href="80000-concepts.html#measurementunit" id="ref-for-measurementunit⑧">80000-concepts:MeasurementUnit</a>, <a data-link-type="dfn" href="80000-3-units.html#unitofrotation" id="ref-for-unitofrotation①">UnitOfRotation</a></p>
+    <p><em>Relations with source:</em></p>
+    <ul>
+     <li data-md>
+      <p>revolutions ← <a data-link-type="dfn" href="80000-3-units.html#revolutions-of-radian" id="ref-for-revolutions-of-radian①">revolutions-of-radian</a> → <a data-link-type="dfn" href="80000-3-units.html#radian" id="ref-for-radian③">radian</a></p>
+    </ul>
+    <h3 class="heading settled" data-level="4.17" id="Second"><span class="secno">4.17. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="second">second<a class="self-link" href="#second"></a></dfn></span><a class="self-link" href="#Second"></a></h3>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#independentmeasurementunit" id="ref-for-independentmeasurementunit①">metrology:IndependentMeasurementUnit</a>, <a data-link-type="dfn" href="80000-concepts.html#measurementunit" id="ref-for-measurementunit⑨">80000-concepts:MeasurementUnit</a>, <a data-link-type="dfn" href="80000-3-units.html#unitoftime" id="ref-for-unitoftime④">UnitOfTime</a></p>
+    <p><em>Relations with target:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="80000-6-units.html#coulomb" id="ref-for-coulomb">80000-6-units:coulomb</a> ← <a data-link-type="dfn" href="80000-6-units.html#coulomb-of-second" id="ref-for-coulomb-of-second">80000-6-units:coulomb-of-second</a> → second</p>
+     <li data-md>
+      <p><a data-link-type="dfn" href="80000-3-units.html#hertz" id="ref-for-hertz①">hertz</a> ← <a data-link-type="dfn" href="80000-3-units.html#hertz_of_second" id="ref-for-hertz_of_second①">hertz_of_second</a> → second</p>
+     <li data-md>
+      <p><a data-link-type="dfn" href="80000-3-units.html#metre-per-second" id="ref-for-metre-per-second③">metre-per-second</a> ← <a data-link-type="dfn" href="80000-3-units.html#kilometre-per-second_of_second" id="ref-for-kilometre-per-second_of_second①">kilometre-per-second_of_second</a> → second</p>
+     <li data-md>
+      <p><a data-link-type="dfn" href="80000-3-units.html#metre-per-second" id="ref-for-metre-per-second④">metre-per-second</a> ← <a data-link-type="dfn" href="80000-3-units.html#metre-per-second_of_second" id="ref-for-metre-per-second_of_second①">metre-per-second_of_second</a> → second</p>
+     <li data-md>
+      <p><a data-link-type="dfn" href="80000-4-units.html#newton-second" id="ref-for-newton-second">80000-4-units:newton-second</a> ← <a data-link-type="dfn" href="80000-4-units.html#newton-second-of-second" id="ref-for-newton-second-of-second">80000-4-units:newton-second-of-second</a> → second</p>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../nist.gov/pml/special-publication-811-units.html#pound-force-second" id="ref-for-pound-force-second">special-publication-811-units:pound-force-second</a> ← <a data-link-type="dfn" href="../nist.gov/pml/special-publication-811-units.html#pound-force-second-of-second" id="ref-for-pound-force-second-of-second">special-publication-811-units:pound-force-second-of-second</a> → second</p>
+    </ul>
     <h2 class="heading settled" data-level="5" id="Relations"><span class="secno">5. </span><span class="content">Relation Entities</span><a class="self-link" href="#Relations"></a></h2>
-    <h3 class="heading settled" data-level="5.1" id="Radian-of-numerator"><span class="secno">5.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="radian-of-numerator">radian-of-numerator<a class="self-link" href="#radian-of-numerator"></a></dfn></span><a class="self-link" href="#Radian-of-numerator"></a></h3>
+    <h3 class="heading settled" data-level="5.1" id="Hertz_of_second"><span class="secno">5.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="hertz_of_second">hertz_of_second<a class="self-link" href="#hertz_of_second"></a></dfn></span><a class="self-link" href="#Hertz_of_second"></a></h3>
     <p><em>Attributes:</em></p>
-    <p><em>Source:</em> <a data-link-type="dfn" href="80000-3-units.html#radian" id="ref-for-radian④">radian</a></p>
-    <p><em>Target:</em> <a data-link-type="dfn" href="80000-3-units.html#metre" id="ref-for-metre④">metre</a></p>
-    <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="radian-of-numerator" data-dfn-type="attribute" data-export id="dom-radian-of-numerator-radian-of-numerator-factor"><code>radian-of-numerator-factor</code><a class="self-link" href="#dom-radian-of-numerator-radian-of-numerator-factor"></a></dfn></p>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../ontology.iupac.org/metrology.html#hasfactorformeasurementunit" id="ref-for-hasfactorformeasurementunit">metrology:HasFactorForMeasurementUnit</a></p>
-    <p><em>Properties with domain:</em> <a data-link-type="dfn" href="../ontology.iupac.org/metrology.html#exponent" id="ref-for-exponent">metrology:exponent</a> (must have value 1/1)</p>
-    <h3 class="heading settled" data-level="5.2" id="Radian-of-denominator"><span class="secno">5.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="radian-of-denominator">radian-of-denominator<a class="self-link" href="#radian-of-denominator"></a></dfn></span><a class="self-link" href="#Radian-of-denominator"></a></h3>
-    <p><em>Attributes:</em></p>
-    <p><em>Source:</em> <a data-link-type="dfn" href="80000-3-units.html#radian" id="ref-for-radian⑤">radian</a></p>
-    <p><em>Target:</em> <a data-link-type="dfn" href="80000-3-units.html#metre" id="ref-for-metre⑤">metre</a></p>
-    <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="radian-of-denominator" data-dfn-type="attribute" data-export id="dom-radian-of-denominator-radian-of-denominator-factor"><code>radian-of-denominator-factor</code><a class="self-link" href="#dom-radian-of-denominator-radian-of-denominator-factor"></a></dfn></p>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../ontology.iupac.org/metrology.html#hasfactorformeasurementunit" id="ref-for-hasfactorformeasurementunit①">metrology:HasFactorForMeasurementUnit</a></p>
-    <p><em>Properties with domain:</em> <a data-link-type="dfn" href="../ontology.iupac.org/metrology.html#exponent" id="ref-for-exponent①">metrology:exponent</a> (must have value -1/1)</p>
-    <h3 class="heading settled" data-level="5.3" id="Metre-per-second_of_metre"><span class="secno">5.3. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="metre-per-second_of_metre">metre-per-second_of_metre<a class="self-link" href="#metre-per-second_of_metre"></a></dfn></span><a class="self-link" href="#Metre-per-second_of_metre"></a></h3>
+    <p><em>Source:</em> <a data-link-type="dfn" href="80000-3-units.html#hertz" id="ref-for-hertz②">hertz</a></p>
+    <p><em>Target:</em> <a data-link-type="dfn" href="80000-3-units.html#second" id="ref-for-second⑤">second</a></p>
+    <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="hertz_of_second" data-dfn-type="attribute" data-export id="dom-hertz_of_second-hertz-of-second-factor"><code>hertz-of-second-factor</code><a class="self-link" href="#dom-hertz_of_second-hertz-of-second-factor"></a></dfn></p>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#hasfactorformeasurementunit" id="ref-for-hasfactorformeasurementunit">metrology:HasFactorForMeasurementUnit</a></p>
+    <p><em>Properties:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../iupac.org/metrology.html#exponent" id="ref-for-exponent">metrology:exponent</a> (must have value -1/1)</p>
+    </ul>
+    <h3 class="heading settled" data-level="5.2" id="Kilometre-per-second_of_metre"><span class="secno">5.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="kilometre-per-second_of_metre">kilometre-per-second_of_metre<a class="self-link" href="#kilometre-per-second_of_metre"></a></dfn></span><a class="self-link" href="#Kilometre-per-second_of_metre"></a></h3>
     <p><em>Attributes:</em></p>
     <p><em>Source:</em> <a data-link-type="dfn" href="80000-3-units.html#metre-per-second" id="ref-for-metre-per-second⑤">metre-per-second</a></p>
-    <p><em>Target:</em> <a data-link-type="dfn" href="80000-3-units.html#metre" id="ref-for-metre⑥">metre</a></p>
-    <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="metre-per-second_of_metre" data-dfn-type="attribute" data-export id="dom-metre-per-second_of_metre-metre-per-second_of_metre-factor"><code>metre-per-second_of_metre-factor</code><a class="self-link" href="#dom-metre-per-second_of_metre-metre-per-second_of_metre-factor"></a></dfn></p>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../ontology.iupac.org/metrology.html#hasfactorformeasurementunit" id="ref-for-hasfactorformeasurementunit②">metrology:HasFactorForMeasurementUnit</a></p>
-    <p><em>Properties with domain:</em> <a data-link-type="dfn" href="../ontology.iupac.org/metrology.html#exponent" id="ref-for-exponent②">metrology:exponent</a> (must have value 1/1)</p>
-    <h3 class="heading settled" data-level="5.4" id="Metre-per-second_of_second"><span class="secno">5.4. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="metre-per-second_of_second">metre-per-second_of_second<a class="self-link" href="#metre-per-second_of_second"></a></dfn></span><a class="self-link" href="#Metre-per-second_of_second"></a></h3>
-    <p><em>Attributes:</em></p>
-    <p><em>Source:</em> <a data-link-type="dfn" href="80000-3-units.html#metre-per-second" id="ref-for-metre-per-second⑥">metre-per-second</a></p>
-    <p><em>Target:</em> <a data-link-type="dfn" href="80000-3-units.html#second" id="ref-for-second⑤">second</a></p>
-    <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="metre-per-second_of_second" data-dfn-type="attribute" data-export id="dom-metre-per-second_of_second-metre-per-second_of_second-factor"><code>metre-per-second_of_second-factor</code><a class="self-link" href="#dom-metre-per-second_of_second-metre-per-second_of_second-factor"></a></dfn></p>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../ontology.iupac.org/metrology.html#hasfactorformeasurementunit" id="ref-for-hasfactorformeasurementunit③">metrology:HasFactorForMeasurementUnit</a></p>
-    <p><em>Properties with domain:</em> <a data-link-type="dfn" href="../ontology.iupac.org/metrology.html#exponent" id="ref-for-exponent③">metrology:exponent</a> (must have value -1/1)</p>
-    <h3 class="heading settled" data-level="5.5" id="Kilometre-per-second_of_metre"><span class="secno">5.5. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="kilometre-per-second_of_metre">kilometre-per-second_of_metre<a class="self-link" href="#kilometre-per-second_of_metre"></a></dfn></span><a class="self-link" href="#Kilometre-per-second_of_metre"></a></h3>
-    <p><em>Attributes:</em></p>
-    <p><em>Source:</em> <a data-link-type="dfn" href="80000-3-units.html#metre-per-second" id="ref-for-metre-per-second⑦">metre-per-second</a></p>
     <p><em>Target:</em> <a data-link-type="dfn" href="80000-3-units.html#kilometre" id="ref-for-kilometre②">kilometre</a></p>
     <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="kilometre-per-second_of_metre" data-dfn-type="attribute" data-export id="dom-kilometre-per-second_of_metre-kilometre-per-second_of_metre-factor"><code>kilometre-per-second_of_metre-factor</code><a class="self-link" href="#dom-kilometre-per-second_of_metre-kilometre-per-second_of_metre-factor"></a></dfn></p>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../ontology.iupac.org/metrology.html#hasfactorformeasurementunit" id="ref-for-hasfactorformeasurementunit④">metrology:HasFactorForMeasurementUnit</a></p>
-    <p><em>Properties with domain:</em> <a data-link-type="dfn" href="../ontology.iupac.org/metrology.html#exponent" id="ref-for-exponent④">metrology:exponent</a> (must have value 1/1)</p>
-    <h3 class="heading settled" data-level="5.6" id="Kilometre-per-second_of_second"><span class="secno">5.6. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="kilometre-per-second_of_second">kilometre-per-second_of_second<a class="self-link" href="#kilometre-per-second_of_second"></a></dfn></span><a class="self-link" href="#Kilometre-per-second_of_second"></a></h3>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#hasfactorformeasurementunit" id="ref-for-hasfactorformeasurementunit①">metrology:HasFactorForMeasurementUnit</a></p>
+    <p><em>Properties:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../iupac.org/metrology.html#exponent" id="ref-for-exponent①">metrology:exponent</a> (must have value 1/1)</p>
+    </ul>
+    <h3 class="heading settled" data-level="5.3" id="Kilometre-per-second_of_second"><span class="secno">5.3. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="kilometre-per-second_of_second">kilometre-per-second_of_second<a class="self-link" href="#kilometre-per-second_of_second"></a></dfn></span><a class="self-link" href="#Kilometre-per-second_of_second"></a></h3>
     <p><em>Attributes:</em></p>
-    <p><em>Source:</em> <a data-link-type="dfn" href="80000-3-units.html#metre-per-second" id="ref-for-metre-per-second⑧">metre-per-second</a></p>
+    <p><em>Source:</em> <a data-link-type="dfn" href="80000-3-units.html#metre-per-second" id="ref-for-metre-per-second⑥">metre-per-second</a></p>
     <p><em>Target:</em> <a data-link-type="dfn" href="80000-3-units.html#second" id="ref-for-second⑥">second</a></p>
     <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="kilometre-per-second_of_second" data-dfn-type="attribute" data-export id="dom-kilometre-per-second_of_second-kilometre-per-second_of_second-factor"><code>kilometre-per-second_of_second-factor</code><a class="self-link" href="#dom-kilometre-per-second_of_second-kilometre-per-second_of_second-factor"></a></dfn></p>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../ontology.iupac.org/metrology.html#hasfactorformeasurementunit" id="ref-for-hasfactorformeasurementunit⑤">metrology:HasFactorForMeasurementUnit</a></p>
-    <p><em>Properties with domain:</em> <a data-link-type="dfn" href="../ontology.iupac.org/metrology.html#exponent" id="ref-for-exponent⑤">metrology:exponent</a> (must have value -1/1)</p>
-    <h3 class="heading settled" data-level="5.7" id="Revolutions-of-radian"><span class="secno">5.7. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="revolutions-of-radian">revolutions-of-radian<a class="self-link" href="#revolutions-of-radian"></a></dfn></span><a class="self-link" href="#Revolutions-of-radian"></a></h3>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#hasfactorformeasurementunit" id="ref-for-hasfactorformeasurementunit②">metrology:HasFactorForMeasurementUnit</a></p>
+    <p><em>Properties:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../iupac.org/metrology.html#exponent" id="ref-for-exponent②">metrology:exponent</a> (must have value -1/1)</p>
+    </ul>
+    <h3 class="heading settled" data-level="5.4" id="Metre-per-second_of_metre"><span class="secno">5.4. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="metre-per-second_of_metre">metre-per-second_of_metre<a class="self-link" href="#metre-per-second_of_metre"></a></dfn></span><a class="self-link" href="#Metre-per-second_of_metre"></a></h3>
+    <p><em>Attributes:</em></p>
+    <p><em>Source:</em> <a data-link-type="dfn" href="80000-3-units.html#metre-per-second" id="ref-for-metre-per-second⑦">metre-per-second</a></p>
+    <p><em>Target:</em> <a data-link-type="dfn" href="80000-3-units.html#metre" id="ref-for-metre④">metre</a></p>
+    <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="metre-per-second_of_metre" data-dfn-type="attribute" data-export id="dom-metre-per-second_of_metre-metre-per-second_of_metre-factor"><code>metre-per-second_of_metre-factor</code><a class="self-link" href="#dom-metre-per-second_of_metre-metre-per-second_of_metre-factor"></a></dfn></p>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#hasfactorformeasurementunit" id="ref-for-hasfactorformeasurementunit③">metrology:HasFactorForMeasurementUnit</a></p>
+    <p><em>Properties:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../iupac.org/metrology.html#exponent" id="ref-for-exponent③">metrology:exponent</a> (must have value 1/1)</p>
+    </ul>
+    <h3 class="heading settled" data-level="5.5" id="Metre-per-second_of_second"><span class="secno">5.5. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="metre-per-second_of_second">metre-per-second_of_second<a class="self-link" href="#metre-per-second_of_second"></a></dfn></span><a class="self-link" href="#Metre-per-second_of_second"></a></h3>
+    <p><em>Attributes:</em></p>
+    <p><em>Source:</em> <a data-link-type="dfn" href="80000-3-units.html#metre-per-second" id="ref-for-metre-per-second⑧">metre-per-second</a></p>
+    <p><em>Target:</em> <a data-link-type="dfn" href="80000-3-units.html#second" id="ref-for-second⑦">second</a></p>
+    <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="metre-per-second_of_second" data-dfn-type="attribute" data-export id="dom-metre-per-second_of_second-metre-per-second_of_second-factor"><code>metre-per-second_of_second-factor</code><a class="self-link" href="#dom-metre-per-second_of_second-metre-per-second_of_second-factor"></a></dfn></p>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#hasfactorformeasurementunit" id="ref-for-hasfactorformeasurementunit④">metrology:HasFactorForMeasurementUnit</a></p>
+    <p><em>Properties:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../iupac.org/metrology.html#exponent" id="ref-for-exponent④">metrology:exponent</a> (must have value -1/1)</p>
+    </ul>
+    <h3 class="heading settled" data-level="5.6" id="Radian-of-denominator"><span class="secno">5.6. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="radian-of-denominator">radian-of-denominator<a class="self-link" href="#radian-of-denominator"></a></dfn></span><a class="self-link" href="#Radian-of-denominator"></a></h3>
+    <p><em>Attributes:</em></p>
+    <p><em>Source:</em> <a data-link-type="dfn" href="80000-3-units.html#radian" id="ref-for-radian④">radian</a></p>
+    <p><em>Target:</em> <a data-link-type="dfn" href="80000-3-units.html#metre" id="ref-for-metre⑤">metre</a></p>
+    <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="radian-of-denominator" data-dfn-type="attribute" data-export id="dom-radian-of-denominator-radian-of-denominator-factor"><code>radian-of-denominator-factor</code><a class="self-link" href="#dom-radian-of-denominator-radian-of-denominator-factor"></a></dfn></p>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#hasfactorformeasurementunit" id="ref-for-hasfactorformeasurementunit⑤">metrology:HasFactorForMeasurementUnit</a></p>
+    <p><em>Properties:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../iupac.org/metrology.html#exponent" id="ref-for-exponent⑤">metrology:exponent</a> (must have value -1/1)</p>
+    </ul>
+    <h3 class="heading settled" data-level="5.7" id="Radian-of-numerator"><span class="secno">5.7. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="radian-of-numerator">radian-of-numerator<a class="self-link" href="#radian-of-numerator"></a></dfn></span><a class="self-link" href="#Radian-of-numerator"></a></h3>
+    <p><em>Attributes:</em></p>
+    <p><em>Source:</em> <a data-link-type="dfn" href="80000-3-units.html#radian" id="ref-for-radian⑤">radian</a></p>
+    <p><em>Target:</em> <a data-link-type="dfn" href="80000-3-units.html#metre" id="ref-for-metre⑥">metre</a></p>
+    <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="radian-of-numerator" data-dfn-type="attribute" data-export id="dom-radian-of-numerator-radian-of-numerator-factor"><code>radian-of-numerator-factor</code><a class="self-link" href="#dom-radian-of-numerator-radian-of-numerator-factor"></a></dfn></p>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#hasfactorformeasurementunit" id="ref-for-hasfactorformeasurementunit⑥">metrology:HasFactorForMeasurementUnit</a></p>
+    <p><em>Properties:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../iupac.org/metrology.html#exponent" id="ref-for-exponent⑥">metrology:exponent</a> (must have value 1/1)</p>
+    </ul>
+    <h3 class="heading settled" data-level="5.8" id="Revolutions-of-radian"><span class="secno">5.8. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="revolutions-of-radian">revolutions-of-radian<a class="self-link" href="#revolutions-of-radian"></a></dfn></span><a class="self-link" href="#Revolutions-of-radian"></a></h3>
     <p><em>Attributes:</em></p>
     <p><em>Source:</em> <a data-link-type="dfn" href="80000-3-units.html#revolutions" id="ref-for-revolutions②">revolutions</a></p>
     <p><em>Target:</em> <a data-link-type="dfn" href="80000-3-units.html#radian" id="ref-for-radian⑥">radian</a></p>
     <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="revolutions-of-radian" data-dfn-type="attribute" data-export id="dom-revolutions-of-radian-revolutions-of-radian-factor"><code>revolutions-of-radian-factor</code><a class="self-link" href="#dom-revolutions-of-radian-revolutions-of-radian-factor"></a></dfn></p>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../ontology.iupac.org/metrology.html#hasfactorformeasurementunit" id="ref-for-hasfactorformeasurementunit⑥">metrology:HasFactorForMeasurementUnit</a></p>
-    <p><em>Properties with domain:</em> <a data-link-type="dfn" href="../ontology.iupac.org/metrology.html#exponent" id="ref-for-exponent⑥">metrology:exponent</a> (must have value 1/1)</p>
-    <h3 class="heading settled" data-level="5.8" id="Hertz_of_second"><span class="secno">5.8. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="hertz_of_second">hertz_of_second<a class="self-link" href="#hertz_of_second"></a></dfn></span><a class="self-link" href="#Hertz_of_second"></a></h3>
-    <p><em>Attributes:</em></p>
-    <p><em>Source:</em> <a data-link-type="dfn" href="80000-3-units.html#hertz" id="ref-for-hertz②">hertz</a></p>
-    <p><em>Target:</em> <a data-link-type="dfn" href="80000-3-units.html#second" id="ref-for-second⑦">second</a></p>
-    <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="hertz_of_second" data-dfn-type="attribute" data-export id="dom-hertz_of_second-hertz-of-second-factor"><code>hertz-of-second-factor</code><a class="self-link" href="#dom-hertz_of_second-hertz-of-second-factor"></a></dfn></p>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../ontology.iupac.org/metrology.html#hasfactorformeasurementunit" id="ref-for-hasfactorformeasurementunit⑦">metrology:HasFactorForMeasurementUnit</a></p>
-    <p><em>Properties with domain:</em> <a data-link-type="dfn" href="../ontology.iupac.org/metrology.html#exponent" id="ref-for-exponent⑦">metrology:exponent</a> (must have value -1/1)</p>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#hasfactorformeasurementunit" id="ref-for-hasfactorformeasurementunit⑦">metrology:HasFactorForMeasurementUnit</a></p>
+    <p><em>Properties:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../iupac.org/metrology.html#exponent" id="ref-for-exponent⑦">metrology:exponent</a> (must have value 1/1)</p>
+    </ul>
    </div>
   </main>
 <script>
@@ -2165,401 +2292,567 @@ dfn > a.self-link::before      { content: "#"; }
   <h2 class="no-num no-ref heading settled" id="index"><span class="content">Index</span><a class="self-link" href="#index"></a></h2>
   <h3 class="no-num no-ref heading settled" id="index-defined-here"><span class="content">Terms defined by this specification</span><a class="self-link" href="#index-defined-here"></a></h3>
   <ul class="index">
-   <li><a href="#hertz">hertz</a><span>, in §3.11</span>
-   <li><a href="#hertz_of_second">hertz_of_second</a><span>, in §5.8</span>
-   <li><a href="#dom-hertz_of_second-hertz-of-second-factor">hertz-of-second-factor</a><span>, in §5.8</span>
-   <li><a href="#hour">hour</a><span>, in §3.7</span>
-   <li><a href="#kilometre">kilometre</a><span>, in §3.2</span>
-   <li><a href="#kilometre-per-second">kilometre-per-second</a><span>, in §3.9</span>
-   <li><a href="#kilometre-per-second_of_metre">kilometre-per-second_of_metre</a><span>, in §5.5</span>
-   <li><a href="#dom-kilometre-per-second_of_metre-kilometre-per-second_of_metre-factor">kilometre-per-second_of_metre-factor</a><span>, in §5.5</span>
-   <li><a href="#kilometre-per-second_of_second">kilometre-per-second_of_second</a><span>, in §5.6</span>
-   <li><a href="#dom-kilometre-per-second_of_second-kilometre-per-second_of_second-factor">kilometre-per-second_of_second-factor</a><span>, in §5.6</span>
-   <li><a href="#metre">metre</a><span>, in §3.1</span>
-   <li><a href="#metre-per-second">metre-per-second</a><span>, in §3.8</span>
-   <li><a href="#metre-per-second_of_metre">metre-per-second_of_metre</a><span>, in §5.3</span>
-   <li><a href="#dom-metre-per-second_of_metre-metre-per-second_of_metre-factor">metre-per-second_of_metre-factor</a><span>, in §5.3</span>
-   <li><a href="#metre-per-second_of_second">metre-per-second_of_second</a><span>, in §5.4</span>
-   <li><a href="#dom-metre-per-second_of_second-metre-per-second_of_second-factor">metre-per-second_of_second-factor</a><span>, in §5.4</span>
-   <li><a href="#millisecond">millisecond</a><span>, in §3.5</span>
-   <li><a href="#minute">minute</a><span>, in §3.6</span>
-   <li><a href="#radian">radian</a><span>, in §3.3</span>
-   <li><a href="#radian-of-denominator">radian-of-denominator</a><span>, in §5.2</span>
-   <li><a href="#dom-radian-of-denominator-radian-of-denominator-factor">radian-of-denominator-factor</a><span>, in §5.2</span>
-   <li><a href="#radian-of-numerator">radian-of-numerator</a><span>, in §5.1</span>
-   <li><a href="#dom-radian-of-numerator-radian-of-numerator-factor">radian-of-numerator-factor</a><span>, in §5.1</span>
-   <li><a href="#revolutions">revolutions</a><span>, in §3.10</span>
-   <li><a href="#revolutions-of-radian">revolutions-of-radian</a><span>, in §5.7</span>
-   <li><a href="#dom-revolutions-of-radian-revolutions-of-radian-factor">revolutions-of-radian-factor</a><span>, in §5.7</span>
-   <li><a href="#second">second</a><span>, in §3.4</span>
-   <li><a href="#unitofangularmeasure">UnitOfAngularMeasure</a><span>, in §4.2</span>
-   <li><a href="#unitoffrequency">UnitOfFrequency</a><span>, in §4.6</span>
-   <li><a href="#unitoflength">UnitOfLength</a><span>, in §4.1</span>
-   <li><a href="#unitofrotation">UnitOfRotation</a><span>, in §4.5</span>
-   <li><a href="#unitoftime">UnitOfTime</a><span>, in §4.3</span>
-   <li><a href="#unitofvelocity">UnitOfVelocity</a><span>, in §4.4</span>
+   <li><a href="#hertz">hertz</a><span>, in §4.7</span>
+   <li><a href="#hertz_of_second">hertz_of_second</a><span>, in §5.1</span>
+   <li><a href="#dom-hertz_of_second-hertz-of-second-factor">hertz-of-second-factor</a><span>, in §5.1</span>
+   <li><a href="#hour">hour</a><span>, in §4.8</span>
+   <li><a href="#kilometre">kilometre</a><span>, in §4.9</span>
+   <li><a href="#kilometre-per-second">kilometre-per-second</a><span>, in §4.10</span>
+   <li><a href="#kilometre-per-second_of_metre">kilometre-per-second_of_metre</a><span>, in §5.2</span>
+   <li><a href="#dom-kilometre-per-second_of_metre-kilometre-per-second_of_metre-factor">kilometre-per-second_of_metre-factor</a><span>, in §5.2</span>
+   <li><a href="#kilometre-per-second_of_second">kilometre-per-second_of_second</a><span>, in §5.3</span>
+   <li><a href="#dom-kilometre-per-second_of_second-kilometre-per-second_of_second-factor">kilometre-per-second_of_second-factor</a><span>, in §5.3</span>
+   <li><a href="#metre">metre</a><span>, in §4.11</span>
+   <li><a href="#metre-per-second">metre-per-second</a><span>, in §4.12</span>
+   <li><a href="#metre-per-second_of_metre">metre-per-second_of_metre</a><span>, in §5.4</span>
+   <li><a href="#dom-metre-per-second_of_metre-metre-per-second_of_metre-factor">metre-per-second_of_metre-factor</a><span>, in §5.4</span>
+   <li><a href="#metre-per-second_of_second">metre-per-second_of_second</a><span>, in §5.5</span>
+   <li><a href="#dom-metre-per-second_of_second-metre-per-second_of_second-factor">metre-per-second_of_second-factor</a><span>, in §5.5</span>
+   <li><a href="#millisecond">millisecond</a><span>, in §4.13</span>
+   <li><a href="#minute">minute</a><span>, in §4.14</span>
+   <li><a href="#radian">radian</a><span>, in §4.15</span>
+   <li><a href="#radian-of-denominator">radian-of-denominator</a><span>, in §5.6</span>
+   <li><a href="#dom-radian-of-denominator-radian-of-denominator-factor">radian-of-denominator-factor</a><span>, in §5.6</span>
+   <li><a href="#radian-of-numerator">radian-of-numerator</a><span>, in §5.7</span>
+   <li><a href="#dom-radian-of-numerator-radian-of-numerator-factor">radian-of-numerator-factor</a><span>, in §5.7</span>
+   <li><a href="#revolutions">revolutions</a><span>, in §4.16</span>
+   <li><a href="#revolutions-of-radian">revolutions-of-radian</a><span>, in §5.8</span>
+   <li><a href="#dom-revolutions-of-radian-revolutions-of-radian-factor">revolutions-of-radian-factor</a><span>, in §5.8</span>
+   <li><a href="#second">second</a><span>, in §4.17</span>
+   <li><a href="#unitofangularmeasure">UnitOfAngularMeasure</a><span>, in §4.1</span>
+   <li><a href="#unitofangularmeasurevalue">UnitOfAngularMeasureValue</a><span>, in §3.1</span>
+   <li><a href="#unitoffrequency">UnitOfFrequency</a><span>, in §4.2</span>
+   <li><a href="#unitoffrequencyvalue">UnitOfFrequencyValue</a><span>, in §3.2</span>
+   <li><a href="#unitoflength">UnitOfLength</a><span>, in §4.3</span>
+   <li><a href="#unitoflengthvalue">UnitOfLengthValue</a><span>, in §3.3</span>
+   <li><a href="#unitofrotation">UnitOfRotation</a><span>, in §4.4</span>
+   <li><a href="#unitofrotationvalue">UnitOfRotationValue</a><span>, in §3.4</span>
+   <li><a href="#unitoftime">UnitOfTime</a><span>, in §4.5</span>
+   <li><a href="#unitoftimevalue">UnitOfTimeValue</a><span>, in §3.5</span>
+   <li><a href="#unitofvelocity">UnitOfVelocity</a><span>, in §4.6</span>
+   <li><a href="#unitofvelocityvalue">UnitOfVelocityValue</a><span>, in §3.6</span>
   </ul>
   <aside class="dfn-panel" data-for="term-for-kilo">
    <a href="80000-1.html#kilo">80000-1.html#kilo</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-kilo">3.2. kilometre</a>
+    <li><a href="#ref-for-kilo">4.9. kilometre</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-milli">
    <a href="80000-1.html#milli">80000-1.html#milli</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-milli">3.5. millisecond</a>
+    <li><a href="#ref-for-milli">4.13. millisecond</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-hertz-magnitude">
+   <a href="80000-3-quantityValues.html#hertz-magnitude">80000-3-quantityValues.html#hertz-magnitude</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-hertz-magnitude">3.2. UnitOfFrequencyValue</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-hour-magnitude">
+   <a href="80000-3-quantityValues.html#hour-magnitude">80000-3-quantityValues.html#hour-magnitude</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-hour-magnitude">3.5. UnitOfTimeValue</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-kilometre-magnitude">
+   <a href="80000-3-quantityValues.html#kilometre-magnitude">80000-3-quantityValues.html#kilometre-magnitude</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-kilometre-magnitude">3.3. UnitOfLengthValue</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-kilometre-per-second-magnitude">
+   <a href="80000-3-quantityValues.html#kilometre-per-second-magnitude">80000-3-quantityValues.html#kilometre-per-second-magnitude</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-kilometre-per-second-magnitude">3.6. UnitOfVelocityValue</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-metre-magnitude">
+   <a href="80000-3-quantityValues.html#metre-magnitude">80000-3-quantityValues.html#metre-magnitude</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-metre-magnitude">3.3. UnitOfLengthValue</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-metre-per-second-magnitude">
+   <a href="80000-3-quantityValues.html#metre-per-second-magnitude">80000-3-quantityValues.html#metre-per-second-magnitude</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-metre-per-second-magnitude">3.6. UnitOfVelocityValue</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-millisecond-magnitude">
+   <a href="80000-3-quantityValues.html#millisecond-magnitude">80000-3-quantityValues.html#millisecond-magnitude</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-millisecond-magnitude">3.5. UnitOfTimeValue</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-minute-magnitude">
+   <a href="80000-3-quantityValues.html#minute-magnitude">80000-3-quantityValues.html#minute-magnitude</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-minute-magnitude">3.5. UnitOfTimeValue</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-radian-magnitude">
+   <a href="80000-3-quantityValues.html#radian-magnitude">80000-3-quantityValues.html#radian-magnitude</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-radian-magnitude">3.1. UnitOfAngularMeasureValue</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-revolutions-magnitude">
+   <a href="80000-3-quantityValues.html#revolutions-magnitude">80000-3-quantityValues.html#revolutions-magnitude</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-revolutions-magnitude">3.4. UnitOfRotationValue</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-second-magnitude">
+   <a href="80000-3-quantityValues.html#second-magnitude">80000-3-quantityValues.html#second-magnitude</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-second-magnitude">3.5. UnitOfTimeValue</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-hertz">
    <a href="80000-3-units.html#hertz">80000-3-units.html#hertz</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-hertz">3.4. second</a>
-    <li><a href="#ref-for-hertz①">4.6. UnitOfFrequency</a>
-    <li><a href="#ref-for-hertz②">5.8. hertz_of_second</a>
+    <li><a href="#ref-for-hertz">4.2. UnitOfFrequency</a>
+    <li><a href="#ref-for-hertz①">4.17. second</a>
+    <li><a href="#ref-for-hertz②">5.1. hertz_of_second</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-hertz-of-second-factor">
-   <a href="80000-3-units.html#hertz-of-second-factor">80000-3-units.html#hertz-of-second-factor</a><b>Referenced in:</b>
+  <aside class="dfn-panel" data-for="term-for-hertz_of_second">
+   <a href="80000-3-units.html#hertz_of_second">80000-3-units.html#hertz_of_second</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-hertz-of-second-factor">3.4. second</a>
-    <li><a href="#ref-for-hertz-of-second-factor①">3.11. hertz</a>
+    <li><a href="#ref-for-hertz_of_second">4.7. hertz</a>
+    <li><a href="#ref-for-hertz_of_second①">4.17. second</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-hour">
+   <a href="80000-3-units.html#hour">80000-3-units.html#hour</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-hour">4.5. UnitOfTime</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-kilometre">
    <a href="80000-3-units.html#kilometre">80000-3-units.html#kilometre</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-kilometre">3.8. metre-per-second</a>
-    <li><a href="#ref-for-kilometre①">4.1. UnitOfLength</a>
-    <li><a href="#ref-for-kilometre②">5.5. kilometre-per-second_of_metre</a>
+    <li><a href="#ref-for-kilometre">4.3. UnitOfLength</a>
+    <li><a href="#ref-for-kilometre①">4.12. metre-per-second</a>
+    <li><a href="#ref-for-kilometre②">5.2. kilometre-per-second_of_metre</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-kilometre-per-second">
    <a href="80000-3-units.html#kilometre-per-second">80000-3-units.html#kilometre-per-second</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-kilometre-per-second">4.4. UnitOfVelocity</a>
+    <li><a href="#ref-for-kilometre-per-second">4.6. UnitOfVelocity</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-kilometre-per-second_of_metre-factor">
-   <a href="80000-3-units.html#kilometre-per-second_of_metre-factor">80000-3-units.html#kilometre-per-second_of_metre-factor</a><b>Referenced in:</b>
+  <aside class="dfn-panel" data-for="term-for-kilometre-per-second_of_metre">
+   <a href="80000-3-units.html#kilometre-per-second_of_metre">80000-3-units.html#kilometre-per-second_of_metre</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-kilometre-per-second_of_metre-factor">3.2. kilometre</a>
-    <li><a href="#ref-for-kilometre-per-second_of_metre-factor①">3.8. metre-per-second</a>
+    <li><a href="#ref-for-kilometre-per-second_of_metre">4.9. kilometre</a>
+    <li><a href="#ref-for-kilometre-per-second_of_metre①">4.12. metre-per-second</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-kilometre-per-second_of_second-factor">
-   <a href="80000-3-units.html#kilometre-per-second_of_second-factor">80000-3-units.html#kilometre-per-second_of_second-factor</a><b>Referenced in:</b>
+  <aside class="dfn-panel" data-for="term-for-kilometre-per-second_of_second">
+   <a href="80000-3-units.html#kilometre-per-second_of_second">80000-3-units.html#kilometre-per-second_of_second</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-kilometre-per-second_of_second-factor">3.4. second</a>
-    <li><a href="#ref-for-kilometre-per-second_of_second-factor①">3.8. metre-per-second</a>
+    <li><a href="#ref-for-kilometre-per-second_of_second">4.12. metre-per-second</a>
+    <li><a href="#ref-for-kilometre-per-second_of_second①">4.17. second</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-metre">
    <a href="80000-3-units.html#metre">80000-3-units.html#metre</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-metre">3.3. radian</a> <a href="#ref-for-metre①">(2)</a>
-    <li><a href="#ref-for-metre②">3.8. metre-per-second</a>
-    <li><a href="#ref-for-metre③">4.1. UnitOfLength</a>
-    <li><a href="#ref-for-metre④">5.1. radian-of-numerator</a>
-    <li><a href="#ref-for-metre⑤">5.2. radian-of-denominator</a>
-    <li><a href="#ref-for-metre⑥">5.3. metre-per-second_of_metre</a>
+    <li><a href="#ref-for-metre">4.3. UnitOfLength</a>
+    <li><a href="#ref-for-metre①">4.12. metre-per-second</a>
+    <li><a href="#ref-for-metre②">4.15. radian</a> <a href="#ref-for-metre③">(2)</a>
+    <li><a href="#ref-for-metre④">5.4. metre-per-second_of_metre</a>
+    <li><a href="#ref-for-metre⑤">5.6. radian-of-denominator</a>
+    <li><a href="#ref-for-metre⑥">5.7. radian-of-numerator</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-metre-per-second">
    <a href="80000-3-units.html#metre-per-second">80000-3-units.html#metre-per-second</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-metre-per-second">3.1. metre</a>
-    <li><a href="#ref-for-metre-per-second①">3.2. kilometre</a>
-    <li><a href="#ref-for-metre-per-second②">3.4. second</a> <a href="#ref-for-metre-per-second③">(2)</a>
-    <li><a href="#ref-for-metre-per-second④">4.4. UnitOfVelocity</a>
-    <li><a href="#ref-for-metre-per-second⑤">5.3. metre-per-second_of_metre</a>
-    <li><a href="#ref-for-metre-per-second⑥">5.4. metre-per-second_of_second</a>
-    <li><a href="#ref-for-metre-per-second⑦">5.5. kilometre-per-second_of_metre</a>
-    <li><a href="#ref-for-metre-per-second⑧">5.6. kilometre-per-second_of_second</a>
+    <li><a href="#ref-for-metre-per-second">4.6. UnitOfVelocity</a>
+    <li><a href="#ref-for-metre-per-second①">4.9. kilometre</a>
+    <li><a href="#ref-for-metre-per-second②">4.11. metre</a>
+    <li><a href="#ref-for-metre-per-second③">4.17. second</a> <a href="#ref-for-metre-per-second④">(2)</a>
+    <li><a href="#ref-for-metre-per-second⑤">5.2. kilometre-per-second_of_metre</a>
+    <li><a href="#ref-for-metre-per-second⑥">5.3. kilometre-per-second_of_second</a>
+    <li><a href="#ref-for-metre-per-second⑦">5.4. metre-per-second_of_metre</a>
+    <li><a href="#ref-for-metre-per-second⑧">5.5. metre-per-second_of_second</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-metre-per-second_of_metre-factor">
-   <a href="80000-3-units.html#metre-per-second_of_metre-factor">80000-3-units.html#metre-per-second_of_metre-factor</a><b>Referenced in:</b>
+  <aside class="dfn-panel" data-for="term-for-metre-per-second_of_metre">
+   <a href="80000-3-units.html#metre-per-second_of_metre">80000-3-units.html#metre-per-second_of_metre</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-metre-per-second_of_metre-factor">3.1. metre</a>
-    <li><a href="#ref-for-metre-per-second_of_metre-factor①">3.8. metre-per-second</a>
+    <li><a href="#ref-for-metre-per-second_of_metre">4.11. metre</a>
+    <li><a href="#ref-for-metre-per-second_of_metre①">4.12. metre-per-second</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-metre-per-second_of_second-factor">
-   <a href="80000-3-units.html#metre-per-second_of_second-factor">80000-3-units.html#metre-per-second_of_second-factor</a><b>Referenced in:</b>
+  <aside class="dfn-panel" data-for="term-for-metre-per-second_of_second">
+   <a href="80000-3-units.html#metre-per-second_of_second">80000-3-units.html#metre-per-second_of_second</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-metre-per-second_of_second-factor">3.4. second</a>
-    <li><a href="#ref-for-metre-per-second_of_second-factor①">3.8. metre-per-second</a>
+    <li><a href="#ref-for-metre-per-second_of_second">4.12. metre-per-second</a>
+    <li><a href="#ref-for-metre-per-second_of_second①">4.17. second</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-millisecond">
    <a href="80000-3-units.html#millisecond">80000-3-units.html#millisecond</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-millisecond">4.3. UnitOfTime</a>
+    <li><a href="#ref-for-millisecond">4.5. UnitOfTime</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-minute">
    <a href="80000-3-units.html#minute">80000-3-units.html#minute</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-minute">3.7. hour</a>
+    <li><a href="#ref-for-minute">4.5. UnitOfTime</a>
+    <li><a href="#ref-for-minute①">4.8. hour</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-radian">
    <a href="80000-3-units.html#radian">80000-3-units.html#radian</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-radian">3.1. metre</a> <a href="#ref-for-radian①">(2)</a>
-    <li><a href="#ref-for-radian②">3.10. revolutions</a>
-    <li><a href="#ref-for-radian③">4.2. UnitOfAngularMeasure</a>
-    <li><a href="#ref-for-radian④">5.1. radian-of-numerator</a>
-    <li><a href="#ref-for-radian⑤">5.2. radian-of-denominator</a>
-    <li><a href="#ref-for-radian⑥">5.7. revolutions-of-radian</a>
+    <li><a href="#ref-for-radian">4.1. UnitOfAngularMeasure</a>
+    <li><a href="#ref-for-radian①">4.11. metre</a> <a href="#ref-for-radian②">(2)</a>
+    <li><a href="#ref-for-radian③">4.16. revolutions</a>
+    <li><a href="#ref-for-radian④">5.6. radian-of-denominator</a>
+    <li><a href="#ref-for-radian⑤">5.7. radian-of-numerator</a>
+    <li><a href="#ref-for-radian⑥">5.8. revolutions-of-radian</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-radian-of-denominator-factor">
-   <a href="80000-3-units.html#radian-of-denominator-factor">80000-3-units.html#radian-of-denominator-factor</a><b>Referenced in:</b>
+  <aside class="dfn-panel" data-for="term-for-radian-of-denominator">
+   <a href="80000-3-units.html#radian-of-denominator">80000-3-units.html#radian-of-denominator</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-radian-of-denominator-factor">3.1. metre</a>
-    <li><a href="#ref-for-radian-of-denominator-factor①">3.3. radian</a>
+    <li><a href="#ref-for-radian-of-denominator">4.11. metre</a>
+    <li><a href="#ref-for-radian-of-denominator①">4.15. radian</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-radian-of-numerator-factor">
-   <a href="80000-3-units.html#radian-of-numerator-factor">80000-3-units.html#radian-of-numerator-factor</a><b>Referenced in:</b>
+  <aside class="dfn-panel" data-for="term-for-radian-of-numerator">
+   <a href="80000-3-units.html#radian-of-numerator">80000-3-units.html#radian-of-numerator</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-radian-of-numerator-factor">3.1. metre</a>
-    <li><a href="#ref-for-radian-of-numerator-factor①">3.3. radian</a>
+    <li><a href="#ref-for-radian-of-numerator">4.11. metre</a>
+    <li><a href="#ref-for-radian-of-numerator①">4.15. radian</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-revolutions">
    <a href="80000-3-units.html#revolutions">80000-3-units.html#revolutions</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-revolutions">3.3. radian</a>
-    <li><a href="#ref-for-revolutions①">4.5. UnitOfRotation</a>
-    <li><a href="#ref-for-revolutions②">5.7. revolutions-of-radian</a>
+    <li><a href="#ref-for-revolutions">4.4. UnitOfRotation</a>
+    <li><a href="#ref-for-revolutions①">4.15. radian</a>
+    <li><a href="#ref-for-revolutions②">5.8. revolutions-of-radian</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-revolutions-of-radian-factor">
-   <a href="80000-3-units.html#revolutions-of-radian-factor">80000-3-units.html#revolutions-of-radian-factor</a><b>Referenced in:</b>
+  <aside class="dfn-panel" data-for="term-for-revolutions-of-radian">
+   <a href="80000-3-units.html#revolutions-of-radian">80000-3-units.html#revolutions-of-radian</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-revolutions-of-radian-factor">3.3. radian</a>
-    <li><a href="#ref-for-revolutions-of-radian-factor①">3.10. revolutions</a>
+    <li><a href="#ref-for-revolutions-of-radian">4.15. radian</a>
+    <li><a href="#ref-for-revolutions-of-radian①">4.16. revolutions</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-second">
    <a href="80000-3-units.html#second">80000-3-units.html#second</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-second">3.6. minute</a>
-    <li><a href="#ref-for-second①">3.8. metre-per-second</a> <a href="#ref-for-second②">(2)</a>
-    <li><a href="#ref-for-second③">3.11. hertz</a>
-    <li><a href="#ref-for-second④">4.3. UnitOfTime</a>
-    <li><a href="#ref-for-second⑤">5.4. metre-per-second_of_second</a>
-    <li><a href="#ref-for-second⑥">5.6. kilometre-per-second_of_second</a>
-    <li><a href="#ref-for-second⑦">5.8. hertz_of_second</a>
+    <li><a href="#ref-for-second">4.5. UnitOfTime</a>
+    <li><a href="#ref-for-second①">4.7. hertz</a>
+    <li><a href="#ref-for-second②">4.12. metre-per-second</a> <a href="#ref-for-second③">(2)</a>
+    <li><a href="#ref-for-second④">4.14. minute</a>
+    <li><a href="#ref-for-second⑤">5.1. hertz_of_second</a>
+    <li><a href="#ref-for-second⑥">5.3. kilometre-per-second_of_second</a>
+    <li><a href="#ref-for-second⑦">5.5. metre-per-second_of_second</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-unitofangularmeasure">
    <a href="80000-3-units.html#unitofangularmeasure">80000-3-units.html#unitofangularmeasure</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-unitofangularmeasure">3.3. radian</a>
+    <li><a href="#ref-for-unitofangularmeasure">3.1. UnitOfAngularMeasureValue</a>
+    <li><a href="#ref-for-unitofangularmeasure①">4.15. radian</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-unitoffrequency">
    <a href="80000-3-units.html#unitoffrequency">80000-3-units.html#unitoffrequency</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-unitoffrequency">3.11. hertz</a>
+    <li><a href="#ref-for-unitoffrequency">3.2. UnitOfFrequencyValue</a>
+    <li><a href="#ref-for-unitoffrequency①">4.7. hertz</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-unitoflength">
    <a href="80000-3-units.html#unitoflength">80000-3-units.html#unitoflength</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-unitoflength">3.1. metre</a>
-    <li><a href="#ref-for-unitoflength①">3.2. kilometre</a>
+    <li><a href="#ref-for-unitoflength">3.3. UnitOfLengthValue</a>
+    <li><a href="#ref-for-unitoflength①">4.9. kilometre</a>
+    <li><a href="#ref-for-unitoflength②">4.11. metre</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-unitofrotation">
    <a href="80000-3-units.html#unitofrotation">80000-3-units.html#unitofrotation</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-unitofrotation">3.10. revolutions</a>
+    <li><a href="#ref-for-unitofrotation">3.4. UnitOfRotationValue</a>
+    <li><a href="#ref-for-unitofrotation①">4.16. revolutions</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-unitoftime">
    <a href="80000-3-units.html#unitoftime">80000-3-units.html#unitoftime</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-unitoftime">3.4. second</a>
-    <li><a href="#ref-for-unitoftime①">3.5. millisecond</a>
+    <li><a href="#ref-for-unitoftime">3.5. UnitOfTimeValue</a>
+    <li><a href="#ref-for-unitoftime①">4.8. hour</a>
+    <li><a href="#ref-for-unitoftime②">4.13. millisecond</a>
+    <li><a href="#ref-for-unitoftime③">4.14. minute</a>
+    <li><a href="#ref-for-unitoftime④">4.17. second</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-unitofvelocity">
    <a href="80000-3-units.html#unitofvelocity">80000-3-units.html#unitofvelocity</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-unitofvelocity">3.8. metre-per-second</a>
-    <li><a href="#ref-for-unitofvelocity①">3.9. kilometre-per-second</a>
+    <li><a href="#ref-for-unitofvelocity">3.6. UnitOfVelocityValue</a>
+    <li><a href="#ref-for-unitofvelocity①">4.10. kilometre-per-second</a>
+    <li><a href="#ref-for-unitofvelocity②">4.12. metre-per-second</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-kilogram-metre-per-second">
    <a href="80000-4-units.html#kilogram-metre-per-second">80000-4-units.html#kilogram-metre-per-second</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-kilogram-metre-per-second">3.8. metre-per-second</a>
+    <li><a href="#ref-for-kilogram-metre-per-second">4.12. metre-per-second</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-kilogram-metre-per-second-of-metre-per-second-factor">
-   <a href="80000-4-units.html#kilogram-metre-per-second-of-metre-per-second-factor">80000-4-units.html#kilogram-metre-per-second-of-metre-per-second-factor</a><b>Referenced in:</b>
+  <aside class="dfn-panel" data-for="term-for-kilogram-metre-per-second-of-metre-per-second">
+   <a href="80000-4-units.html#kilogram-metre-per-second-of-metre-per-second">80000-4-units.html#kilogram-metre-per-second-of-metre-per-second</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-kilogram-metre-per-second-of-metre-per-second-factor">3.8. metre-per-second</a>
+    <li><a href="#ref-for-kilogram-metre-per-second-of-metre-per-second">4.12. metre-per-second</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-newton">
    <a href="80000-4-units.html#newton">80000-4-units.html#newton</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-newton">3.8. metre-per-second</a>
+    <li><a href="#ref-for-newton">4.12. metre-per-second</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-newton-of-metre-per-second-factor">
-   <a href="80000-4-units.html#newton-of-metre-per-second-factor">80000-4-units.html#newton-of-metre-per-second-factor</a><b>Referenced in:</b>
+  <aside class="dfn-panel" data-for="term-for-newton-millisecond">
+   <a href="80000-4-units.html#newton-millisecond">80000-4-units.html#newton-millisecond</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-newton-of-metre-per-second-factor">3.8. metre-per-second</a>
+    <li><a href="#ref-for-newton-millisecond">4.13. millisecond</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-newton-millisecond-of-millisecond">
+   <a href="80000-4-units.html#newton-millisecond-of-millisecond">80000-4-units.html#newton-millisecond-of-millisecond</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-newton-millisecond-of-millisecond">4.13. millisecond</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-newton-of-metre-per-second">
+   <a href="80000-4-units.html#newton-of-metre-per-second">80000-4-units.html#newton-of-metre-per-second</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-newton-of-metre-per-second">4.12. metre-per-second</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-newton-second">
+   <a href="80000-4-units.html#newton-second">80000-4-units.html#newton-second</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-newton-second">4.17. second</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-newton-second-of-second">
+   <a href="80000-4-units.html#newton-second-of-second">80000-4-units.html#newton-second-of-second</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-newton-second-of-second">4.17. second</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-watt">
    <a href="80000-4-units.html#watt">80000-4-units.html#watt</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-watt">3.8. metre-per-second</a>
+    <li><a href="#ref-for-watt">4.12. metre-per-second</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-watt-of-metre-per-second-factor">
-   <a href="80000-4-units.html#watt-of-metre-per-second-factor">80000-4-units.html#watt-of-metre-per-second-factor</a><b>Referenced in:</b>
+  <aside class="dfn-panel" data-for="term-for-watt-of-metre-per-second">
+   <a href="80000-4-units.html#watt-of-metre-per-second">80000-4-units.html#watt-of-metre-per-second</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-watt-of-metre-per-second-factor">3.8. metre-per-second</a>
+    <li><a href="#ref-for-watt-of-metre-per-second">4.12. metre-per-second</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-coulomb">
    <a href="80000-6-units.html#coulomb">80000-6-units.html#coulomb</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-coulomb">3.4. second</a>
+    <li><a href="#ref-for-coulomb">4.17. second</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-coulomb-of-second-factor">
-   <a href="80000-6-units.html#coulomb-of-second-factor">80000-6-units.html#coulomb-of-second-factor</a><b>Referenced in:</b>
+  <aside class="dfn-panel" data-for="term-for-coulomb-of-second">
+   <a href="80000-6-units.html#coulomb-of-second">80000-6-units.html#coulomb-of-second</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-coulomb-of-second-factor">3.4. second</a>
+    <li><a href="#ref-for-coulomb-of-second">4.17. second</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-volt">
    <a href="80000-6-units.html#volt">80000-6-units.html#volt</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-volt">3.1. metre</a>
+    <li><a href="#ref-for-volt">4.11. metre</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-volt-of-metre-factor">
-   <a href="80000-6-units.html#volt-of-metre-factor">80000-6-units.html#volt-of-metre-factor</a><b>Referenced in:</b>
+  <aside class="dfn-panel" data-for="term-for-volt-of-metre">
+   <a href="80000-6-units.html#volt-of-metre">80000-6-units.html#volt-of-metre</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-volt-of-metre-factor">3.1. metre</a>
+    <li><a href="#ref-for-volt-of-metre">4.11. metre</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-measurementunit">
+   <a href="80000-concepts.html#measurementunit">80000-concepts.html#measurementunit</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-measurementunit">4.7. hertz</a>
+    <li><a href="#ref-for-measurementunit①">4.8. hour</a>
+    <li><a href="#ref-for-measurementunit②">4.9. kilometre</a>
+    <li><a href="#ref-for-measurementunit③">4.10. kilometre-per-second</a>
+    <li><a href="#ref-for-measurementunit④">4.11. metre</a>
+    <li><a href="#ref-for-measurementunit⑤">4.12. metre-per-second</a>
+    <li><a href="#ref-for-measurementunit⑥">4.14. minute</a>
+    <li><a href="#ref-for-measurementunit⑦">4.15. radian</a>
+    <li><a href="#ref-for-measurementunit⑧">4.16. revolutions</a>
+    <li><a href="#ref-for-measurementunit⑨">4.17. second</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-coherentmeasurementunit">
-   <a href="../ontology.iupac.org/metrology.html#coherentmeasurementunit">../ontology.iupac.org/metrology.html#coherentmeasurementunit</a><b>Referenced in:</b>
+   <a href="../iupac.org/metrology.html#coherentmeasurementunit">../iupac.org/metrology.html#coherentmeasurementunit</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-coherentmeasurementunit">4.1. UnitOfLength</a>
-    <li><a href="#ref-for-coherentmeasurementunit①">4.2. UnitOfAngularMeasure</a>
-    <li><a href="#ref-for-coherentmeasurementunit②">4.3. UnitOfTime</a>
-    <li><a href="#ref-for-coherentmeasurementunit③">4.4. UnitOfVelocity</a>
-    <li><a href="#ref-for-coherentmeasurementunit④">4.5. UnitOfRotation</a>
-    <li><a href="#ref-for-coherentmeasurementunit⑤">4.6. UnitOfFrequency</a>
+    <li><a href="#ref-for-coherentmeasurementunit">4.1. UnitOfAngularMeasure</a>
+    <li><a href="#ref-for-coherentmeasurementunit①">4.2. UnitOfFrequency</a>
+    <li><a href="#ref-for-coherentmeasurementunit②">4.3. UnitOfLength</a>
+    <li><a href="#ref-for-coherentmeasurementunit③">4.4. UnitOfRotation</a>
+    <li><a href="#ref-for-coherentmeasurementunit④">4.5. UnitOfTime</a>
+    <li><a href="#ref-for-coherentmeasurementunit⑤">4.6. UnitOfVelocity</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-derivedmeasurementunit">
-   <a href="../ontology.iupac.org/metrology.html#derivedmeasurementunit">../ontology.iupac.org/metrology.html#derivedmeasurementunit</a><b>Referenced in:</b>
+   <a href="../iupac.org/metrology.html#derivedmeasurementunit">../iupac.org/metrology.html#derivedmeasurementunit</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-derivedmeasurementunit">3.3. radian</a>
-    <li><a href="#ref-for-derivedmeasurementunit①">3.8. metre-per-second</a>
-    <li><a href="#ref-for-derivedmeasurementunit②">3.9. kilometre-per-second</a>
-    <li><a href="#ref-for-derivedmeasurementunit③">3.10. revolutions</a>
-    <li><a href="#ref-for-derivedmeasurementunit④">3.11. hertz</a>
+    <li><a href="#ref-for-derivedmeasurementunit">4.7. hertz</a>
+    <li><a href="#ref-for-derivedmeasurementunit①">4.10. kilometre-per-second</a>
+    <li><a href="#ref-for-derivedmeasurementunit②">4.12. metre-per-second</a>
+    <li><a href="#ref-for-derivedmeasurementunit③">4.15. radian</a>
+    <li><a href="#ref-for-derivedmeasurementunit④">4.16. revolutions</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-exponent">
-   <a href="../ontology.iupac.org/metrology.html#exponent">../ontology.iupac.org/metrology.html#exponent</a><b>Referenced in:</b>
+   <a href="../iupac.org/metrology.html#exponent">../iupac.org/metrology.html#exponent</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-exponent">5.1. radian-of-numerator</a>
-    <li><a href="#ref-for-exponent①">5.2. radian-of-denominator</a>
-    <li><a href="#ref-for-exponent②">5.3. metre-per-second_of_metre</a>
-    <li><a href="#ref-for-exponent③">5.4. metre-per-second_of_second</a>
-    <li><a href="#ref-for-exponent④">5.5. kilometre-per-second_of_metre</a>
-    <li><a href="#ref-for-exponent⑤">5.6. kilometre-per-second_of_second</a>
-    <li><a href="#ref-for-exponent⑥">5.7. revolutions-of-radian</a>
-    <li><a href="#ref-for-exponent⑦">5.8. hertz_of_second</a>
+    <li><a href="#ref-for-exponent">5.1. hertz_of_second</a>
+    <li><a href="#ref-for-exponent①">5.2. kilometre-per-second_of_metre</a>
+    <li><a href="#ref-for-exponent②">5.3. kilometre-per-second_of_second</a>
+    <li><a href="#ref-for-exponent③">5.4. metre-per-second_of_metre</a>
+    <li><a href="#ref-for-exponent④">5.5. metre-per-second_of_second</a>
+    <li><a href="#ref-for-exponent⑤">5.6. radian-of-denominator</a>
+    <li><a href="#ref-for-exponent⑥">5.7. radian-of-numerator</a>
+    <li><a href="#ref-for-exponent⑦">5.8. revolutions-of-radian</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-hasfactorformeasurementunit">
-   <a href="../ontology.iupac.org/metrology.html#hasfactorformeasurementunit">../ontology.iupac.org/metrology.html#hasfactorformeasurementunit</a><b>Referenced in:</b>
+   <a href="../iupac.org/metrology.html#hasfactorformeasurementunit">../iupac.org/metrology.html#hasfactorformeasurementunit</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-hasfactorformeasurementunit">5.1. radian-of-numerator</a>
-    <li><a href="#ref-for-hasfactorformeasurementunit①">5.2. radian-of-denominator</a>
-    <li><a href="#ref-for-hasfactorformeasurementunit②">5.3. metre-per-second_of_metre</a>
-    <li><a href="#ref-for-hasfactorformeasurementunit③">5.4. metre-per-second_of_second</a>
-    <li><a href="#ref-for-hasfactorformeasurementunit④">5.5. kilometre-per-second_of_metre</a>
-    <li><a href="#ref-for-hasfactorformeasurementunit⑤">5.6. kilometre-per-second_of_second</a>
-    <li><a href="#ref-for-hasfactorformeasurementunit⑥">5.7. revolutions-of-radian</a>
-    <li><a href="#ref-for-hasfactorformeasurementunit⑦">5.8. hertz_of_second</a>
+    <li><a href="#ref-for-hasfactorformeasurementunit">5.1. hertz_of_second</a>
+    <li><a href="#ref-for-hasfactorformeasurementunit①">5.2. kilometre-per-second_of_metre</a>
+    <li><a href="#ref-for-hasfactorformeasurementunit②">5.3. kilometre-per-second_of_second</a>
+    <li><a href="#ref-for-hasfactorformeasurementunit③">5.4. metre-per-second_of_metre</a>
+    <li><a href="#ref-for-hasfactorformeasurementunit④">5.5. metre-per-second_of_second</a>
+    <li><a href="#ref-for-hasfactorformeasurementunit⑤">5.6. radian-of-denominator</a>
+    <li><a href="#ref-for-hasfactorformeasurementunit⑥">5.7. radian-of-numerator</a>
+    <li><a href="#ref-for-hasfactorformeasurementunit⑦">5.8. revolutions-of-radian</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-hasprefix">
-   <a href="../ontology.iupac.org/metrology.html#hasprefix">../ontology.iupac.org/metrology.html#hasprefix</a><b>Referenced in:</b>
+   <a href="../iupac.org/metrology.html#hasprefix">../iupac.org/metrology.html#hasprefix</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-hasprefix">3.2. kilometre</a>
-    <li><a href="#ref-for-hasprefix①">3.5. millisecond</a>
+    <li><a href="#ref-for-hasprefix">4.9. kilometre</a>
+    <li><a href="#ref-for-hasprefix①">4.13. millisecond</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-hasreference">
+   <a href="../iupac.org/metrology.html#hasreference">../iupac.org/metrology.html#hasreference</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-hasreference">3.1. UnitOfAngularMeasureValue</a>
+    <li><a href="#ref-for-hasreference①">3.2. UnitOfFrequencyValue</a>
+    <li><a href="#ref-for-hasreference②">3.3. UnitOfLengthValue</a>
+    <li><a href="#ref-for-hasreference③">3.4. UnitOfRotationValue</a>
+    <li><a href="#ref-for-hasreference④">3.5. UnitOfTimeValue</a>
+    <li><a href="#ref-for-hasreference⑤">3.6. UnitOfVelocityValue</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-independentmeasurementunit">
-   <a href="../ontology.iupac.org/metrology.html#independentmeasurementunit">../ontology.iupac.org/metrology.html#independentmeasurementunit</a><b>Referenced in:</b>
+   <a href="../iupac.org/metrology.html#independentmeasurementunit">../iupac.org/metrology.html#independentmeasurementunit</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-independentmeasurementunit">3.1. metre</a>
-    <li><a href="#ref-for-independentmeasurementunit①">3.4. second</a>
+    <li><a href="#ref-for-independentmeasurementunit">4.11. metre</a>
+    <li><a href="#ref-for-independentmeasurementunit①">4.17. second</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-isdimensionlessmeasurementunit">
-   <a href="../ontology.iupac.org/metrology.html#isdimensionlessmeasurementunit">../ontology.iupac.org/metrology.html#isdimensionlessmeasurementunit</a><b>Referenced in:</b>
+   <a href="../iupac.org/metrology.html#isdimensionlessmeasurementunit">../iupac.org/metrology.html#isdimensionlessmeasurementunit</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-isdimensionlessmeasurementunit">4.1. UnitOfLength</a>
-    <li><a href="#ref-for-isdimensionlessmeasurementunit①">4.2. UnitOfAngularMeasure</a>
-    <li><a href="#ref-for-isdimensionlessmeasurementunit②">4.3. UnitOfTime</a>
-    <li><a href="#ref-for-isdimensionlessmeasurementunit③">4.4. UnitOfVelocity</a>
-    <li><a href="#ref-for-isdimensionlessmeasurementunit④">4.5. UnitOfRotation</a>
-    <li><a href="#ref-for-isdimensionlessmeasurementunit⑤">4.6. UnitOfFrequency</a>
+    <li><a href="#ref-for-isdimensionlessmeasurementunit">4.1. UnitOfAngularMeasure</a>
+    <li><a href="#ref-for-isdimensionlessmeasurementunit①">4.2. UnitOfFrequency</a>
+    <li><a href="#ref-for-isdimensionlessmeasurementunit②">4.3. UnitOfLength</a>
+    <li><a href="#ref-for-isdimensionlessmeasurementunit③">4.4. UnitOfRotation</a>
+    <li><a href="#ref-for-isdimensionlessmeasurementunit④">4.5. UnitOfTime</a>
+    <li><a href="#ref-for-isdimensionlessmeasurementunit⑤">4.6. UnitOfVelocity</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-noncoherentderivedmeasurementunit">
-   <a href="../ontology.iupac.org/metrology.html#noncoherentderivedmeasurementunit">../ontology.iupac.org/metrology.html#noncoherentderivedmeasurementunit</a><b>Referenced in:</b>
+   <a href="../iupac.org/metrology.html#noncoherentderivedmeasurementunit">../iupac.org/metrology.html#noncoherentderivedmeasurementunit</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-noncoherentderivedmeasurementunit">3.6. minute</a>
-    <li><a href="#ref-for-noncoherentderivedmeasurementunit①">3.7. hour</a>
+    <li><a href="#ref-for-noncoherentderivedmeasurementunit">4.8. hour</a>
+    <li><a href="#ref-for-noncoherentderivedmeasurementunit①">4.14. minute</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-noncoherentderivedmeasurementunitof">
-   <a href="../ontology.iupac.org/metrology.html#noncoherentderivedmeasurementunitof">../ontology.iupac.org/metrology.html#noncoherentderivedmeasurementunitof</a><b>Referenced in:</b>
+   <a href="../iupac.org/metrology.html#noncoherentderivedmeasurementunitof">../iupac.org/metrology.html#noncoherentderivedmeasurementunitof</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-noncoherentderivedmeasurementunitof">3.6. minute</a>
-    <li><a href="#ref-for-noncoherentderivedmeasurementunitof①">3.7. hour</a>
+    <li><a href="#ref-for-noncoherentderivedmeasurementunitof">4.8. hour</a>
+    <li><a href="#ref-for-noncoherentderivedmeasurementunitof①">4.14. minute</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-noncoherentrelationship">
-   <a href="../ontology.iupac.org/metrology.html#noncoherentrelationship">../ontology.iupac.org/metrology.html#noncoherentrelationship</a><b>Referenced in:</b>
+   <a href="../iupac.org/metrology.html#noncoherentrelationship">../iupac.org/metrology.html#noncoherentrelationship</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-noncoherentrelationship">3.6. minute</a>
-    <li><a href="#ref-for-noncoherentrelationship①">3.7. hour</a>
+    <li><a href="#ref-for-noncoherentrelationship">4.8. hour</a>
+    <li><a href="#ref-for-noncoherentrelationship①">4.14. minute</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-prefix">
-   <a href="../ontology.iupac.org/metrology.html#prefix">../ontology.iupac.org/metrology.html#prefix</a><b>Referenced in:</b>
+   <a href="../iupac.org/metrology.html#prefix">../iupac.org/metrology.html#prefix</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-prefix">3.2. kilometre</a>
-    <li><a href="#ref-for-prefix①">3.5. millisecond</a>
+    <li><a href="#ref-for-prefix">4.9. kilometre</a>
+    <li><a href="#ref-for-prefix①">4.13. millisecond</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-prefixedmeasurementunit">
-   <a href="../ontology.iupac.org/metrology.html#prefixedmeasurementunit">../ontology.iupac.org/metrology.html#prefixedmeasurementunit</a><b>Referenced in:</b>
+   <a href="../iupac.org/metrology.html#prefixedmeasurementunit">../iupac.org/metrology.html#prefixedmeasurementunit</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-prefixedmeasurementunit">3.2. kilometre</a>
-    <li><a href="#ref-for-prefixedmeasurementunit①">3.5. millisecond</a>
+    <li><a href="#ref-for-prefixedmeasurementunit">4.9. kilometre</a>
+    <li><a href="#ref-for-prefixedmeasurementunit①">4.13. millisecond</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-unitaryquantityvalue">
+   <a href="../iupac.org/metrology.html#unitaryquantityvalue">../iupac.org/metrology.html#unitaryquantityvalue</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-unitaryquantityvalue">3.1. UnitOfAngularMeasureValue</a>
+    <li><a href="#ref-for-unitaryquantityvalue①">3.2. UnitOfFrequencyValue</a>
+    <li><a href="#ref-for-unitaryquantityvalue②">3.3. UnitOfLengthValue</a>
+    <li><a href="#ref-for-unitaryquantityvalue③">3.4. UnitOfRotationValue</a>
+    <li><a href="#ref-for-unitaryquantityvalue④">3.5. UnitOfTimeValue</a>
+    <li><a href="#ref-for-unitaryquantityvalue⑤">3.6. UnitOfVelocityValue</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-foot">
+   <a href="../nist.gov/pml/special-publication-811-units.html#foot">../nist.gov/pml/special-publication-811-units.html#foot</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-foot">4.3. UnitOfLength</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-pound-force-second">
+   <a href="../nist.gov/pml/special-publication-811-units.html#pound-force-second">../nist.gov/pml/special-publication-811-units.html#pound-force-second</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-pound-force-second">4.17. second</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-pound-force-second-of-second">
+   <a href="../nist.gov/pml/special-publication-811-units.html#pound-force-second-of-second">../nist.gov/pml/special-publication-811-units.html#pound-force-second-of-second</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-pound-force-second-of-second">4.17. second</a>
    </ul>
   </aside>
   <h3 class="no-num no-ref heading settled" id="index-defined-elsewhere"><span class="content">Terms defined by reference</span><a class="self-link" href="#index-defined-elsewhere"></a></h3>
@@ -2571,25 +2864,41 @@ dfn > a.self-link::before      { content: "#"; }
      <li><span class="dfn-paneled" id="term-for-milli">milli</span>
     </ul>
    <li>
+    <a data-link-type="biblio">[http://iso.org/80000-3-quantityvalues]</a> defines the following terms:
+    <ul>
+     <li><span class="dfn-paneled" id="term-for-hertz-magnitude">hertz-magnitude</span>
+     <li><span class="dfn-paneled" id="term-for-hour-magnitude">hour-magnitude</span>
+     <li><span class="dfn-paneled" id="term-for-kilometre-magnitude">kilometre-magnitude</span>
+     <li><span class="dfn-paneled" id="term-for-kilometre-per-second-magnitude">kilometre-per-second-magnitude</span>
+     <li><span class="dfn-paneled" id="term-for-metre-magnitude">metre-magnitude</span>
+     <li><span class="dfn-paneled" id="term-for-metre-per-second-magnitude">metre-per-second-magnitude</span>
+     <li><span class="dfn-paneled" id="term-for-millisecond-magnitude">millisecond-magnitude</span>
+     <li><span class="dfn-paneled" id="term-for-minute-magnitude">minute-magnitude</span>
+     <li><span class="dfn-paneled" id="term-for-radian-magnitude">radian-magnitude</span>
+     <li><span class="dfn-paneled" id="term-for-revolutions-magnitude">revolutions-magnitude</span>
+     <li><span class="dfn-paneled" id="term-for-second-magnitude">second-magnitude</span>
+    </ul>
+   <li>
     <a data-link-type="biblio">[http://iso.org/80000-3-units]</a> defines the following terms:
     <ul>
      <li><span class="dfn-paneled" id="term-for-hertz">hertz</span>
-     <li><span class="dfn-paneled" id="term-for-hertz-of-second-factor">hertz-of-second-factor</span>
+     <li><span class="dfn-paneled" id="term-for-hertz_of_second">hertz_of_second</span>
+     <li><span class="dfn-paneled" id="term-for-hour">hour</span>
      <li><span class="dfn-paneled" id="term-for-kilometre">kilometre</span>
      <li><span class="dfn-paneled" id="term-for-kilometre-per-second">kilometre-per-second</span>
-     <li><span class="dfn-paneled" id="term-for-kilometre-per-second_of_metre-factor">kilometre-per-second_of_metre-factor</span>
-     <li><span class="dfn-paneled" id="term-for-kilometre-per-second_of_second-factor">kilometre-per-second_of_second-factor</span>
+     <li><span class="dfn-paneled" id="term-for-kilometre-per-second_of_metre">kilometre-per-second_of_metre</span>
+     <li><span class="dfn-paneled" id="term-for-kilometre-per-second_of_second">kilometre-per-second_of_second</span>
      <li><span class="dfn-paneled" id="term-for-metre">metre</span>
      <li><span class="dfn-paneled" id="term-for-metre-per-second">metre-per-second</span>
-     <li><span class="dfn-paneled" id="term-for-metre-per-second_of_metre-factor">metre-per-second_of_metre-factor</span>
-     <li><span class="dfn-paneled" id="term-for-metre-per-second_of_second-factor">metre-per-second_of_second-factor</span>
+     <li><span class="dfn-paneled" id="term-for-metre-per-second_of_metre">metre-per-second_of_metre</span>
+     <li><span class="dfn-paneled" id="term-for-metre-per-second_of_second">metre-per-second_of_second</span>
      <li><span class="dfn-paneled" id="term-for-millisecond">millisecond</span>
      <li><span class="dfn-paneled" id="term-for-minute">minute</span>
      <li><span class="dfn-paneled" id="term-for-radian">radian</span>
-     <li><span class="dfn-paneled" id="term-for-radian-of-denominator-factor">radian-of-denominator-factor</span>
-     <li><span class="dfn-paneled" id="term-for-radian-of-numerator-factor">radian-of-numerator-factor</span>
+     <li><span class="dfn-paneled" id="term-for-radian-of-denominator">radian-of-denominator</span>
+     <li><span class="dfn-paneled" id="term-for-radian-of-numerator">radian-of-numerator</span>
      <li><span class="dfn-paneled" id="term-for-revolutions">revolutions</span>
-     <li><span class="dfn-paneled" id="term-for-revolutions-of-radian-factor">revolutions-of-radian-factor</span>
+     <li><span class="dfn-paneled" id="term-for-revolutions-of-radian">revolutions-of-radian</span>
      <li><span class="dfn-paneled" id="term-for-second">second</span>
      <li><span class="dfn-paneled" id="term-for-unitofangularmeasure">unitofangularmeasure</span>
      <li><span class="dfn-paneled" id="term-for-unitoffrequency">unitoffrequency</span>
@@ -2602,28 +2911,38 @@ dfn > a.self-link::before      { content: "#"; }
     <a data-link-type="biblio">[http://iso.org/80000-4-units]</a> defines the following terms:
     <ul>
      <li><span class="dfn-paneled" id="term-for-kilogram-metre-per-second">kilogram-metre-per-second</span>
-     <li><span class="dfn-paneled" id="term-for-kilogram-metre-per-second-of-metre-per-second-factor">kilogram-metre-per-second-of-metre-per-second-factor</span>
+     <li><span class="dfn-paneled" id="term-for-kilogram-metre-per-second-of-metre-per-second">kilogram-metre-per-second-of-metre-per-second</span>
      <li><span class="dfn-paneled" id="term-for-newton">newton</span>
-     <li><span class="dfn-paneled" id="term-for-newton-of-metre-per-second-factor">newton-of-metre-per-second-factor</span>
+     <li><span class="dfn-paneled" id="term-for-newton-millisecond">newton-millisecond</span>
+     <li><span class="dfn-paneled" id="term-for-newton-millisecond-of-millisecond">newton-millisecond-of-millisecond</span>
+     <li><span class="dfn-paneled" id="term-for-newton-of-metre-per-second">newton-of-metre-per-second</span>
+     <li><span class="dfn-paneled" id="term-for-newton-second">newton-second</span>
+     <li><span class="dfn-paneled" id="term-for-newton-second-of-second">newton-second-of-second</span>
      <li><span class="dfn-paneled" id="term-for-watt">watt</span>
-     <li><span class="dfn-paneled" id="term-for-watt-of-metre-per-second-factor">watt-of-metre-per-second-factor</span>
+     <li><span class="dfn-paneled" id="term-for-watt-of-metre-per-second">watt-of-metre-per-second</span>
     </ul>
    <li>
     <a data-link-type="biblio">[http://iso.org/80000-6-units]</a> defines the following terms:
     <ul>
      <li><span class="dfn-paneled" id="term-for-coulomb">coulomb</span>
-     <li><span class="dfn-paneled" id="term-for-coulomb-of-second-factor">coulomb-of-second-factor</span>
+     <li><span class="dfn-paneled" id="term-for-coulomb-of-second">coulomb-of-second</span>
      <li><span class="dfn-paneled" id="term-for-volt">volt</span>
-     <li><span class="dfn-paneled" id="term-for-volt-of-metre-factor">volt-of-metre-factor</span>
+     <li><span class="dfn-paneled" id="term-for-volt-of-metre">volt-of-metre</span>
     </ul>
    <li>
-    <a data-link-type="biblio">[http://ontology.iupac.org/metrology]</a> defines the following terms:
+    <a data-link-type="biblio">[http://iso.org/80000-concepts]</a> defines the following terms:
+    <ul>
+     <li><span class="dfn-paneled" id="term-for-measurementunit">measurementunit</span>
+    </ul>
+   <li>
+    <a data-link-type="biblio">[http://iupac.org/metrology]</a> defines the following terms:
     <ul>
      <li><span class="dfn-paneled" id="term-for-coherentmeasurementunit">coherentmeasurementunit</span>
      <li><span class="dfn-paneled" id="term-for-derivedmeasurementunit">derivedmeasurementunit</span>
      <li><span class="dfn-paneled" id="term-for-exponent">exponent</span>
      <li><span class="dfn-paneled" id="term-for-hasfactorformeasurementunit">hasfactorformeasurementunit</span>
      <li><span class="dfn-paneled" id="term-for-hasprefix">hasprefix</span>
+     <li><span class="dfn-paneled" id="term-for-hasreference">hasreference</span>
      <li><span class="dfn-paneled" id="term-for-independentmeasurementunit">independentmeasurementunit</span>
      <li><span class="dfn-paneled" id="term-for-isdimensionlessmeasurementunit">isdimensionlessmeasurementunit</span>
      <li><span class="dfn-paneled" id="term-for-noncoherentderivedmeasurementunit">noncoherentderivedmeasurementunit</span>
@@ -2631,6 +2950,14 @@ dfn > a.self-link::before      { content: "#"; }
      <li><span class="dfn-paneled" id="term-for-noncoherentrelationship">noncoherentrelationship</span>
      <li><span class="dfn-paneled" id="term-for-prefix">prefix</span>
      <li><span class="dfn-paneled" id="term-for-prefixedmeasurementunit">prefixedmeasurementunit</span>
+     <li><span class="dfn-paneled" id="term-for-unitaryquantityvalue">unitaryquantityvalue</span>
+    </ul>
+   <li>
+    <a data-link-type="biblio">[http://nist.gov/pml/special-publication-811-units]</a> defines the following terms:
+    <ul>
+     <li><span class="dfn-paneled" id="term-for-foot">foot</span>
+     <li><span class="dfn-paneled" id="term-for-pound-force-second">pound-force-second</span>
+     <li><span class="dfn-paneled" id="term-for-pound-force-second-of-second">pound-force-second-of-second</span>
     </ul>
   </ul>
 <script>/* script-dfn-panel */
