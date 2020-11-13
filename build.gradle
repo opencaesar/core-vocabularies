@@ -12,6 +12,7 @@ buildscript {
 	repositories {
 		mavenLocal()
 		maven { url 'https://dl.bintray.com/opencaesar/adapters' }
+		maven { url 'https://dl.bintray.com/opencaesar/owl-tools' }
 		maven { url 'https://dl.bintray.com/opencaesar/oml-tools' }
 		maven { url 'https://dl.bintray.com/opencaesar/oml' }
 		jcenter()
