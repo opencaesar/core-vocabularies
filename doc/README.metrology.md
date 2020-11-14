@@ -236,8 +236,6 @@ vocabulary <http://iso.org/80000-3-derivation-consistency> with # as 80000-3-der
 In practice, it is helpful to use SPARQL rules to find consistent and inconsistent instances of
 derived quantities. For example, see [src/sparql/velocity-consistent-derivation.sparql](src/sparql/velocity-consistent-derivation.sparql) and [src/sparql/velocity-inconsistent-derivation.sparql](src/sparql/velocity-inconsistent-derivation.sparql).
 
-</details>
-
 ### Step 3: Defining instances
 
 Note that such instances are kind-of-quantities in the sense of Prof. Dybkaer's ontology
