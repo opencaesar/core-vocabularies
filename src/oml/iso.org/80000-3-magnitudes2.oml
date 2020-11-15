@@ -1,0 +1,91 @@
+@dc:^description "This vocabulary provides convenience specializations of metrology:HasReflexiveMagnitude
+as relation entities for every metrology:MeasurementUnit defined in http://iso.org/80000-3-units.
+
+Note that this vocabulary is an alternative to <http://iso.org/80000-3-magnitudes1>."
+vocabulary <http://iso.org/80000-3-magnitudes> with # as 80000-3-magnitudes {
+
+	uses <http://iso.org/80000-3-instances>
+
+	// 3-1
+	relation entity metre-magnitude :> metrology:HasReflexiveMagnitude, 80000-3-units:LengthMagnitude [
+		from metrology:UnitaryQuantity
+		to metre-magnitude
+		forward hasMetreMagnitude
+		restricts relation metrology:hasReference to 80000-3-instances:metre
+	]
+
+	relation entity kilometre-magnitude :> metrology:HasReflexiveMagnitude, 80000-3-units:LengthMagnitude [
+		from metrology:UnitaryQuantity
+		to kilometre-magnitude
+		forward hasKilometreMagnitude
+		restricts relation metrology:hasReference to 80000-3-instances:kilometre
+	]
+
+	// 3-5
+	relation entity radian-magnitude :> metrology:HasReflexiveMagnitude, 80000-3-units:AngularMeasureMagnitude [
+		from metrology:UnitaryQuantity
+		to radian-magnitude
+		forward hasRadianMagnitude
+		restricts relation metrology:hasReference to 80000-3-instances:radian
+	]
+
+	// 3-9
+	relation entity second-magnitude :> metrology:HasReflexiveMagnitude, 80000-3-units:TimeMagnitude [
+		from metrology:UnitaryQuantity
+		to second-magnitude
+		forward hasSecondMagnitude
+		restricts relation metrology:hasReference to 80000-3-instances:second
+	]
+
+	relation entity millisecond-magnitude :> metrology:HasReflexiveMagnitude, 80000-3-units:TimeMagnitude [
+		from metrology:UnitaryQuantity
+		to millisecond-magnitude
+		forward hasMillisecondMagnitude
+		restricts relation metrology:hasReference to 80000-3-instances:millisecond
+	]
+
+	relation entity minute-magnitude :> metrology:HasReflexiveMagnitude, 80000-3-units:TimeMagnitude [
+		from metrology:UnitaryQuantity
+		to minute-magnitude
+		forward hasMinuteMagnitude
+		restricts relation metrology:hasReference to 80000-3-instances:minute
+	]
+
+	relation entity hour-magnitude :> metrology:HasReflexiveMagnitude, 80000-3-units:TimeMagnitude [
+		from metrology:UnitaryQuantity
+		to hour-magnitude
+		forward hasHourMagnitude
+		restricts relation metrology:hasReference to 80000-3-instances:hour
+	]
+
+	// 3-10
+	relation entity metre-per-second-magnitude :> metrology:HasReflexiveMagnitude, 80000-3-units:VelocityMagnitude [
+		from metrology:UnitaryQuantity
+		to metre-per-second-magnitude
+		forward hasMetrePer-SecondMagnitude
+		restricts relation metrology:hasReference to 80000-3-instances:metre-per-second
+	]
+
+	relation entity kilometre-per-second-magnitude :> metrology:HasReflexiveMagnitude, 80000-3-units:VelocityMagnitude [
+		from metrology:UnitaryQuantity
+		to kilometre-per-second-magnitude
+		forward hasKilometrePerSecondMagnitude
+		restricts relation metrology:hasReference to 80000-3-instances:kilometre-per-second
+	]
+
+	// 3-16
+	relation entity revolutions-magnitude :> metrology:HasReflexiveMagnitude, 80000-3-units:RotationMagnitude [
+		from metrology:UnitaryQuantity
+		to revolutions-magnitude
+		forward hasRevolutionsMagnitude
+		restricts relation metrology:hasReference to 80000-3-instances:revolutions
+	]
+
+	// 3-17
+	relation entity hertz-magnitude :> metrology:HasReflexiveMagnitude, 80000-3-units:FrequencyMagnitude [
+		from metrology:UnitaryQuantity
+		to hertz-magnitude
+		forward hasHertzMagnitude
+		restricts relation metrology:hasReference to 80000-3-instances:hertz
+	]
+}

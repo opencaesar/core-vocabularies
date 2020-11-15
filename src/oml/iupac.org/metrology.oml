@@ -66,7 +66,7 @@ vocabulary <http://iupac.org/metrology> with # as metrology {
 	@dc:^source "object [https://iupac.org/wp-content/uploads/2016/01/ontology-on-Property-Division-VII.pdf, 2.23, p. 33]"
 	aspect Object :> Thing
 
-	// Definitions from Chapter 4: Current measing of "quantity".
+	// Definitions from Chapter 4: Current meaning of "quantity".
 	@dc:^description "A reference can be a measurement unit, a measurement procedure, or a reference material, or a combination of such."
 	@dc:^source "[https://iupac.org/wp-content/uploads/2016/01/ontology-on-Property-Division-VII.pdf, 4.10, p. 44]"
 	aspect Reference :> MetrologicalEntity
@@ -84,18 +84,18 @@ vocabulary <http://iupac.org/metrology> with # as metrology {
 
     This definition is adapted from the expanded definition of 'quantity' (S.12.13, S.12.14).
 
-		Dybkaer's ontology, makes a distinction between Quantity (S.12.13) and KindOfQuantity (S.13.3.1)
-		where the latter is defined as the 'common defining aspect of mutually comparable properties having a magnitude'.
-		
-		In this vocabulary, a specialization of metrology:Quantity corresponds to Dybkaer's KindOfQuantity per S.13.3.1 and S.13.4.1
-		whereas an instance of metrology:Quantity corresponds to Dybkaer's Quantity per S.12.13 and S.12.14.
-		
-		Note that Dybkaer's associative relation between Quantity and KindOfQuantity corresponds to the classification
-		relationship between, respectively, an instance of metrology:Quantity and a specialization of metrology:Quantity.
-		
-		Defining metrology:Quantity as an OML Concept instead of an OML Aspect or Relation, enables the bundle closure 
-		algorithm to infer disjunctions for specializations of metrology:Quantity such as the ISO 80000 libraries
-		or user-defined vocabularies."
+	Dybkaer's ontology, makes a distinction between Quantity (S.12.13) and KindOfQuantity (S.13.3.1)
+	where the latter is defined as the 'common defining aspect of mutually comparable properties having a magnitude'.
+	
+	In this vocabulary, a specialization of metrology:Quantity corresponds to Dybkaer's KindOfQuantity per S.13.3.1 and S.13.4.1
+	whereas an instance of metrology:Quantity corresponds to Dybkaer's Quantity per S.12.13 and S.12.14.
+	
+	Note that Dybkaer's associative relation between Quantity and KindOfQuantity corresponds to the classification
+	relationship between, respectively, an instance of metrology:Quantity and a specialization of metrology:Quantity.
+	
+	Defining metrology:Quantity as an OML Concept instead of an OML Aspect or Relation, enables the bundle closure 
+	algorithm to infer disjunctions for specializations of metrology:Quantity such as the ISO 80000 libraries
+	or user-defined vocabularies."
 	@dc:^source "quantity [https://jcgm.bipm.org/vim/en/1.1.html]"
 	@dc:^source "quantity [https://iupac.org/wp-content/uploads/2016/01/ontology-on-Property-Division-VII.pdf, 12.13, p 115]"
 	@dc:^source "kind of quantity [https://jcgm.bipm.org/vim/en/1.2.html]"
@@ -107,63 +107,60 @@ vocabulary <http://iupac.org/metrology> with # as metrology {
 	@dc:^description "Specifies the metrology:Object that the metrology:Quantity is a feature of.
     Although every metrology:Quantity must have exactly one metrology:Object as its metrology:isQuantityOf,
     this relationship, metrology:isQuantityOf, can be specified either explicitly as an asserted axiom
-    or implicitly as a constraint such as a range restriction or an inference rule.
-    "
+    or implicitly as a constraint such as a range restriction or an inference rule."
 	@dc:^source "quantity [https://jcgm.bipm.org/vim/en/1.1.html]"
 	@dc:^source "quantity [https://iupac.org/wp-content/uploads/2016/01/ontology-on-Property-Division-VII.pdf, 12.13, p 115]"
-	relation entity IsQuantityOf [
-		from Quantity
-		to Object
-		forward isQuantityOf
+	relation entity HasQuantity [
+		from Object
+		to Quantity
+		forward hasQuantity
+		reverse isQuantityOf
 		functional
 	]
 
 	@dc:^description "Specifies the metrology:Magnitude that is the magnitude of a metrology:Quantity.
     This relationship can be specified either explicitly as an asserted axiom
     or implicitly as a constraint such as a range restriction or an inference rule
-		involving the foward or reverse property.
-    "
+		involving the foward or reverse property."
 	@dc:^source "quantity [https://jcgm.bipm.org/vim/en/1.1.html]"
 	@dc:^source "quantity [https://iupac.org/wp-content/uploads/2016/01/ontology-on-Property-Division-VII.pdf, 12.13, p 115]"
 	relation entity HasMagnitude [
 		from Quantity
-		to Magnitude 
-		forward hasMagnitude 
-	  reverse isMagnitudeOf
+		to Magnitude
+		forward hasMagnitude
+		reverse isMagnitudeOf
 	]
 
-	@dc:^description "metrology:IsMagnitudeOfQuantity defines a convenient pattern that
-	combines in a single instantiable relation, metrology:IsMagnitudeOfQuantity,
+	@dc:^description "metrology:HasReflexiveMagnitude defines a convenient pattern that
+	combines in a single instantiable relation, metrology:HasReflexiveMagnitude,
 	two entities that would otherwise have to be instantiated separately,
 	i.e., an instance of metrology:Magnitude and an instance of metrology:HasMagnitude.
 	This relation entity is unsual because it is also its target."
-  relation entity IsMagnitudeOfQuantity :> metrology:HasMagnitude, metrology:Magnitude [
-    from metrology:Quantity
-    to IsMagnitudeOfQuantity
-    forward isMagnitudeOfQuantity
-  ]
-	
+	relation entity HasReflexiveMagnitude :> metrology:HasMagnitude, metrology:Magnitude [
+		from metrology:Quantity
+		to HasReflexiveMagnitude
+		forward hasReflexiveMagnitude
+	]
+
 	@dc:^description "An instance of metrology:OrdinalQuantity is a metrology:Quantity defined by a measurement procedure (S.14.4.4)
     that can be stated only to be lesser than, equal to, or greater than another quantity of the same metrology:KindOfQuantity.
 	
 	As a class, metrology:OrdinalQuantity classifies metrology:Quantity(ies) that are rankable by magnitude, but are neither subtractive nor divisible (S.13.3.2)."
 	@dc:^source "ordinal quantity [https://iupac.org/wp-content/uploads/2016/01/ontology-on-Property-Division-VII.pdf, 12.16, p 116]"
 	@dc:^source "ordinal kind-of-quantity [https://iupac.org/wp-content/uploads/2016/01/ontology-on-Property-Division-VII.pdf, 13.3.2, p. 125]"
-  concept OrdinalQuantity :> Quantity [
+	concept OrdinalQuantity :> Quantity [
 		restricts all relation hasMagnitude to OrdinalMagnitude
 	]
 
 	@dc:^description "An instance of metrology:UnitaryQuantity is a metrology:Quantity with a magnitude expressed as a reference quantity 
     multiplied by a number (S.12.17).
 
-		As a class, of metrology:UnitaryQuantity classifies metrology:Quantity(ies) with magnitudes expressed as a measurement unit multiplied by a number (S.13.3.3).
-    "
+	As a class, of metrology:UnitaryQuantity classifies metrology:Quantity(ies) with magnitudes expressed as a measurement unit multiplied by a number (S.13.3.3)."
 	@dc:^source "unitary quantity [https://iupac.org/wp-content/uploads/2016/01/ontology-on-Property-Division-VII.pdf, 12.17, p 116-7]"
 	@dc:^source "unitary kind-of-quantity [https://iupac.org/wp-content/uploads/2016/01/ontology-on-Property-Division-VII.pdf, 13.3.3, p. 125]"
-  concept UnitaryQuantity :> Quantity [
+	concept UnitaryQuantity :> Quantity [
 		restricts all relation hasMagnitude to UnitaryMagnitude
 	]
-
 
 	@dc:^description "A metrology:IndependentUnitaryQuantity is a metrology:UnitaryQuantity defined independently of any other metrology:UnitaryQuantity."
 	@dc:^source "implicit as a quantity that is not a derived quantity [https://jcgm.bipm.org/vim/en/1.5.html]"
@@ -219,11 +216,11 @@ vocabulary <http://iupac.org/metrology> with # as metrology {
 	]
 
 	@dc:^description "It is a property of a metrology:SystemOfUnitaryQuantities to select of a subset of metrology:UnitaryQuantity 
-  as being functionally independent of each other as its base metrology:UnitaryQuantity
-  such that the other metrology:UnitaryQuantity in the system can be algebraically derived from the base metrology:UnitaryQuantity.
+	as being functionally independent of each other as its base metrology:UnitaryQuantity
+	such that the other metrology:UnitaryQuantity in the system can be algebraically derived from the base metrology:UnitaryQuantity.
   
-  Note that selecting a metrology:UnitaryQuantity as a base or derived for a given system is unrelated to its definition 
-  (i.e metrology:IndependentUnitaryQuantity or metrology:DerivedUnitaryQuantity)."
+	Note that selecting a metrology:UnitaryQuantity as a base or derived for a given system is unrelated to its definition 
+	(i.e metrology:IndependentUnitaryQuantity or metrology:DerivedUnitaryQuantity)."
 	@dc:^source "system of unitary kinds-of-quantity [https://iupac.org/wp-content/uploads/2016/01/ontology-on-Property-Division-VII.pdf, 13.6, p 128]"
 	scalar property isBaseQuantity [
 		domain SystemHasUnitaryQuantity
@@ -244,7 +241,7 @@ vocabulary <http://iupac.org/metrology> with # as metrology {
 	aspect Magnitude :> MetrologicalEntity
 
 	@dc:^description "metrology:hasDoubleNumber provides the capability to specify the number of a metrology:Magnitude as an IEEE 64-bit floating-point number.
-  If this capability is inadequate, the metrology vocabulary can be extended with additional properties for an alternate representation of a number."
+	If this capability is inadequate, the metrology vocabulary can be extended with additional properties for an alternate representation of a number."
 	scalar property hasDoubleNumber [
 		domain Magnitude
 		range xsd:double
@@ -271,31 +268,30 @@ vocabulary <http://iupac.org/metrology> with # as metrology {
 
 	// Definitions from Chapter 17: None
 	// Definitions from Chapter 18: Mixed concept system on <metrological unit> and <system of metrological units>; the metrological unit "one" and SI units revisited.
-
 	@dc:^description "Defining metrology:MeasurementUnit as an OML Concept instead of an OML Aspect or Relation, enables the bundle closure 
-		algorithm to infer disjunctions for specializations of metrology:MeasurementUnit such as the ISO 80000 libraries
-		or user-defined vocabularies."
+	algorithm to infer disjunctions for specializations of metrology:MeasurementUnit such as the ISO 80000 libraries
+	or user-defined vocabularies."
 	@dc:^source "measurement unit [https://jcgm.bipm.org/vim/en/1.9.html]"
 	@dc:^source "metrological unit, measurement unit [https://iupac.org/wp-content/uploads/2016/01/ontology-on-Property-Division-VII.pdf, 18.12, p 189]"
 	concept MeasurementUnit :> Reference
 
 	@dc:^description "A metrology:NonCoherentDerivedMeasurementUnit is a metrology:MeasurementUnit 
-  that has a proportionality factor different than one with respect to another metrology:MeasurementUnit."
+	that has a proportionality factor different than one with respect to another metrology:MeasurementUnit."
 	@dc:^source "non-coherent derived measurement unit [https://iupac.org/wp-content/uploads/2016/01/ontology-on-Property-Division-VII.pdf, 18.20, p 194]"
-	concept NonCoherentDerivedMeasurementUnit :> MeasurementUnit 
-  
-  @dc:^description "metrology:NonCoherentDerivedMeasurementUnitOf specifies the metrology:MeasurementUnit that a metrology:NonCoherentDerivedMeasurementUnit derives from."
-	@dc:^source "non-coherent derived measurement unit [https://iupac.org/wp-content/uploads/2016/01/ontology-on-Property-Division-VII.pdf, 18.20, p 194]"
-  relation entity NonCoherentDerivedMeasurementUnitOf [
-    from NonCoherentDerivedMeasurementUnit
-    to MeasurementUnit
-    forward nonCoherentDerivedMeasurementUnitOf
-    irreflexive
-    functional
-  ]
+	concept NonCoherentDerivedMeasurementUnit :> MeasurementUnit
 
-  @dc:^description "metrology:nonCoherentRelationship specifies the non-coherent derivation relationship between a metrology:NonCoherentDerivedMeasurementUnit 
-  and a metrology:MeasurementUnit that it is a metrology:nonCoherentDerivedMeasurementUnitOf"
+	@dc:^description "metrology:NonCoherentDerivedMeasurementUnitOf specifies the metrology:MeasurementUnit that a metrology:NonCoherentDerivedMeasurementUnit derives from."
+	@dc:^source "non-coherent derived measurement unit [https://iupac.org/wp-content/uploads/2016/01/ontology-on-Property-Division-VII.pdf, 18.20, p 194]"
+	relation entity NonCoherentDerivedMeasurementUnitOf [
+		from NonCoherentDerivedMeasurementUnit
+		to MeasurementUnit
+		forward nonCoherentDerivedMeasurementUnitOf
+		irreflexive
+		functional
+	]
+
+	@dc:^description "metrology:nonCoherentRelationship specifies the non-coherent derivation relationship between a metrology:NonCoherentDerivedMeasurementUnit 
+	and a metrology:MeasurementUnit that it is a metrology:nonCoherentDerivedMeasurementUnitOf"
 	@dc:^source "non-coherent derived measurement unit [https://iupac.org/wp-content/uploads/2016/01/ontology-on-Property-Division-VII.pdf, 18.20, p 194]"
 	scalar property nonCoherentRelationship [
 		domain NonCoherentDerivedMeasurementUnit
@@ -378,14 +374,15 @@ vocabulary <http://iupac.org/metrology> with # as metrology {
 	]
 
 	@dc:^description "It is a property of a metrology:SystemOfMetrologicalUnits to select of a subset of metrology:MeasurementUnit 
-  as being functionally independent of each other as its base metrology:MeasurementUnit(s)
-  such that the other metrology:MeasurementUnit(s) in the system can be algebraically derived from the base metrology:MeasurementUnit(s).
+	as being functionally independent of each other as its base metrology:MeasurementUnit(s)
+	such that the other metrology:MeasurementUnit(s) in the system can be algebraically derived from the base metrology:MeasurementUnit(s).
   
-  Note that selecting a metrology:MeasurementUnit as a base or derived for a given system is unrelated to its definition 
-  (i.e metrology:NonCoherentDerivedMeasurementUnit, metrology:IndependentMeasurementUnit, metrology:DerivedMeasurementUnit or metrology:PrefixedMeasurementUnit)."
+	Note that selecting a metrology:MeasurementUnit as a base or derived for a given system is unrelated to its definition 
+	(i.e metrology:NonCoherentDerivedMeasurementUnit, metrology:IndependentMeasurementUnit, metrology:DerivedMeasurementUnit or metrology:PrefixedMeasurementUnit)."
 	scalar property isBaseMetrologicalUnit [
 		domain SystemHasMetrologicalUnit
 		range xsd:boolean
 		functional
 	]
+	
 }

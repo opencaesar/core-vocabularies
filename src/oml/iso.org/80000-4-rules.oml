@@ -1,0 +1,86 @@
+@dc:^description "Optional consistency rules to enforce that derived quantities are about the same object as the objects of their quantity factors."
+vocabulary <http://iso.org/80000-4-rules> with # as 80000-4-rules {
+
+	extends <http://iso.org/80000-4-quantities>
+
+	extends <http://iso.org/80000-3-rules>
+
+	@dc:^description "
+	If an momentum, x, is derived from a mass, y, and a velocity, z,
+	then x, y, and z must be quantities about the same object."
+	rule momentum-derivation-consistency [
+		// x is the momentum quantity of an object, xo.
+		metrology:isQuantityOf(x,xo) ^
+		80000-4-quantities:momentum(x) ^
+
+		// y is the mass quantity of an object, yo.
+		metrology:isQuantityOf(y,yo) ^
+		80000-4-quantities:mass(y) ^
+
+		// z is the velocity quantity of an object, zo. 
+		metrology:isQuantityOf(z,zo) ^
+		80000-3-quantities:velocity(z) ^
+
+		// if there is a dimensional calculus constraint relating x as a derived from y and z
+		80000-4-quantities:momentum-of-mass-forward(x,y) ^
+		80000-4-quantities:momentum-of-velocity-forward(x,z)
+	
+		->
+
+		// then all the quantities must be about the same object.
+		sameAs(xo,yo) ^ sameAs(xo,yo)
+	]
+
+	@dc:^description "
+	If an force, x, is derived from a momentum, y, and a velocity, z,
+	then x, y, and z must be quantities about the same object."
+	rule force-derivation-consistency [
+		// x is the force quantity of an object, xo.
+		metrology:isQuantityOf(x,xo) ^
+		80000-4-quantities:force(x) ^
+
+		// y is the momentum quantity of an object, yo.
+		metrology:isQuantityOf(y,yo) ^
+		80000-4-quantities:momentum(y) ^
+
+		// z is the velocity quantity of an object, zo. 
+		metrology:isQuantityOf(z,zo) ^
+		80000-3-quantities:velocity(z) ^
+
+		// if there is a dimensional calculus constraint relating x as a derived from y and z
+		80000-4-quantities:force-of-momentum-forward(x,y) ^
+		80000-4-quantities:force-of-velocity-forward(x,z)
+	
+		->
+
+		// then all the quantities must be about the same object.
+		sameAs(xo,yo) ^ sameAs(xo,yo)
+	]
+
+	@dc:^description "
+	If a power, x, is derived from a force, y, and a velocity, z,
+	then x, y, and z must be quantities about the same object."
+	rule power-derivation-consistency [
+		// x is the power quantity of an object, xo.
+		metrology:isQuantityOf(x,xo) ^
+		80000-4-quantities:power(x) ^
+
+		// y is the force quantity of an object, yo.
+		metrology:isQuantityOf(y,yo) ^
+		80000-4-quantities:force(y) ^
+
+		// z is the velocity quantity of an object, zo. 
+		metrology:isQuantityOf(z,zo) ^
+		80000-3-quantities:velocity(z) ^
+
+		// if there is a dimensional calculus constraint relating x as a derived from y and z
+		80000-4-quantities:power-of-force-forward(x,y) ^
+		80000-4-quantities:power-of-velocity-forward(x,z)
+	
+		->
+
+		// then all the quantities must be about the same object.
+		sameAs(xo,yo) ^ sameAs(xo,yo)
+	]
+	
+}
