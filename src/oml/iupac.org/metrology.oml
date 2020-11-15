@@ -1,6 +1,7 @@
 @dc:title "Metrology vocabulary adapted from iupac.org"
 @dc:^source "https://ontology.iupac.org/"
 @dc:^source "https://ontology.iupac.org/wp-content/uploads/2016/01/ontology-on-Property-Division-VII.pdf"
+@dc:^source "https://jcgm.bipm.org/vim/en/index.html"
 @dc:^description "This vocabulary is a partial account of Prof. Rene Dybkaer's 'An Ontology of Property' 
 focused on the concepts necessary for dimensional analysis of systems of metrological units and
 of systems of quantities based on the algebraic relationships involved in the
@@ -79,7 +80,7 @@ vocabulary <http://iupac.org/metrology> with # as metrology {
 	// Definitions from Chapter 12: Generic concept system on <property> and <quantity>
 	// and from Chapter 13: Generic concept system on <kind-of-property> including <kind-of-quantity>.
 	@dc:^description "A metrology:Quantity is an inherent state- or process-descriptive feature
-    of a metrological:Object that has a magnitude expressed as a metrological:QuantityValue.
+    of a metrological:Object that has a magnitude expressed as a metrological:Magnitude.
 
     This definition is adapted from the expanded definition of 'quantity' (S.12.13, S.12.14).
 
@@ -117,7 +118,7 @@ vocabulary <http://iupac.org/metrology> with # as metrology {
 		functional
 	]
 
-	@dc:^description "Specifies the metrology:QuantityValue that is the magnitude of a metrology:Quantity.
+	@dc:^description "Specifies the metrology:Magnitude that is the magnitude of a metrology:Quantity.
     This relationship can be specified either explicitly as an asserted axiom
     or implicitly as a constraint such as a range restriction or an inference rule
 		involving the foward or reverse property.
@@ -126,11 +127,22 @@ vocabulary <http://iupac.org/metrology> with # as metrology {
 	@dc:^source "quantity [https://iupac.org/wp-content/uploads/2016/01/ontology-on-Property-Division-VII.pdf, 12.13, p 115]"
 	relation entity HasMagnitude [
 		from Quantity
-		to QuantityValue 
+		to Magnitude 
 		forward hasMagnitude 
 	  reverse isMagnitudeOf
 	]
 
+	@dc:^description "metrology:IsMagnitudeOfQuantity defines a convenient pattern that
+	combines in a single instantiable relation, metrology:IsMagnitudeOfQuantity,
+	two entities that would otherwise have to be instantiated separately,
+	i.e., an instance of metrology:Magnitude and an instance of metrology:HasMagnitude.
+	This relation entity is unsual because it is also its target."
+  relation entity IsMagnitudeOfQuantity :> metrology:HasMagnitude, metrology:Magnitude [
+    from metrology:Quantity
+    to IsMagnitudeOfQuantity
+    forward isMagnitudeOfQuantity
+  ]
+	
 	@dc:^description "An instance of metrology:OrdinalQuantity is a metrology:Quantity defined by a measurement procedure (S.14.4.4)
     that can be stated only to be lesser than, equal to, or greater than another quantity of the same metrology:KindOfQuantity.
 	
@@ -138,7 +150,7 @@ vocabulary <http://iupac.org/metrology> with # as metrology {
 	@dc:^source "ordinal quantity [https://iupac.org/wp-content/uploads/2016/01/ontology-on-Property-Division-VII.pdf, 12.16, p 116]"
 	@dc:^source "ordinal kind-of-quantity [https://iupac.org/wp-content/uploads/2016/01/ontology-on-Property-Division-VII.pdf, 13.3.2, p. 125]"
   concept OrdinalQuantity :> Quantity [
-		restricts all relation hasMagnitude to OrdinalQuantityValue
+		restricts all relation hasMagnitude to OrdinalMagnitude
 	]
 
 	@dc:^description "An instance of metrology:UnitaryQuantity is a metrology:Quantity with a magnitude expressed as a reference quantity 
@@ -149,8 +161,9 @@ vocabulary <http://iupac.org/metrology> with # as metrology {
 	@dc:^source "unitary quantity [https://iupac.org/wp-content/uploads/2016/01/ontology-on-Property-Division-VII.pdf, 12.17, p 116-7]"
 	@dc:^source "unitary kind-of-quantity [https://iupac.org/wp-content/uploads/2016/01/ontology-on-Property-Division-VII.pdf, 13.3.3, p. 125]"
   concept UnitaryQuantity :> Quantity [
-		restricts all relation hasMagnitude to UnitaryQuantityValue
+		restricts all relation hasMagnitude to UnitaryMagnitude
 	]
+
 
 	@dc:^description "A metrology:IndependentUnitaryQuantity is a metrology:UnitaryQuantity defined independently of any other metrology:UnitaryQuantity."
 	@dc:^source "implicit as a quantity that is not a derived quantity [https://jcgm.bipm.org/vim/en/1.5.html]"
@@ -179,6 +192,7 @@ vocabulary <http://iupac.org/metrology> with # as metrology {
     Note when defining a metrology:DerivedUnitaryQuantity with metrology:isDimensionlessQuantity=true, 
     it is important to retain the non-simplified product factors in order to preserve the metrological provenance of the metrology:DerivedUnitaryQuantity
     with respect to other metrology:UnitaryQuantity(ies)."
+	@dc:^source "See Note 1 in https://jcgm.bipm.org/vim/en/1.8.html"
 	scalar property isDimensionlessQuantity [
 		domain UnitaryQuantity
 		range xsd:boolean
@@ -224,34 +238,34 @@ vocabulary <http://iupac.org/metrology> with # as metrology {
 
 	// Definitions from Chapter 15: Generic concept system on <examination>, <measurement>; quantification.
 	// Definitions from Chapter 16: Generic concept system on <property value>, <quantity value> and allied concepts.
-	@dc:^description "metrology:QuantityValue is the magnitude of a metrology:Quantity represented by a number and a reference."
+	@dc:^description "metrology:Magnitude is the magnitude of a metrology:Quantity represented by a number and a reference."
 	@dc:^source "quantity value [https://jcgm.bipm.org/vim/en/1.19.html]"
 	@dc:^source "quantity value [https://iupac.org/wp-content/uploads/2016/01/ontology-on-Property-Division-VII.pdf, 16.7 and 16.8, p 162]"
-	aspect QuantityValue :> MetrologicalEntity
+	aspect Magnitude :> MetrologicalEntity
 
-	@dc:^description "metrology:hasDoubleNumber provides the capability to specify the number of a metrology:QuantityValue as an IEEE 64-bit floating-point number.
+	@dc:^description "metrology:hasDoubleNumber provides the capability to specify the number of a metrology:Magnitude as an IEEE 64-bit floating-point number.
   If this capability is inadequate, the metrology vocabulary can be extended with additional properties for an alternate representation of a number."
 	scalar property hasDoubleNumber [
-		domain QuantityValue
+		domain Magnitude
 		range xsd:double
 		functional
 	]
 
 	@dc:^description "metrology:HasReference provides the capability to specify the reference involved in measuring the magnitue of a metrology:Quantity."
 	relation entity HasReference [
-		from QuantityValue
+		from Magnitude
 		to Reference
 		forward hasReference
 		functional
 	]
 
 	@dc:^source "ordinal quantity value [https://iupac.org/wp-content/uploads/2016/01/ontology-on-Property-Division-VII.pdf, 16.9, p 163]"
-	aspect OrdinalQuantityValue :> QuantityValue [
+	aspect OrdinalMagnitude :> Magnitude [
 		restricts all relation hasReference to MeasurementProcedure
 	]
 
 	@dc:^source "unitary quantity value [https://iupac.org/wp-content/uploads/2016/01/ontology-on-Property-Division-VII.pdf, 16.10, p 163]"
-	aspect UnitaryQuantityValue :> QuantityValue [
+	aspect UnitaryMagnitude :> Magnitude [
 		restricts all relation hasReference to MeasurementUnit
 	]
 

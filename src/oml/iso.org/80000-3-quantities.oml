@@ -7,7 +7,7 @@ vocabulary <http://iso.org/80000-3-quantities> with # as 80000-3-quantities {
     @dc:^source "3-1.1"
     concept ^length :> metrology:IndependentUnitaryQuantity [
         restricts scalar property metrology:isDimensionlessQuantity to false^^xsd:boolean
-        restricts all relation metrology:hasMagnitude to 80000-3-units:UnitOfLengthValue
+        restricts all relation metrology:hasMagnitude to 80000-3-units:LengthMagnitude
     ]
     
     @dc:^source "3-1.2"
@@ -58,7 +58,7 @@ vocabulary <http://iso.org/80000-3-quantities> with # as 80000-3-quantities {
     @dc:^source "3-5"
     concept angular-measure :> metrology:DerivedUnitaryQuantity [
         restricts scalar property metrology:isDimensionlessQuantity to true^^xsd:boolean
-        restricts all relation metrology:hasMagnitude to 80000-3-units:UnitOfAngularMeasureValue
+        restricts all relation metrology:hasMagnitude to 80000-3-units:AngularMeasureMagnitude
     ]
 
     relation entity angular-measure-of-arc-length :> metrology:HasFactorForUnitaryQuantity [
@@ -80,7 +80,7 @@ vocabulary <http://iso.org/80000-3-quantities> with # as 80000-3-quantities {
     @dc:^source "3-6"
     concept rotational-displacement :> metrology:DerivedUnitaryQuantity [
         restricts scalar property metrology:isDimensionlessQuantity to true^^xsd:boolean
-        restricts all relation metrology:hasMagnitude to 80000-3-units:UnitOfAngularMeasureValue
+        restricts all relation metrology:hasMagnitude to 80000-3-units:AngularMeasureMagnitude
     ]
 
     relation entity rotational-displacement-of-path-length :> metrology:HasFactorForUnitaryQuantity [
@@ -102,13 +102,13 @@ vocabulary <http://iso.org/80000-3-quantities> with # as 80000-3-quantities {
     @dc:^source "3-9"
     concept duration :> metrology:IndependentUnitaryQuantity [
         restricts scalar property metrology:isDimensionlessQuantity to false^^xsd:boolean
-        restricts all relation metrology:hasMagnitude to 80000-3-units:UnitOfTimeValue
+        restricts all relation metrology:hasMagnitude to 80000-3-units:TimeMagnitude
     ]
 
     @dc:^source "3-10.1"
     concept velocity :> metrology:DerivedUnitaryQuantity [
         restricts scalar property metrology:isDimensionlessQuantity to false^^xsd:boolean
-        restricts all relation metrology:hasMagnitude to 80000-3-units:UnitOfVelocityValue
+        restricts all relation metrology:hasMagnitude to 80000-3-units:VelocityMagnitude
     ]
 
     relation entity velocity-of-position-vector :> metrology:HasFactorForUnitaryQuantity [
@@ -133,7 +133,7 @@ vocabulary <http://iso.org/80000-3-quantities> with # as 80000-3-quantities {
     @dc:^source "3-16"
     concept rotation :> metrology:DerivedUnitaryQuantity [
         restricts scalar property metrology:isDimensionlessQuantity to true^^xsd:boolean
-        restricts all relation metrology:hasMagnitude to 80000-3-units:UnitOfRotationValue
+        restricts all relation metrology:hasMagnitude to 80000-3-units:RotationMagnitude
     ]
 
     relation entity rotation-of-rotational-displacement :> metrology:HasFactorForUnitaryQuantity [
@@ -147,7 +147,7 @@ vocabulary <http://iso.org/80000-3-quantities> with # as 80000-3-quantities {
     @dc:^source "3-17.1"
     concept frequency :> metrology:DerivedUnitaryQuantity [
         restricts scalar property metrology:isDimensionlessQuantity to false^^xsd:boolean
-        restricts all relation metrology:hasMagnitude to 80000-3-units:UnitOfFrequencyValue
+        restricts all relation metrology:hasMagnitude to 80000-3-units:FrequencyMagnitude
     ]
 
     relation entity frequency-of-period-duration :> metrology:HasFactorForUnitaryQuantity [
@@ -161,7 +161,7 @@ vocabulary <http://iso.org/80000-3-quantities> with # as 80000-3-quantities {
     @dc:^source "3-17.2"
     concept rotational-frequency :> metrology:DerivedUnitaryQuantity [
         restricts scalar property metrology:isDimensionlessQuantity to false^^xsd:boolean
-        restricts all relation metrology:hasMagnitude to 80000-3-units:UnitOfFrequencyValue
+        restricts all relation metrology:hasMagnitude to 80000-3-units:FrequencyMagnitude
     ]
 
     relation entity rotational-frequency-of-rotation :> metrology:HasFactorForUnitaryQuantity [

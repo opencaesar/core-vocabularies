@@ -4,7 +4,7 @@ vocabulary <http://iso.org/80000-6-units> with # as 80000-6-units {
  
     extends <http://iso.org/80000-5-units>
 
-    aspect UnitOfElectricCurrentValue :> metrology:UnitaryQuantityValue [
+    aspect ElectricCurrentMagnitude :> metrology:UnitaryMagnitude [
         restricts all relation metrology:hasReference to UnitOfElectricCurrent
     ]
     @dc:^source "6-1"
@@ -12,9 +12,9 @@ vocabulary <http://iso.org/80000-6-units> with # as 80000-6-units {
         restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
     ]
 
-    concept ampere :> UnitOfElectricCurrent, metrology:IndependentMeasurementUnit, 80000-concepts:MeasurementUnit 
+    concept ampere :> UnitOfElectricCurrent, metrology:IndependentMeasurementUnit 
 
-    aspect UnitOfElectricChargeValue :> metrology:UnitaryQuantityValue [
+    aspect ElectricChargeMagnitude :> metrology:UnitaryMagnitude [
         restricts all relation metrology:hasReference to UnitOfElectricCharge
     ]
     @dc:^source "6-2"
@@ -22,7 +22,7 @@ vocabulary <http://iso.org/80000-6-units> with # as 80000-6-units {
         restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
     ]
 
-    concept coulomb :> UnitOfElectricCharge, metrology:DerivedMeasurementUnit, 80000-concepts:MeasurementUnit 
+    concept coulomb :> UnitOfElectricCharge, metrology:DerivedMeasurementUnit 
 
     relation entity coulomb-of-ampere :> metrology:HasFactorForMeasurementUnit [
         from coulomb
@@ -38,7 +38,7 @@ vocabulary <http://iso.org/80000-6-units> with # as 80000-6-units {
         restricts scalar property metrology:exponent to "1/1"^^owl:rational
     ]
 
-    aspect UnitOfElectricFieldStrengthValue :> metrology:UnitaryQuantityValue [
+    aspect ElectricFieldStrengthMagnitude :> metrology:UnitaryMagnitude [
         restricts all relation metrology:hasReference to UnitOfElectricFieldStrength
     ]
     @dc:^source "6-10"
@@ -46,7 +46,7 @@ vocabulary <http://iso.org/80000-6-units> with # as 80000-6-units {
         restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
     ]
 
-    concept newton-per-coulomb :> UnitOfElectricFieldStrength, metrology:DerivedMeasurementUnit, 80000-concepts:MeasurementUnit 
+    concept newton-per-coulomb :> UnitOfElectricFieldStrength, metrology:DerivedMeasurementUnit 
 
     relation entity newton-per-coulomb-of-newton :> metrology:HasFactorForMeasurementUnit [
         from newton-per-coulomb
@@ -62,7 +62,7 @@ vocabulary <http://iso.org/80000-6-units> with # as 80000-6-units {
         restricts scalar property metrology:exponent to "-1/1"^^owl:rational
     ]
 
-    aspect UnitOfElectricPotentialValue :> metrology:UnitaryQuantityValue [
+    aspect ElectricPotentialMagnitude :> metrology:UnitaryMagnitude [
         restricts all relation metrology:hasReference to UnitOfElectricPotential
     ]
     
@@ -71,7 +71,7 @@ vocabulary <http://iso.org/80000-6-units> with # as 80000-6-units {
         restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
     ]
 
-    concept volt :> UnitOfElectricPotential, metrology:DerivedMeasurementUnit, 80000-concepts:MeasurementUnit 
+    concept volt :> UnitOfElectricPotential, metrology:DerivedMeasurementUnit 
 
     relation entity volt-of-newton-per-coulomb :> metrology:HasFactorForMeasurementUnit [
         from volt
@@ -87,7 +87,7 @@ vocabulary <http://iso.org/80000-6-units> with # as 80000-6-units {
         restricts scalar property metrology:exponent to "1/1"^^owl:rational
     ]
 
-    aspect UnitOfResistanceValue :> metrology:UnitaryQuantityValue [
+    aspect ResistanceMagnitude :> metrology:UnitaryMagnitude [
         restricts all relation metrology:hasReference to UnitOfResistance
     ]
     @dc:^source "6-46"
@@ -96,7 +96,7 @@ vocabulary <http://iso.org/80000-6-units> with # as 80000-6-units {
     ]
 
     
-    concept ohm :> UnitOfResistance, metrology:DerivedMeasurementUnit, 80000-concepts:MeasurementUnit 
+    concept ohm :> UnitOfResistance, metrology:DerivedMeasurementUnit 
 
     relation entity ohm-of-volt :> metrology:HasFactorForMeasurementUnit [
         from ohm

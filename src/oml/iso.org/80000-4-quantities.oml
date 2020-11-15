@@ -9,13 +9,13 @@ vocabulary <http://iso.org/80000-4-quantities> with # as 80000-4-quantities {
     @dc:^source "4-1"
     concept mass :> metrology:IndependentUnitaryQuantity [
         restricts scalar property metrology:isDimensionlessQuantity to false^^xsd:boolean
-        restricts all relation metrology:hasMagnitude to 80000-4-units:UnitOfMassValue
+        restricts all relation metrology:hasMagnitude to 80000-4-units:MassMagnitude
     ]
 
     @dc:^source "4-8"
     concept momentum :> metrology:DerivedUnitaryQuantity [
         restricts scalar property metrology:isDimensionlessQuantity to false^^xsd:boolean
-        restricts all relation metrology:hasMagnitude to 80000-4-units:UnitOfMomentumValue
+        restricts all relation metrology:hasMagnitude to 80000-4-units:MomentumMagnitude
     ]
     
     relation entity momentum-of-mass :> metrology:HasFactorForUnitaryQuantity [
@@ -37,7 +37,7 @@ vocabulary <http://iso.org/80000-4-quantities> with # as 80000-4-quantities {
     @dc:^source "4-9"
     concept force :> metrology:DerivedUnitaryQuantity [
         restricts scalar property metrology:isDimensionlessQuantity to false^^xsd:boolean
-        restricts all relation  metrology:hasMagnitude to 80000-4-units:UnitOfForceValue
+        restricts all relation  metrology:hasMagnitude to 80000-4-units:ForceMagnitude
     ]
     
     relation entity force-of-momentum :> metrology:HasFactorForUnitaryQuantity [
@@ -59,7 +59,7 @@ vocabulary <http://iso.org/80000-4-quantities> with # as 80000-4-quantities {
     @dc:^source "4-10"
     concept impulse :> metrology:DerivedUnitaryQuantity [
         restricts scalar property metrology:isDimensionlessQuantity to false^^xsd:boolean
-        restricts all relation  metrology:hasMagnitude to 80000-4-units:UnitOfImpulseValue
+        restricts all relation  metrology:hasMagnitude to 80000-4-units:ImpulseMagnitude
     ]
     
     relation entity impulse-of-force :> metrology:HasFactorForUnitaryQuantity [
@@ -81,7 +81,7 @@ vocabulary <http://iso.org/80000-4-quantities> with # as 80000-4-quantities {
     @dc:^source "4-27"
     concept power :> metrology:DerivedUnitaryQuantity [
         restricts scalar property metrology:isDimensionlessQuantity to false^^xsd:boolean
-        restricts all relation  metrology:hasMagnitude to 80000-4-units:UnitOfPowerValue
+        restricts all relation  metrology:hasMagnitude to 80000-4-units:PowerMagnitude
     ]
     
     relation entity power-of-force :> metrology:HasFactorForUnitaryQuantity [

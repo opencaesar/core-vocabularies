@@ -1,11 +1,11 @@
 vocabulary <http://iupac.org/metrology/diagams/quantities-and-values> with # as quantities-and-values {
     extends <http://iupac.org/metrology>
    
-    ref aspect metrology:QuantityValue
+    ref aspect metrology:Magnitude
 
-    ref aspect metrology:OrdinalQuantityValue
+    ref aspect metrology:OrdinalMagnitude
 
-    ref aspect metrology:UnitaryQuantityValue
+    ref aspect metrology:UnitaryMagnitude
 
     ref aspect metrology:ReferenceMaterial
 
