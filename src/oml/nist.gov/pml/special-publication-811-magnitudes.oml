@@ -1,4 +1,4 @@
-vocabulary <http://nist.gov/pml/special-publication-811-Magnitudes> with # as special-publication-811-Magnitudes {
+vocabulary <http://nist.gov/pml/special-publication-811-magnitudes> with # as special-publication-811-magnitudes {
   uses <http://nist.gov/pml/special-publication-811-instances>
 
   relation entity foot-magnitude :> metrology:IsMagnitudeOfQuantity [

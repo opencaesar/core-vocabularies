@@ -50,7 +50,7 @@ Organizing a vocabulary of quantities and units involves several OML files as de
 
 5) Defining an OML vocabulary of quantity values extending the vocabulary of units and the description of instances.
 
-   Example: [src/oml/iso.org/80000-4-Magnitudes.oml](../src/oml/iso.org/80000-4-Magnitudes.oml)
+   Example: [src/oml/iso.org/80000-4-magnitudes.oml](../src/oml/iso.org/80000-4-magnitudes.oml)
 
    For guidance, see Step 6 [Defining units](#defining-units).
 
@@ -293,7 +293,7 @@ Defining a unit involves the following:
   specializations of `metrology:HasFactorForMeasurementUnit` for each unit it depends on.
 4) Define specializations of the unit for the relevant prefixes
 5) Define instances of the unit and of the prefixed units
-6) Define a specialization of `metrology:IsMagnitudeOfQuantity` to facilitate modeling a quantity value and the magnitude relationship.
+6) Define a specialization of `metrology:IsMagnitudeOfQuantity` to facilitate modeling with a single instance a `metrology:Magnitude` and a `metrology:HasMagnitude` relationship.
 
 <details>
 <summary>Details</summary>
@@ -444,7 +444,7 @@ description <http://iso.org/80000-3-instances> with # as 80000-3-instances {
 <details>
 <summary>Details</summary>
 
-Use the following as an example from [src/oml/iso.org/80000-3-Magnitudes.oml](../src/oml/iso.org/80000-3-Magnitudes.oml).
+Use the following as an example from [src/oml/iso.org/80000-3-magnitudes.oml](../src/oml/iso.org/80000-3-magnitudes.oml).
 
 ```oml
 @dc:^description "This vocabulary provides convenience specializations of metrology:UnitaryMagnitude
@@ -452,7 +452,7 @@ as concepts for every metrology:MeasurementUnit defined in http://iso.org/80000-
 
 Note that this vocabulary reflects an opinionated usage of metrology:UnitaryMagnitude
 as an OML concept and does not exclude in any way other possible usages."
-vocabulary <http://iso.org/80000-3-Magnitudes> with # as 80000-3-Magnitudes {
+vocabulary <http://iso.org/80000-3-magnitudes> with # as 80000-3-magnitudes {
   extends <http://iupac.org/metrology>
   extends <http://iso.org/80000-3-units>
   uses <http://iso.org/80000-3-instances>

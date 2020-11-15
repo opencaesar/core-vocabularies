@@ -1,14 +1,8 @@
+@dc:^description "This vocabulary provides convenience specializations of metrology:IsMagnitudeOfQuantity
+as relation entities for every metrology:MeasurementUnit defined in http://iso.org/80000-6-units.
 
-@dc:^description "This vocabulary provides convenience specializations of metrology:UnitaryMagnitude
-as concepts for every metrology:MeasurementUnit defined in http://iso.org/80000-6-units.
-
-Note that this vocabulary reflects an opinionated usage of metrology:UnitaryMagnitude
-as an OML concept and does not exclude in any way other possible usages."
-vocabulary <http://iso.org/80000-6-Magnitudes> with # as 80000-6-Magnitudes {
-
-  extends <http://iupac.org/metrology>
-
-  extends <http://iso.org/80000-6-units>
+Note that this vocabulary is optional."
+vocabulary <http://iso.org/80000-6-magnitudes> with # as 80000-6-magnitudes {
 
   uses <http://iso.org/80000-6-instances>
 
