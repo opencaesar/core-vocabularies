@@ -2,66 +2,68 @@
 @dc:^source "https://www.nist.gov/pml/special-publication-811/nist-guide-si-appendix-b-conversion-factors/nist-guide-si-appendix-b8"
 @dc:^source "https://en.wikipedia.org/wiki/English_Engineering_Units"
 description <http://nist.gov/pml/special-publication-811-instances> with # as special-publication-811-instances {
-  uses <http://nist.gov/pml/special-publication-811-units>
-  extends <http://iso.org/80000-3-instances>
-  extends <http://iso.org/80000-4-instances>
 
-  @dc:^description "The System of English Engineering Units"
-  @dc:^source "https://en.wikipedia.org/wiki/English_Engineering_Units"
-  ci englishEngineeringUnits : metrology:SystemOfMetrologicalUnits
+	uses <http://nist.gov/pml/special-publication-811-units>
 
-  ri englishEngineeringUnits-second : metrology:SystemHasMetrologicalUnit [
-    from englishEngineeringUnits
-    to 80000-3-instances:second
-    metrology:isBaseMetrologicalUnit "true"^^xsd:boolean
-  ]
+	extends <http://iso.org/80000-3-instances>
 
-  ci foot : special-publication-811-units:foot
+	extends <http://iso.org/80000-4-instances>
 
-  ri englishEngineeringUnits-foot : metrology:SystemHasMetrologicalUnit [
-    from englishEngineeringUnits
-    to foot
-    metrology:isBaseMetrologicalUnit "true"^^xsd:boolean
-  ]
+	@dc:^description "The System of English Engineering Units"
+	@dc:^source "https://en.wikipedia.org/wiki/English_Engineering_Units"
+	ci englishEngineeringUnits : metrology:SystemOfMetrologicalUnits
 
-  ci pound-mass : special-publication-811-units:pound-mass
+	ri englishEngineeringUnits-second : metrology:SystemHasMetrologicalUnit [
+		from englishEngineeringUnits
+		to 80000-3-instances:second
+		metrology:isBaseMetrologicalUnit "true"^^xsd:boolean
+	]
 
-  ri englishEngineeringUnits-pound-mass : metrology:SystemHasMetrologicalUnit [
-    from englishEngineeringUnits
-    to pound-mass
-    metrology:isBaseMetrologicalUnit "true"^^xsd:boolean
-  ]
+	ci foot : special-publication-811-units:foot
 
-  ci pound-force : special-publication-811-units:pound-force
+	ri englishEngineeringUnits-foot : metrology:SystemHasMetrologicalUnit [
+		from englishEngineeringUnits
+		to foot
+		metrology:isBaseMetrologicalUnit "true"^^xsd:boolean
+	]
 
-  ri englishEngineeringUnits-pound-force : metrology:SystemHasMetrologicalUnit [
-    from englishEngineeringUnits
-    to pound-force
-    metrology:isBaseMetrologicalUnit "false"^^xsd:boolean
-  ]
+	ci pound-mass : special-publication-811-units:pound-mass
 
-  ci pound-force-second : special-publication-811-units:pound-force-second
+	ri englishEngineeringUnits-pound-mass : metrology:SystemHasMetrologicalUnit [
+		from englishEngineeringUnits
+		to pound-mass
+		metrology:isBaseMetrologicalUnit "true"^^xsd:boolean
+	]
 
-  ri englishEngineeringUnits-pound-force-second : metrology:SystemHasMetrologicalUnit [
-    from englishEngineeringUnits
-    to pound-force-second
-    metrology:isBaseMetrologicalUnit "false"^^xsd:boolean
-  ]
+	ci pound-force : special-publication-811-units:pound-force
 
-  ci degreeFahrenheit : special-publication-811-units:degreeFahrenheit
+	ri englishEngineeringUnits-pound-force : metrology:SystemHasMetrologicalUnit [
+		from englishEngineeringUnits
+		to pound-force
+		metrology:isBaseMetrologicalUnit "false"^^xsd:boolean
+	]
 
-  ri englishEngineeringUnits-degreeFahrenheit : metrology:SystemHasMetrologicalUnit [
-    from englishEngineeringUnits
-    to degreeFahrenheit
-    metrology:isBaseMetrologicalUnit "false"^^xsd:boolean
-  ]
+	ci pound-force-second : special-publication-811-units:pound-force-second
 
-  ci degreeRankine : special-publication-811-units:degreeRankine
+	ri englishEngineeringUnits-pound-force-second : metrology:SystemHasMetrologicalUnit [
+		from englishEngineeringUnits
+		to pound-force-second
+		metrology:isBaseMetrologicalUnit "false"^^xsd:boolean
+	]
 
-  ri englishEngineeringUnits-degreeRankine : metrology:SystemHasMetrologicalUnit [
-    from englishEngineeringUnits
-    to degreeRankine
-    metrology:isBaseMetrologicalUnit "false"^^xsd:boolean
-  ]
+	ci degreeFahrenheit : special-publication-811-units:degreeFahrenheit
 
+	ri englishEngineeringUnits-degreeFahrenheit : metrology:SystemHasMetrologicalUnit [
+		from englishEngineeringUnits
+		to degreeFahrenheit
+		metrology:isBaseMetrologicalUnit "false"^^xsd:boolean
+	]
+
+	ci degreeRankine : special-publication-811-units:degreeRankine
+
+	ri englishEngineeringUnits-degreeRankine : metrology:SystemHasMetrologicalUnit [
+		from englishEngineeringUnits
+		to degreeRankine
+		metrology:isBaseMetrologicalUnit "false"^^xsd:boolean
+	]
 }
