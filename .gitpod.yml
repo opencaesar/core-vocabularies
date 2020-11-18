@@ -1,7 +1,5 @@
 tasks:
-  - init: echo "Replace me with a build script for the project."
-    command: echo "Replace me with something that should run on every start, or just
-      remove me entirely."
+  - init: ./gradlew build
 vscode:
   extensions:
     - JPL.oml-luxor@0.8.2:MGF2nKZca24bPa6XUhEFeQ==
