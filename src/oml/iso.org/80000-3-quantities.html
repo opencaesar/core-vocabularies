@@ -26,6 +26,7 @@
  *   - .figure and .caption (HTML4) and figure and figcaption (HTML5)
  *     -> .sidefigure for right-floated figures
  *   - ins/del
+ *     -> ins/del.c### for candidate and proposed changes (amendments)
  *
  * Code
  *   - pre and code
@@ -34,9 +35,12 @@
  *   - .note       for informative notes             (div, p, span, aside, details)
  *   - .example    for informative examples          (div, p, pre, span)
  *   - .issue      for issues                        (div, p, span)
- *   - .assertion  for assertions                    (div, p, span)
  *   - .advisement for loud normative statements     (div, p, strong)
  *   - .annoying-warning for spec obsoletion notices (div, aside, details)
+ *   - .correction for "candidate corrections"       (div, aside, details, section)
+ *   - .addition   for "candidate additions"         (div, aside, details, section)
+ *   - .correction.proposed for "proposed corrections" (div, aside, details, section)
+ *   - .addition.proposed   for "proposed additions"   (div, aside, details, section)
  *
  * Definition Boxes
  *   - pre.def   for WebIDL definitions
@@ -57,6 +61,8 @@
  *   - .head for the header
  *   - .copyright for the copyright
  *
+ * Outdated warning for old specs
+ *
  * Miscellaneous
  *   - .overlarge for things that should be as wide as possible, even if
  *     that overflows the body text area. This can be used on an item or
@@ -64,6 +70,7 @@
  *     Note that this styling basically doesn't help at all when printing,
  *     since A4 paper isn't much wider than the max-width here.
  *     It's better to design things to fit into a narrower measure if possible.
+ *
  *   - js-added ToC jump links (see fixup.js)
  *
  ******************************************************************************/
@@ -71,24 +78,20 @@
 /* color variables included separately for reliability */
 
 /******************************************************************************/
-/*                                   Body                                     */
+/*                                    Body                                    */
 /******************************************************************************/
 
 	html {
-		color: black;
-		color: var(--text);
-		background-color: white;
-		background-color: var(--bg);
 	}
 
 	body {
 		counter-reset: example figure issue;
 
 		/* Layout */
-		max-width: 50em;               /* limit line length to 50em for readability   */
-		margin: 0 auto;                /* center text within page                     */
+		max-width: 50em;			  /* limit line length to 50em for readability   */
+		margin: 0 auto;				/* center text within page                    */
 		padding: 1.6em 1.5em 2em 50px; /* assume 16px font size for downlevel clients */
-		padding: 1.6em 1.5em 2em calc(26px + 1.5em); /* leave space for status flag     */
+		padding: 1.6em 1.5em 2em calc(26px + 1.5em); /* leave space for status flag    */
 
 		/* Typography */
 		line-height: 1.5;
@@ -99,7 +102,10 @@
 		overflow-wrap: break-word;
 		hyphens: auto;
 
-		background: transparent top left fixed no-repeat;
+		color: black;
+		color: var(--text);
+		background: white top left fixed no-repeat;
+		background: var(--bg) top left fixed no-repeat;
 		background-size: 25px auto;
 	}
 
@@ -110,7 +116,7 @@
 
 /** Header ********************************************************************/
 
-	div.head { margin-bottom: 1em }
+	div.head { margin-bottom: 1em; }
 	div.head hr { border-style: solid; }
 
 	div.head h1 {
@@ -158,7 +164,7 @@
 /** Copyright *****************************************************************/
 
 	p.copyright,
-	p.copyright small { font-size: small }
+	p.copyright small { font-size: small; }
 
 /** Back to Top / ToC Toggle **************************************************/
 
@@ -170,7 +176,7 @@
 	@media not print {
 		#toc-nav {
 			position: fixed;
-			z-index: 2;
+			z-index: 3;
 			bottom: 0; left: 0;
 			margin: 0;
 			min-width: 1.33em;
@@ -337,9 +343,9 @@
 		page-break-after: avoid;
 		page-break-inside: avoid;
 		font: 100% sans-serif;   /* Reset all font styling to clear out UA styles */
-		font-family: inherit;    /* Inherit the font family. */
-		line-height: 1.2;        /* Keep wrapped headings compact */
-		hyphens: manual;         /* Hyphenated headings look weird */
+		font-family: inherit;	/* Inherit the font family. */
+		line-height: 1.2;		/* Keep wrapped headings compact */
+		hyphens: manual;		/* Hyphenated headings look weird */
 	}
 
 	h2, h3, h4, h5, h6 {
@@ -423,51 +429,51 @@
 	/* Style for algorithms */
 	ol.algorithm ol:not(.algorithm),
 	.algorithm > ol ol:not(.algorithm) {
-	 border-left: 0.5em solid #DEF;
-	 border-left: 0.5em solid var(--algo-border);
+	border-left: 0.5em solid #DEF;
+	border-left: 0.5em solid var(--algo-border);
 	}
 
 	/* Put nice boxes around each algorithm. */
 	[data-algorithm]:not(.heading) {
-	  padding: .5em;
-	  border: thin solid #ddd;
-	  border: thin solid var(--algo-border);
-	  border-radius: .5em;
-	  margin: .5em calc(-0.5em - 1px);
+	 padding: .5em;
+	 border: thin solid #ddd;
+	 border: thin solid var(--algo-border);
+	 border-radius: .5em;
+	 margin: .5em calc(-0.5em - 1px);
 	}
 	[data-algorithm]:not(.heading) > :first-child {
-	  margin-top: 0;
+	 margin-top: 0;
 	}
 	[data-algorithm]:not(.heading) > :last-child {
-	  margin-bottom: 0;
+	 margin-bottom: 0;
 	}
 
 	/* Style for switch/case <dl>s */
 	dl.switch > dd > ol.only,
 	dl.switch > dd > .only > ol {
-	 margin-left: 0;
+	margin-left: 0;
 	}
 	dl.switch > dd > ol.algorithm,
 	dl.switch > dd > .algorithm > ol {
-	 margin-left: -2em;
+	margin-left: -2em;
 	}
 	dl.switch {
-	 padding-left: 2em;
+	padding-left: 2em;
 	}
 	dl.switch > dt {
-	 text-indent: -1.5em;
-	 margin-top: 1em;
+	text-indent: -1.5em;
+	margin-top: 1em;
 	}
 	dl.switch > dt + dt {
-	 margin-top: 0;
+	margin-top: 0;
 	}
 	dl.switch > dt::before {
-	 content: '\21AA';
-	 padding: 0 0.5em 0 0;
-	 display: inline-block;
-	 width: 1em;
-	 text-align: right;
-	 line-height: 0.5em;
+	content: '\21AA';
+	padding: 0 0.5em 0 0;
+	display: inline-block;
+	width: 1em;
+	text-align: right;
+	line-height: 0.5em;
 	}
 
 /** Terminology Markup ********************************************************/
@@ -485,7 +491,7 @@
 		font-style: normal;
 	}
 	dt dfn code, code.idl {
-		font-size: medium;
+		font-size: inherit;
 	}
 	dfn var {
 		font-style: normal;
@@ -494,18 +500,37 @@
 /** Change Marking ************************************************************/
 
 	del {
-		color: red;
+		color: #aa0000;
 		color: var(--del-text);
 		background: transparent;
 		background: var(--del-bg);
 		text-decoration: line-through;
 	}
 	ins {
-		color: #080;
+		color: #006100;
 		color: var(--ins-text);
 		background: transparent;
 		background: var(--ins-bg);
 		text-decoration: underline;
+	}
+
+	/* for amendments (candidate/proposed changes) */
+
+	.amendment ins, .correction ins, .addition ins,
+	ins[class^=c] {
+		text-decoration-style: dotted;
+	}
+	.amendment del, .correction del, .addition del,
+	del[class^=c] {
+		text-decoration-style: dotted;
+	}
+	.amendment.proposed ins, .correction.proposed ins, .addition.proposed ins,
+	ins[class^=c].proposed {
+		text-decoration-style: double;
+	}
+	.amendment.proposed del, .correction.proposed del, .addition.proposed del,
+	del[class^=c].proposed {
+		text-decoration-style: double;
 	}
 
 /** Miscellaneous improvements to inline formatting ***************************/
@@ -546,7 +571,7 @@
 
 /** Inline Code fragments *****************************************************/
 
-  /* Do something nice. */
+	/* Do something nice. */
 
 /******************************************************************************/
 /*                                    Links                                   */
@@ -610,7 +635,7 @@
 	}
 
 	/* For autogen numbers, add
-	   .caption::before, figcaption::before { content: "Figure " counter(figure) ". "; }
+	  .caption::before, figcaption::before { content: "Figure " counter(figure) ". "; }
 	*/
 
 	figure, .figure, .sidefigure {
@@ -618,7 +643,7 @@
 		text-align: center;
 		margin: 2.5em 0;
 	}
-	.figure img,    .sidefigure img,    figure img,
+	.figure img,	.sidefigure img,	figure img,
 	.figure object, .sidefigure object, figure object {
 		max-width: 100%;
 		margin: auto;
@@ -636,7 +661,7 @@
 		.sidefigure {
 			float: right;
 			width: 50%;
-			margin: 0 0 0.5em 0.5em
+			margin: 0 0 0.5em 0.5em;
 		}
 	}
 	.caption, figcaption, caption {
@@ -651,13 +676,15 @@
 	}
 
 	/* DL list is indented 2em, but figure inside it is not */
-	dd > .figure, dd > figure { margin-left: -2em }
+	dd > .figure, dd > figure { margin-left: -2em; }
 
 /******************************************************************************/
 /*                             Colored Boxes                                  */
 /******************************************************************************/
 
-	.issue, .note, .example, .assertion, .advisement, blockquote {
+	.issue, .note, .example, .assertion, .advisement, blockquote,
+	.amendment, .correction, .addition {
+		margin: 1em auto;
 		padding: .5em;
 		border: .5em;
 		border-left-style: solid;
@@ -668,20 +695,20 @@
 		border-right-style: solid;
 	}
 
-	.issue,
-	.note,
-	.example,
-	.advisement,
-	.assertion,
-	blockquote {
-		margin: 1em auto;
-	}
+	blockquote > :first-child,
 	.note  > p:first-child,
 	.issue > p:first-child,
-	blockquote > :first-child {
+	.amendment > p:first-child,
+	.correction > p:first-child,
+	.addition > p:first-child {
 		margin-top: 0;
 	}
-	blockquote > :last-child {
+	blockquote > :last-child,
+	.note  > p:last-child,
+	.issue > p:last-child,
+	.amendment > p:last-child,
+	.correction > p:last-child,
+	.addition > p:last-child {
 		margin-bottom: 0;
 	}
 
@@ -689,7 +716,14 @@
 	.issue::before, .issue > .marker,
 	.example::before, .example > .marker,
 	.note::before, .note > .marker,
-	details.note > summary > .marker {
+	details.note > summary > .marker,
+	.amendment::before, .amendment > .marker,
+	details.amendment > summary > .marker,
+	.addition::before, .addition > .marker,
+	addition.amendment > summary > .marker,
+	.correction::before, .correction > .marker,
+	correction.amendment > summary > .marker
+	{
 		text-transform: uppercase;
 		padding-right: 1em;
 	}
@@ -727,7 +761,7 @@
 		color: var(--issueheading-text);
 	}
 	/* Add .issue::before { content: "Issue " counter(issue) " "; } for autogen numbers,
-	   or use class="marker" to mark up the issue number in source. */
+	  or use class="marker" to mark up the issue number in source. */
 
 /** Example *******************************************************************/
 
@@ -747,7 +781,7 @@
 		color: var(--exampleheading-text);
 	}
 	/* Add .example::before { content: "Example " counter(example) " "; } for autogen numbers,
-	   or use class="marker" to mark up the example number in source. */
+	  or use class="marker" to mark up the example number in source. */
 
 /** Non-normative Note ********************************************************/
 
@@ -767,7 +801,7 @@
 		color: var(--noteheading-text);
 	}
 	/* Add .note::before { content: "Note "; } for autogen label,
-	   or use class="marker" to mark up the label in source. */
+	  or use class="marker" to mark up the label in source. */
 
 	details.note[open] > summary {
 		border-bottom: 1px silver solid;
@@ -807,6 +841,38 @@
 		color: var(--advisementheading-text);
 	}
 
+/** Amendment Box *************************************************************/
+
+	.amendment, .correction, .addition {
+		border-color: #330099;
+		border-color: var(--amendment-border);
+		background: #F5F0FF;
+		background: var(--amendment-bg);
+		color: black;
+		color: var(--amendment-text);
+	}
+	.amendment.proposed, .correction.proposed, .addition.proposed {
+		border-style: solid;
+		border-block-width: 0.25em;
+	}
+	.amendment::before, .amendment > .marker,
+	details.amendment > summary::before, details.amendment > summary > .marker,
+	.correction::before, .correction > .marker,
+	details.correction > summary::before, details.correction > summary > .marker,
+	.addition::before, .addition > .marker,
+	details.addition > summary::before, details.addition > summary > .marker {
+		color: #220066;
+		color: var(--amendmentheading-text);
+	}
+	.amendment.proposed::before, .amendment.proposed > .marker,
+	details.amendment.proposed > summary::before, details.amendment.proposed > summary > .marker,
+	.correction.proposed::before, .correction.proposed > .marker,
+	details.correction.proposed > summary::before, details.correction.proposed > summary > .marker,
+	.addition.proposed::before, .addition.proposed > .marker,
+	details.addition.proposed > summary::before, details.addition.proposed > summary > .marker {
+		font-weight: bold;
+	}
+
 /** Spec Obsoletion Notice ****************************************************/
 	/* obnoxious obsoletion notice for older/abandoned specs. */
 
@@ -835,15 +901,15 @@
 		margin-bottom: 0;
 	}
 
-	@media not print {
-		details.annoying-warning[open] {
-			position: fixed;
-			left: 0;
-			right: 0;
-			bottom: 2em;
-			z-index: 1000;
-		}
+@media not print {
+	details.annoying-warning[open] {
+		position: fixed;
+		left: 0;
+		right: 0;
+		bottom: 2em;
+		z-index: 1000;
 	}
+}
 
 	details.annoying-warning:not([open]) > summary {
 		text-align: center;
@@ -918,15 +984,15 @@
 
 /** Data tables (and properly marked-up index tables) *************************/
 	/*
-		 <table class="data"> highlights structural relationships in a table
-		 when correct markup is used (e.g. thead/tbody, th vs. td, scope attribute)
+		<table class="data"> highlights structural relationships in a table
+		when correct markup is used (e.g. thead/tbody, th vs. td, scope attribute)
 
-		 Use class="complex data" for particularly complicated tables --
-		 (This will draw more lines: busier, but clearer.)
+		Use class="complex data" for particularly complicated tables --
+		(This will draw more lines: busier, but clearer.)
 
-		 Use class="long" on table cells with paragraph-like contents
-		 (This will adjust text alignment accordingly.)
-		 Alternately use class="longlastcol" on tables, to have the last column assume "long".
+		Use class="long" on table cells with paragraph-like contents
+		(This will adjust text alignment accordingly.)
+		Alternately use class="longlastcol" on tables, to have the last column assume "long".
 	*/
 
 	table {
@@ -1075,22 +1141,22 @@ Possible extra rowspan handling
 		/* because generated content isn't search/selectable and markers can't do multilevel yet */
 		margin:  0;
 		padding: 0;
-		line-height: 1.1rem; /* consistent spacing */
+	}
+	.toc {
+		line-height: 1.1em;
 	}
 
 	/* ToC not indented until third level, but font style & margins show hierarchy */
-	.toc > li             { font-weight: bold;   }
-	.toc > li li          { font-weight: normal; }
-	.toc > li li li       { font-size:   95%;    }
-	.toc > li li li li    { font-size:   90%;    }
-	.toc > li li li li .secno { font-size: 85%; }
-	.toc > li li li li li { font-size:   85%;    }
-	.toc > li li li li li .secno { font-size: 100%; }
+	.toc > li			{ font-weight: bold;   }
+	.toc > li li		 { font-weight: normal; }
+	.toc > li li li	  { font-size:   95%;	}
+	.toc > li li li li	{ font-size:   90%;	}
+	.toc > li li li li li { font-size:   85%;	}
 
 	/* @supports not (display:grid) { */
-		.toc > li             { margin: 1.5rem 0;    }
-		.toc > li li          { margin: 0.3rem 0;    }
-		.toc > li li li       { margin-left: 2rem;   }
+		.toc > li			{ margin: 1.5rem 0;	}
+		.toc > li li		 { margin: 0.3rem 0;	}
+		.toc > li li li	  { margin-left: 2rem;   }
 
 		/* Section numbers in a column of their own */
 		.toc .secno {
@@ -1098,33 +1164,35 @@ Possible extra rowspan handling
 			width: 4rem;
 			white-space: nowrap;
 		}
+		.toc > li li li li .secno { font-size: 85%; }
+		.toc > li li li li li .secno { font-size: 100%; }
 
 		.toc li {
 			clear: both;
 		}
 
-		:not(li) > .toc              { margin-left:  5rem; }
-		.toc .secno                  { margin-left: -5rem; }
-		.toc > li li li .secno       { margin-left: -7rem; }
-		.toc > li li li li .secno    { margin-left: -9rem; }
+		:not(li) > .toc			 { margin-left:  5rem; }
+		.toc .secno				 { margin-left: -5rem; }
+		.toc > li li li .secno	  { margin-left: -7rem; }
+		.toc > li li li li .secno	{ margin-left: -9rem; }
 		.toc > li li li li li .secno { margin-left: -11rem; }
 
 		/* Tighten up indentation in narrow ToCs */
 		@media (max-width: 30em) {
-			:not(li) > .toc              { margin-left:  4rem; }
-			.toc .secno                  { margin-left: -4rem; }
-			.toc > li li li              { margin-left:  1rem; }
-			.toc > li li li .secno       { margin-left: -5rem; }
-			.toc > li li li li .secno    { margin-left: -6rem; }
+			:not(li) > .toc			 { margin-left:  4rem; }
+			.toc .secno				 { margin-left: -4rem; }
+			.toc > li li li			 { margin-left:  1rem; }
+			.toc > li li li .secno	  { margin-left: -5rem; }
+			.toc > li li li li .secno	{ margin-left: -6rem; }
 			.toc > li li li li li .secno { margin-left: -7rem; }
 		}
 		/* Loosen it on wide screens */
 		@media screen and (min-width: 78em) {
-			body:not(.toc-inline) :not(li) > .toc              { margin-left:  4rem; }
-			body:not(.toc-inline) .toc .secno                  { margin-left: -4rem; }
-			body:not(.toc-inline) .toc > li li li              { margin-left:  1rem; }
-			body:not(.toc-inline) .toc > li li li .secno       { margin-left: -5rem; }
-			body:not(.toc-inline) .toc > li li li li .secno    { margin-left: -6rem; }
+			body:not(.toc-inline) :not(li) > .toc			 { margin-left:  4rem; }
+			body:not(.toc-inline) .toc .secno				 { margin-left: -4rem; }
+			body:not(.toc-inline) .toc > li li li			 { margin-left:  1rem; }
+			body:not(.toc-inline) .toc > li li li .secno	  { margin-left: -5rem; }
+			body:not(.toc-inline) .toc > li li li li .secno	{ margin-left: -6rem; }
 			body:not(.toc-inline) .toc > li li li li li .secno { margin-left: -7rem; }
 	}
 	/* } */
@@ -1155,7 +1223,7 @@ Possible extra rowspan handling
 		}
 		#toc > .toc > li > a > span {
 			/* The spans of the top-level list,
-			   comprising the first items of each top-level section. */
+			  comprising the first items of each top-level section. */
 			margin-top: 1.1rem;
 		}
 		#toc#toc .secno { /* Ugh, need more specificity to override base.css */
@@ -1188,12 +1256,12 @@ Possible extra rowspan handling
 /** Index *********************************************************************/
 
 	/* Index Lists: Layout */
-	ul.index       { margin-left: 0; columns: 15em; text-indent: 1em hanging; }
-	ul.index li    { margin-left: 0; list-style: none; break-inside: avoid; }
-	ul.index li li { margin-left: 1em }
-	ul.index dl    { margin-top: 0; }
-	ul.index dt    { margin: .2em 0 .2em 20px;}
-	ul.index dd    { margin: .2em 0 .2em 40px;}
+	ul.index	  { margin-left: 0; columns: 15em; text-indent: 1em hanging; }
+	ul.index li	{ margin-left: 0; list-style: none; break-inside: avoid; }
+	ul.index li li { margin-left: 1em; }
+	ul.index dl	{ margin-top: 0; }
+	ul.index dt	{ margin: .2em 0 .2em 20px;}
+	ul.index dd	{ margin: .2em 0 .2em 40px;}
 	/* Index Lists: Typography */
 	ul.index ul,
 	ul.index dl { font-size: smaller; }
@@ -1237,6 +1305,91 @@ Possible extra rowspan handling
 		font-weight: bold;
 	}
 
+/** Outdated warning **********************************************************/
+
+.outdated-spec {
+	color: black;
+	color: var(--outdatedspec-text);
+	background-color: rgba(0,0,0,0.5);
+	background-color: var(--outdatedspec-bg);
+}
+
+.outdated-warning {
+	position: fixed;
+	bottom: 50%;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	width: 50%;
+	background: maroon;
+	background: var(--outdated-bg);
+	color: white;
+	color: var(--outdated-text);
+	border-radius: 1em;
+	box-shadow: 0 0 1em red;
+	box-shadow: 0 0 1em var(--outdated-shadow);
+	padding: 2em;
+	text-align: center;
+	z-index: 2;
+}
+
+.outdated-warning a {
+	color: currentcolor;
+	background: transparent;
+}
+
+.edited-rec-warning {
+	background: darkorange;
+	background: var(--editedrec-bg);
+	box-shadow: 0 0 1em;
+}
+
+.outdated-warning button {
+	color: var(--outdated-text);
+	border-radius: 1em;
+	box-shadow: 0 0 1em red;
+	box-shadow: 0 0 1em var(--outdated-shadow);
+	padding: 2em;
+	text-align: center;
+	z-index: 2;
+}
+
+.outdated-warning a {
+	color: currentcolor;
+	background: transparent;
+}
+
+.edited-rec-warning {
+	background: darkorange;
+	background: var(--editedrec-bg);
+	box-shadow: 0 0 1em;
+}
+
+.outdated-warning button {
+	position: absolute;
+	top: 0;
+	right:0;
+	margin: 0;
+	border: 0;
+	padding: 0.25em 0.5em;
+	background: transparent;
+	color: white;
+	color: var(--outdated-text);
+	font:1em sans-serif;
+	text-align:center;
+}
+
+.outdated-warning span {
+	display: block;
+}
+
+.outdated-collapsed {
+	bottom: 0;
+	border-radius: 0;
+	width: 100%;
+	padding: 0;
+}
+
 /******************************************************************************/
 /*                                    Print                                   */
 /******************************************************************************/
@@ -1249,6 +1402,16 @@ Possible extra rowspan handling
 		/* Serif for print. */
 		body {
 			font-family: serif;
+		}
+
+		.outdated-warning {
+			position: absolute;
+			border-style: solid;
+			border-color: red;
+		}
+
+		.outdated-warning input {
+			display: none;
 		}
 	}
 	@page {
@@ -1268,13 +1431,13 @@ Possible extra rowspan handling
 		margin-right: auto;
 	}
 	.overlarge {
-		/* Magic to create good table positioning:
-		   "content column" is 50ems wide at max; less on smaller screens.
-		   Extra space (after ToC + content) is empty on the right.
+		/* Magic to create good item positioning:
+		  "content column" is 50ems wide at max; less on smaller screens.
+		  Extra space (after ToC + content) is empty on the right.
 
-		   1. When table < content column, centers table in column.
-		   2. When content < table < available, left-aligns.
-		   3. When table > available, fills available + scroll bar.
+		  1. When item < content column, centers item in column.
+		  2. When content < item < available, left-aligns.
+		  3. When item > available, fills available + scroll bar.
 		*/
 		display: grid;
 		grid-template-columns: minmax(0, 50em);
@@ -1309,21 +1472,21 @@ Possible extra rowspan handling
 		.overlarge {
 			overflow-x: auto;
 			/* See Lea Verou's explanation background-attachment:
-			 * http://lea.verou.me/2012/04/background-attachment-local/
-			 *
+			* http://lea.verou.me/2012/04/background-attachment-local/
+			*
 			background: top left  / 4em 100% linear-gradient(to right,  #ffffff, rgba(255, 255, 255, 0)) local,
-			            top right / 4em 100% linear-gradient(to left, #ffffff, rgba(255, 255, 255, 0)) local,
-			            top left  / 1em 100% linear-gradient(to right,  #c3c3c5, rgba(195, 195, 197, 0)) scroll,
-			            top right / 1em 100% linear-gradient(to left, #c3c3c5, rgba(195, 195, 197, 0)) scroll,
-			            white;
+						top right / 4em 100% linear-gradient(to left, #ffffff, rgba(255, 255, 255, 0)) local,
+						top left  / 1em 100% linear-gradient(to right,  #c3c3c5, rgba(195, 195, 197, 0)) scroll,
+						top right / 1em 100% linear-gradient(to left, #c3c3c5, rgba(195, 195, 197, 0)) scroll,
+						white;
 			background-repeat: no-repeat;
 			*/
 		}
 	}
 </style>
-  <meta content="Bikeshed version 89ebb6ab, updated Fri Oct 9 15:32:07 2020 -0700" name="generator">
+  <meta content="Bikeshed version c5172e83, updated Fri Nov 20 15:35:20 2020 -0800" name="generator">
   <link href="https://opencaesar.github.io/core-vocabularies//src/oml/iso.org/80000-3-quantities" rel="canonical">
-  <meta content="016d25312624eba77cc9060e2b9fc3b359f0e606" name="document-revision">
+  <meta content="f1448e00267c6de5a8b438541ebe1980e5b42225" name="document-revision">
 <style>
 a[data-link-type=biblio] {
     white-space: pre-wrap;
@@ -1394,17 +1557,13 @@ pre .property::before, pre .property::after {
 <style>/* style-colors */
 
 /* Any --*-text not paired with a --*-bg is assumed to have a transparent bg */
-html {
-    color: black;
-    color: var(--text);
-    background-color: white;
-    background-color: var(--bg);
-}
 :root {
     color-scheme: light dark;
 
     --text: black;
     --bg: white;
+
+    --unofficial-watermark: url(https://www.w3.org/StyleSheets/TR/2016/logos/UD-watermark);
 
     --logo-bg: #1a5e9a;
     --logo-active-bg: #c00;
@@ -1478,6 +1637,11 @@ html {
     --warning-border: red;
     --warning-bg: hsla(40,100%,50%,0.95);
     --warning-text: var(--text);
+
+    --amendment-border: #330099;
+    --amendment-bg: #F5F0FF;
+    --amendment-text: var(--text);
+    --amendmentheading-text: #220066;
 
     --def-border: #8ccbf2;
     --def-bg: #def;
@@ -1638,6 +1802,8 @@ dfn > a.self-link::before      { content: "#"; }
         --text: #ddd;
         --bg: black;
 
+        --unofficial-watermark: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cg fill='%23100808' transform='translate(200 200) rotate(-45) translate(-200 -200)' stroke='%23100808' stroke-width='3'%3E%3Ctext x='50%25' y='220' style='font: bold 70px sans-serif; text-anchor: middle; letter-spacing: 6px;'%3EUNOFFICIAL%3C/text%3E%3Ctext x='50%25' y='305' style='font: bold 70px sans-serif; text-anchor: middle; letter-spacing: 6px;'%3EDRAFT%3C/text%3E%3C/g%3E%3C/svg%3E");
+
         --logo-bg: #1a5e9a;
         --logo-active-bg: #c00;
         --logo-text: white;
@@ -1713,6 +1879,11 @@ dfn > a.self-link::before      { content: "#"; }
         --warning-bg: hsla(40,100%,20%,0.95);
         --warning-text: var(--text);
 
+        --amendment-border: #330099;
+        --amendment-bg: #080010;
+        --amendment-text: var(--text);
+        --amendmentheading-text: #cc00ff;
+
         --def-border: #8ccbf2;
         --def-bg: #080818;
         --def-text: var(--text);
@@ -1755,7 +1926,7 @@ dfn > a.self-link::before      { content: "#"; }
   <div class="head">
    <p data-fill-with="logo"><a class="logo" href="https://www.openapis.org/"><img alt="OpenAPI Initiative" height="48" src="https://opencaesar.github.io/oml/images/oml.svg"></a></p>
    <h1 class="p-name no-ref" id="title">80000-3-quantities</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2020-11-13">13 November 2020</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2020-11-26">26 November 2020</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -1809,16 +1980,16 @@ dfn > a.self-link::before      { content: "#"; }
     <li>
      <a href="#Relations"><span class="secno">4</span> <span class="content">Relation Entities</span></a>
      <ol class="toc">
-      <li><a href="#Angular-measure-of-arc-length"><span class="secno">4.1</span> <span class="content"><span>angular-measure-of-arc-length</span></span></a>
-      <li><a href="#Angular-measure-of-radius"><span class="secno">4.2</span> <span class="content"><span>angular-measure-of-radius</span></span></a>
-      <li><a href="#Frequency-of-period-duration"><span class="secno">4.3</span> <span class="content"><span>frequency-of-period-duration</span></span></a>
-      <li><a href="#Rotation-of-rotational-displacement"><span class="secno">4.4</span> <span class="content"><span>rotation-of-rotational-displacement</span></span></a>
-      <li><a href="#Rotational-displacement-of-distance"><span class="secno">4.5</span> <span class="content"><span>rotational-displacement-of-distance</span></span></a>
-      <li><a href="#Rotational-displacement-of-path-length"><span class="secno">4.6</span> <span class="content"><span>rotational-displacement-of-path-length</span></span></a>
-      <li><a href="#Rotational-frequency-of-duration"><span class="secno">4.7</span> <span class="content"><span>rotational-frequency-of-duration</span></span></a>
-      <li><a href="#Rotational-frequency-of-rotation"><span class="secno">4.8</span> <span class="content"><span>rotational-frequency-of-rotation</span></span></a>
-      <li><a href="#Velocity-of-duration"><span class="secno">4.9</span> <span class="content"><span>velocity-of-duration</span></span></a>
-      <li><a href="#Velocity-of-position-vector"><span class="secno">4.10</span> <span class="content"><span>velocity-of-position-vector</span></span></a>
+      <li><a href="#Angular-Measure-Has-Arc-Length"><span class="secno">4.1</span> <span class="content"><span>Angular-Measure-Has-Arc-Length</span></span></a>
+      <li><a href="#Angular-Measure-Has-Radius"><span class="secno">4.2</span> <span class="content"><span>Angular-Measure-Has-Radius</span></span></a>
+      <li><a href="#Frequency-Has-Period-Duration"><span class="secno">4.3</span> <span class="content"><span>Frequency-Has-Period-Duration</span></span></a>
+      <li><a href="#Rotation-Has-Rotational-Displacement"><span class="secno">4.4</span> <span class="content"><span>Rotation-Has-Rotational-Displacement</span></span></a>
+      <li><a href="#Rotational-Displacement-Has-Distance"><span class="secno">4.5</span> <span class="content"><span>Rotational-Displacement-Has-Distance</span></span></a>
+      <li><a href="#Rotational-Displacement-Has-Path-Length"><span class="secno">4.6</span> <span class="content"><span>Rotational-Displacement-Has-Path-Length</span></span></a>
+      <li><a href="#Rotational-Frequency-Has-Duration"><span class="secno">4.7</span> <span class="content"><span>Rotational-Frequency-Has-Duration</span></span></a>
+      <li><a href="#Rotational-Frequency-Has-Rotation"><span class="secno">4.8</span> <span class="content"><span>Rotational-Frequency-Has-Rotation</span></span></a>
+      <li><a href="#Velocity-Has-Duration"><span class="secno">4.9</span> <span class="content"><span>Velocity-Has-Duration</span></span></a>
+      <li><a href="#Velocity-Has-Position-Vector"><span class="secno">4.10</span> <span class="content"><span>Velocity-Has-Position-Vector</span></span></a>
      </ol>
     <li>
      <a href="#index"><span class="secno"></span> <span class="content">Index</span></a>
@@ -1853,18 +2024,21 @@ dfn > a.self-link::before      { content: "#"; }
     <p><em>Relations with source:</em></p>
     <ul>
      <li data-md>
-      <p>angular-measure ← <a data-link-type="dfn" href="../iupac.org/metrology.html#hasmagnitude" id="ref-for-hasmagnitude">metrology:HasMagnitude</a> → <a data-link-type="dfn" href="80000-3-units.html#unitofangularmeasurevalue" id="ref-for-unitofangularmeasurevalue">80000-3-units:UnitOfAngularMeasureValue</a></p>
+      <p>angular-measure ← <a data-link-type="dfn" href="80000-3-quantities.html#angular-measure-has-arc-length" id="ref-for-angular-measure-has-arc-length">Angular-Measure-Has-Arc-Length</a> → <a data-link-type="dfn" href="80000-3-quantities.html#arc-length" id="ref-for-arc-length">arc-length</a></p>
      <li data-md>
-      <p>angular-measure ← <a data-link-type="dfn" href="80000-3-quantities.html#angular-measure-of-arc-length" id="ref-for-angular-measure-of-arc-length">angular-measure-of-arc-length</a> → <a data-link-type="dfn" href="80000-3-quantities.html#arc-length" id="ref-for-arc-length">arc-length</a></p>
+      <p>angular-measure ← <a data-link-type="dfn" href="80000-3-quantities.html#angular-measure-has-radius" id="ref-for-angular-measure-has-radius">Angular-Measure-Has-Radius</a> → <a data-link-type="dfn" href="80000-3-quantities.html#radius" id="ref-for-radius">radius</a></p>
+    </ul>
+    <p><em>Relations with target:</em></p>
+    <ul>
      <li data-md>
-      <p>angular-measure ← <a data-link-type="dfn" href="80000-3-quantities.html#angular-measure-of-radius" id="ref-for-angular-measure-of-radius">angular-measure-of-radius</a> → <a data-link-type="dfn" href="80000-3-quantities.html#radius" id="ref-for-radius">radius</a></p>
+      <p><a data-link-type="dfn" href="80000-3-units.html#angularmeasuremagnitude" id="ref-for-angularmeasuremagnitude">80000-3-units:AngularMeasureMagnitude</a> ← <a data-link-type="dfn" href="../iupac.org/metrology.html#ismagnitudeof" id="ref-for-ismagnitudeof">metrology:IsMagnitudeOf</a> → angular-measure</p>
     </ul>
     <h3 class="heading settled" data-level="3.3" id="Arc-length"><span class="secno">3.3. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="arc-length">arc-length<a class="self-link" href="#arc-length"></a></dfn></span><a class="self-link" href="#Arc-length"></a></h3>
     <p><em>Supertypes:</em> <a data-link-type="dfn" href="80000-3-quantities.html#path-length" id="ref-for-path-length">path-length</a></p>
     <p><em>Relations with target:</em></p>
     <ul>
      <li data-md>
-      <p><a data-link-type="dfn" href="80000-3-quantities.html#angular-measure" id="ref-for-angular-measure">angular-measure</a> ← <a data-link-type="dfn" href="80000-3-quantities.html#angular-measure-of-arc-length" id="ref-for-angular-measure-of-arc-length①">angular-measure-of-arc-length</a> → arc-length</p>
+      <p><a data-link-type="dfn" href="80000-3-quantities.html#angular-measure" id="ref-for-angular-measure">angular-measure</a> ← <a data-link-type="dfn" href="80000-3-quantities.html#angular-measure-has-arc-length" id="ref-for-angular-measure-has-arc-length①">Angular-Measure-Has-Arc-Length</a> → arc-length</p>
     </ul>
     <h3 class="heading settled" data-level="3.4" id="Breadth"><span class="secno">3.4. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="breadth">breadth<a class="self-link" href="#breadth"></a></dfn></span><a class="self-link" href="#Breadth"></a></h3>
     <p><em>Supertypes:</em> <a data-link-type="dfn" href="80000-3-quantities.html#width" id="ref-for-width">width</a></p>
@@ -1879,7 +2053,7 @@ dfn > a.self-link::before      { content: "#"; }
     <p><em>Relations with target:</em></p>
     <ul>
      <li data-md>
-      <p><a data-link-type="dfn" href="80000-3-quantities.html#rotational-displacement" id="ref-for-rotational-displacement">rotational-displacement</a> ← <a data-link-type="dfn" href="80000-3-quantities.html#rotational-displacement-of-distance" id="ref-for-rotational-displacement-of-distance">rotational-displacement-of-distance</a> → distance</p>
+      <p><a data-link-type="dfn" href="80000-3-quantities.html#rotational-displacement" id="ref-for-rotational-displacement">rotational-displacement</a> ← <a data-link-type="dfn" href="80000-3-quantities.html#rotational-displacement-has-distance" id="ref-for-rotational-displacement-has-distance">Rotational-Displacement-Has-Distance</a> → distance</p>
     </ul>
     <h3 class="heading settled" data-level="3.9" id="Duration"><span class="secno">3.9. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="duration">duration<a class="self-link" href="#duration"></a></dfn></span><a class="self-link" href="#Duration"></a></h3>
     <p><em>Supertypes:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#independentunitaryquantity" id="ref-for-independentunitaryquantity">metrology:IndependentUnitaryQuantity</a></p>
@@ -1889,21 +2063,18 @@ dfn > a.self-link::before      { content: "#"; }
      <li data-md>
       <p><a data-link-type="dfn" href="../iupac.org/metrology.html#isdimensionlessquantity" id="ref-for-isdimensionlessquantity①">metrology:isDimensionlessQuantity</a> (must have value false)</p>
     </ul>
-    <p><em>Relations with source:</em></p>
-    <ul>
-     <li data-md>
-      <p>duration ← <a data-link-type="dfn" href="../iupac.org/metrology.html#hasmagnitude" id="ref-for-hasmagnitude①">metrology:HasMagnitude</a> → <a data-link-type="dfn" href="80000-3-units.html#unitoftimevalue" id="ref-for-unitoftimevalue">80000-3-units:UnitOfTimeValue</a></p>
-    </ul>
     <p><em>Relations with target:</em></p>
     <ul>
      <li data-md>
-      <p><a data-link-type="dfn" href="80000-6-quantities.html#electric-charge" id="ref-for-electric-charge">80000-6-quantities:electric-charge</a> ← <a data-link-type="dfn" href="80000-6-quantities.html#electric-charge-of-duration" id="ref-for-electric-charge-of-duration">80000-6-quantities:electric-charge-of-duration</a> → duration</p>
+      <p><a data-link-type="dfn" href="80000-6-quantities.html#electric-charge" id="ref-for-electric-charge">80000-6-quantities:electric-charge</a> ← <a data-link-type="dfn" href="80000-6-quantities.html#electric-charge-has-duration" id="ref-for-electric-charge-has-duration">80000-6-quantities:Electric-Charge-Has-Duration</a> → duration</p>
      <li data-md>
-      <p><a data-link-type="dfn" href="80000-4-quantities.html#impulse" id="ref-for-impulse">80000-4-quantities:impulse</a> ← <a data-link-type="dfn" href="80000-4-quantities.html#impulse-of-duration" id="ref-for-impulse-of-duration">80000-4-quantities:impulse-of-duration</a> → duration</p>
+      <p><a data-link-type="dfn" href="80000-4-quantities.html#impulse" id="ref-for-impulse">80000-4-quantities:impulse</a> ← <a data-link-type="dfn" href="80000-4-quantities.html#impulse-has-duration" id="ref-for-impulse-has-duration">80000-4-quantities:Impulse-Has-Duration</a> → duration</p>
      <li data-md>
-      <p><a data-link-type="dfn" href="80000-3-quantities.html#rotational-frequency" id="ref-for-rotational-frequency">rotational-frequency</a> ← <a data-link-type="dfn" href="80000-3-quantities.html#rotational-frequency-of-duration" id="ref-for-rotational-frequency-of-duration">rotational-frequency-of-duration</a> → duration</p>
+      <p><a data-link-type="dfn" href="80000-3-units.html#timemagnitude" id="ref-for-timemagnitude">80000-3-units:TimeMagnitude</a> ← <a data-link-type="dfn" href="../iupac.org/metrology.html#ismagnitudeof" id="ref-for-ismagnitudeof①">metrology:IsMagnitudeOf</a> → duration</p>
      <li data-md>
-      <p><a data-link-type="dfn" href="80000-3-quantities.html#velocity" id="ref-for-velocity">velocity</a> ← <a data-link-type="dfn" href="80000-3-quantities.html#velocity-of-duration" id="ref-for-velocity-of-duration">velocity-of-duration</a> → duration</p>
+      <p><a data-link-type="dfn" href="80000-3-quantities.html#rotational-frequency" id="ref-for-rotational-frequency">rotational-frequency</a> ← <a data-link-type="dfn" href="80000-3-quantities.html#rotational-frequency-has-duration" id="ref-for-rotational-frequency-has-duration">Rotational-Frequency-Has-Duration</a> → duration</p>
+     <li data-md>
+      <p><a data-link-type="dfn" href="80000-3-quantities.html#velocity" id="ref-for-velocity">velocity</a> ← <a data-link-type="dfn" href="80000-3-quantities.html#velocity-has-duration" id="ref-for-velocity-has-duration">Velocity-Has-Duration</a> → duration</p>
     </ul>
     <h3 class="heading settled" data-level="3.10" id="Frequency"><span class="secno">3.10. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="frequency">frequency<a class="self-link" href="#frequency"></a></dfn></span><a class="self-link" href="#Frequency"></a></h3>
     <p><em>Supertypes:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#derivedunitaryquantity" id="ref-for-derivedunitaryquantity①">metrology:DerivedUnitaryQuantity</a></p>
@@ -1915,9 +2086,12 @@ dfn > a.self-link::before      { content: "#"; }
     <p><em>Relations with source:</em></p>
     <ul>
      <li data-md>
-      <p>frequency ← <a data-link-type="dfn" href="../iupac.org/metrology.html#hasmagnitude" id="ref-for-hasmagnitude②">metrology:HasMagnitude</a> → <a data-link-type="dfn" href="80000-3-units.html#unitoffrequencyvalue" id="ref-for-unitoffrequencyvalue">80000-3-units:UnitOfFrequencyValue</a></p>
+      <p>frequency ← <a data-link-type="dfn" href="80000-3-quantities.html#frequency-has-period-duration" id="ref-for-frequency-has-period-duration">Frequency-Has-Period-Duration</a> → <a data-link-type="dfn" href="80000-3-quantities.html#period-duration" id="ref-for-period-duration①">period-duration</a></p>
+    </ul>
+    <p><em>Relations with target:</em></p>
+    <ul>
      <li data-md>
-      <p>frequency ← <a data-link-type="dfn" href="80000-3-quantities.html#frequency-of-period-duration" id="ref-for-frequency-of-period-duration">frequency-of-period-duration</a> → <a data-link-type="dfn" href="80000-3-quantities.html#period-duration" id="ref-for-period-duration①">period-duration</a></p>
+      <p><a data-link-type="dfn" href="80000-3-units.html#frequencymagnitude" id="ref-for-frequencymagnitude">80000-3-units:FrequencyMagnitude</a> ← <a data-link-type="dfn" href="../iupac.org/metrology.html#ismagnitudeof" id="ref-for-ismagnitudeof②">metrology:IsMagnitudeOf</a> → frequency</p>
     </ul>
     <h3 class="heading settled" data-level="3.11" id="Height"><span class="secno">3.11. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="height">height<a class="self-link" href="#height"></a></dfn></span><a class="self-link" href="#Height"></a></h3>
     <p><em>Supertypes:</em> <a data-link-type="dfn" href="80000-3-quantities.html#length" id="ref-for-length③">length</a></p>
@@ -1930,10 +2104,10 @@ dfn > a.self-link::before      { content: "#"; }
      <li data-md>
       <p><a data-link-type="dfn" href="../iupac.org/metrology.html#isdimensionlessquantity" id="ref-for-isdimensionlessquantity③">metrology:isDimensionlessQuantity</a> (must have value false)</p>
     </ul>
-    <p><em>Relations with source:</em></p>
+    <p><em>Relations with target:</em></p>
     <ul>
      <li data-md>
-      <p>length ← <a data-link-type="dfn" href="../iupac.org/metrology.html#hasmagnitude" id="ref-for-hasmagnitude③">metrology:HasMagnitude</a> → <a data-link-type="dfn" href="80000-3-units.html#unitoflengthvalue" id="ref-for-unitoflengthvalue">80000-3-units:UnitOfLengthValue</a></p>
+      <p><a data-link-type="dfn" href="80000-3-units.html#lengthmagnitude" id="ref-for-lengthmagnitude">80000-3-units:LengthMagnitude</a> ← <a data-link-type="dfn" href="../iupac.org/metrology.html#ismagnitudeof" id="ref-for-ismagnitudeof③">metrology:IsMagnitudeOf</a> → length</p>
     </ul>
     <h3 class="heading settled" data-level="3.13" id="Path-length"><span class="secno">3.13. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="path-length">path-length<a class="self-link" href="#path-length"></a></dfn></span><a class="self-link" href="#Path-length"></a></h3>
     <p><em>Supertypes:</em> <a data-link-type="dfn" href="80000-3-quantities.html#length" id="ref-for-length④">length</a></p>
@@ -1941,23 +2115,23 @@ dfn > a.self-link::before      { content: "#"; }
     <p><em>Relations with target:</em></p>
     <ul>
      <li data-md>
-      <p><a data-link-type="dfn" href="80000-6-quantities.html#electric-potential" id="ref-for-electric-potential">80000-6-quantities:electric-potential</a> ← <a data-link-type="dfn" href="80000-6-quantities.html#electric-potential-of-path-length" id="ref-for-electric-potential-of-path-length">80000-6-quantities:electric-potential-of-path-length</a> → path-length</p>
+      <p><a data-link-type="dfn" href="80000-6-quantities.html#electric-potential" id="ref-for-electric-potential">80000-6-quantities:electric-potential</a> ← <a data-link-type="dfn" href="80000-6-quantities.html#electric-potential-has-path-length" id="ref-for-electric-potential-has-path-length">80000-6-quantities:Electric-Potential-Has-Path-Length</a> → path-length</p>
      <li data-md>
-      <p><a data-link-type="dfn" href="80000-3-quantities.html#rotational-displacement" id="ref-for-rotational-displacement①">rotational-displacement</a> ← <a data-link-type="dfn" href="80000-3-quantities.html#rotational-displacement-of-path-length" id="ref-for-rotational-displacement-of-path-length">rotational-displacement-of-path-length</a> → path-length</p>
+      <p><a data-link-type="dfn" href="80000-3-quantities.html#rotational-displacement" id="ref-for-rotational-displacement①">rotational-displacement</a> ← <a data-link-type="dfn" href="80000-3-quantities.html#rotational-displacement-has-path-length" id="ref-for-rotational-displacement-has-path-length">Rotational-Displacement-Has-Path-Length</a> → path-length</p>
     </ul>
     <h3 class="heading settled" data-level="3.14" id="Period-duration"><span class="secno">3.14. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="period-duration">period-duration<a class="self-link" href="#period-duration"></a></dfn></span><a class="self-link" href="#Period-duration"></a></h3>
     <p><em>Supertypes:</em> <a data-link-type="dfn" href="80000-3-quantities.html#duration" id="ref-for-duration">duration</a></p>
     <p><em>Relations with target:</em></p>
     <ul>
      <li data-md>
-      <p><a data-link-type="dfn" href="80000-3-quantities.html#frequency" id="ref-for-frequency">frequency</a> ← <a data-link-type="dfn" href="80000-3-quantities.html#frequency-of-period-duration" id="ref-for-frequency-of-period-duration①">frequency-of-period-duration</a> → period-duration</p>
+      <p><a data-link-type="dfn" href="80000-3-quantities.html#frequency" id="ref-for-frequency">frequency</a> ← <a data-link-type="dfn" href="80000-3-quantities.html#frequency-has-period-duration" id="ref-for-frequency-has-period-duration①">Frequency-Has-Period-Duration</a> → period-duration</p>
     </ul>
     <h3 class="heading settled" data-level="3.15" id="Position-vector"><span class="secno">3.15. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="position-vector">position-vector<a class="self-link" href="#position-vector"></a></dfn></span><a class="self-link" href="#Position-vector"></a></h3>
     <p><em>Supertypes:</em> <a data-link-type="dfn" href="80000-3-quantities.html#length" id="ref-for-length⑤">length</a></p>
     <p><em>Relations with target:</em></p>
     <ul>
      <li data-md>
-      <p><a data-link-type="dfn" href="80000-3-quantities.html#velocity" id="ref-for-velocity①">velocity</a> ← <a data-link-type="dfn" href="80000-3-quantities.html#velocity-of-position-vector" id="ref-for-velocity-of-position-vector">velocity-of-position-vector</a> → position-vector</p>
+      <p><a data-link-type="dfn" href="80000-3-quantities.html#velocity" id="ref-for-velocity①">velocity</a> ← <a data-link-type="dfn" href="80000-3-quantities.html#velocity-has-position-vector" id="ref-for-velocity-has-position-vector">Velocity-Has-Position-Vector</a> → position-vector</p>
     </ul>
     <h3 class="heading settled" data-level="3.16" id="Radial-distance"><span class="secno">3.16. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="radial-distance">radial-distance<a class="self-link" href="#radial-distance"></a></dfn></span><a class="self-link" href="#Radial-distance"></a></h3>
     <p><em>Supertypes:</em> <a data-link-type="dfn" href="80000-3-quantities.html#length" id="ref-for-length⑥">length</a></p>
@@ -1966,7 +2140,7 @@ dfn > a.self-link::before      { content: "#"; }
     <p><em>Relations with target:</em></p>
     <ul>
      <li data-md>
-      <p><a data-link-type="dfn" href="80000-3-quantities.html#angular-measure" id="ref-for-angular-measure①">angular-measure</a> ← <a data-link-type="dfn" href="80000-3-quantities.html#angular-measure-of-radius" id="ref-for-angular-measure-of-radius①">angular-measure-of-radius</a> → radius</p>
+      <p><a data-link-type="dfn" href="80000-3-quantities.html#angular-measure" id="ref-for-angular-measure①">angular-measure</a> ← <a data-link-type="dfn" href="80000-3-quantities.html#angular-measure-has-radius" id="ref-for-angular-measure-has-radius①">Angular-Measure-Has-Radius</a> → radius</p>
     </ul>
     <h3 class="heading settled" data-level="3.18" id="Radius-of-curvature"><span class="secno">3.18. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="radius-of-curvature">radius-of-curvature<a class="self-link" href="#radius-of-curvature"></a></dfn></span><a class="self-link" href="#Radius-of-curvature"></a></h3>
     <p><em>Supertypes:</em> <a data-link-type="dfn" href="80000-3-quantities.html#length" id="ref-for-length⑧">length</a></p>
@@ -1980,14 +2154,14 @@ dfn > a.self-link::before      { content: "#"; }
     <p><em>Relations with source:</em></p>
     <ul>
      <li data-md>
-      <p>rotation ← <a data-link-type="dfn" href="../iupac.org/metrology.html#hasmagnitude" id="ref-for-hasmagnitude④">metrology:HasMagnitude</a> → <a data-link-type="dfn" href="80000-3-units.html#unitofrotationvalue" id="ref-for-unitofrotationvalue">80000-3-units:UnitOfRotationValue</a></p>
-     <li data-md>
-      <p>rotation ← <a data-link-type="dfn" href="80000-3-quantities.html#rotation-of-rotational-displacement" id="ref-for-rotation-of-rotational-displacement">rotation-of-rotational-displacement</a> → <a data-link-type="dfn" href="80000-3-quantities.html#rotational-displacement" id="ref-for-rotational-displacement②">rotational-displacement</a></p>
+      <p>rotation ← <a data-link-type="dfn" href="80000-3-quantities.html#rotation-has-rotational-displacement" id="ref-for-rotation-has-rotational-displacement">Rotation-Has-Rotational-Displacement</a> → <a data-link-type="dfn" href="80000-3-quantities.html#rotational-displacement" id="ref-for-rotational-displacement②">rotational-displacement</a></p>
     </ul>
     <p><em>Relations with target:</em></p>
     <ul>
      <li data-md>
-      <p><a data-link-type="dfn" href="80000-3-quantities.html#rotational-frequency" id="ref-for-rotational-frequency①">rotational-frequency</a> ← <a data-link-type="dfn" href="80000-3-quantities.html#rotational-frequency-of-rotation" id="ref-for-rotational-frequency-of-rotation">rotational-frequency-of-rotation</a> → rotation</p>
+      <p><a data-link-type="dfn" href="80000-3-units.html#rotationmagnitude" id="ref-for-rotationmagnitude">80000-3-units:RotationMagnitude</a> ← <a data-link-type="dfn" href="../iupac.org/metrology.html#ismagnitudeof" id="ref-for-ismagnitudeof④">metrology:IsMagnitudeOf</a> → rotation</p>
+     <li data-md>
+      <p><a data-link-type="dfn" href="80000-3-quantities.html#rotational-frequency" id="ref-for-rotational-frequency①">rotational-frequency</a> ← <a data-link-type="dfn" href="80000-3-quantities.html#rotational-frequency-has-rotation" id="ref-for-rotational-frequency-has-rotation">Rotational-Frequency-Has-Rotation</a> → rotation</p>
     </ul>
     <h3 class="heading settled" data-level="3.20" id="Rotational-displacement"><span class="secno">3.20. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="rotational-displacement">rotational-displacement<a class="self-link" href="#rotational-displacement"></a></dfn></span><a class="self-link" href="#Rotational-displacement"></a></h3>
     <p><em>Supertypes:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#derivedunitaryquantity" id="ref-for-derivedunitaryquantity③">metrology:DerivedUnitaryQuantity</a></p>
@@ -1999,16 +2173,16 @@ dfn > a.self-link::before      { content: "#"; }
     <p><em>Relations with source:</em></p>
     <ul>
      <li data-md>
-      <p>rotational-displacement ← <a data-link-type="dfn" href="../iupac.org/metrology.html#hasmagnitude" id="ref-for-hasmagnitude⑤">metrology:HasMagnitude</a> → <a data-link-type="dfn" href="80000-3-units.html#unitofangularmeasurevalue" id="ref-for-unitofangularmeasurevalue①">80000-3-units:UnitOfAngularMeasureValue</a></p>
+      <p>rotational-displacement ← <a data-link-type="dfn" href="80000-3-quantities.html#rotational-displacement-has-distance" id="ref-for-rotational-displacement-has-distance①">Rotational-Displacement-Has-Distance</a> → <a data-link-type="dfn" href="80000-3-quantities.html#distance" id="ref-for-distance①">distance</a></p>
      <li data-md>
-      <p>rotational-displacement ← <a data-link-type="dfn" href="80000-3-quantities.html#rotational-displacement-of-distance" id="ref-for-rotational-displacement-of-distance①">rotational-displacement-of-distance</a> → <a data-link-type="dfn" href="80000-3-quantities.html#distance" id="ref-for-distance①">distance</a></p>
-     <li data-md>
-      <p>rotational-displacement ← <a data-link-type="dfn" href="80000-3-quantities.html#rotational-displacement-of-path-length" id="ref-for-rotational-displacement-of-path-length①">rotational-displacement-of-path-length</a> → <a data-link-type="dfn" href="80000-3-quantities.html#path-length" id="ref-for-path-length②">path-length</a></p>
+      <p>rotational-displacement ← <a data-link-type="dfn" href="80000-3-quantities.html#rotational-displacement-has-path-length" id="ref-for-rotational-displacement-has-path-length①">Rotational-Displacement-Has-Path-Length</a> → <a data-link-type="dfn" href="80000-3-quantities.html#path-length" id="ref-for-path-length②">path-length</a></p>
     </ul>
     <p><em>Relations with target:</em></p>
     <ul>
      <li data-md>
-      <p><a data-link-type="dfn" href="80000-3-quantities.html#rotation" id="ref-for-rotation">rotation</a> ← <a data-link-type="dfn" href="80000-3-quantities.html#rotation-of-rotational-displacement" id="ref-for-rotation-of-rotational-displacement①">rotation-of-rotational-displacement</a> → rotational-displacement</p>
+      <p><a data-link-type="dfn" href="80000-3-units.html#angularmeasuremagnitude" id="ref-for-angularmeasuremagnitude①">80000-3-units:AngularMeasureMagnitude</a> ← <a data-link-type="dfn" href="../iupac.org/metrology.html#ismagnitudeof" id="ref-for-ismagnitudeof⑤">metrology:IsMagnitudeOf</a> → rotational-displacement</p>
+     <li data-md>
+      <p><a data-link-type="dfn" href="80000-3-quantities.html#rotation" id="ref-for-rotation">rotation</a> ← <a data-link-type="dfn" href="80000-3-quantities.html#rotation-has-rotational-displacement" id="ref-for-rotation-has-rotational-displacement①">Rotation-Has-Rotational-Displacement</a> → rotational-displacement</p>
     </ul>
     <h3 class="heading settled" data-level="3.21" id="Rotational-frequency"><span class="secno">3.21. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="rotational-frequency">rotational-frequency<a class="self-link" href="#rotational-frequency"></a></dfn></span><a class="self-link" href="#Rotational-frequency"></a></h3>
     <p><em>Supertypes:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#derivedunitaryquantity" id="ref-for-derivedunitaryquantity④">metrology:DerivedUnitaryQuantity</a></p>
@@ -2020,11 +2194,14 @@ dfn > a.self-link::before      { content: "#"; }
     <p><em>Relations with source:</em></p>
     <ul>
      <li data-md>
-      <p>rotational-frequency ← <a data-link-type="dfn" href="../iupac.org/metrology.html#hasmagnitude" id="ref-for-hasmagnitude⑥">metrology:HasMagnitude</a> → <a data-link-type="dfn" href="80000-3-units.html#unitoffrequencyvalue" id="ref-for-unitoffrequencyvalue①">80000-3-units:UnitOfFrequencyValue</a></p>
+      <p>rotational-frequency ← <a data-link-type="dfn" href="80000-3-quantities.html#rotational-frequency-has-duration" id="ref-for-rotational-frequency-has-duration①">Rotational-Frequency-Has-Duration</a> → <a data-link-type="dfn" href="80000-3-quantities.html#duration" id="ref-for-duration①">duration</a></p>
      <li data-md>
-      <p>rotational-frequency ← <a data-link-type="dfn" href="80000-3-quantities.html#rotational-frequency-of-duration" id="ref-for-rotational-frequency-of-duration①">rotational-frequency-of-duration</a> → <a data-link-type="dfn" href="80000-3-quantities.html#duration" id="ref-for-duration①">duration</a></p>
+      <p>rotational-frequency ← <a data-link-type="dfn" href="80000-3-quantities.html#rotational-frequency-has-rotation" id="ref-for-rotational-frequency-has-rotation①">Rotational-Frequency-Has-Rotation</a> → <a data-link-type="dfn" href="80000-3-quantities.html#rotation" id="ref-for-rotation①">rotation</a></p>
+    </ul>
+    <p><em>Relations with target:</em></p>
+    <ul>
      <li data-md>
-      <p>rotational-frequency ← <a data-link-type="dfn" href="80000-3-quantities.html#rotational-frequency-of-rotation" id="ref-for-rotational-frequency-of-rotation①">rotational-frequency-of-rotation</a> → <a data-link-type="dfn" href="80000-3-quantities.html#rotation" id="ref-for-rotation①">rotation</a></p>
+      <p><a data-link-type="dfn" href="80000-3-units.html#frequencymagnitude" id="ref-for-frequencymagnitude①">80000-3-units:FrequencyMagnitude</a> ← <a data-link-type="dfn" href="../iupac.org/metrology.html#ismagnitudeof" id="ref-for-ismagnitudeof⑥">metrology:IsMagnitudeOf</a> → rotational-frequency</p>
     </ul>
     <h3 class="heading settled" data-level="3.22" id="Thickness"><span class="secno">3.22. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="thickness">thickness<a class="self-link" href="#thickness"></a></dfn></span><a class="self-link" href="#Thickness"></a></h3>
     <p><em>Supertypes:</em> <a data-link-type="dfn" href="80000-3-quantities.html#length" id="ref-for-length⑨">length</a></p>
@@ -2038,129 +2215,129 @@ dfn > a.self-link::before      { content: "#"; }
     <p><em>Relations with source:</em></p>
     <ul>
      <li data-md>
-      <p>velocity ← <a data-link-type="dfn" href="../iupac.org/metrology.html#hasmagnitude" id="ref-for-hasmagnitude⑦">metrology:HasMagnitude</a> → <a data-link-type="dfn" href="80000-3-units.html#unitofvelocityvalue" id="ref-for-unitofvelocityvalue">80000-3-units:UnitOfVelocityValue</a></p>
+      <p>velocity ← <a data-link-type="dfn" href="80000-3-quantities.html#velocity-has-duration" id="ref-for-velocity-has-duration①">Velocity-Has-Duration</a> → <a data-link-type="dfn" href="80000-3-quantities.html#duration" id="ref-for-duration②">duration</a></p>
      <li data-md>
-      <p>velocity ← <a data-link-type="dfn" href="80000-3-quantities.html#velocity-of-duration" id="ref-for-velocity-of-duration①">velocity-of-duration</a> → <a data-link-type="dfn" href="80000-3-quantities.html#duration" id="ref-for-duration②">duration</a></p>
-     <li data-md>
-      <p>velocity ← <a data-link-type="dfn" href="80000-3-quantities.html#velocity-of-position-vector" id="ref-for-velocity-of-position-vector①">velocity-of-position-vector</a> → <a data-link-type="dfn" href="80000-3-quantities.html#position-vector" id="ref-for-position-vector①">position-vector</a></p>
+      <p>velocity ← <a data-link-type="dfn" href="80000-3-quantities.html#velocity-has-position-vector" id="ref-for-velocity-has-position-vector①">Velocity-Has-Position-Vector</a> → <a data-link-type="dfn" href="80000-3-quantities.html#position-vector" id="ref-for-position-vector①">position-vector</a></p>
     </ul>
     <p><em>Relations with target:</em></p>
     <ul>
      <li data-md>
-      <p><a data-link-type="dfn" href="80000-4-quantities.html#force" id="ref-for-force">80000-4-quantities:force</a> ← <a data-link-type="dfn" href="80000-4-quantities.html#force-of-velocity" id="ref-for-force-of-velocity">80000-4-quantities:force-of-velocity</a> → velocity</p>
+      <p><a data-link-type="dfn" href="80000-4-quantities.html#force" id="ref-for-force">80000-4-quantities:force</a> ← <a data-link-type="dfn" href="80000-4-quantities.html#force-has-velocity" id="ref-for-force-has-velocity">80000-4-quantities:Force-Has-Velocity</a> → velocity</p>
      <li data-md>
-      <p><a data-link-type="dfn" href="80000-4-quantities.html#momentum" id="ref-for-momentum">80000-4-quantities:momentum</a> ← <a data-link-type="dfn" href="80000-4-quantities.html#momentum-of-velocity" id="ref-for-momentum-of-velocity">80000-4-quantities:momentum-of-velocity</a> → velocity</p>
+      <p><a data-link-type="dfn" href="80000-3-units.html#velocitymagnitude" id="ref-for-velocitymagnitude">80000-3-units:VelocityMagnitude</a> ← <a data-link-type="dfn" href="../iupac.org/metrology.html#ismagnitudeof" id="ref-for-ismagnitudeof⑦">metrology:IsMagnitudeOf</a> → velocity</p>
      <li data-md>
-      <p><a data-link-type="dfn" href="80000-4-quantities.html#power" id="ref-for-power">80000-4-quantities:power</a> ← <a data-link-type="dfn" href="80000-4-quantities.html#power-of-velocity" id="ref-for-power-of-velocity">80000-4-quantities:power-of-velocity</a> → velocity</p>
+      <p><a data-link-type="dfn" href="80000-4-quantities.html#momentum" id="ref-for-momentum">80000-4-quantities:momentum</a> ← <a data-link-type="dfn" href="80000-4-quantities.html#momentum-has-velocity" id="ref-for-momentum-has-velocity">80000-4-quantities:Momentum-Has-Velocity</a> → velocity</p>
+     <li data-md>
+      <p><a data-link-type="dfn" href="80000-4-quantities.html#power" id="ref-for-power">80000-4-quantities:power</a> ← <a data-link-type="dfn" href="80000-4-quantities.html#power-has-velocity" id="ref-for-power-has-velocity">80000-4-quantities:Power-Has-Velocity</a> → velocity</p>
     </ul>
     <h3 class="heading settled" data-level="3.24" id="Width"><span class="secno">3.24. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="width">width<a class="self-link" href="#width"></a></dfn></span><a class="self-link" href="#Width"></a></h3>
     <p><em>Supertypes:</em> <a data-link-type="dfn" href="80000-3-quantities.html#length" id="ref-for-length①⓪">length</a></p>
     <p><em>Subtypes:</em> <a data-link-type="dfn" href="80000-3-quantities.html#breadth" id="ref-for-breadth">breadth</a></p>
     <h2 class="heading settled" data-level="4" id="Relations"><span class="secno">4. </span><span class="content">Relation Entities</span><a class="self-link" href="#Relations"></a></h2>
-    <h3 class="heading settled" data-level="4.1" id="Angular-measure-of-arc-length"><span class="secno">4.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="angular-measure-of-arc-length">angular-measure-of-arc-length<a class="self-link" href="#angular-measure-of-arc-length"></a></dfn></span><a class="self-link" href="#Angular-measure-of-arc-length"></a></h3>
+    <h3 class="heading settled" data-level="4.1" id="Angular-Measure-Has-Arc-Length"><span class="secno">4.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="angular-measure-has-arc-length">Angular-Measure-Has-Arc-Length<a class="self-link" href="#angular-measure-has-arc-length"></a></dfn></span><a class="self-link" href="#Angular-Measure-Has-Arc-Length"></a></h3>
     <p><em>Attributes:</em> Functional</p>
     <p><em>Source:</em> <a data-link-type="dfn" href="80000-3-quantities.html#angular-measure" id="ref-for-angular-measure②">angular-measure</a></p>
     <p><em>Target:</em> <a data-link-type="dfn" href="80000-3-quantities.html#arc-length" id="ref-for-arc-length②">arc-length</a></p>
-    <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="angular-measure-of-arc-length" data-dfn-type="attribute" data-export id="dom-angular-measure-of-arc-length-angular-measure-of-arc-length-forward"><code>angular-measure-of-arc-length-forward</code><a class="self-link" href="#dom-angular-measure-of-arc-length-angular-measure-of-arc-length-forward"></a></dfn></p>
+    <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="Angular-Measure-Has-Arc-Length" data-dfn-type="attribute" data-export id="dom-angular-measure-has-arc-length-angular-measure-has-arc-length"><code>angular-measure-has-arc-length</code><a class="self-link" href="#dom-angular-measure-has-arc-length-angular-measure-has-arc-length"></a></dfn></p>
     <p><em>Supertypes:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#hasfactorforunitaryquantity" id="ref-for-hasfactorforunitaryquantity">metrology:HasFactorForUnitaryQuantity</a></p>
     <p><em>Properties:</em></p>
     <ul>
      <li data-md>
       <p><a data-link-type="dfn" href="../iupac.org/metrology.html#exponent" id="ref-for-exponent">metrology:exponent</a> (must have value 1/1)</p>
     </ul>
-    <h3 class="heading settled" data-level="4.2" id="Angular-measure-of-radius"><span class="secno">4.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="angular-measure-of-radius">angular-measure-of-radius<a class="self-link" href="#angular-measure-of-radius"></a></dfn></span><a class="self-link" href="#Angular-measure-of-radius"></a></h3>
+    <h3 class="heading settled" data-level="4.2" id="Angular-Measure-Has-Radius"><span class="secno">4.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="angular-measure-has-radius">Angular-Measure-Has-Radius<a class="self-link" href="#angular-measure-has-radius"></a></dfn></span><a class="self-link" href="#Angular-Measure-Has-Radius"></a></h3>
     <p><em>Attributes:</em> Functional</p>
     <p><em>Source:</em> <a data-link-type="dfn" href="80000-3-quantities.html#angular-measure" id="ref-for-angular-measure③">angular-measure</a></p>
     <p><em>Target:</em> <a data-link-type="dfn" href="80000-3-quantities.html#radius" id="ref-for-radius②">radius</a></p>
-    <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="angular-measure-of-radius" data-dfn-type="attribute" data-export id="dom-angular-measure-of-radius-angular-measure-of-radius-forward"><code>angular-measure-of-radius-forward</code><a class="self-link" href="#dom-angular-measure-of-radius-angular-measure-of-radius-forward"></a></dfn></p>
+    <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="Angular-Measure-Has-Radius" data-dfn-type="attribute" data-export id="dom-angular-measure-has-radius-angular-measure-has-radius"><code>angular-measure-has-radius</code><a class="self-link" href="#dom-angular-measure-has-radius-angular-measure-has-radius"></a></dfn></p>
     <p><em>Supertypes:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#hasfactorforunitaryquantity" id="ref-for-hasfactorforunitaryquantity①">metrology:HasFactorForUnitaryQuantity</a></p>
     <p><em>Properties:</em></p>
     <ul>
      <li data-md>
       <p><a data-link-type="dfn" href="../iupac.org/metrology.html#exponent" id="ref-for-exponent①">metrology:exponent</a> (must have value -1/1)</p>
     </ul>
-    <h3 class="heading settled" data-level="4.3" id="Frequency-of-period-duration"><span class="secno">4.3. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="frequency-of-period-duration">frequency-of-period-duration<a class="self-link" href="#frequency-of-period-duration"></a></dfn></span><a class="self-link" href="#Frequency-of-period-duration"></a></h3>
+    <h3 class="heading settled" data-level="4.3" id="Frequency-Has-Period-Duration"><span class="secno">4.3. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="frequency-has-period-duration">Frequency-Has-Period-Duration<a class="self-link" href="#frequency-has-period-duration"></a></dfn></span><a class="self-link" href="#Frequency-Has-Period-Duration"></a></h3>
     <p><em>Attributes:</em> Functional</p>
     <p><em>Source:</em> <a data-link-type="dfn" href="80000-3-quantities.html#frequency" id="ref-for-frequency①">frequency</a></p>
     <p><em>Target:</em> <a data-link-type="dfn" href="80000-3-quantities.html#period-duration" id="ref-for-period-duration②">period-duration</a></p>
-    <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="frequency-of-period-duration" data-dfn-type="attribute" data-export id="dom-frequency-of-period-duration-frequency-of-period-duration-forward"><code>frequency-of-period-duration-forward</code><a class="self-link" href="#dom-frequency-of-period-duration-frequency-of-period-duration-forward"></a></dfn></p>
+    <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="Frequency-Has-Period-Duration" data-dfn-type="attribute" data-export id="dom-frequency-has-period-duration-frequency-has-period-duration"><code>frequency-has-period-duration</code><a class="self-link" href="#dom-frequency-has-period-duration-frequency-has-period-duration"></a></dfn></p>
     <p><em>Supertypes:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#hasfactorforunitaryquantity" id="ref-for-hasfactorforunitaryquantity②">metrology:HasFactorForUnitaryQuantity</a></p>
     <p><em>Properties:</em></p>
     <ul>
      <li data-md>
       <p><a data-link-type="dfn" href="../iupac.org/metrology.html#exponent" id="ref-for-exponent②">metrology:exponent</a> (must have value -1/1)</p>
     </ul>
-    <h3 class="heading settled" data-level="4.4" id="Rotation-of-rotational-displacement"><span class="secno">4.4. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="rotation-of-rotational-displacement">rotation-of-rotational-displacement<a class="self-link" href="#rotation-of-rotational-displacement"></a></dfn></span><a class="self-link" href="#Rotation-of-rotational-displacement"></a></h3>
+    <h3 class="heading settled" data-level="4.4" id="Rotation-Has-Rotational-Displacement"><span class="secno">4.4. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="rotation-has-rotational-displacement">Rotation-Has-Rotational-Displacement<a class="self-link" href="#rotation-has-rotational-displacement"></a></dfn></span><a class="self-link" href="#Rotation-Has-Rotational-Displacement"></a></h3>
     <p><em>Attributes:</em> Functional</p>
     <p><em>Source:</em> <a data-link-type="dfn" href="80000-3-quantities.html#rotation" id="ref-for-rotation②">rotation</a></p>
     <p><em>Target:</em> <a data-link-type="dfn" href="80000-3-quantities.html#rotational-displacement" id="ref-for-rotational-displacement③">rotational-displacement</a></p>
-    <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="rotation-of-rotational-displacement" data-dfn-type="attribute" data-export id="dom-rotation-of-rotational-displacement-rotation-of-rotational-displacement-forward"><code>rotation-of-rotational-displacement-forward</code><a class="self-link" href="#dom-rotation-of-rotational-displacement-rotation-of-rotational-displacement-forward"></a></dfn></p>
+    <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="Rotation-Has-Rotational-Displacement" data-dfn-type="attribute" data-export id="dom-rotation-has-rotational-displacement-rotation-has-rotational-displacement"><code>rotation-has-rotational-displacement</code><a class="self-link" href="#dom-rotation-has-rotational-displacement-rotation-has-rotational-displacement"></a></dfn></p>
     <p><em>Supertypes:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#hasfactorforunitaryquantity" id="ref-for-hasfactorforunitaryquantity③">metrology:HasFactorForUnitaryQuantity</a></p>
     <p><em>Properties:</em></p>
     <ul>
      <li data-md>
       <p><a data-link-type="dfn" href="../iupac.org/metrology.html#exponent" id="ref-for-exponent③">metrology:exponent</a> (must have value 1/1)</p>
     </ul>
-    <h3 class="heading settled" data-level="4.5" id="Rotational-displacement-of-distance"><span class="secno">4.5. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="rotational-displacement-of-distance">rotational-displacement-of-distance<a class="self-link" href="#rotational-displacement-of-distance"></a></dfn></span><a class="self-link" href="#Rotational-displacement-of-distance"></a></h3>
+    <h3 class="heading settled" data-level="4.5" id="Rotational-Displacement-Has-Distance"><span class="secno">4.5. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="rotational-displacement-has-distance">Rotational-Displacement-Has-Distance<a class="self-link" href="#rotational-displacement-has-distance"></a></dfn></span><a class="self-link" href="#Rotational-Displacement-Has-Distance"></a></h3>
     <p><em>Attributes:</em> Functional</p>
     <p><em>Source:</em> <a data-link-type="dfn" href="80000-3-quantities.html#rotational-displacement" id="ref-for-rotational-displacement④">rotational-displacement</a></p>
     <p><em>Target:</em> <a data-link-type="dfn" href="80000-3-quantities.html#distance" id="ref-for-distance②">distance</a></p>
-    <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="rotational-displacement-of-distance" data-dfn-type="attribute" data-export id="dom-rotational-displacement-of-distance-rotational-displacement-of-distance-forward"><code>rotational-displacement-of-distance-forward</code><a class="self-link" href="#dom-rotational-displacement-of-distance-rotational-displacement-of-distance-forward"></a></dfn></p>
+    <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="Rotational-Displacement-Has-Distance" data-dfn-type="attribute" data-export id="dom-rotational-displacement-has-distance-rotational-displacement-has-distance"><code>rotational-displacement-has-distance</code><a class="self-link" href="#dom-rotational-displacement-has-distance-rotational-displacement-has-distance"></a></dfn></p>
     <p><em>Supertypes:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#hasfactorforunitaryquantity" id="ref-for-hasfactorforunitaryquantity④">metrology:HasFactorForUnitaryQuantity</a></p>
     <p><em>Properties:</em></p>
     <ul>
      <li data-md>
       <p><a data-link-type="dfn" href="../iupac.org/metrology.html#exponent" id="ref-for-exponent④">metrology:exponent</a> (must have value -1/1)</p>
     </ul>
-    <h3 class="heading settled" data-level="4.6" id="Rotational-displacement-of-path-length"><span class="secno">4.6. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="rotational-displacement-of-path-length">rotational-displacement-of-path-length<a class="self-link" href="#rotational-displacement-of-path-length"></a></dfn></span><a class="self-link" href="#Rotational-displacement-of-path-length"></a></h3>
+    <h3 class="heading settled" data-level="4.6" id="Rotational-Displacement-Has-Path-Length"><span class="secno">4.6. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="rotational-displacement-has-path-length">Rotational-Displacement-Has-Path-Length<a class="self-link" href="#rotational-displacement-has-path-length"></a></dfn></span><a class="self-link" href="#Rotational-Displacement-Has-Path-Length"></a></h3>
     <p><em>Attributes:</em> Functional</p>
     <p><em>Source:</em> <a data-link-type="dfn" href="80000-3-quantities.html#rotational-displacement" id="ref-for-rotational-displacement⑤">rotational-displacement</a></p>
     <p><em>Target:</em> <a data-link-type="dfn" href="80000-3-quantities.html#path-length" id="ref-for-path-length③">path-length</a></p>
-    <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="rotational-displacement-of-path-length" data-dfn-type="attribute" data-export id="dom-rotational-displacement-of-path-length-rotational-displacement-of-path-length-forward"><code>rotational-displacement-of-path-length-forward</code><a class="self-link" href="#dom-rotational-displacement-of-path-length-rotational-displacement-of-path-length-forward"></a></dfn></p>
+    <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="Rotational-Displacement-Has-Path-Length" data-dfn-type="attribute" data-export id="dom-rotational-displacement-has-path-length-rotational-displacement-has-path-length"><code>rotational-displacement-has-path-length</code><a class="self-link" href="#dom-rotational-displacement-has-path-length-rotational-displacement-has-path-length"></a></dfn></p>
     <p><em>Supertypes:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#hasfactorforunitaryquantity" id="ref-for-hasfactorforunitaryquantity⑤">metrology:HasFactorForUnitaryQuantity</a></p>
     <p><em>Properties:</em></p>
     <ul>
      <li data-md>
       <p><a data-link-type="dfn" href="../iupac.org/metrology.html#exponent" id="ref-for-exponent⑤">metrology:exponent</a> (must have value 1/1)</p>
     </ul>
-    <h3 class="heading settled" data-level="4.7" id="Rotational-frequency-of-duration"><span class="secno">4.7. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="rotational-frequency-of-duration">rotational-frequency-of-duration<a class="self-link" href="#rotational-frequency-of-duration"></a></dfn></span><a class="self-link" href="#Rotational-frequency-of-duration"></a></h3>
+    <h3 class="heading settled" data-level="4.7" id="Rotational-Frequency-Has-Duration"><span class="secno">4.7. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="rotational-frequency-has-duration">Rotational-Frequency-Has-Duration<a class="self-link" href="#rotational-frequency-has-duration"></a></dfn></span><a class="self-link" href="#Rotational-Frequency-Has-Duration"></a></h3>
     <p><em>Attributes:</em> Functional</p>
     <p><em>Source:</em> <a data-link-type="dfn" href="80000-3-quantities.html#rotational-frequency" id="ref-for-rotational-frequency②">rotational-frequency</a></p>
     <p><em>Target:</em> <a data-link-type="dfn" href="80000-3-quantities.html#duration" id="ref-for-duration③">duration</a></p>
-    <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="rotational-frequency-of-duration" data-dfn-type="attribute" data-export id="dom-rotational-frequency-of-duration-rotational-frequency-of-duration-forward"><code>rotational-frequency-of-duration-forward</code><a class="self-link" href="#dom-rotational-frequency-of-duration-rotational-frequency-of-duration-forward"></a></dfn></p>
+    <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="Rotational-Frequency-Has-Duration" data-dfn-type="attribute" data-export id="dom-rotational-frequency-has-duration-rotational-frequency-has-duration"><code>rotational-frequency-has-duration</code><a class="self-link" href="#dom-rotational-frequency-has-duration-rotational-frequency-has-duration"></a></dfn></p>
     <p><em>Supertypes:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#hasfactorforunitaryquantity" id="ref-for-hasfactorforunitaryquantity⑥">metrology:HasFactorForUnitaryQuantity</a></p>
     <p><em>Properties:</em></p>
     <ul>
      <li data-md>
       <p><a data-link-type="dfn" href="../iupac.org/metrology.html#exponent" id="ref-for-exponent⑥">metrology:exponent</a> (must have value -1/1)</p>
     </ul>
-    <h3 class="heading settled" data-level="4.8" id="Rotational-frequency-of-rotation"><span class="secno">4.8. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="rotational-frequency-of-rotation">rotational-frequency-of-rotation<a class="self-link" href="#rotational-frequency-of-rotation"></a></dfn></span><a class="self-link" href="#Rotational-frequency-of-rotation"></a></h3>
+    <h3 class="heading settled" data-level="4.8" id="Rotational-Frequency-Has-Rotation"><span class="secno">4.8. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="rotational-frequency-has-rotation">Rotational-Frequency-Has-Rotation<a class="self-link" href="#rotational-frequency-has-rotation"></a></dfn></span><a class="self-link" href="#Rotational-Frequency-Has-Rotation"></a></h3>
     <p><em>Attributes:</em> Functional</p>
     <p><em>Source:</em> <a data-link-type="dfn" href="80000-3-quantities.html#rotational-frequency" id="ref-for-rotational-frequency③">rotational-frequency</a></p>
     <p><em>Target:</em> <a data-link-type="dfn" href="80000-3-quantities.html#rotation" id="ref-for-rotation③">rotation</a></p>
-    <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="rotational-frequency-of-rotation" data-dfn-type="attribute" data-export id="dom-rotational-frequency-of-rotation-rotational-frequency-of-rotation-forward"><code>rotational-frequency-of-rotation-forward</code><a class="self-link" href="#dom-rotational-frequency-of-rotation-rotational-frequency-of-rotation-forward"></a></dfn></p>
+    <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="Rotational-Frequency-Has-Rotation" data-dfn-type="attribute" data-export id="dom-rotational-frequency-has-rotation-rotational-frequency-has-rotation"><code>rotational-frequency-has-rotation</code><a class="self-link" href="#dom-rotational-frequency-has-rotation-rotational-frequency-has-rotation"></a></dfn></p>
     <p><em>Supertypes:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#hasfactorforunitaryquantity" id="ref-for-hasfactorforunitaryquantity⑦">metrology:HasFactorForUnitaryQuantity</a></p>
     <p><em>Properties:</em></p>
     <ul>
      <li data-md>
       <p><a data-link-type="dfn" href="../iupac.org/metrology.html#exponent" id="ref-for-exponent⑦">metrology:exponent</a> (must have value 1/1)</p>
     </ul>
-    <h3 class="heading settled" data-level="4.9" id="Velocity-of-duration"><span class="secno">4.9. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="velocity-of-duration">velocity-of-duration<a class="self-link" href="#velocity-of-duration"></a></dfn></span><a class="self-link" href="#Velocity-of-duration"></a></h3>
+    <h3 class="heading settled" data-level="4.9" id="Velocity-Has-Duration"><span class="secno">4.9. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="velocity-has-duration">Velocity-Has-Duration<a class="self-link" href="#velocity-has-duration"></a></dfn></span><a class="self-link" href="#Velocity-Has-Duration"></a></h3>
     <p><em>Attributes:</em> Functional</p>
     <p><em>Source:</em> <a data-link-type="dfn" href="80000-3-quantities.html#velocity" id="ref-for-velocity②">velocity</a></p>
     <p><em>Target:</em> <a data-link-type="dfn" href="80000-3-quantities.html#duration" id="ref-for-duration④">duration</a></p>
-    <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="velocity-of-duration" data-dfn-type="attribute" data-export id="dom-velocity-of-duration-velocity-of-duration-forward"><code>velocity-of-duration-forward</code><a class="self-link" href="#dom-velocity-of-duration-velocity-of-duration-forward"></a></dfn></p>
+    <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="Velocity-Has-Duration" data-dfn-type="attribute" data-export id="dom-velocity-has-duration-velocity-has-duration"><code>velocity-has-duration</code><a class="self-link" href="#dom-velocity-has-duration-velocity-has-duration"></a></dfn></p>
     <p><em>Supertypes:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#hasfactorforunitaryquantity" id="ref-for-hasfactorforunitaryquantity⑧">metrology:HasFactorForUnitaryQuantity</a></p>
     <p><em>Properties:</em></p>
     <ul>
      <li data-md>
       <p><a data-link-type="dfn" href="../iupac.org/metrology.html#exponent" id="ref-for-exponent⑧">metrology:exponent</a> (must have value -1/1)</p>
     </ul>
-    <h3 class="heading settled" data-level="4.10" id="Velocity-of-position-vector"><span class="secno">4.10. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="velocity-of-position-vector">velocity-of-position-vector<a class="self-link" href="#velocity-of-position-vector"></a></dfn></span><a class="self-link" href="#Velocity-of-position-vector"></a></h3>
+    <h3 class="heading settled" data-level="4.10" id="Velocity-Has-Position-Vector"><span class="secno">4.10. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="velocity-has-position-vector">Velocity-Has-Position-Vector<a class="self-link" href="#velocity-has-position-vector"></a></dfn></span><a class="self-link" href="#Velocity-Has-Position-Vector"></a></h3>
     <p><em>Attributes:</em> Functional</p>
     <p><em>Source:</em> <a data-link-type="dfn" href="80000-3-quantities.html#velocity" id="ref-for-velocity③">velocity</a></p>
     <p><em>Target:</em> <a data-link-type="dfn" href="80000-3-quantities.html#position-vector" id="ref-for-position-vector②">position-vector</a></p>
-    <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="velocity-of-position-vector" data-dfn-type="attribute" data-export id="dom-velocity-of-position-vector-velocity-of-position-vector-forward"><code>velocity-of-position-vector-forward</code><a class="self-link" href="#dom-velocity-of-position-vector-velocity-of-position-vector-forward"></a></dfn></p>
+    <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="Velocity-Has-Position-Vector" data-dfn-type="attribute" data-export id="dom-velocity-has-position-vector-velocity-has-position-vector"><code>velocity-has-position-vector</code><a class="self-link" href="#dom-velocity-has-position-vector-velocity-has-position-vector"></a></dfn></p>
     <p><em>Supertypes:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#hasfactorforunitaryquantity" id="ref-for-hasfactorforunitaryquantity⑨">metrology:HasFactorForUnitaryQuantity</a></p>
     <p><em>Properties:</em></p>
     <ul>
@@ -2303,10 +2480,10 @@ dfn > a.self-link::before      { content: "#"; }
   <ul class="index">
    <li><a href="#altitude">altitude</a><span>, in §3.1</span>
    <li><a href="#angular-measure">angular-measure</a><span>, in §3.2</span>
-   <li><a href="#angular-measure-of-arc-length">angular-measure-of-arc-length</a><span>, in §4.1</span>
-   <li><a href="#dom-angular-measure-of-arc-length-angular-measure-of-arc-length-forward">angular-measure-of-arc-length-forward</a><span>, in §4.1</span>
-   <li><a href="#angular-measure-of-radius">angular-measure-of-radius</a><span>, in §4.2</span>
-   <li><a href="#dom-angular-measure-of-radius-angular-measure-of-radius-forward">angular-measure-of-radius-forward</a><span>, in §4.2</span>
+   <li><a href="#angular-measure-has-arc-length">Angular-Measure-Has-Arc-Length</a><span>, in §4.1</span>
+   <li><a href="#dom-angular-measure-has-arc-length-angular-measure-has-arc-length">angular-measure-has-arc-length</a><span>, in §4.1</span>
+   <li><a href="#angular-measure-has-radius">Angular-Measure-Has-Radius</a><span>, in §4.2</span>
+   <li><a href="#dom-angular-measure-has-radius-angular-measure-has-radius">angular-measure-has-radius</a><span>, in §4.2</span>
    <li><a href="#arc-length">arc-length</a><span>, in §3.3</span>
    <li><a href="#breadth">breadth</a><span>, in §3.4</span>
    <li><a href="#depth">depth</a><span>, in §3.5</span>
@@ -2315,8 +2492,8 @@ dfn > a.self-link::before      { content: "#"; }
    <li><a href="#distance">distance</a><span>, in §3.8</span>
    <li><a href="#duration">duration</a><span>, in §3.9</span>
    <li><a href="#frequency">frequency</a><span>, in §3.10</span>
-   <li><a href="#frequency-of-period-duration">frequency-of-period-duration</a><span>, in §4.3</span>
-   <li><a href="#dom-frequency-of-period-duration-frequency-of-period-duration-forward">frequency-of-period-duration-forward</a><span>, in §4.3</span>
+   <li><a href="#frequency-has-period-duration">Frequency-Has-Period-Duration</a><span>, in §4.3</span>
+   <li><a href="#dom-frequency-has-period-duration-frequency-has-period-duration">frequency-has-period-duration</a><span>, in §4.3</span>
    <li><a href="#height">height</a><span>, in §3.11</span>
    <li><a href="#length">length</a><span>, in §3.12</span>
    <li><a href="#path-length">path-length</a><span>, in §3.13</span>
@@ -2327,23 +2504,23 @@ dfn > a.self-link::before      { content: "#"; }
    <li><a href="#radius-of-curvature">radius-of-curvature</a><span>, in §3.18</span>
    <li><a href="#rotation">rotation</a><span>, in §3.19</span>
    <li><a href="#rotational-displacement">rotational-displacement</a><span>, in §3.20</span>
-   <li><a href="#rotational-displacement-of-distance">rotational-displacement-of-distance</a><span>, in §4.5</span>
-   <li><a href="#dom-rotational-displacement-of-distance-rotational-displacement-of-distance-forward">rotational-displacement-of-distance-forward</a><span>, in §4.5</span>
-   <li><a href="#rotational-displacement-of-path-length">rotational-displacement-of-path-length</a><span>, in §4.6</span>
-   <li><a href="#dom-rotational-displacement-of-path-length-rotational-displacement-of-path-length-forward">rotational-displacement-of-path-length-forward</a><span>, in §4.6</span>
+   <li><a href="#rotational-displacement-has-distance">Rotational-Displacement-Has-Distance</a><span>, in §4.5</span>
+   <li><a href="#dom-rotational-displacement-has-distance-rotational-displacement-has-distance">rotational-displacement-has-distance</a><span>, in §4.5</span>
+   <li><a href="#rotational-displacement-has-path-length">Rotational-Displacement-Has-Path-Length</a><span>, in §4.6</span>
+   <li><a href="#dom-rotational-displacement-has-path-length-rotational-displacement-has-path-length">rotational-displacement-has-path-length</a><span>, in §4.6</span>
    <li><a href="#rotational-frequency">rotational-frequency</a><span>, in §3.21</span>
-   <li><a href="#rotational-frequency-of-duration">rotational-frequency-of-duration</a><span>, in §4.7</span>
-   <li><a href="#dom-rotational-frequency-of-duration-rotational-frequency-of-duration-forward">rotational-frequency-of-duration-forward</a><span>, in §4.7</span>
-   <li><a href="#rotational-frequency-of-rotation">rotational-frequency-of-rotation</a><span>, in §4.8</span>
-   <li><a href="#dom-rotational-frequency-of-rotation-rotational-frequency-of-rotation-forward">rotational-frequency-of-rotation-forward</a><span>, in §4.8</span>
-   <li><a href="#rotation-of-rotational-displacement">rotation-of-rotational-displacement</a><span>, in §4.4</span>
-   <li><a href="#dom-rotation-of-rotational-displacement-rotation-of-rotational-displacement-forward">rotation-of-rotational-displacement-forward</a><span>, in §4.4</span>
+   <li><a href="#rotational-frequency-has-duration">Rotational-Frequency-Has-Duration</a><span>, in §4.7</span>
+   <li><a href="#dom-rotational-frequency-has-duration-rotational-frequency-has-duration">rotational-frequency-has-duration</a><span>, in §4.7</span>
+   <li><a href="#rotational-frequency-has-rotation">Rotational-Frequency-Has-Rotation</a><span>, in §4.8</span>
+   <li><a href="#dom-rotational-frequency-has-rotation-rotational-frequency-has-rotation">rotational-frequency-has-rotation</a><span>, in §4.8</span>
+   <li><a href="#rotation-has-rotational-displacement">Rotation-Has-Rotational-Displacement</a><span>, in §4.4</span>
+   <li><a href="#dom-rotation-has-rotational-displacement-rotation-has-rotational-displacement">rotation-has-rotational-displacement</a><span>, in §4.4</span>
    <li><a href="#thickness">thickness</a><span>, in §3.22</span>
    <li><a href="#velocity">velocity</a><span>, in §3.23</span>
-   <li><a href="#velocity-of-duration">velocity-of-duration</a><span>, in §4.9</span>
-   <li><a href="#dom-velocity-of-duration-velocity-of-duration-forward">velocity-of-duration-forward</a><span>, in §4.9</span>
-   <li><a href="#velocity-of-position-vector">velocity-of-position-vector</a><span>, in §4.10</span>
-   <li><a href="#dom-velocity-of-position-vector-velocity-of-position-vector-forward">velocity-of-position-vector-forward</a><span>, in §4.10</span>
+   <li><a href="#velocity-has-duration">Velocity-Has-Duration</a><span>, in §4.9</span>
+   <li><a href="#dom-velocity-has-duration-velocity-has-duration">velocity-has-duration</a><span>, in §4.9</span>
+   <li><a href="#velocity-has-position-vector">Velocity-Has-Position-Vector</a><span>, in §4.10</span>
+   <li><a href="#dom-velocity-has-position-vector-velocity-has-position-vector">velocity-has-position-vector</a><span>, in §4.10</span>
    <li><a href="#width">width</a><span>, in §3.24</span>
   </ul>
   <aside class="dfn-panel" data-for="term-for-altitude">
@@ -2357,22 +2534,22 @@ dfn > a.self-link::before      { content: "#"; }
    <ul>
     <li><a href="#ref-for-angular-measure">3.3. arc-length</a>
     <li><a href="#ref-for-angular-measure①">3.17. radius</a>
-    <li><a href="#ref-for-angular-measure②">4.1. angular-measure-of-arc-length</a>
-    <li><a href="#ref-for-angular-measure③">4.2. angular-measure-of-radius</a>
+    <li><a href="#ref-for-angular-measure②">4.1. Angular-Measure-Has-Arc-Length</a>
+    <li><a href="#ref-for-angular-measure③">4.2. Angular-Measure-Has-Radius</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-angular-measure-of-arc-length">
-   <a href="80000-3-quantities.html#angular-measure-of-arc-length">80000-3-quantities.html#angular-measure-of-arc-length</a><b>Referenced in:</b>
+  <aside class="dfn-panel" data-for="term-for-angular-measure-has-arc-length">
+   <a href="80000-3-quantities.html#angular-measure-has-arc-length">80000-3-quantities.html#angular-measure-has-arc-length</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-angular-measure-of-arc-length">3.2. angular-measure</a>
-    <li><a href="#ref-for-angular-measure-of-arc-length①">3.3. arc-length</a>
+    <li><a href="#ref-for-angular-measure-has-arc-length">3.2. angular-measure</a>
+    <li><a href="#ref-for-angular-measure-has-arc-length①">3.3. arc-length</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-angular-measure-of-radius">
-   <a href="80000-3-quantities.html#angular-measure-of-radius">80000-3-quantities.html#angular-measure-of-radius</a><b>Referenced in:</b>
+  <aside class="dfn-panel" data-for="term-for-angular-measure-has-radius">
+   <a href="80000-3-quantities.html#angular-measure-has-radius">80000-3-quantities.html#angular-measure-has-radius</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-angular-measure-of-radius">3.2. angular-measure</a>
-    <li><a href="#ref-for-angular-measure-of-radius①">3.17. radius</a>
+    <li><a href="#ref-for-angular-measure-has-radius">3.2. angular-measure</a>
+    <li><a href="#ref-for-angular-measure-has-radius①">3.17. radius</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-arc-length">
@@ -2380,7 +2557,7 @@ dfn > a.self-link::before      { content: "#"; }
    <ul>
     <li><a href="#ref-for-arc-length">3.2. angular-measure</a>
     <li><a href="#ref-for-arc-length①">3.13. path-length</a>
-    <li><a href="#ref-for-arc-length②">4.1. angular-measure-of-arc-length</a>
+    <li><a href="#ref-for-arc-length②">4.1. Angular-Measure-Has-Arc-Length</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-breadth">
@@ -2412,7 +2589,7 @@ dfn > a.self-link::before      { content: "#"; }
    <ul>
     <li><a href="#ref-for-distance">3.12. length</a>
     <li><a href="#ref-for-distance①">3.20. rotational-displacement</a>
-    <li><a href="#ref-for-distance②">4.5. rotational-displacement-of-distance</a>
+    <li><a href="#ref-for-distance②">4.5. Rotational-Displacement-Has-Distance</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-duration">
@@ -2421,22 +2598,22 @@ dfn > a.self-link::before      { content: "#"; }
     <li><a href="#ref-for-duration">3.14. period-duration</a>
     <li><a href="#ref-for-duration①">3.21. rotational-frequency</a>
     <li><a href="#ref-for-duration②">3.23. velocity</a>
-    <li><a href="#ref-for-duration③">4.7. rotational-frequency-of-duration</a>
-    <li><a href="#ref-for-duration④">4.9. velocity-of-duration</a>
+    <li><a href="#ref-for-duration③">4.7. Rotational-Frequency-Has-Duration</a>
+    <li><a href="#ref-for-duration④">4.9. Velocity-Has-Duration</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-frequency">
    <a href="80000-3-quantities.html#frequency">80000-3-quantities.html#frequency</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-frequency">3.14. period-duration</a>
-    <li><a href="#ref-for-frequency①">4.3. frequency-of-period-duration</a>
+    <li><a href="#ref-for-frequency①">4.3. Frequency-Has-Period-Duration</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-frequency-of-period-duration">
-   <a href="80000-3-quantities.html#frequency-of-period-duration">80000-3-quantities.html#frequency-of-period-duration</a><b>Referenced in:</b>
+  <aside class="dfn-panel" data-for="term-for-frequency-has-period-duration">
+   <a href="80000-3-quantities.html#frequency-has-period-duration">80000-3-quantities.html#frequency-has-period-duration</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-frequency-of-period-duration">3.10. frequency</a>
-    <li><a href="#ref-for-frequency-of-period-duration①">3.14. period-duration</a>
+    <li><a href="#ref-for-frequency-has-period-duration">3.10. frequency</a>
+    <li><a href="#ref-for-frequency-has-period-duration①">3.14. period-duration</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-height">
@@ -2469,7 +2646,7 @@ dfn > a.self-link::before      { content: "#"; }
     <li><a href="#ref-for-path-length">3.3. arc-length</a>
     <li><a href="#ref-for-path-length①">3.12. length</a>
     <li><a href="#ref-for-path-length②">3.20. rotational-displacement</a>
-    <li><a href="#ref-for-path-length③">4.6. rotational-displacement-of-path-length</a>
+    <li><a href="#ref-for-path-length③">4.6. Rotational-Displacement-Has-Path-Length</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-period-duration">
@@ -2477,7 +2654,7 @@ dfn > a.self-link::before      { content: "#"; }
    <ul>
     <li><a href="#ref-for-period-duration">3.9. duration</a>
     <li><a href="#ref-for-period-duration①">3.10. frequency</a>
-    <li><a href="#ref-for-period-duration②">4.3. frequency-of-period-duration</a>
+    <li><a href="#ref-for-period-duration②">4.3. Frequency-Has-Period-Duration</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-position-vector">
@@ -2485,7 +2662,7 @@ dfn > a.self-link::before      { content: "#"; }
    <ul>
     <li><a href="#ref-for-position-vector">3.12. length</a>
     <li><a href="#ref-for-position-vector①">3.23. velocity</a>
-    <li><a href="#ref-for-position-vector②">4.10. velocity-of-position-vector</a>
+    <li><a href="#ref-for-position-vector②">4.10. Velocity-Has-Position-Vector</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-radial-distance">
@@ -2499,7 +2676,7 @@ dfn > a.self-link::before      { content: "#"; }
    <ul>
     <li><a href="#ref-for-radius">3.2. angular-measure</a>
     <li><a href="#ref-for-radius①">3.12. length</a>
-    <li><a href="#ref-for-radius②">4.2. angular-measure-of-radius</a>
+    <li><a href="#ref-for-radius②">4.2. Angular-Measure-Has-Radius</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-radius-of-curvature">
@@ -2513,15 +2690,15 @@ dfn > a.self-link::before      { content: "#"; }
    <ul>
     <li><a href="#ref-for-rotation">3.20. rotational-displacement</a>
     <li><a href="#ref-for-rotation①">3.21. rotational-frequency</a>
-    <li><a href="#ref-for-rotation②">4.4. rotation-of-rotational-displacement</a>
-    <li><a href="#ref-for-rotation③">4.8. rotational-frequency-of-rotation</a>
+    <li><a href="#ref-for-rotation②">4.4. Rotation-Has-Rotational-Displacement</a>
+    <li><a href="#ref-for-rotation③">4.8. Rotational-Frequency-Has-Rotation</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-rotation-of-rotational-displacement">
-   <a href="80000-3-quantities.html#rotation-of-rotational-displacement">80000-3-quantities.html#rotation-of-rotational-displacement</a><b>Referenced in:</b>
+  <aside class="dfn-panel" data-for="term-for-rotation-has-rotational-displacement">
+   <a href="80000-3-quantities.html#rotation-has-rotational-displacement">80000-3-quantities.html#rotation-has-rotational-displacement</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-rotation-of-rotational-displacement">3.19. rotation</a>
-    <li><a href="#ref-for-rotation-of-rotational-displacement①">3.20. rotational-displacement</a>
+    <li><a href="#ref-for-rotation-has-rotational-displacement">3.19. rotation</a>
+    <li><a href="#ref-for-rotation-has-rotational-displacement①">3.20. rotational-displacement</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-rotational-displacement">
@@ -2530,23 +2707,23 @@ dfn > a.self-link::before      { content: "#"; }
     <li><a href="#ref-for-rotational-displacement">3.8. distance</a>
     <li><a href="#ref-for-rotational-displacement①">3.13. path-length</a>
     <li><a href="#ref-for-rotational-displacement②">3.19. rotation</a>
-    <li><a href="#ref-for-rotational-displacement③">4.4. rotation-of-rotational-displacement</a>
-    <li><a href="#ref-for-rotational-displacement④">4.5. rotational-displacement-of-distance</a>
-    <li><a href="#ref-for-rotational-displacement⑤">4.6. rotational-displacement-of-path-length</a>
+    <li><a href="#ref-for-rotational-displacement③">4.4. Rotation-Has-Rotational-Displacement</a>
+    <li><a href="#ref-for-rotational-displacement④">4.5. Rotational-Displacement-Has-Distance</a>
+    <li><a href="#ref-for-rotational-displacement⑤">4.6. Rotational-Displacement-Has-Path-Length</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-rotational-displacement-of-distance">
-   <a href="80000-3-quantities.html#rotational-displacement-of-distance">80000-3-quantities.html#rotational-displacement-of-distance</a><b>Referenced in:</b>
+  <aside class="dfn-panel" data-for="term-for-rotational-displacement-has-distance">
+   <a href="80000-3-quantities.html#rotational-displacement-has-distance">80000-3-quantities.html#rotational-displacement-has-distance</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-rotational-displacement-of-distance">3.8. distance</a>
-    <li><a href="#ref-for-rotational-displacement-of-distance①">3.20. rotational-displacement</a>
+    <li><a href="#ref-for-rotational-displacement-has-distance">3.8. distance</a>
+    <li><a href="#ref-for-rotational-displacement-has-distance①">3.20. rotational-displacement</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-rotational-displacement-of-path-length">
-   <a href="80000-3-quantities.html#rotational-displacement-of-path-length">80000-3-quantities.html#rotational-displacement-of-path-length</a><b>Referenced in:</b>
+  <aside class="dfn-panel" data-for="term-for-rotational-displacement-has-path-length">
+   <a href="80000-3-quantities.html#rotational-displacement-has-path-length">80000-3-quantities.html#rotational-displacement-has-path-length</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-rotational-displacement-of-path-length">3.13. path-length</a>
-    <li><a href="#ref-for-rotational-displacement-of-path-length①">3.20. rotational-displacement</a>
+    <li><a href="#ref-for-rotational-displacement-has-path-length">3.13. path-length</a>
+    <li><a href="#ref-for-rotational-displacement-has-path-length①">3.20. rotational-displacement</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-rotational-frequency">
@@ -2554,22 +2731,22 @@ dfn > a.self-link::before      { content: "#"; }
    <ul>
     <li><a href="#ref-for-rotational-frequency">3.9. duration</a>
     <li><a href="#ref-for-rotational-frequency①">3.19. rotation</a>
-    <li><a href="#ref-for-rotational-frequency②">4.7. rotational-frequency-of-duration</a>
-    <li><a href="#ref-for-rotational-frequency③">4.8. rotational-frequency-of-rotation</a>
+    <li><a href="#ref-for-rotational-frequency②">4.7. Rotational-Frequency-Has-Duration</a>
+    <li><a href="#ref-for-rotational-frequency③">4.8. Rotational-Frequency-Has-Rotation</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-rotational-frequency-of-duration">
-   <a href="80000-3-quantities.html#rotational-frequency-of-duration">80000-3-quantities.html#rotational-frequency-of-duration</a><b>Referenced in:</b>
+  <aside class="dfn-panel" data-for="term-for-rotational-frequency-has-duration">
+   <a href="80000-3-quantities.html#rotational-frequency-has-duration">80000-3-quantities.html#rotational-frequency-has-duration</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-rotational-frequency-of-duration">3.9. duration</a>
-    <li><a href="#ref-for-rotational-frequency-of-duration①">3.21. rotational-frequency</a>
+    <li><a href="#ref-for-rotational-frequency-has-duration">3.9. duration</a>
+    <li><a href="#ref-for-rotational-frequency-has-duration①">3.21. rotational-frequency</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-rotational-frequency-of-rotation">
-   <a href="80000-3-quantities.html#rotational-frequency-of-rotation">80000-3-quantities.html#rotational-frequency-of-rotation</a><b>Referenced in:</b>
+  <aside class="dfn-panel" data-for="term-for-rotational-frequency-has-rotation">
+   <a href="80000-3-quantities.html#rotational-frequency-has-rotation">80000-3-quantities.html#rotational-frequency-has-rotation</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-rotational-frequency-of-rotation">3.19. rotation</a>
-    <li><a href="#ref-for-rotational-frequency-of-rotation①">3.21. rotational-frequency</a>
+    <li><a href="#ref-for-rotational-frequency-has-rotation">3.19. rotation</a>
+    <li><a href="#ref-for-rotational-frequency-has-rotation①">3.21. rotational-frequency</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-thickness">
@@ -2583,22 +2760,22 @@ dfn > a.self-link::before      { content: "#"; }
    <ul>
     <li><a href="#ref-for-velocity">3.9. duration</a>
     <li><a href="#ref-for-velocity①">3.15. position-vector</a>
-    <li><a href="#ref-for-velocity②">4.9. velocity-of-duration</a>
-    <li><a href="#ref-for-velocity③">4.10. velocity-of-position-vector</a>
+    <li><a href="#ref-for-velocity②">4.9. Velocity-Has-Duration</a>
+    <li><a href="#ref-for-velocity③">4.10. Velocity-Has-Position-Vector</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-velocity-of-duration">
-   <a href="80000-3-quantities.html#velocity-of-duration">80000-3-quantities.html#velocity-of-duration</a><b>Referenced in:</b>
+  <aside class="dfn-panel" data-for="term-for-velocity-has-duration">
+   <a href="80000-3-quantities.html#velocity-has-duration">80000-3-quantities.html#velocity-has-duration</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-velocity-of-duration">3.9. duration</a>
-    <li><a href="#ref-for-velocity-of-duration①">3.23. velocity</a>
+    <li><a href="#ref-for-velocity-has-duration">3.9. duration</a>
+    <li><a href="#ref-for-velocity-has-duration①">3.23. velocity</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-velocity-of-position-vector">
-   <a href="80000-3-quantities.html#velocity-of-position-vector">80000-3-quantities.html#velocity-of-position-vector</a><b>Referenced in:</b>
+  <aside class="dfn-panel" data-for="term-for-velocity-has-position-vector">
+   <a href="80000-3-quantities.html#velocity-has-position-vector">80000-3-quantities.html#velocity-has-position-vector</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-velocity-of-position-vector">3.15. position-vector</a>
-    <li><a href="#ref-for-velocity-of-position-vector①">3.23. velocity</a>
+    <li><a href="#ref-for-velocity-has-position-vector">3.15. position-vector</a>
+    <li><a href="#ref-for-velocity-has-position-vector①">3.23. velocity</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-width">
@@ -2608,42 +2785,42 @@ dfn > a.self-link::before      { content: "#"; }
     <li><a href="#ref-for-width①">3.12. length</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-unitofangularmeasurevalue">
-   <a href="80000-3-units.html#unitofangularmeasurevalue">80000-3-units.html#unitofangularmeasurevalue</a><b>Referenced in:</b>
+  <aside class="dfn-panel" data-for="term-for-angularmeasuremagnitude">
+   <a href="80000-3-units.html#angularmeasuremagnitude">80000-3-units.html#angularmeasuremagnitude</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-unitofangularmeasurevalue">3.2. angular-measure</a>
-    <li><a href="#ref-for-unitofangularmeasurevalue①">3.20. rotational-displacement</a>
+    <li><a href="#ref-for-angularmeasuremagnitude">3.2. angular-measure</a>
+    <li><a href="#ref-for-angularmeasuremagnitude①">3.20. rotational-displacement</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-unitoffrequencyvalue">
-   <a href="80000-3-units.html#unitoffrequencyvalue">80000-3-units.html#unitoffrequencyvalue</a><b>Referenced in:</b>
+  <aside class="dfn-panel" data-for="term-for-frequencymagnitude">
+   <a href="80000-3-units.html#frequencymagnitude">80000-3-units.html#frequencymagnitude</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-unitoffrequencyvalue">3.10. frequency</a>
-    <li><a href="#ref-for-unitoffrequencyvalue①">3.21. rotational-frequency</a>
+    <li><a href="#ref-for-frequencymagnitude">3.10. frequency</a>
+    <li><a href="#ref-for-frequencymagnitude①">3.21. rotational-frequency</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-unitoflengthvalue">
-   <a href="80000-3-units.html#unitoflengthvalue">80000-3-units.html#unitoflengthvalue</a><b>Referenced in:</b>
+  <aside class="dfn-panel" data-for="term-for-lengthmagnitude">
+   <a href="80000-3-units.html#lengthmagnitude">80000-3-units.html#lengthmagnitude</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-unitoflengthvalue">3.12. length</a>
+    <li><a href="#ref-for-lengthmagnitude">3.12. length</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-unitofrotationvalue">
-   <a href="80000-3-units.html#unitofrotationvalue">80000-3-units.html#unitofrotationvalue</a><b>Referenced in:</b>
+  <aside class="dfn-panel" data-for="term-for-rotationmagnitude">
+   <a href="80000-3-units.html#rotationmagnitude">80000-3-units.html#rotationmagnitude</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-unitofrotationvalue">3.19. rotation</a>
+    <li><a href="#ref-for-rotationmagnitude">3.19. rotation</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-unitoftimevalue">
-   <a href="80000-3-units.html#unitoftimevalue">80000-3-units.html#unitoftimevalue</a><b>Referenced in:</b>
+  <aside class="dfn-panel" data-for="term-for-timemagnitude">
+   <a href="80000-3-units.html#timemagnitude">80000-3-units.html#timemagnitude</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-unitoftimevalue">3.9. duration</a>
+    <li><a href="#ref-for-timemagnitude">3.9. duration</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-unitofvelocityvalue">
-   <a href="80000-3-units.html#unitofvelocityvalue">80000-3-units.html#unitofvelocityvalue</a><b>Referenced in:</b>
+  <aside class="dfn-panel" data-for="term-for-velocitymagnitude">
+   <a href="80000-3-units.html#velocitymagnitude">80000-3-units.html#velocitymagnitude</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-unitofvelocityvalue">3.23. velocity</a>
+    <li><a href="#ref-for-velocitymagnitude">3.23. velocity</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-force">
@@ -2652,10 +2829,10 @@ dfn > a.self-link::before      { content: "#"; }
     <li><a href="#ref-for-force">3.23. velocity</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-force-of-velocity">
-   <a href="80000-4-quantities.html#force-of-velocity">80000-4-quantities.html#force-of-velocity</a><b>Referenced in:</b>
+  <aside class="dfn-panel" data-for="term-for-force-has-velocity">
+   <a href="80000-4-quantities.html#force-has-velocity">80000-4-quantities.html#force-has-velocity</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-force-of-velocity">3.23. velocity</a>
+    <li><a href="#ref-for-force-has-velocity">3.23. velocity</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-impulse">
@@ -2664,10 +2841,10 @@ dfn > a.self-link::before      { content: "#"; }
     <li><a href="#ref-for-impulse">3.9. duration</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-impulse-of-duration">
-   <a href="80000-4-quantities.html#impulse-of-duration">80000-4-quantities.html#impulse-of-duration</a><b>Referenced in:</b>
+  <aside class="dfn-panel" data-for="term-for-impulse-has-duration">
+   <a href="80000-4-quantities.html#impulse-has-duration">80000-4-quantities.html#impulse-has-duration</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-impulse-of-duration">3.9. duration</a>
+    <li><a href="#ref-for-impulse-has-duration">3.9. duration</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-momentum">
@@ -2676,10 +2853,10 @@ dfn > a.self-link::before      { content: "#"; }
     <li><a href="#ref-for-momentum">3.23. velocity</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-momentum-of-velocity">
-   <a href="80000-4-quantities.html#momentum-of-velocity">80000-4-quantities.html#momentum-of-velocity</a><b>Referenced in:</b>
+  <aside class="dfn-panel" data-for="term-for-momentum-has-velocity">
+   <a href="80000-4-quantities.html#momentum-has-velocity">80000-4-quantities.html#momentum-has-velocity</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-momentum-of-velocity">3.23. velocity</a>
+    <li><a href="#ref-for-momentum-has-velocity">3.23. velocity</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-power">
@@ -2688,10 +2865,10 @@ dfn > a.self-link::before      { content: "#"; }
     <li><a href="#ref-for-power">3.23. velocity</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-power-of-velocity">
-   <a href="80000-4-quantities.html#power-of-velocity">80000-4-quantities.html#power-of-velocity</a><b>Referenced in:</b>
+  <aside class="dfn-panel" data-for="term-for-power-has-velocity">
+   <a href="80000-4-quantities.html#power-has-velocity">80000-4-quantities.html#power-has-velocity</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-power-of-velocity">3.23. velocity</a>
+    <li><a href="#ref-for-power-has-velocity">3.23. velocity</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-electric-charge">
@@ -2700,10 +2877,10 @@ dfn > a.self-link::before      { content: "#"; }
     <li><a href="#ref-for-electric-charge">3.9. duration</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-electric-charge-of-duration">
-   <a href="80000-6-quantities.html#electric-charge-of-duration">80000-6-quantities.html#electric-charge-of-duration</a><b>Referenced in:</b>
+  <aside class="dfn-panel" data-for="term-for-electric-charge-has-duration">
+   <a href="80000-6-quantities.html#electric-charge-has-duration">80000-6-quantities.html#electric-charge-has-duration</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-electric-charge-of-duration">3.9. duration</a>
+    <li><a href="#ref-for-electric-charge-has-duration">3.9. duration</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-electric-potential">
@@ -2712,10 +2889,10 @@ dfn > a.self-link::before      { content: "#"; }
     <li><a href="#ref-for-electric-potential">3.13. path-length</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-electric-potential-of-path-length">
-   <a href="80000-6-quantities.html#electric-potential-of-path-length">80000-6-quantities.html#electric-potential-of-path-length</a><b>Referenced in:</b>
+  <aside class="dfn-panel" data-for="term-for-electric-potential-has-path-length">
+   <a href="80000-6-quantities.html#electric-potential-has-path-length">80000-6-quantities.html#electric-potential-has-path-length</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-electric-potential-of-path-length">3.13. path-length</a>
+    <li><a href="#ref-for-electric-potential-has-path-length">3.13. path-length</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-derivedunitaryquantity">
@@ -2732,44 +2909,31 @@ dfn > a.self-link::before      { content: "#"; }
   <aside class="dfn-panel" data-for="term-for-exponent">
    <a href="../iupac.org/metrology.html#exponent">../iupac.org/metrology.html#exponent</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-exponent">4.1. angular-measure-of-arc-length</a>
-    <li><a href="#ref-for-exponent①">4.2. angular-measure-of-radius</a>
-    <li><a href="#ref-for-exponent②">4.3. frequency-of-period-duration</a>
-    <li><a href="#ref-for-exponent③">4.4. rotation-of-rotational-displacement</a>
-    <li><a href="#ref-for-exponent④">4.5. rotational-displacement-of-distance</a>
-    <li><a href="#ref-for-exponent⑤">4.6. rotational-displacement-of-path-length</a>
-    <li><a href="#ref-for-exponent⑥">4.7. rotational-frequency-of-duration</a>
-    <li><a href="#ref-for-exponent⑦">4.8. rotational-frequency-of-rotation</a>
-    <li><a href="#ref-for-exponent⑧">4.9. velocity-of-duration</a>
-    <li><a href="#ref-for-exponent⑨">4.10. velocity-of-position-vector</a>
+    <li><a href="#ref-for-exponent">4.1. Angular-Measure-Has-Arc-Length</a>
+    <li><a href="#ref-for-exponent①">4.2. Angular-Measure-Has-Radius</a>
+    <li><a href="#ref-for-exponent②">4.3. Frequency-Has-Period-Duration</a>
+    <li><a href="#ref-for-exponent③">4.4. Rotation-Has-Rotational-Displacement</a>
+    <li><a href="#ref-for-exponent④">4.5. Rotational-Displacement-Has-Distance</a>
+    <li><a href="#ref-for-exponent⑤">4.6. Rotational-Displacement-Has-Path-Length</a>
+    <li><a href="#ref-for-exponent⑥">4.7. Rotational-Frequency-Has-Duration</a>
+    <li><a href="#ref-for-exponent⑦">4.8. Rotational-Frequency-Has-Rotation</a>
+    <li><a href="#ref-for-exponent⑧">4.9. Velocity-Has-Duration</a>
+    <li><a href="#ref-for-exponent⑨">4.10. Velocity-Has-Position-Vector</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-hasfactorforunitaryquantity">
    <a href="../iupac.org/metrology.html#hasfactorforunitaryquantity">../iupac.org/metrology.html#hasfactorforunitaryquantity</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-hasfactorforunitaryquantity">4.1. angular-measure-of-arc-length</a>
-    <li><a href="#ref-for-hasfactorforunitaryquantity①">4.2. angular-measure-of-radius</a>
-    <li><a href="#ref-for-hasfactorforunitaryquantity②">4.3. frequency-of-period-duration</a>
-    <li><a href="#ref-for-hasfactorforunitaryquantity③">4.4. rotation-of-rotational-displacement</a>
-    <li><a href="#ref-for-hasfactorforunitaryquantity④">4.5. rotational-displacement-of-distance</a>
-    <li><a href="#ref-for-hasfactorforunitaryquantity⑤">4.6. rotational-displacement-of-path-length</a>
-    <li><a href="#ref-for-hasfactorforunitaryquantity⑥">4.7. rotational-frequency-of-duration</a>
-    <li><a href="#ref-for-hasfactorforunitaryquantity⑦">4.8. rotational-frequency-of-rotation</a>
-    <li><a href="#ref-for-hasfactorforunitaryquantity⑧">4.9. velocity-of-duration</a>
-    <li><a href="#ref-for-hasfactorforunitaryquantity⑨">4.10. velocity-of-position-vector</a>
-   </ul>
-  </aside>
-  <aside class="dfn-panel" data-for="term-for-hasmagnitude">
-   <a href="../iupac.org/metrology.html#hasmagnitude">../iupac.org/metrology.html#hasmagnitude</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-hasmagnitude">3.2. angular-measure</a>
-    <li><a href="#ref-for-hasmagnitude①">3.9. duration</a>
-    <li><a href="#ref-for-hasmagnitude②">3.10. frequency</a>
-    <li><a href="#ref-for-hasmagnitude③">3.12. length</a>
-    <li><a href="#ref-for-hasmagnitude④">3.19. rotation</a>
-    <li><a href="#ref-for-hasmagnitude⑤">3.20. rotational-displacement</a>
-    <li><a href="#ref-for-hasmagnitude⑥">3.21. rotational-frequency</a>
-    <li><a href="#ref-for-hasmagnitude⑦">3.23. velocity</a>
+    <li><a href="#ref-for-hasfactorforunitaryquantity">4.1. Angular-Measure-Has-Arc-Length</a>
+    <li><a href="#ref-for-hasfactorforunitaryquantity①">4.2. Angular-Measure-Has-Radius</a>
+    <li><a href="#ref-for-hasfactorforunitaryquantity②">4.3. Frequency-Has-Period-Duration</a>
+    <li><a href="#ref-for-hasfactorforunitaryquantity③">4.4. Rotation-Has-Rotational-Displacement</a>
+    <li><a href="#ref-for-hasfactorforunitaryquantity④">4.5. Rotational-Displacement-Has-Distance</a>
+    <li><a href="#ref-for-hasfactorforunitaryquantity⑤">4.6. Rotational-Displacement-Has-Path-Length</a>
+    <li><a href="#ref-for-hasfactorforunitaryquantity⑥">4.7. Rotational-Frequency-Has-Duration</a>
+    <li><a href="#ref-for-hasfactorforunitaryquantity⑦">4.8. Rotational-Frequency-Has-Rotation</a>
+    <li><a href="#ref-for-hasfactorforunitaryquantity⑧">4.9. Velocity-Has-Duration</a>
+    <li><a href="#ref-for-hasfactorforunitaryquantity⑨">4.10. Velocity-Has-Position-Vector</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-independentunitaryquantity">
@@ -2792,6 +2956,19 @@ dfn > a.self-link::before      { content: "#"; }
     <li><a href="#ref-for-isdimensionlessquantity⑦">3.23. velocity</a>
    </ul>
   </aside>
+  <aside class="dfn-panel" data-for="term-for-ismagnitudeof">
+   <a href="../iupac.org/metrology.html#ismagnitudeof">../iupac.org/metrology.html#ismagnitudeof</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-ismagnitudeof">3.2. angular-measure</a>
+    <li><a href="#ref-for-ismagnitudeof①">3.9. duration</a>
+    <li><a href="#ref-for-ismagnitudeof②">3.10. frequency</a>
+    <li><a href="#ref-for-ismagnitudeof③">3.12. length</a>
+    <li><a href="#ref-for-ismagnitudeof④">3.19. rotation</a>
+    <li><a href="#ref-for-ismagnitudeof⑤">3.20. rotational-displacement</a>
+    <li><a href="#ref-for-ismagnitudeof⑥">3.21. rotational-frequency</a>
+    <li><a href="#ref-for-ismagnitudeof⑦">3.23. velocity</a>
+   </ul>
+  </aside>
   <h3 class="no-num no-ref heading settled" id="index-defined-elsewhere"><span class="content">Terms defined by reference</span><a class="self-link" href="#index-defined-elsewhere"></a></h3>
   <ul class="index">
    <li>
@@ -2799,8 +2976,8 @@ dfn > a.self-link::before      { content: "#"; }
     <ul>
      <li><span class="dfn-paneled" id="term-for-altitude">altitude</span>
      <li><span class="dfn-paneled" id="term-for-angular-measure">angular-measure</span>
-     <li><span class="dfn-paneled" id="term-for-angular-measure-of-arc-length">angular-measure-of-arc-length</span>
-     <li><span class="dfn-paneled" id="term-for-angular-measure-of-radius">angular-measure-of-radius</span>
+     <li><span class="dfn-paneled" id="term-for-angular-measure-has-arc-length">angular-measure-has-arc-length</span>
+     <li><span class="dfn-paneled" id="term-for-angular-measure-has-radius">angular-measure-has-radius</span>
      <li><span class="dfn-paneled" id="term-for-arc-length">arc-length</span>
      <li><span class="dfn-paneled" id="term-for-breadth">breadth</span>
      <li><span class="dfn-paneled" id="term-for-depth">depth</span>
@@ -2809,7 +2986,7 @@ dfn > a.self-link::before      { content: "#"; }
      <li><span class="dfn-paneled" id="term-for-distance">distance</span>
      <li><span class="dfn-paneled" id="term-for-duration">duration</span>
      <li><span class="dfn-paneled" id="term-for-frequency">frequency</span>
-     <li><span class="dfn-paneled" id="term-for-frequency-of-period-duration">frequency-of-period-duration</span>
+     <li><span class="dfn-paneled" id="term-for-frequency-has-period-duration">frequency-has-period-duration</span>
      <li><span class="dfn-paneled" id="term-for-height">height</span>
      <li><span class="dfn-paneled" id="term-for-length">length</span>
      <li><span class="dfn-paneled" id="term-for-path-length">path-length</span>
@@ -2819,48 +2996,48 @@ dfn > a.self-link::before      { content: "#"; }
      <li><span class="dfn-paneled" id="term-for-radius">radius</span>
      <li><span class="dfn-paneled" id="term-for-radius-of-curvature">radius-of-curvature</span>
      <li><span class="dfn-paneled" id="term-for-rotation">rotation</span>
-     <li><span class="dfn-paneled" id="term-for-rotation-of-rotational-displacement">rotation-of-rotational-displacement</span>
+     <li><span class="dfn-paneled" id="term-for-rotation-has-rotational-displacement">rotation-has-rotational-displacement</span>
      <li><span class="dfn-paneled" id="term-for-rotational-displacement">rotational-displacement</span>
-     <li><span class="dfn-paneled" id="term-for-rotational-displacement-of-distance">rotational-displacement-of-distance</span>
-     <li><span class="dfn-paneled" id="term-for-rotational-displacement-of-path-length">rotational-displacement-of-path-length</span>
+     <li><span class="dfn-paneled" id="term-for-rotational-displacement-has-distance">rotational-displacement-has-distance</span>
+     <li><span class="dfn-paneled" id="term-for-rotational-displacement-has-path-length">rotational-displacement-has-path-length</span>
      <li><span class="dfn-paneled" id="term-for-rotational-frequency">rotational-frequency</span>
-     <li><span class="dfn-paneled" id="term-for-rotational-frequency-of-duration">rotational-frequency-of-duration</span>
-     <li><span class="dfn-paneled" id="term-for-rotational-frequency-of-rotation">rotational-frequency-of-rotation</span>
+     <li><span class="dfn-paneled" id="term-for-rotational-frequency-has-duration">rotational-frequency-has-duration</span>
+     <li><span class="dfn-paneled" id="term-for-rotational-frequency-has-rotation">rotational-frequency-has-rotation</span>
      <li><span class="dfn-paneled" id="term-for-thickness">thickness</span>
      <li><span class="dfn-paneled" id="term-for-velocity">velocity</span>
-     <li><span class="dfn-paneled" id="term-for-velocity-of-duration">velocity-of-duration</span>
-     <li><span class="dfn-paneled" id="term-for-velocity-of-position-vector">velocity-of-position-vector</span>
+     <li><span class="dfn-paneled" id="term-for-velocity-has-duration">velocity-has-duration</span>
+     <li><span class="dfn-paneled" id="term-for-velocity-has-position-vector">velocity-has-position-vector</span>
      <li><span class="dfn-paneled" id="term-for-width">width</span>
     </ul>
    <li>
     <a data-link-type="biblio">[http://iso.org/80000-3-units]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="term-for-unitofangularmeasurevalue">unitofangularmeasurevalue</span>
-     <li><span class="dfn-paneled" id="term-for-unitoffrequencyvalue">unitoffrequencyvalue</span>
-     <li><span class="dfn-paneled" id="term-for-unitoflengthvalue">unitoflengthvalue</span>
-     <li><span class="dfn-paneled" id="term-for-unitofrotationvalue">unitofrotationvalue</span>
-     <li><span class="dfn-paneled" id="term-for-unitoftimevalue">unitoftimevalue</span>
-     <li><span class="dfn-paneled" id="term-for-unitofvelocityvalue">unitofvelocityvalue</span>
+     <li><span class="dfn-paneled" id="term-for-angularmeasuremagnitude">angularmeasuremagnitude</span>
+     <li><span class="dfn-paneled" id="term-for-frequencymagnitude">frequencymagnitude</span>
+     <li><span class="dfn-paneled" id="term-for-lengthmagnitude">lengthmagnitude</span>
+     <li><span class="dfn-paneled" id="term-for-rotationmagnitude">rotationmagnitude</span>
+     <li><span class="dfn-paneled" id="term-for-timemagnitude">timemagnitude</span>
+     <li><span class="dfn-paneled" id="term-for-velocitymagnitude">velocitymagnitude</span>
     </ul>
    <li>
     <a data-link-type="biblio">[http://iso.org/80000-4-quantities]</a> defines the following terms:
     <ul>
      <li><span class="dfn-paneled" id="term-for-force">force</span>
-     <li><span class="dfn-paneled" id="term-for-force-of-velocity">force-of-velocity</span>
+     <li><span class="dfn-paneled" id="term-for-force-has-velocity">force-has-velocity</span>
      <li><span class="dfn-paneled" id="term-for-impulse">impulse</span>
-     <li><span class="dfn-paneled" id="term-for-impulse-of-duration">impulse-of-duration</span>
+     <li><span class="dfn-paneled" id="term-for-impulse-has-duration">impulse-has-duration</span>
      <li><span class="dfn-paneled" id="term-for-momentum">momentum</span>
-     <li><span class="dfn-paneled" id="term-for-momentum-of-velocity">momentum-of-velocity</span>
+     <li><span class="dfn-paneled" id="term-for-momentum-has-velocity">momentum-has-velocity</span>
      <li><span class="dfn-paneled" id="term-for-power">power</span>
-     <li><span class="dfn-paneled" id="term-for-power-of-velocity">power-of-velocity</span>
+     <li><span class="dfn-paneled" id="term-for-power-has-velocity">power-has-velocity</span>
     </ul>
    <li>
     <a data-link-type="biblio">[http://iso.org/80000-6-quantities]</a> defines the following terms:
     <ul>
      <li><span class="dfn-paneled" id="term-for-electric-charge">electric-charge</span>
-     <li><span class="dfn-paneled" id="term-for-electric-charge-of-duration">electric-charge-of-duration</span>
+     <li><span class="dfn-paneled" id="term-for-electric-charge-has-duration">electric-charge-has-duration</span>
      <li><span class="dfn-paneled" id="term-for-electric-potential">electric-potential</span>
-     <li><span class="dfn-paneled" id="term-for-electric-potential-of-path-length">electric-potential-of-path-length</span>
+     <li><span class="dfn-paneled" id="term-for-electric-potential-has-path-length">electric-potential-has-path-length</span>
     </ul>
    <li>
     <a data-link-type="biblio">[http://iupac.org/metrology]</a> defines the following terms:
@@ -2868,9 +3045,9 @@ dfn > a.self-link::before      { content: "#"; }
      <li><span class="dfn-paneled" id="term-for-derivedunitaryquantity">derivedunitaryquantity</span>
      <li><span class="dfn-paneled" id="term-for-exponent">exponent</span>
      <li><span class="dfn-paneled" id="term-for-hasfactorforunitaryquantity">hasfactorforunitaryquantity</span>
-     <li><span class="dfn-paneled" id="term-for-hasmagnitude">hasmagnitude</span>
      <li><span class="dfn-paneled" id="term-for-independentunitaryquantity">independentunitaryquantity</span>
      <li><span class="dfn-paneled" id="term-for-isdimensionlessquantity">isdimensionlessquantity</span>
+     <li><span class="dfn-paneled" id="term-for-ismagnitudeof">ismagnitudeof</span>
     </ul>
   </ul>
 <script>/* script-dfn-panel */

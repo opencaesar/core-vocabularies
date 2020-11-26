@@ -1,7 +1,7 @@
 <!doctype html><html lang="en">
  <head>
   <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-  <title>80000-3-quantityValues</title>
+  <title>80000-3-magnitudes</title>
   <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
 <style data-fill-with="stylesheet">/******************************************************************************
  *                   Style sheet for the W3C specifications                   *
@@ -26,6 +26,7 @@
  *   - .figure and .caption (HTML4) and figure and figcaption (HTML5)
  *     -> .sidefigure for right-floated figures
  *   - ins/del
+ *     -> ins/del.c### for candidate and proposed changes (amendments)
  *
  * Code
  *   - pre and code
@@ -34,9 +35,12 @@
  *   - .note       for informative notes             (div, p, span, aside, details)
  *   - .example    for informative examples          (div, p, pre, span)
  *   - .issue      for issues                        (div, p, span)
- *   - .assertion  for assertions                    (div, p, span)
  *   - .advisement for loud normative statements     (div, p, strong)
  *   - .annoying-warning for spec obsoletion notices (div, aside, details)
+ *   - .correction for "candidate corrections"       (div, aside, details, section)
+ *   - .addition   for "candidate additions"         (div, aside, details, section)
+ *   - .correction.proposed for "proposed corrections" (div, aside, details, section)
+ *   - .addition.proposed   for "proposed additions"   (div, aside, details, section)
  *
  * Definition Boxes
  *   - pre.def   for WebIDL definitions
@@ -57,6 +61,8 @@
  *   - .head for the header
  *   - .copyright for the copyright
  *
+ * Outdated warning for old specs
+ *
  * Miscellaneous
  *   - .overlarge for things that should be as wide as possible, even if
  *     that overflows the body text area. This can be used on an item or
@@ -64,6 +70,7 @@
  *     Note that this styling basically doesn't help at all when printing,
  *     since A4 paper isn't much wider than the max-width here.
  *     It's better to design things to fit into a narrower measure if possible.
+ *
  *   - js-added ToC jump links (see fixup.js)
  *
  ******************************************************************************/
@@ -71,24 +78,20 @@
 /* color variables included separately for reliability */
 
 /******************************************************************************/
-/*                                   Body                                     */
+/*                                    Body                                    */
 /******************************************************************************/
 
 	html {
-		color: black;
-		color: var(--text);
-		background-color: white;
-		background-color: var(--bg);
 	}
 
 	body {
 		counter-reset: example figure issue;
 
 		/* Layout */
-		max-width: 50em;               /* limit line length to 50em for readability   */
-		margin: 0 auto;                /* center text within page                     */
+		max-width: 50em;			  /* limit line length to 50em for readability   */
+		margin: 0 auto;				/* center text within page                    */
 		padding: 1.6em 1.5em 2em 50px; /* assume 16px font size for downlevel clients */
-		padding: 1.6em 1.5em 2em calc(26px + 1.5em); /* leave space for status flag     */
+		padding: 1.6em 1.5em 2em calc(26px + 1.5em); /* leave space for status flag    */
 
 		/* Typography */
 		line-height: 1.5;
@@ -99,7 +102,10 @@
 		overflow-wrap: break-word;
 		hyphens: auto;
 
-		background: transparent top left fixed no-repeat;
+		color: black;
+		color: var(--text);
+		background: white top left fixed no-repeat;
+		background: var(--bg) top left fixed no-repeat;
 		background-size: 25px auto;
 	}
 
@@ -110,7 +116,7 @@
 
 /** Header ********************************************************************/
 
-	div.head { margin-bottom: 1em }
+	div.head { margin-bottom: 1em; }
 	div.head hr { border-style: solid; }
 
 	div.head h1 {
@@ -158,7 +164,7 @@
 /** Copyright *****************************************************************/
 
 	p.copyright,
-	p.copyright small { font-size: small }
+	p.copyright small { font-size: small; }
 
 /** Back to Top / ToC Toggle **************************************************/
 
@@ -170,7 +176,7 @@
 	@media not print {
 		#toc-nav {
 			position: fixed;
-			z-index: 2;
+			z-index: 3;
 			bottom: 0; left: 0;
 			margin: 0;
 			min-width: 1.33em;
@@ -337,9 +343,9 @@
 		page-break-after: avoid;
 		page-break-inside: avoid;
 		font: 100% sans-serif;   /* Reset all font styling to clear out UA styles */
-		font-family: inherit;    /* Inherit the font family. */
-		line-height: 1.2;        /* Keep wrapped headings compact */
-		hyphens: manual;         /* Hyphenated headings look weird */
+		font-family: inherit;	/* Inherit the font family. */
+		line-height: 1.2;		/* Keep wrapped headings compact */
+		hyphens: manual;		/* Hyphenated headings look weird */
 	}
 
 	h2, h3, h4, h5, h6 {
@@ -423,51 +429,51 @@
 	/* Style for algorithms */
 	ol.algorithm ol:not(.algorithm),
 	.algorithm > ol ol:not(.algorithm) {
-	 border-left: 0.5em solid #DEF;
-	 border-left: 0.5em solid var(--algo-border);
+	border-left: 0.5em solid #DEF;
+	border-left: 0.5em solid var(--algo-border);
 	}
 
 	/* Put nice boxes around each algorithm. */
 	[data-algorithm]:not(.heading) {
-	  padding: .5em;
-	  border: thin solid #ddd;
-	  border: thin solid var(--algo-border);
-	  border-radius: .5em;
-	  margin: .5em calc(-0.5em - 1px);
+	 padding: .5em;
+	 border: thin solid #ddd;
+	 border: thin solid var(--algo-border);
+	 border-radius: .5em;
+	 margin: .5em calc(-0.5em - 1px);
 	}
 	[data-algorithm]:not(.heading) > :first-child {
-	  margin-top: 0;
+	 margin-top: 0;
 	}
 	[data-algorithm]:not(.heading) > :last-child {
-	  margin-bottom: 0;
+	 margin-bottom: 0;
 	}
 
 	/* Style for switch/case <dl>s */
 	dl.switch > dd > ol.only,
 	dl.switch > dd > .only > ol {
-	 margin-left: 0;
+	margin-left: 0;
 	}
 	dl.switch > dd > ol.algorithm,
 	dl.switch > dd > .algorithm > ol {
-	 margin-left: -2em;
+	margin-left: -2em;
 	}
 	dl.switch {
-	 padding-left: 2em;
+	padding-left: 2em;
 	}
 	dl.switch > dt {
-	 text-indent: -1.5em;
-	 margin-top: 1em;
+	text-indent: -1.5em;
+	margin-top: 1em;
 	}
 	dl.switch > dt + dt {
-	 margin-top: 0;
+	margin-top: 0;
 	}
 	dl.switch > dt::before {
-	 content: '\21AA';
-	 padding: 0 0.5em 0 0;
-	 display: inline-block;
-	 width: 1em;
-	 text-align: right;
-	 line-height: 0.5em;
+	content: '\21AA';
+	padding: 0 0.5em 0 0;
+	display: inline-block;
+	width: 1em;
+	text-align: right;
+	line-height: 0.5em;
 	}
 
 /** Terminology Markup ********************************************************/
@@ -485,7 +491,7 @@
 		font-style: normal;
 	}
 	dt dfn code, code.idl {
-		font-size: medium;
+		font-size: inherit;
 	}
 	dfn var {
 		font-style: normal;
@@ -494,18 +500,37 @@
 /** Change Marking ************************************************************/
 
 	del {
-		color: red;
+		color: #aa0000;
 		color: var(--del-text);
 		background: transparent;
 		background: var(--del-bg);
 		text-decoration: line-through;
 	}
 	ins {
-		color: #080;
+		color: #006100;
 		color: var(--ins-text);
 		background: transparent;
 		background: var(--ins-bg);
 		text-decoration: underline;
+	}
+
+	/* for amendments (candidate/proposed changes) */
+
+	.amendment ins, .correction ins, .addition ins,
+	ins[class^=c] {
+		text-decoration-style: dotted;
+	}
+	.amendment del, .correction del, .addition del,
+	del[class^=c] {
+		text-decoration-style: dotted;
+	}
+	.amendment.proposed ins, .correction.proposed ins, .addition.proposed ins,
+	ins[class^=c].proposed {
+		text-decoration-style: double;
+	}
+	.amendment.proposed del, .correction.proposed del, .addition.proposed del,
+	del[class^=c].proposed {
+		text-decoration-style: double;
 	}
 
 /** Miscellaneous improvements to inline formatting ***************************/
@@ -546,7 +571,7 @@
 
 /** Inline Code fragments *****************************************************/
 
-  /* Do something nice. */
+	/* Do something nice. */
 
 /******************************************************************************/
 /*                                    Links                                   */
@@ -610,7 +635,7 @@
 	}
 
 	/* For autogen numbers, add
-	   .caption::before, figcaption::before { content: "Figure " counter(figure) ". "; }
+	  .caption::before, figcaption::before { content: "Figure " counter(figure) ". "; }
 	*/
 
 	figure, .figure, .sidefigure {
@@ -618,7 +643,7 @@
 		text-align: center;
 		margin: 2.5em 0;
 	}
-	.figure img,    .sidefigure img,    figure img,
+	.figure img,	.sidefigure img,	figure img,
 	.figure object, .sidefigure object, figure object {
 		max-width: 100%;
 		margin: auto;
@@ -636,7 +661,7 @@
 		.sidefigure {
 			float: right;
 			width: 50%;
-			margin: 0 0 0.5em 0.5em
+			margin: 0 0 0.5em 0.5em;
 		}
 	}
 	.caption, figcaption, caption {
@@ -651,13 +676,15 @@
 	}
 
 	/* DL list is indented 2em, but figure inside it is not */
-	dd > .figure, dd > figure { margin-left: -2em }
+	dd > .figure, dd > figure { margin-left: -2em; }
 
 /******************************************************************************/
 /*                             Colored Boxes                                  */
 /******************************************************************************/
 
-	.issue, .note, .example, .assertion, .advisement, blockquote {
+	.issue, .note, .example, .assertion, .advisement, blockquote,
+	.amendment, .correction, .addition {
+		margin: 1em auto;
 		padding: .5em;
 		border: .5em;
 		border-left-style: solid;
@@ -668,20 +695,20 @@
 		border-right-style: solid;
 	}
 
-	.issue,
-	.note,
-	.example,
-	.advisement,
-	.assertion,
-	blockquote {
-		margin: 1em auto;
-	}
+	blockquote > :first-child,
 	.note  > p:first-child,
 	.issue > p:first-child,
-	blockquote > :first-child {
+	.amendment > p:first-child,
+	.correction > p:first-child,
+	.addition > p:first-child {
 		margin-top: 0;
 	}
-	blockquote > :last-child {
+	blockquote > :last-child,
+	.note  > p:last-child,
+	.issue > p:last-child,
+	.amendment > p:last-child,
+	.correction > p:last-child,
+	.addition > p:last-child {
 		margin-bottom: 0;
 	}
 
@@ -689,7 +716,14 @@
 	.issue::before, .issue > .marker,
 	.example::before, .example > .marker,
 	.note::before, .note > .marker,
-	details.note > summary > .marker {
+	details.note > summary > .marker,
+	.amendment::before, .amendment > .marker,
+	details.amendment > summary > .marker,
+	.addition::before, .addition > .marker,
+	addition.amendment > summary > .marker,
+	.correction::before, .correction > .marker,
+	correction.amendment > summary > .marker
+	{
 		text-transform: uppercase;
 		padding-right: 1em;
 	}
@@ -727,7 +761,7 @@
 		color: var(--issueheading-text);
 	}
 	/* Add .issue::before { content: "Issue " counter(issue) " "; } for autogen numbers,
-	   or use class="marker" to mark up the issue number in source. */
+	  or use class="marker" to mark up the issue number in source. */
 
 /** Example *******************************************************************/
 
@@ -747,7 +781,7 @@
 		color: var(--exampleheading-text);
 	}
 	/* Add .example::before { content: "Example " counter(example) " "; } for autogen numbers,
-	   or use class="marker" to mark up the example number in source. */
+	  or use class="marker" to mark up the example number in source. */
 
 /** Non-normative Note ********************************************************/
 
@@ -767,7 +801,7 @@
 		color: var(--noteheading-text);
 	}
 	/* Add .note::before { content: "Note "; } for autogen label,
-	   or use class="marker" to mark up the label in source. */
+	  or use class="marker" to mark up the label in source. */
 
 	details.note[open] > summary {
 		border-bottom: 1px silver solid;
@@ -807,6 +841,38 @@
 		color: var(--advisementheading-text);
 	}
 
+/** Amendment Box *************************************************************/
+
+	.amendment, .correction, .addition {
+		border-color: #330099;
+		border-color: var(--amendment-border);
+		background: #F5F0FF;
+		background: var(--amendment-bg);
+		color: black;
+		color: var(--amendment-text);
+	}
+	.amendment.proposed, .correction.proposed, .addition.proposed {
+		border-style: solid;
+		border-block-width: 0.25em;
+	}
+	.amendment::before, .amendment > .marker,
+	details.amendment > summary::before, details.amendment > summary > .marker,
+	.correction::before, .correction > .marker,
+	details.correction > summary::before, details.correction > summary > .marker,
+	.addition::before, .addition > .marker,
+	details.addition > summary::before, details.addition > summary > .marker {
+		color: #220066;
+		color: var(--amendmentheading-text);
+	}
+	.amendment.proposed::before, .amendment.proposed > .marker,
+	details.amendment.proposed > summary::before, details.amendment.proposed > summary > .marker,
+	.correction.proposed::before, .correction.proposed > .marker,
+	details.correction.proposed > summary::before, details.correction.proposed > summary > .marker,
+	.addition.proposed::before, .addition.proposed > .marker,
+	details.addition.proposed > summary::before, details.addition.proposed > summary > .marker {
+		font-weight: bold;
+	}
+
 /** Spec Obsoletion Notice ****************************************************/
 	/* obnoxious obsoletion notice for older/abandoned specs. */
 
@@ -835,15 +901,15 @@
 		margin-bottom: 0;
 	}
 
-	@media not print {
-		details.annoying-warning[open] {
-			position: fixed;
-			left: 0;
-			right: 0;
-			bottom: 2em;
-			z-index: 1000;
-		}
+@media not print {
+	details.annoying-warning[open] {
+		position: fixed;
+		left: 0;
+		right: 0;
+		bottom: 2em;
+		z-index: 1000;
 	}
+}
 
 	details.annoying-warning:not([open]) > summary {
 		text-align: center;
@@ -918,15 +984,15 @@
 
 /** Data tables (and properly marked-up index tables) *************************/
 	/*
-		 <table class="data"> highlights structural relationships in a table
-		 when correct markup is used (e.g. thead/tbody, th vs. td, scope attribute)
+		<table class="data"> highlights structural relationships in a table
+		when correct markup is used (e.g. thead/tbody, th vs. td, scope attribute)
 
-		 Use class="complex data" for particularly complicated tables --
-		 (This will draw more lines: busier, but clearer.)
+		Use class="complex data" for particularly complicated tables --
+		(This will draw more lines: busier, but clearer.)
 
-		 Use class="long" on table cells with paragraph-like contents
-		 (This will adjust text alignment accordingly.)
-		 Alternately use class="longlastcol" on tables, to have the last column assume "long".
+		Use class="long" on table cells with paragraph-like contents
+		(This will adjust text alignment accordingly.)
+		Alternately use class="longlastcol" on tables, to have the last column assume "long".
 	*/
 
 	table {
@@ -1075,22 +1141,22 @@ Possible extra rowspan handling
 		/* because generated content isn't search/selectable and markers can't do multilevel yet */
 		margin:  0;
 		padding: 0;
-		line-height: 1.1rem; /* consistent spacing */
+	}
+	.toc {
+		line-height: 1.1em;
 	}
 
 	/* ToC not indented until third level, but font style & margins show hierarchy */
-	.toc > li             { font-weight: bold;   }
-	.toc > li li          { font-weight: normal; }
-	.toc > li li li       { font-size:   95%;    }
-	.toc > li li li li    { font-size:   90%;    }
-	.toc > li li li li .secno { font-size: 85%; }
-	.toc > li li li li li { font-size:   85%;    }
-	.toc > li li li li li .secno { font-size: 100%; }
+	.toc > li			{ font-weight: bold;   }
+	.toc > li li		 { font-weight: normal; }
+	.toc > li li li	  { font-size:   95%;	}
+	.toc > li li li li	{ font-size:   90%;	}
+	.toc > li li li li li { font-size:   85%;	}
 
 	/* @supports not (display:grid) { */
-		.toc > li             { margin: 1.5rem 0;    }
-		.toc > li li          { margin: 0.3rem 0;    }
-		.toc > li li li       { margin-left: 2rem;   }
+		.toc > li			{ margin: 1.5rem 0;	}
+		.toc > li li		 { margin: 0.3rem 0;	}
+		.toc > li li li	  { margin-left: 2rem;   }
 
 		/* Section numbers in a column of their own */
 		.toc .secno {
@@ -1098,33 +1164,35 @@ Possible extra rowspan handling
 			width: 4rem;
 			white-space: nowrap;
 		}
+		.toc > li li li li .secno { font-size: 85%; }
+		.toc > li li li li li .secno { font-size: 100%; }
 
 		.toc li {
 			clear: both;
 		}
 
-		:not(li) > .toc              { margin-left:  5rem; }
-		.toc .secno                  { margin-left: -5rem; }
-		.toc > li li li .secno       { margin-left: -7rem; }
-		.toc > li li li li .secno    { margin-left: -9rem; }
+		:not(li) > .toc			 { margin-left:  5rem; }
+		.toc .secno				 { margin-left: -5rem; }
+		.toc > li li li .secno	  { margin-left: -7rem; }
+		.toc > li li li li .secno	{ margin-left: -9rem; }
 		.toc > li li li li li .secno { margin-left: -11rem; }
 
 		/* Tighten up indentation in narrow ToCs */
 		@media (max-width: 30em) {
-			:not(li) > .toc              { margin-left:  4rem; }
-			.toc .secno                  { margin-left: -4rem; }
-			.toc > li li li              { margin-left:  1rem; }
-			.toc > li li li .secno       { margin-left: -5rem; }
-			.toc > li li li li .secno    { margin-left: -6rem; }
+			:not(li) > .toc			 { margin-left:  4rem; }
+			.toc .secno				 { margin-left: -4rem; }
+			.toc > li li li			 { margin-left:  1rem; }
+			.toc > li li li .secno	  { margin-left: -5rem; }
+			.toc > li li li li .secno	{ margin-left: -6rem; }
 			.toc > li li li li li .secno { margin-left: -7rem; }
 		}
 		/* Loosen it on wide screens */
 		@media screen and (min-width: 78em) {
-			body:not(.toc-inline) :not(li) > .toc              { margin-left:  4rem; }
-			body:not(.toc-inline) .toc .secno                  { margin-left: -4rem; }
-			body:not(.toc-inline) .toc > li li li              { margin-left:  1rem; }
-			body:not(.toc-inline) .toc > li li li .secno       { margin-left: -5rem; }
-			body:not(.toc-inline) .toc > li li li li .secno    { margin-left: -6rem; }
+			body:not(.toc-inline) :not(li) > .toc			 { margin-left:  4rem; }
+			body:not(.toc-inline) .toc .secno				 { margin-left: -4rem; }
+			body:not(.toc-inline) .toc > li li li			 { margin-left:  1rem; }
+			body:not(.toc-inline) .toc > li li li .secno	  { margin-left: -5rem; }
+			body:not(.toc-inline) .toc > li li li li .secno	{ margin-left: -6rem; }
 			body:not(.toc-inline) .toc > li li li li li .secno { margin-left: -7rem; }
 	}
 	/* } */
@@ -1155,7 +1223,7 @@ Possible extra rowspan handling
 		}
 		#toc > .toc > li > a > span {
 			/* The spans of the top-level list,
-			   comprising the first items of each top-level section. */
+			  comprising the first items of each top-level section. */
 			margin-top: 1.1rem;
 		}
 		#toc#toc .secno { /* Ugh, need more specificity to override base.css */
@@ -1188,12 +1256,12 @@ Possible extra rowspan handling
 /** Index *********************************************************************/
 
 	/* Index Lists: Layout */
-	ul.index       { margin-left: 0; columns: 15em; text-indent: 1em hanging; }
-	ul.index li    { margin-left: 0; list-style: none; break-inside: avoid; }
-	ul.index li li { margin-left: 1em }
-	ul.index dl    { margin-top: 0; }
-	ul.index dt    { margin: .2em 0 .2em 20px;}
-	ul.index dd    { margin: .2em 0 .2em 40px;}
+	ul.index	  { margin-left: 0; columns: 15em; text-indent: 1em hanging; }
+	ul.index li	{ margin-left: 0; list-style: none; break-inside: avoid; }
+	ul.index li li { margin-left: 1em; }
+	ul.index dl	{ margin-top: 0; }
+	ul.index dt	{ margin: .2em 0 .2em 20px;}
+	ul.index dd	{ margin: .2em 0 .2em 40px;}
 	/* Index Lists: Typography */
 	ul.index ul,
 	ul.index dl { font-size: smaller; }
@@ -1237,6 +1305,91 @@ Possible extra rowspan handling
 		font-weight: bold;
 	}
 
+/** Outdated warning **********************************************************/
+
+.outdated-spec {
+	color: black;
+	color: var(--outdatedspec-text);
+	background-color: rgba(0,0,0,0.5);
+	background-color: var(--outdatedspec-bg);
+}
+
+.outdated-warning {
+	position: fixed;
+	bottom: 50%;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	width: 50%;
+	background: maroon;
+	background: var(--outdated-bg);
+	color: white;
+	color: var(--outdated-text);
+	border-radius: 1em;
+	box-shadow: 0 0 1em red;
+	box-shadow: 0 0 1em var(--outdated-shadow);
+	padding: 2em;
+	text-align: center;
+	z-index: 2;
+}
+
+.outdated-warning a {
+	color: currentcolor;
+	background: transparent;
+}
+
+.edited-rec-warning {
+	background: darkorange;
+	background: var(--editedrec-bg);
+	box-shadow: 0 0 1em;
+}
+
+.outdated-warning button {
+	color: var(--outdated-text);
+	border-radius: 1em;
+	box-shadow: 0 0 1em red;
+	box-shadow: 0 0 1em var(--outdated-shadow);
+	padding: 2em;
+	text-align: center;
+	z-index: 2;
+}
+
+.outdated-warning a {
+	color: currentcolor;
+	background: transparent;
+}
+
+.edited-rec-warning {
+	background: darkorange;
+	background: var(--editedrec-bg);
+	box-shadow: 0 0 1em;
+}
+
+.outdated-warning button {
+	position: absolute;
+	top: 0;
+	right:0;
+	margin: 0;
+	border: 0;
+	padding: 0.25em 0.5em;
+	background: transparent;
+	color: white;
+	color: var(--outdated-text);
+	font:1em sans-serif;
+	text-align:center;
+}
+
+.outdated-warning span {
+	display: block;
+}
+
+.outdated-collapsed {
+	bottom: 0;
+	border-radius: 0;
+	width: 100%;
+	padding: 0;
+}
+
 /******************************************************************************/
 /*                                    Print                                   */
 /******************************************************************************/
@@ -1249,6 +1402,16 @@ Possible extra rowspan handling
 		/* Serif for print. */
 		body {
 			font-family: serif;
+		}
+
+		.outdated-warning {
+			position: absolute;
+			border-style: solid;
+			border-color: red;
+		}
+
+		.outdated-warning input {
+			display: none;
 		}
 	}
 	@page {
@@ -1268,13 +1431,13 @@ Possible extra rowspan handling
 		margin-right: auto;
 	}
 	.overlarge {
-		/* Magic to create good table positioning:
-		   "content column" is 50ems wide at max; less on smaller screens.
-		   Extra space (after ToC + content) is empty on the right.
+		/* Magic to create good item positioning:
+		  "content column" is 50ems wide at max; less on smaller screens.
+		  Extra space (after ToC + content) is empty on the right.
 
-		   1. When table < content column, centers table in column.
-		   2. When content < table < available, left-aligns.
-		   3. When table > available, fills available + scroll bar.
+		  1. When item < content column, centers item in column.
+		  2. When content < item < available, left-aligns.
+		  3. When item > available, fills available + scroll bar.
 		*/
 		display: grid;
 		grid-template-columns: minmax(0, 50em);
@@ -1309,21 +1472,21 @@ Possible extra rowspan handling
 		.overlarge {
 			overflow-x: auto;
 			/* See Lea Verou's explanation background-attachment:
-			 * http://lea.verou.me/2012/04/background-attachment-local/
-			 *
+			* http://lea.verou.me/2012/04/background-attachment-local/
+			*
 			background: top left  / 4em 100% linear-gradient(to right,  #ffffff, rgba(255, 255, 255, 0)) local,
-			            top right / 4em 100% linear-gradient(to left, #ffffff, rgba(255, 255, 255, 0)) local,
-			            top left  / 1em 100% linear-gradient(to right,  #c3c3c5, rgba(195, 195, 197, 0)) scroll,
-			            top right / 1em 100% linear-gradient(to left, #c3c3c5, rgba(195, 195, 197, 0)) scroll,
-			            white;
+						top right / 4em 100% linear-gradient(to left, #ffffff, rgba(255, 255, 255, 0)) local,
+						top left  / 1em 100% linear-gradient(to right,  #c3c3c5, rgba(195, 195, 197, 0)) scroll,
+						top right / 1em 100% linear-gradient(to left, #c3c3c5, rgba(195, 195, 197, 0)) scroll,
+						white;
 			background-repeat: no-repeat;
 			*/
 		}
 	}
 </style>
-  <meta content="Bikeshed version 89ebb6ab, updated Fri Oct 9 15:32:07 2020 -0700" name="generator">
-  <link href="https://opencaesar.github.io/core-vocabularies//src/oml/iso.org/80000-3-quantityValues" rel="canonical">
-  <meta content="016d25312624eba77cc9060e2b9fc3b359f0e606" name="document-revision">
+  <meta content="Bikeshed version c5172e83, updated Fri Nov 20 15:35:20 2020 -0800" name="generator">
+  <link href="https://opencaesar.github.io/core-vocabularies//src/oml/iso.org/80000-3-magnitudes2" rel="canonical">
+  <meta content="f1448e00267c6de5a8b438541ebe1980e5b42225" name="document-revision">
 <style>
 a[data-link-type=biblio] {
     white-space: pre-wrap;
@@ -1394,17 +1557,13 @@ pre .property::before, pre .property::after {
 <style>/* style-colors */
 
 /* Any --*-text not paired with a --*-bg is assumed to have a transparent bg */
-html {
-    color: black;
-    color: var(--text);
-    background-color: white;
-    background-color: var(--bg);
-}
 :root {
     color-scheme: light dark;
 
     --text: black;
     --bg: white;
+
+    --unofficial-watermark: url(https://www.w3.org/StyleSheets/TR/2016/logos/UD-watermark);
 
     --logo-bg: #1a5e9a;
     --logo-active-bg: #c00;
@@ -1478,6 +1637,11 @@ html {
     --warning-border: red;
     --warning-bg: hsla(40,100%,50%,0.95);
     --warning-text: var(--text);
+
+    --amendment-border: #330099;
+    --amendment-bg: #F5F0FF;
+    --amendment-text: var(--text);
+    --amendmentheading-text: #220066;
 
     --def-border: #8ccbf2;
     --def-bg: #def;
@@ -1638,6 +1802,8 @@ dfn > a.self-link::before      { content: "#"; }
         --text: #ddd;
         --bg: black;
 
+        --unofficial-watermark: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cg fill='%23100808' transform='translate(200 200) rotate(-45) translate(-200 -200)' stroke='%23100808' stroke-width='3'%3E%3Ctext x='50%25' y='220' style='font: bold 70px sans-serif; text-anchor: middle; letter-spacing: 6px;'%3EUNOFFICIAL%3C/text%3E%3Ctext x='50%25' y='305' style='font: bold 70px sans-serif; text-anchor: middle; letter-spacing: 6px;'%3EDRAFT%3C/text%3E%3C/g%3E%3C/svg%3E");
+
         --logo-bg: #1a5e9a;
         --logo-active-bg: #c00;
         --logo-text: white;
@@ -1713,6 +1879,11 @@ dfn > a.self-link::before      { content: "#"; }
         --warning-bg: hsla(40,100%,20%,0.95);
         --warning-text: var(--text);
 
+        --amendment-border: #330099;
+        --amendment-bg: #080010;
+        --amendment-text: var(--text);
+        --amendmentheading-text: #cc00ff;
+
         --def-border: #8ccbf2;
         --def-bg: #080818;
         --def-text: var(--text);
@@ -1754,12 +1925,12 @@ dfn > a.self-link::before      { content: "#"; }
  <body class="h-entry">
   <div class="head">
    <p data-fill-with="logo"><a class="logo" href="https://www.openapis.org/"><img alt="OpenAPI Initiative" height="48" src="https://opencaesar.github.io/oml/images/oml.svg"></a></p>
-   <h1 class="p-name no-ref" id="title">80000-3-quantityValues</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2020-11-13">13 November 2020</time></span></h2>
+   <h1 class="p-name no-ref" id="title">80000-3-magnitudes</h1>
+   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2020-11-26">26 November 2020</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
-     <dd><a class="u-url" href="https://opencaesar.github.io/core-vocabularies//src/oml/iso.org/80000-3-quantityValues">https://opencaesar.github.io/core-vocabularies//src/oml/iso.org/80000-3-quantityValues</a>
+     <dd><a class="u-url" href="https://opencaesar.github.io/core-vocabularies//src/oml/iso.org/80000-3-magnitudes2">https://opencaesar.github.io/core-vocabularies//src/oml/iso.org/80000-3-magnitudes2</a>
      <dt class="editor">Editor:
      <dd class="editor p-author h-card vcard"><span class="p-name fn">Unknown</span>
      <dt>Copyright:
@@ -1771,33 +1942,33 @@ dfn > a.self-link::before      { content: "#"; }
   </div>
   <div class="p-summary" data-fill-with="abstract">
    <h2 class="no-num no-toc no-ref heading settled" id="abstract"><span class="content">Abstract</span></h2>
-   <p>This vocabulary provides convenience specializations of metrology:UnitaryQuantityValue
+   <p>This vocabulary provides convenience specializations of metrology:IsReflexiveMagnitudeOf
 
- as concepts for every metrology:MeasurementUnit defined in http://iso.org/80000-3-units.</p>
-   <p>Note that this vocabulary reflects an opinionated usage of metrology:UnitaryQuantityValue
-
- as an OML concept and does not exclude in any way other possible usages.</p>
+ as relation entities for every metrology:MeasurementUnit defined in http://iso.org/80000-3-units.</p>
+   <p>
+    Note that this vocabulary is an alternative to 
+    <httpU0003A U000380000-3-magnitudes1 iso.org>.</httpU0003A>
+   </p>
   </div>
   <div data-fill-with="at-risk"></div>
   <nav data-fill-with="table-of-contents" id="toc">
    <h2 class="no-num no-toc no-ref" id="contents">Table of Contents</h2>
    <ol class="toc" role="directory">
     <li><a href="#Namespace"><span class="secno">1</span> <span class="content">Namespace</span></a>
-    <li><a href="#Extensions"><span class="secno">2</span> <span class="content">Imports</span></a>
     <li>
-     <a href="#Relations"><span class="secno">3</span> <span class="content">Relation Entities</span></a>
+     <a href="#Relations"><span class="secno">2</span> <span class="content">Relation Entities</span></a>
      <ol class="toc">
-      <li><a href="#Hertz-magnitude"><span class="secno">3.1</span> <span class="content"><span>hertz-magnitude</span></span></a>
-      <li><a href="#Hour-magnitude"><span class="secno">3.2</span> <span class="content"><span>hour-magnitude</span></span></a>
-      <li><a href="#Kilometre-magnitude"><span class="secno">3.3</span> <span class="content"><span>kilometre-magnitude</span></span></a>
-      <li><a href="#Kilometre-per-second-magnitude"><span class="secno">3.4</span> <span class="content"><span>kilometre-per-second-magnitude</span></span></a>
-      <li><a href="#Metre-magnitude"><span class="secno">3.5</span> <span class="content"><span>metre-magnitude</span></span></a>
-      <li><a href="#Metre-per-second-magnitude"><span class="secno">3.6</span> <span class="content"><span>metre-per-second-magnitude</span></span></a>
-      <li><a href="#Millisecond-magnitude"><span class="secno">3.7</span> <span class="content"><span>millisecond-magnitude</span></span></a>
-      <li><a href="#Minute-magnitude"><span class="secno">3.8</span> <span class="content"><span>minute-magnitude</span></span></a>
-      <li><a href="#Radian-magnitude"><span class="secno">3.9</span> <span class="content"><span>radian-magnitude</span></span></a>
-      <li><a href="#Revolutions-magnitude"><span class="secno">3.10</span> <span class="content"><span>revolutions-magnitude</span></span></a>
-      <li><a href="#Second-magnitude"><span class="secno">3.11</span> <span class="content"><span>second-magnitude</span></span></a>
+      <li><a href="#Hertz-magnitude"><span class="secno">2.1</span> <span class="content"><span>hertz-magnitude</span></span></a>
+      <li><a href="#Hour-magnitude"><span class="secno">2.2</span> <span class="content"><span>hour-magnitude</span></span></a>
+      <li><a href="#Kilometre-magnitude"><span class="secno">2.3</span> <span class="content"><span>kilometre-magnitude</span></span></a>
+      <li><a href="#Kilometre-per-second-magnitude"><span class="secno">2.4</span> <span class="content"><span>kilometre-per-second-magnitude</span></span></a>
+      <li><a href="#Metre-magnitude"><span class="secno">2.5</span> <span class="content"><span>metre-magnitude</span></span></a>
+      <li><a href="#Metre-per-second-magnitude"><span class="secno">2.6</span> <span class="content"><span>metre-per-second-magnitude</span></span></a>
+      <li><a href="#Millisecond-magnitude"><span class="secno">2.7</span> <span class="content"><span>millisecond-magnitude</span></span></a>
+      <li><a href="#Minute-magnitude"><span class="secno">2.8</span> <span class="content"><span>minute-magnitude</span></span></a>
+      <li><a href="#Radian-magnitude"><span class="secno">2.9</span> <span class="content"><span>radian-magnitude</span></span></a>
+      <li><a href="#Revolution-magnitude"><span class="secno">2.10</span> <span class="content"><span>revolution-magnitude</span></span></a>
+      <li><a href="#Second-magnitude"><span class="secno">2.11</span> <span class="content"><span>second-magnitude</span></span></a>
      </ol>
     <li>
      <a href="#index"><span class="secno"></span> <span class="content">Index</span></a>
@@ -1812,191 +1983,151 @@ dfn > a.self-link::before      { content: "#"; }
     <h2 class="heading settled" data-level="1" id="Namespace"><span class="secno">1. </span><span class="content">Namespace</span><a class="self-link" href="#Namespace"></a></h2>
     <ul>
      <li data-md>
-      <p>80000-3-quantityValues: <a href="80000-3-quantityValues.html">http://iso.org/80000-3-quantityValues</a></p>
+      <p>80000-3-magnitudes: <a href="80000-3-magnitudes2.html">http://iso.org/80000-3-magnitudes</a></p>
     </ul>
-    <h2 class="heading settled" data-level="2" id="Extensions"><span class="secno">2. </span><span class="content">Imports</span><a class="self-link" href="#Extensions"></a></h2>
-    <ul>
-     <li data-md>
-      <p>80000-concepts: <a href="http://iso.org/80000-concepts.html">http://iso.org/80000-concepts</a></p>
-     <li data-md>
-      <p>80000-3-units: <a href="http://iso.org/80000-3-units.html">http://iso.org/80000-3-units</a></p>
-    </ul>
-    <h2 class="heading settled" data-level="3" id="Relations"><span class="secno">3. </span><span class="content">Relation Entities</span><a class="self-link" href="#Relations"></a></h2>
-    <h3 class="heading settled" data-level="3.1" id="Hertz-magnitude"><span class="secno">3.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="hertz-magnitude">hertz-magnitude<a class="self-link" href="#hertz-magnitude"></a></dfn></span><a class="self-link" href="#Hertz-magnitude"></a></h3>
+    <h2 class="heading settled" data-level="2" id="Relations"><span class="secno">2. </span><span class="content">Relation Entities</span><a class="self-link" href="#Relations"></a></h2>
+    <h3 class="heading settled" data-level="2.1" id="Hertz-magnitude"><span class="secno">2.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="hertz-magnitude">hertz-magnitude<a class="self-link" href="#hertz-magnitude"></a></dfn></span><a class="self-link" href="#Hertz-magnitude"></a></h3>
     <p><em>Attributes:</em></p>
-    <p><em>Source:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#unitaryquantity" id="ref-for-unitaryquantity">metrology:UnitaryQuantity</a></p>
-    <p><em>Target:</em> <a data-link-type="dfn" href="80000-3-quantityValues.html#hertz-magnitude" id="ref-for-hertz-magnitude">hertz-magnitude</a></p>
-    <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="hertz-magnitude" data-dfn-type="attribute" data-export id="dom-hertz-magnitude-hashertzmagnitude"><code>hasHertzMagnitude</code><a class="self-link" href="#dom-hertz-magnitude-hashertzmagnitude"></a></dfn></p>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="80000-3-units.html#unitoffrequencyvalue" id="ref-for-unitoffrequencyvalue">80000-3-units:UnitOfFrequencyValue</a>, <a data-link-type="dfn" href="80000-concepts.html#unitaryquantitymagnitude" id="ref-for-unitaryquantitymagnitude">80000-concepts:UnitaryQuantityMagnitude</a></p>
+    <p><em>Source:</em> <a data-link-type="dfn" href="80000-3-magnitudes2.html#hertz-magnitude" id="ref-for-hertz-magnitude">hertz-magnitude</a></p>
+    <p><em>Target:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#unitaryquantity" id="ref-for-unitaryquantity">metrology:UnitaryQuantity</a></p>
+    <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="hertz-magnitude" data-dfn-type="attribute" data-export id="dom-hertz-magnitude-ishertzmagnitudeof"><code>isHertzMagnitudeOf</code><a class="self-link" href="#dom-hertz-magnitude-ishertzmagnitudeof"></a></dfn></p>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="80000-3-units.html#frequencymagnitude" id="ref-for-frequencymagnitude">80000-3-units:FrequencyMagnitude</a>, <a data-link-type="dfn" href="../iupac.org/metrology.html#isreflexivemagnitudeof" id="ref-for-isreflexivemagnitudeof">metrology:IsReflexiveMagnitudeOf</a></p>
     <p><em>Relations with source:</em></p>
     <ul>
      <li data-md>
       <p>hertz-magnitude ← <a data-link-type="dfn" href="../iupac.org/metrology.html#hasreference" id="ref-for-hasreference">metrology:HasReference</a> → <a data-link-type="dfn" href="../iupac.org/metrology.html#reference" id="ref-for-reference">metrology:Reference</a> (range restricted to instance <a data-link-type="dfn" href="80000-3-instances.html#hertz" id="ref-for-hertz">80000-3-instances:hertz</a>)</p>
-    </ul>
-    <p><em>Relations with target:</em></p>
-    <ul>
      <li data-md>
-      <p><a data-link-type="dfn" href="../iupac.org/metrology.html#unitaryquantity" id="ref-for-unitaryquantity①">metrology:UnitaryQuantity</a> ← <a data-link-type="dfn" href="80000-3-quantityValues.html#hertz-magnitude" id="ref-for-hertz-magnitude①">hertz-magnitude</a> → hertz-magnitude</p>
+      <p>hertz-magnitude ← <a data-link-type="dfn" href="80000-3-magnitudes2.html#hertz-magnitude" id="ref-for-hertz-magnitude①">hertz-magnitude</a> → <a data-link-type="dfn" href="../iupac.org/metrology.html#unitaryquantity" id="ref-for-unitaryquantity①">metrology:UnitaryQuantity</a></p>
     </ul>
-    <h3 class="heading settled" data-level="3.2" id="Hour-magnitude"><span class="secno">3.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="hour-magnitude">hour-magnitude<a class="self-link" href="#hour-magnitude"></a></dfn></span><a class="self-link" href="#Hour-magnitude"></a></h3>
+    <h3 class="heading settled" data-level="2.2" id="Hour-magnitude"><span class="secno">2.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="hour-magnitude">hour-magnitude<a class="self-link" href="#hour-magnitude"></a></dfn></span><a class="self-link" href="#Hour-magnitude"></a></h3>
     <p><em>Attributes:</em></p>
-    <p><em>Source:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#unitaryquantity" id="ref-for-unitaryquantity②">metrology:UnitaryQuantity</a></p>
-    <p><em>Target:</em> <a data-link-type="dfn" href="80000-3-quantityValues.html#hour-magnitude" id="ref-for-hour-magnitude">hour-magnitude</a></p>
-    <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="hour-magnitude" data-dfn-type="attribute" data-export id="dom-hour-magnitude-hashourmagnitude"><code>hasHourMagnitude</code><a class="self-link" href="#dom-hour-magnitude-hashourmagnitude"></a></dfn></p>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="80000-3-units.html#unitoftimevalue" id="ref-for-unitoftimevalue">80000-3-units:UnitOfTimeValue</a>, <a data-link-type="dfn" href="80000-concepts.html#unitaryquantitymagnitude" id="ref-for-unitaryquantitymagnitude①">80000-concepts:UnitaryQuantityMagnitude</a></p>
+    <p><em>Source:</em> <a data-link-type="dfn" href="80000-3-magnitudes2.html#hour-magnitude" id="ref-for-hour-magnitude">hour-magnitude</a></p>
+    <p><em>Target:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#unitaryquantity" id="ref-for-unitaryquantity②">metrology:UnitaryQuantity</a></p>
+    <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="hour-magnitude" data-dfn-type="attribute" data-export id="dom-hour-magnitude-ishourmagnitudeof"><code>isHourMagnitudeOf</code><a class="self-link" href="#dom-hour-magnitude-ishourmagnitudeof"></a></dfn></p>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#isreflexivemagnitudeof" id="ref-for-isreflexivemagnitudeof①">metrology:IsReflexiveMagnitudeOf</a>, <a data-link-type="dfn" href="80000-3-units.html#timemagnitude" id="ref-for-timemagnitude">80000-3-units:TimeMagnitude</a></p>
     <p><em>Relations with source:</em></p>
     <ul>
      <li data-md>
       <p>hour-magnitude ← <a data-link-type="dfn" href="../iupac.org/metrology.html#hasreference" id="ref-for-hasreference①">metrology:HasReference</a> → <a data-link-type="dfn" href="../iupac.org/metrology.html#reference" id="ref-for-reference①">metrology:Reference</a> (range restricted to instance <a data-link-type="dfn" href="80000-3-instances.html#hour" id="ref-for-hour">80000-3-instances:hour</a>)</p>
-    </ul>
-    <p><em>Relations with target:</em></p>
-    <ul>
      <li data-md>
-      <p><a data-link-type="dfn" href="../iupac.org/metrology.html#unitaryquantity" id="ref-for-unitaryquantity③">metrology:UnitaryQuantity</a> ← <a data-link-type="dfn" href="80000-3-quantityValues.html#hour-magnitude" id="ref-for-hour-magnitude①">hour-magnitude</a> → hour-magnitude</p>
+      <p>hour-magnitude ← <a data-link-type="dfn" href="80000-3-magnitudes2.html#hour-magnitude" id="ref-for-hour-magnitude①">hour-magnitude</a> → <a data-link-type="dfn" href="../iupac.org/metrology.html#unitaryquantity" id="ref-for-unitaryquantity③">metrology:UnitaryQuantity</a></p>
     </ul>
-    <h3 class="heading settled" data-level="3.3" id="Kilometre-magnitude"><span class="secno">3.3. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="kilometre-magnitude">kilometre-magnitude<a class="self-link" href="#kilometre-magnitude"></a></dfn></span><a class="self-link" href="#Kilometre-magnitude"></a></h3>
+    <h3 class="heading settled" data-level="2.3" id="Kilometre-magnitude"><span class="secno">2.3. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="kilometre-magnitude">kilometre-magnitude<a class="self-link" href="#kilometre-magnitude"></a></dfn></span><a class="self-link" href="#Kilometre-magnitude"></a></h3>
     <p><em>Attributes:</em></p>
-    <p><em>Source:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#unitaryquantity" id="ref-for-unitaryquantity④">metrology:UnitaryQuantity</a></p>
-    <p><em>Target:</em> <a data-link-type="dfn" href="80000-3-quantityValues.html#kilometre-magnitude" id="ref-for-kilometre-magnitude">kilometre-magnitude</a></p>
-    <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="kilometre-magnitude" data-dfn-type="attribute" data-export id="dom-kilometre-magnitude-haskilometremagnitude"><code>hasKilometreMagnitude</code><a class="self-link" href="#dom-kilometre-magnitude-haskilometremagnitude"></a></dfn></p>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="80000-3-units.html#unitoflengthvalue" id="ref-for-unitoflengthvalue">80000-3-units:UnitOfLengthValue</a>, <a data-link-type="dfn" href="80000-concepts.html#unitaryquantitymagnitude" id="ref-for-unitaryquantitymagnitude②">80000-concepts:UnitaryQuantityMagnitude</a></p>
+    <p><em>Source:</em> <a data-link-type="dfn" href="80000-3-magnitudes2.html#kilometre-magnitude" id="ref-for-kilometre-magnitude">kilometre-magnitude</a></p>
+    <p><em>Target:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#unitaryquantity" id="ref-for-unitaryquantity④">metrology:UnitaryQuantity</a></p>
+    <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="kilometre-magnitude" data-dfn-type="attribute" data-export id="dom-kilometre-magnitude-iskilometremagnitudeof"><code>isKilometreMagnitudeOf</code><a class="self-link" href="#dom-kilometre-magnitude-iskilometremagnitudeof"></a></dfn></p>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#isreflexivemagnitudeof" id="ref-for-isreflexivemagnitudeof②">metrology:IsReflexiveMagnitudeOf</a>, <a data-link-type="dfn" href="80000-3-units.html#lengthmagnitude" id="ref-for-lengthmagnitude">80000-3-units:LengthMagnitude</a></p>
     <p><em>Relations with source:</em></p>
     <ul>
      <li data-md>
       <p>kilometre-magnitude ← <a data-link-type="dfn" href="../iupac.org/metrology.html#hasreference" id="ref-for-hasreference②">metrology:HasReference</a> → <a data-link-type="dfn" href="../iupac.org/metrology.html#reference" id="ref-for-reference②">metrology:Reference</a> (range restricted to instance <a data-link-type="dfn" href="80000-3-instances.html#kilometre" id="ref-for-kilometre">80000-3-instances:kilometre</a>)</p>
-    </ul>
-    <p><em>Relations with target:</em></p>
-    <ul>
      <li data-md>
-      <p><a data-link-type="dfn" href="../iupac.org/metrology.html#unitaryquantity" id="ref-for-unitaryquantity⑤">metrology:UnitaryQuantity</a> ← <a data-link-type="dfn" href="80000-3-quantityValues.html#kilometre-magnitude" id="ref-for-kilometre-magnitude①">kilometre-magnitude</a> → kilometre-magnitude</p>
+      <p>kilometre-magnitude ← <a data-link-type="dfn" href="80000-3-magnitudes2.html#kilometre-magnitude" id="ref-for-kilometre-magnitude①">kilometre-magnitude</a> → <a data-link-type="dfn" href="../iupac.org/metrology.html#unitaryquantity" id="ref-for-unitaryquantity⑤">metrology:UnitaryQuantity</a></p>
     </ul>
-    <h3 class="heading settled" data-level="3.4" id="Kilometre-per-second-magnitude"><span class="secno">3.4. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="kilometre-per-second-magnitude">kilometre-per-second-magnitude<a class="self-link" href="#kilometre-per-second-magnitude"></a></dfn></span><a class="self-link" href="#Kilometre-per-second-magnitude"></a></h3>
+    <h3 class="heading settled" data-level="2.4" id="Kilometre-per-second-magnitude"><span class="secno">2.4. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="kilometre-per-second-magnitude">kilometre-per-second-magnitude<a class="self-link" href="#kilometre-per-second-magnitude"></a></dfn></span><a class="self-link" href="#Kilometre-per-second-magnitude"></a></h3>
     <p><em>Attributes:</em></p>
-    <p><em>Source:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#unitaryquantity" id="ref-for-unitaryquantity⑥">metrology:UnitaryQuantity</a></p>
-    <p><em>Target:</em> <a data-link-type="dfn" href="80000-3-quantityValues.html#kilometre-per-second-magnitude" id="ref-for-kilometre-per-second-magnitude">kilometre-per-second-magnitude</a></p>
-    <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="kilometre-per-second-magnitude" data-dfn-type="attribute" data-export id="dom-kilometre-per-second-magnitude-haskilometrepersecondmagnitude"><code>hasKilometrePerSecondMagnitude</code><a class="self-link" href="#dom-kilometre-per-second-magnitude-haskilometrepersecondmagnitude"></a></dfn></p>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="80000-3-units.html#unitofvelocityvalue" id="ref-for-unitofvelocityvalue">80000-3-units:UnitOfVelocityValue</a>, <a data-link-type="dfn" href="80000-concepts.html#unitaryquantitymagnitude" id="ref-for-unitaryquantitymagnitude③">80000-concepts:UnitaryQuantityMagnitude</a></p>
+    <p><em>Source:</em> <a data-link-type="dfn" href="80000-3-magnitudes2.html#kilometre-per-second-magnitude" id="ref-for-kilometre-per-second-magnitude">kilometre-per-second-magnitude</a></p>
+    <p><em>Target:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#unitaryquantity" id="ref-for-unitaryquantity⑥">metrology:UnitaryQuantity</a></p>
+    <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="kilometre-per-second-magnitude" data-dfn-type="attribute" data-export id="dom-kilometre-per-second-magnitude-iskilometrepersecondmagnitudeof"><code>isKilometrePerSecondMagnitudeOf</code><a class="self-link" href="#dom-kilometre-per-second-magnitude-iskilometrepersecondmagnitudeof"></a></dfn></p>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#isreflexivemagnitudeof" id="ref-for-isreflexivemagnitudeof③">metrology:IsReflexiveMagnitudeOf</a>, <a data-link-type="dfn" href="80000-3-units.html#velocitymagnitude" id="ref-for-velocitymagnitude">80000-3-units:VelocityMagnitude</a></p>
     <p><em>Relations with source:</em></p>
     <ul>
      <li data-md>
       <p>kilometre-per-second-magnitude ← <a data-link-type="dfn" href="../iupac.org/metrology.html#hasreference" id="ref-for-hasreference③">metrology:HasReference</a> → <a data-link-type="dfn" href="../iupac.org/metrology.html#reference" id="ref-for-reference③">metrology:Reference</a> (range restricted to instance <a data-link-type="dfn" href="80000-3-instances.html#kilometre-per-second" id="ref-for-kilometre-per-second">80000-3-instances:kilometre-per-second</a>)</p>
-    </ul>
-    <p><em>Relations with target:</em></p>
-    <ul>
      <li data-md>
-      <p><a data-link-type="dfn" href="../iupac.org/metrology.html#unitaryquantity" id="ref-for-unitaryquantity⑦">metrology:UnitaryQuantity</a> ← <a data-link-type="dfn" href="80000-3-quantityValues.html#kilometre-per-second-magnitude" id="ref-for-kilometre-per-second-magnitude①">kilometre-per-second-magnitude</a> → kilometre-per-second-magnitude</p>
+      <p>kilometre-per-second-magnitude ← <a data-link-type="dfn" href="80000-3-magnitudes2.html#kilometre-per-second-magnitude" id="ref-for-kilometre-per-second-magnitude①">kilometre-per-second-magnitude</a> → <a data-link-type="dfn" href="../iupac.org/metrology.html#unitaryquantity" id="ref-for-unitaryquantity⑦">metrology:UnitaryQuantity</a></p>
     </ul>
-    <h3 class="heading settled" data-level="3.5" id="Metre-magnitude"><span class="secno">3.5. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="metre-magnitude">metre-magnitude<a class="self-link" href="#metre-magnitude"></a></dfn></span><a class="self-link" href="#Metre-magnitude"></a></h3>
+    <h3 class="heading settled" data-level="2.5" id="Metre-magnitude"><span class="secno">2.5. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="metre-magnitude">metre-magnitude<a class="self-link" href="#metre-magnitude"></a></dfn></span><a class="self-link" href="#Metre-magnitude"></a></h3>
     <p><em>Attributes:</em></p>
-    <p><em>Source:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#unitaryquantity" id="ref-for-unitaryquantity⑧">metrology:UnitaryQuantity</a></p>
-    <p><em>Target:</em> <a data-link-type="dfn" href="80000-3-quantityValues.html#metre-magnitude" id="ref-for-metre-magnitude">metre-magnitude</a></p>
-    <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="metre-magnitude" data-dfn-type="attribute" data-export id="dom-metre-magnitude-hasmetremagnitude"><code>hasMetreMagnitude</code><a class="self-link" href="#dom-metre-magnitude-hasmetremagnitude"></a></dfn></p>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="80000-3-units.html#unitoflengthvalue" id="ref-for-unitoflengthvalue①">80000-3-units:UnitOfLengthValue</a>, <a data-link-type="dfn" href="80000-concepts.html#unitaryquantitymagnitude" id="ref-for-unitaryquantitymagnitude④">80000-concepts:UnitaryQuantityMagnitude</a></p>
+    <p><em>Source:</em> <a data-link-type="dfn" href="80000-3-magnitudes2.html#metre-magnitude" id="ref-for-metre-magnitude">metre-magnitude</a></p>
+    <p><em>Target:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#unitaryquantity" id="ref-for-unitaryquantity⑧">metrology:UnitaryQuantity</a></p>
+    <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="metre-magnitude" data-dfn-type="attribute" data-export id="dom-metre-magnitude-ismetremagnitudeof"><code>isMetreMagnitudeOf</code><a class="self-link" href="#dom-metre-magnitude-ismetremagnitudeof"></a></dfn></p>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#isreflexivemagnitudeof" id="ref-for-isreflexivemagnitudeof④">metrology:IsReflexiveMagnitudeOf</a>, <a data-link-type="dfn" href="80000-3-units.html#lengthmagnitude" id="ref-for-lengthmagnitude①">80000-3-units:LengthMagnitude</a></p>
     <p><em>Relations with source:</em></p>
     <ul>
      <li data-md>
       <p>metre-magnitude ← <a data-link-type="dfn" href="../iupac.org/metrology.html#hasreference" id="ref-for-hasreference④">metrology:HasReference</a> → <a data-link-type="dfn" href="../iupac.org/metrology.html#reference" id="ref-for-reference④">metrology:Reference</a> (range restricted to instance <a data-link-type="dfn" href="80000-3-instances.html#metre" id="ref-for-metre">80000-3-instances:metre</a>)</p>
-    </ul>
-    <p><em>Relations with target:</em></p>
-    <ul>
      <li data-md>
-      <p><a data-link-type="dfn" href="../iupac.org/metrology.html#unitaryquantity" id="ref-for-unitaryquantity⑨">metrology:UnitaryQuantity</a> ← <a data-link-type="dfn" href="80000-3-quantityValues.html#metre-magnitude" id="ref-for-metre-magnitude①">metre-magnitude</a> → metre-magnitude</p>
+      <p>metre-magnitude ← <a data-link-type="dfn" href="80000-3-magnitudes2.html#metre-magnitude" id="ref-for-metre-magnitude①">metre-magnitude</a> → <a data-link-type="dfn" href="../iupac.org/metrology.html#unitaryquantity" id="ref-for-unitaryquantity⑨">metrology:UnitaryQuantity</a></p>
     </ul>
-    <h3 class="heading settled" data-level="3.6" id="Metre-per-second-magnitude"><span class="secno">3.6. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="metre-per-second-magnitude">metre-per-second-magnitude<a class="self-link" href="#metre-per-second-magnitude"></a></dfn></span><a class="self-link" href="#Metre-per-second-magnitude"></a></h3>
+    <h3 class="heading settled" data-level="2.6" id="Metre-per-second-magnitude"><span class="secno">2.6. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="metre-per-second-magnitude">metre-per-second-magnitude<a class="self-link" href="#metre-per-second-magnitude"></a></dfn></span><a class="self-link" href="#Metre-per-second-magnitude"></a></h3>
     <p><em>Attributes:</em></p>
-    <p><em>Source:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#unitaryquantity" id="ref-for-unitaryquantity①⓪">metrology:UnitaryQuantity</a></p>
-    <p><em>Target:</em> <a data-link-type="dfn" href="80000-3-quantityValues.html#metre-per-second-magnitude" id="ref-for-metre-per-second-magnitude">metre-per-second-magnitude</a></p>
-    <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="metre-per-second-magnitude" data-dfn-type="attribute" data-export id="dom-metre-per-second-magnitude-hasmetreper-secondmagnitude"><code>hasMetrePer-SecondMagnitude</code><a class="self-link" href="#dom-metre-per-second-magnitude-hasmetreper-secondmagnitude"></a></dfn></p>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="80000-3-units.html#unitofvelocityvalue" id="ref-for-unitofvelocityvalue①">80000-3-units:UnitOfVelocityValue</a>, <a data-link-type="dfn" href="80000-concepts.html#unitaryquantitymagnitude" id="ref-for-unitaryquantitymagnitude⑤">80000-concepts:UnitaryQuantityMagnitude</a></p>
+    <p><em>Source:</em> <a data-link-type="dfn" href="80000-3-magnitudes2.html#metre-per-second-magnitude" id="ref-for-metre-per-second-magnitude">metre-per-second-magnitude</a></p>
+    <p><em>Target:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#unitaryquantity" id="ref-for-unitaryquantity①⓪">metrology:UnitaryQuantity</a></p>
+    <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="metre-per-second-magnitude" data-dfn-type="attribute" data-export id="dom-metre-per-second-magnitude-ismetreper-secondmagnitudeof"><code>isMetrePer-SecondMagnitudeOf</code><a class="self-link" href="#dom-metre-per-second-magnitude-ismetreper-secondmagnitudeof"></a></dfn></p>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#isreflexivemagnitudeof" id="ref-for-isreflexivemagnitudeof⑤">metrology:IsReflexiveMagnitudeOf</a>, <a data-link-type="dfn" href="80000-3-units.html#velocitymagnitude" id="ref-for-velocitymagnitude①">80000-3-units:VelocityMagnitude</a></p>
     <p><em>Relations with source:</em></p>
     <ul>
      <li data-md>
       <p>metre-per-second-magnitude ← <a data-link-type="dfn" href="../iupac.org/metrology.html#hasreference" id="ref-for-hasreference⑤">metrology:HasReference</a> → <a data-link-type="dfn" href="../iupac.org/metrology.html#reference" id="ref-for-reference⑤">metrology:Reference</a> (range restricted to instance <a data-link-type="dfn" href="80000-3-instances.html#metre-per-second" id="ref-for-metre-per-second">80000-3-instances:metre-per-second</a>)</p>
-    </ul>
-    <p><em>Relations with target:</em></p>
-    <ul>
      <li data-md>
-      <p><a data-link-type="dfn" href="../iupac.org/metrology.html#unitaryquantity" id="ref-for-unitaryquantity①①">metrology:UnitaryQuantity</a> ← <a data-link-type="dfn" href="80000-3-quantityValues.html#metre-per-second-magnitude" id="ref-for-metre-per-second-magnitude①">metre-per-second-magnitude</a> → metre-per-second-magnitude</p>
+      <p>metre-per-second-magnitude ← <a data-link-type="dfn" href="80000-3-magnitudes2.html#metre-per-second-magnitude" id="ref-for-metre-per-second-magnitude①">metre-per-second-magnitude</a> → <a data-link-type="dfn" href="../iupac.org/metrology.html#unitaryquantity" id="ref-for-unitaryquantity①①">metrology:UnitaryQuantity</a></p>
     </ul>
-    <h3 class="heading settled" data-level="3.7" id="Millisecond-magnitude"><span class="secno">3.7. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="millisecond-magnitude">millisecond-magnitude<a class="self-link" href="#millisecond-magnitude"></a></dfn></span><a class="self-link" href="#Millisecond-magnitude"></a></h3>
+    <h3 class="heading settled" data-level="2.7" id="Millisecond-magnitude"><span class="secno">2.7. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="millisecond-magnitude">millisecond-magnitude<a class="self-link" href="#millisecond-magnitude"></a></dfn></span><a class="self-link" href="#Millisecond-magnitude"></a></h3>
     <p><em>Attributes:</em></p>
-    <p><em>Source:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#unitaryquantity" id="ref-for-unitaryquantity①②">metrology:UnitaryQuantity</a></p>
-    <p><em>Target:</em> <a data-link-type="dfn" href="80000-3-quantityValues.html#millisecond-magnitude" id="ref-for-millisecond-magnitude">millisecond-magnitude</a></p>
-    <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="millisecond-magnitude" data-dfn-type="attribute" data-export id="dom-millisecond-magnitude-hasmillisecondmagnitude"><code>hasMillisecondMagnitude</code><a class="self-link" href="#dom-millisecond-magnitude-hasmillisecondmagnitude"></a></dfn></p>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="80000-3-units.html#unitoftimevalue" id="ref-for-unitoftimevalue①">80000-3-units:UnitOfTimeValue</a>, <a data-link-type="dfn" href="80000-concepts.html#unitaryquantitymagnitude" id="ref-for-unitaryquantitymagnitude⑥">80000-concepts:UnitaryQuantityMagnitude</a></p>
+    <p><em>Source:</em> <a data-link-type="dfn" href="80000-3-magnitudes2.html#millisecond-magnitude" id="ref-for-millisecond-magnitude">millisecond-magnitude</a></p>
+    <p><em>Target:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#unitaryquantity" id="ref-for-unitaryquantity①②">metrology:UnitaryQuantity</a></p>
+    <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="millisecond-magnitude" data-dfn-type="attribute" data-export id="dom-millisecond-magnitude-ismillisecondmagnitudeof"><code>isMillisecondMagnitudeOf</code><a class="self-link" href="#dom-millisecond-magnitude-ismillisecondmagnitudeof"></a></dfn></p>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#isreflexivemagnitudeof" id="ref-for-isreflexivemagnitudeof⑥">metrology:IsReflexiveMagnitudeOf</a>, <a data-link-type="dfn" href="80000-3-units.html#timemagnitude" id="ref-for-timemagnitude①">80000-3-units:TimeMagnitude</a></p>
     <p><em>Relations with source:</em></p>
     <ul>
      <li data-md>
       <p>millisecond-magnitude ← <a data-link-type="dfn" href="../iupac.org/metrology.html#hasreference" id="ref-for-hasreference⑥">metrology:HasReference</a> → <a data-link-type="dfn" href="../iupac.org/metrology.html#reference" id="ref-for-reference⑥">metrology:Reference</a> (range restricted to instance <a data-link-type="dfn" href="80000-3-instances.html#millisecond" id="ref-for-millisecond">80000-3-instances:millisecond</a>)</p>
-    </ul>
-    <p><em>Relations with target:</em></p>
-    <ul>
      <li data-md>
-      <p><a data-link-type="dfn" href="../iupac.org/metrology.html#unitaryquantity" id="ref-for-unitaryquantity①③">metrology:UnitaryQuantity</a> ← <a data-link-type="dfn" href="80000-3-quantityValues.html#millisecond-magnitude" id="ref-for-millisecond-magnitude①">millisecond-magnitude</a> → millisecond-magnitude</p>
+      <p>millisecond-magnitude ← <a data-link-type="dfn" href="80000-3-magnitudes2.html#millisecond-magnitude" id="ref-for-millisecond-magnitude①">millisecond-magnitude</a> → <a data-link-type="dfn" href="../iupac.org/metrology.html#unitaryquantity" id="ref-for-unitaryquantity①③">metrology:UnitaryQuantity</a></p>
     </ul>
-    <h3 class="heading settled" data-level="3.8" id="Minute-magnitude"><span class="secno">3.8. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="minute-magnitude">minute-magnitude<a class="self-link" href="#minute-magnitude"></a></dfn></span><a class="self-link" href="#Minute-magnitude"></a></h3>
+    <h3 class="heading settled" data-level="2.8" id="Minute-magnitude"><span class="secno">2.8. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="minute-magnitude">minute-magnitude<a class="self-link" href="#minute-magnitude"></a></dfn></span><a class="self-link" href="#Minute-magnitude"></a></h3>
     <p><em>Attributes:</em></p>
-    <p><em>Source:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#unitaryquantity" id="ref-for-unitaryquantity①④">metrology:UnitaryQuantity</a></p>
-    <p><em>Target:</em> <a data-link-type="dfn" href="80000-3-quantityValues.html#minute-magnitude" id="ref-for-minute-magnitude">minute-magnitude</a></p>
-    <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="minute-magnitude" data-dfn-type="attribute" data-export id="dom-minute-magnitude-hasminutemagnitude"><code>hasMinuteMagnitude</code><a class="self-link" href="#dom-minute-magnitude-hasminutemagnitude"></a></dfn></p>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="80000-3-units.html#unitoftimevalue" id="ref-for-unitoftimevalue②">80000-3-units:UnitOfTimeValue</a>, <a data-link-type="dfn" href="80000-concepts.html#unitaryquantitymagnitude" id="ref-for-unitaryquantitymagnitude⑦">80000-concepts:UnitaryQuantityMagnitude</a></p>
+    <p><em>Source:</em> <a data-link-type="dfn" href="80000-3-magnitudes2.html#minute-magnitude" id="ref-for-minute-magnitude">minute-magnitude</a></p>
+    <p><em>Target:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#unitaryquantity" id="ref-for-unitaryquantity①④">metrology:UnitaryQuantity</a></p>
+    <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="minute-magnitude" data-dfn-type="attribute" data-export id="dom-minute-magnitude-isminutemagnitudeof"><code>isMinuteMagnitudeOf</code><a class="self-link" href="#dom-minute-magnitude-isminutemagnitudeof"></a></dfn></p>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#isreflexivemagnitudeof" id="ref-for-isreflexivemagnitudeof⑦">metrology:IsReflexiveMagnitudeOf</a>, <a data-link-type="dfn" href="80000-3-units.html#timemagnitude" id="ref-for-timemagnitude②">80000-3-units:TimeMagnitude</a></p>
     <p><em>Relations with source:</em></p>
     <ul>
      <li data-md>
       <p>minute-magnitude ← <a data-link-type="dfn" href="../iupac.org/metrology.html#hasreference" id="ref-for-hasreference⑦">metrology:HasReference</a> → <a data-link-type="dfn" href="../iupac.org/metrology.html#reference" id="ref-for-reference⑦">metrology:Reference</a> (range restricted to instance <a data-link-type="dfn" href="80000-3-instances.html#minute" id="ref-for-minute">80000-3-instances:minute</a>)</p>
-    </ul>
-    <p><em>Relations with target:</em></p>
-    <ul>
      <li data-md>
-      <p><a data-link-type="dfn" href="../iupac.org/metrology.html#unitaryquantity" id="ref-for-unitaryquantity①⑤">metrology:UnitaryQuantity</a> ← <a data-link-type="dfn" href="80000-3-quantityValues.html#minute-magnitude" id="ref-for-minute-magnitude①">minute-magnitude</a> → minute-magnitude</p>
+      <p>minute-magnitude ← <a data-link-type="dfn" href="80000-3-magnitudes2.html#minute-magnitude" id="ref-for-minute-magnitude①">minute-magnitude</a> → <a data-link-type="dfn" href="../iupac.org/metrology.html#unitaryquantity" id="ref-for-unitaryquantity①⑤">metrology:UnitaryQuantity</a></p>
     </ul>
-    <h3 class="heading settled" data-level="3.9" id="Radian-magnitude"><span class="secno">3.9. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="radian-magnitude">radian-magnitude<a class="self-link" href="#radian-magnitude"></a></dfn></span><a class="self-link" href="#Radian-magnitude"></a></h3>
+    <h3 class="heading settled" data-level="2.9" id="Radian-magnitude"><span class="secno">2.9. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="radian-magnitude">radian-magnitude<a class="self-link" href="#radian-magnitude"></a></dfn></span><a class="self-link" href="#Radian-magnitude"></a></h3>
     <p><em>Attributes:</em></p>
-    <p><em>Source:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#unitaryquantity" id="ref-for-unitaryquantity①⑥">metrology:UnitaryQuantity</a></p>
-    <p><em>Target:</em> <a data-link-type="dfn" href="80000-3-quantityValues.html#radian-magnitude" id="ref-for-radian-magnitude">radian-magnitude</a></p>
-    <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="radian-magnitude" data-dfn-type="attribute" data-export id="dom-radian-magnitude-hasradianmagnitude"><code>hasRadianMagnitude</code><a class="self-link" href="#dom-radian-magnitude-hasradianmagnitude"></a></dfn></p>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="80000-3-units.html#unitofangularmeasurevalue" id="ref-for-unitofangularmeasurevalue">80000-3-units:UnitOfAngularMeasureValue</a>, <a data-link-type="dfn" href="80000-concepts.html#unitaryquantitymagnitude" id="ref-for-unitaryquantitymagnitude⑧">80000-concepts:UnitaryQuantityMagnitude</a></p>
+    <p><em>Source:</em> <a data-link-type="dfn" href="80000-3-magnitudes2.html#radian-magnitude" id="ref-for-radian-magnitude">radian-magnitude</a></p>
+    <p><em>Target:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#unitaryquantity" id="ref-for-unitaryquantity①⑥">metrology:UnitaryQuantity</a></p>
+    <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="radian-magnitude" data-dfn-type="attribute" data-export id="dom-radian-magnitude-isradianmagnitudeof"><code>isRadianMagnitudeOf</code><a class="self-link" href="#dom-radian-magnitude-isradianmagnitudeof"></a></dfn></p>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="80000-3-units.html#angularmeasuremagnitude" id="ref-for-angularmeasuremagnitude">80000-3-units:AngularMeasureMagnitude</a>, <a data-link-type="dfn" href="../iupac.org/metrology.html#isreflexivemagnitudeof" id="ref-for-isreflexivemagnitudeof⑧">metrology:IsReflexiveMagnitudeOf</a></p>
     <p><em>Relations with source:</em></p>
     <ul>
      <li data-md>
       <p>radian-magnitude ← <a data-link-type="dfn" href="../iupac.org/metrology.html#hasreference" id="ref-for-hasreference⑧">metrology:HasReference</a> → <a data-link-type="dfn" href="../iupac.org/metrology.html#reference" id="ref-for-reference⑧">metrology:Reference</a> (range restricted to instance <a data-link-type="dfn" href="80000-3-instances.html#radian" id="ref-for-radian">80000-3-instances:radian</a>)</p>
-    </ul>
-    <p><em>Relations with target:</em></p>
-    <ul>
      <li data-md>
-      <p><a data-link-type="dfn" href="../iupac.org/metrology.html#unitaryquantity" id="ref-for-unitaryquantity①⑦">metrology:UnitaryQuantity</a> ← <a data-link-type="dfn" href="80000-3-quantityValues.html#radian-magnitude" id="ref-for-radian-magnitude①">radian-magnitude</a> → radian-magnitude</p>
+      <p>radian-magnitude ← <a data-link-type="dfn" href="80000-3-magnitudes2.html#radian-magnitude" id="ref-for-radian-magnitude①">radian-magnitude</a> → <a data-link-type="dfn" href="../iupac.org/metrology.html#unitaryquantity" id="ref-for-unitaryquantity①⑦">metrology:UnitaryQuantity</a></p>
     </ul>
-    <h3 class="heading settled" data-level="3.10" id="Revolutions-magnitude"><span class="secno">3.10. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="revolutions-magnitude">revolutions-magnitude<a class="self-link" href="#revolutions-magnitude"></a></dfn></span><a class="self-link" href="#Revolutions-magnitude"></a></h3>
+    <h3 class="heading settled" data-level="2.10" id="Revolution-magnitude"><span class="secno">2.10. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="revolution-magnitude">revolution-magnitude<a class="self-link" href="#revolution-magnitude"></a></dfn></span><a class="self-link" href="#Revolution-magnitude"></a></h3>
     <p><em>Attributes:</em></p>
-    <p><em>Source:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#unitaryquantity" id="ref-for-unitaryquantity①⑧">metrology:UnitaryQuantity</a></p>
-    <p><em>Target:</em> <a data-link-type="dfn" href="80000-3-quantityValues.html#revolutions-magnitude" id="ref-for-revolutions-magnitude">revolutions-magnitude</a></p>
-    <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="revolutions-magnitude" data-dfn-type="attribute" data-export id="dom-revolutions-magnitude-hasrevolutionsmagnitude"><code>hasRevolutionsMagnitude</code><a class="self-link" href="#dom-revolutions-magnitude-hasrevolutionsmagnitude"></a></dfn></p>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="80000-3-units.html#unitofrotationvalue" id="ref-for-unitofrotationvalue">80000-3-units:UnitOfRotationValue</a>, <a data-link-type="dfn" href="80000-concepts.html#unitaryquantitymagnitude" id="ref-for-unitaryquantitymagnitude⑨">80000-concepts:UnitaryQuantityMagnitude</a></p>
+    <p><em>Source:</em> <a data-link-type="dfn" href="80000-3-magnitudes2.html#revolution-magnitude" id="ref-for-revolution-magnitude">revolution-magnitude</a></p>
+    <p><em>Target:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#unitaryquantity" id="ref-for-unitaryquantity①⑧">metrology:UnitaryQuantity</a></p>
+    <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="revolution-magnitude" data-dfn-type="attribute" data-export id="dom-revolution-magnitude-isrevolutionmagnitudeof"><code>isRevolutionMagnitudeOf</code><a class="self-link" href="#dom-revolution-magnitude-isrevolutionmagnitudeof"></a></dfn></p>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#isreflexivemagnitudeof" id="ref-for-isreflexivemagnitudeof⑨">metrology:IsReflexiveMagnitudeOf</a>, <a data-link-type="dfn" href="80000-3-units.html#rotationmagnitude" id="ref-for-rotationmagnitude">80000-3-units:RotationMagnitude</a></p>
     <p><em>Relations with source:</em></p>
     <ul>
      <li data-md>
-      <p>revolutions-magnitude ← <a data-link-type="dfn" href="../iupac.org/metrology.html#hasreference" id="ref-for-hasreference⑨">metrology:HasReference</a> → <a data-link-type="dfn" href="../iupac.org/metrology.html#reference" id="ref-for-reference⑨">metrology:Reference</a> (range restricted to instance <a data-link-type="dfn" href="80000-3-instances.html#revolutions" id="ref-for-revolutions">80000-3-instances:revolutions</a>)</p>
-    </ul>
-    <p><em>Relations with target:</em></p>
-    <ul>
+      <p>revolution-magnitude ← <a data-link-type="dfn" href="../iupac.org/metrology.html#hasreference" id="ref-for-hasreference⑨">metrology:HasReference</a> → <a data-link-type="dfn" href="../iupac.org/metrology.html#reference" id="ref-for-reference⑨">metrology:Reference</a> (range restricted to instance <a data-link-type="dfn" href="80000-3-instances.html#revolution" id="ref-for-revolution">80000-3-instances:revolution</a>)</p>
      <li data-md>
-      <p><a data-link-type="dfn" href="../iupac.org/metrology.html#unitaryquantity" id="ref-for-unitaryquantity①⑨">metrology:UnitaryQuantity</a> ← <a data-link-type="dfn" href="80000-3-quantityValues.html#revolutions-magnitude" id="ref-for-revolutions-magnitude①">revolutions-magnitude</a> → revolutions-magnitude</p>
+      <p>revolution-magnitude ← <a data-link-type="dfn" href="80000-3-magnitudes2.html#revolution-magnitude" id="ref-for-revolution-magnitude①">revolution-magnitude</a> → <a data-link-type="dfn" href="../iupac.org/metrology.html#unitaryquantity" id="ref-for-unitaryquantity①⑨">metrology:UnitaryQuantity</a></p>
     </ul>
-    <h3 class="heading settled" data-level="3.11" id="Second-magnitude"><span class="secno">3.11. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="second-magnitude">second-magnitude<a class="self-link" href="#second-magnitude"></a></dfn></span><a class="self-link" href="#Second-magnitude"></a></h3>
+    <h3 class="heading settled" data-level="2.11" id="Second-magnitude"><span class="secno">2.11. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="second-magnitude">second-magnitude<a class="self-link" href="#second-magnitude"></a></dfn></span><a class="self-link" href="#Second-magnitude"></a></h3>
     <p><em>Attributes:</em></p>
-    <p><em>Source:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#unitaryquantity" id="ref-for-unitaryquantity②⓪">metrology:UnitaryQuantity</a></p>
-    <p><em>Target:</em> <a data-link-type="dfn" href="80000-3-quantityValues.html#second-magnitude" id="ref-for-second-magnitude">second-magnitude</a></p>
-    <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="second-magnitude" data-dfn-type="attribute" data-export id="dom-second-magnitude-hassecondmagnitude"><code>hasSecondMagnitude</code><a class="self-link" href="#dom-second-magnitude-hassecondmagnitude"></a></dfn></p>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="80000-3-units.html#unitoftimevalue" id="ref-for-unitoftimevalue③">80000-3-units:UnitOfTimeValue</a>, <a data-link-type="dfn" href="80000-concepts.html#unitaryquantitymagnitude" id="ref-for-unitaryquantitymagnitude①⓪">80000-concepts:UnitaryQuantityMagnitude</a></p>
+    <p><em>Source:</em> <a data-link-type="dfn" href="80000-3-magnitudes2.html#second-magnitude" id="ref-for-second-magnitude">second-magnitude</a></p>
+    <p><em>Target:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#unitaryquantity" id="ref-for-unitaryquantity②⓪">metrology:UnitaryQuantity</a></p>
+    <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="second-magnitude" data-dfn-type="attribute" data-export id="dom-second-magnitude-issecondmagnitudeof"><code>isSecondMagnitudeOf</code><a class="self-link" href="#dom-second-magnitude-issecondmagnitudeof"></a></dfn></p>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#isreflexivemagnitudeof" id="ref-for-isreflexivemagnitudeof①⓪">metrology:IsReflexiveMagnitudeOf</a>, <a data-link-type="dfn" href="80000-3-units.html#timemagnitude" id="ref-for-timemagnitude③">80000-3-units:TimeMagnitude</a></p>
     <p><em>Relations with source:</em></p>
     <ul>
      <li data-md>
       <p>second-magnitude ← <a data-link-type="dfn" href="../iupac.org/metrology.html#hasreference" id="ref-for-hasreference①⓪">metrology:HasReference</a> → <a data-link-type="dfn" href="../iupac.org/metrology.html#reference" id="ref-for-reference①⓪">metrology:Reference</a> (range restricted to instance <a data-link-type="dfn" href="80000-3-instances.html#second" id="ref-for-second">80000-3-instances:second</a>)</p>
-    </ul>
-    <p><em>Relations with target:</em></p>
-    <ul>
      <li data-md>
-      <p><a data-link-type="dfn" href="../iupac.org/metrology.html#unitaryquantity" id="ref-for-unitaryquantity②①">metrology:UnitaryQuantity</a> ← <a data-link-type="dfn" href="80000-3-quantityValues.html#second-magnitude" id="ref-for-second-magnitude①">second-magnitude</a> → second-magnitude</p>
+      <p>second-magnitude ← <a data-link-type="dfn" href="80000-3-magnitudes2.html#second-magnitude" id="ref-for-second-magnitude①">second-magnitude</a> → <a data-link-type="dfn" href="../iupac.org/metrology.html#unitaryquantity" id="ref-for-unitaryquantity②①">metrology:UnitaryQuantity</a></p>
     </ul>
    </div>
   </main>
@@ -2132,264 +2263,264 @@ dfn > a.self-link::before      { content: "#"; }
   <h2 class="no-num no-ref heading settled" id="index"><span class="content">Index</span><a class="self-link" href="#index"></a></h2>
   <h3 class="no-num no-ref heading settled" id="index-defined-here"><span class="content">Terms defined by this specification</span><a class="self-link" href="#index-defined-here"></a></h3>
   <ul class="index">
-   <li><a href="#dom-hertz-magnitude-hashertzmagnitude">hasHertzMagnitude</a><span>, in §3.1</span>
-   <li><a href="#dom-hour-magnitude-hashourmagnitude">hasHourMagnitude</a><span>, in §3.2</span>
-   <li><a href="#dom-kilometre-magnitude-haskilometremagnitude">hasKilometreMagnitude</a><span>, in §3.3</span>
-   <li><a href="#dom-kilometre-per-second-magnitude-haskilometrepersecondmagnitude">hasKilometrePerSecondMagnitude</a><span>, in §3.4</span>
-   <li><a href="#dom-metre-magnitude-hasmetremagnitude">hasMetreMagnitude</a><span>, in §3.5</span>
-   <li><a href="#dom-metre-per-second-magnitude-hasmetreper-secondmagnitude">hasMetrePer-SecondMagnitude</a><span>, in §3.6</span>
-   <li><a href="#dom-millisecond-magnitude-hasmillisecondmagnitude">hasMillisecondMagnitude</a><span>, in §3.7</span>
-   <li><a href="#dom-minute-magnitude-hasminutemagnitude">hasMinuteMagnitude</a><span>, in §3.8</span>
-   <li><a href="#dom-radian-magnitude-hasradianmagnitude">hasRadianMagnitude</a><span>, in §3.9</span>
-   <li><a href="#dom-revolutions-magnitude-hasrevolutionsmagnitude">hasRevolutionsMagnitude</a><span>, in §3.10</span>
-   <li><a href="#dom-second-magnitude-hassecondmagnitude">hasSecondMagnitude</a><span>, in §3.11</span>
-   <li><a href="#hertz-magnitude">hertz-magnitude</a><span>, in §3.1</span>
-   <li><a href="#hour-magnitude">hour-magnitude</a><span>, in §3.2</span>
-   <li><a href="#kilometre-magnitude">kilometre-magnitude</a><span>, in §3.3</span>
-   <li><a href="#kilometre-per-second-magnitude">kilometre-per-second-magnitude</a><span>, in §3.4</span>
-   <li><a href="#metre-magnitude">metre-magnitude</a><span>, in §3.5</span>
-   <li><a href="#metre-per-second-magnitude">metre-per-second-magnitude</a><span>, in §3.6</span>
-   <li><a href="#millisecond-magnitude">millisecond-magnitude</a><span>, in §3.7</span>
-   <li><a href="#minute-magnitude">minute-magnitude</a><span>, in §3.8</span>
-   <li><a href="#radian-magnitude">radian-magnitude</a><span>, in §3.9</span>
-   <li><a href="#revolutions-magnitude">revolutions-magnitude</a><span>, in §3.10</span>
-   <li><a href="#second-magnitude">second-magnitude</a><span>, in §3.11</span>
+   <li><a href="#hertz-magnitude">hertz-magnitude</a><span>, in §2.1</span>
+   <li><a href="#hour-magnitude">hour-magnitude</a><span>, in §2.2</span>
+   <li><a href="#dom-hertz-magnitude-ishertzmagnitudeof">isHertzMagnitudeOf</a><span>, in §2.1</span>
+   <li><a href="#dom-hour-magnitude-ishourmagnitudeof">isHourMagnitudeOf</a><span>, in §2.2</span>
+   <li><a href="#dom-kilometre-magnitude-iskilometremagnitudeof">isKilometreMagnitudeOf</a><span>, in §2.3</span>
+   <li><a href="#dom-kilometre-per-second-magnitude-iskilometrepersecondmagnitudeof">isKilometrePerSecondMagnitudeOf</a><span>, in §2.4</span>
+   <li><a href="#dom-metre-magnitude-ismetremagnitudeof">isMetreMagnitudeOf</a><span>, in §2.5</span>
+   <li><a href="#dom-metre-per-second-magnitude-ismetreper-secondmagnitudeof">isMetrePer-SecondMagnitudeOf</a><span>, in §2.6</span>
+   <li><a href="#dom-millisecond-magnitude-ismillisecondmagnitudeof">isMillisecondMagnitudeOf</a><span>, in §2.7</span>
+   <li><a href="#dom-minute-magnitude-isminutemagnitudeof">isMinuteMagnitudeOf</a><span>, in §2.8</span>
+   <li><a href="#dom-radian-magnitude-isradianmagnitudeof">isRadianMagnitudeOf</a><span>, in §2.9</span>
+   <li><a href="#dom-revolution-magnitude-isrevolutionmagnitudeof">isRevolutionMagnitudeOf</a><span>, in §2.10</span>
+   <li><a href="#dom-second-magnitude-issecondmagnitudeof">isSecondMagnitudeOf</a><span>, in §2.11</span>
+   <li><a href="#kilometre-magnitude">kilometre-magnitude</a><span>, in §2.3</span>
+   <li><a href="#kilometre-per-second-magnitude">kilometre-per-second-magnitude</a><span>, in §2.4</span>
+   <li><a href="#metre-magnitude">metre-magnitude</a><span>, in §2.5</span>
+   <li><a href="#metre-per-second-magnitude">metre-per-second-magnitude</a><span>, in §2.6</span>
+   <li><a href="#millisecond-magnitude">millisecond-magnitude</a><span>, in §2.7</span>
+   <li><a href="#minute-magnitude">minute-magnitude</a><span>, in §2.8</span>
+   <li><a href="#radian-magnitude">radian-magnitude</a><span>, in §2.9</span>
+   <li><a href="#revolution-magnitude">revolution-magnitude</a><span>, in §2.10</span>
+   <li><a href="#second-magnitude">second-magnitude</a><span>, in §2.11</span>
   </ul>
   <aside class="dfn-panel" data-for="term-for-hertz">
    <a href="80000-3-instances.html#hertz">80000-3-instances.html#hertz</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-hertz">3.1. hertz-magnitude</a>
+    <li><a href="#ref-for-hertz">2.1. hertz-magnitude</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-hour">
    <a href="80000-3-instances.html#hour">80000-3-instances.html#hour</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-hour">3.2. hour-magnitude</a>
+    <li><a href="#ref-for-hour">2.2. hour-magnitude</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-kilometre">
    <a href="80000-3-instances.html#kilometre">80000-3-instances.html#kilometre</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-kilometre">3.3. kilometre-magnitude</a>
+    <li><a href="#ref-for-kilometre">2.3. kilometre-magnitude</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-kilometre-per-second">
    <a href="80000-3-instances.html#kilometre-per-second">80000-3-instances.html#kilometre-per-second</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-kilometre-per-second">3.4. kilometre-per-second-magnitude</a>
+    <li><a href="#ref-for-kilometre-per-second">2.4. kilometre-per-second-magnitude</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-metre">
    <a href="80000-3-instances.html#metre">80000-3-instances.html#metre</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-metre">3.5. metre-magnitude</a>
+    <li><a href="#ref-for-metre">2.5. metre-magnitude</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-metre-per-second">
    <a href="80000-3-instances.html#metre-per-second">80000-3-instances.html#metre-per-second</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-metre-per-second">3.6. metre-per-second-magnitude</a>
+    <li><a href="#ref-for-metre-per-second">2.6. metre-per-second-magnitude</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-millisecond">
    <a href="80000-3-instances.html#millisecond">80000-3-instances.html#millisecond</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-millisecond">3.7. millisecond-magnitude</a>
+    <li><a href="#ref-for-millisecond">2.7. millisecond-magnitude</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-minute">
    <a href="80000-3-instances.html#minute">80000-3-instances.html#minute</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-minute">3.8. minute-magnitude</a>
+    <li><a href="#ref-for-minute">2.8. minute-magnitude</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-radian">
    <a href="80000-3-instances.html#radian">80000-3-instances.html#radian</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-radian">3.9. radian-magnitude</a>
+    <li><a href="#ref-for-radian">2.9. radian-magnitude</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-revolutions">
-   <a href="80000-3-instances.html#revolutions">80000-3-instances.html#revolutions</a><b>Referenced in:</b>
+  <aside class="dfn-panel" data-for="term-for-revolution">
+   <a href="80000-3-instances.html#revolution">80000-3-instances.html#revolution</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-revolutions">3.10. revolutions-magnitude</a>
+    <li><a href="#ref-for-revolution">2.10. revolution-magnitude</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-second">
    <a href="80000-3-instances.html#second">80000-3-instances.html#second</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-second">3.11. second-magnitude</a>
+    <li><a href="#ref-for-second">2.11. second-magnitude</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-hertz-magnitude">
-   <a href="80000-3-quantityValues.html#hertz-magnitude">80000-3-quantityValues.html#hertz-magnitude</a><b>Referenced in:</b>
+   <a href="80000-3-magnitudes2.html#hertz-magnitude">80000-3-magnitudes2.html#hertz-magnitude</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-hertz-magnitude">3.1. hertz-magnitude</a> <a href="#ref-for-hertz-magnitude①">(2)</a>
+    <li><a href="#ref-for-hertz-magnitude">2.1. hertz-magnitude</a> <a href="#ref-for-hertz-magnitude①">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-hour-magnitude">
-   <a href="80000-3-quantityValues.html#hour-magnitude">80000-3-quantityValues.html#hour-magnitude</a><b>Referenced in:</b>
+   <a href="80000-3-magnitudes2.html#hour-magnitude">80000-3-magnitudes2.html#hour-magnitude</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-hour-magnitude">3.2. hour-magnitude</a> <a href="#ref-for-hour-magnitude①">(2)</a>
+    <li><a href="#ref-for-hour-magnitude">2.2. hour-magnitude</a> <a href="#ref-for-hour-magnitude①">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-kilometre-magnitude">
-   <a href="80000-3-quantityValues.html#kilometre-magnitude">80000-3-quantityValues.html#kilometre-magnitude</a><b>Referenced in:</b>
+   <a href="80000-3-magnitudes2.html#kilometre-magnitude">80000-3-magnitudes2.html#kilometre-magnitude</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-kilometre-magnitude">3.3. kilometre-magnitude</a> <a href="#ref-for-kilometre-magnitude①">(2)</a>
+    <li><a href="#ref-for-kilometre-magnitude">2.3. kilometre-magnitude</a> <a href="#ref-for-kilometre-magnitude①">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-kilometre-per-second-magnitude">
-   <a href="80000-3-quantityValues.html#kilometre-per-second-magnitude">80000-3-quantityValues.html#kilometre-per-second-magnitude</a><b>Referenced in:</b>
+   <a href="80000-3-magnitudes2.html#kilometre-per-second-magnitude">80000-3-magnitudes2.html#kilometre-per-second-magnitude</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-kilometre-per-second-magnitude">3.4. kilometre-per-second-magnitude</a> <a href="#ref-for-kilometre-per-second-magnitude①">(2)</a>
+    <li><a href="#ref-for-kilometre-per-second-magnitude">2.4. kilometre-per-second-magnitude</a> <a href="#ref-for-kilometre-per-second-magnitude①">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-metre-magnitude">
-   <a href="80000-3-quantityValues.html#metre-magnitude">80000-3-quantityValues.html#metre-magnitude</a><b>Referenced in:</b>
+   <a href="80000-3-magnitudes2.html#metre-magnitude">80000-3-magnitudes2.html#metre-magnitude</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-metre-magnitude">3.5. metre-magnitude</a> <a href="#ref-for-metre-magnitude①">(2)</a>
+    <li><a href="#ref-for-metre-magnitude">2.5. metre-magnitude</a> <a href="#ref-for-metre-magnitude①">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-metre-per-second-magnitude">
-   <a href="80000-3-quantityValues.html#metre-per-second-magnitude">80000-3-quantityValues.html#metre-per-second-magnitude</a><b>Referenced in:</b>
+   <a href="80000-3-magnitudes2.html#metre-per-second-magnitude">80000-3-magnitudes2.html#metre-per-second-magnitude</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-metre-per-second-magnitude">3.6. metre-per-second-magnitude</a> <a href="#ref-for-metre-per-second-magnitude①">(2)</a>
+    <li><a href="#ref-for-metre-per-second-magnitude">2.6. metre-per-second-magnitude</a> <a href="#ref-for-metre-per-second-magnitude①">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-millisecond-magnitude">
-   <a href="80000-3-quantityValues.html#millisecond-magnitude">80000-3-quantityValues.html#millisecond-magnitude</a><b>Referenced in:</b>
+   <a href="80000-3-magnitudes2.html#millisecond-magnitude">80000-3-magnitudes2.html#millisecond-magnitude</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-millisecond-magnitude">3.7. millisecond-magnitude</a> <a href="#ref-for-millisecond-magnitude①">(2)</a>
+    <li><a href="#ref-for-millisecond-magnitude">2.7. millisecond-magnitude</a> <a href="#ref-for-millisecond-magnitude①">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-minute-magnitude">
-   <a href="80000-3-quantityValues.html#minute-magnitude">80000-3-quantityValues.html#minute-magnitude</a><b>Referenced in:</b>
+   <a href="80000-3-magnitudes2.html#minute-magnitude">80000-3-magnitudes2.html#minute-magnitude</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-minute-magnitude">3.8. minute-magnitude</a> <a href="#ref-for-minute-magnitude①">(2)</a>
+    <li><a href="#ref-for-minute-magnitude">2.8. minute-magnitude</a> <a href="#ref-for-minute-magnitude①">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-radian-magnitude">
-   <a href="80000-3-quantityValues.html#radian-magnitude">80000-3-quantityValues.html#radian-magnitude</a><b>Referenced in:</b>
+   <a href="80000-3-magnitudes2.html#radian-magnitude">80000-3-magnitudes2.html#radian-magnitude</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-radian-magnitude">3.9. radian-magnitude</a> <a href="#ref-for-radian-magnitude①">(2)</a>
+    <li><a href="#ref-for-radian-magnitude">2.9. radian-magnitude</a> <a href="#ref-for-radian-magnitude①">(2)</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-revolutions-magnitude">
-   <a href="80000-3-quantityValues.html#revolutions-magnitude">80000-3-quantityValues.html#revolutions-magnitude</a><b>Referenced in:</b>
+  <aside class="dfn-panel" data-for="term-for-revolution-magnitude">
+   <a href="80000-3-magnitudes2.html#revolution-magnitude">80000-3-magnitudes2.html#revolution-magnitude</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-revolutions-magnitude">3.10. revolutions-magnitude</a> <a href="#ref-for-revolutions-magnitude①">(2)</a>
+    <li><a href="#ref-for-revolution-magnitude">2.10. revolution-magnitude</a> <a href="#ref-for-revolution-magnitude①">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-second-magnitude">
-   <a href="80000-3-quantityValues.html#second-magnitude">80000-3-quantityValues.html#second-magnitude</a><b>Referenced in:</b>
+   <a href="80000-3-magnitudes2.html#second-magnitude">80000-3-magnitudes2.html#second-magnitude</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-second-magnitude">3.11. second-magnitude</a> <a href="#ref-for-second-magnitude①">(2)</a>
+    <li><a href="#ref-for-second-magnitude">2.11. second-magnitude</a> <a href="#ref-for-second-magnitude①">(2)</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-unitofangularmeasurevalue">
-   <a href="80000-3-units.html#unitofangularmeasurevalue">80000-3-units.html#unitofangularmeasurevalue</a><b>Referenced in:</b>
+  <aside class="dfn-panel" data-for="term-for-angularmeasuremagnitude">
+   <a href="80000-3-units.html#angularmeasuremagnitude">80000-3-units.html#angularmeasuremagnitude</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-unitofangularmeasurevalue">3.9. radian-magnitude</a>
+    <li><a href="#ref-for-angularmeasuremagnitude">2.9. radian-magnitude</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-unitoffrequencyvalue">
-   <a href="80000-3-units.html#unitoffrequencyvalue">80000-3-units.html#unitoffrequencyvalue</a><b>Referenced in:</b>
+  <aside class="dfn-panel" data-for="term-for-frequencymagnitude">
+   <a href="80000-3-units.html#frequencymagnitude">80000-3-units.html#frequencymagnitude</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-unitoffrequencyvalue">3.1. hertz-magnitude</a>
+    <li><a href="#ref-for-frequencymagnitude">2.1. hertz-magnitude</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-unitoflengthvalue">
-   <a href="80000-3-units.html#unitoflengthvalue">80000-3-units.html#unitoflengthvalue</a><b>Referenced in:</b>
+  <aside class="dfn-panel" data-for="term-for-lengthmagnitude">
+   <a href="80000-3-units.html#lengthmagnitude">80000-3-units.html#lengthmagnitude</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-unitoflengthvalue">3.3. kilometre-magnitude</a>
-    <li><a href="#ref-for-unitoflengthvalue①">3.5. metre-magnitude</a>
+    <li><a href="#ref-for-lengthmagnitude">2.3. kilometre-magnitude</a>
+    <li><a href="#ref-for-lengthmagnitude①">2.5. metre-magnitude</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-unitofrotationvalue">
-   <a href="80000-3-units.html#unitofrotationvalue">80000-3-units.html#unitofrotationvalue</a><b>Referenced in:</b>
+  <aside class="dfn-panel" data-for="term-for-rotationmagnitude">
+   <a href="80000-3-units.html#rotationmagnitude">80000-3-units.html#rotationmagnitude</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-unitofrotationvalue">3.10. revolutions-magnitude</a>
+    <li><a href="#ref-for-rotationmagnitude">2.10. revolution-magnitude</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-unitoftimevalue">
-   <a href="80000-3-units.html#unitoftimevalue">80000-3-units.html#unitoftimevalue</a><b>Referenced in:</b>
+  <aside class="dfn-panel" data-for="term-for-timemagnitude">
+   <a href="80000-3-units.html#timemagnitude">80000-3-units.html#timemagnitude</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-unitoftimevalue">3.2. hour-magnitude</a>
-    <li><a href="#ref-for-unitoftimevalue①">3.7. millisecond-magnitude</a>
-    <li><a href="#ref-for-unitoftimevalue②">3.8. minute-magnitude</a>
-    <li><a href="#ref-for-unitoftimevalue③">3.11. second-magnitude</a>
+    <li><a href="#ref-for-timemagnitude">2.2. hour-magnitude</a>
+    <li><a href="#ref-for-timemagnitude①">2.7. millisecond-magnitude</a>
+    <li><a href="#ref-for-timemagnitude②">2.8. minute-magnitude</a>
+    <li><a href="#ref-for-timemagnitude③">2.11. second-magnitude</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-unitofvelocityvalue">
-   <a href="80000-3-units.html#unitofvelocityvalue">80000-3-units.html#unitofvelocityvalue</a><b>Referenced in:</b>
+  <aside class="dfn-panel" data-for="term-for-velocitymagnitude">
+   <a href="80000-3-units.html#velocitymagnitude">80000-3-units.html#velocitymagnitude</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-unitofvelocityvalue">3.4. kilometre-per-second-magnitude</a>
-    <li><a href="#ref-for-unitofvelocityvalue①">3.6. metre-per-second-magnitude</a>
-   </ul>
-  </aside>
-  <aside class="dfn-panel" data-for="term-for-unitaryquantitymagnitude">
-   <a href="80000-concepts.html#unitaryquantitymagnitude">80000-concepts.html#unitaryquantitymagnitude</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-unitaryquantitymagnitude">3.1. hertz-magnitude</a>
-    <li><a href="#ref-for-unitaryquantitymagnitude①">3.2. hour-magnitude</a>
-    <li><a href="#ref-for-unitaryquantitymagnitude②">3.3. kilometre-magnitude</a>
-    <li><a href="#ref-for-unitaryquantitymagnitude③">3.4. kilometre-per-second-magnitude</a>
-    <li><a href="#ref-for-unitaryquantitymagnitude④">3.5. metre-magnitude</a>
-    <li><a href="#ref-for-unitaryquantitymagnitude⑤">3.6. metre-per-second-magnitude</a>
-    <li><a href="#ref-for-unitaryquantitymagnitude⑥">3.7. millisecond-magnitude</a>
-    <li><a href="#ref-for-unitaryquantitymagnitude⑦">3.8. minute-magnitude</a>
-    <li><a href="#ref-for-unitaryquantitymagnitude⑧">3.9. radian-magnitude</a>
-    <li><a href="#ref-for-unitaryquantitymagnitude⑨">3.10. revolutions-magnitude</a>
-    <li><a href="#ref-for-unitaryquantitymagnitude①⓪">3.11. second-magnitude</a>
+    <li><a href="#ref-for-velocitymagnitude">2.4. kilometre-per-second-magnitude</a>
+    <li><a href="#ref-for-velocitymagnitude①">2.6. metre-per-second-magnitude</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-hasreference">
    <a href="../iupac.org/metrology.html#hasreference">../iupac.org/metrology.html#hasreference</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-hasreference">3.1. hertz-magnitude</a>
-    <li><a href="#ref-for-hasreference①">3.2. hour-magnitude</a>
-    <li><a href="#ref-for-hasreference②">3.3. kilometre-magnitude</a>
-    <li><a href="#ref-for-hasreference③">3.4. kilometre-per-second-magnitude</a>
-    <li><a href="#ref-for-hasreference④">3.5. metre-magnitude</a>
-    <li><a href="#ref-for-hasreference⑤">3.6. metre-per-second-magnitude</a>
-    <li><a href="#ref-for-hasreference⑥">3.7. millisecond-magnitude</a>
-    <li><a href="#ref-for-hasreference⑦">3.8. minute-magnitude</a>
-    <li><a href="#ref-for-hasreference⑧">3.9. radian-magnitude</a>
-    <li><a href="#ref-for-hasreference⑨">3.10. revolutions-magnitude</a>
-    <li><a href="#ref-for-hasreference①⓪">3.11. second-magnitude</a>
+    <li><a href="#ref-for-hasreference">2.1. hertz-magnitude</a>
+    <li><a href="#ref-for-hasreference①">2.2. hour-magnitude</a>
+    <li><a href="#ref-for-hasreference②">2.3. kilometre-magnitude</a>
+    <li><a href="#ref-for-hasreference③">2.4. kilometre-per-second-magnitude</a>
+    <li><a href="#ref-for-hasreference④">2.5. metre-magnitude</a>
+    <li><a href="#ref-for-hasreference⑤">2.6. metre-per-second-magnitude</a>
+    <li><a href="#ref-for-hasreference⑥">2.7. millisecond-magnitude</a>
+    <li><a href="#ref-for-hasreference⑦">2.8. minute-magnitude</a>
+    <li><a href="#ref-for-hasreference⑧">2.9. radian-magnitude</a>
+    <li><a href="#ref-for-hasreference⑨">2.10. revolution-magnitude</a>
+    <li><a href="#ref-for-hasreference①⓪">2.11. second-magnitude</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-isreflexivemagnitudeof">
+   <a href="../iupac.org/metrology.html#isreflexivemagnitudeof">../iupac.org/metrology.html#isreflexivemagnitudeof</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-isreflexivemagnitudeof">2.1. hertz-magnitude</a>
+    <li><a href="#ref-for-isreflexivemagnitudeof①">2.2. hour-magnitude</a>
+    <li><a href="#ref-for-isreflexivemagnitudeof②">2.3. kilometre-magnitude</a>
+    <li><a href="#ref-for-isreflexivemagnitudeof③">2.4. kilometre-per-second-magnitude</a>
+    <li><a href="#ref-for-isreflexivemagnitudeof④">2.5. metre-magnitude</a>
+    <li><a href="#ref-for-isreflexivemagnitudeof⑤">2.6. metre-per-second-magnitude</a>
+    <li><a href="#ref-for-isreflexivemagnitudeof⑥">2.7. millisecond-magnitude</a>
+    <li><a href="#ref-for-isreflexivemagnitudeof⑦">2.8. minute-magnitude</a>
+    <li><a href="#ref-for-isreflexivemagnitudeof⑧">2.9. radian-magnitude</a>
+    <li><a href="#ref-for-isreflexivemagnitudeof⑨">2.10. revolution-magnitude</a>
+    <li><a href="#ref-for-isreflexivemagnitudeof①⓪">2.11. second-magnitude</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-reference">
    <a href="../iupac.org/metrology.html#reference">../iupac.org/metrology.html#reference</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-reference">3.1. hertz-magnitude</a>
-    <li><a href="#ref-for-reference①">3.2. hour-magnitude</a>
-    <li><a href="#ref-for-reference②">3.3. kilometre-magnitude</a>
-    <li><a href="#ref-for-reference③">3.4. kilometre-per-second-magnitude</a>
-    <li><a href="#ref-for-reference④">3.5. metre-magnitude</a>
-    <li><a href="#ref-for-reference⑤">3.6. metre-per-second-magnitude</a>
-    <li><a href="#ref-for-reference⑥">3.7. millisecond-magnitude</a>
-    <li><a href="#ref-for-reference⑦">3.8. minute-magnitude</a>
-    <li><a href="#ref-for-reference⑧">3.9. radian-magnitude</a>
-    <li><a href="#ref-for-reference⑨">3.10. revolutions-magnitude</a>
-    <li><a href="#ref-for-reference①⓪">3.11. second-magnitude</a>
+    <li><a href="#ref-for-reference">2.1. hertz-magnitude</a>
+    <li><a href="#ref-for-reference①">2.2. hour-magnitude</a>
+    <li><a href="#ref-for-reference②">2.3. kilometre-magnitude</a>
+    <li><a href="#ref-for-reference③">2.4. kilometre-per-second-magnitude</a>
+    <li><a href="#ref-for-reference④">2.5. metre-magnitude</a>
+    <li><a href="#ref-for-reference⑤">2.6. metre-per-second-magnitude</a>
+    <li><a href="#ref-for-reference⑥">2.7. millisecond-magnitude</a>
+    <li><a href="#ref-for-reference⑦">2.8. minute-magnitude</a>
+    <li><a href="#ref-for-reference⑧">2.9. radian-magnitude</a>
+    <li><a href="#ref-for-reference⑨">2.10. revolution-magnitude</a>
+    <li><a href="#ref-for-reference①⓪">2.11. second-magnitude</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-unitaryquantity">
    <a href="../iupac.org/metrology.html#unitaryquantity">../iupac.org/metrology.html#unitaryquantity</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-unitaryquantity">3.1. hertz-magnitude</a> <a href="#ref-for-unitaryquantity①">(2)</a>
-    <li><a href="#ref-for-unitaryquantity②">3.2. hour-magnitude</a> <a href="#ref-for-unitaryquantity③">(2)</a>
-    <li><a href="#ref-for-unitaryquantity④">3.3. kilometre-magnitude</a> <a href="#ref-for-unitaryquantity⑤">(2)</a>
-    <li><a href="#ref-for-unitaryquantity⑥">3.4. kilometre-per-second-magnitude</a> <a href="#ref-for-unitaryquantity⑦">(2)</a>
-    <li><a href="#ref-for-unitaryquantity⑧">3.5. metre-magnitude</a> <a href="#ref-for-unitaryquantity⑨">(2)</a>
-    <li><a href="#ref-for-unitaryquantity①⓪">3.6. metre-per-second-magnitude</a> <a href="#ref-for-unitaryquantity①①">(2)</a>
-    <li><a href="#ref-for-unitaryquantity①②">3.7. millisecond-magnitude</a> <a href="#ref-for-unitaryquantity①③">(2)</a>
-    <li><a href="#ref-for-unitaryquantity①④">3.8. minute-magnitude</a> <a href="#ref-for-unitaryquantity①⑤">(2)</a>
-    <li><a href="#ref-for-unitaryquantity①⑥">3.9. radian-magnitude</a> <a href="#ref-for-unitaryquantity①⑦">(2)</a>
-    <li><a href="#ref-for-unitaryquantity①⑧">3.10. revolutions-magnitude</a> <a href="#ref-for-unitaryquantity①⑨">(2)</a>
-    <li><a href="#ref-for-unitaryquantity②⓪">3.11. second-magnitude</a> <a href="#ref-for-unitaryquantity②①">(2)</a>
+    <li><a href="#ref-for-unitaryquantity">2.1. hertz-magnitude</a> <a href="#ref-for-unitaryquantity①">(2)</a>
+    <li><a href="#ref-for-unitaryquantity②">2.2. hour-magnitude</a> <a href="#ref-for-unitaryquantity③">(2)</a>
+    <li><a href="#ref-for-unitaryquantity④">2.3. kilometre-magnitude</a> <a href="#ref-for-unitaryquantity⑤">(2)</a>
+    <li><a href="#ref-for-unitaryquantity⑥">2.4. kilometre-per-second-magnitude</a> <a href="#ref-for-unitaryquantity⑦">(2)</a>
+    <li><a href="#ref-for-unitaryquantity⑧">2.5. metre-magnitude</a> <a href="#ref-for-unitaryquantity⑨">(2)</a>
+    <li><a href="#ref-for-unitaryquantity①⓪">2.6. metre-per-second-magnitude</a> <a href="#ref-for-unitaryquantity①①">(2)</a>
+    <li><a href="#ref-for-unitaryquantity①②">2.7. millisecond-magnitude</a> <a href="#ref-for-unitaryquantity①③">(2)</a>
+    <li><a href="#ref-for-unitaryquantity①④">2.8. minute-magnitude</a> <a href="#ref-for-unitaryquantity①⑤">(2)</a>
+    <li><a href="#ref-for-unitaryquantity①⑥">2.9. radian-magnitude</a> <a href="#ref-for-unitaryquantity①⑦">(2)</a>
+    <li><a href="#ref-for-unitaryquantity①⑧">2.10. revolution-magnitude</a> <a href="#ref-for-unitaryquantity①⑨">(2)</a>
+    <li><a href="#ref-for-unitaryquantity②⓪">2.11. second-magnitude</a> <a href="#ref-for-unitaryquantity②①">(2)</a>
    </ul>
   </aside>
   <h3 class="no-num no-ref heading settled" id="index-defined-elsewhere"><span class="content">Terms defined by reference</span><a class="self-link" href="#index-defined-elsewhere"></a></h3>
@@ -2406,11 +2537,11 @@ dfn > a.self-link::before      { content: "#"; }
      <li><span class="dfn-paneled" id="term-for-millisecond">millisecond</span>
      <li><span class="dfn-paneled" id="term-for-minute">minute</span>
      <li><span class="dfn-paneled" id="term-for-radian">radian</span>
-     <li><span class="dfn-paneled" id="term-for-revolutions">revolutions</span>
+     <li><span class="dfn-paneled" id="term-for-revolution">revolution</span>
      <li><span class="dfn-paneled" id="term-for-second">second</span>
     </ul>
    <li>
-    <a data-link-type="biblio">[http://iso.org/80000-3-quantityvalues]</a> defines the following terms:
+    <a data-link-type="biblio">[http://iso.org/80000-3-magnitudes]</a> defines the following terms:
     <ul>
      <li><span class="dfn-paneled" id="term-for-hertz-magnitude">hertz-magnitude</span>
      <li><span class="dfn-paneled" id="term-for-hour-magnitude">hour-magnitude</span>
@@ -2421,28 +2552,24 @@ dfn > a.self-link::before      { content: "#"; }
      <li><span class="dfn-paneled" id="term-for-millisecond-magnitude">millisecond-magnitude</span>
      <li><span class="dfn-paneled" id="term-for-minute-magnitude">minute-magnitude</span>
      <li><span class="dfn-paneled" id="term-for-radian-magnitude">radian-magnitude</span>
-     <li><span class="dfn-paneled" id="term-for-revolutions-magnitude">revolutions-magnitude</span>
+     <li><span class="dfn-paneled" id="term-for-revolution-magnitude">revolution-magnitude</span>
      <li><span class="dfn-paneled" id="term-for-second-magnitude">second-magnitude</span>
     </ul>
    <li>
     <a data-link-type="biblio">[http://iso.org/80000-3-units]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="term-for-unitofangularmeasurevalue">unitofangularmeasurevalue</span>
-     <li><span class="dfn-paneled" id="term-for-unitoffrequencyvalue">unitoffrequencyvalue</span>
-     <li><span class="dfn-paneled" id="term-for-unitoflengthvalue">unitoflengthvalue</span>
-     <li><span class="dfn-paneled" id="term-for-unitofrotationvalue">unitofrotationvalue</span>
-     <li><span class="dfn-paneled" id="term-for-unitoftimevalue">unitoftimevalue</span>
-     <li><span class="dfn-paneled" id="term-for-unitofvelocityvalue">unitofvelocityvalue</span>
-    </ul>
-   <li>
-    <a data-link-type="biblio">[http://iso.org/80000-concepts]</a> defines the following terms:
-    <ul>
-     <li><span class="dfn-paneled" id="term-for-unitaryquantitymagnitude">unitaryquantitymagnitude</span>
+     <li><span class="dfn-paneled" id="term-for-angularmeasuremagnitude">angularmeasuremagnitude</span>
+     <li><span class="dfn-paneled" id="term-for-frequencymagnitude">frequencymagnitude</span>
+     <li><span class="dfn-paneled" id="term-for-lengthmagnitude">lengthmagnitude</span>
+     <li><span class="dfn-paneled" id="term-for-rotationmagnitude">rotationmagnitude</span>
+     <li><span class="dfn-paneled" id="term-for-timemagnitude">timemagnitude</span>
+     <li><span class="dfn-paneled" id="term-for-velocitymagnitude">velocitymagnitude</span>
     </ul>
    <li>
     <a data-link-type="biblio">[http://iupac.org/metrology]</a> defines the following terms:
     <ul>
      <li><span class="dfn-paneled" id="term-for-hasreference">hasreference</span>
+     <li><span class="dfn-paneled" id="term-for-isreflexivemagnitudeof">isreflexivemagnitudeof</span>
      <li><span class="dfn-paneled" id="term-for-reference">reference</span>
      <li><span class="dfn-paneled" id="term-for-unitaryquantity">unitaryquantity</span>
     </ul>
