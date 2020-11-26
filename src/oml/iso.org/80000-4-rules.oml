@@ -22,8 +22,8 @@ vocabulary <http://iso.org/80000-4-rules> with # as 80000-4-rules {
 		80000-3-quantities:velocity(z) ^
 
 		// if there is a dimensional calculus constraint relating x as a derived from y and z
-		80000-4-quantities:momentum-of-mass-forward(x,y) ^
-		80000-4-quantities:momentum-of-velocity-forward(x,z)
+		80000-4-quantities:momentum-has-mass(x,y) ^
+		80000-4-quantities:momentum-has-velocity(x,z)
 	
 		->
 
@@ -48,8 +48,8 @@ vocabulary <http://iso.org/80000-4-rules> with # as 80000-4-rules {
 		80000-3-quantities:velocity(z) ^
 
 		// if there is a dimensional calculus constraint relating x as a derived from y and z
-		80000-4-quantities:force-of-momentum-forward(x,y) ^
-		80000-4-quantities:force-of-velocity-forward(x,z)
+		80000-4-quantities:force-has-momentum(x,y) ^
+		80000-4-quantities:force-has-velocity(x,z)
 	
 		->
 
@@ -74,8 +74,8 @@ vocabulary <http://iso.org/80000-4-rules> with # as 80000-4-rules {
 		80000-3-quantities:velocity(z) ^
 
 		// if there is a dimensional calculus constraint relating x as a derived from y and z
-		80000-4-quantities:power-of-force-forward(x,y) ^
-		80000-4-quantities:power-of-velocity-forward(x,z)
+		80000-4-quantities:power-has-force(x,y) ^
+		80000-4-quantities:power-has-velocity(x,z)
 	
 		->
 

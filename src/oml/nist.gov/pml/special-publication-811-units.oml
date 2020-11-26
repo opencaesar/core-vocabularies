@@ -26,17 +26,17 @@ vocabulary <http://nist.gov/pml/special-publication-811-units> with # as special
 	@dc:^description "1 pound-force-second = 4.448 221 615 260 5 E+00 newton-second"
 	concept pound-force-second :> 80000-4-units:ImpulseUnit, metrology:DerivedMeasurementUnit
 
-	relation entity pound-force-second-of-pound-force :> metrology:HasFactorForMeasurementUnit [
+	relation entity Pound-Force-Second-Has-Pound-Force :> metrology:HasFactorForMeasurementUnit [
 		from pound-force-second
 		to pound-force
-		forward pound-force-second-of-pound-force-factor
+		forward pound-force-second-has-pound-force
 		restricts scalar property metrology:exponent to "1/1"^^owl:rational
 	]
 
-	relation entity pound-force-second-of-second :> metrology:HasFactorForMeasurementUnit [
+	relation entity Pound-Force-Second-Has-Second :> metrology:HasFactorForMeasurementUnit [
 		from pound-force-second
 		to 80000-3-units:second
-		forward pound-force-second-of-second-factor
+		forward pound-force-second-has-second
 		restricts scalar property metrology:exponent to "1/1"^^owl:rational
 	]
 

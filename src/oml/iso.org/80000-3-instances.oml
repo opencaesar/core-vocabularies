@@ -249,11 +249,11 @@ description <http://iso.org/80000-3-instances> with # as 80000-3-instances {
 	]
 
 	@dc:^source "3-16"
-	ci revolutions : 80000-3-units:revolutions
+	ci revolution : 80000-3-units:revolution
 
-	ri systemOfUnits-revolutions : metrology:SystemHasMetrologicalUnit [
+	ri systemOfUnits-revolution : metrology:SystemHasMetrologicalUnit [
 		from 80000-instances:systemOfUnits
-		to revolutions
+		to revolution
 		metrology:isBaseMetrologicalUnit "false"^^xsd:boolean
 	]
 

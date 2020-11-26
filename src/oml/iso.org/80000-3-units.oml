@@ -32,17 +32,17 @@ vocabulary <http://iso.org/80000-3-units> with # as 80000-3-units {
 
 	concept radian :> AngularMeasureUnit, metrology:DerivedMeasurementUnit
 
-	relation entity radian-of-metre-numerator :> metrology:HasFactorForMeasurementUnit [
+	relation entity Radian-Has-Metre-Numerator :> metrology:HasFactorForMeasurementUnit [
 		from radian
 		to metre
-		forward radian-of-metre-numerator-factor
+		forward radian-has-metre-numerator
 		restricts scalar property metrology:exponent to "1/1"^^owl:rational
 	]
 
-	relation entity radian-of-metre-denominator :> metrology:HasFactorForMeasurementUnit [
+	relation entity Radian-Has-Metre-Denominator :> metrology:HasFactorForMeasurementUnit [
 		from radian
 		to metre
-		forward radian-of-metre-denominator-factor
+		forward radian-has-metre-denominator
 		restricts scalar property metrology:exponent to "-1/1"^^owl:rational
 	]
 
@@ -82,33 +82,33 @@ vocabulary <http://iso.org/80000-3-units> with # as 80000-3-units {
 
 	concept metre-per-second :> VelocityUnit, metrology:DerivedMeasurementUnit
 
-	relation entity metre-per-second-of-metre :>  metrology:HasFactorForMeasurementUnit [
+	relation entity Metre-Per-Second-Has-Metre :>  metrology:HasFactorForMeasurementUnit [
 		from metre-per-second
 		to metre
-		forward metre-per-second-of-metre-factor
+		forward metre-per-second-has-metre
 		restricts scalar property metrology:exponent to "1/1"^^owl:rational
 	]
 
-	relation entity metre-per-second-of-second :>  metrology:HasFactorForMeasurementUnit [
+	relation entity Metre-Per-Second-Has-Second :>  metrology:HasFactorForMeasurementUnit [
 		from metre-per-second
 		to second
-		forward metre-per-second-of-second-factor
+		forward metre-per-second-has-second
 		restricts scalar property metrology:exponent to "-1/1"^^owl:rational
 	]
 
 	concept kilometre-per-second :> VelocityUnit, metrology:DerivedMeasurementUnit
 
-	relation entity kilometre-per-second-of-metre :>  metrology:HasFactorForMeasurementUnit [
-		from metre-per-second
+	relation entity Kilometre-Per-Second-Has-Kilometre :>  metrology:HasFactorForMeasurementUnit [
+		from kilometre-per-second
 		to kilometre
-		forward kilometre-per-second-of-metre-factor
+		forward kilometre-per-second-has-kilometre
 		restricts scalar property metrology:exponent to "1/1"^^owl:rational
 	]
 
-	relation entity kilometre-per-second-of-second :>  metrology:HasFactorForMeasurementUnit [
-		from metre-per-second
+	relation entity Kilometre-Per-Second-Has-Second :>  metrology:HasFactorForMeasurementUnit [
+		from kilometre-per-second
 		to second
-		forward kilometre-per-second-of-second-factor
+		forward kilometre-per-second-has-second
 		restricts scalar property metrology:exponent to "-1/1"^^owl:rational
 	]
 
@@ -121,12 +121,12 @@ vocabulary <http://iso.org/80000-3-units> with # as 80000-3-units {
 		restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
 	]
 
-	concept revolutions :> RotationUnit, metrology:DerivedMeasurementUnit
+	concept revolution :> RotationUnit, metrology:DerivedMeasurementUnit
 
-	relation entity revolutions-of-radian :> metrology:HasFactorForMeasurementUnit [
-		from revolutions
+	relation entity Revolution-Has-Radian :> metrology:HasFactorForMeasurementUnit [
+		from revolution
 		to radian
-		forward revolutions-of-radian-factor
+		forward revolution-has-radian
 		restricts scalar property metrology:exponent to "1/1"^^owl:rational
 	]
 
@@ -141,10 +141,10 @@ vocabulary <http://iso.org/80000-3-units> with # as 80000-3-units {
 
 	concept hertz :> FrequencyUnit, metrology:DerivedMeasurementUnit
 
-	relation entity hertz-of-second :> metrology:HasFactorForMeasurementUnit [
+	relation entity Hertz-Has-Second :> metrology:HasFactorForMeasurementUnit [
 		from hertz
 		to second
-		forward hertz-of-second-factor
+		forward hertz-has-second
 		restricts scalar property metrology:exponent to "-1/1"^^owl:rational
 	]
 

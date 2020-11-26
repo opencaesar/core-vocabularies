@@ -1,4 +1,4 @@
-@dc:^description "This vocabulary provides convenience specializations of metrology:HasReflexiveMagnitude
+@dc:^description "This vocabulary provides convenience specializations of metrology:IsReflexiveMagnitudeOf
 as relation entities for every metrology:MeasurementUnit defined in http://iso.org/80000-4-units.
 
 Note that this vocabulary is an alternative to <http://iso.org/80000-4-magnitudes1>."
@@ -8,60 +8,60 @@ vocabulary <http://iso.org/80000-4-magnitudes2> with # as 80000-4-magnitudes2 {
 
 	// 4-1
 
-	relation entity gram-magnitude :> metrology:HasReflexiveMagnitude, 80000-4-units:MassMagnitude [
-		from metrology:UnitaryQuantity
-		to gram-magnitude
-		forward hasGramMagnitude
+	relation entity gram-magnitude :> metrology:IsReflexiveMagnitudeOf, 80000-4-units:MassMagnitude [
+		from gram-magnitude
+		to metrology:UnitaryQuantity
+		forward isGramMagnitudeOf
 		restricts relation metrology:hasReference to 80000-4-instances:gram
 	]
 
-	relation entity kilogram-magnitude :> metrology:HasReflexiveMagnitude, 80000-4-units:MassMagnitude [
-		from metrology:UnitaryQuantity
-		to kilogram-magnitude
-		forward hasKilogramMagnitude
+	relation entity kilogram-magnitude :> metrology:IsReflexiveMagnitudeOf, 80000-4-units:MassMagnitude [
+		from kilogram-magnitude
+		to metrology:UnitaryQuantity
+		forward isKilogramMagnitudeOf
 		restricts relation metrology:hasReference to 80000-4-instances:kilogram
 	]
 	
 	// 4-8
 
-	relation entity kilogram-metre-per-second-magnitude :> metrology:HasReflexiveMagnitude, 80000-4-units:MomentumMagnitude [
-		from metrology:UnitaryQuantity
-		to kilogram-metre-per-second-magnitude
-		forward hasKilogramMetrePerSecondMagnitude
+	relation entity kilogram-metre-per-second-magnitude :> metrology:IsReflexiveMagnitudeOf, 80000-4-units:MomentumMagnitude [
+		from kilogram-metre-per-second-magnitude
+		to metrology:UnitaryQuantity
+		forward isKilogramMetrePerSecondMagnitudeOf
 		restricts relation metrology:hasReference to 80000-4-instances:kilogram-metre-per-second
 	]
 
 	// 4-9
 
-	relation entity newton-magnitude :> metrology:HasReflexiveMagnitude, 80000-4-units:ForceMagnitude [
-		from metrology:UnitaryQuantity
-		to newton-magnitude
-		forward hasNewtonMagnitude
+	relation entity newton-magnitude :> metrology:IsReflexiveMagnitudeOf, 80000-4-units:ForceMagnitude [
+		from newton-magnitude
+		to metrology:UnitaryQuantity
+		forward isNewtonMagnitudeOf
 		restricts relation metrology:hasReference to 80000-4-instances:newton
 	]
 
 	// 4-10
 
-	relation entity newton-second-magnitude :> metrology:HasReflexiveMagnitude, 80000-4-units:ImpulseMagnitude [
-		from metrology:UnitaryQuantity
-		to newton-second-magnitude
-		forward hasNewtonSecondMagnitude
+	relation entity newton-second-magnitude :> metrology:IsReflexiveMagnitudeOf, 80000-4-units:ImpulseMagnitude [
+		from newton-second-magnitude
+		to metrology:UnitaryQuantity
+		forward isNewtonSecondMagnitudeOf
 		restricts relation metrology:hasReference to 80000-4-instances:newton-second
 	]
 
-	relation entity newton-millisecond-magnitude :> metrology:HasReflexiveMagnitude, 80000-4-units:ImpulseMagnitude [
-		from metrology:UnitaryQuantity
-		to newton-millisecond-magnitude
-		forward hasNewtonMilliSecondMagnitude
+	relation entity newton-millisecond-magnitude :> metrology:IsReflexiveMagnitudeOf, 80000-4-units:ImpulseMagnitude [
+		from newton-millisecond-magnitude
+		to metrology:UnitaryQuantity
+		forward isNewtonMilliSecondMagnitudeOf
 		restricts relation metrology:hasReference to 80000-4-instances:newton-second
 	]
 
 	// 4-27
 
-	relation entity watt-magnitude :> metrology:HasReflexiveMagnitude, 80000-4-units:PowerMagnitude [
-		from metrology:UnitaryQuantity
-		to watt-magnitude
-		forward hasWattMagnitude
+	relation entity watt-magnitude :> metrology:IsReflexiveMagnitudeOf, 80000-4-units:PowerMagnitude [
+		from watt-magnitude
+		to metrology:UnitaryQuantity
+		forward isWattMagnitudeOf
 		restricts relation metrology:hasReference to 80000-4-instances:watt
 	]
 }

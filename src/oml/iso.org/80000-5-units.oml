@@ -26,10 +26,10 @@ vocabulary <http://iso.org/80000-5-units> with # as 80000-5-units {
 
     concept degreeCelcius :> CelciusTemperatureUnit, metrology:DerivedMeasurementUnit 
 
-    relation entity degreeCelcius-of-kelvin :> metrology:HasFactorForMeasurementUnit [
+    relation entity DegreeCelcius-Has-Kelvin :> metrology:HasFactorForMeasurementUnit [
         from degreeCelcius
         to kelvin
-        forward degreeCelcius-of-kelvin-factor
+        forward degreeCelcius-has-kelvin
         restricts scalar property metrology:exponent to "1/1"^^owl:rational
     ]
 

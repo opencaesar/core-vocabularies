@@ -47,8 +47,8 @@ vocabulary <http://iso.org/80000-3-magnitudes1> with # as 80000-3-magnitudes1 {
 	]
 
 	// 3-16
-	concept revolutions-magnitude :> 80000-3-units:RotationMagnitude [
-		restricts relation metrology:hasReference to 80000-3-instances:revolutions
+	concept revolution-magnitude :> 80000-3-units:RotationMagnitude [
+		restricts relation metrology:hasReference to 80000-3-instances:revolution
 	]
 
 	// 3-17

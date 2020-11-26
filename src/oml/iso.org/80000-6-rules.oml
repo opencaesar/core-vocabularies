@@ -22,8 +22,8 @@ vocabulary <http://iso.org/80000-6-rules> with # as 80000-6-rules {
 		80000-3-quantities:duration(z) ^
 
 		// if there is a dimensional calculus constraint relating x as a derived from y and z
-		80000-6-quantities:electric-charge-of-electric-current-forward(x,y) ^
-		80000-6-quantities:electric-charge-of-duration-forward(x,z)
+		80000-6-quantities:electric-charge-has-electric-current(x,y) ^
+		80000-6-quantities:electric-charge-has-duration(x,z)
 	
 		->
 
@@ -48,8 +48,8 @@ vocabulary <http://iso.org/80000-6-rules> with # as 80000-6-rules {
 		80000-6-quantities:electric-charge(z) ^
 
 		// if there is a dimensional calculus constraint relating x as a derived from y and z
-		80000-6-quantities:electric-field-strength-of-force-forward(x,y) ^
-		80000-6-quantities:electric-field-strength-of-electric-charge-forward(x,z)
+		80000-6-quantities:electric-field-strength-has-force(x,y) ^
+		80000-6-quantities:electric-field-strength-has-electric-charge(x,z)
 	
 		->
 
@@ -74,8 +74,8 @@ vocabulary <http://iso.org/80000-6-rules> with # as 80000-6-rules {
 		80000-3-quantities:path-length(z) ^
 
 		// if there is a dimensional calculus constraint relating x as a derived from y and z
-		80000-6-quantities:electric-potential-of-electric-field-strength-forward(x,y) ^
-		80000-6-quantities:electric-potential-of-path-length-forward(x,z)
+		80000-6-quantities:electric-potential-has-electric-field-strength(x,y) ^
+		80000-6-quantities:electric-potential-has-path-length(x,z)
 	
 		->
 
@@ -100,8 +100,8 @@ vocabulary <http://iso.org/80000-6-rules> with # as 80000-6-rules {
 		80000-6-quantities:electric-current(z) ^
 
 		// if there is a dimensional calculus constraint relating x as a derived from y and z
-		80000-6-quantities:resistance-of-electric-potential-forward(x,y) ^
-		80000-6-quantities:resistance-of-electric-current-forward(x,z)
+		80000-6-quantities:resistance-has-electric-potential(x,y) ^
+		80000-6-quantities:resistance-has-electric-current(x,z)
 	
 		->
 

@@ -46,18 +46,18 @@ vocabulary <http://iso.org/80000-3-quantities> with # as 80000-3-quantities {
 		restricts all relation metrology:hasMagnitude to 80000-3-units:AngularMeasureMagnitude
 	]
 
-	relation entity angular-measure-of-arc-length :> metrology:HasFactorForUnitaryQuantity [
+	relation entity Angular-Measure-Has-Arc-Length :> metrology:HasFactorForUnitaryQuantity [
 		from angular-measure
 		to arc-length
-		forward angular-measure-of-arc-length-forward
+		forward angular-measure-has-arc-length
 		functional
 		restricts scalar property metrology:exponent to "1/1"^^owl:rational
 	]
 
-	relation entity angular-measure-of-radius :> metrology:HasFactorForUnitaryQuantity [
+	relation entity Angular-Measure-Has-Radius :> metrology:HasFactorForUnitaryQuantity [
 		from angular-measure
 		to radius
-		forward angular-measure-of-radius-forward
+		forward angular-measure-has-radius
 		functional
 		restricts scalar property metrology:exponent to "-1/1"^^owl:rational
 	]
@@ -68,18 +68,18 @@ vocabulary <http://iso.org/80000-3-quantities> with # as 80000-3-quantities {
 		restricts all relation metrology:hasMagnitude to 80000-3-units:AngularMeasureMagnitude
 	]
 
-	relation entity rotational-displacement-of-path-length :> metrology:HasFactorForUnitaryQuantity [
+	relation entity Rotational-Displacement-Has-Path-Length :> metrology:HasFactorForUnitaryQuantity [
 		from rotational-displacement
 		to path-length
-		forward rotational-displacement-of-path-length-forward
+		forward rotational-displacement-has-path-length
 		functional
 		restricts scalar property metrology:exponent to "1/1"^^owl:rational
 	]
 
-	relation entity rotational-displacement-of-distance :> metrology:HasFactorForUnitaryQuantity [
+	relation entity Rotational-Displacement-Has-Distance :> metrology:HasFactorForUnitaryQuantity [
 		from rotational-displacement
 		to distance
-		forward rotational-displacement-of-distance-forward
+		forward rotational-displacement-has-distance
 		functional
 		restricts scalar property metrology:exponent to "-1/1"^^owl:rational
 	]
@@ -96,18 +96,18 @@ vocabulary <http://iso.org/80000-3-quantities> with # as 80000-3-quantities {
 		restricts all relation metrology:hasMagnitude to 80000-3-units:VelocityMagnitude
 	]
 
-	relation entity velocity-of-position-vector :> metrology:HasFactorForUnitaryQuantity [
+	relation entity Velocity-Has-Position-Vector :> metrology:HasFactorForUnitaryQuantity [
 		from velocity
 		to position-vector
-		forward velocity-of-position-vector-forward
+		forward velocity-has-position-vector
 		functional
 		restricts scalar property metrology:exponent to "1/1"^^owl:rational
 	]
 
-	relation entity velocity-of-duration :> metrology:HasFactorForUnitaryQuantity [
+	relation entity Velocity-Has-Duration :> metrology:HasFactorForUnitaryQuantity [
 		from velocity
 		to duration
-		forward velocity-of-duration-forward
+		forward velocity-has-duration
 		functional
 		restricts scalar property metrology:exponent to "-1/1"^^owl:rational
 	]
@@ -121,10 +121,10 @@ vocabulary <http://iso.org/80000-3-quantities> with # as 80000-3-quantities {
 		restricts all relation metrology:hasMagnitude to 80000-3-units:RotationMagnitude
 	]
 
-	relation entity rotation-of-rotational-displacement :> metrology:HasFactorForUnitaryQuantity [
+	relation entity Rotation-Has-Rotational-Displacement :> metrology:HasFactorForUnitaryQuantity [
 		from rotation
 		to rotational-displacement
-		forward rotation-of-rotational-displacement-forward
+		forward rotation-has-rotational-displacement
 		functional
 		restricts scalar property metrology:exponent to "1/1"^^owl:rational
 	]
@@ -135,10 +135,10 @@ vocabulary <http://iso.org/80000-3-quantities> with # as 80000-3-quantities {
 		restricts all relation metrology:hasMagnitude to 80000-3-units:FrequencyMagnitude
 	]
 
-	relation entity frequency-of-period-duration :> metrology:HasFactorForUnitaryQuantity [
+	relation entity Frequency-Has-Period-Duration :> metrology:HasFactorForUnitaryQuantity [
 		from frequency
 		to period-duration
-		forward frequency-of-period-duration-forward
+		forward frequency-has-period-duration
 		functional
 		restricts scalar property metrology:exponent to "-1/1"^^owl:rational
 	]
@@ -148,18 +148,18 @@ vocabulary <http://iso.org/80000-3-quantities> with # as 80000-3-quantities {
 		restricts all relation metrology:hasMagnitude to 80000-3-units:FrequencyMagnitude
 	]
 
-	relation entity rotational-frequency-of-rotation :> metrology:HasFactorForUnitaryQuantity [
+	relation entity Rotational-Frequency-Has-Rotation :> metrology:HasFactorForUnitaryQuantity [
 		from rotational-frequency
 		to rotation
-		forward rotational-frequency-of-rotation-forward
+		forward rotational-frequency-has-rotation
 		functional
 		restricts scalar property metrology:exponent to "1/1"^^owl:rational
 	]
 
-	relation entity rotational-frequency-of-duration :> metrology:HasFactorForUnitaryQuantity [
+	relation entity Rotational-Frequency-Has-Duration :> metrology:HasFactorForUnitaryQuantity [
 		from rotational-frequency
 		to duration
-		forward rotational-frequency-of-duration-forward
+		forward rotational-frequency-has-duration
 		functional
 		restricts scalar property metrology:exponent to "-1/1"^^owl:rational
 	]

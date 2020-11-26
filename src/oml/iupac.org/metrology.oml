@@ -15,8 +15,7 @@ The VIM3 is available in document PDF here: https://www.bipm.org/utils/common/do
 
 References to definitions in the ontology are indicated via a reference 
 in parentheses with a chapter and section and a page number;
-for example, (S.2.23, p. 33) refers to the definition of 'object' on page 33.
-"
+for example, (S.2.23, p. 33) refers to the definition of 'object' on page 33."
 @dc:rights "Copyright 2019, by the California Institute of Technology. ALL RIGHTS RESERVED.
 United States Government Sponsorship acknowledged. 
 Any commercial use must be negotiated with the Office of Technology Transfer at the California Institute of Technology.
@@ -48,6 +47,7 @@ vocabulary <http://iupac.org/metrology> with # as metrology {
 	]
 
 	// Definitions from Chapter 2: Terminology and 3: "System" and "Component"
+	
 	@dc:^description "A metrology:Object is anything perceivable or conceivable.
 
     A metrology:Object serves two purposes:
@@ -67,11 +67,13 @@ vocabulary <http://iupac.org/metrology> with # as metrology {
 	aspect Object :> Thing
 
 	// Definitions from Chapter 4: Current meaning of "quantity".
+	
 	@dc:^description "A reference can be a measurement unit, a measurement procedure, or a reference material, or a combination of such."
 	@dc:^source "[https://iupac.org/wp-content/uploads/2016/01/ontology-on-Property-Division-VII.pdf, 4.10, p. 44]"
 	aspect Reference :> MetrologicalEntity
 
 	// Definitions from Chapter 5: "Property", "examinand", and "measurand".
+	
 	@dc:^source "reference material [https://jcgm.bipm.org/vim/en/5.13.html]"
 	@dc:^source "reference material [https://iupac.org/wp-content/uploads/2016/01/ontology-on-Property-Division-VII.pdf, 5.1, p 47]"
 	aspect ReferenceMaterial :> Reference
@@ -79,6 +81,7 @@ vocabulary <http://iupac.org/metrology> with # as metrology {
 	// Definitions from Chapters 6,7,8,9,10,11: None
 	// Definitions from Chapter 12: Generic concept system on <property> and <quantity>
 	// and from Chapter 13: Generic concept system on <kind-of-property> including <kind-of-quantity>.
+	
 	@dc:^description "A metrology:Quantity is an inherent state- or process-descriptive feature
     of a metrological:Object that has a magnitude expressed as a metrological:Magnitude.
 
@@ -110,36 +113,35 @@ vocabulary <http://iupac.org/metrology> with # as metrology {
     or implicitly as a constraint such as a range restriction or an inference rule."
 	@dc:^source "quantity [https://jcgm.bipm.org/vim/en/1.1.html]"
 	@dc:^source "quantity [https://iupac.org/wp-content/uploads/2016/01/ontology-on-Property-Division-VII.pdf, 12.13, p 115]"
-	relation entity HasQuantity [
-		from Object
-		to Quantity
-		forward hasQuantity
-		reverse isQuantityOf
+	relation entity IsQuantityOf [
+		from Quantity
+		to Object
+		forward isQuantityOf
+		reverse hasQuantity
 		functional
 	]
 
 	@dc:^description "Specifies the metrology:Magnitude that is the magnitude of a metrology:Quantity.
     This relationship can be specified either explicitly as an asserted axiom
     or implicitly as a constraint such as a range restriction or an inference rule
-		involving the foward or reverse property."
+	involving the foward or reverse property."
 	@dc:^source "quantity [https://jcgm.bipm.org/vim/en/1.1.html]"
 	@dc:^source "quantity [https://iupac.org/wp-content/uploads/2016/01/ontology-on-Property-Division-VII.pdf, 12.13, p 115]"
-	relation entity HasMagnitude [
-		from Quantity
-		to Magnitude
-		forward hasMagnitude
-		reverse isMagnitudeOf
+	relation entity IsMagnitudeOf [
+		from Magnitude
+		to Quantity
+		forward isMagnitudeOf
+		reverse hasMagnitude
 	]
 
-	@dc:^description "metrology:HasReflexiveMagnitude defines a convenient pattern that
-	combines in a single instantiable relation, metrology:HasReflexiveMagnitude,
-	two entities that would otherwise have to be instantiated separately,
-	i.e., an instance of metrology:Magnitude and an instance of metrology:HasMagnitude.
-	This relation entity is unsual because it is also its target."
-	relation entity HasReflexiveMagnitude :> metrology:HasMagnitude, metrology:Magnitude [
-		from metrology:Quantity
-		to HasReflexiveMagnitude
-		forward hasReflexiveMagnitude
+	@dc:^description "metrology:IsReflexiveMagnitudeOf defines a convenient pattern that combines in a single 
+	instantiable relation two entities that would otherwise have to be instantiated separately,i.e., an instance 
+	of metrology:Magnitude and an instance of metrology:HasMagnitude. This relation entity is unsual because it 
+	is also its source."
+	relation entity IsReflexiveMagnitudeOf :> metrology:IsMagnitudeOf, metrology:Magnitude [
+		from IsReflexiveMagnitudeOf
+		to metrology:Quantity
+		forward isReflexiveMagnitudeOf
 	]
 
 	@dc:^description "An instance of metrology:OrdinalQuantity is a metrology:Quantity defined by a measurement procedure (S.14.4.4)
@@ -229,12 +231,14 @@ vocabulary <http://iupac.org/metrology> with # as metrology {
 	]
 
 	// Definitions from Chapter 14: Generic concept system on <examination procedure>, <measurement procedure>, <examination method>, and <examination principle>.
+	
 	@dc:^source "measurement procedure [https://jcgm.bipm.org/vim/en/2.6.html]"
 	@dc:^source "measurement procedure [https://iupac.org/wp-content/uploads/2016/01/ontology-on-Property-Division-VII.pdf, 14.4.3, p 139]"
 	aspect MeasurementProcedure :> Reference
 
 	// Definitions from Chapter 15: Generic concept system on <examination>, <measurement>; quantification.
 	// Definitions from Chapter 16: Generic concept system on <property value>, <quantity value> and allied concepts.
+	
 	@dc:^description "metrology:Magnitude is the magnitude of a metrology:Quantity represented by a number and a reference."
 	@dc:^source "quantity value [https://jcgm.bipm.org/vim/en/1.19.html]"
 	@dc:^source "quantity value [https://iupac.org/wp-content/uploads/2016/01/ontology-on-Property-Division-VII.pdf, 16.7 and 16.8, p 162]"
@@ -268,6 +272,7 @@ vocabulary <http://iupac.org/metrology> with # as metrology {
 
 	// Definitions from Chapter 17: None
 	// Definitions from Chapter 18: Mixed concept system on <metrological unit> and <system of metrological units>; the metrological unit "one" and SI units revisited.
+	
 	@dc:^description "Defining metrology:MeasurementUnit as an OML Concept instead of an OML Aspect or Relation, enables the bundle closure 
 	algorithm to infer disjunctions for specializations of metrology:MeasurementUnit such as the ISO 80000 libraries
 	or user-defined vocabularies."

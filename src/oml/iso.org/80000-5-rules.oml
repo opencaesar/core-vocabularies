@@ -18,7 +18,7 @@ vocabulary <http://iso.org/80000-5-rules> with # as 80000-5-rules {
 		80000-5-quantities:thermodynamic-temperature(y) ^
 
 		// if there is a dimensional calculus constraint relating x as a derived from y
-		80000-5-quantities:celcius-temperature-of-thermodynamic-temperature-forward(x,y) 
+		80000-5-quantities:celcius-temperature-has-thermodynamic-temperature(x,y) 
 	
 		->
 

@@ -19,9 +19,9 @@ vocabulary <http://iupac.org/metrology/diagams/quantities-and-values> with # as 
 
     ref concept metrology:UnitaryQuantity
 
-    ref relation entity metrology:HasQuantity
+    ref relation entity metrology:IsQuantityOf
 
-    ref relation entity metrology:HasMagnitude
+    ref relation entity metrology:IsMagnitudeOf
 
     ref relation entity metrology:HasReference
 }

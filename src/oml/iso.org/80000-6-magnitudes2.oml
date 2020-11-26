@@ -1,4 +1,4 @@
-@dc:^description "This vocabulary provides convenience specializations of metrology:HasReflexiveMagnitude
+@dc:^description "This vocabulary provides convenience specializations of metrology:IsReflexiveMagnitudeOf
 as relation entities for every metrology:MeasurementUnit defined in http://iso.org/80000-6-units.
 
 Note that this vocabulary is an alternative to <http://iso.org/80000-6-magnitudes1>."
@@ -8,46 +8,46 @@ vocabulary <http://iso.org/80000-6-magnitudes2> with # as 80000-6-magnitudes2 {
 
 	// 6-1
 
-	relation entity ampere-magnitude :> metrology:HasReflexiveMagnitude, 80000-6-units:ElectricCurrentMagnitude [
-		from metrology:UnitaryQuantity
-		to ampere-magnitude
-		forward hasAmpereMagnitude
+	relation entity ampere-magnitude :> metrology:IsReflexiveMagnitudeOf, 80000-6-units:ElectricCurrentMagnitude [
+		from ampere-magnitude
+		to metrology:UnitaryQuantity
+		forward isAmpereMagnitudeOf
 		restricts relation metrology:hasReference to 80000-6-instances:ampere
 	]
 
 	// 6-2
 
-	relation entity coulomb-magnitude :> metrology:HasReflexiveMagnitude, 80000-6-units:ElectricChargeMagnitude [
-		from metrology:UnitaryQuantity
-		to coulomb-magnitude
-		forward hasCoulombMagnitude
+	relation entity coulomb-magnitude :> metrology:IsReflexiveMagnitudeOf, 80000-6-units:ElectricChargeMagnitude [
+		from coulomb-magnitude
+		to metrology:UnitaryQuantity
+		forward isCoulombMagnitudeOf
 		restricts relation metrology:hasReference to 80000-6-instances:coulomb
 	]
 
 	// 6-10
 
-	relation entity newton-per-coulomb-magnitude :> metrology:HasReflexiveMagnitude, 80000-6-units:ElectricFieldStrengthMagnitude [
-		from metrology:UnitaryQuantity
-		to newton-per-coulomb-magnitude
-		forward hasNewtonPerCoulombMagnitude
+	relation entity newton-per-coulomb-magnitude :> metrology:IsReflexiveMagnitudeOf, 80000-6-units:ElectricFieldStrengthMagnitude [
+		from newton-per-coulomb-magnitude
+		to metrology:UnitaryQuantity
+		forward isNewtonPerCoulombMagnitudeOf
 		restricts relation metrology:hasReference to 80000-6-instances:newton-per-coulomb
 	]
 
 	// 6-11
 
-	relation entity volt-magnitude :> metrology:HasReflexiveMagnitude, 80000-6-units:ElectricPotentialMagnitude [
-		from metrology:UnitaryQuantity
-		to volt-magnitude
-		forward hasVoltMagnitude
+	relation entity volt-magnitude :> metrology:IsReflexiveMagnitudeOf, 80000-6-units:ElectricPotentialMagnitude [
+		from volt-magnitude
+		to metrology:UnitaryQuantity
+		forward isVoltMagnitudeOf
 		restricts relation metrology:hasReference to 80000-6-instances:volt
 	]
 
 	// 6-46
 
-	relation entity ohm-magnitude :> metrology:HasReflexiveMagnitude, 80000-6-units:ResistanceMagnitude [
-		from metrology:UnitaryQuantity
-		to ohm-magnitude
-		forward hasOhmMagnitude
+	relation entity ohm-magnitude :> metrology:IsReflexiveMagnitudeOf, 80000-6-units:ResistanceMagnitude [
+		from ohm-magnitude
+		to metrology:UnitaryQuantity
+		forward isOhmMagnitudeOf
 		restricts relation metrology:hasReference to 80000-6-instances:ohm
 	]
 }

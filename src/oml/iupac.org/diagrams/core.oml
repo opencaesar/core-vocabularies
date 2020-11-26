@@ -1,9 +1,9 @@
 vocabulary <http://iupac.org/metrology/diagrams/core> with # as core {
     extends <http://iupac.org/metrology>
 
-    ref relation entity metrology:HasQuantity
+    ref relation entity metrology:IsQuantityOf
 
-    ref relation entity metrology:HasMagnitude
+    ref relation entity metrology:IsMagnitudeOf
     
     ref relation entity metrology:HasReference
 
