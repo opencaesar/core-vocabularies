@@ -1,0 +1,46 @@
+@dc:^description "This vocabulary provides convenience specializations of every metrology:Magnitude 
+defined in in http://iso.org/80000-4-units.
+
+Note that this vocabulary is an alternative to <http://iso.org/80000-4-magnitudes2>."
+vocabulary <http://iso.org/80000-4-magnitudes1> with # as 80000-4-magnitudes1 {
+
+	uses <http://iso.org/80000-4-instances>
+
+	// 4-1
+
+	concept gram-magnitude :> 80000-4-units:MassMagnitude [
+		restricts relation metrology:hasReference to 80000-4-instances:gram
+	]
+
+	concept kilogram-magnitude :> 80000-4-units:MassMagnitude [
+		restricts relation metrology:hasReference to 80000-4-instances:kilogram
+	]
+	
+	// 4-8
+
+	concept kilogram-metre-per-second-magnitude :> 80000-4-units:MomentumMagnitude [
+		restricts relation metrology:hasReference to 80000-4-instances:kilogram-metre-per-second
+	]
+
+	// 4-9
+
+	concept newton-magnitude :> 80000-4-units:ForceMagnitude [
+		restricts relation metrology:hasReference to 80000-4-instances:newton
+	]
+
+	// 4-10
+
+	concept newton-second-magnitude :> 80000-4-units:ImpulseMagnitude [
+		restricts relation metrology:hasReference to 80000-4-instances:newton-second
+	]
+
+	concept newton-millisecond-magnitude :> 80000-4-units:ImpulseMagnitude [
+		restricts relation metrology:hasReference to 80000-4-instances:newton-second
+	]
+
+	// 4-27
+
+	concept watt-magnitude :> 80000-4-units:PowerMagnitude [
+		restricts relation metrology:hasReference to 80000-4-instances:watt
+	]
+}

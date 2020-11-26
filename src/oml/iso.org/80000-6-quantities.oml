@@ -9,27 +9,27 @@ vocabulary <http://iso.org/80000-6-quantities> with # as 80000-6-quantities {
     @dc:^source "6-1"
     concept electric-current :> metrology:IndependentUnitaryQuantity [
         restricts scalar property metrology:isDimensionlessQuantity to false^^xsd:boolean
-        restricts all relation  metrology:hasMagnitude to 80000-6-units:UnitOfElectricCurrentValue
+        restricts all relation  metrology:hasMagnitude to 80000-6-units:ElectricCurrentMagnitude
     ]
 
     @dc:^source "6-2"
     concept electric-charge :> metrology:DerivedUnitaryQuantity [
         restricts scalar property metrology:isDimensionlessQuantity to false^^xsd:boolean
-        restricts all relation  metrology:hasMagnitude to 80000-6-units:UnitOfElectricChargeValue
+        restricts all relation  metrology:hasMagnitude to 80000-6-units:ElectricChargeMagnitude
     ]
 
-    relation entity electric-charge-of-electric-current :> metrology:HasFactorForUnitaryQuantity [
+    relation entity Electric-Charge-Has-Electric-Current :> metrology:HasFactorForUnitaryQuantity [
         from electric-charge
         to electric-current
-        forward electric-charge-of-electric-current-forward
+        forward electric-charge-has-electric-current
         functional
         restricts scalar property metrology:exponent to "1/1"^^owl:rational
     ]
 
-    relation entity electric-charge-of-duration :> metrology:HasFactorForUnitaryQuantity [
+    relation entity Electric-Charge-Has-Duration :> metrology:HasFactorForUnitaryQuantity [
         from electric-charge
         to 80000-3-quantities:duration
-        forward electric-charge-of-duration-forward
+        forward electric-charge-has-duration
         functional
         restricts scalar property metrology:exponent to "1/1"^^owl:rational
     ]
@@ -37,21 +37,21 @@ vocabulary <http://iso.org/80000-6-quantities> with # as 80000-6-quantities {
     @dc:^source "6-10"
     concept electric-field-strength :> metrology:DerivedUnitaryQuantity [
         restricts scalar property metrology:isDimensionlessQuantity to false^^xsd:boolean
-        restricts all relation  metrology:hasMagnitude to 80000-6-units:UnitOfElectricFieldStrengthValue
+        restricts all relation  metrology:hasMagnitude to 80000-6-units:ElectricFieldStrengthMagnitude
     ]
 
-    relation entity electric-field-strength-of-force :> metrology:HasFactorForUnitaryQuantity [
+    relation entity Electric-Field-Strength-Has-Force :> metrology:HasFactorForUnitaryQuantity [
         from electric-field-strength
         to 80000-4-quantities:force
-        forward electric-field-strength-of-force-forward
+        forward electric-field-strength-has-force
         functional
         restricts scalar property metrology:exponent to "1/1"^^owl:rational
     ]
 
-    relation entity electric-field-strength-of-electric-charge :> metrology:HasFactorForUnitaryQuantity [
+    relation entity Electric-Field-Strength-Has-Electric-Charge :> metrology:HasFactorForUnitaryQuantity [
         from electric-field-strength
         to electric-charge
-        forward electric-field-strength-of-electric-charge-forward
+        forward electric-field-strength-has-electric-charge
         functional
         restricts scalar property metrology:exponent to "-1/1"^^owl:rational
     ]
@@ -59,21 +59,21 @@ vocabulary <http://iso.org/80000-6-quantities> with # as 80000-6-quantities {
     @dc:^source "6-11"
     concept electric-potential :> metrology:DerivedUnitaryQuantity [
         restricts scalar property metrology:isDimensionlessQuantity to false^^xsd:boolean
-        restricts all relation  metrology:hasMagnitude to 80000-6-units:UnitOfElectricPotentialValue
+        restricts all relation  metrology:hasMagnitude to 80000-6-units:ElectricPotentialMagnitude
     ]
 
-    relation entity electric-potential-of-electric-field-strength :> metrology:HasFactorForUnitaryQuantity [
+    relation entity Electric-Potential-Has-Electric-Field-Strength :> metrology:HasFactorForUnitaryQuantity [
         from electric-potential
         to electric-field-strength
-        forward electric-potential-of-electric-field-strength-forward
+        forward electric-potential-has-electric-field-strength
         functional
         restricts scalar property metrology:exponent to "1/1"^^owl:rational
     ]
 
-    relation entity electric-potential-of-path-length :> metrology:HasFactorForUnitaryQuantity [
+    relation entity Electric-Potential-Has-Path-Length :> metrology:HasFactorForUnitaryQuantity [
         from electric-potential
         to 80000-3-quantities:path-length
-        forward electric-potential-of-path-length-forward
+        forward electric-potential-has-path-length
         functional
         restricts scalar property metrology:exponent to "1/1"^^owl:rational
     ]
@@ -81,21 +81,21 @@ vocabulary <http://iso.org/80000-6-quantities> with # as 80000-6-quantities {
     @dc:^source "6-46"
     concept resistance :> metrology:DerivedUnitaryQuantity [
         restricts scalar property metrology:isDimensionlessQuantity to false^^xsd:boolean
-        restricts all relation  metrology:hasMagnitude to 80000-6-units:UnitOfResistanceValue
+        restricts all relation  metrology:hasMagnitude to 80000-6-units:ResistanceMagnitude
     ]
 
-    relation entity resistance-of-electric-potential :> metrology:HasFactorForUnitaryQuantity [
+    relation entity Resistance-Has-Electric-Potential :> metrology:HasFactorForUnitaryQuantity [
         from resistance
         to electric-potential
-        forward resistance-of-electric-potential-forward
+        forward resistance-has-electric-potential
         functional
         restricts scalar property metrology:exponent to "1/1"^^owl:rational
     ]
 
-    relation entity resistance-of-electric-current :> metrology:HasFactorForUnitaryQuantity [
+    relation entity Resistance-Has-Electric-Current :> metrology:HasFactorForUnitaryQuantity [
         from resistance
         to electric-current
-        forward resistance-of-electric-current-forward
+        forward resistance-has-electric-current
         functional
         restricts scalar property metrology:exponent to "-1/1"^^owl:rational
     ]

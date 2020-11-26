@@ -1,0 +1,20 @@
+@dc:^description "This vocabulary provides convenience specializations of every metrology:Magnitude 
+defined in http://iso.org/80000-5-units.
+
+Note that this vocabulary is an alternative to <http://iso.org/80000-5-magnitudes2>."
+vocabulary <http://iso.org/80000-5-magnitudes1> with # as 80000-5-magnitudes1 {
+
+	uses <http://iso.org/80000-5-instances>
+
+	// 5-1
+	
+	concept kelvin-magnitude :> 80000-5-units:ThermodynamicTemperatureMagnitude [
+		restricts relation metrology:hasReference to 80000-5-instances:kelvin
+	]
+
+	// 5-2
+
+	concept degreeCelcius-magnitude :> 80000-5-units:CelciusTemperatureMagnitude [
+		restricts relation metrology:hasReference to 80000-5-instances:degreeCelcius
+	]
+}

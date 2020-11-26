@@ -50,7 +50,7 @@ Organizing a vocabulary of quantities and units involves several OML files as de
 
 5) Defining an OML vocabulary of quantity values extending the vocabulary of units and the description of instances.
 
-   Example: [src/oml/iso.org/80000-4-quantityValues.oml](../src/oml/iso.org/80000-4-quantityValues.oml)
+   Example: [src/oml/iso.org/80000-4-magnitudes.oml](../src/oml/iso.org/80000-4-magnitudes.oml)
 
    For guidance, see Step 6 [Defining units](#defining-units).
 
@@ -100,7 +100,7 @@ vocabulary <http://iso.org/80000-3-quantities> with # as 80000-3-quantities {
     @dc:^source "3-1.1"
     concept ^length :> metrology:IndependentUnitaryQuantity [
         restricts scalar property metrology:isDimensionlessQuantity to false^^xsd:boolean
-        restricts all relation metrology:hasMagnitude to 80000-3-units:UnitOfLengthValue 
+        restricts all relation metrology:hasMagnitude to 80000-3-units:LengthMagnitude 
     ]
 
     ...
@@ -108,7 +108,7 @@ vocabulary <http://iso.org/80000-3-quantities> with # as 80000-3-quantities {
 ```
 
 The last restriction above says that the `metrology:hasMagnitude` of every `80000-3-quantities:length` must
-be a `metrology:QuantityValue` whose `metrology:hasReference` must be a `metrology:MeasurementUnit` that is a `80000-3-units:UnitOfLengthValue`.
+be a `metrology:Magnitude` whose `metrology:hasReference` must be a `metrology:MeasurementUnit` that is a `80000-3-units:LengthMagnitude`.
 
 </details>
 
@@ -156,7 +156,7 @@ vocabulary <http://iso.org/80000-4-quantities> with # as 80000-4-quantities {
     @dc:^source "4-10"
     concept impulse :> metrology:DerivedUnitaryQuantity [
         restricts scalar property metrology:isDimensionlessQuantity to false^^xsd:boolean
-        restricts all relation  metrology:hasMagnitude to 80000-4-units:UnitOfForceValue
+        restricts all relation  metrology:hasMagnitude to 80000-4-units:ForceMagnitude
     ]
     
     relation entity impulse-of-force :> metrology:HasFactorForUnitaryQuantity [
@@ -285,7 +285,7 @@ description <http://iso.org/80000-3-instances> with # as 80000-3-instances {
 Each of part 3 through 14 of the ISO 80000 collection define kinds of quantities and corresponding measurement units. The following describes the process involved in defining a measurement unit.
 
 Defining a unit involves the following:
-1) Define a specialization of `metrology:UnitaryQuantityValue` for representing quantity values whose reference is that unit.
+1) Define a specialization of `metrology:UnitaryMagnitude` for representing quantity values whose reference is that unit.
 2) Define a specialization of `metrology:CoherentMeasurementUnit` as the root taxonomy for the unit including its prefix variations.
 3) Determine whether the unit is base or derived.
    * Define a base unit as a specialization of `metrology:IndependentMeasurementUnit`
@@ -293,7 +293,7 @@ Defining a unit involves the following:
   specializations of `metrology:HasFactorForMeasurementUnit` for each unit it depends on.
 4) Define specializations of the unit for the relevant prefixes
 5) Define instances of the unit and of the prefixed units
-6) Define a specialization of `80000-concepts:UnitaryQuantityMagnitude` to facilitate modeling a quantity value and the magnitude relationship.
+6) Define a specialization of `metrology:IsMagnitudeOfQuantity` to facilitate modeling with a single instance a `metrology:Magnitude` and a `metrology:HasMagnitude` relationship.
 
 <details>
 <summary>Details</summary>
@@ -314,11 +314,11 @@ Here is the corresponding definition using the metrology vocabulary:
 ```oml
 @dc:^source "https://www.iso.org/obp/ui/#iso:std:iso:80000:-3:ed-2:v1:en"
 vocabulary <http://iso.org/80000-3-units> with # as 80000-3-units {
-    extends <http://iso.org/80000-concepts>
+    extends <http://iupac.org/metrology>
     uses <http://iso.org/80000-1>
 
     -- step 1
-    aspect UnitOfLengthValue :> metrology:UnitaryQuantityValue [
+    aspect LengthMagnitude :> metrology:UnitaryMagnitude [
         restricts all relation metrology:hasReference to UnitOfLength
     ]
     
@@ -329,10 +329,10 @@ vocabulary <http://iso.org/80000-3-units> with # as 80000-3-units {
     ]
 
     -- step 3
-    concept metre :> UnitOfLength, metrology:IndependentMeasurementUnit, 80000-concepts:MeasurementUnit
+    concept metre :> UnitOfLength, metrology:IndependentMeasurementUnit
 
     -- step 4
-    concept kilometre :> UnitOfLength, metrology:PrefixedMeasurementUnit, 80000-concepts:MeasurementUnit [
+    concept kilometre :> UnitOfLength, metrology:PrefixedMeasurementUnit [
         restricts relation metrology:hasPrefix to 80000-1:kilo
     ]
 }
@@ -363,7 +363,7 @@ vocabulary <http://iso.org/80000-4-units> with # as 80000-4-units {
     ...
 
     -- step 1
-    aspect UnitOfImpulseValue :> metrology:UnitaryQuantityValue [
+    aspect ImpulseMagnitude :> metrology:UnitaryMagnitude [
         restricts all relation metrology:hasReference to UnitOfImpulse
     ]
 
@@ -374,7 +374,7 @@ vocabulary <http://iso.org/80000-4-units> with # as 80000-4-units {
     ]
 
     -- step 3
-    concept newton-second :> UnitOfImpulse, metrology:DerivedMeasurementUnit, 80000-concepts:MeasurementUnit 
+    concept newton-second :> UnitOfImpulse, metrology:DerivedMeasurementUnit 
 
     relation entity newton-second-of-newton :> metrology:HasFactorForMeasurementUnit [
         from newton-second
@@ -391,7 +391,7 @@ vocabulary <http://iso.org/80000-4-units> with # as 80000-4-units {
     ]
 
     -- step 4
-    concept newton-millisecond :> UnitOfImpulse, metrology:DerivedMeasurementUnit, 80000-concepts:MeasurementUnit 
+    concept newton-millisecond :> UnitOfImpulse, metrology:DerivedMeasurementUnit 
 
     relation entity newton-millisecond-of-newton :> metrology:HasFactorForMeasurementUnit [
         from newton-millisecond
@@ -444,27 +444,27 @@ description <http://iso.org/80000-3-instances> with # as 80000-3-instances {
 <details>
 <summary>Details</summary>
 
-Use the following as an example from [src/oml/iso.org/80000-3-quantityValues.oml](../src/oml/iso.org/80000-3-quantityValues.oml).
+Use the following as an example from [src/oml/iso.org/80000-3-magnitudes.oml](../src/oml/iso.org/80000-3-magnitudes.oml).
 
 ```oml
-@dc:^description "This vocabulary provides convenience specializations of metrology:UnitaryQuantityValue
+@dc:^description "This vocabulary provides convenience specializations of metrology:UnitaryMagnitude
 as concepts for every metrology:MeasurementUnit defined in http://iso.org/80000-3-units.
 
-Note that this vocabulary reflects an opinionated usage of metrology:UnitaryQuantityValue
+Note that this vocabulary reflects an opinionated usage of metrology:UnitaryMagnitude
 as an OML concept and does not exclude in any way other possible usages."
-vocabulary <http://iso.org/80000-3-quantityValues> with # as 80000-3-quantityValues {
-  extends <http://iso.org/80000-concepts>
+vocabulary <http://iso.org/80000-3-magnitudes> with # as 80000-3-magnitudes {
+  extends <http://iupac.org/metrology>
   extends <http://iso.org/80000-3-units>
   uses <http://iso.org/80000-3-instances>
 
-  relation entity metre-magnitude :> 80000-concepts:UnitaryQuantityMagnitude, 80000-3-units:UnitOfLengthValue [
+  relation entity metre-magnitude :> metrology:IsMagnitudeOfQuantity, 80000-3-units:LengthMagnitude [
      from metrology:UnitaryQuantity
      to metre-magnitude
      forward hasMetreMagnitude
      restricts relation metrology:hasReference to 80000-3-instances:metre
   ]
 
-  relation entity kilometre-magnitude :> 80000-concepts:UnitaryQuantityMagnitude, 80000-3-units:UnitOfLengthValue [
+  relation entity kilometre-magnitude :> metrology:IsMagnitudeOfQuantity, 80000-3-units:LengthMagnitude [
      from metrology:UnitaryQuantity
      to kilometre-magnitude
      forward hasKilometreMagnitude
@@ -473,14 +473,14 @@ vocabulary <http://iso.org/80000-3-quantityValues> with # as 80000-3-quantityVal
 
   ...
 
-    relation entity metre-per-second-magnitude :> 80000-concepts:UnitaryQuantityMagnitude, 80000-3-units:UnitOfVelocityValue [
+    relation entity metre-per-second-magnitude :> metrology:IsMagnitudeOfQuantity, 80000-3-units:VelocityMagnitude [
      from metrology:UnitaryQuantity
      to metre-per-second-magnitude
      forward hasMetrePer-SecondMagnitude
      restricts relation metrology:hasReference to 80000-3-instances:metre-per-second
   ]
 
-  relation entity kilometre-per-second-magnitude :> 80000-concepts:UnitaryQuantityMagnitude, 80000-3-units:UnitOfVelocityValue [
+  relation entity kilometre-per-second-magnitude :> metrology:IsMagnitudeOfQuantity, 80000-3-units:VelocityMagnitude [
      from metrology:UnitaryQuantity
      to kilometre-per-second-magnitude
      forward hasKilometrePerSecondMagnitude

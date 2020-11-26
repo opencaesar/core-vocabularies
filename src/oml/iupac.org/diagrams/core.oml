@@ -3,7 +3,7 @@ vocabulary <http://iupac.org/metrology/diagrams/core> with # as core {
 
     ref relation entity metrology:IsQuantityOf
 
-    ref relation entity metrology:HasMagnitude
+    ref relation entity metrology:IsMagnitudeOf
     
     ref relation entity metrology:HasReference
 

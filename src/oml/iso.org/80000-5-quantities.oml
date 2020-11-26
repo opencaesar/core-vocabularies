@@ -9,19 +9,19 @@ vocabulary <http://iso.org/80000-5-quantities> with # as 80000-5-quantities {
     @dc:^source "5-1"
     concept thermodynamic-temperature :> metrology:IndependentUnitaryQuantity [
         restricts scalar property metrology:isDimensionlessQuantity to false^^xsd:boolean
-        restricts all relation  metrology:hasMagnitude to 80000-5-units:UnitOfThermodynamicTemperature
+        restricts all relation  metrology:hasMagnitude to 80000-5-units:ThermodynamicTemperatureUnit
     ]
 
     @dc:^source "5-2"
     concept celcius-temperature :> metrology:DerivedUnitaryQuantity [
         restricts scalar property metrology:isDimensionlessQuantity to false^^xsd:boolean
-        restricts all relation  metrology:hasMagnitude to 80000-5-units:UnitOfCelciusTemperature
+        restricts all relation  metrology:hasMagnitude to 80000-5-units:CelciusTemperatureUnit
     ]
 
-    relation entity celcius-temperature-of-thermodynamic-temperature :> metrology:HasFactorForUnitaryQuantity [
+    relation entity Celcius-Temperature-Has-Thermodynamic-Temperature :> metrology:HasFactorForUnitaryQuantity [
         from celcius-temperature
         to thermodynamic-temperature
-        forward celcius-temperature-of-thermodynamic-temperature-forward
+        forward celcius-temperature-has-thermodynamic-temperature
         functional
         restricts scalar property metrology:exponent to "1/1"^^owl:rational
     ]

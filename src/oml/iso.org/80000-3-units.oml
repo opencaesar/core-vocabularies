@@ -2,150 +2,150 @@
 @dc:^source "https://www.iso.org/obp/ui/#iso:std:iso:80000:-3:ed-2:v1:en"
 vocabulary <http://iso.org/80000-3-units> with # as 80000-3-units {
 
-    extends <http://iso.org/80000-concepts>
+	extends <http://iupac.org/metrology>
 
-    uses <http://iso.org/80000-1>
+	uses <http://iso.org/80000-1>
 
-    aspect UnitOfLengthValue :> metrology:UnitaryQuantityValue [
-        restricts all relation metrology:hasReference to UnitOfLength
-    ]
-    
-    @dc:^source "3-1"
-    concept UnitOfLength :> metrology:CoherentMeasurementUnit [
-        restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
-    ]
+	@dc:^source "3-1"
+	aspect LengthMagnitude :> metrology:UnitaryMagnitude [
+		restricts all relation metrology:hasReference to LengthUnit
+	]
 
-    concept metre :> UnitOfLength, metrology:IndependentMeasurementUnit, 80000-concepts:MeasurementUnit
+	concept LengthUnit :> metrology:CoherentMeasurementUnit [
+		restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
+	]
 
-    concept kilometre :> UnitOfLength, metrology:PrefixedMeasurementUnit, 80000-concepts:MeasurementUnit [
-        restricts relation metrology:hasPrefix to 80000-1:kilo
-    ]
+	concept metre :> LengthUnit, metrology:IndependentMeasurementUnit
 
-    aspect UnitOfAngularMeasureValue :> metrology:UnitaryQuantityValue [
-        restricts all relation metrology:hasReference to UnitOfAngularMeasure
-    ]
-    
-    @dc:^source "3-5"
-    concept UnitOfAngularMeasure :> metrology:CoherentMeasurementUnit [
-        restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
-    ]
+	concept kilometre :> LengthUnit, metrology:PrefixedMeasurementUnit [
+		restricts relation metrology:hasPrefix to 80000-1:kilo
+	]
 
-    concept radian :> UnitOfAngularMeasure, metrology:DerivedMeasurementUnit, 80000-concepts:MeasurementUnit 
+	@dc:^source "3-5"
+	aspect AngularMeasureMagnitude :> metrology:UnitaryMagnitude [
+		restricts all relation metrology:hasReference to AngularMeasureUnit
+	]
 
-    relation entity radian-of-numerator :> metrology:HasFactorForMeasurementUnit [
-        from radian
-        to metre
-        forward radian-of-numerator-factor
-        restricts scalar property metrology:exponent to "1/1"^^owl:rational
-    ]
+	concept AngularMeasureUnit :> metrology:CoherentMeasurementUnit [
+		restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
+	]
 
-    relation entity radian-of-denominator :> metrology:HasFactorForMeasurementUnit [
-        from radian
-        to metre
-        forward radian-of-denominator-factor
-        restricts scalar property metrology:exponent to "-1/1"^^owl:rational
-    ]
+	concept radian :> AngularMeasureUnit, metrology:DerivedMeasurementUnit
 
-    aspect UnitOfTimeValue :> metrology:UnitaryQuantityValue [
-        restricts all relation metrology:hasReference to UnitOfTime
-    ]
-    
-    @dc:^source "3-9"
-    concept UnitOfTime :> metrology:CoherentMeasurementUnit [
-        restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
-    ]
+	relation entity Radian-Has-Metre-Numerator :> metrology:HasFactorForMeasurementUnit [
+		from radian
+		to metre
+		forward radian-has-metre-numerator
+		restricts scalar property metrology:exponent to "1/1"^^owl:rational
+	]
 
-    concept second :> UnitOfTime, metrology:IndependentMeasurementUnit, 80000-concepts:MeasurementUnit
+	relation entity Radian-Has-Metre-Denominator :> metrology:HasFactorForMeasurementUnit [
+		from radian
+		to metre
+		forward radian-has-metre-denominator
+		restricts scalar property metrology:exponent to "-1/1"^^owl:rational
+	]
 
-    concept millisecond :> UnitOfTime, metrology:PrefixedMeasurementUnit [
-        restricts relation metrology:hasPrefix to 80000-1:milli
-    ]
+	@dc:^source "3-9"
+	aspect TimeMagnitude :> metrology:UnitaryMagnitude [
+		restricts all relation metrology:hasReference to TimeUnit
+	]
 
-    concept minute :> UnitOfTime, metrology:NonCoherentDerivedMeasurementUnit, 80000-concepts:MeasurementUnit [
-        restricts scalar property metrology:nonCoherentRelationship to "1 minute = 60 seconds"^^xsd:string
-        restricts all relation metrology:nonCoherentDerivedMeasurementUnitOf to second
-    ]
+	concept TimeUnit :> metrology:CoherentMeasurementUnit [
+		restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
+	]
 
-    concept hour :> UnitOfTime, metrology:NonCoherentDerivedMeasurementUnit, 80000-concepts:MeasurementUnit [
-        restricts scalar property metrology:nonCoherentRelationship to "1 hour = 60 minutes"
-        restricts all relation metrology:nonCoherentDerivedMeasurementUnitOf to minute
-    ]
+	concept second :> TimeUnit, metrology:IndependentMeasurementUnit
 
-    aspect UnitOfVelocityValue :> metrology:UnitaryQuantityValue [
-        restricts all relation metrology:hasReference to UnitOfVelocity
-    ]
+	concept millisecond :> TimeUnit, metrology:PrefixedMeasurementUnit [
+		restricts relation metrology:hasPrefix to 80000-1:milli
+	]
 
-    @dc:^source "3-10"
-    concept UnitOfVelocity :> metrology:CoherentMeasurementUnit [
-        restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
-    ]
+	concept minute :> TimeUnit, metrology:NonCoherentDerivedMeasurementUnit [
+		restricts scalar property metrology:nonCoherentRelationship to "1 minute = 60 seconds"^^xsd:string
+		restricts all relation metrology:nonCoherentDerivedMeasurementUnitOf to second
+	]
 
-    concept metre-per-second :> UnitOfVelocity, metrology:DerivedMeasurementUnit, 80000-concepts:MeasurementUnit
+	concept hour :> TimeUnit, metrology:NonCoherentDerivedMeasurementUnit [
+		restricts scalar property metrology:nonCoherentRelationship to "1 hour = 60 minutes"
+		restricts all relation metrology:nonCoherentDerivedMeasurementUnitOf to minute
+	]
 
-    relation entity metre-per-second_of_metre :>  metrology:HasFactorForMeasurementUnit [
-        from metre-per-second
-        to metre
-        forward metre-per-second_of_metre-factor
-        restricts scalar property metrology:exponent to "1/1"^^owl:rational
-    ]
+	@dc:^source "3-10"
+	aspect VelocityMagnitude :> metrology:UnitaryMagnitude [
+		restricts all relation metrology:hasReference to VelocityUnit
+	]
 
-    relation entity metre-per-second_of_second :>  metrology:HasFactorForMeasurementUnit [
-        from metre-per-second
-        to second
-        forward metre-per-second_of_second-factor
-        restricts scalar property metrology:exponent to "-1/1"^^owl:rational
-    ]
+	concept VelocityUnit :> metrology:CoherentMeasurementUnit [
+		restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
+	]
 
-    concept kilometre-per-second :> UnitOfVelocity, metrology:DerivedMeasurementUnit, 80000-concepts:MeasurementUnit
+	concept metre-per-second :> VelocityUnit, metrology:DerivedMeasurementUnit
 
-    relation entity kilometre-per-second_of_metre :>  metrology:HasFactorForMeasurementUnit [
-        from metre-per-second
-        to kilometre
-        forward kilometre-per-second_of_metre-factor
-        restricts scalar property metrology:exponent to "1/1"^^owl:rational
-    ]
+	relation entity Metre-Per-Second-Has-Metre :>  metrology:HasFactorForMeasurementUnit [
+		from metre-per-second
+		to metre
+		forward metre-per-second-has-metre
+		restricts scalar property metrology:exponent to "1/1"^^owl:rational
+	]
 
-    relation entity kilometre-per-second_of_second :>  metrology:HasFactorForMeasurementUnit [
-        from metre-per-second
-        to second
-        forward kilometre-per-second_of_second-factor
-        restricts scalar property metrology:exponent to "-1/1"^^owl:rational
-    ]
+	relation entity Metre-Per-Second-Has-Second :>  metrology:HasFactorForMeasurementUnit [
+		from metre-per-second
+		to second
+		forward metre-per-second-has-second
+		restricts scalar property metrology:exponent to "-1/1"^^owl:rational
+	]
 
-    aspect UnitOfRotationValue :> metrology:UnitaryQuantityValue [
-        restricts all relation metrology:hasReference to UnitOfRotation
-    ]
+	concept kilometre-per-second :> VelocityUnit, metrology:DerivedMeasurementUnit
 
-    @dc:^source "3-16"
-    concept UnitOfRotation :> metrology:CoherentMeasurementUnit [
-        restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
-    ]
+	relation entity Kilometre-Per-Second-Has-Kilometre :>  metrology:HasFactorForMeasurementUnit [
+		from kilometre-per-second
+		to kilometre
+		forward kilometre-per-second-has-kilometre
+		restricts scalar property metrology:exponent to "1/1"^^owl:rational
+	]
 
-    concept revolutions :> UnitOfRotation, metrology:DerivedMeasurementUnit, 80000-concepts:MeasurementUnit
+	relation entity Kilometre-Per-Second-Has-Second :>  metrology:HasFactorForMeasurementUnit [
+		from kilometre-per-second
+		to second
+		forward kilometre-per-second-has-second
+		restricts scalar property metrology:exponent to "-1/1"^^owl:rational
+	]
 
-    relation entity revolutions-of-radian :> metrology:HasFactorForMeasurementUnit [
-        from revolutions
-        to radian
-        forward revolutions-of-radian-factor
-        restricts scalar property metrology:exponent to "1/1"^^owl:rational
-    ]
+	@dc:^source "3-16"
+	aspect RotationMagnitude :> metrology:UnitaryMagnitude [
+		restricts all relation metrology:hasReference to RotationUnit
+	]
 
-    aspect UnitOfFrequencyValue :> metrology:UnitaryQuantityValue [
-        restricts all relation metrology:hasReference to UnitOfFrequency
-    ]
-    
-    @dc:^source "3-17"
-    concept UnitOfFrequency :> metrology:CoherentMeasurementUnit [
-        restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
-    ]
-    
-    concept hertz :> UnitOfFrequency, metrology:DerivedMeasurementUnit, 80000-concepts:MeasurementUnit
+	concept RotationUnit :> metrology:CoherentMeasurementUnit [
+		restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
+	]
 
-    relation entity hertz_of_second :> metrology:HasFactorForMeasurementUnit [
-        from hertz
-        to second
-        forward hertz-of-second-factor
-        restricts scalar property metrology:exponent to "-1/1"^^owl:rational
-    ]
+	concept revolution :> RotationUnit, metrology:DerivedMeasurementUnit
+
+	relation entity Revolution-Has-Radian :> metrology:HasFactorForMeasurementUnit [
+		from revolution
+		to radian
+		forward revolution-has-radian
+		restricts scalar property metrology:exponent to "1/1"^^owl:rational
+	]
+
+	@dc:^source "3-17"
+	aspect FrequencyMagnitude :> metrology:UnitaryMagnitude [
+		restricts all relation metrology:hasReference to FrequencyUnit
+	]
+
+	concept FrequencyUnit :> metrology:CoherentMeasurementUnit [
+		restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
+	]
+
+	concept hertz :> FrequencyUnit, metrology:DerivedMeasurementUnit
+
+	relation entity Hertz-Has-Second :> metrology:HasFactorForMeasurementUnit [
+		from hertz
+		to second
+		forward hertz-has-second
+		restricts scalar property metrology:exponent to "-1/1"^^owl:rational
+	]
 
 }

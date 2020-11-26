@@ -1,97 +1,96 @@
 description <http://iso.org/80000-6-instances> with # as 80000-6-instances {
 
-  uses <http://iso.org/80000-6-quantities>
+	uses <http://iso.org/80000-6-quantities>
 
-  extends <http://iso.org/80000-instances>
+	extends <http://iso.org/80000-instances>
 
-  @dc:^source "6-1"
-  ci electric-current : 80000-6-quantities:electric-current
+	@dc:^source "6-1"
+	ci electric-current : 80000-6-quantities:electric-current
 
-  ri systemOfQuantities-electric-current : metrology:SystemHasUnitaryQuantity [
-    from 80000-instances:systemOfQuantities
-    to electric-current
-    metrology:isBaseQuantity "true"^^xsd:boolean
-  ]
+	ri systemOfQuantities-electric-current : metrology:SystemHasUnitaryQuantity [
+		from 80000-instances:systemOfQuantities
+		to electric-current
+		metrology:isBaseQuantity "true"^^xsd:boolean
+	]
 
-  @dc:^source "6-1"
-  ci ampere : 80000-6-units:ampere
+	@dc:^source "6-1"
+	ci ampere : 80000-6-units:ampere
 
-  ri systemOfUnits-ampere : metrology:SystemHasMetrologicalUnit [
-    from 80000-instances:systemOfUnits
-    to ampere
-    metrology:isBaseMetrologicalUnit "true"^^xsd:boolean
-  ]
+	ri systemOfUnits-ampere : metrology:SystemHasMetrologicalUnit [
+		from 80000-instances:systemOfUnits
+		to ampere
+		metrology:isBaseMetrologicalUnit "true"^^xsd:boolean
+	]
 
-  @dc:^source "6-2"
-  ci electric-charge : 80000-6-quantities:electric-charge
+	@dc:^source "6-2"
+	ci electric-charge : 80000-6-quantities:electric-charge
 
-  ri systemOfQuantities-electric-charge : metrology:SystemHasUnitaryQuantity [
-    from 80000-instances:systemOfQuantities
-    to electric-charge
-    metrology:isBaseQuantity "false"^^xsd:boolean
-  ]
+	ri systemOfQuantities-electric-charge : metrology:SystemHasUnitaryQuantity [
+		from 80000-instances:systemOfQuantities
+		to electric-charge
+		metrology:isBaseQuantity "false"^^xsd:boolean
+	]
 
-  @dc:^source "6-2"
-  ci coulomb : 80000-6-units:coulomb
+	@dc:^source "6-2"
+	ci coulomb : 80000-6-units:coulomb
 
-  ri systemOfUnits-coulomb : metrology:SystemHasMetrologicalUnit [
-    from 80000-instances:systemOfUnits
-    to coulomb
-    metrology:isBaseMetrologicalUnit "false"^^xsd:boolean
-  ]
+	ri systemOfUnits-coulomb : metrology:SystemHasMetrologicalUnit [
+		from 80000-instances:systemOfUnits
+		to coulomb
+		metrology:isBaseMetrologicalUnit "false"^^xsd:boolean
+	]
 
-  @dc:^source "6-10"
-  ci electric-field-strength : 80000-6-quantities:electric-field-strength
+	@dc:^source "6-10"
+	ci electric-field-strength : 80000-6-quantities:electric-field-strength
 
-  ri systemOfQuantities-electric-field-strength : metrology:SystemHasUnitaryQuantity [
-    from 80000-instances:systemOfQuantities
-    to electric-field-strength
-    metrology:isBaseQuantity "false"^^xsd:boolean
-  ]
+	ri systemOfQuantities-electric-field-strength : metrology:SystemHasUnitaryQuantity [
+		from 80000-instances:systemOfQuantities
+		to electric-field-strength
+		metrology:isBaseQuantity "false"^^xsd:boolean
+	]
 
-  @dc:^source "6-10"
-  ci newton-per-coulomb : 80000-6-units:newton-per-coulomb
+	@dc:^source "6-10"
+	ci newton-per-coulomb : 80000-6-units:newton-per-coulomb
 
-  ri systemOfUnits-newton-per-coulomb : metrology:SystemHasMetrologicalUnit [
-    from 80000-instances:systemOfUnits
-    to newton-per-coulomb
-    metrology:isBaseMetrologicalUnit "false"^^xsd:boolean
-  ]
+	ri systemOfUnits-newton-per-coulomb : metrology:SystemHasMetrologicalUnit [
+		from 80000-instances:systemOfUnits
+		to newton-per-coulomb
+		metrology:isBaseMetrologicalUnit "false"^^xsd:boolean
+	]
 
-  @dc:^source "6-11"
-  ci electric-potential : 80000-6-quantities:electric-potential
+	@dc:^source "6-11"
+	ci electric-potential : 80000-6-quantities:electric-potential
 
-  ri systemOfQuantities-electric-potential : metrology:SystemHasUnitaryQuantity [
-    from 80000-instances:systemOfQuantities
-    to electric-potential
-    metrology:isBaseQuantity "false"^^xsd:boolean
-  ]
+	ri systemOfQuantities-electric-potential : metrology:SystemHasUnitaryQuantity [
+		from 80000-instances:systemOfQuantities
+		to electric-potential
+		metrology:isBaseQuantity "false"^^xsd:boolean
+	]
 
-  @dc:^source "6-11"
-  ci volt : 80000-6-units:volt
+	@dc:^source "6-11"
+	ci volt : 80000-6-units:volt
 
-  ri systemOfUnits-volt : metrology:SystemHasMetrologicalUnit [
-    from 80000-instances:systemOfUnits
-    to volt
-    metrology:isBaseMetrologicalUnit "false"^^xsd:boolean
-  ]
+	ri systemOfUnits-volt : metrology:SystemHasMetrologicalUnit [
+		from 80000-instances:systemOfUnits
+		to volt
+		metrology:isBaseMetrologicalUnit "false"^^xsd:boolean
+	]
 
-  @dc:^source "6-46"
-  ci resistance : 80000-6-quantities:resistance
+	@dc:^source "6-46"
+	ci resistance : 80000-6-quantities:resistance
 
-  ri systemOfQuantities-resistance : metrology:SystemHasUnitaryQuantity [
-    from 80000-instances:systemOfQuantities
-    to resistance
-    metrology:isBaseQuantity "false"^^xsd:boolean
-  ]
+	ri systemOfQuantities-resistance : metrology:SystemHasUnitaryQuantity [
+		from 80000-instances:systemOfQuantities
+		to resistance
+		metrology:isBaseQuantity "false"^^xsd:boolean
+	]
 
-  @dc:^source "6-46"
-  ci ohm : 80000-6-units:ohm
+	@dc:^source "6-46"
+	ci ohm : 80000-6-units:ohm
 
-  ri systemOfUnits-ohm : metrology:SystemHasMetrologicalUnit [
-    from 80000-instances:systemOfUnits
-    to ohm
-    metrology:isBaseMetrologicalUnit "false"^^xsd:boolean
-  ]
-
+	ri systemOfUnits-ohm : metrology:SystemHasMetrologicalUnit [
+		from 80000-instances:systemOfUnits
+		to ohm
+		metrology:isBaseMetrologicalUnit "false"^^xsd:boolean
+	]
 }

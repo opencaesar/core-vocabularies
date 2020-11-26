@@ -1,182 +1,166 @@
 @dc:^source "ISO 80000-3:2019(en)"
 @dc:^source "https://www.iso.org/obp/ui/#iso:std:iso:80000:-3:ed-2:v1:en"
 vocabulary <http://iso.org/80000-3-quantities> with # as 80000-3-quantities {
-    
-    extends <http://iso.org/80000-3-units>
 
-    @dc:^source "3-1.1"
-    concept ^length :> metrology:IndependentUnitaryQuantity [
-        restricts scalar property metrology:isDimensionlessQuantity to false^^xsd:boolean
-        restricts all relation metrology:hasMagnitude to 80000-3-units:UnitOfLengthValue
-    ]
-    
-    @dc:^source "3-1.2"
-    concept width :> ^length
+	extends <http://iso.org/80000-3-units>
 
-    @dc:^source "3-1.2"
-    concept breadth :> width
+	@dc:^source "3-1"
+	concept ^length :> metrology:IndependentUnitaryQuantity [
+		restricts scalar property metrology:isDimensionlessQuantity to false^^xsd:boolean
+		restricts all relation metrology:hasMagnitude to 80000-3-units:LengthMagnitude
+	]
 
-    @dc:^source "3-1.3"
-    concept height :> ^length
+	concept width :> ^length
 
-    @dc:^source "3-1.3"
-    concept depth :> height
+	concept breadth :> width
 
-    @dc:^source "3-1.3"
-    concept altitude :> height
+	concept height :> ^length
 
-    @dc:^source "3-1.4"
-    concept thickness :> ^length
+	concept depth :> height
 
-    @dc:^source "3-1.5"
-    concept diameter :> ^length
+	concept altitude :> height
 
-    @dc:^source "3-1.6"
-    concept radius :> ^length
+	concept thickness :> ^length
 
-    @dc:^source "3-1.7"
-    concept path-length :> ^length
+	concept diameter :> ^length
 
-    @dc:^source "3-1.7"
-    concept arc-length :> path-length
+	concept radius :> ^length
 
-    @dc:^source "3-1.8"
-    concept distance :> ^length
+	concept path-length :> ^length
 
-    @dc:^source "3-1.9"
-    concept radial-distance :> ^length
+	concept arc-length :> path-length
 
-    @dc:^source "3-1.10"
-    concept position-vector :> ^length
+	concept distance :> ^length
 
-    @dc:^source "3-1.11"
-    concept displacement :> ^length
+	concept radial-distance :> ^length
 
-    @dc:^source "3-1.12"
-    concept radius-of-curvature :> ^length
+	concept position-vector :> ^length
 
-    @dc:^source "3-5"
-    concept angular-measure :> metrology:DerivedUnitaryQuantity [
-        restricts scalar property metrology:isDimensionlessQuantity to true^^xsd:boolean
-        restricts all relation metrology:hasMagnitude to 80000-3-units:UnitOfAngularMeasureValue
-    ]
+	concept displacement :> ^length
 
-    relation entity angular-measure-of-arc-length :> metrology:HasFactorForUnitaryQuantity [
-        from angular-measure
-        to arc-length
-        forward angular-measure-of-arc-length-forward
-        functional
-        restricts scalar property metrology:exponent to "1/1"^^owl:rational
-    ]
+	concept radius-of-curvature :> ^length
 
-    relation entity angular-measure-of-radius :> metrology:HasFactorForUnitaryQuantity [
-        from angular-measure
-        to radius
-        forward angular-measure-of-radius-forward
-        functional
-        restricts scalar property metrology:exponent to "-1/1"^^owl:rational
-    ]
+	@dc:^source "3-5"
+	concept angular-measure :> metrology:DerivedUnitaryQuantity [
+		restricts scalar property metrology:isDimensionlessQuantity to true^^xsd:boolean
+		restricts all relation metrology:hasMagnitude to 80000-3-units:AngularMeasureMagnitude
+	]
 
-    @dc:^source "3-6"
-    concept rotational-displacement :> metrology:DerivedUnitaryQuantity [
-        restricts scalar property metrology:isDimensionlessQuantity to true^^xsd:boolean
-        restricts all relation metrology:hasMagnitude to 80000-3-units:UnitOfAngularMeasureValue
-    ]
+	relation entity Angular-Measure-Has-Arc-Length :> metrology:HasFactorForUnitaryQuantity [
+		from angular-measure
+		to arc-length
+		forward angular-measure-has-arc-length
+		functional
+		restricts scalar property metrology:exponent to "1/1"^^owl:rational
+	]
 
-    relation entity rotational-displacement-of-path-length :> metrology:HasFactorForUnitaryQuantity [
-        from rotational-displacement
-        to path-length
-        forward rotational-displacement-of-path-length-forward
-        functional
-        restricts scalar property metrology:exponent to "1/1"^^owl:rational
-    ]
+	relation entity Angular-Measure-Has-Radius :> metrology:HasFactorForUnitaryQuantity [
+		from angular-measure
+		to radius
+		forward angular-measure-has-radius
+		functional
+		restricts scalar property metrology:exponent to "-1/1"^^owl:rational
+	]
 
-    relation entity rotational-displacement-of-distance :> metrology:HasFactorForUnitaryQuantity [
-        from rotational-displacement
-        to distance
-        forward rotational-displacement-of-distance-forward
-        functional
-        restricts scalar property metrology:exponent to "-1/1"^^owl:rational
-    ]
+	@dc:^source "3-6"
+	concept rotational-displacement :> metrology:DerivedUnitaryQuantity [
+		restricts scalar property metrology:isDimensionlessQuantity to true^^xsd:boolean
+		restricts all relation metrology:hasMagnitude to 80000-3-units:AngularMeasureMagnitude
+	]
 
-    @dc:^source "3-9"
-    concept duration :> metrology:IndependentUnitaryQuantity [
-        restricts scalar property metrology:isDimensionlessQuantity to false^^xsd:boolean
-        restricts all relation metrology:hasMagnitude to 80000-3-units:UnitOfTimeValue
-    ]
+	relation entity Rotational-Displacement-Has-Path-Length :> metrology:HasFactorForUnitaryQuantity [
+		from rotational-displacement
+		to path-length
+		forward rotational-displacement-has-path-length
+		functional
+		restricts scalar property metrology:exponent to "1/1"^^owl:rational
+	]
 
-    @dc:^source "3-10.1"
-    concept velocity :> metrology:DerivedUnitaryQuantity [
-        restricts scalar property metrology:isDimensionlessQuantity to false^^xsd:boolean
-        restricts all relation metrology:hasMagnitude to 80000-3-units:UnitOfVelocityValue
-    ]
+	relation entity Rotational-Displacement-Has-Distance :> metrology:HasFactorForUnitaryQuantity [
+		from rotational-displacement
+		to distance
+		forward rotational-displacement-has-distance
+		functional
+		restricts scalar property metrology:exponent to "-1/1"^^owl:rational
+	]
 
-    relation entity velocity-of-position-vector :> metrology:HasFactorForUnitaryQuantity [
-        from velocity
-        to position-vector
-        forward velocity-of-position-vector-forward
-        functional
-        restricts scalar property metrology:exponent to "1/1"^^owl:rational
-    ]
+	@dc:^source "3-9"
+	concept duration :> metrology:IndependentUnitaryQuantity [
+		restricts scalar property metrology:isDimensionlessQuantity to false^^xsd:boolean
+		restricts all relation metrology:hasMagnitude to 80000-3-units:TimeMagnitude
+	]
 
-    relation entity velocity-of-duration :> metrology:HasFactorForUnitaryQuantity [
-        from velocity
-        to duration
-        forward velocity-of-duration-forward
-        functional
-        restricts scalar property metrology:exponent to "-1/1"^^owl:rational
-    ]
+	@dc:^source "3-10"
+	concept velocity :> metrology:DerivedUnitaryQuantity [
+		restricts scalar property metrology:isDimensionlessQuantity to false^^xsd:boolean
+		restricts all relation metrology:hasMagnitude to 80000-3-units:VelocityMagnitude
+	]
 
-    @dc:^source "3-14"
-    concept period-duration :> duration
+	relation entity Velocity-Has-Position-Vector :> metrology:HasFactorForUnitaryQuantity [
+		from velocity
+		to position-vector
+		forward velocity-has-position-vector
+		functional
+		restricts scalar property metrology:exponent to "1/1"^^owl:rational
+	]
 
-    @dc:^source "3-16"
-    concept rotation :> metrology:DerivedUnitaryQuantity [
-        restricts scalar property metrology:isDimensionlessQuantity to true^^xsd:boolean
-        restricts all relation metrology:hasMagnitude to 80000-3-units:UnitOfRotationValue
-    ]
+	relation entity Velocity-Has-Duration :> metrology:HasFactorForUnitaryQuantity [
+		from velocity
+		to duration
+		forward velocity-has-duration
+		functional
+		restricts scalar property metrology:exponent to "-1/1"^^owl:rational
+	]
 
-    relation entity rotation-of-rotational-displacement :> metrology:HasFactorForUnitaryQuantity [
-        from rotation
-        to rotational-displacement
-        forward rotation-of-rotational-displacement-forward
-        functional
-        restricts scalar property metrology:exponent to "1/1"^^owl:rational
-    ]
+	@dc:^source "3-14"
+	concept period-duration :> duration
 
-    @dc:^source "3-17.1"
-    concept frequency :> metrology:DerivedUnitaryQuantity [
-        restricts scalar property metrology:isDimensionlessQuantity to false^^xsd:boolean
-        restricts all relation metrology:hasMagnitude to 80000-3-units:UnitOfFrequencyValue
-    ]
+	@dc:^source "3-16"
+	concept rotation :> metrology:DerivedUnitaryQuantity [
+		restricts scalar property metrology:isDimensionlessQuantity to true^^xsd:boolean
+		restricts all relation metrology:hasMagnitude to 80000-3-units:RotationMagnitude
+	]
 
-    relation entity frequency-of-period-duration :> metrology:HasFactorForUnitaryQuantity [
-        from frequency
-        to period-duration
-        forward frequency-of-period-duration-forward
-        functional
-        restricts scalar property metrology:exponent to "-1/1"^^owl:rational
-    ]
+	relation entity Rotation-Has-Rotational-Displacement :> metrology:HasFactorForUnitaryQuantity [
+		from rotation
+		to rotational-displacement
+		forward rotation-has-rotational-displacement
+		functional
+		restricts scalar property metrology:exponent to "1/1"^^owl:rational
+	]
 
-    @dc:^source "3-17.2"
-    concept rotational-frequency :> metrology:DerivedUnitaryQuantity [
-        restricts scalar property metrology:isDimensionlessQuantity to false^^xsd:boolean
-        restricts all relation metrology:hasMagnitude to 80000-3-units:UnitOfFrequencyValue
-    ]
+	@dc:^source "3-17"
+	concept frequency :> metrology:DerivedUnitaryQuantity [
+		restricts scalar property metrology:isDimensionlessQuantity to false^^xsd:boolean
+		restricts all relation metrology:hasMagnitude to 80000-3-units:FrequencyMagnitude
+	]
 
-    relation entity rotational-frequency-of-rotation :> metrology:HasFactorForUnitaryQuantity [
-        from rotational-frequency
-        to rotation
-        forward rotational-frequency-of-rotation-forward
-        functional
-        restricts scalar property metrology:exponent to "1/1"^^owl:rational
-    ]
+	relation entity Frequency-Has-Period-Duration :> metrology:HasFactorForUnitaryQuantity [
+		from frequency
+		to period-duration
+		forward frequency-has-period-duration
+		functional
+		restricts scalar property metrology:exponent to "-1/1"^^owl:rational
+	]
 
-    relation entity rotational-frequency-of-duration :> metrology:HasFactorForUnitaryQuantity [
-        from rotational-frequency
-        to duration
-        forward rotational-frequency-of-duration-forward
-        functional
-        restricts scalar property metrology:exponent to "-1/1"^^owl:rational
-    ]
+	concept rotational-frequency :> metrology:DerivedUnitaryQuantity [
+		restricts scalar property metrology:isDimensionlessQuantity to false^^xsd:boolean
+		restricts all relation metrology:hasMagnitude to 80000-3-units:FrequencyMagnitude
+	]
+
+	relation entity Rotational-Frequency-Has-Rotation :> metrology:HasFactorForUnitaryQuantity [
+		from rotational-frequency
+		to rotation
+		forward rotational-frequency-has-rotation
+		functional
+		restricts scalar property metrology:exponent to "1/1"^^owl:rational
+	]
+
+	relation entity Rotational-Frequency-Has-Duration :> metrology:HasFactorForUnitaryQuantity [
+		from rotational-frequency
+		to duration
+		forward rotational-frequency-has-duration
+		functional
+		restricts scalar property metrology:exponent to "-1/1"^^owl:rational
+	]
 }

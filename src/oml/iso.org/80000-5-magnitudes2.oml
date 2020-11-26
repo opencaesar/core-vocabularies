@@ -1,0 +1,26 @@
+@dc:^description "This vocabulary provides convenience specializations of metrology:IsReflexiveMagnitudeOf
+as relation entities for every metrology:MeasurementUnit defined in http://iso.org/80000-5-units.
+
+Note that this vocabulary is an alternative to <http://iso.org/80000-5-magnitudes1>."
+vocabulary <http://iso.org/80000-5-magnitudes2> with # as 80000-5-magnitudes2 {
+
+	uses <http://iso.org/80000-5-instances>
+
+	// 5-1
+	
+	relation entity kelvin-magnitude :> metrology:IsReflexiveMagnitudeOf, 80000-5-units:ThermodynamicTemperatureMagnitude [
+		from kelvin-magnitude
+		to metrology:UnitaryQuantity
+		forward isKelvinMagnitudeOf
+		restricts relation metrology:hasReference to 80000-5-instances:kelvin
+	]
+
+	// 5-2
+
+	relation entity degreeCelcius-magnitude :> metrology:IsReflexiveMagnitudeOf, 80000-5-units:CelciusTemperatureMagnitude [
+		from degreeCelcius-magnitude
+		to metrology:UnitaryQuantity
+		forward isDegreeCelciusMagnitudeOf
+		restricts relation metrology:hasReference to 80000-5-instances:degreeCelcius
+	]
+}

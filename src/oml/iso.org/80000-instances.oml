@@ -1,11 +1,10 @@
 description <http://iso.org/80000-instances> with # as 80000-instances {
 
-  uses <http://iupac.org/metrology>
+	uses <http://iupac.org/metrology>
 
-  @dc:^description "The International System of Quantities."
-  ci systemOfQuantities : metrology:SystemOfUnitaryQuantities
-   
-  @dc:^description "The International System of Units."
-  ci systemOfUnits : metrology:SystemOfMetrologicalUnits
-  
+	@dc:^description "The International System of Quantities."
+	ci systemOfQuantities : metrology:SystemOfUnitaryQuantities
+
+	@dc:^description "The International System of Units."
+	ci systemOfUnits : metrology:SystemOfMetrologicalUnits
 }

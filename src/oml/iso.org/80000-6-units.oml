@@ -4,111 +4,115 @@ vocabulary <http://iso.org/80000-6-units> with # as 80000-6-units {
  
     extends <http://iso.org/80000-5-units>
 
-    aspect UnitOfElectricCurrentValue :> metrology:UnitaryQuantityValue [
-        restricts all relation metrology:hasReference to UnitOfElectricCurrent
-    ]
     @dc:^source "6-1"
-    concept UnitOfElectricCurrent :> metrology:CoherentMeasurementUnit [
+    aspect ElectricCurrentMagnitude :> metrology:UnitaryMagnitude [
+        restricts all relation metrology:hasReference to ElectricCurrentUnit
+    ]
+
+    concept ElectricCurrentUnit :> metrology:CoherentMeasurementUnit [
         restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
     ]
 
-    concept ampere :> UnitOfElectricCurrent, metrology:IndependentMeasurementUnit, 80000-concepts:MeasurementUnit 
+    concept ampere :> ElectricCurrentUnit, metrology:IndependentMeasurementUnit 
 
-    aspect UnitOfElectricChargeValue :> metrology:UnitaryQuantityValue [
-        restricts all relation metrology:hasReference to UnitOfElectricCharge
-    ]
     @dc:^source "6-2"
-    concept UnitOfElectricCharge :> metrology:CoherentMeasurementUnit [
+    aspect ElectricChargeMagnitude :> metrology:UnitaryMagnitude [
+        restricts all relation metrology:hasReference to ElectricChargeUnit
+    ]
+
+    concept ElectricChargeUnit :> metrology:CoherentMeasurementUnit [
         restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
     ]
 
-    concept coulomb :> UnitOfElectricCharge, metrology:DerivedMeasurementUnit, 80000-concepts:MeasurementUnit 
+    concept coulomb :> ElectricChargeUnit, metrology:DerivedMeasurementUnit 
 
-    relation entity coulomb-of-ampere :> metrology:HasFactorForMeasurementUnit [
+    relation entity Coulomb-Has-Ampere :> metrology:HasFactorForMeasurementUnit [
         from coulomb
         to ampere
-        forward coulomb-of-ampere-factor
+        forward coulomb-has-ampere
         restricts scalar property metrology:exponent to "1/1"^^owl:rational
     ]
 
-    relation entity coulomb-of-second :> metrology:HasFactorForMeasurementUnit [
+    relation entity Coulomb-Has-Second :> metrology:HasFactorForMeasurementUnit [
         from coulomb
         to 80000-3-units:second
-        forward coulomb-of-second-factor
+        forward coulomb-has-second
         restricts scalar property metrology:exponent to "1/1"^^owl:rational
     ]
 
-    aspect UnitOfElectricFieldStrengthValue :> metrology:UnitaryQuantityValue [
-        restricts all relation metrology:hasReference to UnitOfElectricFieldStrength
-    ]
     @dc:^source "6-10"
-    concept UnitOfElectricFieldStrength :> metrology:CoherentMeasurementUnit [
+    aspect ElectricFieldStrengthMagnitude :> metrology:UnitaryMagnitude [
+        restricts all relation metrology:hasReference to ElectricFieldStrengthUnit
+    ]
+
+    concept ElectricFieldStrengthUnit :> metrology:CoherentMeasurementUnit [
         restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
     ]
 
-    concept newton-per-coulomb :> UnitOfElectricFieldStrength, metrology:DerivedMeasurementUnit, 80000-concepts:MeasurementUnit 
+    concept newton-per-coulomb :> ElectricFieldStrengthUnit, metrology:DerivedMeasurementUnit 
 
-    relation entity newton-per-coulomb-of-newton :> metrology:HasFactorForMeasurementUnit [
+    relation entity Newton-Per-Coulomb-Has-Newton :> metrology:HasFactorForMeasurementUnit [
         from newton-per-coulomb
         to 80000-4-units:newton
-        forward newton-per-coulomb-of-newton-factor
+        forward newton-per-coulomb-has-newton
         restricts scalar property metrology:exponent to "1/1"^^owl:rational
     ]
 
-    relation entity newton-per-coulomb-of-coulomb :> metrology:HasFactorForMeasurementUnit [
+    relation entity Newton-Per-Coulomb-Has-Coulomb :> metrology:HasFactorForMeasurementUnit [
         from newton-per-coulomb
         to coulomb
-        forward newton-per-coulomb-of-coulomb-factor
+        forward newton-per-coulomb-has-coulomb
         restricts scalar property metrology:exponent to "-1/1"^^owl:rational
     ]
 
-    aspect UnitOfElectricPotentialValue :> metrology:UnitaryQuantityValue [
-        restricts all relation metrology:hasReference to UnitOfElectricPotential
+    @dc:^source "6-11"
+    aspect ElectricPotentialMagnitude :> metrology:UnitaryMagnitude [
+        restricts all relation metrology:hasReference to ElectricPotentialUnit
     ]
     
-    @dc:^source "6-11"
-    concept UnitOfElectricPotential :> metrology:CoherentMeasurementUnit [
+    concept ElectricPotentialUnit :> metrology:CoherentMeasurementUnit [
         restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
     ]
 
-    concept volt :> UnitOfElectricPotential, metrology:DerivedMeasurementUnit, 80000-concepts:MeasurementUnit 
+    concept volt :> ElectricPotentialUnit, metrology:DerivedMeasurementUnit 
 
-    relation entity volt-of-newton-per-coulomb :> metrology:HasFactorForMeasurementUnit [
+    relation entity Volt-Has-Newton-Per-Coulomb :> metrology:HasFactorForMeasurementUnit [
         from volt
         to newton-per-coulomb
-        forward volt-of-newton-per-coulomb-factor
+        forward volt-has-newton-per-coulomb
         restricts scalar property metrology:exponent to "1/1"^^owl:rational
     ]
 
-    relation entity volt-of-metre :> metrology:HasFactorForMeasurementUnit [
+    relation entity Volt-Has-Metre :> metrology:HasFactorForMeasurementUnit [
         from volt
         to 80000-3-units:metre
-        forward volt-of-metre-factor
+        forward volt-has-metre
         restricts scalar property metrology:exponent to "1/1"^^owl:rational
     ]
 
-    aspect UnitOfResistanceValue :> metrology:UnitaryQuantityValue [
-        restricts all relation metrology:hasReference to UnitOfResistance
-    ]
     @dc:^source "6-46"
-    concept UnitOfResistance :> metrology:CoherentMeasurementUnit [
+    aspect ResistanceMagnitude :> metrology:UnitaryMagnitude [
+        restricts all relation metrology:hasReference to ResistanceUnit
+    ]
+
+    concept ResistanceUnit :> metrology:CoherentMeasurementUnit [
         restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
     ]
 
     
-    concept ohm :> UnitOfResistance, metrology:DerivedMeasurementUnit, 80000-concepts:MeasurementUnit 
+    concept ohm :> ResistanceUnit, metrology:DerivedMeasurementUnit 
 
-    relation entity ohm-of-volt :> metrology:HasFactorForMeasurementUnit [
+    relation entity Ohm-Has-Volt :> metrology:HasFactorForMeasurementUnit [
         from ohm
         to volt
-        forward ohm-of-volt-factor
+        forward ohm-has-volt
         restricts scalar property metrology:exponent to "1/1"^^owl:rational
     ]
 
-    relation entity ohm-of-ampere :> metrology:HasFactorForMeasurementUnit [
+    relation entity Ohm-Has-Ampere :> metrology:HasFactorForMeasurementUnit [
         from ohm
         to ampere
-        forward ohm-of-ampere-factor
+        forward ohm-has-ampere
         restricts scalar property metrology:exponent to "-1/1"^^owl:rational
     ]
 }
