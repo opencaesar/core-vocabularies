@@ -17,7 +17,7 @@ vocabulary <http://iso.org/80000-3-units> with # as 80000-3-units {
 
 	concept metre :> LengthUnit, metrology:IndependentMeasurementUnit
 
-	concept kilometre :> LengthUnit, metrology:PrefixedMeasurementUnit [
+	concept kilometre :> metre, metrology:PrefixedMeasurementUnit [
 		restricts relation metrology:hasPrefix to 80000-1:kilo
 	]
 
@@ -51,13 +51,15 @@ vocabulary <http://iso.org/80000-3-units> with # as 80000-3-units {
 		restricts all relation metrology:hasReference to TimeUnit
 	]
 
-	concept TimeUnit :> metrology:CoherentMeasurementUnit [
+	concept TimeUnit :> metrology:MeasurementUnit 
+	
+	concept CoherentTimeUnit :> TimeUnit, metrology:CoherentMeasurementUnit [
 		restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
 	]
 
-	concept second :> TimeUnit, metrology:IndependentMeasurementUnit
+	concept second :> CoherentTimeUnit, metrology:IndependentMeasurementUnit
 
-	concept millisecond :> TimeUnit, metrology:PrefixedMeasurementUnit [
+	concept millisecond :> second, metrology:PrefixedMeasurementUnit [
 		restricts relation metrology:hasPrefix to 80000-1:milli
 	]
 

@@ -7,7 +7,7 @@ vocabulary <http://iupac.org/metrology/diagrams/units> with # as units {
 
     ref concept metrology:CoherentMeasurementUnit
 
-    ref concept metrology:PrefixedMeasurementUnit
+    ref aspect metrology:PrefixedMeasurementUnit
 
     ref relation entity metrology:HasPrefix
 

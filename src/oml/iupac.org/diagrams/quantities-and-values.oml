@@ -11,7 +11,7 @@ vocabulary <http://iupac.org/metrology/diagams/quantities-and-values> with # as 
 
     ref aspect metrology:MeasurementProcedure
 
-    ref concept metrology:MeasurementUnit
+    ref aspect metrology:MeasurementUnit
 
     ref concept metrology:Quantity
 

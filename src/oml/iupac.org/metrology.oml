@@ -278,7 +278,7 @@ vocabulary <http://iupac.org/metrology> with # as metrology {
 	or user-defined vocabularies."
 	@dc:^source "measurement unit [https://jcgm.bipm.org/vim/en/1.9.html]"
 	@dc:^source "metrological unit, measurement unit [https://iupac.org/wp-content/uploads/2016/01/ontology-on-Property-Division-VII.pdf, 18.12, p 189]"
-	concept MeasurementUnit :> Reference
+	aspect MeasurementUnit :> Reference
 
 	@dc:^description "A metrology:NonCoherentDerivedMeasurementUnit is a metrology:MeasurementUnit 
 	that has a proportionality factor different than one with respect to another metrology:MeasurementUnit."
@@ -306,7 +306,7 @@ vocabulary <http://iupac.org/metrology> with # as metrology {
 
 	@dc:^description "A metrology:PrefixedMeasurementUnit is a metrology:MeasurementUnit defined by multiplication of another metrology:MeasurementUnit (that it must specialize) and a prefix."
 	@dc:^source "multiple of a unit 3.17, submultiple of a unit 3.18 [https://www.iso.org/obp/ui/#iso:std:iso:80000:-1:ed-1:v1:en]"
-	concept PrefixedMeasurementUnit :> MeasurementUnit
+	aspect PrefixedMeasurementUnit :> MeasurementUnit
 
 	@dc:^description "A metrology:Prefix is an opaque representation of a multiplier used for defining a metrology:PrefixedMeasurementUnit.
     This representation facilitates dimensional analysis of a metrology:SystemOfMetrologicalUnits as a logical analysis since prefixes are individuals.
@@ -327,8 +327,8 @@ vocabulary <http://iupac.org/metrology> with # as metrology {
 	concept CoherentMeasurementUnit :> MeasurementUnit
 
 	@dc:^description "metrology:isDimensionlessMeasurementUnit specifies whether the definition of a metrology:CoherentMeasurementUnit has dimension 'one',
-    either intrisically as an metrology:IndependentMeasurementUnit 
-    or extrinsically as a metrology:DerivedMeasurementUnit where the product factors of other metrology:MeasurementUnit(s) could be algebraically reduced to 'one'.
+    either intrisically as an metrology:IndependentMeasurementUnit or extrinsically as a metrology:DerivedMeasurementUnit where the product factors of other 
+	metrology:MeasurementUnit(s) could be algebraically reduced to 'one'.
     
     Note when defining a metrology:DerivedMeasurementUnit with metrology:isDimensionlessMeasurementUnit=true, 
     it is important to retain the non-simplified product factors in order to preserve the metrological provenance of the metrology:DerivedMeasurementUnit
