@@ -1,7 +1,7 @@
 @dc:^description "This vocabulary provides convenience specializations of metrology:IsReflexiveMagnitudeOf
 as relation entities for every metrology:MeasurementUnit defined in http://iso.org/80000-4-units.
 
-Note that this vocabulary is an alternative to <http://iso.org/80000-4-magnitudes1>."
+Note that this vocabulary is an alternative to http://iso.org/80000-4-magnitudes1."
 vocabulary <http://iso.org/80000-4-magnitudes2> with # as 80000-4-magnitudes2 {
 
 	uses <http://iso.org/80000-4-instances>

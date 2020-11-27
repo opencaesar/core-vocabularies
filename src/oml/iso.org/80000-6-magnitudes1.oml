@@ -1,7 +1,7 @@
 @dc:^description "This vocabulary provides convenience specializations of every metrology:Magnitude 
 defined in http://iso.org/80000-6-units.
 
-Note that this vocabulary is an alternative to <http://iso.org/80000-6-magnitudes2>."
+Note that this vocabulary is an alternative to http://iso.org/80000-6-magnitudes2."
 vocabulary <http://iso.org/80000-6-magnitudes1> with # as 80000-6-magnitudes1 {
 
 	uses <http://iso.org/80000-6-instances>
