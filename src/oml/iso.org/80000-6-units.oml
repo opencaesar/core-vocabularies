@@ -9,22 +9,26 @@ vocabulary <http://iso.org/80000-6-units> with # as 80000-6-units {
         restricts all relation metrology:hasReference to ElectricCurrentUnit
     ]
 
-    concept ElectricCurrentUnit :> metrology:CoherentMeasurementUnit [
+    concept ElectricCurrentUnit :> metrology:MeasurementUnit
+
+    concept CoherentElectricCurrentUnit :> ElectricCurrentUnit, metrology:CoherentMeasurementUnit [
         restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
     ]
 
-    concept ampere :> ElectricCurrentUnit, metrology:IndependentMeasurementUnit 
+    concept ampere :> CoherentElectricCurrentUnit, metrology:IndependentMeasurementUnit 
 
     @dc:^source "6-2"
     aspect ElectricChargeMagnitude :> metrology:UnitaryMagnitude [
         restricts all relation metrology:hasReference to ElectricChargeUnit
     ]
 
-    concept ElectricChargeUnit :> metrology:CoherentMeasurementUnit [
+    concept ElectricChargeUnit :> metrology:MeasurementUnit
+
+    concept CoherentElectricChargeUnit :> ElectricChargeUnit, metrology:CoherentMeasurementUnit [
         restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
     ]
 
-    concept coulomb :> ElectricChargeUnit, metrology:DerivedMeasurementUnit 
+    concept coulomb :> CoherentElectricChargeUnit, metrology:DerivedMeasurementUnit 
 
     relation entity Coulomb-Has-Ampere :> metrology:HasFactorForMeasurementUnit [
         from coulomb
@@ -45,11 +49,13 @@ vocabulary <http://iso.org/80000-6-units> with # as 80000-6-units {
         restricts all relation metrology:hasReference to ElectricFieldStrengthUnit
     ]
 
-    concept ElectricFieldStrengthUnit :> metrology:CoherentMeasurementUnit [
+    concept ElectricFieldStrengthUnit :> metrology:MeasurementUnit 
+
+    concept CoherentElectricFieldStrengthUnit :> ElectricFieldStrengthUnit, metrology:CoherentMeasurementUnit [
         restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
     ]
 
-    concept newton-per-coulomb :> ElectricFieldStrengthUnit, metrology:DerivedMeasurementUnit 
+    concept newton-per-coulomb :> CoherentElectricFieldStrengthUnit, metrology:DerivedMeasurementUnit 
 
     relation entity Newton-Per-Coulomb-Has-Newton :> metrology:HasFactorForMeasurementUnit [
         from newton-per-coulomb
@@ -70,11 +76,13 @@ vocabulary <http://iso.org/80000-6-units> with # as 80000-6-units {
         restricts all relation metrology:hasReference to ElectricPotentialUnit
     ]
     
-    concept ElectricPotentialUnit :> metrology:CoherentMeasurementUnit [
+    concept ElectricPotentialUnit :> metrology:MeasurementUnit
+    
+    concept CoherentElectricPotentialUnit :> ElectricPotentialUnit, metrology:CoherentMeasurementUnit [
         restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
     ]
 
-    concept volt :> ElectricPotentialUnit, metrology:DerivedMeasurementUnit 
+    concept volt :> CoherentElectricPotentialUnit, metrology:DerivedMeasurementUnit 
 
     relation entity Volt-Has-Newton-Per-Coulomb :> metrology:HasFactorForMeasurementUnit [
         from volt
@@ -95,12 +103,13 @@ vocabulary <http://iso.org/80000-6-units> with # as 80000-6-units {
         restricts all relation metrology:hasReference to ResistanceUnit
     ]
 
-    concept ResistanceUnit :> metrology:CoherentMeasurementUnit [
+    concept ResistanceUnit :> metrology:MeasurementUnit
+
+    concept CoherentResistanceUnit :> ResistanceUnit, metrology:CoherentMeasurementUnit [
         restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
     ]
-
     
-    concept ohm :> ResistanceUnit, metrology:DerivedMeasurementUnit 
+    concept ohm :> CoherentResistanceUnit, metrology:DerivedMeasurementUnit 
 
     relation entity Ohm-Has-Volt :> metrology:HasFactorForMeasurementUnit [
         from ohm

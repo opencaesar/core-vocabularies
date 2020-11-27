@@ -3,6 +3,7 @@
 vocabulary <http://iso.org/80000-4-units> with # as 80000-4-units {
 
     extends <http://iso.org/80000-3-units>
+    uses <http://iso.org/80000-4-instances>
 
     uses <http://iso.org/80000-1>
 
@@ -11,14 +12,17 @@ vocabulary <http://iso.org/80000-4-units> with # as 80000-4-units {
         restricts all relation metrology:hasReference to MassUnit
     ]
 
-    concept MassUnit :> metrology:CoherentMeasurementUnit [
+    concept MassUnit :> metrology:MeasurementUnit
+
+    concept CoherentMassUnit :> MassUnit, metrology:CoherentMeasurementUnit [
         restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
     ]
 
     concept gram :> MassUnit, metrology:IndependentMeasurementUnit 
 
-    concept kilogram :> gram, metrology:PrefixedMeasurementUnit [
+    concept kilogram :> CoherentMassUnit, metrology:PrefixedMeasurementUnit [
         restricts relation metrology:hasPrefix to 80000-1:kilo
+        restricts relation metrology:prefixesMeasurementUnit to 80000-4-instances:gram
     ]
 
     @dc:^source "4-8"
@@ -26,11 +30,13 @@ vocabulary <http://iso.org/80000-4-units> with # as 80000-4-units {
         restricts all relation metrology:hasReference to MomentumUnit
     ]
 
-    concept MomentumUnit :> metrology:CoherentMeasurementUnit [
+    concept MomentumUnit :> metrology:MeasurementUnit
+    
+    concept CoherentMomentumUnit :> MomentumUnit, metrology:CoherentMeasurementUnit [
         restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
     ]
 
-    concept kilogram-metre-per-second :> MomentumUnit, metrology:DerivedMeasurementUnit 
+    concept kilogram-metre-per-second :> CoherentMomentumUnit, metrology:DerivedMeasurementUnit 
 
     relation entity Kilogram-Metre-Per-Second-Has-Kilogram :> metrology:HasFactorForMeasurementUnit [
         from kilogram-metre-per-second
@@ -51,11 +57,13 @@ vocabulary <http://iso.org/80000-4-units> with # as 80000-4-units {
         restricts all relation metrology:hasReference to ForceUnit
     ]
     
-    concept ForceUnit :> metrology:CoherentMeasurementUnit [
+    concept ForceUnit :> metrology:MeasurementUnit
+
+    concept CoherentForceUnit :> ForceUnit, metrology:CoherentMeasurementUnit [
         restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
     ]
 
-    concept newton :> ForceUnit, metrology:DerivedMeasurementUnit 
+    concept newton :> CoherentForceUnit, metrology:DerivedMeasurementUnit 
 
     relation entity Newton-Has-Kilogram :> metrology:HasFactorForMeasurementUnit [
         from newton
@@ -76,11 +84,13 @@ vocabulary <http://iso.org/80000-4-units> with # as 80000-4-units {
         restricts all relation metrology:hasReference to ImpulseUnit
     ]
 
-    concept ImpulseUnit :> metrology:CoherentMeasurementUnit [
+    concept ImpulseUnit :> metrology:MeasurementUnit
+
+    concept CoherentImpulseUnit :> ImpulseUnit, metrology:CoherentMeasurementUnit [
         restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
     ]
 
-    concept newton-second :> ImpulseUnit, metrology:DerivedMeasurementUnit 
+    concept newton-second :> CoherentImpulseUnit, metrology:DerivedMeasurementUnit 
 
     relation entity Newton-Second-Has-Newton :> metrology:HasFactorForMeasurementUnit [
         from newton-second
@@ -117,11 +127,13 @@ vocabulary <http://iso.org/80000-4-units> with # as 80000-4-units {
         restricts all relation metrology:hasReference to PowerUnit
     ]
 
-    concept PowerUnit :> metrology:CoherentMeasurementUnit [
+    concept PowerUnit :> metrology:MeasurementUnit
+
+    concept CoherentPowerUnit :> PowerUnit, metrology:CoherentMeasurementUnit [
         restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
     ]
 
-    concept watt :> PowerUnit, metrology:DerivedMeasurementUnit 
+    concept watt :> CoherentPowerUnit, metrology:DerivedMeasurementUnit 
 
     relation entity Watt-Has-Newton :> metrology:HasFactorForMeasurementUnit [
         from watt
