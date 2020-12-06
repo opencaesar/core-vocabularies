@@ -1,0 +1,181 @@
+vocabulary <http://opencaesar.io/document> with # as doc {
+	extends <http://www.w3.org/2001/XMLSchema>
+	extends <http://purl.org/dc/elements/1.1>
+	
+	// SPARQL bindings
+	
+	@dc:^description '''
+		Specifies a SPARQL query used to attach bindings to a single Element in the
+		document tree. If multiple solutions are returned; the bindings from the
+		first are used.
+		'''
+	annotation property hasSparqlMapping
+	
+	@dc:^description '''
+		Specifies a SPARQL query used to attch bindings to multiple Elements in the
+		document tree. Each returned solution will result in a new Element added to
+		the tree. If no results are returned, no Element is created.
+		'''
+	annotation property hasSparqlExpansion
+	
+	// Binding forwarding
+	
+	@dc:^description '''
+		Specifies a binding name forwarded from the parent element which is required
+		in this context and may be used in a SPARQL mapping or expansion query.
+		'''
+	annotation property hasRequiredBinding
+	
+	@dc:^description '''
+		Specifies a binding name forwarded from the parent element which is optional
+		in this context and may be used in a SPARQL mapping or expansion query.
+		'''
+	annotation property hasOptionalBinding
+	
+	@dc:^description '''
+		Specifies a binding name in the current context to forward to child elements.
+		'''
+	annotation property hasForwardedBinding
+	
+	// Implied bindings
+	
+	@dc:^description '''
+		Specifies a binding name for which the value of the annotated property will be
+		automatically created when the property is applied to an Element.
+		'''
+	annotation property impliesBinding
+	
+	@dc:^description '''An element in the document tree.'''
+	aspect Element
+	
+	@dc:^description '''An element that can have a title. Titles are specified with the 'hasTitle' binding.'''
+	aspect Titled
+	
+	@dc:^description '''The root of the document tree'''
+	aspect Document :> Element, Titled
+	
+	@dc:^description '''A model that may be referenced by a document or document element.'''
+	aspect Referenceable
+	
+	@dc:^description '''An arbitrary grouping of Elements, with no semantic relationship implied.'''
+	concept Block :> Element
+	
+	@dc:^description '''A document which contains chapters.'''
+	concept Book :> Document
+	
+	@dc:^description '''The preface of a document'''
+	concept Preface :> Element, Titled
+	
+	@dc:^description '''A document which may contain sections.'''
+	concept Article :> Element, Titled
+	
+	@dc:^description '''Organizes content within a book'''
+	concept Chapter :> Element, Titled
+	
+	@dc:^description '''Organizes content within a chapter, article, or other section'''
+	concept Section :> Element, Titled
+	
+	@dc:^description '''A table of data. Contains TableRow elements. Columns are specified within TableRows.'''
+	concept Table :> Element, Titled
+	
+	@dc:^description '''An informal table, not numbered or included in the list of tables.'''
+	concept InformalTable :> Element, Titled
+	
+	@dc:^description '''Specifies a row of data in a table. Contains TableColumn elements.'''
+	concept TableRow :> Element
+	
+	@dc:^description '''A column of data within a table row. The title of the column is used as its header.'''
+	concept TableColumn :> Element, Titled
+	
+	@dc:^description '''A paragraph of text. The text is specified with the 'hasText' binding.'''
+	concept Para :> Element
+	
+	@dc:^description '''A title page which may list the Preparers of the document.'''
+	concept TitlePage :> Element
+	
+	@dc:^description '''A Preparer of a document. Uses bindings 'hasName', 'hasRole' and 'hasOrganization'. '''
+	concept Preparer :> Element
+	
+	@impliesBinding 'hasTitle'
+	@dc:^description 'Specifies the title of a titled element.'
+	annotation property hasTitle
+	
+	@impliesBinding 'hasText'
+	@dc:^description 'Specifies the text content of a textual element.'
+	annotation property hasText
+	
+	@impliesBinding 'hasStyle'
+	@dc:^description 'Specifies a CSS style of an Element.'
+	annotation property hasStyle
+	
+	@impliesBinding 'hasClass'
+	@dc:^description 'Specifies a CSS class of an Element.'
+	annotation property hasClass
+	
+	@impliesBinding 'hasLink'
+	@dc:^description 'Makes the annotated Element into a Link to a given ID.'
+	annotation property hasLink
+	
+	@impliesBinding 'hasId'
+	@dc:^description 'Gives the annotated Element an ID which may be linked to.'
+	annotation property hasId
+	
+	@impliesBinding 'hasBorder'
+	@dc:^description 'Specifies a table border.'
+	annotation property hasBorder
+	
+	@impliesBinding 'hasBodyColor'
+	@dc:^description 'Specifies a table body color.'
+	annotation property hasBodyColor
+	
+	@impliesBinding 'hasBackgroundColor'
+	@dc:^description 'Specifies a table background color.'
+	annotation property hasBackgroundColor
+	
+	@impliesBinding 'hasReleaseVersion'
+	@dc:^description 'Specifies a Document release version.'
+	annotation property hasReleaseVersion
+	
+	relation entity HasElement [
+		from Element
+		to Element
+		@dc:^description '''
+			Indicates than an element directly includes another. If annotated with hasSparqlExpansion
+			the resulting document tree will have a variable number of corresponding nodes; otherwise
+			a single node will result for each element.'''
+		forward hasElement
+		irreflexive
+	]
+	
+	relation entity Includes [
+		from Element
+		to Element
+		@dc:^description '''Indicates an element transitively includes another. Implied by hasElement.'''
+		forward ^includes
+		irreflexive
+		transitive
+	]
+	
+	
+	relation entity PreparedBy [
+		from Element
+		to Referenceable
+		@dc:^description '''Indicates the preparer of a document.'''
+		forward preparedBy
+	]
+	
+	rule hasElementImpliesIncludes [
+		hasElement(a,b) -> ^includes(a,b)
+	]
+	
+	rule IncludesIsTransitive [
+		^includes(a,b) ^ ^includes(b,c) -> ^includes(a,c)
+	]
+	
+	relation entity Describes [
+		from Element
+		to Referenceable
+		@dc:^description '''Indicates a document or document element describes an object in the model.'''
+		forward describes
+	]
+}
