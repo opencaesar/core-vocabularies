@@ -2,6 +2,8 @@
 @dc:^source "https://www.iso.org/obp/ui/#iso:std:iso:80000:-3:ed-2:v1:en"
 vocabulary <http://iso.org/80000-3-units> with # as 80000-3-units {
 
+	uses <http://iso.org/80000-3-instances>
+
 	extends <http://iupac.org/metrology>
 
 	uses <http://iso.org/80000-1>
@@ -11,14 +13,17 @@ vocabulary <http://iso.org/80000-3-units> with # as 80000-3-units {
 		restricts all relation metrology:hasReference to LengthUnit
 	]
 
-	concept LengthUnit :> metrology:CoherentMeasurementUnit [
+	concept LengthUnit :> metrology:MeasurementUnit
+
+	concept CoherentLengthUnit :> LengthUnit, metrology:CoherentMeasurementUnit [
 		restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
 	]
 
-	concept metre :> LengthUnit, metrology:IndependentMeasurementUnit
+	concept metre :> CoherentLengthUnit, metrology:IndependentMeasurementUnit
 
-	concept kilometre :> metre, metrology:PrefixedMeasurementUnit [
+	concept kilometre :> LengthUnit, metrology:PrefixedMeasurementUnit [
 		restricts relation metrology:hasPrefix to 80000-1:kilo
+		restricts relation metrology:prefixesMeasurementUnit to 80000-3-instances:metre
 	]
 
 	@dc:^source "3-5"
@@ -51,26 +56,27 @@ vocabulary <http://iso.org/80000-3-units> with # as 80000-3-units {
 		restricts all relation metrology:hasReference to TimeUnit
 	]
 
-	concept TimeUnit :> metrology:MeasurementUnit 
-	
+	concept TimeUnit :> metrology:MeasurementUnit
+
 	concept CoherentTimeUnit :> TimeUnit, metrology:CoherentMeasurementUnit [
 		restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
 	]
 
 	concept second :> CoherentTimeUnit, metrology:IndependentMeasurementUnit
 
-	concept millisecond :> second, metrology:PrefixedMeasurementUnit [
+	concept millisecond :> TimeUnit, metrology:PrefixedMeasurementUnit [
 		restricts relation metrology:hasPrefix to 80000-1:milli
+		restricts relation metrology:prefixesMeasurementUnit to 80000-3-instances:second
 	]
 
 	concept minute :> TimeUnit, metrology:NonCoherentDerivedMeasurementUnit [
 		restricts scalar property metrology:nonCoherentRelationship to "1 minute = 60 seconds"^^xsd:string
-		restricts all relation metrology:nonCoherentDerivedMeasurementUnitOf to second
+		restricts relation metrology:nonCoherentDerivedMeasurementUnitOf to 80000-3-instances:second
 	]
 
 	concept hour :> TimeUnit, metrology:NonCoherentDerivedMeasurementUnit [
 		restricts scalar property metrology:nonCoherentRelationship to "1 hour = 60 minutes"
-		restricts all relation metrology:nonCoherentDerivedMeasurementUnitOf to minute
+		restricts relation metrology:nonCoherentDerivedMeasurementUnitOf to 80000-3-instances:minute
 	]
 
 	@dc:^source "3-10"
@@ -78,11 +84,13 @@ vocabulary <http://iso.org/80000-3-units> with # as 80000-3-units {
 		restricts all relation metrology:hasReference to VelocityUnit
 	]
 
-	concept VelocityUnit :> metrology:CoherentMeasurementUnit [
+	concept VelocityUnit :> metrology:MeasurementUnit
+
+	concept CoherentVelocityUnit :> VelocityUnit, metrology:CoherentMeasurementUnit [
 		restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
 	]
 
-	concept metre-per-second :> VelocityUnit, metrology:DerivedMeasurementUnit
+	concept metre-per-second :> CoherentVelocityUnit, metrology:DerivedMeasurementUnit
 
 	relation entity Metre-Per-Second-Has-Metre :>  metrology:HasFactorForMeasurementUnit [
 		from metre-per-second
@@ -98,7 +106,7 @@ vocabulary <http://iso.org/80000-3-units> with # as 80000-3-units {
 		restricts scalar property metrology:exponent to "-1/1"^^owl:rational
 	]
 
-	concept kilometre-per-second :> VelocityUnit, metrology:DerivedMeasurementUnit
+	concept kilometre-per-second :> CoherentVelocityUnit, metrology:DerivedMeasurementUnit
 
 	relation entity Kilometre-Per-Second-Has-Kilometre :>  metrology:HasFactorForMeasurementUnit [
 		from kilometre-per-second
@@ -119,11 +127,13 @@ vocabulary <http://iso.org/80000-3-units> with # as 80000-3-units {
 		restricts all relation metrology:hasReference to RotationUnit
 	]
 
-	concept RotationUnit :> metrology:CoherentMeasurementUnit [
+	concept RotationUnit :> metrology:MeasurementUnit
+
+	concept CoherentRotationUnit :> RotationUnit, metrology:CoherentMeasurementUnit [
 		restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
 	]
 
-	concept revolution :> RotationUnit, metrology:DerivedMeasurementUnit
+	concept revolution :> CoherentRotationUnit, metrology:DerivedMeasurementUnit
 
 	relation entity Revolution-Has-Radian :> metrology:HasFactorForMeasurementUnit [
 		from revolution
@@ -137,11 +147,13 @@ vocabulary <http://iso.org/80000-3-units> with # as 80000-3-units {
 		restricts all relation metrology:hasReference to FrequencyUnit
 	]
 
-	concept FrequencyUnit :> metrology:CoherentMeasurementUnit [
+	concept FrequencyUnit :> metrology:MeasurementUnit
+
+	concept CoherentFrequencyUnit :> FrequencyUnit, metrology:CoherentMeasurementUnit [
 		restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
 	]
 
-	concept hertz :> FrequencyUnit, metrology:DerivedMeasurementUnit
+	concept hertz :> CoherentFrequencyUnit, metrology:DerivedMeasurementUnit
 
 	relation entity Hertz-Has-Second :> metrology:HasFactorForMeasurementUnit [
 		from hertz
@@ -149,5 +161,4 @@ vocabulary <http://iso.org/80000-3-units> with # as 80000-3-units {
 		forward hertz-has-second
 		restricts scalar property metrology:exponent to "-1/1"^^owl:rational
 	]
-
 }

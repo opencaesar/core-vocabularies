@@ -304,9 +304,18 @@ vocabulary <http://iupac.org/metrology> with # as metrology {
 		functional
 	]
 
-	@dc:^description "A metrology:PrefixedMeasurementUnit is a metrology:MeasurementUnit defined by multiplication of another metrology:MeasurementUnit (that it must specialize) and a prefix."
+	@dc:^description "A metrology:PrefixedMeasurementUnit is a metrology:MeasurementUnit defined by multiplication of another metrology:MeasurementUnit (via metrology:PrefixesMeasurementUnit) and a prefix.
+  	Note that a PrefixedMeasurementUnit may also be a metrology:CoherentMeasurementUnit or not according to its membership in a system of units."
 	@dc:^source "multiple of a unit 3.17, submultiple of a unit 3.18 [https://www.iso.org/obp/ui/#iso:std:iso:80000:-1:ed-1:v1:en]"
 	aspect PrefixedMeasurementUnit :> MeasurementUnit
+
+	relation entity PrefixesMeasurementUnit [
+		from PrefixedMeasurementUnit
+		to MeasurementUnit
+		forward prefixesMeasurementUnit
+		functional
+		irreflexive
+	]
 
 	@dc:^description "A metrology:Prefix is an opaque representation of a multiplier used for defining a metrology:PrefixedMeasurementUnit.
     This representation facilitates dimensional analysis of a metrology:SystemOfMetrologicalUnits as a logical analysis since prefixes are individuals.
