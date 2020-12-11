@@ -2,6 +2,7 @@
 @dc:^description "The RDF vocabulary is a subset of the vocabulary maintained by the W3C."
 @dc:rights "Copyright 1999 W3C."
 @dc:creator "W3C"
+@dc:^source "https://www.w3.org/TR/owl2-syntax/#ref-xml-schema-datatypes"
 @dc:hasVersion "1999/02/22"
 @dc:date "1999-02-22"
 vocabulary <http://www.w3.org/1999/02/22-rdf-syntax-ns> with # as rdf {
@@ -10,7 +11,10 @@ vocabulary <http://www.w3.org/1999/02/22-rdf-syntax-ns> with # as rdf {
 
 	annotation property about
 
+	@dc:^source "https://www.w3.org/TR/owl2-syntax/#Literals"
 	scalar PlainLiteral
 
+	@dc:^source "https://www.w3.org/TR/owl2-syntax/#XML_Literals"
 	scalar XMLLiteral
+
 }

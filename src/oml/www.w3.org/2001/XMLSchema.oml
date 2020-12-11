@@ -2,155 +2,113 @@
 @dc:^description "The XSD vocabulary is a subset of the corresponding vocabulary maintained by the W3C."
 @dc:rights "Copyright 2014 W3C."
 @dc:creator "W3C"
+@dc:^source "https://www.w3.org/TR/owl2-syntax/#ref-xml-schema-datatypes"
+@dc:^source "https://www.w3.org/TR/2012/REC-xmlschema11-2-20120405/#built-in-datatypes"
 @dc:hasVersion "1.1"
 @dc:date "2014-10-15"
 vocabulary <http://www.w3.org/2001/XMLSchema> with # as xsd {
 
 	extends <http://purl.org/dc/elements/1.1>
 
-	scalar anyAtomicType
+	// 4.1 Real Numbers, Decimal Numbers, and Integers
 
-	scalar anyURI
+	@dc:^source "https://www.w3.org/TR/2012/REC-xmlschema11-2-20120405/datatypes.html#decimal"
+	scalar decimal
+	
+	@dc:^source "https://www.w3.org/TR/2012/REC-xmlschema11-2-20120405/datatypes.html#integer"
+	scalar integer :> decimal
+	
+	@dc:^source "https://www.w3.org/TR/2012/REC-xmlschema11-2-20120405/datatypes.html#long"
+	scalar long :> integer
 
-	scalar base64Binary
+	@dc:^source "https://www.w3.org/TR/2012/REC-xmlschema11-2-20120405/datatypes.html#int"
+	scalar int :> long
 
+	@dc:^source "https://www.w3.org/TR/2012/REC-xmlschema11-2-20120405/datatypes.html#short"
+	scalar short :> int
+
+	@dc:^source "https://www.w3.org/TR/2012/REC-xmlschema11-2-20120405/datatypes.html#byte"
+	scalar byte :> short
+
+	@dc:^source "https://www.w3.org/TR/2012/REC-xmlschema11-2-20120405/datatypes.html#nonNegativeInteger"
+	scalar nonNegativeInteger :> integer
+	
+	@dc:^source "https://www.w3.org/TR/2012/REC-xmlschema11-2-20120405/datatypes.html#positiveInteger"
+	scalar positiveInteger :> nonNegativeInteger
+
+	@dc:^source "https://www.w3.org/TR/2012/REC-xmlschema11-2-20120405/datatypes.html#unsignedLong"
+	scalar unsignedLong :> nonNegativeInteger
+
+	@dc:^source "https://www.w3.org/TR/2012/REC-xmlschema11-2-20120405/datatypes.html#unsignedInt"
+	scalar unsignedInt :> unsignedLong
+
+	@dc:^source "https://www.w3.org/TR/2012/REC-xmlschema11-2-20120405/datatypes.html#unsignedShort"
+	scalar unsignedShort :> unsignedInt
+
+	@dc:^source "https://www.w3.org/TR/2012/REC-xmlschema11-2-20120405/datatypes.html#unsignedByte"
+	scalar unsignedByte :> unsignedShort
+
+	@dc:^source "https://www.w3.org/TR/2012/REC-xmlschema11-2-20120405/datatypes.html#nonPositiveInteger"
+	scalar nonPositiveInteger :> integer
+	
+	@dc:^source "https://www.w3.org/TR/2012/REC-xmlschema11-2-20120405/datatypes.html#negativeInteger"
+	scalar negativeInteger :> nonPositiveInteger
+	
+	// 4.2 Floating-Point Numbers
+	
+	@dc:^source "https://www.w3.org/TR/2012/REC-xmlschema11-2-20120405/datatypes.html#double"
+	scalar double
+	
+	@dc:^source "https://www.w3.org/TR/2012/REC-xmlschema11-2-20120405/datatypes.html#float"
+	scalar float
+	
+	// 4.3 Strings
+	
+	@dc:^source "https://www.w3.org/TR/2012/REC-xmlschema11-2-20120405/datatypes.html#string"
+	scalar string
+	
+	@dc:^source "https://www.w3.org/TR/2012/REC-xmlschema11-2-20120405/datatypes.html#normalizedString"
+	scalar normalizedString :> string
+	
+	@dc:^source "https://www.w3.org/TR/2012/REC-xmlschema11-2-20120405/datatypes.html#token"
+	scalar token :> normalizedString
+	
+	@dc:^source "https://www.w3.org/TR/2012/REC-xmlschema11-2-20120405/datatypes.html#language"
+	scalar ^language :> token
+	
+	@dc:^source "https://www.w3.org/TR/2012/REC-xmlschema11-2-20120405/datatypes.html#Name"
+	scalar Name :> token
+	
+	@dc:^source "https://www.w3.org/TR/2012/REC-xmlschema11-2-20120405/datatypes.html#NCName"
+	scalar NCName :> Name
+	
+	@dc:^source "https://www.w3.org/TR/2012/REC-xmlschema11-2-20120405/datatypes.html#NMTOKEN"
+	scalar NMTOKEN :> token
+
+	// 4.4 Boolean Values
+
+	@dc:^source "https://www.w3.org/TR/2012/REC-xmlschema11-2-20120405/datatypes.html#boolean"
 	scalar boolean
 
-	scalar date
+	// 4.5 Binary Data
 
+	@dc:^source "https://www.w3.org/TR/2012/REC-xmlschema11-2-20120405/datatypes.html#hexBinary"
+	scalar hexBinary
+	
+	@dc:^source "https://www.w3.org/TR/2012/REC-xmlschema11-2-20120405/datatypes.html#base64Binary"
+	scalar base64Binary
+	
+	// 4.6 IRIs
+	
+	@dc:^source "https://www.w3.org/TR/2012/REC-xmlschema11-2-20120405/datatypes.html#anyURI"
+	scalar anyURI
+	
+	// 4.7 Time Instants
+	
+	@dc:^source "https://www.w3.org/TR/2012/REC-xmlschema11-2-20120405/datatypes.html#dateTime"
 	scalar dateTime
+	
+	@dc:^source "https://www.w3.org/TR/2012/REC-xmlschema11-2-20120405/datatypes.html#dateTimeStamp"
+	scalar dateTimeStamp :> dateTime
 
-	scalar dateTimeStamp
-
-	scalar decimal
-
-	scalar string
-
-	scalar byte :> short [
-		minInclusive -128
-		maxInclusive 127
-	]
-
-	scalar int :> long [
-		minInclusive -2147483648
-		maxInclusive 2147483647
-	]
-
-	scalar long :> integer [
-		minInclusive "-9223372036854775808"^^long
-		maxInclusive "9223372036854775807"^^long
-	]
-
-	scalar negativeInteger :> nonPositiveInteger [
-		maxInclusive -1
-	]
-
-	scalar nonNegativeInteger :> integer [
-		minInclusive 0
-	]
-
-	scalar nonPositiveInteger :> integer [
-		maxInclusive 0
-	]
-
-	scalar positiveInteger :> nonNegativeInteger [
-		minInclusive 1
-	]
-
-	scalar short :> int [
-		minInclusive -32768
-		maxInclusive 32767
-	]
-
-	scalar unsignedByte :> unsignedShort [
-		maxInclusive 255
-	]
-
-	scalar unsignedInt :> unsignedLong [
-		maxInclusive "4294967295"^^unsignedInt
-	]
-
-	scalar unsignedLong :> nonNegativeInteger [
-		maxInclusive "18446744073709551615"^^unsignedLong
-	]
-
-	scalar unsignedShort :> unsignedInt [
-		maxInclusive 65535
-	]
-
-	scalar NCName :> name [
-		pattern "[\i\c*&&[\i-[:]][\c-[:]]*]"
-	]
-
-	scalar NMTOKEN :> token [
-		pattern "\c+"
-	]
-
-	scalar dayTimeDuration :> duration [
-		pattern "[^YM]*(T.*)?"
-	]
-
-	scalar double :> anyAtomicType [
-		pattern "(\+|\-)?([0-9]+(\.[0-9]*)?|\.[0-9]+)([Ee](\+|\-)?[0-9]+)?|(\+|\-)?INF|NaN"
-	]
-
-	scalar duration :> anyAtomicType [
-		pattern "-?P((([0-9]+Y([0-9]+M)?([0-9]+D)?|([0-9]+M)([0-9]+D)?|([0-9]+D))(T(([0-9]+H)([0-9]+M)?([0-9]+(\.[0-9]+)?S)?|([0-9]+M)([0-9]+(\.[0-9]+)?S)?|([0-9]+(\.[0-9]+)?S)))?)|(T(([0-9]+H)([0-9]+M)?([0-9]+(\.[0-9]+)?S)?|([0-9]+M)([0-9]+(\.[0-9]+)?S)?|([0-9]+(\.[0-9]+)?S))))"
-	]
-
-	scalar float :> anyAtomicType [
-		pattern "(\+|\-)?([0-9]+(\.[0-9]*)?|\.[0-9]+)([Ee](\+|\-)?[0-9]+)?|(\+|\-)?INF|NaN"
-	]
-
-	scalar gDay :> anyAtomicType [
-		pattern "---(0[1-9]|[12][0-9]|3[01])(Z|(\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?"
-	]
-
-	scalar gMonth :> anyAtomicType [
-		pattern "--(0[1-9]|1[0-2])(Z|(\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?"
-	]
-
-	scalar gMonthDay :> anyAtomicType [
-		pattern "--(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])(Z|(\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?"
-	]
-
-	scalar gYear :> anyAtomicType [
-		pattern "-?([1-9][0-9]{3,}|0[0-9]{3})(Z|(\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?"
-	]
-
-	scalar gYearMonth :> anyAtomicType [
-		pattern "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])(Z|(\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?"
-	]
-
-	scalar hexBinary :> anyAtomicType [
-		pattern "([0-9a-fA-F]{2})*"
-	]
-
-	scalar integer :> decimal [
-		pattern "[\-+]?[0-9]+"
-	]
-
-	scalar ^language :> token [
-		pattern "[a-zA-Z]{1,8}(-[a-zA-Z0-9]{1,8})*"
-	]
-
-	scalar name :> token [
-		pattern "\i\c*"
-	]
-
-	scalar normalizedString :> string [
-		pattern "[^\n\r\t]"
-	]
-
-	scalar time :> anyAtomicType [
-		pattern "(([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\.[0-9]+)?|(24:00:00(\.0+)?))(Z|(\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?"
-	]
-
-	scalar token :> normalizedString [
-		pattern "\S[\S[ ]{0,2}]\S"
-	]
-
-	scalar yearMonthDuration :> duration [
-		pattern "[^DT]*"
-	]
 }

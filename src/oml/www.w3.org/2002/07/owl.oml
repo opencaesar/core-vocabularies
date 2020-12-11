@@ -2,6 +2,7 @@
 @dc:^description "The OWL2 vocabulary is a subset of the vocabulary maintained by the W3C."
 @dc:rights "Copyright 2002 W3C."
 @dc:creator "W3C"
+@dc:^source "https://www.w3.org/TR/owl2-syntax/#ref-xml-schema-datatypes"
 @dc:hasVersion "2002/07"
 @dc:date "2002-07"
 vocabulary <http://www.w3.org/2002/07/owl> with # as owl {
@@ -20,9 +21,12 @@ vocabulary <http://www.w3.org/2002/07/owl> with # as owl {
 
 	annotation property versionInfo
 
-	scalar rational :> real [
-		pattern "[\-+]?[0-9]+\\/[1-9][0-9]*"
-	]
+	@dc:^source "https://www.w3.org/TR/owl2-syntax/#Real_Numbers.2C_Decimal_Numbers.2C_and_Integers"
+	scalar real
 
-	scalar real :> xsd:anyAtomicType
+	@dc:^source "https://www.w3.org/TR/owl2-syntax/#Real_Numbers.2C_Decimal_Numbers.2C_and_Integers"
+	scalar rational :> real
+
+	@dc:^source "https://www.w3.org/TR/owl2-syntax/#Real_Numbers.2C_Decimal_Numbers.2C_and_Integers"
+	ref scalar xsd:decimal :> rational
 }
