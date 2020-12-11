@@ -1,30 +1,32 @@
 @dc:^source "ISO 80000-5:2019(en)"
 @dc:^source "https://www.iso.org/obp/ui/#iso:std:iso:80000:-5:ed-2:v1:en"
 vocabulary <http://iso.org/80000-5-units> with # as 80000-5-units {
-    uses <http://iso.org/80000-5-instances>
-    extends <http://iso.org/80000-4-units>
 
-    @dc:^source "5-1"
-    aspect ThermodynamicTemperatureMagnitude :> metrology:UnitaryMagnitude [
-        restricts all relation metrology:hasReference to ThermodynamicTemperatureUnit
-    ]
-    
-    concept ThermodynamicTemperatureUnit :> metrology:MeasurementUnit
+	uses <http://iso.org/80000-5-instances>
 
-    concept CoherentThermodynamicTemperatureUnit :> ThermodynamicTemperatureUnit, metrology:CoherentMeasurementUnit [
-        restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
-    ]
+	extends <http://iso.org/80000-4-units>
 
-    concept kelvin :> CoherentThermodynamicTemperatureUnit, metrology:IndependentMeasurementUnit 
+	@dc:^source "5-1"
+	aspect ThermodynamicTemperatureMagnitude :> metrology:UnitaryMagnitude [
+		restricts all relation metrology:hasReference to ThermodynamicTemperatureUnit
+	]
 
-    @dc:^source "5-2"
-    aspect CelciusTemperatureMagnitude :> metrology:UnitaryMagnitude [
-        restricts all relation metrology:hasReference to CelciusTemperatureUnit
-    ]
+	concept ThermodynamicTemperatureUnit :> metrology:MeasurementUnit
 
-    concept CelciusTemperatureUnit :> metrology:MeasurementUnit
+	concept CoherentThermodynamicTemperatureUnit :> ThermodynamicTemperatureUnit, metrology:CoherentMeasurementUnit [
+		restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
+	]
 
-    concept degreeCelcius :> CelciusTemperatureUnit, metrology:NonCoherentDerivedMeasurementUnit [
+	concept kelvin :> CoherentThermodynamicTemperatureUnit, metrology:IndependentMeasurementUnit
+
+	@dc:^source "5-2"
+	aspect CelciusTemperatureMagnitude :> metrology:UnitaryMagnitude [
+		restricts all relation metrology:hasReference to CelciusTemperatureUnit
+	]
+
+	concept CelciusTemperatureUnit :> metrology:MeasurementUnit
+
+	concept degreeCelcius :> CelciusTemperatureUnit, metrology:NonCoherentDerivedMeasurementUnit [
 		restricts scalar property metrology:nonCoherentRelationship to "0 °C = 273,15 kelvin"^^xsd:string
 		restricts relation metrology:nonCoherentDerivedMeasurementUnitOf to 80000-5-instances:kelvin
 	]

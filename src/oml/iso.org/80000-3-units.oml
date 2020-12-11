@@ -3,6 +3,7 @@
 vocabulary <http://iso.org/80000-3-units> with # as 80000-3-units {
 
 	uses <http://iso.org/80000-3-instances>
+
 	extends <http://iupac.org/metrology>
 
 	uses <http://iso.org/80000-1>
@@ -20,7 +21,7 @@ vocabulary <http://iso.org/80000-3-units> with # as 80000-3-units {
 
 	concept metre :> CoherentLengthUnit, metrology:IndependentMeasurementUnit
 
-  concept kilometre :> LengthUnit, metrology:PrefixedMeasurementUnit [
+	concept kilometre :> LengthUnit, metrology:PrefixedMeasurementUnit [
 		restricts relation metrology:hasPrefix to 80000-1:kilo
 		restricts relation metrology:prefixesMeasurementUnit to 80000-3-instances:metre
 	]
@@ -55,8 +56,8 @@ vocabulary <http://iso.org/80000-3-units> with # as 80000-3-units {
 		restricts all relation metrology:hasReference to TimeUnit
 	]
 
-	concept TimeUnit :> metrology:MeasurementUnit 
-	
+	concept TimeUnit :> metrology:MeasurementUnit
+
 	concept CoherentTimeUnit :> TimeUnit, metrology:CoherentMeasurementUnit [
 		restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
 	]
@@ -160,5 +161,4 @@ vocabulary <http://iso.org/80000-3-units> with # as 80000-3-units {
 		forward hertz-has-second
 		restricts scalar property metrology:exponent to "-1/1"^^owl:rational
 	]
-
 }
