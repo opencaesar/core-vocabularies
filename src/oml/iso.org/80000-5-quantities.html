@@ -1486,10 +1486,20 @@ Possible extra rowspan handling
 </style>
   <meta content="Bikeshed version c5172e83, updated Fri Nov 20 15:35:20 2020 -0800" name="generator">
   <link href="https://opencaesar.github.io/core-vocabularies//src/oml/iso.org/80000-5-quantities" rel="canonical">
-  <meta content="97e6129b684406752cb3cde74153f83668a2932b" name="document-revision">
+  <meta content="6349cd132ceb7b12f0d888abf6ecfee4d5963343" name="document-revision">
 <style>
 a[data-link-type=biblio] {
     white-space: pre-wrap;
+}
+table.def th {
+	white-space: nowrap;
+}
+table.def ul {
+	padding-left: 1em;
+}
+table.def dfn code {
+	font-family: sans-serif;
+	color: #005A9C;
 }
 </style>
 <style>/* style-autolinks */
@@ -1926,7 +1936,7 @@ dfn > a.self-link::before      { content: "#"; }
   <div class="head">
    <p data-fill-with="logo"><a class="logo" href="https://www.openapis.org/"><img alt="OpenAPI Initiative" height="48" src="https://opencaesar.github.io/oml/images/oml.svg"></a></p>
    <h1 class="p-name no-ref" id="title">80000-5-quantities</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2020-11-28">28 November 2020</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2020-12-11">11 December 2020</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -1984,48 +1994,88 @@ dfn > a.self-link::before      { content: "#"; }
     </ul>
     <h2 class="heading settled" data-level="3" id="concepts"><span class="secno">3. </span><span class="content">Concepts</span><a class="self-link" href="#concepts"></a></h2>
     <h3 class="heading settled" data-level="3.1" id="Celcius-temperature"><span class="secno">3.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="celcius-temperature">celcius-temperature<a class="self-link" href="#celcius-temperature"></a></dfn></span><a class="self-link" href="#Celcius-temperature"></a></h3>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#derivedunitaryquantity" id="ref-for-derivedunitaryquantity">metrology:DerivedUnitaryQuantity</a></p>
-    <p><em>Properties:</em></p>
-    <ul>
-     <li data-md>
-      <p><a data-link-type="dfn" href="../iupac.org/metrology.html#isdimensionlessquantity" id="ref-for-isdimensionlessquantity">metrology:isDimensionlessQuantity</a> (must have value false)</p>
-    </ul>
-    <p><em>Relations with source:</em></p>
-    <ul>
-     <li data-md>
-      <p>celcius-temperature ← <a data-link-type="dfn" href="80000-5-quantities.html#celcius-temperature-has-thermodynamic-temperature" id="ref-for-celcius-temperature-has-thermodynamic-temperature">Celcius-Temperature-Has-Thermodynamic-Temperature</a> → <a data-link-type="dfn" href="80000-5-quantities.html#thermodynamic-temperature" id="ref-for-thermodynamic-temperature">thermodynamic-temperature</a></p>
-    </ul>
-    <p><em>Relations with target:</em></p>
-    <ul>
-     <li data-md>
-      <p><a data-link-type="dfn" href="80000-5-units.html#celciustemperatureunit" id="ref-for-celciustemperatureunit">80000-5-units:CelciusTemperatureUnit</a> ← <a data-link-type="dfn" href="../iupac.org/metrology.html#ismagnitudeof" id="ref-for-ismagnitudeof">metrology:IsMagnitudeOf</a> → celcius-temperature</p>
-    </ul>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Supertypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="../iupac.org/metrology.html#derivedunitaryquantity" id="ref-for-derivedunitaryquantity">metrology:DerivedUnitaryQuantity</a>
+        </ul>
+      <tr>
+       <th>Properties
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="../iupac.org/metrology.html#isdimensionlessquantity" id="ref-for-isdimensionlessquantity">metrology:isDimensionlessQuantity</a> (must have value false)
+        </ul>
+      <tr>
+       <th>Relations with source
+       <td>
+        <ul>
+         <li>celcius-temperature ← <a data-link-type="dfn" href="80000-5-quantities.html#celcius-temperature-has-thermodynamic-temperature" id="ref-for-celcius-temperature-has-thermodynamic-temperature">Celcius-Temperature-Has-Thermodynamic-Temperature</a> → <a data-link-type="dfn" href="80000-5-quantities.html#thermodynamic-temperature" id="ref-for-thermodynamic-temperature">thermodynamic-temperature</a> 
+        </ul>
+      <tr>
+       <th>Relations with target
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="80000-5-units.html#celciustemperatureunit" id="ref-for-celciustemperatureunit">80000-5-units:CelciusTemperatureUnit</a> ← <a data-link-type="dfn" href="../iupac.org/metrology.html#ismagnitudeof" id="ref-for-ismagnitudeof">metrology:IsMagnitudeOf</a> → celcius-temperature 
+        </ul>
+    </table>
     <h3 class="heading settled" data-level="3.2" id="Thermodynamic-temperature"><span class="secno">3.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="thermodynamic-temperature">thermodynamic-temperature<a class="self-link" href="#thermodynamic-temperature"></a></dfn></span><a class="self-link" href="#Thermodynamic-temperature"></a></h3>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#independentunitaryquantity" id="ref-for-independentunitaryquantity">metrology:IndependentUnitaryQuantity</a></p>
-    <p><em>Properties:</em></p>
-    <ul>
-     <li data-md>
-      <p><a data-link-type="dfn" href="../iupac.org/metrology.html#isdimensionlessquantity" id="ref-for-isdimensionlessquantity①">metrology:isDimensionlessQuantity</a> (must have value false)</p>
-    </ul>
-    <p><em>Relations with target:</em></p>
-    <ul>
-     <li data-md>
-      <p><a data-link-type="dfn" href="80000-5-quantities.html#celcius-temperature" id="ref-for-celcius-temperature">celcius-temperature</a> ← <a data-link-type="dfn" href="80000-5-quantities.html#celcius-temperature-has-thermodynamic-temperature" id="ref-for-celcius-temperature-has-thermodynamic-temperature①">Celcius-Temperature-Has-Thermodynamic-Temperature</a> → thermodynamic-temperature</p>
-     <li data-md>
-      <p><a data-link-type="dfn" href="80000-5-units.html#thermodynamictemperatureunit" id="ref-for-thermodynamictemperatureunit">80000-5-units:ThermodynamicTemperatureUnit</a> ← <a data-link-type="dfn" href="../iupac.org/metrology.html#ismagnitudeof" id="ref-for-ismagnitudeof①">metrology:IsMagnitudeOf</a> → thermodynamic-temperature</p>
-    </ul>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Supertypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="../iupac.org/metrology.html#independentunitaryquantity" id="ref-for-independentunitaryquantity">metrology:IndependentUnitaryQuantity</a>
+        </ul>
+      <tr>
+       <th>Properties
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="../iupac.org/metrology.html#isdimensionlessquantity" id="ref-for-isdimensionlessquantity①">metrology:isDimensionlessQuantity</a> (must have value false)
+        </ul>
+      <tr>
+       <th>Relations with target
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="80000-5-quantities.html#celcius-temperature" id="ref-for-celcius-temperature">celcius-temperature</a> ← <a data-link-type="dfn" href="80000-5-quantities.html#celcius-temperature-has-thermodynamic-temperature" id="ref-for-celcius-temperature-has-thermodynamic-temperature①">Celcius-Temperature-Has-Thermodynamic-Temperature</a> → thermodynamic-temperature 
+         <li><a data-link-type="dfn" href="80000-5-units.html#thermodynamictemperatureunit" id="ref-for-thermodynamictemperatureunit">80000-5-units:ThermodynamicTemperatureUnit</a> ← <a data-link-type="dfn" href="../iupac.org/metrology.html#ismagnitudeof" id="ref-for-ismagnitudeof①">metrology:IsMagnitudeOf</a> → thermodynamic-temperature 
+        </ul>
+    </table>
     <h2 class="heading settled" data-level="4" id="Relations"><span class="secno">4. </span><span class="content">Relation Entities</span><a class="self-link" href="#Relations"></a></h2>
     <h3 class="heading settled" data-level="4.1" id="Celcius-Temperature-Has-Thermodynamic-Temperature"><span class="secno">4.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="celcius-temperature-has-thermodynamic-temperature">Celcius-Temperature-Has-Thermodynamic-Temperature<a class="self-link" href="#celcius-temperature-has-thermodynamic-temperature"></a></dfn></span><a class="self-link" href="#Celcius-Temperature-Has-Thermodynamic-Temperature"></a></h3>
-    <p><em>Attributes:</em> Functional</p>
-    <p><em>Source:</em> <a data-link-type="dfn" href="80000-5-quantities.html#celcius-temperature" id="ref-for-celcius-temperature①">celcius-temperature</a></p>
-    <p><em>Target:</em> <a data-link-type="dfn" href="80000-5-quantities.html#thermodynamic-temperature" id="ref-for-thermodynamic-temperature①">thermodynamic-temperature</a></p>
-    <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="Celcius-Temperature-Has-Thermodynamic-Temperature" data-dfn-type="attribute" data-export id="dom-celcius-temperature-has-thermodynamic-temperature-celcius-temperature-has-thermodynamic-temperature"><code>celcius-temperature-has-thermodynamic-temperature</code><a class="self-link" href="#dom-celcius-temperature-has-thermodynamic-temperature-celcius-temperature-has-thermodynamic-temperature"></a></dfn></p>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#hasfactorforunitaryquantity" id="ref-for-hasfactorforunitaryquantity">metrology:HasFactorForUnitaryQuantity</a></p>
-    <p><em>Properties:</em></p>
-    <ul>
-     <li data-md>
-      <p><a data-link-type="dfn" href="../iupac.org/metrology.html#exponent" id="ref-for-exponent">metrology:exponent</a> (must have value 1/1)</p>
-    </ul>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Source
+       <td><a data-link-type="dfn" href="80000-5-quantities.html#celcius-temperature" id="ref-for-celcius-temperature①">celcius-temperature</a>
+      <tr>
+       <th>Target
+       <td><a data-link-type="dfn" href="80000-5-quantities.html#thermodynamic-temperature" id="ref-for-thermodynamic-temperature①">thermodynamic-temperature</a>
+      <tr>
+       <th>Supertypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="../iupac.org/metrology.html#hasfactorforunitaryquantity" id="ref-for-hasfactorforunitaryquantity">metrology:HasFactorForUnitaryQuantity</a>
+        </ul>
+      <tr>
+       <th>Forward Relation
+       <td><dfn class="idl-code" data-dfn-for="Celcius-Temperature-Has-Thermodynamic-Temperature" data-dfn-type="attribute" data-export id="dom-celcius-temperature-has-thermodynamic-temperature-celcius-temperature-has-thermodynamic-temperature"><code>celcius-temperature-has-thermodynamic-temperature</code><a class="self-link" href="#dom-celcius-temperature-has-thermodynamic-temperature-celcius-temperature-has-thermodynamic-temperature"></a></dfn> 
+      <tr>
+       <th>Attributes
+       <td>
+        <ul>
+         <li>Functional
+        </ul>
+      <tr>
+       <th>Properties
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="../iupac.org/metrology.html#exponent" id="ref-for-exponent">metrology:exponent</a> (must have value 1/1)
+        </ul>
+    </table>
    </div>
   </main>
 <script>

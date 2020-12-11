@@ -1486,10 +1486,20 @@ Possible extra rowspan handling
 </style>
   <meta content="Bikeshed version c5172e83, updated Fri Nov 20 15:35:20 2020 -0800" name="generator">
   <link href="https://opencaesar.github.io/core-vocabularies//src/oml/iso.org/80000-5-magnitudes1" rel="canonical">
-  <meta content="97e6129b684406752cb3cde74153f83668a2932b" name="document-revision">
+  <meta content="6349cd132ceb7b12f0d888abf6ecfee4d5963343" name="document-revision">
 <style>
 a[data-link-type=biblio] {
     white-space: pre-wrap;
+}
+table.def th {
+	white-space: nowrap;
+}
+table.def ul {
+	padding-left: 1em;
+}
+table.def dfn code {
+	font-family: sans-serif;
+	color: #005A9C;
 }
 </style>
 <style>/* style-autolinks */
@@ -1926,7 +1936,7 @@ dfn > a.self-link::before      { content: "#"; }
   <div class="head">
    <p data-fill-with="logo"><a class="logo" href="https://www.openapis.org/"><img alt="OpenAPI Initiative" height="48" src="https://opencaesar.github.io/oml/images/oml.svg"></a></p>
    <h1 class="p-name no-ref" id="title">80000-5-magnitudes1</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2020-11-28">28 November 2020</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2020-12-11">11 December 2020</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -1975,19 +1985,37 @@ dfn > a.self-link::before      { content: "#"; }
     </ul>
     <h2 class="heading settled" data-level="2" id="concepts"><span class="secno">2. </span><span class="content">Concepts</span><a class="self-link" href="#concepts"></a></h2>
     <h3 class="heading settled" data-level="2.1" id="DegreeCelcius-magnitude"><span class="secno">2.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="degreecelcius-magnitude">degreeCelcius-magnitude<a class="self-link" href="#degreecelcius-magnitude"></a></dfn></span><a class="self-link" href="#DegreeCelcius-magnitude"></a></h3>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="80000-5-units.html#celciustemperaturemagnitude" id="ref-for-celciustemperaturemagnitude">80000-5-units:CelciusTemperatureMagnitude</a></p>
-    <p><em>Relations with source:</em></p>
-    <ul>
-     <li data-md>
-      <p>degreeCelcius-magnitude ← <a data-link-type="dfn" href="../iupac.org/metrology.html#hasreference" id="ref-for-hasreference">metrology:HasReference</a> → <a data-link-type="dfn" href="../iupac.org/metrology.html#reference" id="ref-for-reference">metrology:Reference</a> (range restricted to instance <a data-link-type="dfn" href="80000-5-instances.html#degreecelcius" id="ref-for-degreecelcius">80000-5-instances:degreeCelcius</a>)</p>
-    </ul>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Supertypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="80000-5-units.html#celciustemperaturemagnitude" id="ref-for-celciustemperaturemagnitude">80000-5-units:CelciusTemperatureMagnitude</a>
+        </ul>
+      <tr>
+       <th>Relations with source
+       <td>
+        <ul>
+         <li>degreeCelcius-magnitude ← <a data-link-type="dfn" href="../iupac.org/metrology.html#hasreference" id="ref-for-hasreference">metrology:HasReference</a> → <a data-link-type="dfn" href="../iupac.org/metrology.html#reference" id="ref-for-reference">metrology:Reference</a> (range restricted to instance <a data-link-type="dfn" href="80000-5-instances.html#degreecelcius" id="ref-for-degreecelcius">80000-5-instances:degreeCelcius</a>) 
+        </ul>
+    </table>
     <h3 class="heading settled" data-level="2.2" id="Kelvin-magnitude"><span class="secno">2.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="kelvin-magnitude">kelvin-magnitude<a class="self-link" href="#kelvin-magnitude"></a></dfn></span><a class="self-link" href="#Kelvin-magnitude"></a></h3>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="80000-5-units.html#thermodynamictemperaturemagnitude" id="ref-for-thermodynamictemperaturemagnitude">80000-5-units:ThermodynamicTemperatureMagnitude</a></p>
-    <p><em>Relations with source:</em></p>
-    <ul>
-     <li data-md>
-      <p>kelvin-magnitude ← <a data-link-type="dfn" href="../iupac.org/metrology.html#hasreference" id="ref-for-hasreference①">metrology:HasReference</a> → <a data-link-type="dfn" href="../iupac.org/metrology.html#reference" id="ref-for-reference①">metrology:Reference</a> (range restricted to instance <a data-link-type="dfn" href="80000-5-instances.html#kelvin" id="ref-for-kelvin">80000-5-instances:kelvin</a>)</p>
-    </ul>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Supertypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="80000-5-units.html#thermodynamictemperaturemagnitude" id="ref-for-thermodynamictemperaturemagnitude">80000-5-units:ThermodynamicTemperatureMagnitude</a>
+        </ul>
+      <tr>
+       <th>Relations with source
+       <td>
+        <ul>
+         <li>kelvin-magnitude ← <a data-link-type="dfn" href="../iupac.org/metrology.html#hasreference" id="ref-for-hasreference①">metrology:HasReference</a> → <a data-link-type="dfn" href="../iupac.org/metrology.html#reference" id="ref-for-reference①">metrology:Reference</a> (range restricted to instance <a data-link-type="dfn" href="80000-5-instances.html#kelvin" id="ref-for-kelvin">80000-5-instances:kelvin</a>) 
+        </ul>
+    </table>
    </div>
   </main>
 <script>

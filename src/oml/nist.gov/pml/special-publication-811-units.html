@@ -1486,10 +1486,20 @@ Possible extra rowspan handling
 </style>
   <meta content="Bikeshed version c5172e83, updated Fri Nov 20 15:35:20 2020 -0800" name="generator">
   <link href="https://opencaesar.github.io/core-vocabularies//src/oml/nist.gov/pml/special-publication-811-units" rel="canonical">
-  <meta content="97e6129b684406752cb3cde74153f83668a2932b" name="document-revision">
+  <meta content="6349cd132ceb7b12f0d888abf6ecfee4d5963343" name="document-revision">
 <style>
 a[data-link-type=biblio] {
     white-space: pre-wrap;
+}
+table.def th {
+	white-space: nowrap;
+}
+table.def ul {
+	padding-left: 1em;
+}
+table.def dfn code {
+	font-family: sans-serif;
+	color: #005A9C;
 }
 </style>
 <style>/* style-autolinks */
@@ -1926,7 +1936,7 @@ dfn > a.self-link::before      { content: "#"; }
   <div class="head">
    <p data-fill-with="logo"><a class="logo" href="https://www.openapis.org/"><img alt="OpenAPI Initiative" height="48" src="https://opencaesar.github.io/oml/images/oml.svg"></a></p>
    <h1 class="p-name no-ref" id="title">special-publication-811-units</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2020-11-28">28 November 2020</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2020-12-11">11 December 2020</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -1989,82 +1999,176 @@ dfn > a.self-link::before      { content: "#"; }
     <h2 class="heading settled" data-level="3" id="concepts"><span class="secno">3. </span><span class="content">Concepts</span><a class="self-link" href="#concepts"></a></h2>
     <h3 class="heading settled" data-level="3.1" id="DegreeFahrenheit"><span class="secno">3.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="degreefahrenheit">degreeFahrenheit<a class="self-link" href="#degreefahrenheit"></a></dfn></span><a class="self-link" href="#DegreeFahrenheit"></a></h3>
     <p>t/°C = (t/°F - 32)/1.8</p>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../../iupac.org/metrology.html#noncoherentderivedmeasurementunit" id="ref-for-noncoherentderivedmeasurementunit">metrology:NonCoherentDerivedMeasurementUnit</a></p>
-    <p><em>Relations with source:</em></p>
-    <ul>
-     <li data-md>
-      <p>degreeFahrenheit ← <a data-link-type="dfn" href="../../iupac.org/metrology.html#noncoherentderivedmeasurementunitof" id="ref-for-noncoherentderivedmeasurementunitof">metrology:NonCoherentDerivedMeasurementUnitOf</a> → <a data-link-type="dfn" href="../../iso.org/80000-5-units.html#degreecelcius" id="ref-for-degreecelcius">80000-5-units:degreeCelcius</a></p>
-    </ul>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Supertypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="../../iupac.org/metrology.html#noncoherentderivedmeasurementunit" id="ref-for-noncoherentderivedmeasurementunit">metrology:NonCoherentDerivedMeasurementUnit</a>
+        </ul>
+      <tr>
+       <th>Relations with source
+       <td>
+        <ul>
+         <li>degreeFahrenheit ← <a data-link-type="dfn" href="../../iupac.org/metrology.html#noncoherentderivedmeasurementunitof" id="ref-for-noncoherentderivedmeasurementunitof">metrology:NonCoherentDerivedMeasurementUnitOf</a> → <a data-link-type="dfn" href="../../iso.org/80000-5-units.html#degreecelcius" id="ref-for-degreecelcius">80000-5-units:degreeCelcius</a> 
+        </ul>
+    </table>
     <h3 class="heading settled" data-level="3.2" id="DegreeRankine"><span class="secno">3.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="degreerankine">degreeRankine<a class="self-link" href="#degreerankine"></a></dfn></span><a class="self-link" href="#DegreeRankine"></a></h3>
     <p>T/K = (T/°R)/1.8</p>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../../iupac.org/metrology.html#noncoherentderivedmeasurementunit" id="ref-for-noncoherentderivedmeasurementunit①">metrology:NonCoherentDerivedMeasurementUnit</a></p>
-    <p><em>Relations with source:</em></p>
-    <ul>
-     <li data-md>
-      <p>degreeRankine ← <a data-link-type="dfn" href="../../iupac.org/metrology.html#noncoherentderivedmeasurementunitof" id="ref-for-noncoherentderivedmeasurementunitof①">metrology:NonCoherentDerivedMeasurementUnitOf</a> → <a data-link-type="dfn" href="../../iso.org/80000-5-units.html#kelvin" id="ref-for-kelvin">80000-5-units:kelvin</a></p>
-    </ul>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Supertypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="../../iupac.org/metrology.html#noncoherentderivedmeasurementunit" id="ref-for-noncoherentderivedmeasurementunit①">metrology:NonCoherentDerivedMeasurementUnit</a>
+        </ul>
+      <tr>
+       <th>Relations with source
+       <td>
+        <ul>
+         <li>degreeRankine ← <a data-link-type="dfn" href="../../iupac.org/metrology.html#noncoherentderivedmeasurementunitof" id="ref-for-noncoherentderivedmeasurementunitof①">metrology:NonCoherentDerivedMeasurementUnitOf</a> → <a data-link-type="dfn" href="../../iso.org/80000-5-units.html#kelvin" id="ref-for-kelvin">80000-5-units:kelvin</a> 
+        </ul>
+    </table>
     <h3 class="heading settled" data-level="3.3" id="Foot"><span class="secno">3.3. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="foot">foot<a class="self-link" href="#foot"></a></dfn></span><a class="self-link" href="#Foot"></a></h3>
     <p>1 foot = 3.048 E-01 metre</p>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../../iso.org/80000-3-units.html#lengthunit" id="ref-for-lengthunit">80000-3-units:LengthUnit</a>, <a data-link-type="dfn" href="../../iupac.org/metrology.html#noncoherentderivedmeasurementunit" id="ref-for-noncoherentderivedmeasurementunit②">metrology:NonCoherentDerivedMeasurementUnit</a></p>
-    <p><em>Relations with source:</em></p>
-    <ul>
-     <li data-md>
-      <p>foot ← <a data-link-type="dfn" href="../../iupac.org/metrology.html#noncoherentderivedmeasurementunitof" id="ref-for-noncoherentderivedmeasurementunitof②">metrology:NonCoherentDerivedMeasurementUnitOf</a> → <a data-link-type="dfn" href="../../iso.org/80000-3-units.html#metre" id="ref-for-metre">80000-3-units:metre</a></p>
-    </ul>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Supertypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="../../iso.org/80000-3-units.html#lengthunit" id="ref-for-lengthunit">80000-3-units:LengthUnit</a>
+         <li><a data-link-type="dfn" href="../../iupac.org/metrology.html#noncoherentderivedmeasurementunit" id="ref-for-noncoherentderivedmeasurementunit②">metrology:NonCoherentDerivedMeasurementUnit</a>
+        </ul>
+      <tr>
+       <th>Relations with source
+       <td>
+        <ul>
+         <li>foot ← <a data-link-type="dfn" href="../../iupac.org/metrology.html#noncoherentderivedmeasurementunitof" id="ref-for-noncoherentderivedmeasurementunitof②">metrology:NonCoherentDerivedMeasurementUnitOf</a> → <a data-link-type="dfn" href="../../iso.org/80000-3-units.html#metre" id="ref-for-metre">80000-3-units:metre</a> 
+        </ul>
+    </table>
     <h3 class="heading settled" data-level="3.4" id="Pound-force"><span class="secno">3.4. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="pound-force">pound-force<a class="self-link" href="#pound-force"></a></dfn></span><a class="self-link" href="#Pound-force"></a></h3>
     <p>1 pound-force = 4.448 221 615 260 5 E+00 newton</p>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../../iso.org/80000-4-units.html#forceunit" id="ref-for-forceunit">80000-4-units:ForceUnit</a>, <a data-link-type="dfn" href="../../iupac.org/metrology.html#noncoherentderivedmeasurementunit" id="ref-for-noncoherentderivedmeasurementunit③">metrology:NonCoherentDerivedMeasurementUnit</a></p>
-    <p><em>Relations with source:</em></p>
-    <ul>
-     <li data-md>
-      <p>pound-force ← <a data-link-type="dfn" href="../../iupac.org/metrology.html#noncoherentderivedmeasurementunitof" id="ref-for-noncoherentderivedmeasurementunitof③">metrology:NonCoherentDerivedMeasurementUnitOf</a> → <a data-link-type="dfn" href="../../iso.org/80000-4-units.html#newton" id="ref-for-newton">80000-4-units:newton</a></p>
-    </ul>
-    <p><em>Relations with target:</em></p>
-    <ul>
-     <li data-md>
-      <p><a data-link-type="dfn" href="special-publication-811-units.html#pound-force-second" id="ref-for-pound-force-second">pound-force-second</a> ← <a data-link-type="dfn" href="special-publication-811-units.html#pound-force-second-has-pound-force" id="ref-for-pound-force-second-has-pound-force">Pound-Force-Second-Has-Pound-Force</a> → pound-force</p>
-    </ul>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Supertypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="../../iso.org/80000-4-units.html#forceunit" id="ref-for-forceunit">80000-4-units:ForceUnit</a>
+         <li><a data-link-type="dfn" href="../../iupac.org/metrology.html#noncoherentderivedmeasurementunit" id="ref-for-noncoherentderivedmeasurementunit③">metrology:NonCoherentDerivedMeasurementUnit</a>
+        </ul>
+      <tr>
+       <th>Relations with source
+       <td>
+        <ul>
+         <li>pound-force ← <a data-link-type="dfn" href="../../iupac.org/metrology.html#noncoherentderivedmeasurementunitof" id="ref-for-noncoherentderivedmeasurementunitof③">metrology:NonCoherentDerivedMeasurementUnitOf</a> → <a data-link-type="dfn" href="../../iso.org/80000-4-units.html#newton" id="ref-for-newton">80000-4-units:newton</a> 
+        </ul>
+      <tr>
+       <th>Relations with target
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="special-publication-811-units.html#pound-force-second" id="ref-for-pound-force-second">pound-force-second</a> ← <a data-link-type="dfn" href="special-publication-811-units.html#pound-force-second-has-pound-force" id="ref-for-pound-force-second-has-pound-force">Pound-Force-Second-Has-Pound-Force</a> → pound-force 
+        </ul>
+    </table>
     <h3 class="heading settled" data-level="3.5" id="Pound-force-second"><span class="secno">3.5. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="pound-force-second">pound-force-second<a class="self-link" href="#pound-force-second"></a></dfn></span><a class="self-link" href="#Pound-force-second"></a></h3>
     <p>1 pound-force-second = 4.448 221 615 260 5 E+00 newton-second</p>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../../iupac.org/metrology.html#derivedmeasurementunit" id="ref-for-derivedmeasurementunit">metrology:DerivedMeasurementUnit</a>, <a data-link-type="dfn" href="../../iso.org/80000-4-units.html#impulseunit" id="ref-for-impulseunit">80000-4-units:ImpulseUnit</a></p>
-    <p><em>Relations with source:</em></p>
-    <ul>
-     <li data-md>
-      <p>pound-force-second ← <a data-link-type="dfn" href="special-publication-811-units.html#pound-force-second-has-pound-force" id="ref-for-pound-force-second-has-pound-force①">Pound-Force-Second-Has-Pound-Force</a> → <a data-link-type="dfn" href="special-publication-811-units.html#pound-force" id="ref-for-pound-force">pound-force</a></p>
-     <li data-md>
-      <p>pound-force-second ← <a data-link-type="dfn" href="special-publication-811-units.html#pound-force-second-has-second" id="ref-for-pound-force-second-has-second">Pound-Force-Second-Has-Second</a> → <a data-link-type="dfn" href="../../iso.org/80000-3-units.html#second" id="ref-for-second">80000-3-units:second</a></p>
-    </ul>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Supertypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="../../iupac.org/metrology.html#derivedmeasurementunit" id="ref-for-derivedmeasurementunit">metrology:DerivedMeasurementUnit</a>
+         <li><a data-link-type="dfn" href="../../iso.org/80000-4-units.html#impulseunit" id="ref-for-impulseunit">80000-4-units:ImpulseUnit</a>
+        </ul>
+      <tr>
+       <th>Relations with source
+       <td>
+        <ul>
+         <li>pound-force-second ← <a data-link-type="dfn" href="special-publication-811-units.html#pound-force-second-has-pound-force" id="ref-for-pound-force-second-has-pound-force①">Pound-Force-Second-Has-Pound-Force</a> → <a data-link-type="dfn" href="special-publication-811-units.html#pound-force" id="ref-for-pound-force">pound-force</a> 
+         <li>pound-force-second ← <a data-link-type="dfn" href="special-publication-811-units.html#pound-force-second-has-second" id="ref-for-pound-force-second-has-second">Pound-Force-Second-Has-Second</a> → <a data-link-type="dfn" href="../../iso.org/80000-3-units.html#second" id="ref-for-second">80000-3-units:second</a> 
+        </ul>
+    </table>
     <h3 class="heading settled" data-level="3.6" id="Pound-mass"><span class="secno">3.6. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="pound-mass">pound-mass<a class="self-link" href="#pound-mass"></a></dfn></span><a class="self-link" href="#Pound-mass"></a></h3>
     <p>1 pound-mass = 4.535 923 7 E-01 kilogram</p>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../../iso.org/80000-4-units.html#massunit" id="ref-for-massunit">80000-4-units:MassUnit</a>, <a data-link-type="dfn" href="../../iupac.org/metrology.html#noncoherentderivedmeasurementunit" id="ref-for-noncoherentderivedmeasurementunit④">metrology:NonCoherentDerivedMeasurementUnit</a></p>
-    <p><em>Relations with source:</em></p>
-    <ul>
-     <li data-md>
-      <p>pound-mass ← <a data-link-type="dfn" href="../../iupac.org/metrology.html#noncoherentderivedmeasurementunitof" id="ref-for-noncoherentderivedmeasurementunitof④">metrology:NonCoherentDerivedMeasurementUnitOf</a> → <a data-link-type="dfn" href="../../iso.org/80000-4-units.html#kilogram" id="ref-for-kilogram">80000-4-units:kilogram</a></p>
-    </ul>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Supertypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="../../iso.org/80000-4-units.html#massunit" id="ref-for-massunit">80000-4-units:MassUnit</a>
+         <li><a data-link-type="dfn" href="../../iupac.org/metrology.html#noncoherentderivedmeasurementunit" id="ref-for-noncoherentderivedmeasurementunit④">metrology:NonCoherentDerivedMeasurementUnit</a>
+        </ul>
+      <tr>
+       <th>Relations with source
+       <td>
+        <ul>
+         <li>pound-mass ← <a data-link-type="dfn" href="../../iupac.org/metrology.html#noncoherentderivedmeasurementunitof" id="ref-for-noncoherentderivedmeasurementunitof④">metrology:NonCoherentDerivedMeasurementUnitOf</a> → <a data-link-type="dfn" href="../../iso.org/80000-4-units.html#kilogram" id="ref-for-kilogram">80000-4-units:kilogram</a> 
+        </ul>
+    </table>
     <h2 class="heading settled" data-level="4" id="Relations"><span class="secno">4. </span><span class="content">Relation Entities</span><a class="self-link" href="#Relations"></a></h2>
     <h3 class="heading settled" data-level="4.1" id="Pound-Force-Second-Has-Pound-Force"><span class="secno">4.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="pound-force-second-has-pound-force">Pound-Force-Second-Has-Pound-Force<a class="self-link" href="#pound-force-second-has-pound-force"></a></dfn></span><a class="self-link" href="#Pound-Force-Second-Has-Pound-Force"></a></h3>
-    <p><em>Attributes:</em></p>
-    <p><em>Source:</em> <a data-link-type="dfn" href="special-publication-811-units.html#pound-force-second" id="ref-for-pound-force-second①">pound-force-second</a></p>
-    <p><em>Target:</em> <a data-link-type="dfn" href="special-publication-811-units.html#pound-force" id="ref-for-pound-force①">pound-force</a></p>
-    <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="Pound-Force-Second-Has-Pound-Force" data-dfn-type="attribute" data-export id="dom-pound-force-second-has-pound-force-pound-force-second-has-pound-force"><code>pound-force-second-has-pound-force</code><a class="self-link" href="#dom-pound-force-second-has-pound-force-pound-force-second-has-pound-force"></a></dfn></p>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../../iupac.org/metrology.html#hasfactorformeasurementunit" id="ref-for-hasfactorformeasurementunit">metrology:HasFactorForMeasurementUnit</a></p>
-    <p><em>Properties:</em></p>
-    <ul>
-     <li data-md>
-      <p><a data-link-type="dfn" href="../../iupac.org/metrology.html#exponent" id="ref-for-exponent">metrology:exponent</a> (must have value 1/1)</p>
-    </ul>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Source
+       <td><a data-link-type="dfn" href="special-publication-811-units.html#pound-force-second" id="ref-for-pound-force-second①">pound-force-second</a>
+      <tr>
+       <th>Target
+       <td><a data-link-type="dfn" href="special-publication-811-units.html#pound-force" id="ref-for-pound-force①">pound-force</a>
+      <tr>
+       <th>Supertypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="../../iupac.org/metrology.html#hasfactorformeasurementunit" id="ref-for-hasfactorformeasurementunit">metrology:HasFactorForMeasurementUnit</a>
+        </ul>
+      <tr>
+       <th>Forward Relation
+       <td><dfn class="idl-code" data-dfn-for="Pound-Force-Second-Has-Pound-Force" data-dfn-type="attribute" data-export id="dom-pound-force-second-has-pound-force-pound-force-second-has-pound-force"><code>pound-force-second-has-pound-force</code><a class="self-link" href="#dom-pound-force-second-has-pound-force-pound-force-second-has-pound-force"></a></dfn> 
+      <tr>
+       <th>Attributes
+       <td>
+        <ul></ul>
+      <tr>
+       <th>Properties
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="../../iupac.org/metrology.html#exponent" id="ref-for-exponent">metrology:exponent</a> (must have value 1/1)
+        </ul>
+    </table>
     <h3 class="heading settled" data-level="4.2" id="Pound-Force-Second-Has-Second"><span class="secno">4.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="pound-force-second-has-second">Pound-Force-Second-Has-Second<a class="self-link" href="#pound-force-second-has-second"></a></dfn></span><a class="self-link" href="#Pound-Force-Second-Has-Second"></a></h3>
-    <p><em>Attributes:</em></p>
-    <p><em>Source:</em> <a data-link-type="dfn" href="special-publication-811-units.html#pound-force-second" id="ref-for-pound-force-second②">pound-force-second</a></p>
-    <p><em>Target:</em> <a data-link-type="dfn" href="../../iso.org/80000-3-units.html#second" id="ref-for-second①">80000-3-units:second</a></p>
-    <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="Pound-Force-Second-Has-Second" data-dfn-type="attribute" data-export id="dom-pound-force-second-has-second-pound-force-second-has-second"><code>pound-force-second-has-second</code><a class="self-link" href="#dom-pound-force-second-has-second-pound-force-second-has-second"></a></dfn></p>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../../iupac.org/metrology.html#hasfactorformeasurementunit" id="ref-for-hasfactorformeasurementunit①">metrology:HasFactorForMeasurementUnit</a></p>
-    <p><em>Properties:</em></p>
-    <ul>
-     <li data-md>
-      <p><a data-link-type="dfn" href="../../iupac.org/metrology.html#exponent" id="ref-for-exponent①">metrology:exponent</a> (must have value 1/1)</p>
-    </ul>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Source
+       <td><a data-link-type="dfn" href="special-publication-811-units.html#pound-force-second" id="ref-for-pound-force-second②">pound-force-second</a>
+      <tr>
+       <th>Target
+       <td><a data-link-type="dfn" href="../../iso.org/80000-3-units.html#second" id="ref-for-second①">80000-3-units:second</a>
+      <tr>
+       <th>Supertypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="../../iupac.org/metrology.html#hasfactorformeasurementunit" id="ref-for-hasfactorformeasurementunit①">metrology:HasFactorForMeasurementUnit</a>
+        </ul>
+      <tr>
+       <th>Forward Relation
+       <td><dfn class="idl-code" data-dfn-for="Pound-Force-Second-Has-Second" data-dfn-type="attribute" data-export id="dom-pound-force-second-has-second-pound-force-second-has-second"><code>pound-force-second-has-second</code><a class="self-link" href="#dom-pound-force-second-has-second-pound-force-second-has-second"></a></dfn> 
+      <tr>
+       <th>Attributes
+       <td>
+        <ul></ul>
+      <tr>
+       <th>Properties
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="../../iupac.org/metrology.html#exponent" id="ref-for-exponent①">metrology:exponent</a> (must have value 1/1)
+        </ul>
+    </table>
    </div>
   </main>
 <script>

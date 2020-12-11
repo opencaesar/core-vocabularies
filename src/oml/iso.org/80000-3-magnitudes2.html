@@ -1486,10 +1486,20 @@ Possible extra rowspan handling
 </style>
   <meta content="Bikeshed version c5172e83, updated Fri Nov 20 15:35:20 2020 -0800" name="generator">
   <link href="https://opencaesar.github.io/core-vocabularies//src/oml/iso.org/80000-3-magnitudes2" rel="canonical">
-  <meta content="97e6129b684406752cb3cde74153f83668a2932b" name="document-revision">
+  <meta content="6349cd132ceb7b12f0d888abf6ecfee4d5963343" name="document-revision">
 <style>
 a[data-link-type=biblio] {
     white-space: pre-wrap;
+}
+table.def th {
+	white-space: nowrap;
+}
+table.def ul {
+	padding-left: 1em;
+}
+table.def dfn code {
+	font-family: sans-serif;
+	color: #005A9C;
 }
 </style>
 <style>/* style-autolinks */
@@ -1926,7 +1936,7 @@ dfn > a.self-link::before      { content: "#"; }
   <div class="head">
    <p data-fill-with="logo"><a class="logo" href="https://www.openapis.org/"><img alt="OpenAPI Initiative" height="48" src="https://opencaesar.github.io/oml/images/oml.svg"></a></p>
    <h1 class="p-name no-ref" id="title">80000-3-magnitudes</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2020-11-28">28 November 2020</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2020-12-11">11 December 2020</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -1984,148 +1994,346 @@ dfn > a.self-link::before      { content: "#"; }
     </ul>
     <h2 class="heading settled" data-level="2" id="Relations"><span class="secno">2. </span><span class="content">Relation Entities</span><a class="self-link" href="#Relations"></a></h2>
     <h3 class="heading settled" data-level="2.1" id="Hertz-magnitude"><span class="secno">2.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="hertz-magnitude">hertz-magnitude<a class="self-link" href="#hertz-magnitude"></a></dfn></span><a class="self-link" href="#Hertz-magnitude"></a></h3>
-    <p><em>Attributes:</em></p>
-    <p><em>Source:</em> <a data-link-type="dfn" href="80000-3-magnitudes2.html#hertz-magnitude" id="ref-for-hertz-magnitude">hertz-magnitude</a></p>
-    <p><em>Target:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#unitaryquantity" id="ref-for-unitaryquantity">metrology:UnitaryQuantity</a></p>
-    <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="hertz-magnitude" data-dfn-type="attribute" data-export id="dom-hertz-magnitude-ishertzmagnitudeof"><code>isHertzMagnitudeOf</code><a class="self-link" href="#dom-hertz-magnitude-ishertzmagnitudeof"></a></dfn></p>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="80000-3-units.html#frequencymagnitude" id="ref-for-frequencymagnitude">80000-3-units:FrequencyMagnitude</a>, <a data-link-type="dfn" href="../iupac.org/metrology.html#isreflexivemagnitudeof" id="ref-for-isreflexivemagnitudeof">metrology:IsReflexiveMagnitudeOf</a></p>
-    <p><em>Relations with source:</em></p>
-    <ul>
-     <li data-md>
-      <p>hertz-magnitude ← <a data-link-type="dfn" href="../iupac.org/metrology.html#hasreference" id="ref-for-hasreference">metrology:HasReference</a> → <a data-link-type="dfn" href="../iupac.org/metrology.html#reference" id="ref-for-reference">metrology:Reference</a> (range restricted to instance <a data-link-type="dfn" href="80000-3-instances.html#hertz" id="ref-for-hertz">80000-3-instances:hertz</a>)</p>
-     <li data-md>
-      <p>hertz-magnitude ← <a data-link-type="dfn" href="80000-3-magnitudes2.html#hertz-magnitude" id="ref-for-hertz-magnitude①">hertz-magnitude</a> → <a data-link-type="dfn" href="../iupac.org/metrology.html#unitaryquantity" id="ref-for-unitaryquantity①">metrology:UnitaryQuantity</a></p>
-    </ul>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Source
+       <td><a data-link-type="dfn" href="80000-3-magnitudes2.html#hertz-magnitude" id="ref-for-hertz-magnitude">hertz-magnitude</a>
+      <tr>
+       <th>Target
+       <td><a data-link-type="dfn" href="../iupac.org/metrology.html#unitaryquantity" id="ref-for-unitaryquantity">metrology:UnitaryQuantity</a>
+      <tr>
+       <th>Supertypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="80000-3-units.html#frequencymagnitude" id="ref-for-frequencymagnitude">80000-3-units:FrequencyMagnitude</a>
+         <li><a data-link-type="dfn" href="../iupac.org/metrology.html#isreflexivemagnitudeof" id="ref-for-isreflexivemagnitudeof">metrology:IsReflexiveMagnitudeOf</a>
+        </ul>
+      <tr>
+       <th>Forward Relation
+       <td><dfn class="idl-code" data-dfn-for="hertz-magnitude" data-dfn-type="attribute" data-export id="dom-hertz-magnitude-ishertzmagnitudeof"><code>isHertzMagnitudeOf</code><a class="self-link" href="#dom-hertz-magnitude-ishertzmagnitudeof"></a></dfn> 
+      <tr>
+       <th>Attributes
+       <td>
+        <ul></ul>
+      <tr>
+       <th>Relations with source
+       <td>
+        <ul>
+         <li>hertz-magnitude ← <a data-link-type="dfn" href="../iupac.org/metrology.html#hasreference" id="ref-for-hasreference">metrology:HasReference</a> → <a data-link-type="dfn" href="../iupac.org/metrology.html#reference" id="ref-for-reference">metrology:Reference</a> (range restricted to instance <a data-link-type="dfn" href="80000-3-instances.html#hertz" id="ref-for-hertz">80000-3-instances:hertz</a>) 
+         <li>hertz-magnitude ← <a data-link-type="dfn" href="80000-3-magnitudes2.html#hertz-magnitude" id="ref-for-hertz-magnitude①">hertz-magnitude</a> → <a data-link-type="dfn" href="../iupac.org/metrology.html#unitaryquantity" id="ref-for-unitaryquantity①">metrology:UnitaryQuantity</a> 
+        </ul>
+    </table>
     <h3 class="heading settled" data-level="2.2" id="Hour-magnitude"><span class="secno">2.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="hour-magnitude">hour-magnitude<a class="self-link" href="#hour-magnitude"></a></dfn></span><a class="self-link" href="#Hour-magnitude"></a></h3>
-    <p><em>Attributes:</em></p>
-    <p><em>Source:</em> <a data-link-type="dfn" href="80000-3-magnitudes2.html#hour-magnitude" id="ref-for-hour-magnitude">hour-magnitude</a></p>
-    <p><em>Target:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#unitaryquantity" id="ref-for-unitaryquantity②">metrology:UnitaryQuantity</a></p>
-    <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="hour-magnitude" data-dfn-type="attribute" data-export id="dom-hour-magnitude-ishourmagnitudeof"><code>isHourMagnitudeOf</code><a class="self-link" href="#dom-hour-magnitude-ishourmagnitudeof"></a></dfn></p>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#isreflexivemagnitudeof" id="ref-for-isreflexivemagnitudeof①">metrology:IsReflexiveMagnitudeOf</a>, <a data-link-type="dfn" href="80000-3-units.html#timemagnitude" id="ref-for-timemagnitude">80000-3-units:TimeMagnitude</a></p>
-    <p><em>Relations with source:</em></p>
-    <ul>
-     <li data-md>
-      <p>hour-magnitude ← <a data-link-type="dfn" href="../iupac.org/metrology.html#hasreference" id="ref-for-hasreference①">metrology:HasReference</a> → <a data-link-type="dfn" href="../iupac.org/metrology.html#reference" id="ref-for-reference①">metrology:Reference</a> (range restricted to instance <a data-link-type="dfn" href="80000-3-instances.html#hour" id="ref-for-hour">80000-3-instances:hour</a>)</p>
-     <li data-md>
-      <p>hour-magnitude ← <a data-link-type="dfn" href="80000-3-magnitudes2.html#hour-magnitude" id="ref-for-hour-magnitude①">hour-magnitude</a> → <a data-link-type="dfn" href="../iupac.org/metrology.html#unitaryquantity" id="ref-for-unitaryquantity③">metrology:UnitaryQuantity</a></p>
-    </ul>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Source
+       <td><a data-link-type="dfn" href="80000-3-magnitudes2.html#hour-magnitude" id="ref-for-hour-magnitude">hour-magnitude</a>
+      <tr>
+       <th>Target
+       <td><a data-link-type="dfn" href="../iupac.org/metrology.html#unitaryquantity" id="ref-for-unitaryquantity②">metrology:UnitaryQuantity</a>
+      <tr>
+       <th>Supertypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="../iupac.org/metrology.html#isreflexivemagnitudeof" id="ref-for-isreflexivemagnitudeof①">metrology:IsReflexiveMagnitudeOf</a>
+         <li><a data-link-type="dfn" href="80000-3-units.html#timemagnitude" id="ref-for-timemagnitude">80000-3-units:TimeMagnitude</a>
+        </ul>
+      <tr>
+       <th>Forward Relation
+       <td><dfn class="idl-code" data-dfn-for="hour-magnitude" data-dfn-type="attribute" data-export id="dom-hour-magnitude-ishourmagnitudeof"><code>isHourMagnitudeOf</code><a class="self-link" href="#dom-hour-magnitude-ishourmagnitudeof"></a></dfn> 
+      <tr>
+       <th>Attributes
+       <td>
+        <ul></ul>
+      <tr>
+       <th>Relations with source
+       <td>
+        <ul>
+         <li>hour-magnitude ← <a data-link-type="dfn" href="../iupac.org/metrology.html#hasreference" id="ref-for-hasreference①">metrology:HasReference</a> → <a data-link-type="dfn" href="../iupac.org/metrology.html#reference" id="ref-for-reference①">metrology:Reference</a> (range restricted to instance <a data-link-type="dfn" href="80000-3-instances.html#hour" id="ref-for-hour">80000-3-instances:hour</a>) 
+         <li>hour-magnitude ← <a data-link-type="dfn" href="80000-3-magnitudes2.html#hour-magnitude" id="ref-for-hour-magnitude①">hour-magnitude</a> → <a data-link-type="dfn" href="../iupac.org/metrology.html#unitaryquantity" id="ref-for-unitaryquantity③">metrology:UnitaryQuantity</a> 
+        </ul>
+    </table>
     <h3 class="heading settled" data-level="2.3" id="Kilometre-magnitude"><span class="secno">2.3. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="kilometre-magnitude">kilometre-magnitude<a class="self-link" href="#kilometre-magnitude"></a></dfn></span><a class="self-link" href="#Kilometre-magnitude"></a></h3>
-    <p><em>Attributes:</em></p>
-    <p><em>Source:</em> <a data-link-type="dfn" href="80000-3-magnitudes2.html#kilometre-magnitude" id="ref-for-kilometre-magnitude">kilometre-magnitude</a></p>
-    <p><em>Target:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#unitaryquantity" id="ref-for-unitaryquantity④">metrology:UnitaryQuantity</a></p>
-    <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="kilometre-magnitude" data-dfn-type="attribute" data-export id="dom-kilometre-magnitude-iskilometremagnitudeof"><code>isKilometreMagnitudeOf</code><a class="self-link" href="#dom-kilometre-magnitude-iskilometremagnitudeof"></a></dfn></p>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#isreflexivemagnitudeof" id="ref-for-isreflexivemagnitudeof②">metrology:IsReflexiveMagnitudeOf</a>, <a data-link-type="dfn" href="80000-3-units.html#lengthmagnitude" id="ref-for-lengthmagnitude">80000-3-units:LengthMagnitude</a></p>
-    <p><em>Relations with source:</em></p>
-    <ul>
-     <li data-md>
-      <p>kilometre-magnitude ← <a data-link-type="dfn" href="../iupac.org/metrology.html#hasreference" id="ref-for-hasreference②">metrology:HasReference</a> → <a data-link-type="dfn" href="../iupac.org/metrology.html#reference" id="ref-for-reference②">metrology:Reference</a> (range restricted to instance <a data-link-type="dfn" href="80000-3-instances.html#kilometre" id="ref-for-kilometre">80000-3-instances:kilometre</a>)</p>
-     <li data-md>
-      <p>kilometre-magnitude ← <a data-link-type="dfn" href="80000-3-magnitudes2.html#kilometre-magnitude" id="ref-for-kilometre-magnitude①">kilometre-magnitude</a> → <a data-link-type="dfn" href="../iupac.org/metrology.html#unitaryquantity" id="ref-for-unitaryquantity⑤">metrology:UnitaryQuantity</a></p>
-    </ul>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Source
+       <td><a data-link-type="dfn" href="80000-3-magnitudes2.html#kilometre-magnitude" id="ref-for-kilometre-magnitude">kilometre-magnitude</a>
+      <tr>
+       <th>Target
+       <td><a data-link-type="dfn" href="../iupac.org/metrology.html#unitaryquantity" id="ref-for-unitaryquantity④">metrology:UnitaryQuantity</a>
+      <tr>
+       <th>Supertypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="../iupac.org/metrology.html#isreflexivemagnitudeof" id="ref-for-isreflexivemagnitudeof②">metrology:IsReflexiveMagnitudeOf</a>
+         <li><a data-link-type="dfn" href="80000-3-units.html#lengthmagnitude" id="ref-for-lengthmagnitude">80000-3-units:LengthMagnitude</a>
+        </ul>
+      <tr>
+       <th>Forward Relation
+       <td><dfn class="idl-code" data-dfn-for="kilometre-magnitude" data-dfn-type="attribute" data-export id="dom-kilometre-magnitude-iskilometremagnitudeof"><code>isKilometreMagnitudeOf</code><a class="self-link" href="#dom-kilometre-magnitude-iskilometremagnitudeof"></a></dfn> 
+      <tr>
+       <th>Attributes
+       <td>
+        <ul></ul>
+      <tr>
+       <th>Relations with source
+       <td>
+        <ul>
+         <li>kilometre-magnitude ← <a data-link-type="dfn" href="../iupac.org/metrology.html#hasreference" id="ref-for-hasreference②">metrology:HasReference</a> → <a data-link-type="dfn" href="../iupac.org/metrology.html#reference" id="ref-for-reference②">metrology:Reference</a> (range restricted to instance <a data-link-type="dfn" href="80000-3-instances.html#kilometre" id="ref-for-kilometre">80000-3-instances:kilometre</a>) 
+         <li>kilometre-magnitude ← <a data-link-type="dfn" href="80000-3-magnitudes2.html#kilometre-magnitude" id="ref-for-kilometre-magnitude①">kilometre-magnitude</a> → <a data-link-type="dfn" href="../iupac.org/metrology.html#unitaryquantity" id="ref-for-unitaryquantity⑤">metrology:UnitaryQuantity</a> 
+        </ul>
+    </table>
     <h3 class="heading settled" data-level="2.4" id="Kilometre-per-second-magnitude"><span class="secno">2.4. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="kilometre-per-second-magnitude">kilometre-per-second-magnitude<a class="self-link" href="#kilometre-per-second-magnitude"></a></dfn></span><a class="self-link" href="#Kilometre-per-second-magnitude"></a></h3>
-    <p><em>Attributes:</em></p>
-    <p><em>Source:</em> <a data-link-type="dfn" href="80000-3-magnitudes2.html#kilometre-per-second-magnitude" id="ref-for-kilometre-per-second-magnitude">kilometre-per-second-magnitude</a></p>
-    <p><em>Target:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#unitaryquantity" id="ref-for-unitaryquantity⑥">metrology:UnitaryQuantity</a></p>
-    <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="kilometre-per-second-magnitude" data-dfn-type="attribute" data-export id="dom-kilometre-per-second-magnitude-iskilometrepersecondmagnitudeof"><code>isKilometrePerSecondMagnitudeOf</code><a class="self-link" href="#dom-kilometre-per-second-magnitude-iskilometrepersecondmagnitudeof"></a></dfn></p>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#isreflexivemagnitudeof" id="ref-for-isreflexivemagnitudeof③">metrology:IsReflexiveMagnitudeOf</a>, <a data-link-type="dfn" href="80000-3-units.html#velocitymagnitude" id="ref-for-velocitymagnitude">80000-3-units:VelocityMagnitude</a></p>
-    <p><em>Relations with source:</em></p>
-    <ul>
-     <li data-md>
-      <p>kilometre-per-second-magnitude ← <a data-link-type="dfn" href="../iupac.org/metrology.html#hasreference" id="ref-for-hasreference③">metrology:HasReference</a> → <a data-link-type="dfn" href="../iupac.org/metrology.html#reference" id="ref-for-reference③">metrology:Reference</a> (range restricted to instance <a data-link-type="dfn" href="80000-3-instances.html#kilometre-per-second" id="ref-for-kilometre-per-second">80000-3-instances:kilometre-per-second</a>)</p>
-     <li data-md>
-      <p>kilometre-per-second-magnitude ← <a data-link-type="dfn" href="80000-3-magnitudes2.html#kilometre-per-second-magnitude" id="ref-for-kilometre-per-second-magnitude①">kilometre-per-second-magnitude</a> → <a data-link-type="dfn" href="../iupac.org/metrology.html#unitaryquantity" id="ref-for-unitaryquantity⑦">metrology:UnitaryQuantity</a></p>
-    </ul>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Source
+       <td><a data-link-type="dfn" href="80000-3-magnitudes2.html#kilometre-per-second-magnitude" id="ref-for-kilometre-per-second-magnitude">kilometre-per-second-magnitude</a>
+      <tr>
+       <th>Target
+       <td><a data-link-type="dfn" href="../iupac.org/metrology.html#unitaryquantity" id="ref-for-unitaryquantity⑥">metrology:UnitaryQuantity</a>
+      <tr>
+       <th>Supertypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="../iupac.org/metrology.html#isreflexivemagnitudeof" id="ref-for-isreflexivemagnitudeof③">metrology:IsReflexiveMagnitudeOf</a>
+         <li><a data-link-type="dfn" href="80000-3-units.html#velocitymagnitude" id="ref-for-velocitymagnitude">80000-3-units:VelocityMagnitude</a>
+        </ul>
+      <tr>
+       <th>Forward Relation
+       <td><dfn class="idl-code" data-dfn-for="kilometre-per-second-magnitude" data-dfn-type="attribute" data-export id="dom-kilometre-per-second-magnitude-iskilometrepersecondmagnitudeof"><code>isKilometrePerSecondMagnitudeOf</code><a class="self-link" href="#dom-kilometre-per-second-magnitude-iskilometrepersecondmagnitudeof"></a></dfn> 
+      <tr>
+       <th>Attributes
+       <td>
+        <ul></ul>
+      <tr>
+       <th>Relations with source
+       <td>
+        <ul>
+         <li>kilometre-per-second-magnitude ← <a data-link-type="dfn" href="../iupac.org/metrology.html#hasreference" id="ref-for-hasreference③">metrology:HasReference</a> → <a data-link-type="dfn" href="../iupac.org/metrology.html#reference" id="ref-for-reference③">metrology:Reference</a> (range restricted to instance <a data-link-type="dfn" href="80000-3-instances.html#kilometre-per-second" id="ref-for-kilometre-per-second">80000-3-instances:kilometre-per-second</a>) 
+         <li>kilometre-per-second-magnitude ← <a data-link-type="dfn" href="80000-3-magnitudes2.html#kilometre-per-second-magnitude" id="ref-for-kilometre-per-second-magnitude①">kilometre-per-second-magnitude</a> → <a data-link-type="dfn" href="../iupac.org/metrology.html#unitaryquantity" id="ref-for-unitaryquantity⑦">metrology:UnitaryQuantity</a> 
+        </ul>
+    </table>
     <h3 class="heading settled" data-level="2.5" id="Metre-magnitude"><span class="secno">2.5. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="metre-magnitude">metre-magnitude<a class="self-link" href="#metre-magnitude"></a></dfn></span><a class="self-link" href="#Metre-magnitude"></a></h3>
-    <p><em>Attributes:</em></p>
-    <p><em>Source:</em> <a data-link-type="dfn" href="80000-3-magnitudes2.html#metre-magnitude" id="ref-for-metre-magnitude">metre-magnitude</a></p>
-    <p><em>Target:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#unitaryquantity" id="ref-for-unitaryquantity⑧">metrology:UnitaryQuantity</a></p>
-    <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="metre-magnitude" data-dfn-type="attribute" data-export id="dom-metre-magnitude-ismetremagnitudeof"><code>isMetreMagnitudeOf</code><a class="self-link" href="#dom-metre-magnitude-ismetremagnitudeof"></a></dfn></p>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#isreflexivemagnitudeof" id="ref-for-isreflexivemagnitudeof④">metrology:IsReflexiveMagnitudeOf</a>, <a data-link-type="dfn" href="80000-3-units.html#lengthmagnitude" id="ref-for-lengthmagnitude①">80000-3-units:LengthMagnitude</a></p>
-    <p><em>Relations with source:</em></p>
-    <ul>
-     <li data-md>
-      <p>metre-magnitude ← <a data-link-type="dfn" href="../iupac.org/metrology.html#hasreference" id="ref-for-hasreference④">metrology:HasReference</a> → <a data-link-type="dfn" href="../iupac.org/metrology.html#reference" id="ref-for-reference④">metrology:Reference</a> (range restricted to instance <a data-link-type="dfn" href="80000-3-instances.html#metre" id="ref-for-metre">80000-3-instances:metre</a>)</p>
-     <li data-md>
-      <p>metre-magnitude ← <a data-link-type="dfn" href="80000-3-magnitudes2.html#metre-magnitude" id="ref-for-metre-magnitude①">metre-magnitude</a> → <a data-link-type="dfn" href="../iupac.org/metrology.html#unitaryquantity" id="ref-for-unitaryquantity⑨">metrology:UnitaryQuantity</a></p>
-    </ul>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Source
+       <td><a data-link-type="dfn" href="80000-3-magnitudes2.html#metre-magnitude" id="ref-for-metre-magnitude">metre-magnitude</a>
+      <tr>
+       <th>Target
+       <td><a data-link-type="dfn" href="../iupac.org/metrology.html#unitaryquantity" id="ref-for-unitaryquantity⑧">metrology:UnitaryQuantity</a>
+      <tr>
+       <th>Supertypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="../iupac.org/metrology.html#isreflexivemagnitudeof" id="ref-for-isreflexivemagnitudeof④">metrology:IsReflexiveMagnitudeOf</a>
+         <li><a data-link-type="dfn" href="80000-3-units.html#lengthmagnitude" id="ref-for-lengthmagnitude①">80000-3-units:LengthMagnitude</a>
+        </ul>
+      <tr>
+       <th>Forward Relation
+       <td><dfn class="idl-code" data-dfn-for="metre-magnitude" data-dfn-type="attribute" data-export id="dom-metre-magnitude-ismetremagnitudeof"><code>isMetreMagnitudeOf</code><a class="self-link" href="#dom-metre-magnitude-ismetremagnitudeof"></a></dfn> 
+      <tr>
+       <th>Attributes
+       <td>
+        <ul></ul>
+      <tr>
+       <th>Relations with source
+       <td>
+        <ul>
+         <li>metre-magnitude ← <a data-link-type="dfn" href="../iupac.org/metrology.html#hasreference" id="ref-for-hasreference④">metrology:HasReference</a> → <a data-link-type="dfn" href="../iupac.org/metrology.html#reference" id="ref-for-reference④">metrology:Reference</a> (range restricted to instance <a data-link-type="dfn" href="80000-3-instances.html#metre" id="ref-for-metre">80000-3-instances:metre</a>) 
+         <li>metre-magnitude ← <a data-link-type="dfn" href="80000-3-magnitudes2.html#metre-magnitude" id="ref-for-metre-magnitude①">metre-magnitude</a> → <a data-link-type="dfn" href="../iupac.org/metrology.html#unitaryquantity" id="ref-for-unitaryquantity⑨">metrology:UnitaryQuantity</a> 
+        </ul>
+    </table>
     <h3 class="heading settled" data-level="2.6" id="Metre-per-second-magnitude"><span class="secno">2.6. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="metre-per-second-magnitude">metre-per-second-magnitude<a class="self-link" href="#metre-per-second-magnitude"></a></dfn></span><a class="self-link" href="#Metre-per-second-magnitude"></a></h3>
-    <p><em>Attributes:</em></p>
-    <p><em>Source:</em> <a data-link-type="dfn" href="80000-3-magnitudes2.html#metre-per-second-magnitude" id="ref-for-metre-per-second-magnitude">metre-per-second-magnitude</a></p>
-    <p><em>Target:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#unitaryquantity" id="ref-for-unitaryquantity①⓪">metrology:UnitaryQuantity</a></p>
-    <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="metre-per-second-magnitude" data-dfn-type="attribute" data-export id="dom-metre-per-second-magnitude-ismetreper-secondmagnitudeof"><code>isMetrePer-SecondMagnitudeOf</code><a class="self-link" href="#dom-metre-per-second-magnitude-ismetreper-secondmagnitudeof"></a></dfn></p>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#isreflexivemagnitudeof" id="ref-for-isreflexivemagnitudeof⑤">metrology:IsReflexiveMagnitudeOf</a>, <a data-link-type="dfn" href="80000-3-units.html#velocitymagnitude" id="ref-for-velocitymagnitude①">80000-3-units:VelocityMagnitude</a></p>
-    <p><em>Relations with source:</em></p>
-    <ul>
-     <li data-md>
-      <p>metre-per-second-magnitude ← <a data-link-type="dfn" href="../iupac.org/metrology.html#hasreference" id="ref-for-hasreference⑤">metrology:HasReference</a> → <a data-link-type="dfn" href="../iupac.org/metrology.html#reference" id="ref-for-reference⑤">metrology:Reference</a> (range restricted to instance <a data-link-type="dfn" href="80000-3-instances.html#metre-per-second" id="ref-for-metre-per-second">80000-3-instances:metre-per-second</a>)</p>
-     <li data-md>
-      <p>metre-per-second-magnitude ← <a data-link-type="dfn" href="80000-3-magnitudes2.html#metre-per-second-magnitude" id="ref-for-metre-per-second-magnitude①">metre-per-second-magnitude</a> → <a data-link-type="dfn" href="../iupac.org/metrology.html#unitaryquantity" id="ref-for-unitaryquantity①①">metrology:UnitaryQuantity</a></p>
-    </ul>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Source
+       <td><a data-link-type="dfn" href="80000-3-magnitudes2.html#metre-per-second-magnitude" id="ref-for-metre-per-second-magnitude">metre-per-second-magnitude</a>
+      <tr>
+       <th>Target
+       <td><a data-link-type="dfn" href="../iupac.org/metrology.html#unitaryquantity" id="ref-for-unitaryquantity①⓪">metrology:UnitaryQuantity</a>
+      <tr>
+       <th>Supertypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="../iupac.org/metrology.html#isreflexivemagnitudeof" id="ref-for-isreflexivemagnitudeof⑤">metrology:IsReflexiveMagnitudeOf</a>
+         <li><a data-link-type="dfn" href="80000-3-units.html#velocitymagnitude" id="ref-for-velocitymagnitude①">80000-3-units:VelocityMagnitude</a>
+        </ul>
+      <tr>
+       <th>Forward Relation
+       <td><dfn class="idl-code" data-dfn-for="metre-per-second-magnitude" data-dfn-type="attribute" data-export id="dom-metre-per-second-magnitude-ismetreper-secondmagnitudeof"><code>isMetrePer-SecondMagnitudeOf</code><a class="self-link" href="#dom-metre-per-second-magnitude-ismetreper-secondmagnitudeof"></a></dfn> 
+      <tr>
+       <th>Attributes
+       <td>
+        <ul></ul>
+      <tr>
+       <th>Relations with source
+       <td>
+        <ul>
+         <li>metre-per-second-magnitude ← <a data-link-type="dfn" href="../iupac.org/metrology.html#hasreference" id="ref-for-hasreference⑤">metrology:HasReference</a> → <a data-link-type="dfn" href="../iupac.org/metrology.html#reference" id="ref-for-reference⑤">metrology:Reference</a> (range restricted to instance <a data-link-type="dfn" href="80000-3-instances.html#metre-per-second" id="ref-for-metre-per-second">80000-3-instances:metre-per-second</a>) 
+         <li>metre-per-second-magnitude ← <a data-link-type="dfn" href="80000-3-magnitudes2.html#metre-per-second-magnitude" id="ref-for-metre-per-second-magnitude①">metre-per-second-magnitude</a> → <a data-link-type="dfn" href="../iupac.org/metrology.html#unitaryquantity" id="ref-for-unitaryquantity①①">metrology:UnitaryQuantity</a> 
+        </ul>
+    </table>
     <h3 class="heading settled" data-level="2.7" id="Millisecond-magnitude"><span class="secno">2.7. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="millisecond-magnitude">millisecond-magnitude<a class="self-link" href="#millisecond-magnitude"></a></dfn></span><a class="self-link" href="#Millisecond-magnitude"></a></h3>
-    <p><em>Attributes:</em></p>
-    <p><em>Source:</em> <a data-link-type="dfn" href="80000-3-magnitudes2.html#millisecond-magnitude" id="ref-for-millisecond-magnitude">millisecond-magnitude</a></p>
-    <p><em>Target:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#unitaryquantity" id="ref-for-unitaryquantity①②">metrology:UnitaryQuantity</a></p>
-    <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="millisecond-magnitude" data-dfn-type="attribute" data-export id="dom-millisecond-magnitude-ismillisecondmagnitudeof"><code>isMillisecondMagnitudeOf</code><a class="self-link" href="#dom-millisecond-magnitude-ismillisecondmagnitudeof"></a></dfn></p>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#isreflexivemagnitudeof" id="ref-for-isreflexivemagnitudeof⑥">metrology:IsReflexiveMagnitudeOf</a>, <a data-link-type="dfn" href="80000-3-units.html#timemagnitude" id="ref-for-timemagnitude①">80000-3-units:TimeMagnitude</a></p>
-    <p><em>Relations with source:</em></p>
-    <ul>
-     <li data-md>
-      <p>millisecond-magnitude ← <a data-link-type="dfn" href="../iupac.org/metrology.html#hasreference" id="ref-for-hasreference⑥">metrology:HasReference</a> → <a data-link-type="dfn" href="../iupac.org/metrology.html#reference" id="ref-for-reference⑥">metrology:Reference</a> (range restricted to instance <a data-link-type="dfn" href="80000-3-instances.html#millisecond" id="ref-for-millisecond">80000-3-instances:millisecond</a>)</p>
-     <li data-md>
-      <p>millisecond-magnitude ← <a data-link-type="dfn" href="80000-3-magnitudes2.html#millisecond-magnitude" id="ref-for-millisecond-magnitude①">millisecond-magnitude</a> → <a data-link-type="dfn" href="../iupac.org/metrology.html#unitaryquantity" id="ref-for-unitaryquantity①③">metrology:UnitaryQuantity</a></p>
-    </ul>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Source
+       <td><a data-link-type="dfn" href="80000-3-magnitudes2.html#millisecond-magnitude" id="ref-for-millisecond-magnitude">millisecond-magnitude</a>
+      <tr>
+       <th>Target
+       <td><a data-link-type="dfn" href="../iupac.org/metrology.html#unitaryquantity" id="ref-for-unitaryquantity①②">metrology:UnitaryQuantity</a>
+      <tr>
+       <th>Supertypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="../iupac.org/metrology.html#isreflexivemagnitudeof" id="ref-for-isreflexivemagnitudeof⑥">metrology:IsReflexiveMagnitudeOf</a>
+         <li><a data-link-type="dfn" href="80000-3-units.html#timemagnitude" id="ref-for-timemagnitude①">80000-3-units:TimeMagnitude</a>
+        </ul>
+      <tr>
+       <th>Forward Relation
+       <td><dfn class="idl-code" data-dfn-for="millisecond-magnitude" data-dfn-type="attribute" data-export id="dom-millisecond-magnitude-ismillisecondmagnitudeof"><code>isMillisecondMagnitudeOf</code><a class="self-link" href="#dom-millisecond-magnitude-ismillisecondmagnitudeof"></a></dfn> 
+      <tr>
+       <th>Attributes
+       <td>
+        <ul></ul>
+      <tr>
+       <th>Relations with source
+       <td>
+        <ul>
+         <li>millisecond-magnitude ← <a data-link-type="dfn" href="../iupac.org/metrology.html#hasreference" id="ref-for-hasreference⑥">metrology:HasReference</a> → <a data-link-type="dfn" href="../iupac.org/metrology.html#reference" id="ref-for-reference⑥">metrology:Reference</a> (range restricted to instance <a data-link-type="dfn" href="80000-3-instances.html#millisecond" id="ref-for-millisecond">80000-3-instances:millisecond</a>) 
+         <li>millisecond-magnitude ← <a data-link-type="dfn" href="80000-3-magnitudes2.html#millisecond-magnitude" id="ref-for-millisecond-magnitude①">millisecond-magnitude</a> → <a data-link-type="dfn" href="../iupac.org/metrology.html#unitaryquantity" id="ref-for-unitaryquantity①③">metrology:UnitaryQuantity</a> 
+        </ul>
+    </table>
     <h3 class="heading settled" data-level="2.8" id="Minute-magnitude"><span class="secno">2.8. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="minute-magnitude">minute-magnitude<a class="self-link" href="#minute-magnitude"></a></dfn></span><a class="self-link" href="#Minute-magnitude"></a></h3>
-    <p><em>Attributes:</em></p>
-    <p><em>Source:</em> <a data-link-type="dfn" href="80000-3-magnitudes2.html#minute-magnitude" id="ref-for-minute-magnitude">minute-magnitude</a></p>
-    <p><em>Target:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#unitaryquantity" id="ref-for-unitaryquantity①④">metrology:UnitaryQuantity</a></p>
-    <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="minute-magnitude" data-dfn-type="attribute" data-export id="dom-minute-magnitude-isminutemagnitudeof"><code>isMinuteMagnitudeOf</code><a class="self-link" href="#dom-minute-magnitude-isminutemagnitudeof"></a></dfn></p>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#isreflexivemagnitudeof" id="ref-for-isreflexivemagnitudeof⑦">metrology:IsReflexiveMagnitudeOf</a>, <a data-link-type="dfn" href="80000-3-units.html#timemagnitude" id="ref-for-timemagnitude②">80000-3-units:TimeMagnitude</a></p>
-    <p><em>Relations with source:</em></p>
-    <ul>
-     <li data-md>
-      <p>minute-magnitude ← <a data-link-type="dfn" href="../iupac.org/metrology.html#hasreference" id="ref-for-hasreference⑦">metrology:HasReference</a> → <a data-link-type="dfn" href="../iupac.org/metrology.html#reference" id="ref-for-reference⑦">metrology:Reference</a> (range restricted to instance <a data-link-type="dfn" href="80000-3-instances.html#minute" id="ref-for-minute">80000-3-instances:minute</a>)</p>
-     <li data-md>
-      <p>minute-magnitude ← <a data-link-type="dfn" href="80000-3-magnitudes2.html#minute-magnitude" id="ref-for-minute-magnitude①">minute-magnitude</a> → <a data-link-type="dfn" href="../iupac.org/metrology.html#unitaryquantity" id="ref-for-unitaryquantity①⑤">metrology:UnitaryQuantity</a></p>
-    </ul>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Source
+       <td><a data-link-type="dfn" href="80000-3-magnitudes2.html#minute-magnitude" id="ref-for-minute-magnitude">minute-magnitude</a>
+      <tr>
+       <th>Target
+       <td><a data-link-type="dfn" href="../iupac.org/metrology.html#unitaryquantity" id="ref-for-unitaryquantity①④">metrology:UnitaryQuantity</a>
+      <tr>
+       <th>Supertypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="../iupac.org/metrology.html#isreflexivemagnitudeof" id="ref-for-isreflexivemagnitudeof⑦">metrology:IsReflexiveMagnitudeOf</a>
+         <li><a data-link-type="dfn" href="80000-3-units.html#timemagnitude" id="ref-for-timemagnitude②">80000-3-units:TimeMagnitude</a>
+        </ul>
+      <tr>
+       <th>Forward Relation
+       <td><dfn class="idl-code" data-dfn-for="minute-magnitude" data-dfn-type="attribute" data-export id="dom-minute-magnitude-isminutemagnitudeof"><code>isMinuteMagnitudeOf</code><a class="self-link" href="#dom-minute-magnitude-isminutemagnitudeof"></a></dfn> 
+      <tr>
+       <th>Attributes
+       <td>
+        <ul></ul>
+      <tr>
+       <th>Relations with source
+       <td>
+        <ul>
+         <li>minute-magnitude ← <a data-link-type="dfn" href="../iupac.org/metrology.html#hasreference" id="ref-for-hasreference⑦">metrology:HasReference</a> → <a data-link-type="dfn" href="../iupac.org/metrology.html#reference" id="ref-for-reference⑦">metrology:Reference</a> (range restricted to instance <a data-link-type="dfn" href="80000-3-instances.html#minute" id="ref-for-minute">80000-3-instances:minute</a>) 
+         <li>minute-magnitude ← <a data-link-type="dfn" href="80000-3-magnitudes2.html#minute-magnitude" id="ref-for-minute-magnitude①">minute-magnitude</a> → <a data-link-type="dfn" href="../iupac.org/metrology.html#unitaryquantity" id="ref-for-unitaryquantity①⑤">metrology:UnitaryQuantity</a> 
+        </ul>
+    </table>
     <h3 class="heading settled" data-level="2.9" id="Radian-magnitude"><span class="secno">2.9. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="radian-magnitude">radian-magnitude<a class="self-link" href="#radian-magnitude"></a></dfn></span><a class="self-link" href="#Radian-magnitude"></a></h3>
-    <p><em>Attributes:</em></p>
-    <p><em>Source:</em> <a data-link-type="dfn" href="80000-3-magnitudes2.html#radian-magnitude" id="ref-for-radian-magnitude">radian-magnitude</a></p>
-    <p><em>Target:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#unitaryquantity" id="ref-for-unitaryquantity①⑥">metrology:UnitaryQuantity</a></p>
-    <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="radian-magnitude" data-dfn-type="attribute" data-export id="dom-radian-magnitude-isradianmagnitudeof"><code>isRadianMagnitudeOf</code><a class="self-link" href="#dom-radian-magnitude-isradianmagnitudeof"></a></dfn></p>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="80000-3-units.html#angularmeasuremagnitude" id="ref-for-angularmeasuremagnitude">80000-3-units:AngularMeasureMagnitude</a>, <a data-link-type="dfn" href="../iupac.org/metrology.html#isreflexivemagnitudeof" id="ref-for-isreflexivemagnitudeof⑧">metrology:IsReflexiveMagnitudeOf</a></p>
-    <p><em>Relations with source:</em></p>
-    <ul>
-     <li data-md>
-      <p>radian-magnitude ← <a data-link-type="dfn" href="../iupac.org/metrology.html#hasreference" id="ref-for-hasreference⑧">metrology:HasReference</a> → <a data-link-type="dfn" href="../iupac.org/metrology.html#reference" id="ref-for-reference⑧">metrology:Reference</a> (range restricted to instance <a data-link-type="dfn" href="80000-3-instances.html#radian" id="ref-for-radian">80000-3-instances:radian</a>)</p>
-     <li data-md>
-      <p>radian-magnitude ← <a data-link-type="dfn" href="80000-3-magnitudes2.html#radian-magnitude" id="ref-for-radian-magnitude①">radian-magnitude</a> → <a data-link-type="dfn" href="../iupac.org/metrology.html#unitaryquantity" id="ref-for-unitaryquantity①⑦">metrology:UnitaryQuantity</a></p>
-    </ul>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Source
+       <td><a data-link-type="dfn" href="80000-3-magnitudes2.html#radian-magnitude" id="ref-for-radian-magnitude">radian-magnitude</a>
+      <tr>
+       <th>Target
+       <td><a data-link-type="dfn" href="../iupac.org/metrology.html#unitaryquantity" id="ref-for-unitaryquantity①⑥">metrology:UnitaryQuantity</a>
+      <tr>
+       <th>Supertypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="80000-3-units.html#angularmeasuremagnitude" id="ref-for-angularmeasuremagnitude">80000-3-units:AngularMeasureMagnitude</a>
+         <li><a data-link-type="dfn" href="../iupac.org/metrology.html#isreflexivemagnitudeof" id="ref-for-isreflexivemagnitudeof⑧">metrology:IsReflexiveMagnitudeOf</a>
+        </ul>
+      <tr>
+       <th>Forward Relation
+       <td><dfn class="idl-code" data-dfn-for="radian-magnitude" data-dfn-type="attribute" data-export id="dom-radian-magnitude-isradianmagnitudeof"><code>isRadianMagnitudeOf</code><a class="self-link" href="#dom-radian-magnitude-isradianmagnitudeof"></a></dfn> 
+      <tr>
+       <th>Attributes
+       <td>
+        <ul></ul>
+      <tr>
+       <th>Relations with source
+       <td>
+        <ul>
+         <li>radian-magnitude ← <a data-link-type="dfn" href="../iupac.org/metrology.html#hasreference" id="ref-for-hasreference⑧">metrology:HasReference</a> → <a data-link-type="dfn" href="../iupac.org/metrology.html#reference" id="ref-for-reference⑧">metrology:Reference</a> (range restricted to instance <a data-link-type="dfn" href="80000-3-instances.html#radian" id="ref-for-radian">80000-3-instances:radian</a>) 
+         <li>radian-magnitude ← <a data-link-type="dfn" href="80000-3-magnitudes2.html#radian-magnitude" id="ref-for-radian-magnitude①">radian-magnitude</a> → <a data-link-type="dfn" href="../iupac.org/metrology.html#unitaryquantity" id="ref-for-unitaryquantity①⑦">metrology:UnitaryQuantity</a> 
+        </ul>
+    </table>
     <h3 class="heading settled" data-level="2.10" id="Revolution-magnitude"><span class="secno">2.10. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="revolution-magnitude">revolution-magnitude<a class="self-link" href="#revolution-magnitude"></a></dfn></span><a class="self-link" href="#Revolution-magnitude"></a></h3>
-    <p><em>Attributes:</em></p>
-    <p><em>Source:</em> <a data-link-type="dfn" href="80000-3-magnitudes2.html#revolution-magnitude" id="ref-for-revolution-magnitude">revolution-magnitude</a></p>
-    <p><em>Target:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#unitaryquantity" id="ref-for-unitaryquantity①⑧">metrology:UnitaryQuantity</a></p>
-    <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="revolution-magnitude" data-dfn-type="attribute" data-export id="dom-revolution-magnitude-isrevolutionmagnitudeof"><code>isRevolutionMagnitudeOf</code><a class="self-link" href="#dom-revolution-magnitude-isrevolutionmagnitudeof"></a></dfn></p>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#isreflexivemagnitudeof" id="ref-for-isreflexivemagnitudeof⑨">metrology:IsReflexiveMagnitudeOf</a>, <a data-link-type="dfn" href="80000-3-units.html#rotationmagnitude" id="ref-for-rotationmagnitude">80000-3-units:RotationMagnitude</a></p>
-    <p><em>Relations with source:</em></p>
-    <ul>
-     <li data-md>
-      <p>revolution-magnitude ← <a data-link-type="dfn" href="../iupac.org/metrology.html#hasreference" id="ref-for-hasreference⑨">metrology:HasReference</a> → <a data-link-type="dfn" href="../iupac.org/metrology.html#reference" id="ref-for-reference⑨">metrology:Reference</a> (range restricted to instance <a data-link-type="dfn" href="80000-3-instances.html#revolution" id="ref-for-revolution">80000-3-instances:revolution</a>)</p>
-     <li data-md>
-      <p>revolution-magnitude ← <a data-link-type="dfn" href="80000-3-magnitudes2.html#revolution-magnitude" id="ref-for-revolution-magnitude①">revolution-magnitude</a> → <a data-link-type="dfn" href="../iupac.org/metrology.html#unitaryquantity" id="ref-for-unitaryquantity①⑨">metrology:UnitaryQuantity</a></p>
-    </ul>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Source
+       <td><a data-link-type="dfn" href="80000-3-magnitudes2.html#revolution-magnitude" id="ref-for-revolution-magnitude">revolution-magnitude</a>
+      <tr>
+       <th>Target
+       <td><a data-link-type="dfn" href="../iupac.org/metrology.html#unitaryquantity" id="ref-for-unitaryquantity①⑧">metrology:UnitaryQuantity</a>
+      <tr>
+       <th>Supertypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="../iupac.org/metrology.html#isreflexivemagnitudeof" id="ref-for-isreflexivemagnitudeof⑨">metrology:IsReflexiveMagnitudeOf</a>
+         <li><a data-link-type="dfn" href="80000-3-units.html#rotationmagnitude" id="ref-for-rotationmagnitude">80000-3-units:RotationMagnitude</a>
+        </ul>
+      <tr>
+       <th>Forward Relation
+       <td><dfn class="idl-code" data-dfn-for="revolution-magnitude" data-dfn-type="attribute" data-export id="dom-revolution-magnitude-isrevolutionmagnitudeof"><code>isRevolutionMagnitudeOf</code><a class="self-link" href="#dom-revolution-magnitude-isrevolutionmagnitudeof"></a></dfn> 
+      <tr>
+       <th>Attributes
+       <td>
+        <ul></ul>
+      <tr>
+       <th>Relations with source
+       <td>
+        <ul>
+         <li>revolution-magnitude ← <a data-link-type="dfn" href="../iupac.org/metrology.html#hasreference" id="ref-for-hasreference⑨">metrology:HasReference</a> → <a data-link-type="dfn" href="../iupac.org/metrology.html#reference" id="ref-for-reference⑨">metrology:Reference</a> (range restricted to instance <a data-link-type="dfn" href="80000-3-instances.html#revolution" id="ref-for-revolution">80000-3-instances:revolution</a>) 
+         <li>revolution-magnitude ← <a data-link-type="dfn" href="80000-3-magnitudes2.html#revolution-magnitude" id="ref-for-revolution-magnitude①">revolution-magnitude</a> → <a data-link-type="dfn" href="../iupac.org/metrology.html#unitaryquantity" id="ref-for-unitaryquantity①⑨">metrology:UnitaryQuantity</a> 
+        </ul>
+    </table>
     <h3 class="heading settled" data-level="2.11" id="Second-magnitude"><span class="secno">2.11. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="second-magnitude">second-magnitude<a class="self-link" href="#second-magnitude"></a></dfn></span><a class="self-link" href="#Second-magnitude"></a></h3>
-    <p><em>Attributes:</em></p>
-    <p><em>Source:</em> <a data-link-type="dfn" href="80000-3-magnitudes2.html#second-magnitude" id="ref-for-second-magnitude">second-magnitude</a></p>
-    <p><em>Target:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#unitaryquantity" id="ref-for-unitaryquantity②⓪">metrology:UnitaryQuantity</a></p>
-    <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="second-magnitude" data-dfn-type="attribute" data-export id="dom-second-magnitude-issecondmagnitudeof"><code>isSecondMagnitudeOf</code><a class="self-link" href="#dom-second-magnitude-issecondmagnitudeof"></a></dfn></p>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#isreflexivemagnitudeof" id="ref-for-isreflexivemagnitudeof①⓪">metrology:IsReflexiveMagnitudeOf</a>, <a data-link-type="dfn" href="80000-3-units.html#timemagnitude" id="ref-for-timemagnitude③">80000-3-units:TimeMagnitude</a></p>
-    <p><em>Relations with source:</em></p>
-    <ul>
-     <li data-md>
-      <p>second-magnitude ← <a data-link-type="dfn" href="../iupac.org/metrology.html#hasreference" id="ref-for-hasreference①⓪">metrology:HasReference</a> → <a data-link-type="dfn" href="../iupac.org/metrology.html#reference" id="ref-for-reference①⓪">metrology:Reference</a> (range restricted to instance <a data-link-type="dfn" href="80000-3-instances.html#second" id="ref-for-second">80000-3-instances:second</a>)</p>
-     <li data-md>
-      <p>second-magnitude ← <a data-link-type="dfn" href="80000-3-magnitudes2.html#second-magnitude" id="ref-for-second-magnitude①">second-magnitude</a> → <a data-link-type="dfn" href="../iupac.org/metrology.html#unitaryquantity" id="ref-for-unitaryquantity②①">metrology:UnitaryQuantity</a></p>
-    </ul>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Source
+       <td><a data-link-type="dfn" href="80000-3-magnitudes2.html#second-magnitude" id="ref-for-second-magnitude">second-magnitude</a>
+      <tr>
+       <th>Target
+       <td><a data-link-type="dfn" href="../iupac.org/metrology.html#unitaryquantity" id="ref-for-unitaryquantity②⓪">metrology:UnitaryQuantity</a>
+      <tr>
+       <th>Supertypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="../iupac.org/metrology.html#isreflexivemagnitudeof" id="ref-for-isreflexivemagnitudeof①⓪">metrology:IsReflexiveMagnitudeOf</a>
+         <li><a data-link-type="dfn" href="80000-3-units.html#timemagnitude" id="ref-for-timemagnitude③">80000-3-units:TimeMagnitude</a>
+        </ul>
+      <tr>
+       <th>Forward Relation
+       <td><dfn class="idl-code" data-dfn-for="second-magnitude" data-dfn-type="attribute" data-export id="dom-second-magnitude-issecondmagnitudeof"><code>isSecondMagnitudeOf</code><a class="self-link" href="#dom-second-magnitude-issecondmagnitudeof"></a></dfn> 
+      <tr>
+       <th>Attributes
+       <td>
+        <ul></ul>
+      <tr>
+       <th>Relations with source
+       <td>
+        <ul>
+         <li>second-magnitude ← <a data-link-type="dfn" href="../iupac.org/metrology.html#hasreference" id="ref-for-hasreference①⓪">metrology:HasReference</a> → <a data-link-type="dfn" href="../iupac.org/metrology.html#reference" id="ref-for-reference①⓪">metrology:Reference</a> (range restricted to instance <a data-link-type="dfn" href="80000-3-instances.html#second" id="ref-for-second">80000-3-instances:second</a>) 
+         <li>second-magnitude ← <a data-link-type="dfn" href="80000-3-magnitudes2.html#second-magnitude" id="ref-for-second-magnitude①">second-magnitude</a> → <a data-link-type="dfn" href="../iupac.org/metrology.html#unitaryquantity" id="ref-for-unitaryquantity②①">metrology:UnitaryQuantity</a> 
+        </ul>
+    </table>
    </div>
   </main>
 <script>
