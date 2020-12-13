@@ -6,7 +6,7 @@ vocabulary <http://iso.org/80000-3-quantities> with # as 80000-3-quantities {
 
 	@dc:^source "3-1"
 	concept ^length :> metrology:IndependentUnitaryQuantity [
-		restricts scalar property metrology:isDimensionlessQuantity to false^^xsd:boolean
+		restricts scalar property metrology:isDimensionlessQuantity to "false"^^xsd:boolean
 		restricts all relation metrology:hasMagnitude to 80000-3-units:LengthMagnitude
 	]
 
@@ -42,7 +42,7 @@ vocabulary <http://iso.org/80000-3-quantities> with # as 80000-3-quantities {
 
 	@dc:^source "3-5"
 	concept angular-measure :> metrology:DerivedUnitaryQuantity [
-		restricts scalar property metrology:isDimensionlessQuantity to true^^xsd:boolean
+		restricts scalar property metrology:isDimensionlessQuantity to "true"^^xsd:boolean
 		restricts all relation metrology:hasMagnitude to 80000-3-units:AngularMeasureMagnitude
 	]
 
@@ -64,7 +64,7 @@ vocabulary <http://iso.org/80000-3-quantities> with # as 80000-3-quantities {
 
 	@dc:^source "3-6"
 	concept rotational-displacement :> metrology:DerivedUnitaryQuantity [
-		restricts scalar property metrology:isDimensionlessQuantity to true^^xsd:boolean
+		restricts scalar property metrology:isDimensionlessQuantity to "true"^^xsd:boolean
 		restricts all relation metrology:hasMagnitude to 80000-3-units:AngularMeasureMagnitude
 	]
 
@@ -86,13 +86,13 @@ vocabulary <http://iso.org/80000-3-quantities> with # as 80000-3-quantities {
 
 	@dc:^source "3-9"
 	concept duration :> metrology:IndependentUnitaryQuantity [
-		restricts scalar property metrology:isDimensionlessQuantity to false^^xsd:boolean
+		restricts scalar property metrology:isDimensionlessQuantity to "false"^^xsd:boolean
 		restricts all relation metrology:hasMagnitude to 80000-3-units:TimeMagnitude
 	]
 
 	@dc:^source "3-10"
 	concept velocity :> metrology:DerivedUnitaryQuantity [
-		restricts scalar property metrology:isDimensionlessQuantity to false^^xsd:boolean
+		restricts scalar property metrology:isDimensionlessQuantity to "false"^^xsd:boolean
 		restricts all relation metrology:hasMagnitude to 80000-3-units:VelocityMagnitude
 	]
 
@@ -117,7 +117,7 @@ vocabulary <http://iso.org/80000-3-quantities> with # as 80000-3-quantities {
 
 	@dc:^source "3-16"
 	concept rotation :> metrology:DerivedUnitaryQuantity [
-		restricts scalar property metrology:isDimensionlessQuantity to true^^xsd:boolean
+		restricts scalar property metrology:isDimensionlessQuantity to "true"^^xsd:boolean
 		restricts all relation metrology:hasMagnitude to 80000-3-units:RotationMagnitude
 	]
 
@@ -131,7 +131,7 @@ vocabulary <http://iso.org/80000-3-quantities> with # as 80000-3-quantities {
 
 	@dc:^source "3-17"
 	concept frequency :> metrology:DerivedUnitaryQuantity [
-		restricts scalar property metrology:isDimensionlessQuantity to false^^xsd:boolean
+		restricts scalar property metrology:isDimensionlessQuantity to "false"^^xsd:boolean
 		restricts all relation metrology:hasMagnitude to 80000-3-units:FrequencyMagnitude
 	]
 
@@ -144,7 +144,7 @@ vocabulary <http://iso.org/80000-3-quantities> with # as 80000-3-quantities {
 	]
 
 	concept rotational-frequency :> metrology:DerivedUnitaryQuantity [
-		restricts scalar property metrology:isDimensionlessQuantity to false^^xsd:boolean
+		restricts scalar property metrology:isDimensionlessQuantity to "false"^^xsd:boolean
 		restricts all relation metrology:hasMagnitude to 80000-3-units:FrequencyMagnitude
 	]
 

@@ -14,7 +14,7 @@ vocabulary <http://iso.org/80000-5-units> with # as 80000-5-units {
 	concept ThermodynamicTemperatureUnit :> metrology:MeasurementUnit
 
 	concept CoherentThermodynamicTemperatureUnit :> ThermodynamicTemperatureUnit, metrology:CoherentMeasurementUnit [
-		restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
+		restricts scalar property metrology:isDimensionlessMeasurementUnit to "false"^^xsd:boolean
 	]
 
 	concept kelvin :> CoherentThermodynamicTemperatureUnit, metrology:IndependentMeasurementUnit

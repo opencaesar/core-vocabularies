@@ -8,13 +8,13 @@ vocabulary <http://iso.org/80000-4-quantities> with # as 80000-4-quantities {
 
     @dc:^source "4-1"
     concept mass :> metrology:IndependentUnitaryQuantity [
-        restricts scalar property metrology:isDimensionlessQuantity to false^^xsd:boolean
+        restricts scalar property metrology:isDimensionlessQuantity to "false"^^xsd:boolean
         restricts all relation metrology:hasMagnitude to 80000-4-units:MassMagnitude
     ]
 
     @dc:^source "4-8"
     concept momentum :> metrology:DerivedUnitaryQuantity [
-        restricts scalar property metrology:isDimensionlessQuantity to false^^xsd:boolean
+        restricts scalar property metrology:isDimensionlessQuantity to "false"^^xsd:boolean
         restricts all relation metrology:hasMagnitude to 80000-4-units:MomentumMagnitude
     ]
     
@@ -36,7 +36,7 @@ vocabulary <http://iso.org/80000-4-quantities> with # as 80000-4-quantities {
 
     @dc:^source "4-9"
     concept force :> metrology:DerivedUnitaryQuantity [
-        restricts scalar property metrology:isDimensionlessQuantity to false^^xsd:boolean
+        restricts scalar property metrology:isDimensionlessQuantity to "false"^^xsd:boolean
         restricts all relation  metrology:hasMagnitude to 80000-4-units:ForceMagnitude
     ]
     
@@ -58,7 +58,7 @@ vocabulary <http://iso.org/80000-4-quantities> with # as 80000-4-quantities {
 
     @dc:^source "4-10"
     concept impulse :> metrology:DerivedUnitaryQuantity [
-        restricts scalar property metrology:isDimensionlessQuantity to false^^xsd:boolean
+        restricts scalar property metrology:isDimensionlessQuantity to "false"^^xsd:boolean
         restricts all relation  metrology:hasMagnitude to 80000-4-units:ImpulseMagnitude
     ]
     
@@ -80,7 +80,7 @@ vocabulary <http://iso.org/80000-4-quantities> with # as 80000-4-quantities {
 
     @dc:^source "4-27"
     concept power :> metrology:DerivedUnitaryQuantity [
-        restricts scalar property metrology:isDimensionlessQuantity to false^^xsd:boolean
+        restricts scalar property metrology:isDimensionlessQuantity to "false"^^xsd:boolean
         restricts all relation  metrology:hasMagnitude to 80000-4-units:PowerMagnitude
     ]
     

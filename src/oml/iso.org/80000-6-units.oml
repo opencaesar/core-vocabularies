@@ -12,7 +12,7 @@ vocabulary <http://iso.org/80000-6-units> with # as 80000-6-units {
 	concept ElectricCurrentUnit :> metrology:MeasurementUnit
 
 	concept CoherentElectricCurrentUnit :> ElectricCurrentUnit, metrology:CoherentMeasurementUnit [
-		restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
+		restricts scalar property metrology:isDimensionlessMeasurementUnit to "false"^^xsd:boolean
 	]
 
 	concept ampere :> CoherentElectricCurrentUnit, metrology:IndependentMeasurementUnit
@@ -25,7 +25,7 @@ vocabulary <http://iso.org/80000-6-units> with # as 80000-6-units {
 	concept ElectricChargeUnit :> metrology:MeasurementUnit
 
 	concept CoherentElectricChargeUnit :> ElectricChargeUnit, metrology:CoherentMeasurementUnit [
-		restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
+		restricts scalar property metrology:isDimensionlessMeasurementUnit to "false"^^xsd:boolean
 	]
 
 	concept coulomb :> CoherentElectricChargeUnit, metrology:DerivedMeasurementUnit
@@ -52,7 +52,7 @@ vocabulary <http://iso.org/80000-6-units> with # as 80000-6-units {
 	concept ElectricFieldStrengthUnit :> metrology:MeasurementUnit
 
 	concept CoherentElectricFieldStrengthUnit :> ElectricFieldStrengthUnit, metrology:CoherentMeasurementUnit [
-		restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
+		restricts scalar property metrology:isDimensionlessMeasurementUnit to "false"^^xsd:boolean
 	]
 
 	concept newton-per-coulomb :> CoherentElectricFieldStrengthUnit, metrology:DerivedMeasurementUnit
@@ -79,7 +79,7 @@ vocabulary <http://iso.org/80000-6-units> with # as 80000-6-units {
 	concept ElectricPotentialUnit :> metrology:MeasurementUnit
 
 	concept CoherentElectricPotentialUnit :> ElectricPotentialUnit, metrology:CoherentMeasurementUnit [
-		restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
+		restricts scalar property metrology:isDimensionlessMeasurementUnit to "false"^^xsd:boolean
 	]
 
 	concept volt :> CoherentElectricPotentialUnit, metrology:DerivedMeasurementUnit
@@ -106,7 +106,7 @@ vocabulary <http://iso.org/80000-6-units> with # as 80000-6-units {
 	concept ResistanceUnit :> metrology:MeasurementUnit
 
 	concept CoherentResistanceUnit :> ResistanceUnit, metrology:CoherentMeasurementUnit [
-		restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
+		restricts scalar property metrology:isDimensionlessMeasurementUnit to "false"^^xsd:boolean
 	]
 
 	concept ohm :> CoherentResistanceUnit, metrology:DerivedMeasurementUnit

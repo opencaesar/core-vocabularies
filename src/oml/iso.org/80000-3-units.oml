@@ -16,7 +16,7 @@ vocabulary <http://iso.org/80000-3-units> with # as 80000-3-units {
 	concept LengthUnit :> metrology:MeasurementUnit
 
 	concept CoherentLengthUnit :> LengthUnit, metrology:CoherentMeasurementUnit [
-		restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
+		restricts scalar property metrology:isDimensionlessMeasurementUnit to "false"^^xsd:boolean
 	]
 
 	concept metre :> CoherentLengthUnit, metrology:IndependentMeasurementUnit
@@ -32,7 +32,7 @@ vocabulary <http://iso.org/80000-3-units> with # as 80000-3-units {
 	]
 
 	concept AngularMeasureUnit :> metrology:CoherentMeasurementUnit [
-		restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
+		restricts scalar property metrology:isDimensionlessMeasurementUnit to "false"^^xsd:boolean
 	]
 
 	concept radian :> AngularMeasureUnit, metrology:DerivedMeasurementUnit
@@ -59,7 +59,7 @@ vocabulary <http://iso.org/80000-3-units> with # as 80000-3-units {
 	concept TimeUnit :> metrology:MeasurementUnit
 
 	concept CoherentTimeUnit :> TimeUnit, metrology:CoherentMeasurementUnit [
-		restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
+		restricts scalar property metrology:isDimensionlessMeasurementUnit to "false"^^xsd:boolean
 	]
 
 	concept second :> CoherentTimeUnit, metrology:IndependentMeasurementUnit
@@ -87,7 +87,7 @@ vocabulary <http://iso.org/80000-3-units> with # as 80000-3-units {
 	concept VelocityUnit :> metrology:MeasurementUnit
 
 	concept CoherentVelocityUnit :> VelocityUnit, metrology:CoherentMeasurementUnit [
-		restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
+		restricts scalar property metrology:isDimensionlessMeasurementUnit to "false"^^xsd:boolean
 	]
 
 	concept metre-per-second :> CoherentVelocityUnit, metrology:DerivedMeasurementUnit
@@ -130,7 +130,7 @@ vocabulary <http://iso.org/80000-3-units> with # as 80000-3-units {
 	concept RotationUnit :> metrology:MeasurementUnit
 
 	concept CoherentRotationUnit :> RotationUnit, metrology:CoherentMeasurementUnit [
-		restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
+		restricts scalar property metrology:isDimensionlessMeasurementUnit to "false"^^xsd:boolean
 	]
 
 	concept revolution :> CoherentRotationUnit, metrology:DerivedMeasurementUnit
@@ -150,7 +150,7 @@ vocabulary <http://iso.org/80000-3-units> with # as 80000-3-units {
 	concept FrequencyUnit :> metrology:MeasurementUnit
 
 	concept CoherentFrequencyUnit :> FrequencyUnit, metrology:CoherentMeasurementUnit [
-		restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
+		restricts scalar property metrology:isDimensionlessMeasurementUnit to "false"^^xsd:boolean
 	]
 
 	concept hertz :> CoherentFrequencyUnit, metrology:DerivedMeasurementUnit

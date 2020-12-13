@@ -16,7 +16,7 @@ vocabulary <http://iso.org/80000-4-units> with # as 80000-4-units {
 	concept MassUnit :> metrology:MeasurementUnit
 
 	concept CoherentMassUnit :> MassUnit, metrology:CoherentMeasurementUnit [
-		restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
+		restricts scalar property metrology:isDimensionlessMeasurementUnit to "false"^^xsd:boolean
 	]
 
 	concept gram :> MassUnit, metrology:IndependentMeasurementUnit
@@ -34,7 +34,7 @@ vocabulary <http://iso.org/80000-4-units> with # as 80000-4-units {
 	concept MomentumUnit :> metrology:MeasurementUnit
 
 	concept CoherentMomentumUnit :> MomentumUnit, metrology:CoherentMeasurementUnit [
-		restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
+		restricts scalar property metrology:isDimensionlessMeasurementUnit to "false"^^xsd:boolean
 	]
 
 	concept kilogram-metre-per-second :> CoherentMomentumUnit, metrology:DerivedMeasurementUnit
@@ -61,7 +61,7 @@ vocabulary <http://iso.org/80000-4-units> with # as 80000-4-units {
 	concept ForceUnit :> metrology:MeasurementUnit
 
 	concept CoherentForceUnit :> ForceUnit, metrology:CoherentMeasurementUnit [
-		restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
+		restricts scalar property metrology:isDimensionlessMeasurementUnit to "false"^^xsd:boolean
 	]
 
 	concept newton :> CoherentForceUnit, metrology:DerivedMeasurementUnit
@@ -88,7 +88,7 @@ vocabulary <http://iso.org/80000-4-units> with # as 80000-4-units {
 	concept ImpulseUnit :> metrology:MeasurementUnit
 
 	concept CoherentImpulseUnit :> ImpulseUnit, metrology:CoherentMeasurementUnit [
-		restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
+		restricts scalar property metrology:isDimensionlessMeasurementUnit to "false"^^xsd:boolean
 	]
 
 	concept newton-second :> CoherentImpulseUnit, metrology:DerivedMeasurementUnit
@@ -131,7 +131,7 @@ vocabulary <http://iso.org/80000-4-units> with # as 80000-4-units {
 	concept PowerUnit :> metrology:MeasurementUnit
 
 	concept CoherentPowerUnit :> PowerUnit, metrology:CoherentMeasurementUnit [
-		restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
+		restricts scalar property metrology:isDimensionlessMeasurementUnit to "false"^^xsd:boolean
 	]
 
 	concept watt :> CoherentPowerUnit, metrology:DerivedMeasurementUnit

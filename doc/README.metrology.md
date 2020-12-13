@@ -99,7 +99,7 @@ vocabulary <http://iso.org/80000-3-quantities> with # as 80000-3-quantities {
 
     @dc:^source "3-1.1"
     concept ^length :> metrology:IndependentUnitaryQuantity [
-        restricts scalar property metrology:isDimensionlessQuantity to false^^xsd:boolean
+        restricts scalar property metrology:isDimensionlessQuantity to "false"^^xsd:boolean
         restricts all relation metrology:hasMagnitude to 80000-3-units:LengthMagnitude 
     ]
 
@@ -155,7 +155,7 @@ vocabulary <http://iso.org/80000-4-quantities> with # as 80000-4-quantities {
 
     @dc:^source "4-10"
     concept impulse :> metrology:DerivedUnitaryQuantity [
-        restricts scalar property metrology:isDimensionlessQuantity to false^^xsd:boolean
+        restricts scalar property metrology:isDimensionlessQuantity to "false"^^xsd:boolean
         restricts all relation  metrology:hasMagnitude to 80000-4-units:ForceMagnitude
     ]
     
@@ -325,7 +325,7 @@ vocabulary <http://iso.org/80000-3-units> with # as 80000-3-units {
     -- step 2
     @dc:^source "3-1"
     concept UnitOfLength :> metrology:CoherentMeasurementUnit [
-        restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
+        restricts scalar property metrology:isDimensionlessMeasurementUnit to "false"^^xsd:boolean
     ]
 
     -- step 3
@@ -370,7 +370,7 @@ vocabulary <http://iso.org/80000-4-units> with # as 80000-4-units {
     -- step 2
     @dc:^source "4-10"
     concept UnitOfImpulse :> metrology:CoherentMeasurementUnit [
-        restricts scalar property metrology:isDimensionlessMeasurementUnit to false^^xsd:boolean
+        restricts scalar property metrology:isDimensionlessMeasurementUnit to "false"^^xsd:boolean
     ]
 
     -- step 3
