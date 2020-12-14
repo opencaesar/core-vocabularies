@@ -1,18 +1,23 @@
-vocabulary <http://iupac.org/metrology/diagrams/units> with # as units {
-    extends <http://iupac.org/metrology>
+@dc:creator "Jet Propulsion Laboratory"
+@dc:rights """Copyright 2010-2020, by the California Institute of Technology. ALL RIGHTS RESERVED. United States Government Sponsorship acknowledged. Any commercial use must be negotiated with the Office of Technology Transfer at the California Institute of Technology. 
+This software may be subject to U.S. export control laws. By accepting this software, the user agrees to comply with all applicable U.S. export laws and regulations. User has the responsibility to obtain export licenses, or other export authority as may be required before exporting such information to foreign countries or providing access to foreign persons."""
+@dc:^description "The Metrology Units diagram."
+@dc:title "Metrology Units Diagram"
+vocabulary <http://iupac.org/metrology/diagrams/units> with # as units-diagram {
 
-    ref concept metrology:IndependentMeasurementUnit
-    
-    ref concept metrology:DerivedMeasurementUnit
+	extends <http://iupac.org/metrology>
 
-    ref concept metrology:CoherentMeasurementUnit
+	ref concept metrology:IndependentMeasurementUnit
 
-    ref aspect metrology:PrefixedMeasurementUnit
+	ref concept metrology:DerivedMeasurementUnit
 
-    ref relation entity metrology:HasPrefix
+	ref concept metrology:CoherentMeasurementUnit
 
-    ref relation entity metrology:HasFactorForMeasurementUnit
+	ref aspect metrology:PrefixedMeasurementUnit
 
-    ref relation entity metrology:NonCoherentDerivedMeasurementUnitOf
+	ref relation entity metrology:HasPrefix
 
+	ref relation entity metrology:HasFactorForMeasurementUnit
+
+	ref relation entity metrology:NonCoherentDerivedMeasurementUnitOf
 }

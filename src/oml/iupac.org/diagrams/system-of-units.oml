@@ -1,11 +1,17 @@
-vocabulary <http://iupac.org/metrology/diagrams/system-of-units> with # as system-of-units {
-    extends <http://iupac.org/metrology>
+@dc:creator "Jet Propulsion Laboratory"
+@dc:rights """Copyright 2010-2020, by the California Institute of Technology. ALL RIGHTS RESERVED. United States Government Sponsorship acknowledged. Any commercial use must be negotiated with the Office of Technology Transfer at the California Institute of Technology. 
+This software may be subject to U.S. export control laws. By accepting this software, the user agrees to comply with all applicable U.S. export laws and regulations. User has the responsibility to obtain export licenses, or other export authority as may be required before exporting such information to foreign countries or providing access to foreign persons."""
+@dc:^description "The Metrology System of Units diagram."
+@dc:title "Metrology Systems of Units Diagram"
+vocabulary <http://iupac.org/metrology/diagrams/system-of-units> with # as system-of-units-diagram {
 
-  ref relation entity metrology:SystemHasMetrologicalUnit
+	extends <http://iupac.org/metrology>
 
-  ref relation entity metrology:HasFactorForMeasurementUnit
+	ref relation entity metrology:SystemHasMetrologicalUnit
 
-  ref concept metrology:CoherentMeasurementUnit
+	ref relation entity metrology:HasFactorForMeasurementUnit
 
-  ref concept metrology:IndependentMeasurementUnit
+	ref concept metrology:CoherentMeasurementUnit
+
+	ref concept metrology:IndependentMeasurementUnit
 }

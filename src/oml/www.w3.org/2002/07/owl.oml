@@ -1,10 +1,8 @@
-@dc:title "OWL2"
-@dc:^description "The OWL2 vocabulary is a subset of the vocabulary maintained by the W3C."
-@dc:rights "Copyright 2002 W3C."
 @dc:creator "W3C"
+@dc:rights "Copyright 2002 W3C."
 @dc:^source "https://www.w3.org/TR/owl2-syntax/#ref-xml-schema-datatypes"
-@dc:hasVersion "2002/07"
-@dc:date "2002-07"
+@dc:^description "The OWL2 vocabulary is a subset of the vocabulary maintained by the W3C."
+@dc:title "OWL2"
 vocabulary <http://www.w3.org/2002/07/owl> with # as owl {
 
 	extends <http://www.w3.org/1999/02/22-rdf-syntax-ns>

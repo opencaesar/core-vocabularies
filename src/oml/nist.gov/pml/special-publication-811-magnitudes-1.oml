@@ -1,4 +1,9 @@
-vocabulary <http://nist.gov/pml/special-publication-811-magnitudes1> with # as special-publication-811-magnitudes1 {
+@dc:creator "Jet Propulsion Laboratory"
+@dc:rights """Copyright 2010-2020, by the California Institute of Technology. ALL RIGHTS RESERVED. United States Government Sponsorship acknowledged. Any commercial use must be negotiated with the Office of Technology Transfer at the California Institute of Technology. 
+This software may be subject to U.S. export control laws. By accepting this software, the user agrees to comply with all applicable U.S. export laws and regulations. User has the responsibility to obtain export licenses, or other export authority as may be required before exporting such information to foreign countries or providing access to foreign persons."""
+@dc:^description "English Engineering Units defined in NIST PML Special Publication 811, Appendix B.8. Note that this vocabulary is an alternative to http://nist.gov/pml/special-publication-811-magnitudes-2."
+@dc:title "Special Publication 811 Magnitudes-1"
+vocabulary <http://nist.gov/pml/special-publication-811-magnitudes-1> with # as special-publication-811-magnitudes-1 {
 
 	uses <http://nist.gov/pml/special-publication-811-instances>
 

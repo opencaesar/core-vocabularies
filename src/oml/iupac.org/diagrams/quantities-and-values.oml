@@ -1,27 +1,33 @@
-vocabulary <http://iupac.org/metrology/diagams/quantities-and-values> with # as quantities-and-values {
-    extends <http://iupac.org/metrology>
-   
-    ref aspect metrology:Magnitude
+@dc:creator "Jet Propulsion Laboratory"
+@dc:rights """Copyright 2010-2020, by the California Institute of Technology. ALL RIGHTS RESERVED. United States Government Sponsorship acknowledged. Any commercial use must be negotiated with the Office of Technology Transfer at the California Institute of Technology. 
+This software may be subject to U.S. export control laws. By accepting this software, the user agrees to comply with all applicable U.S. export laws and regulations. User has the responsibility to obtain export licenses, or other export authority as may be required before exporting such information to foreign countries or providing access to foreign persons."""
+@dc:^description "The Metrology Quantities and Values diagram."
+@dc:title "Metrology Quantities and Values Diagram"
+vocabulary <http://iupac.org/metrology/diagams/quantities-and-values> with # as quantities-and-values-diagram {
 
-    ref aspect metrology:OrdinalMagnitude
+	extends <http://iupac.org/metrology>
 
-    ref aspect metrology:UnitaryMagnitude
+	ref aspect metrology:Magnitude
 
-    ref aspect metrology:ReferenceMaterial
+	ref aspect metrology:OrdinalMagnitude
 
-    ref aspect metrology:MeasurementProcedure
+	ref aspect metrology:UnitaryMagnitude
 
-    ref aspect metrology:MeasurementUnit
+	ref aspect metrology:ReferenceMaterial
 
-    ref concept metrology:Quantity
+	ref aspect metrology:MeasurementProcedure
 
-    ref concept metrology:OrdinalQuantity
+	ref aspect metrology:MeasurementUnit
 
-    ref concept metrology:UnitaryQuantity
+	ref concept metrology:Quantity
 
-    ref relation entity metrology:IsQuantityOf
+	ref concept metrology:OrdinalQuantity
 
-    ref relation entity metrology:IsMagnitudeOf
+	ref concept metrology:UnitaryQuantity
 
-    ref relation entity metrology:HasReference
+	ref relation entity metrology:IsQuantityOf
+
+	ref relation entity metrology:IsMagnitudeOf
+
+	ref relation entity metrology:HasReference
 }

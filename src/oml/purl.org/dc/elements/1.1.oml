@@ -1,9 +1,7 @@
-@dc:title "DC"
-@dc:^description "The DC vocabulary is a subset of the vocabulary maintained by the Dublin Core Metadata Initiative."
-@dc:rights "Copyright 1995-2019 DCMI."
 @dc:creator "DCMI Usage Board"
-@dc:hasVersion "1.1"
-@dc:date "2012-06-14"
+@dc:rights "Copyright 1995-2019 DCMI."
+@dc:^description "The DC vocabulary is a subset of the vocabulary maintained by the Dublin Core Metadata Initiative."
+@dc:title "DC"
 vocabulary <http://purl.org/dc/elements/1.1> with / as dc {
 
 	annotation property contributor
