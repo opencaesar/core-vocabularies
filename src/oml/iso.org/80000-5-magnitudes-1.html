@@ -1,7 +1,7 @@
 <!doctype html><html lang="en">
  <head>
   <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-  <title>80000-6-magnitudes1</title>
+  <title>ISO 80000-5 Magnitudes-1</title>
   <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
 <style data-fill-with="stylesheet">/******************************************************************************
  *                   Style sheet for the W3C specifications                   *
@@ -1485,8 +1485,8 @@ Possible extra rowspan handling
 	}
 </style>
   <meta content="Bikeshed version c5172e83, updated Fri Nov 20 15:35:20 2020 -0800" name="generator">
-  <link href="https://opencaesar.github.io/core-vocabularies//src/oml/iso.org/80000-6-magnitudes1" rel="canonical">
-  <meta content="174f68ba843989f4f5c4c339e20918ccbaca026a" name="document-revision">
+  <link href="https://opencaesar.github.io/core-vocabularies//src/oml/iso.org/80000-5-magnitudes-1" rel="canonical">
+  <meta content="fdbf7c86712e057d3602237617c70a9e9c8ae152" name="document-revision">
 <style>
 a[data-link-type=biblio] {
     white-space: pre-wrap;
@@ -1935,16 +1935,16 @@ dfn > a.self-link::before      { content: "#"; }
  <body class="h-entry">
   <div class="head">
    <p data-fill-with="logo"><a class="logo" href="https://www.openapis.org/"><img alt="OpenAPI Initiative" height="48" src="https://opencaesar.github.io/oml/images/oml.svg"></a></p>
-   <h1 class="p-name no-ref" id="title">80000-6-magnitudes1</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2020-12-13">13 December 2020</time></span></h2>
+   <h1 class="p-name no-ref" id="title">ISO 80000-5 Magnitudes-1</h1>
+   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2020-12-14">14 December 2020</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
-     <dd><a class="u-url" href="https://opencaesar.github.io/core-vocabularies//src/oml/iso.org/80000-6-magnitudes1">https://opencaesar.github.io/core-vocabularies//src/oml/iso.org/80000-6-magnitudes1</a>
+     <dd><a class="u-url" href="https://opencaesar.github.io/core-vocabularies//src/oml/iso.org/80000-5-magnitudes-1">https://opencaesar.github.io/core-vocabularies//src/oml/iso.org/80000-5-magnitudes-1</a>
      <dt class="editor">Editor:
-     <dd class="editor p-author h-card vcard"><span class="p-name fn">Unknown</span>
+     <dd class="editor p-author h-card vcard"><span class="p-name fn">Jet Propulsion Laboratory</span>
      <dt>Copyright:
-     <dd>
+     <dd>Copyright 2010-2020, by the California Institute of Technology. ALL RIGHTS RESERVED. United States Government Sponsorship acknowledged. Any commercial use must be negotiated with the Office of Technology Transfer at the California Institute of Technology. This software may be subject to U.S. export control laws. By accepting this software, the user agrees to comply with all applicable U.S. export laws and regulations. User has the responsibility to obtain export licenses, or other export authority as may be required before exporting such information to foreign countries or providing access to foreign persons.
     </dl>
    </div>
    <div data-fill-with="warning"></div>
@@ -1952,10 +1952,9 @@ dfn > a.self-link::before      { content: "#"; }
   </div>
   <div class="p-summary" data-fill-with="abstract">
    <h2 class="no-num no-toc no-ref heading settled" id="abstract"><span class="content">Abstract</span></h2>
-   <p>This vocabulary provides convenience specializations of every metrology:Magnitude
+   <p>The ISO 80000-5 magnitudes-1 vocabulary. It provides convenience specializations of every metrology:Magnitude defined in http://iso.org/80000-5-units.
 
- defined in http://iso.org/80000-6-units.</p>
-   <p>Note that this vocabulary is an alternative to http://iso.org/80000-6-magnitudes2.</p>
+ Note that this vocabulary is an alternative to http://iso.org/80000-5-magnitudes-2.</p>
   </div>
   <div data-fill-with="at-risk"></div>
   <nav data-fill-with="table-of-contents" id="toc">
@@ -1965,11 +1964,8 @@ dfn > a.self-link::before      { content: "#"; }
     <li>
      <a href="#concepts"><span class="secno">2</span> <span class="content">Concepts</span></a>
      <ol class="toc">
-      <li><a href="#Ampere-magnitude"><span class="secno">2.1</span> <span class="content"><span>ampere-magnitude</span></span></a>
-      <li><a href="#Coulomb-magnitude"><span class="secno">2.2</span> <span class="content"><span>coulomb-magnitude</span></span></a>
-      <li><a href="#Newton-per-coulomb-magnitude"><span class="secno">2.3</span> <span class="content"><span>newton-per-coulomb-magnitude</span></span></a>
-      <li><a href="#Ohm-magnitude"><span class="secno">2.4</span> <span class="content"><span>ohm-magnitude</span></span></a>
-      <li><a href="#Volt-magnitude"><span class="secno">2.5</span> <span class="content"><span>volt-magnitude</span></span></a>
+      <li><a href="#DegreeCelcius-magnitude"><span class="secno">2.1</span> <span class="content"><span>degreeCelcius-magnitude</span></span></a>
+      <li><a href="#Kelvin-magnitude"><span class="secno">2.2</span> <span class="content"><span>kelvin-magnitude</span></span></a>
      </ol>
     <li>
      <a href="#index"><span class="secno"></span> <span class="content">Index</span></a>
@@ -1984,87 +1980,39 @@ dfn > a.self-link::before      { content: "#"; }
     <h2 class="heading settled" data-level="1" id="Namespace"><span class="secno">1. </span><span class="content">Namespace</span><a class="self-link" href="#Namespace"></a></h2>
     <ul>
      <li data-md>
-      <p>80000-6-magnitudes1: <a href="80000-6-magnitudes1.html">http://iso.org/80000-6-magnitudes1</a></p>
+      <p>80000-5-magnitudes-1: <a href="80000-5-magnitudes-1.html">http://iso.org/80000-5-magnitudes-1</a></p>
     </ul>
     <h2 class="heading settled" data-level="2" id="concepts"><span class="secno">2. </span><span class="content">Concepts</span><a class="self-link" href="#concepts"></a></h2>
-    <h3 class="heading settled" data-level="2.1" id="Ampere-magnitude"><span class="secno">2.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="ampere-magnitude">ampere-magnitude<a class="self-link" href="#ampere-magnitude"></a></dfn></span><a class="self-link" href="#Ampere-magnitude"></a></h3>
+    <h3 class="heading settled" data-level="2.1" id="DegreeCelcius-magnitude"><span class="secno">2.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="degreecelcius-magnitude">degreeCelcius-magnitude<a class="self-link" href="#degreecelcius-magnitude"></a></dfn></span><a class="self-link" href="#DegreeCelcius-magnitude"></a></h3>
     <table class="def">
      <tbody>
       <tr>
        <th>Supertypes
        <td>
         <ul>
-         <li><a data-link-type="dfn" href="80000-6-units.html#electriccurrentmagnitude" id="ref-for-electriccurrentmagnitude">80000-6-units:ElectricCurrentMagnitude</a>
+         <li><a data-link-type="dfn" href="80000-5-units.html#celciustemperaturemagnitude" id="ref-for-celciustemperaturemagnitude">80000-5-units:CelciusTemperatureMagnitude</a>
         </ul>
       <tr>
        <th>Relations with source
        <td>
         <ul>
-         <li>ampere-magnitude ← <a data-link-type="dfn" href="../iupac.org/metrology.html#hasreference" id="ref-for-hasreference">metrology:HasReference</a> → <a data-link-type="dfn" href="../iupac.org/metrology.html#reference" id="ref-for-reference">metrology:Reference</a> (range restricted to instance <a data-link-type="dfn" href="80000-6-instances.html#ampere" id="ref-for-ampere">80000-6-instances:ampere</a>) 
+         <li>degreeCelcius-magnitude ← <a data-link-type="dfn" href="../iupac.org/metrology.html#hasreference" id="ref-for-hasreference">metrology:HasReference</a> → <a data-link-type="dfn" href="../iupac.org/metrology.html#reference" id="ref-for-reference">metrology:Reference</a> (range restricted to instance <a data-link-type="dfn" href="80000-5-instances.html#degreecelcius" id="ref-for-degreecelcius">80000-5-instances:degreeCelcius</a>) 
         </ul>
     </table>
-    <h3 class="heading settled" data-level="2.2" id="Coulomb-magnitude"><span class="secno">2.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="coulomb-magnitude">coulomb-magnitude<a class="self-link" href="#coulomb-magnitude"></a></dfn></span><a class="self-link" href="#Coulomb-magnitude"></a></h3>
+    <h3 class="heading settled" data-level="2.2" id="Kelvin-magnitude"><span class="secno">2.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="kelvin-magnitude">kelvin-magnitude<a class="self-link" href="#kelvin-magnitude"></a></dfn></span><a class="self-link" href="#Kelvin-magnitude"></a></h3>
     <table class="def">
      <tbody>
       <tr>
        <th>Supertypes
        <td>
         <ul>
-         <li><a data-link-type="dfn" href="80000-6-units.html#electricchargemagnitude" id="ref-for-electricchargemagnitude">80000-6-units:ElectricChargeMagnitude</a>
+         <li><a data-link-type="dfn" href="80000-5-units.html#thermodynamictemperaturemagnitude" id="ref-for-thermodynamictemperaturemagnitude">80000-5-units:ThermodynamicTemperatureMagnitude</a>
         </ul>
       <tr>
        <th>Relations with source
        <td>
         <ul>
-         <li>coulomb-magnitude ← <a data-link-type="dfn" href="../iupac.org/metrology.html#hasreference" id="ref-for-hasreference①">metrology:HasReference</a> → <a data-link-type="dfn" href="../iupac.org/metrology.html#reference" id="ref-for-reference①">metrology:Reference</a> (range restricted to instance <a data-link-type="dfn" href="80000-6-instances.html#coulomb" id="ref-for-coulomb">80000-6-instances:coulomb</a>) 
-        </ul>
-    </table>
-    <h3 class="heading settled" data-level="2.3" id="Newton-per-coulomb-magnitude"><span class="secno">2.3. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="newton-per-coulomb-magnitude">newton-per-coulomb-magnitude<a class="self-link" href="#newton-per-coulomb-magnitude"></a></dfn></span><a class="self-link" href="#Newton-per-coulomb-magnitude"></a></h3>
-    <table class="def">
-     <tbody>
-      <tr>
-       <th>Supertypes
-       <td>
-        <ul>
-         <li><a data-link-type="dfn" href="80000-6-units.html#electricfieldstrengthmagnitude" id="ref-for-electricfieldstrengthmagnitude">80000-6-units:ElectricFieldStrengthMagnitude</a>
-        </ul>
-      <tr>
-       <th>Relations with source
-       <td>
-        <ul>
-         <li>newton-per-coulomb-magnitude ← <a data-link-type="dfn" href="../iupac.org/metrology.html#hasreference" id="ref-for-hasreference②">metrology:HasReference</a> → <a data-link-type="dfn" href="../iupac.org/metrology.html#reference" id="ref-for-reference②">metrology:Reference</a> (range restricted to instance <a data-link-type="dfn" href="80000-6-instances.html#newton-per-coulomb" id="ref-for-newton-per-coulomb">80000-6-instances:newton-per-coulomb</a>) 
-        </ul>
-    </table>
-    <h3 class="heading settled" data-level="2.4" id="Ohm-magnitude"><span class="secno">2.4. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="ohm-magnitude">ohm-magnitude<a class="self-link" href="#ohm-magnitude"></a></dfn></span><a class="self-link" href="#Ohm-magnitude"></a></h3>
-    <table class="def">
-     <tbody>
-      <tr>
-       <th>Supertypes
-       <td>
-        <ul>
-         <li><a data-link-type="dfn" href="80000-6-units.html#resistancemagnitude" id="ref-for-resistancemagnitude">80000-6-units:ResistanceMagnitude</a>
-        </ul>
-      <tr>
-       <th>Relations with source
-       <td>
-        <ul>
-         <li>ohm-magnitude ← <a data-link-type="dfn" href="../iupac.org/metrology.html#hasreference" id="ref-for-hasreference③">metrology:HasReference</a> → <a data-link-type="dfn" href="../iupac.org/metrology.html#reference" id="ref-for-reference③">metrology:Reference</a> (range restricted to instance <a data-link-type="dfn" href="80000-6-instances.html#ohm" id="ref-for-ohm">80000-6-instances:ohm</a>) 
-        </ul>
-    </table>
-    <h3 class="heading settled" data-level="2.5" id="Volt-magnitude"><span class="secno">2.5. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="volt-magnitude">volt-magnitude<a class="self-link" href="#volt-magnitude"></a></dfn></span><a class="self-link" href="#Volt-magnitude"></a></h3>
-    <table class="def">
-     <tbody>
-      <tr>
-       <th>Supertypes
-       <td>
-        <ul>
-         <li><a data-link-type="dfn" href="80000-6-units.html#electricpotentialmagnitude" id="ref-for-electricpotentialmagnitude">80000-6-units:ElectricPotentialMagnitude</a>
-        </ul>
-      <tr>
-       <th>Relations with source
-       <td>
-        <ul>
-         <li>volt-magnitude ← <a data-link-type="dfn" href="../iupac.org/metrology.html#hasreference" id="ref-for-hasreference④">metrology:HasReference</a> → <a data-link-type="dfn" href="../iupac.org/metrology.html#reference" id="ref-for-reference④">metrology:Reference</a> (range restricted to instance <a data-link-type="dfn" href="80000-6-instances.html#volt" id="ref-for-volt">80000-6-instances:volt</a>) 
+         <li>kelvin-magnitude ← <a data-link-type="dfn" href="../iupac.org/metrology.html#hasreference" id="ref-for-hasreference①">metrology:HasReference</a> → <a data-link-type="dfn" href="../iupac.org/metrology.html#reference" id="ref-for-reference①">metrology:Reference</a> (range restricted to instance <a data-link-type="dfn" href="80000-5-instances.html#kelvin" id="ref-for-kelvin">80000-5-instances:kelvin</a>) 
         </ul>
     </table>
    </div>
@@ -2201,111 +2149,60 @@ dfn > a.self-link::before      { content: "#"; }
   <h2 class="no-num no-ref heading settled" id="index"><span class="content">Index</span><a class="self-link" href="#index"></a></h2>
   <h3 class="no-num no-ref heading settled" id="index-defined-here"><span class="content">Terms defined by this specification</span><a class="self-link" href="#index-defined-here"></a></h3>
   <ul class="index">
-   <li><a href="#ampere-magnitude">ampere-magnitude</a><span>, in §2.1</span>
-   <li><a href="#coulomb-magnitude">coulomb-magnitude</a><span>, in §2.2</span>
-   <li><a href="#newton-per-coulomb-magnitude">newton-per-coulomb-magnitude</a><span>, in §2.3</span>
-   <li><a href="#ohm-magnitude">ohm-magnitude</a><span>, in §2.4</span>
-   <li><a href="#volt-magnitude">volt-magnitude</a><span>, in §2.5</span>
+   <li><a href="#degreecelcius-magnitude">degreeCelcius-magnitude</a><span>, in §2.1</span>
+   <li><a href="#kelvin-magnitude">kelvin-magnitude</a><span>, in §2.2</span>
   </ul>
-  <aside class="dfn-panel" data-for="term-for-ampere">
-   <a href="80000-6-instances.html#ampere">80000-6-instances.html#ampere</a><b>Referenced in:</b>
+  <aside class="dfn-panel" data-for="term-for-degreecelcius">
+   <a href="80000-5-instances.html#degreecelcius">80000-5-instances.html#degreecelcius</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-ampere">2.1. ampere-magnitude</a>
+    <li><a href="#ref-for-degreecelcius">2.1. degreeCelcius-magnitude</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-coulomb">
-   <a href="80000-6-instances.html#coulomb">80000-6-instances.html#coulomb</a><b>Referenced in:</b>
+  <aside class="dfn-panel" data-for="term-for-kelvin">
+   <a href="80000-5-instances.html#kelvin">80000-5-instances.html#kelvin</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-coulomb">2.2. coulomb-magnitude</a>
+    <li><a href="#ref-for-kelvin">2.2. kelvin-magnitude</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-newton-per-coulomb">
-   <a href="80000-6-instances.html#newton-per-coulomb">80000-6-instances.html#newton-per-coulomb</a><b>Referenced in:</b>
+  <aside class="dfn-panel" data-for="term-for-celciustemperaturemagnitude">
+   <a href="80000-5-units.html#celciustemperaturemagnitude">80000-5-units.html#celciustemperaturemagnitude</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-newton-per-coulomb">2.3. newton-per-coulomb-magnitude</a>
+    <li><a href="#ref-for-celciustemperaturemagnitude">2.1. degreeCelcius-magnitude</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-ohm">
-   <a href="80000-6-instances.html#ohm">80000-6-instances.html#ohm</a><b>Referenced in:</b>
+  <aside class="dfn-panel" data-for="term-for-thermodynamictemperaturemagnitude">
+   <a href="80000-5-units.html#thermodynamictemperaturemagnitude">80000-5-units.html#thermodynamictemperaturemagnitude</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-ohm">2.4. ohm-magnitude</a>
-   </ul>
-  </aside>
-  <aside class="dfn-panel" data-for="term-for-volt">
-   <a href="80000-6-instances.html#volt">80000-6-instances.html#volt</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-volt">2.5. volt-magnitude</a>
-   </ul>
-  </aside>
-  <aside class="dfn-panel" data-for="term-for-electricchargemagnitude">
-   <a href="80000-6-units.html#electricchargemagnitude">80000-6-units.html#electricchargemagnitude</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-electricchargemagnitude">2.2. coulomb-magnitude</a>
-   </ul>
-  </aside>
-  <aside class="dfn-panel" data-for="term-for-electriccurrentmagnitude">
-   <a href="80000-6-units.html#electriccurrentmagnitude">80000-6-units.html#electriccurrentmagnitude</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-electriccurrentmagnitude">2.1. ampere-magnitude</a>
-   </ul>
-  </aside>
-  <aside class="dfn-panel" data-for="term-for-electricfieldstrengthmagnitude">
-   <a href="80000-6-units.html#electricfieldstrengthmagnitude">80000-6-units.html#electricfieldstrengthmagnitude</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-electricfieldstrengthmagnitude">2.3. newton-per-coulomb-magnitude</a>
-   </ul>
-  </aside>
-  <aside class="dfn-panel" data-for="term-for-electricpotentialmagnitude">
-   <a href="80000-6-units.html#electricpotentialmagnitude">80000-6-units.html#electricpotentialmagnitude</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-electricpotentialmagnitude">2.5. volt-magnitude</a>
-   </ul>
-  </aside>
-  <aside class="dfn-panel" data-for="term-for-resistancemagnitude">
-   <a href="80000-6-units.html#resistancemagnitude">80000-6-units.html#resistancemagnitude</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-resistancemagnitude">2.4. ohm-magnitude</a>
+    <li><a href="#ref-for-thermodynamictemperaturemagnitude">2.2. kelvin-magnitude</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-hasreference">
    <a href="../iupac.org/metrology.html#hasreference">../iupac.org/metrology.html#hasreference</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-hasreference">2.1. ampere-magnitude</a>
-    <li><a href="#ref-for-hasreference①">2.2. coulomb-magnitude</a>
-    <li><a href="#ref-for-hasreference②">2.3. newton-per-coulomb-magnitude</a>
-    <li><a href="#ref-for-hasreference③">2.4. ohm-magnitude</a>
-    <li><a href="#ref-for-hasreference④">2.5. volt-magnitude</a>
+    <li><a href="#ref-for-hasreference">2.1. degreeCelcius-magnitude</a>
+    <li><a href="#ref-for-hasreference①">2.2. kelvin-magnitude</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-reference">
    <a href="../iupac.org/metrology.html#reference">../iupac.org/metrology.html#reference</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-reference">2.1. ampere-magnitude</a>
-    <li><a href="#ref-for-reference①">2.2. coulomb-magnitude</a>
-    <li><a href="#ref-for-reference②">2.3. newton-per-coulomb-magnitude</a>
-    <li><a href="#ref-for-reference③">2.4. ohm-magnitude</a>
-    <li><a href="#ref-for-reference④">2.5. volt-magnitude</a>
+    <li><a href="#ref-for-reference">2.1. degreeCelcius-magnitude</a>
+    <li><a href="#ref-for-reference①">2.2. kelvin-magnitude</a>
    </ul>
   </aside>
   <h3 class="no-num no-ref heading settled" id="index-defined-elsewhere"><span class="content">Terms defined by reference</span><a class="self-link" href="#index-defined-elsewhere"></a></h3>
   <ul class="index">
    <li>
-    <a data-link-type="biblio">[http://iso.org/80000-6-instances]</a> defines the following terms:
+    <a data-link-type="biblio">[http://iso.org/80000-5-instances]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="term-for-ampere">ampere</span>
-     <li><span class="dfn-paneled" id="term-for-coulomb">coulomb</span>
-     <li><span class="dfn-paneled" id="term-for-newton-per-coulomb">newton-per-coulomb</span>
-     <li><span class="dfn-paneled" id="term-for-ohm">ohm</span>
-     <li><span class="dfn-paneled" id="term-for-volt">volt</span>
+     <li><span class="dfn-paneled" id="term-for-degreecelcius">degreecelcius</span>
+     <li><span class="dfn-paneled" id="term-for-kelvin">kelvin</span>
     </ul>
    <li>
-    <a data-link-type="biblio">[http://iso.org/80000-6-units]</a> defines the following terms:
+    <a data-link-type="biblio">[http://iso.org/80000-5-units]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="term-for-electricchargemagnitude">electricchargemagnitude</span>
-     <li><span class="dfn-paneled" id="term-for-electriccurrentmagnitude">electriccurrentmagnitude</span>
-     <li><span class="dfn-paneled" id="term-for-electricfieldstrengthmagnitude">electricfieldstrengthmagnitude</span>
-     <li><span class="dfn-paneled" id="term-for-electricpotentialmagnitude">electricpotentialmagnitude</span>
-     <li><span class="dfn-paneled" id="term-for-resistancemagnitude">resistancemagnitude</span>
+     <li><span class="dfn-paneled" id="term-for-celciustemperaturemagnitude">celciustemperaturemagnitude</span>
+     <li><span class="dfn-paneled" id="term-for-thermodynamictemperaturemagnitude">thermodynamictemperaturemagnitude</span>
     </ul>
    <li>
     <a data-link-type="biblio">[http://iupac.org/metrology]</a> defines the following terms:

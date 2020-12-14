@@ -1,7 +1,7 @@
 <!doctype html><html lang="en">
  <head>
   <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-  <title>80000-4-magnitudes1</title>
+  <title>ISO 80000-4 Magnitudes-2</title>
   <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
 <style data-fill-with="stylesheet">/******************************************************************************
  *                   Style sheet for the W3C specifications                   *
@@ -1485,8 +1485,8 @@ Possible extra rowspan handling
 	}
 </style>
   <meta content="Bikeshed version c5172e83, updated Fri Nov 20 15:35:20 2020 -0800" name="generator">
-  <link href="https://opencaesar.github.io/core-vocabularies//src/oml/iso.org/80000-4-magnitudes1" rel="canonical">
-  <meta content="174f68ba843989f4f5c4c339e20918ccbaca026a" name="document-revision">
+  <link href="https://opencaesar.github.io/core-vocabularies//src/oml/iso.org/80000-4-magnitudes-2" rel="canonical">
+  <meta content="fdbf7c86712e057d3602237617c70a9e9c8ae152" name="document-revision">
 <style>
 a[data-link-type=biblio] {
     white-space: pre-wrap;
@@ -1935,16 +1935,16 @@ dfn > a.self-link::before      { content: "#"; }
  <body class="h-entry">
   <div class="head">
    <p data-fill-with="logo"><a class="logo" href="https://www.openapis.org/"><img alt="OpenAPI Initiative" height="48" src="https://opencaesar.github.io/oml/images/oml.svg"></a></p>
-   <h1 class="p-name no-ref" id="title">80000-4-magnitudes1</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2020-12-13">13 December 2020</time></span></h2>
+   <h1 class="p-name no-ref" id="title">ISO 80000-4 Magnitudes-2</h1>
+   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2020-12-14">14 December 2020</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
-     <dd><a class="u-url" href="https://opencaesar.github.io/core-vocabularies//src/oml/iso.org/80000-4-magnitudes1">https://opencaesar.github.io/core-vocabularies//src/oml/iso.org/80000-4-magnitudes1</a>
+     <dd><a class="u-url" href="https://opencaesar.github.io/core-vocabularies//src/oml/iso.org/80000-4-magnitudes-2">https://opencaesar.github.io/core-vocabularies//src/oml/iso.org/80000-4-magnitudes-2</a>
      <dt class="editor">Editor:
-     <dd class="editor p-author h-card vcard"><span class="p-name fn">Unknown</span>
+     <dd class="editor p-author h-card vcard"><span class="p-name fn">Jet Propulsion Laboratory</span>
      <dt>Copyright:
-     <dd>
+     <dd>Copyright 2010-2020, by the California Institute of Technology. ALL RIGHTS RESERVED. United States Government Sponsorship acknowledged. Any commercial use must be negotiated with the Office of Technology Transfer at the California Institute of Technology. This software may be subject to U.S. export control laws. By accepting this software, the user agrees to comply with all applicable U.S. export laws and regulations. User has the responsibility to obtain export licenses, or other export authority as may be required before exporting such information to foreign countries or providing access to foreign persons.
     </dl>
    </div>
    <div data-fill-with="warning"></div>
@@ -1952,10 +1952,9 @@ dfn > a.self-link::before      { content: "#"; }
   </div>
   <div class="p-summary" data-fill-with="abstract">
    <h2 class="no-num no-toc no-ref heading settled" id="abstract"><span class="content">Abstract</span></h2>
-   <p>This vocabulary provides convenience specializations of every metrology:Magnitude
+   <p>The ISO 80000-4 magnitudes-2 vocabulary. It provides convenience specializations of every metrology:IsReflexiveMagnitudeOf as relation entities for every metrology:MeasurementUnit defined in http://iso.org/80000-4-unit.
 
- defined in in http://iso.org/80000-4-units.</p>
-   <p>Note that this vocabulary is an alternative to http://iso.org/80000-4-magnitudes2.</p>
+ Note that this vocabulary is an alternative to http://iso.org/80000-4-magnitudes-1.</p>
   </div>
   <div data-fill-with="at-risk"></div>
   <nav data-fill-with="table-of-contents" id="toc">
@@ -1963,7 +1962,7 @@ dfn > a.self-link::before      { content: "#"; }
    <ol class="toc" role="directory">
     <li><a href="#Namespace"><span class="secno">1</span> <span class="content">Namespace</span></a>
     <li>
-     <a href="#concepts"><span class="secno">2</span> <span class="content">Concepts</span></a>
+     <a href="#Relations"><span class="secno">2</span> <span class="content">Relation Entities</span></a>
      <ol class="toc">
       <li><a href="#Gram-magnitude"><span class="secno">2.1</span> <span class="content"><span>gram-magnitude</span></span></a>
       <li><a href="#Kilogram-magnitude"><span class="secno">2.2</span> <span class="content"><span>kilogram-magnitude</span></span></a>
@@ -1986,119 +1985,224 @@ dfn > a.self-link::before      { content: "#"; }
     <h2 class="heading settled" data-level="1" id="Namespace"><span class="secno">1. </span><span class="content">Namespace</span><a class="self-link" href="#Namespace"></a></h2>
     <ul>
      <li data-md>
-      <p>80000-4-magnitudes1: <a href="80000-4-magnitudes1.html">http://iso.org/80000-4-magnitudes1</a></p>
+      <p>80000-4-magnitudes-2: <a href="80000-4-magnitudes-2.html">http://iso.org/80000-4-magnitudes-2</a></p>
     </ul>
-    <h2 class="heading settled" data-level="2" id="concepts"><span class="secno">2. </span><span class="content">Concepts</span><a class="self-link" href="#concepts"></a></h2>
+    <h2 class="heading settled" data-level="2" id="Relations"><span class="secno">2. </span><span class="content">Relation Entities</span><a class="self-link" href="#Relations"></a></h2>
     <h3 class="heading settled" data-level="2.1" id="Gram-magnitude"><span class="secno">2.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="gram-magnitude">gram-magnitude<a class="self-link" href="#gram-magnitude"></a></dfn></span><a class="self-link" href="#Gram-magnitude"></a></h3>
     <table class="def">
      <tbody>
       <tr>
+       <th>Source
+       <td><a data-link-type="dfn" href="80000-4-magnitudes-2.html#gram-magnitude" id="ref-for-gram-magnitude">gram-magnitude</a>
+      <tr>
+       <th>Target
+       <td><a data-link-type="dfn" href="../iupac.org/metrology.html#unitaryquantity" id="ref-for-unitaryquantity">metrology:UnitaryQuantity</a>
+      <tr>
        <th>Supertypes
        <td>
         <ul>
+         <li><a data-link-type="dfn" href="../iupac.org/metrology.html#isreflexivemagnitudeof" id="ref-for-isreflexivemagnitudeof">metrology:IsReflexiveMagnitudeOf</a>
          <li><a data-link-type="dfn" href="80000-4-units.html#massmagnitude" id="ref-for-massmagnitude">80000-4-units:MassMagnitude</a>
         </ul>
+      <tr>
+       <th>Forward Relation
+       <td><dfn class="idl-code" data-dfn-for="gram-magnitude" data-dfn-type="attribute" data-export id="dom-gram-magnitude-isgrammagnitudeof"><code>isGramMagnitudeOf</code><a class="self-link" href="#dom-gram-magnitude-isgrammagnitudeof"></a></dfn> 
+      <tr>
+       <th>Attributes
+       <td>
+        <ul></ul>
       <tr>
        <th>Relations with source
        <td>
         <ul>
          <li>gram-magnitude ← <a data-link-type="dfn" href="../iupac.org/metrology.html#hasreference" id="ref-for-hasreference">metrology:HasReference</a> → <a data-link-type="dfn" href="../iupac.org/metrology.html#reference" id="ref-for-reference">metrology:Reference</a> (range restricted to instance <a data-link-type="dfn" href="80000-4-instances.html#gram" id="ref-for-gram">80000-4-instances:gram</a>) 
+         <li>gram-magnitude ← <a data-link-type="dfn" href="80000-4-magnitudes-2.html#gram-magnitude" id="ref-for-gram-magnitude①">gram-magnitude</a> → <a data-link-type="dfn" href="../iupac.org/metrology.html#unitaryquantity" id="ref-for-unitaryquantity①">metrology:UnitaryQuantity</a> 
         </ul>
     </table>
     <h3 class="heading settled" data-level="2.2" id="Kilogram-magnitude"><span class="secno">2.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="kilogram-magnitude">kilogram-magnitude<a class="self-link" href="#kilogram-magnitude"></a></dfn></span><a class="self-link" href="#Kilogram-magnitude"></a></h3>
     <table class="def">
      <tbody>
       <tr>
+       <th>Source
+       <td><a data-link-type="dfn" href="80000-4-magnitudes-2.html#kilogram-magnitude" id="ref-for-kilogram-magnitude">kilogram-magnitude</a>
+      <tr>
+       <th>Target
+       <td><a data-link-type="dfn" href="../iupac.org/metrology.html#unitaryquantity" id="ref-for-unitaryquantity②">metrology:UnitaryQuantity</a>
+      <tr>
        <th>Supertypes
        <td>
         <ul>
+         <li><a data-link-type="dfn" href="../iupac.org/metrology.html#isreflexivemagnitudeof" id="ref-for-isreflexivemagnitudeof①">metrology:IsReflexiveMagnitudeOf</a>
          <li><a data-link-type="dfn" href="80000-4-units.html#massmagnitude" id="ref-for-massmagnitude①">80000-4-units:MassMagnitude</a>
         </ul>
+      <tr>
+       <th>Forward Relation
+       <td><dfn class="idl-code" data-dfn-for="kilogram-magnitude" data-dfn-type="attribute" data-export id="dom-kilogram-magnitude-iskilogrammagnitudeof"><code>isKilogramMagnitudeOf</code><a class="self-link" href="#dom-kilogram-magnitude-iskilogrammagnitudeof"></a></dfn> 
+      <tr>
+       <th>Attributes
+       <td>
+        <ul></ul>
       <tr>
        <th>Relations with source
        <td>
         <ul>
          <li>kilogram-magnitude ← <a data-link-type="dfn" href="../iupac.org/metrology.html#hasreference" id="ref-for-hasreference①">metrology:HasReference</a> → <a data-link-type="dfn" href="../iupac.org/metrology.html#reference" id="ref-for-reference①">metrology:Reference</a> (range restricted to instance <a data-link-type="dfn" href="80000-4-instances.html#kilogram" id="ref-for-kilogram">80000-4-instances:kilogram</a>) 
+         <li>kilogram-magnitude ← <a data-link-type="dfn" href="80000-4-magnitudes-2.html#kilogram-magnitude" id="ref-for-kilogram-magnitude①">kilogram-magnitude</a> → <a data-link-type="dfn" href="../iupac.org/metrology.html#unitaryquantity" id="ref-for-unitaryquantity③">metrology:UnitaryQuantity</a> 
         </ul>
     </table>
     <h3 class="heading settled" data-level="2.3" id="Kilogram-metre-per-second-magnitude"><span class="secno">2.3. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="kilogram-metre-per-second-magnitude">kilogram-metre-per-second-magnitude<a class="self-link" href="#kilogram-metre-per-second-magnitude"></a></dfn></span><a class="self-link" href="#Kilogram-metre-per-second-magnitude"></a></h3>
     <table class="def">
      <tbody>
       <tr>
+       <th>Source
+       <td><a data-link-type="dfn" href="80000-4-magnitudes-2.html#kilogram-metre-per-second-magnitude" id="ref-for-kilogram-metre-per-second-magnitude">kilogram-metre-per-second-magnitude</a>
+      <tr>
+       <th>Target
+       <td><a data-link-type="dfn" href="../iupac.org/metrology.html#unitaryquantity" id="ref-for-unitaryquantity④">metrology:UnitaryQuantity</a>
+      <tr>
        <th>Supertypes
        <td>
         <ul>
+         <li><a data-link-type="dfn" href="../iupac.org/metrology.html#isreflexivemagnitudeof" id="ref-for-isreflexivemagnitudeof②">metrology:IsReflexiveMagnitudeOf</a>
          <li><a data-link-type="dfn" href="80000-4-units.html#momentummagnitude" id="ref-for-momentummagnitude">80000-4-units:MomentumMagnitude</a>
         </ul>
+      <tr>
+       <th>Forward Relation
+       <td><dfn class="idl-code" data-dfn-for="kilogram-metre-per-second-magnitude" data-dfn-type="attribute" data-export id="dom-kilogram-metre-per-second-magnitude-iskilogrammetrepersecondmagnitudeof"><code>isKilogramMetrePerSecondMagnitudeOf</code><a class="self-link" href="#dom-kilogram-metre-per-second-magnitude-iskilogrammetrepersecondmagnitudeof"></a></dfn> 
+      <tr>
+       <th>Attributes
+       <td>
+        <ul></ul>
       <tr>
        <th>Relations with source
        <td>
         <ul>
          <li>kilogram-metre-per-second-magnitude ← <a data-link-type="dfn" href="../iupac.org/metrology.html#hasreference" id="ref-for-hasreference②">metrology:HasReference</a> → <a data-link-type="dfn" href="../iupac.org/metrology.html#reference" id="ref-for-reference②">metrology:Reference</a> (range restricted to instance <a data-link-type="dfn" href="80000-4-instances.html#kilogram-metre-per-second" id="ref-for-kilogram-metre-per-second">80000-4-instances:kilogram-metre-per-second</a>) 
+         <li>kilogram-metre-per-second-magnitude ← <a data-link-type="dfn" href="80000-4-magnitudes-2.html#kilogram-metre-per-second-magnitude" id="ref-for-kilogram-metre-per-second-magnitude①">kilogram-metre-per-second-magnitude</a> → <a data-link-type="dfn" href="../iupac.org/metrology.html#unitaryquantity" id="ref-for-unitaryquantity⑤">metrology:UnitaryQuantity</a> 
         </ul>
     </table>
     <h3 class="heading settled" data-level="2.4" id="Newton-magnitude"><span class="secno">2.4. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="newton-magnitude">newton-magnitude<a class="self-link" href="#newton-magnitude"></a></dfn></span><a class="self-link" href="#Newton-magnitude"></a></h3>
     <table class="def">
      <tbody>
       <tr>
+       <th>Source
+       <td><a data-link-type="dfn" href="80000-4-magnitudes-2.html#newton-magnitude" id="ref-for-newton-magnitude">newton-magnitude</a>
+      <tr>
+       <th>Target
+       <td><a data-link-type="dfn" href="../iupac.org/metrology.html#unitaryquantity" id="ref-for-unitaryquantity⑥">metrology:UnitaryQuantity</a>
+      <tr>
        <th>Supertypes
        <td>
         <ul>
          <li><a data-link-type="dfn" href="80000-4-units.html#forcemagnitude" id="ref-for-forcemagnitude">80000-4-units:ForceMagnitude</a>
+         <li><a data-link-type="dfn" href="../iupac.org/metrology.html#isreflexivemagnitudeof" id="ref-for-isreflexivemagnitudeof③">metrology:IsReflexiveMagnitudeOf</a>
         </ul>
+      <tr>
+       <th>Forward Relation
+       <td><dfn class="idl-code" data-dfn-for="newton-magnitude" data-dfn-type="attribute" data-export id="dom-newton-magnitude-isnewtonmagnitudeof"><code>isNewtonMagnitudeOf</code><a class="self-link" href="#dom-newton-magnitude-isnewtonmagnitudeof"></a></dfn> 
+      <tr>
+       <th>Attributes
+       <td>
+        <ul></ul>
       <tr>
        <th>Relations with source
        <td>
         <ul>
          <li>newton-magnitude ← <a data-link-type="dfn" href="../iupac.org/metrology.html#hasreference" id="ref-for-hasreference③">metrology:HasReference</a> → <a data-link-type="dfn" href="../iupac.org/metrology.html#reference" id="ref-for-reference③">metrology:Reference</a> (range restricted to instance <a data-link-type="dfn" href="80000-4-instances.html#newton" id="ref-for-newton">80000-4-instances:newton</a>) 
+         <li>newton-magnitude ← <a data-link-type="dfn" href="80000-4-magnitudes-2.html#newton-magnitude" id="ref-for-newton-magnitude①">newton-magnitude</a> → <a data-link-type="dfn" href="../iupac.org/metrology.html#unitaryquantity" id="ref-for-unitaryquantity⑦">metrology:UnitaryQuantity</a> 
         </ul>
     </table>
     <h3 class="heading settled" data-level="2.5" id="Newton-millisecond-magnitude"><span class="secno">2.5. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="newton-millisecond-magnitude">newton-millisecond-magnitude<a class="self-link" href="#newton-millisecond-magnitude"></a></dfn></span><a class="self-link" href="#Newton-millisecond-magnitude"></a></h3>
     <table class="def">
      <tbody>
       <tr>
+       <th>Source
+       <td><a data-link-type="dfn" href="80000-4-magnitudes-2.html#newton-millisecond-magnitude" id="ref-for-newton-millisecond-magnitude">newton-millisecond-magnitude</a>
+      <tr>
+       <th>Target
+       <td><a data-link-type="dfn" href="../iupac.org/metrology.html#unitaryquantity" id="ref-for-unitaryquantity⑧">metrology:UnitaryQuantity</a>
+      <tr>
        <th>Supertypes
        <td>
         <ul>
          <li><a data-link-type="dfn" href="80000-4-units.html#impulsemagnitude" id="ref-for-impulsemagnitude">80000-4-units:ImpulseMagnitude</a>
+         <li><a data-link-type="dfn" href="../iupac.org/metrology.html#isreflexivemagnitudeof" id="ref-for-isreflexivemagnitudeof④">metrology:IsReflexiveMagnitudeOf</a>
         </ul>
+      <tr>
+       <th>Forward Relation
+       <td><dfn class="idl-code" data-dfn-for="newton-millisecond-magnitude" data-dfn-type="attribute" data-export id="dom-newton-millisecond-magnitude-isnewtonmillisecondmagnitudeof"><code>isNewtonMilliSecondMagnitudeOf</code><a class="self-link" href="#dom-newton-millisecond-magnitude-isnewtonmillisecondmagnitudeof"></a></dfn> 
+      <tr>
+       <th>Attributes
+       <td>
+        <ul></ul>
       <tr>
        <th>Relations with source
        <td>
         <ul>
          <li>newton-millisecond-magnitude ← <a data-link-type="dfn" href="../iupac.org/metrology.html#hasreference" id="ref-for-hasreference④">metrology:HasReference</a> → <a data-link-type="dfn" href="../iupac.org/metrology.html#reference" id="ref-for-reference④">metrology:Reference</a> (range restricted to instance <a data-link-type="dfn" href="80000-4-instances.html#newton-second" id="ref-for-newton-second">80000-4-instances:newton-second</a>) 
+         <li>newton-millisecond-magnitude ← <a data-link-type="dfn" href="80000-4-magnitudes-2.html#newton-millisecond-magnitude" id="ref-for-newton-millisecond-magnitude①">newton-millisecond-magnitude</a> → <a data-link-type="dfn" href="../iupac.org/metrology.html#unitaryquantity" id="ref-for-unitaryquantity⑨">metrology:UnitaryQuantity</a> 
         </ul>
     </table>
     <h3 class="heading settled" data-level="2.6" id="Newton-second-magnitude"><span class="secno">2.6. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="newton-second-magnitude">newton-second-magnitude<a class="self-link" href="#newton-second-magnitude"></a></dfn></span><a class="self-link" href="#Newton-second-magnitude"></a></h3>
     <table class="def">
      <tbody>
       <tr>
+       <th>Source
+       <td><a data-link-type="dfn" href="80000-4-magnitudes-2.html#newton-second-magnitude" id="ref-for-newton-second-magnitude">newton-second-magnitude</a>
+      <tr>
+       <th>Target
+       <td><a data-link-type="dfn" href="../iupac.org/metrology.html#unitaryquantity" id="ref-for-unitaryquantity①⓪">metrology:UnitaryQuantity</a>
+      <tr>
        <th>Supertypes
        <td>
         <ul>
          <li><a data-link-type="dfn" href="80000-4-units.html#impulsemagnitude" id="ref-for-impulsemagnitude①">80000-4-units:ImpulseMagnitude</a>
+         <li><a data-link-type="dfn" href="../iupac.org/metrology.html#isreflexivemagnitudeof" id="ref-for-isreflexivemagnitudeof⑤">metrology:IsReflexiveMagnitudeOf</a>
         </ul>
+      <tr>
+       <th>Forward Relation
+       <td><dfn class="idl-code" data-dfn-for="newton-second-magnitude" data-dfn-type="attribute" data-export id="dom-newton-second-magnitude-isnewtonsecondmagnitudeof"><code>isNewtonSecondMagnitudeOf</code><a class="self-link" href="#dom-newton-second-magnitude-isnewtonsecondmagnitudeof"></a></dfn> 
+      <tr>
+       <th>Attributes
+       <td>
+        <ul></ul>
       <tr>
        <th>Relations with source
        <td>
         <ul>
          <li>newton-second-magnitude ← <a data-link-type="dfn" href="../iupac.org/metrology.html#hasreference" id="ref-for-hasreference⑤">metrology:HasReference</a> → <a data-link-type="dfn" href="../iupac.org/metrology.html#reference" id="ref-for-reference⑤">metrology:Reference</a> (range restricted to instance <a data-link-type="dfn" href="80000-4-instances.html#newton-second" id="ref-for-newton-second①">80000-4-instances:newton-second</a>) 
+         <li>newton-second-magnitude ← <a data-link-type="dfn" href="80000-4-magnitudes-2.html#newton-second-magnitude" id="ref-for-newton-second-magnitude①">newton-second-magnitude</a> → <a data-link-type="dfn" href="../iupac.org/metrology.html#unitaryquantity" id="ref-for-unitaryquantity①①">metrology:UnitaryQuantity</a> 
         </ul>
     </table>
     <h3 class="heading settled" data-level="2.7" id="Watt-magnitude"><span class="secno">2.7. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="watt-magnitude">watt-magnitude<a class="self-link" href="#watt-magnitude"></a></dfn></span><a class="self-link" href="#Watt-magnitude"></a></h3>
     <table class="def">
      <tbody>
       <tr>
+       <th>Source
+       <td><a data-link-type="dfn" href="80000-4-magnitudes-2.html#watt-magnitude" id="ref-for-watt-magnitude">watt-magnitude</a>
+      <tr>
+       <th>Target
+       <td><a data-link-type="dfn" href="../iupac.org/metrology.html#unitaryquantity" id="ref-for-unitaryquantity①②">metrology:UnitaryQuantity</a>
+      <tr>
        <th>Supertypes
        <td>
         <ul>
+         <li><a data-link-type="dfn" href="../iupac.org/metrology.html#isreflexivemagnitudeof" id="ref-for-isreflexivemagnitudeof⑥">metrology:IsReflexiveMagnitudeOf</a>
          <li><a data-link-type="dfn" href="80000-4-units.html#powermagnitude" id="ref-for-powermagnitude">80000-4-units:PowerMagnitude</a>
         </ul>
+      <tr>
+       <th>Forward Relation
+       <td><dfn class="idl-code" data-dfn-for="watt-magnitude" data-dfn-type="attribute" data-export id="dom-watt-magnitude-iswattmagnitudeof"><code>isWattMagnitudeOf</code><a class="self-link" href="#dom-watt-magnitude-iswattmagnitudeof"></a></dfn> 
+      <tr>
+       <th>Attributes
+       <td>
+        <ul></ul>
       <tr>
        <th>Relations with source
        <td>
         <ul>
          <li>watt-magnitude ← <a data-link-type="dfn" href="../iupac.org/metrology.html#hasreference" id="ref-for-hasreference⑥">metrology:HasReference</a> → <a data-link-type="dfn" href="../iupac.org/metrology.html#reference" id="ref-for-reference⑥">metrology:Reference</a> (range restricted to instance <a data-link-type="dfn" href="80000-4-instances.html#watt" id="ref-for-watt">80000-4-instances:watt</a>) 
+         <li>watt-magnitude ← <a data-link-type="dfn" href="80000-4-magnitudes-2.html#watt-magnitude" id="ref-for-watt-magnitude①">watt-magnitude</a> → <a data-link-type="dfn" href="../iupac.org/metrology.html#unitaryquantity" id="ref-for-unitaryquantity①③">metrology:UnitaryQuantity</a> 
         </ul>
     </table>
    </div>
@@ -2236,6 +2340,13 @@ dfn > a.self-link::before      { content: "#"; }
   <h3 class="no-num no-ref heading settled" id="index-defined-here"><span class="content">Terms defined by this specification</span><a class="self-link" href="#index-defined-here"></a></h3>
   <ul class="index">
    <li><a href="#gram-magnitude">gram-magnitude</a><span>, in §2.1</span>
+   <li><a href="#dom-gram-magnitude-isgrammagnitudeof">isGramMagnitudeOf</a><span>, in §2.1</span>
+   <li><a href="#dom-kilogram-magnitude-iskilogrammagnitudeof">isKilogramMagnitudeOf</a><span>, in §2.2</span>
+   <li><a href="#dom-kilogram-metre-per-second-magnitude-iskilogrammetrepersecondmagnitudeof">isKilogramMetrePerSecondMagnitudeOf</a><span>, in §2.3</span>
+   <li><a href="#dom-newton-magnitude-isnewtonmagnitudeof">isNewtonMagnitudeOf</a><span>, in §2.4</span>
+   <li><a href="#dom-newton-millisecond-magnitude-isnewtonmillisecondmagnitudeof">isNewtonMilliSecondMagnitudeOf</a><span>, in §2.5</span>
+   <li><a href="#dom-newton-second-magnitude-isnewtonsecondmagnitudeof">isNewtonSecondMagnitudeOf</a><span>, in §2.6</span>
+   <li><a href="#dom-watt-magnitude-iswattmagnitudeof">isWattMagnitudeOf</a><span>, in §2.7</span>
    <li><a href="#kilogram-magnitude">kilogram-magnitude</a><span>, in §2.2</span>
    <li><a href="#kilogram-metre-per-second-magnitude">kilogram-metre-per-second-magnitude</a><span>, in §2.3</span>
    <li><a href="#newton-magnitude">newton-magnitude</a><span>, in §2.4</span>
@@ -2278,6 +2389,48 @@ dfn > a.self-link::before      { content: "#"; }
    <a href="80000-4-instances.html#watt">80000-4-instances.html#watt</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-watt">2.7. watt-magnitude</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-gram-magnitude">
+   <a href="80000-4-magnitudes-2.html#gram-magnitude">80000-4-magnitudes-2.html#gram-magnitude</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-gram-magnitude">2.1. gram-magnitude</a> <a href="#ref-for-gram-magnitude①">(2)</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-kilogram-magnitude">
+   <a href="80000-4-magnitudes-2.html#kilogram-magnitude">80000-4-magnitudes-2.html#kilogram-magnitude</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-kilogram-magnitude">2.2. kilogram-magnitude</a> <a href="#ref-for-kilogram-magnitude①">(2)</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-kilogram-metre-per-second-magnitude">
+   <a href="80000-4-magnitudes-2.html#kilogram-metre-per-second-magnitude">80000-4-magnitudes-2.html#kilogram-metre-per-second-magnitude</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-kilogram-metre-per-second-magnitude">2.3. kilogram-metre-per-second-magnitude</a> <a href="#ref-for-kilogram-metre-per-second-magnitude①">(2)</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-newton-magnitude">
+   <a href="80000-4-magnitudes-2.html#newton-magnitude">80000-4-magnitudes-2.html#newton-magnitude</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-newton-magnitude">2.4. newton-magnitude</a> <a href="#ref-for-newton-magnitude①">(2)</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-newton-millisecond-magnitude">
+   <a href="80000-4-magnitudes-2.html#newton-millisecond-magnitude">80000-4-magnitudes-2.html#newton-millisecond-magnitude</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-newton-millisecond-magnitude">2.5. newton-millisecond-magnitude</a> <a href="#ref-for-newton-millisecond-magnitude①">(2)</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-newton-second-magnitude">
+   <a href="80000-4-magnitudes-2.html#newton-second-magnitude">80000-4-magnitudes-2.html#newton-second-magnitude</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-newton-second-magnitude">2.6. newton-second-magnitude</a> <a href="#ref-for-newton-second-magnitude①">(2)</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-watt-magnitude">
+   <a href="80000-4-magnitudes-2.html#watt-magnitude">80000-4-magnitudes-2.html#watt-magnitude</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-watt-magnitude">2.7. watt-magnitude</a> <a href="#ref-for-watt-magnitude①">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-forcemagnitude">
@@ -2324,6 +2477,18 @@ dfn > a.self-link::before      { content: "#"; }
     <li><a href="#ref-for-hasreference⑥">2.7. watt-magnitude</a>
    </ul>
   </aside>
+  <aside class="dfn-panel" data-for="term-for-isreflexivemagnitudeof">
+   <a href="../iupac.org/metrology.html#isreflexivemagnitudeof">../iupac.org/metrology.html#isreflexivemagnitudeof</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-isreflexivemagnitudeof">2.1. gram-magnitude</a>
+    <li><a href="#ref-for-isreflexivemagnitudeof①">2.2. kilogram-magnitude</a>
+    <li><a href="#ref-for-isreflexivemagnitudeof②">2.3. kilogram-metre-per-second-magnitude</a>
+    <li><a href="#ref-for-isreflexivemagnitudeof③">2.4. newton-magnitude</a>
+    <li><a href="#ref-for-isreflexivemagnitudeof④">2.5. newton-millisecond-magnitude</a>
+    <li><a href="#ref-for-isreflexivemagnitudeof⑤">2.6. newton-second-magnitude</a>
+    <li><a href="#ref-for-isreflexivemagnitudeof⑥">2.7. watt-magnitude</a>
+   </ul>
+  </aside>
   <aside class="dfn-panel" data-for="term-for-reference">
    <a href="../iupac.org/metrology.html#reference">../iupac.org/metrology.html#reference</a><b>Referenced in:</b>
    <ul>
@@ -2334,6 +2499,18 @@ dfn > a.self-link::before      { content: "#"; }
     <li><a href="#ref-for-reference④">2.5. newton-millisecond-magnitude</a>
     <li><a href="#ref-for-reference⑤">2.6. newton-second-magnitude</a>
     <li><a href="#ref-for-reference⑥">2.7. watt-magnitude</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-unitaryquantity">
+   <a href="../iupac.org/metrology.html#unitaryquantity">../iupac.org/metrology.html#unitaryquantity</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-unitaryquantity">2.1. gram-magnitude</a> <a href="#ref-for-unitaryquantity①">(2)</a>
+    <li><a href="#ref-for-unitaryquantity②">2.2. kilogram-magnitude</a> <a href="#ref-for-unitaryquantity③">(2)</a>
+    <li><a href="#ref-for-unitaryquantity④">2.3. kilogram-metre-per-second-magnitude</a> <a href="#ref-for-unitaryquantity⑤">(2)</a>
+    <li><a href="#ref-for-unitaryquantity⑥">2.4. newton-magnitude</a> <a href="#ref-for-unitaryquantity⑦">(2)</a>
+    <li><a href="#ref-for-unitaryquantity⑧">2.5. newton-millisecond-magnitude</a> <a href="#ref-for-unitaryquantity⑨">(2)</a>
+    <li><a href="#ref-for-unitaryquantity①⓪">2.6. newton-second-magnitude</a> <a href="#ref-for-unitaryquantity①①">(2)</a>
+    <li><a href="#ref-for-unitaryquantity①②">2.7. watt-magnitude</a> <a href="#ref-for-unitaryquantity①③">(2)</a>
    </ul>
   </aside>
   <h3 class="no-num no-ref heading settled" id="index-defined-elsewhere"><span class="content">Terms defined by reference</span><a class="self-link" href="#index-defined-elsewhere"></a></h3>
@@ -2349,6 +2526,17 @@ dfn > a.self-link::before      { content: "#"; }
      <li><span class="dfn-paneled" id="term-for-watt">watt</span>
     </ul>
    <li>
+    <a data-link-type="biblio">[http://iso.org/80000-4-magnitudes-2]</a> defines the following terms:
+    <ul>
+     <li><span class="dfn-paneled" id="term-for-gram-magnitude">gram-magnitude</span>
+     <li><span class="dfn-paneled" id="term-for-kilogram-magnitude">kilogram-magnitude</span>
+     <li><span class="dfn-paneled" id="term-for-kilogram-metre-per-second-magnitude">kilogram-metre-per-second-magnitude</span>
+     <li><span class="dfn-paneled" id="term-for-newton-magnitude">newton-magnitude</span>
+     <li><span class="dfn-paneled" id="term-for-newton-millisecond-magnitude">newton-millisecond-magnitude</span>
+     <li><span class="dfn-paneled" id="term-for-newton-second-magnitude">newton-second-magnitude</span>
+     <li><span class="dfn-paneled" id="term-for-watt-magnitude">watt-magnitude</span>
+    </ul>
+   <li>
     <a data-link-type="biblio">[http://iso.org/80000-4-units]</a> defines the following terms:
     <ul>
      <li><span class="dfn-paneled" id="term-for-forcemagnitude">forcemagnitude</span>
@@ -2361,7 +2549,9 @@ dfn > a.self-link::before      { content: "#"; }
     <a data-link-type="biblio">[http://iupac.org/metrology]</a> defines the following terms:
     <ul>
      <li><span class="dfn-paneled" id="term-for-hasreference">hasreference</span>
+     <li><span class="dfn-paneled" id="term-for-isreflexivemagnitudeof">isreflexivemagnitudeof</span>
      <li><span class="dfn-paneled" id="term-for-reference">reference</span>
+     <li><span class="dfn-paneled" id="term-for-unitaryquantity">unitaryquantity</span>
     </ul>
   </ul>
 <script>/* script-dfn-panel */

@@ -1,7 +1,7 @@
 <!doctype html><html lang="en">
  <head>
   <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-  <title>80000-3-magnitudes1</title>
+  <title>ISO 80000-4 Magnitudes-1</title>
   <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
 <style data-fill-with="stylesheet">/******************************************************************************
  *                   Style sheet for the W3C specifications                   *
@@ -1485,8 +1485,8 @@ Possible extra rowspan handling
 	}
 </style>
   <meta content="Bikeshed version c5172e83, updated Fri Nov 20 15:35:20 2020 -0800" name="generator">
-  <link href="https://opencaesar.github.io/core-vocabularies//src/oml/iso.org/80000-3-magnitudes1" rel="canonical">
-  <meta content="174f68ba843989f4f5c4c339e20918ccbaca026a" name="document-revision">
+  <link href="https://opencaesar.github.io/core-vocabularies//src/oml/iso.org/80000-4-magnitudes-1" rel="canonical">
+  <meta content="fdbf7c86712e057d3602237617c70a9e9c8ae152" name="document-revision">
 <style>
 a[data-link-type=biblio] {
     white-space: pre-wrap;
@@ -1935,16 +1935,16 @@ dfn > a.self-link::before      { content: "#"; }
  <body class="h-entry">
   <div class="head">
    <p data-fill-with="logo"><a class="logo" href="https://www.openapis.org/"><img alt="OpenAPI Initiative" height="48" src="https://opencaesar.github.io/oml/images/oml.svg"></a></p>
-   <h1 class="p-name no-ref" id="title">80000-3-magnitudes1</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2020-12-13">13 December 2020</time></span></h2>
+   <h1 class="p-name no-ref" id="title">ISO 80000-4 Magnitudes-1</h1>
+   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2020-12-14">14 December 2020</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
-     <dd><a class="u-url" href="https://opencaesar.github.io/core-vocabularies//src/oml/iso.org/80000-3-magnitudes1">https://opencaesar.github.io/core-vocabularies//src/oml/iso.org/80000-3-magnitudes1</a>
+     <dd><a class="u-url" href="https://opencaesar.github.io/core-vocabularies//src/oml/iso.org/80000-4-magnitudes-1">https://opencaesar.github.io/core-vocabularies//src/oml/iso.org/80000-4-magnitudes-1</a>
      <dt class="editor">Editor:
-     <dd class="editor p-author h-card vcard"><span class="p-name fn">Unknown</span>
+     <dd class="editor p-author h-card vcard"><span class="p-name fn">Jet Propulsion Laboratory</span>
      <dt>Copyright:
-     <dd>
+     <dd>Copyright 2010-2020, by the California Institute of Technology. ALL RIGHTS RESERVED. United States Government Sponsorship acknowledged. Any commercial use must be negotiated with the Office of Technology Transfer at the California Institute of Technology. This software may be subject to U.S. export control laws. By accepting this software, the user agrees to comply with all applicable U.S. export laws and regulations. User has the responsibility to obtain export licenses, or other export authority as may be required before exporting such information to foreign countries or providing access to foreign persons.
     </dl>
    </div>
    <div data-fill-with="warning"></div>
@@ -1952,10 +1952,9 @@ dfn > a.self-link::before      { content: "#"; }
   </div>
   <div class="p-summary" data-fill-with="abstract">
    <h2 class="no-num no-toc no-ref heading settled" id="abstract"><span class="content">Abstract</span></h2>
-   <p>This vocabulary provides convenience specializations of every metrology:Magnitude
+   <p>The ISO 80000-4 magnitudes-1 vocabulary. It provides convenience specializations of every metrology:Magnitude defined in http://iso.org/80000-4-units.
 
- defined in http://iso.org/80000-3-units.</p>
-   <p>Note that this vocabulary is an alternative to http://iso.org/80000-3-magnitudes2.</p>
+ Note that this vocabulary is an alternative to http://iso.org/80000-4-magnitudes-2.</p>
   </div>
   <div data-fill-with="at-risk"></div>
   <nav data-fill-with="table-of-contents" id="toc">
@@ -1965,17 +1964,13 @@ dfn > a.self-link::before      { content: "#"; }
     <li>
      <a href="#concepts"><span class="secno">2</span> <span class="content">Concepts</span></a>
      <ol class="toc">
-      <li><a href="#Hertz-magnitude"><span class="secno">2.1</span> <span class="content"><span>hertz-magnitude</span></span></a>
-      <li><a href="#Hour-magnitude"><span class="secno">2.2</span> <span class="content"><span>hour-magnitude</span></span></a>
-      <li><a href="#Kilometre-magnitude"><span class="secno">2.3</span> <span class="content"><span>kilometre-magnitude</span></span></a>
-      <li><a href="#Kilometre-per-second-magnitude"><span class="secno">2.4</span> <span class="content"><span>kilometre-per-second-magnitude</span></span></a>
-      <li><a href="#Metre-magnitude"><span class="secno">2.5</span> <span class="content"><span>metre-magnitude</span></span></a>
-      <li><a href="#Metre-per-second-magnitude"><span class="secno">2.6</span> <span class="content"><span>metre-per-second-magnitude</span></span></a>
-      <li><a href="#Millisecond-magnitude"><span class="secno">2.7</span> <span class="content"><span>millisecond-magnitude</span></span></a>
-      <li><a href="#Minute-magnitude"><span class="secno">2.8</span> <span class="content"><span>minute-magnitude</span></span></a>
-      <li><a href="#Radian-magnitude"><span class="secno">2.9</span> <span class="content"><span>radian-magnitude</span></span></a>
-      <li><a href="#Revolution-magnitude"><span class="secno">2.10</span> <span class="content"><span>revolution-magnitude</span></span></a>
-      <li><a href="#Second-magnitude"><span class="secno">2.11</span> <span class="content"><span>second-magnitude</span></span></a>
+      <li><a href="#Gram-magnitude"><span class="secno">2.1</span> <span class="content"><span>gram-magnitude</span></span></a>
+      <li><a href="#Kilogram-magnitude"><span class="secno">2.2</span> <span class="content"><span>kilogram-magnitude</span></span></a>
+      <li><a href="#Kilogram-metre-per-second-magnitude"><span class="secno">2.3</span> <span class="content"><span>kilogram-metre-per-second-magnitude</span></span></a>
+      <li><a href="#Newton-magnitude"><span class="secno">2.4</span> <span class="content"><span>newton-magnitude</span></span></a>
+      <li><a href="#Newton-millisecond-magnitude"><span class="secno">2.5</span> <span class="content"><span>newton-millisecond-magnitude</span></span></a>
+      <li><a href="#Newton-second-magnitude"><span class="secno">2.6</span> <span class="content"><span>newton-second-magnitude</span></span></a>
+      <li><a href="#Watt-magnitude"><span class="secno">2.7</span> <span class="content"><span>watt-magnitude</span></span></a>
      </ol>
     <li>
      <a href="#index"><span class="secno"></span> <span class="content">Index</span></a>
@@ -1990,183 +1985,119 @@ dfn > a.self-link::before      { content: "#"; }
     <h2 class="heading settled" data-level="1" id="Namespace"><span class="secno">1. </span><span class="content">Namespace</span><a class="self-link" href="#Namespace"></a></h2>
     <ul>
      <li data-md>
-      <p>80000-3-magnitudes1: <a href="80000-3-magnitudes1.html">http://iso.org/80000-3-magnitudes1</a></p>
+      <p>80000-4-magnitudes-1: <a href="80000-4-magnitudes-1.html">http://iso.org/80000-4-magnitudes-1</a></p>
     </ul>
     <h2 class="heading settled" data-level="2" id="concepts"><span class="secno">2. </span><span class="content">Concepts</span><a class="self-link" href="#concepts"></a></h2>
-    <h3 class="heading settled" data-level="2.1" id="Hertz-magnitude"><span class="secno">2.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="hertz-magnitude">hertz-magnitude<a class="self-link" href="#hertz-magnitude"></a></dfn></span><a class="self-link" href="#Hertz-magnitude"></a></h3>
+    <h3 class="heading settled" data-level="2.1" id="Gram-magnitude"><span class="secno">2.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="gram-magnitude">gram-magnitude<a class="self-link" href="#gram-magnitude"></a></dfn></span><a class="self-link" href="#Gram-magnitude"></a></h3>
     <table class="def">
      <tbody>
       <tr>
        <th>Supertypes
        <td>
         <ul>
-         <li><a data-link-type="dfn" href="80000-3-units.html#frequencymagnitude" id="ref-for-frequencymagnitude">80000-3-units:FrequencyMagnitude</a>
+         <li><a data-link-type="dfn" href="80000-4-units.html#massmagnitude" id="ref-for-massmagnitude">80000-4-units:MassMagnitude</a>
         </ul>
       <tr>
        <th>Relations with source
        <td>
         <ul>
-         <li>hertz-magnitude ← <a data-link-type="dfn" href="../iupac.org/metrology.html#hasreference" id="ref-for-hasreference">metrology:HasReference</a> → <a data-link-type="dfn" href="../iupac.org/metrology.html#reference" id="ref-for-reference">metrology:Reference</a> (range restricted to instance <a data-link-type="dfn" href="80000-3-instances.html#hertz" id="ref-for-hertz">80000-3-instances:hertz</a>) 
+         <li>gram-magnitude ← <a data-link-type="dfn" href="../iupac.org/metrology.html#hasreference" id="ref-for-hasreference">metrology:HasReference</a> → <a data-link-type="dfn" href="../iupac.org/metrology.html#reference" id="ref-for-reference">metrology:Reference</a> (range restricted to instance <a data-link-type="dfn" href="80000-4-instances.html#gram" id="ref-for-gram">80000-4-instances:gram</a>) 
         </ul>
     </table>
-    <h3 class="heading settled" data-level="2.2" id="Hour-magnitude"><span class="secno">2.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="hour-magnitude">hour-magnitude<a class="self-link" href="#hour-magnitude"></a></dfn></span><a class="self-link" href="#Hour-magnitude"></a></h3>
+    <h3 class="heading settled" data-level="2.2" id="Kilogram-magnitude"><span class="secno">2.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="kilogram-magnitude">kilogram-magnitude<a class="self-link" href="#kilogram-magnitude"></a></dfn></span><a class="self-link" href="#Kilogram-magnitude"></a></h3>
     <table class="def">
      <tbody>
       <tr>
        <th>Supertypes
        <td>
         <ul>
-         <li><a data-link-type="dfn" href="80000-3-units.html#timemagnitude" id="ref-for-timemagnitude">80000-3-units:TimeMagnitude</a>
+         <li><a data-link-type="dfn" href="80000-4-units.html#massmagnitude" id="ref-for-massmagnitude①">80000-4-units:MassMagnitude</a>
         </ul>
       <tr>
        <th>Relations with source
        <td>
         <ul>
-         <li>hour-magnitude ← <a data-link-type="dfn" href="../iupac.org/metrology.html#hasreference" id="ref-for-hasreference①">metrology:HasReference</a> → <a data-link-type="dfn" href="../iupac.org/metrology.html#reference" id="ref-for-reference①">metrology:Reference</a> (range restricted to instance <a data-link-type="dfn" href="80000-3-instances.html#hour" id="ref-for-hour">80000-3-instances:hour</a>) 
+         <li>kilogram-magnitude ← <a data-link-type="dfn" href="../iupac.org/metrology.html#hasreference" id="ref-for-hasreference①">metrology:HasReference</a> → <a data-link-type="dfn" href="../iupac.org/metrology.html#reference" id="ref-for-reference①">metrology:Reference</a> (range restricted to instance <a data-link-type="dfn" href="80000-4-instances.html#kilogram" id="ref-for-kilogram">80000-4-instances:kilogram</a>) 
         </ul>
     </table>
-    <h3 class="heading settled" data-level="2.3" id="Kilometre-magnitude"><span class="secno">2.3. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="kilometre-magnitude">kilometre-magnitude<a class="self-link" href="#kilometre-magnitude"></a></dfn></span><a class="self-link" href="#Kilometre-magnitude"></a></h3>
+    <h3 class="heading settled" data-level="2.3" id="Kilogram-metre-per-second-magnitude"><span class="secno">2.3. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="kilogram-metre-per-second-magnitude">kilogram-metre-per-second-magnitude<a class="self-link" href="#kilogram-metre-per-second-magnitude"></a></dfn></span><a class="self-link" href="#Kilogram-metre-per-second-magnitude"></a></h3>
     <table class="def">
      <tbody>
       <tr>
        <th>Supertypes
        <td>
         <ul>
-         <li><a data-link-type="dfn" href="80000-3-units.html#lengthmagnitude" id="ref-for-lengthmagnitude">80000-3-units:LengthMagnitude</a>
+         <li><a data-link-type="dfn" href="80000-4-units.html#momentummagnitude" id="ref-for-momentummagnitude">80000-4-units:MomentumMagnitude</a>
         </ul>
       <tr>
        <th>Relations with source
        <td>
         <ul>
-         <li>kilometre-magnitude ← <a data-link-type="dfn" href="../iupac.org/metrology.html#hasreference" id="ref-for-hasreference②">metrology:HasReference</a> → <a data-link-type="dfn" href="../iupac.org/metrology.html#reference" id="ref-for-reference②">metrology:Reference</a> (range restricted to instance <a data-link-type="dfn" href="80000-3-instances.html#kilometre" id="ref-for-kilometre">80000-3-instances:kilometre</a>) 
+         <li>kilogram-metre-per-second-magnitude ← <a data-link-type="dfn" href="../iupac.org/metrology.html#hasreference" id="ref-for-hasreference②">metrology:HasReference</a> → <a data-link-type="dfn" href="../iupac.org/metrology.html#reference" id="ref-for-reference②">metrology:Reference</a> (range restricted to instance <a data-link-type="dfn" href="80000-4-instances.html#kilogram-metre-per-second" id="ref-for-kilogram-metre-per-second">80000-4-instances:kilogram-metre-per-second</a>) 
         </ul>
     </table>
-    <h3 class="heading settled" data-level="2.4" id="Kilometre-per-second-magnitude"><span class="secno">2.4. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="kilometre-per-second-magnitude">kilometre-per-second-magnitude<a class="self-link" href="#kilometre-per-second-magnitude"></a></dfn></span><a class="self-link" href="#Kilometre-per-second-magnitude"></a></h3>
+    <h3 class="heading settled" data-level="2.4" id="Newton-magnitude"><span class="secno">2.4. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="newton-magnitude">newton-magnitude<a class="self-link" href="#newton-magnitude"></a></dfn></span><a class="self-link" href="#Newton-magnitude"></a></h3>
     <table class="def">
      <tbody>
       <tr>
        <th>Supertypes
        <td>
         <ul>
-         <li><a data-link-type="dfn" href="80000-3-units.html#velocitymagnitude" id="ref-for-velocitymagnitude">80000-3-units:VelocityMagnitude</a>
+         <li><a data-link-type="dfn" href="80000-4-units.html#forcemagnitude" id="ref-for-forcemagnitude">80000-4-units:ForceMagnitude</a>
         </ul>
       <tr>
        <th>Relations with source
        <td>
         <ul>
-         <li>kilometre-per-second-magnitude ← <a data-link-type="dfn" href="../iupac.org/metrology.html#hasreference" id="ref-for-hasreference③">metrology:HasReference</a> → <a data-link-type="dfn" href="../iupac.org/metrology.html#reference" id="ref-for-reference③">metrology:Reference</a> (range restricted to instance <a data-link-type="dfn" href="80000-3-instances.html#kilometre-per-second" id="ref-for-kilometre-per-second">80000-3-instances:kilometre-per-second</a>) 
+         <li>newton-magnitude ← <a data-link-type="dfn" href="../iupac.org/metrology.html#hasreference" id="ref-for-hasreference③">metrology:HasReference</a> → <a data-link-type="dfn" href="../iupac.org/metrology.html#reference" id="ref-for-reference③">metrology:Reference</a> (range restricted to instance <a data-link-type="dfn" href="80000-4-instances.html#newton" id="ref-for-newton">80000-4-instances:newton</a>) 
         </ul>
     </table>
-    <h3 class="heading settled" data-level="2.5" id="Metre-magnitude"><span class="secno">2.5. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="metre-magnitude">metre-magnitude<a class="self-link" href="#metre-magnitude"></a></dfn></span><a class="self-link" href="#Metre-magnitude"></a></h3>
+    <h3 class="heading settled" data-level="2.5" id="Newton-millisecond-magnitude"><span class="secno">2.5. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="newton-millisecond-magnitude">newton-millisecond-magnitude<a class="self-link" href="#newton-millisecond-magnitude"></a></dfn></span><a class="self-link" href="#Newton-millisecond-magnitude"></a></h3>
     <table class="def">
      <tbody>
       <tr>
        <th>Supertypes
        <td>
         <ul>
-         <li><a data-link-type="dfn" href="80000-3-units.html#lengthmagnitude" id="ref-for-lengthmagnitude①">80000-3-units:LengthMagnitude</a>
+         <li><a data-link-type="dfn" href="80000-4-units.html#impulsemagnitude" id="ref-for-impulsemagnitude">80000-4-units:ImpulseMagnitude</a>
         </ul>
       <tr>
        <th>Relations with source
        <td>
         <ul>
-         <li>metre-magnitude ← <a data-link-type="dfn" href="../iupac.org/metrology.html#hasreference" id="ref-for-hasreference④">metrology:HasReference</a> → <a data-link-type="dfn" href="../iupac.org/metrology.html#reference" id="ref-for-reference④">metrology:Reference</a> (range restricted to instance <a data-link-type="dfn" href="80000-3-instances.html#metre" id="ref-for-metre">80000-3-instances:metre</a>) 
+         <li>newton-millisecond-magnitude ← <a data-link-type="dfn" href="../iupac.org/metrology.html#hasreference" id="ref-for-hasreference④">metrology:HasReference</a> → <a data-link-type="dfn" href="../iupac.org/metrology.html#reference" id="ref-for-reference④">metrology:Reference</a> (range restricted to instance <a data-link-type="dfn" href="80000-4-instances.html#newton-second" id="ref-for-newton-second">80000-4-instances:newton-second</a>) 
         </ul>
     </table>
-    <h3 class="heading settled" data-level="2.6" id="Metre-per-second-magnitude"><span class="secno">2.6. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="metre-per-second-magnitude">metre-per-second-magnitude<a class="self-link" href="#metre-per-second-magnitude"></a></dfn></span><a class="self-link" href="#Metre-per-second-magnitude"></a></h3>
+    <h3 class="heading settled" data-level="2.6" id="Newton-second-magnitude"><span class="secno">2.6. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="newton-second-magnitude">newton-second-magnitude<a class="self-link" href="#newton-second-magnitude"></a></dfn></span><a class="self-link" href="#Newton-second-magnitude"></a></h3>
     <table class="def">
      <tbody>
       <tr>
        <th>Supertypes
        <td>
         <ul>
-         <li><a data-link-type="dfn" href="80000-3-units.html#velocitymagnitude" id="ref-for-velocitymagnitude①">80000-3-units:VelocityMagnitude</a>
+         <li><a data-link-type="dfn" href="80000-4-units.html#impulsemagnitude" id="ref-for-impulsemagnitude①">80000-4-units:ImpulseMagnitude</a>
         </ul>
       <tr>
        <th>Relations with source
        <td>
         <ul>
-         <li>metre-per-second-magnitude ← <a data-link-type="dfn" href="../iupac.org/metrology.html#hasreference" id="ref-for-hasreference⑤">metrology:HasReference</a> → <a data-link-type="dfn" href="../iupac.org/metrology.html#reference" id="ref-for-reference⑤">metrology:Reference</a> (range restricted to instance <a data-link-type="dfn" href="80000-3-instances.html#metre-per-second" id="ref-for-metre-per-second">80000-3-instances:metre-per-second</a>) 
+         <li>newton-second-magnitude ← <a data-link-type="dfn" href="../iupac.org/metrology.html#hasreference" id="ref-for-hasreference⑤">metrology:HasReference</a> → <a data-link-type="dfn" href="../iupac.org/metrology.html#reference" id="ref-for-reference⑤">metrology:Reference</a> (range restricted to instance <a data-link-type="dfn" href="80000-4-instances.html#newton-second" id="ref-for-newton-second①">80000-4-instances:newton-second</a>) 
         </ul>
     </table>
-    <h3 class="heading settled" data-level="2.7" id="Millisecond-magnitude"><span class="secno">2.7. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="millisecond-magnitude">millisecond-magnitude<a class="self-link" href="#millisecond-magnitude"></a></dfn></span><a class="self-link" href="#Millisecond-magnitude"></a></h3>
+    <h3 class="heading settled" data-level="2.7" id="Watt-magnitude"><span class="secno">2.7. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="watt-magnitude">watt-magnitude<a class="self-link" href="#watt-magnitude"></a></dfn></span><a class="self-link" href="#Watt-magnitude"></a></h3>
     <table class="def">
      <tbody>
       <tr>
        <th>Supertypes
        <td>
         <ul>
-         <li><a data-link-type="dfn" href="80000-3-units.html#timemagnitude" id="ref-for-timemagnitude①">80000-3-units:TimeMagnitude</a>
+         <li><a data-link-type="dfn" href="80000-4-units.html#powermagnitude" id="ref-for-powermagnitude">80000-4-units:PowerMagnitude</a>
         </ul>
       <tr>
        <th>Relations with source
        <td>
         <ul>
-         <li>millisecond-magnitude ← <a data-link-type="dfn" href="../iupac.org/metrology.html#hasreference" id="ref-for-hasreference⑥">metrology:HasReference</a> → <a data-link-type="dfn" href="../iupac.org/metrology.html#reference" id="ref-for-reference⑥">metrology:Reference</a> (range restricted to instance <a data-link-type="dfn" href="80000-3-instances.html#millisecond" id="ref-for-millisecond">80000-3-instances:millisecond</a>) 
-        </ul>
-    </table>
-    <h3 class="heading settled" data-level="2.8" id="Minute-magnitude"><span class="secno">2.8. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="minute-magnitude">minute-magnitude<a class="self-link" href="#minute-magnitude"></a></dfn></span><a class="self-link" href="#Minute-magnitude"></a></h3>
-    <table class="def">
-     <tbody>
-      <tr>
-       <th>Supertypes
-       <td>
-        <ul>
-         <li><a data-link-type="dfn" href="80000-3-units.html#timemagnitude" id="ref-for-timemagnitude②">80000-3-units:TimeMagnitude</a>
-        </ul>
-      <tr>
-       <th>Relations with source
-       <td>
-        <ul>
-         <li>minute-magnitude ← <a data-link-type="dfn" href="../iupac.org/metrology.html#hasreference" id="ref-for-hasreference⑦">metrology:HasReference</a> → <a data-link-type="dfn" href="../iupac.org/metrology.html#reference" id="ref-for-reference⑦">metrology:Reference</a> (range restricted to instance <a data-link-type="dfn" href="80000-3-instances.html#minute" id="ref-for-minute">80000-3-instances:minute</a>) 
-        </ul>
-    </table>
-    <h3 class="heading settled" data-level="2.9" id="Radian-magnitude"><span class="secno">2.9. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="radian-magnitude">radian-magnitude<a class="self-link" href="#radian-magnitude"></a></dfn></span><a class="self-link" href="#Radian-magnitude"></a></h3>
-    <table class="def">
-     <tbody>
-      <tr>
-       <th>Supertypes
-       <td>
-        <ul>
-         <li><a data-link-type="dfn" href="80000-3-units.html#angularmeasuremagnitude" id="ref-for-angularmeasuremagnitude">80000-3-units:AngularMeasureMagnitude</a>
-        </ul>
-      <tr>
-       <th>Relations with source
-       <td>
-        <ul>
-         <li>radian-magnitude ← <a data-link-type="dfn" href="../iupac.org/metrology.html#hasreference" id="ref-for-hasreference⑧">metrology:HasReference</a> → <a data-link-type="dfn" href="../iupac.org/metrology.html#reference" id="ref-for-reference⑧">metrology:Reference</a> (range restricted to instance <a data-link-type="dfn" href="80000-3-instances.html#radian" id="ref-for-radian">80000-3-instances:radian</a>) 
-        </ul>
-    </table>
-    <h3 class="heading settled" data-level="2.10" id="Revolution-magnitude"><span class="secno">2.10. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="revolution-magnitude">revolution-magnitude<a class="self-link" href="#revolution-magnitude"></a></dfn></span><a class="self-link" href="#Revolution-magnitude"></a></h3>
-    <table class="def">
-     <tbody>
-      <tr>
-       <th>Supertypes
-       <td>
-        <ul>
-         <li><a data-link-type="dfn" href="80000-3-units.html#rotationmagnitude" id="ref-for-rotationmagnitude">80000-3-units:RotationMagnitude</a>
-        </ul>
-      <tr>
-       <th>Relations with source
-       <td>
-        <ul>
-         <li>revolution-magnitude ← <a data-link-type="dfn" href="../iupac.org/metrology.html#hasreference" id="ref-for-hasreference⑨">metrology:HasReference</a> → <a data-link-type="dfn" href="../iupac.org/metrology.html#reference" id="ref-for-reference⑨">metrology:Reference</a> (range restricted to instance <a data-link-type="dfn" href="80000-3-instances.html#revolution" id="ref-for-revolution">80000-3-instances:revolution</a>) 
-        </ul>
-    </table>
-    <h3 class="heading settled" data-level="2.11" id="Second-magnitude"><span class="secno">2.11. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="second-magnitude">second-magnitude<a class="self-link" href="#second-magnitude"></a></dfn></span><a class="self-link" href="#Second-magnitude"></a></h3>
-    <table class="def">
-     <tbody>
-      <tr>
-       <th>Supertypes
-       <td>
-        <ul>
-         <li><a data-link-type="dfn" href="80000-3-units.html#timemagnitude" id="ref-for-timemagnitude③">80000-3-units:TimeMagnitude</a>
-        </ul>
-      <tr>
-       <th>Relations with source
-       <td>
-        <ul>
-         <li>second-magnitude ← <a data-link-type="dfn" href="../iupac.org/metrology.html#hasreference" id="ref-for-hasreference①⓪">metrology:HasReference</a> → <a data-link-type="dfn" href="../iupac.org/metrology.html#reference" id="ref-for-reference①⓪">metrology:Reference</a> (range restricted to instance <a data-link-type="dfn" href="80000-3-instances.html#second" id="ref-for-second">80000-3-instances:second</a>) 
+         <li>watt-magnitude ← <a data-link-type="dfn" href="../iupac.org/metrology.html#hasreference" id="ref-for-hasreference⑥">metrology:HasReference</a> → <a data-link-type="dfn" href="../iupac.org/metrology.html#reference" id="ref-for-reference⑥">metrology:Reference</a> (range restricted to instance <a data-link-type="dfn" href="80000-4-instances.html#watt" id="ref-for-watt">80000-4-instances:watt</a>) 
         </ul>
     </table>
    </div>
@@ -2303,183 +2234,127 @@ dfn > a.self-link::before      { content: "#"; }
   <h2 class="no-num no-ref heading settled" id="index"><span class="content">Index</span><a class="self-link" href="#index"></a></h2>
   <h3 class="no-num no-ref heading settled" id="index-defined-here"><span class="content">Terms defined by this specification</span><a class="self-link" href="#index-defined-here"></a></h3>
   <ul class="index">
-   <li><a href="#hertz-magnitude">hertz-magnitude</a><span>, in §2.1</span>
-   <li><a href="#hour-magnitude">hour-magnitude</a><span>, in §2.2</span>
-   <li><a href="#kilometre-magnitude">kilometre-magnitude</a><span>, in §2.3</span>
-   <li><a href="#kilometre-per-second-magnitude">kilometre-per-second-magnitude</a><span>, in §2.4</span>
-   <li><a href="#metre-magnitude">metre-magnitude</a><span>, in §2.5</span>
-   <li><a href="#metre-per-second-magnitude">metre-per-second-magnitude</a><span>, in §2.6</span>
-   <li><a href="#millisecond-magnitude">millisecond-magnitude</a><span>, in §2.7</span>
-   <li><a href="#minute-magnitude">minute-magnitude</a><span>, in §2.8</span>
-   <li><a href="#radian-magnitude">radian-magnitude</a><span>, in §2.9</span>
-   <li><a href="#revolution-magnitude">revolution-magnitude</a><span>, in §2.10</span>
-   <li><a href="#second-magnitude">second-magnitude</a><span>, in §2.11</span>
+   <li><a href="#gram-magnitude">gram-magnitude</a><span>, in §2.1</span>
+   <li><a href="#kilogram-magnitude">kilogram-magnitude</a><span>, in §2.2</span>
+   <li><a href="#kilogram-metre-per-second-magnitude">kilogram-metre-per-second-magnitude</a><span>, in §2.3</span>
+   <li><a href="#newton-magnitude">newton-magnitude</a><span>, in §2.4</span>
+   <li><a href="#newton-millisecond-magnitude">newton-millisecond-magnitude</a><span>, in §2.5</span>
+   <li><a href="#newton-second-magnitude">newton-second-magnitude</a><span>, in §2.6</span>
+   <li><a href="#watt-magnitude">watt-magnitude</a><span>, in §2.7</span>
   </ul>
-  <aside class="dfn-panel" data-for="term-for-hertz">
-   <a href="80000-3-instances.html#hertz">80000-3-instances.html#hertz</a><b>Referenced in:</b>
+  <aside class="dfn-panel" data-for="term-for-gram">
+   <a href="80000-4-instances.html#gram">80000-4-instances.html#gram</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-hertz">2.1. hertz-magnitude</a>
+    <li><a href="#ref-for-gram">2.1. gram-magnitude</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-hour">
-   <a href="80000-3-instances.html#hour">80000-3-instances.html#hour</a><b>Referenced in:</b>
+  <aside class="dfn-panel" data-for="term-for-kilogram">
+   <a href="80000-4-instances.html#kilogram">80000-4-instances.html#kilogram</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-hour">2.2. hour-magnitude</a>
+    <li><a href="#ref-for-kilogram">2.2. kilogram-magnitude</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-kilometre">
-   <a href="80000-3-instances.html#kilometre">80000-3-instances.html#kilometre</a><b>Referenced in:</b>
+  <aside class="dfn-panel" data-for="term-for-kilogram-metre-per-second">
+   <a href="80000-4-instances.html#kilogram-metre-per-second">80000-4-instances.html#kilogram-metre-per-second</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-kilometre">2.3. kilometre-magnitude</a>
+    <li><a href="#ref-for-kilogram-metre-per-second">2.3. kilogram-metre-per-second-magnitude</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-kilometre-per-second">
-   <a href="80000-3-instances.html#kilometre-per-second">80000-3-instances.html#kilometre-per-second</a><b>Referenced in:</b>
+  <aside class="dfn-panel" data-for="term-for-newton">
+   <a href="80000-4-instances.html#newton">80000-4-instances.html#newton</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-kilometre-per-second">2.4. kilometre-per-second-magnitude</a>
+    <li><a href="#ref-for-newton">2.4. newton-magnitude</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-metre">
-   <a href="80000-3-instances.html#metre">80000-3-instances.html#metre</a><b>Referenced in:</b>
+  <aside class="dfn-panel" data-for="term-for-newton-second">
+   <a href="80000-4-instances.html#newton-second">80000-4-instances.html#newton-second</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-metre">2.5. metre-magnitude</a>
+    <li><a href="#ref-for-newton-second">2.5. newton-millisecond-magnitude</a>
+    <li><a href="#ref-for-newton-second①">2.6. newton-second-magnitude</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-metre-per-second">
-   <a href="80000-3-instances.html#metre-per-second">80000-3-instances.html#metre-per-second</a><b>Referenced in:</b>
+  <aside class="dfn-panel" data-for="term-for-watt">
+   <a href="80000-4-instances.html#watt">80000-4-instances.html#watt</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-metre-per-second">2.6. metre-per-second-magnitude</a>
+    <li><a href="#ref-for-watt">2.7. watt-magnitude</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-millisecond">
-   <a href="80000-3-instances.html#millisecond">80000-3-instances.html#millisecond</a><b>Referenced in:</b>
+  <aside class="dfn-panel" data-for="term-for-forcemagnitude">
+   <a href="80000-4-units.html#forcemagnitude">80000-4-units.html#forcemagnitude</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-millisecond">2.7. millisecond-magnitude</a>
+    <li><a href="#ref-for-forcemagnitude">2.4. newton-magnitude</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-minute">
-   <a href="80000-3-instances.html#minute">80000-3-instances.html#minute</a><b>Referenced in:</b>
+  <aside class="dfn-panel" data-for="term-for-impulsemagnitude">
+   <a href="80000-4-units.html#impulsemagnitude">80000-4-units.html#impulsemagnitude</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-minute">2.8. minute-magnitude</a>
+    <li><a href="#ref-for-impulsemagnitude">2.5. newton-millisecond-magnitude</a>
+    <li><a href="#ref-for-impulsemagnitude①">2.6. newton-second-magnitude</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-radian">
-   <a href="80000-3-instances.html#radian">80000-3-instances.html#radian</a><b>Referenced in:</b>
+  <aside class="dfn-panel" data-for="term-for-massmagnitude">
+   <a href="80000-4-units.html#massmagnitude">80000-4-units.html#massmagnitude</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-radian">2.9. radian-magnitude</a>
+    <li><a href="#ref-for-massmagnitude">2.1. gram-magnitude</a>
+    <li><a href="#ref-for-massmagnitude①">2.2. kilogram-magnitude</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-revolution">
-   <a href="80000-3-instances.html#revolution">80000-3-instances.html#revolution</a><b>Referenced in:</b>
+  <aside class="dfn-panel" data-for="term-for-momentummagnitude">
+   <a href="80000-4-units.html#momentummagnitude">80000-4-units.html#momentummagnitude</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-revolution">2.10. revolution-magnitude</a>
+    <li><a href="#ref-for-momentummagnitude">2.3. kilogram-metre-per-second-magnitude</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-second">
-   <a href="80000-3-instances.html#second">80000-3-instances.html#second</a><b>Referenced in:</b>
+  <aside class="dfn-panel" data-for="term-for-powermagnitude">
+   <a href="80000-4-units.html#powermagnitude">80000-4-units.html#powermagnitude</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-second">2.11. second-magnitude</a>
-   </ul>
-  </aside>
-  <aside class="dfn-panel" data-for="term-for-angularmeasuremagnitude">
-   <a href="80000-3-units.html#angularmeasuremagnitude">80000-3-units.html#angularmeasuremagnitude</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-angularmeasuremagnitude">2.9. radian-magnitude</a>
-   </ul>
-  </aside>
-  <aside class="dfn-panel" data-for="term-for-frequencymagnitude">
-   <a href="80000-3-units.html#frequencymagnitude">80000-3-units.html#frequencymagnitude</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-frequencymagnitude">2.1. hertz-magnitude</a>
-   </ul>
-  </aside>
-  <aside class="dfn-panel" data-for="term-for-lengthmagnitude">
-   <a href="80000-3-units.html#lengthmagnitude">80000-3-units.html#lengthmagnitude</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-lengthmagnitude">2.3. kilometre-magnitude</a>
-    <li><a href="#ref-for-lengthmagnitude①">2.5. metre-magnitude</a>
-   </ul>
-  </aside>
-  <aside class="dfn-panel" data-for="term-for-rotationmagnitude">
-   <a href="80000-3-units.html#rotationmagnitude">80000-3-units.html#rotationmagnitude</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-rotationmagnitude">2.10. revolution-magnitude</a>
-   </ul>
-  </aside>
-  <aside class="dfn-panel" data-for="term-for-timemagnitude">
-   <a href="80000-3-units.html#timemagnitude">80000-3-units.html#timemagnitude</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-timemagnitude">2.2. hour-magnitude</a>
-    <li><a href="#ref-for-timemagnitude①">2.7. millisecond-magnitude</a>
-    <li><a href="#ref-for-timemagnitude②">2.8. minute-magnitude</a>
-    <li><a href="#ref-for-timemagnitude③">2.11. second-magnitude</a>
-   </ul>
-  </aside>
-  <aside class="dfn-panel" data-for="term-for-velocitymagnitude">
-   <a href="80000-3-units.html#velocitymagnitude">80000-3-units.html#velocitymagnitude</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-velocitymagnitude">2.4. kilometre-per-second-magnitude</a>
-    <li><a href="#ref-for-velocitymagnitude①">2.6. metre-per-second-magnitude</a>
+    <li><a href="#ref-for-powermagnitude">2.7. watt-magnitude</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-hasreference">
    <a href="../iupac.org/metrology.html#hasreference">../iupac.org/metrology.html#hasreference</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-hasreference">2.1. hertz-magnitude</a>
-    <li><a href="#ref-for-hasreference①">2.2. hour-magnitude</a>
-    <li><a href="#ref-for-hasreference②">2.3. kilometre-magnitude</a>
-    <li><a href="#ref-for-hasreference③">2.4. kilometre-per-second-magnitude</a>
-    <li><a href="#ref-for-hasreference④">2.5. metre-magnitude</a>
-    <li><a href="#ref-for-hasreference⑤">2.6. metre-per-second-magnitude</a>
-    <li><a href="#ref-for-hasreference⑥">2.7. millisecond-magnitude</a>
-    <li><a href="#ref-for-hasreference⑦">2.8. minute-magnitude</a>
-    <li><a href="#ref-for-hasreference⑧">2.9. radian-magnitude</a>
-    <li><a href="#ref-for-hasreference⑨">2.10. revolution-magnitude</a>
-    <li><a href="#ref-for-hasreference①⓪">2.11. second-magnitude</a>
+    <li><a href="#ref-for-hasreference">2.1. gram-magnitude</a>
+    <li><a href="#ref-for-hasreference①">2.2. kilogram-magnitude</a>
+    <li><a href="#ref-for-hasreference②">2.3. kilogram-metre-per-second-magnitude</a>
+    <li><a href="#ref-for-hasreference③">2.4. newton-magnitude</a>
+    <li><a href="#ref-for-hasreference④">2.5. newton-millisecond-magnitude</a>
+    <li><a href="#ref-for-hasreference⑤">2.6. newton-second-magnitude</a>
+    <li><a href="#ref-for-hasreference⑥">2.7. watt-magnitude</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-reference">
    <a href="../iupac.org/metrology.html#reference">../iupac.org/metrology.html#reference</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-reference">2.1. hertz-magnitude</a>
-    <li><a href="#ref-for-reference①">2.2. hour-magnitude</a>
-    <li><a href="#ref-for-reference②">2.3. kilometre-magnitude</a>
-    <li><a href="#ref-for-reference③">2.4. kilometre-per-second-magnitude</a>
-    <li><a href="#ref-for-reference④">2.5. metre-magnitude</a>
-    <li><a href="#ref-for-reference⑤">2.6. metre-per-second-magnitude</a>
-    <li><a href="#ref-for-reference⑥">2.7. millisecond-magnitude</a>
-    <li><a href="#ref-for-reference⑦">2.8. minute-magnitude</a>
-    <li><a href="#ref-for-reference⑧">2.9. radian-magnitude</a>
-    <li><a href="#ref-for-reference⑨">2.10. revolution-magnitude</a>
-    <li><a href="#ref-for-reference①⓪">2.11. second-magnitude</a>
+    <li><a href="#ref-for-reference">2.1. gram-magnitude</a>
+    <li><a href="#ref-for-reference①">2.2. kilogram-magnitude</a>
+    <li><a href="#ref-for-reference②">2.3. kilogram-metre-per-second-magnitude</a>
+    <li><a href="#ref-for-reference③">2.4. newton-magnitude</a>
+    <li><a href="#ref-for-reference④">2.5. newton-millisecond-magnitude</a>
+    <li><a href="#ref-for-reference⑤">2.6. newton-second-magnitude</a>
+    <li><a href="#ref-for-reference⑥">2.7. watt-magnitude</a>
    </ul>
   </aside>
   <h3 class="no-num no-ref heading settled" id="index-defined-elsewhere"><span class="content">Terms defined by reference</span><a class="self-link" href="#index-defined-elsewhere"></a></h3>
   <ul class="index">
    <li>
-    <a data-link-type="biblio">[http://iso.org/80000-3-instances]</a> defines the following terms:
+    <a data-link-type="biblio">[http://iso.org/80000-4-instances]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="term-for-hertz">hertz</span>
-     <li><span class="dfn-paneled" id="term-for-hour">hour</span>
-     <li><span class="dfn-paneled" id="term-for-kilometre">kilometre</span>
-     <li><span class="dfn-paneled" id="term-for-kilometre-per-second">kilometre-per-second</span>
-     <li><span class="dfn-paneled" id="term-for-metre">metre</span>
-     <li><span class="dfn-paneled" id="term-for-metre-per-second">metre-per-second</span>
-     <li><span class="dfn-paneled" id="term-for-millisecond">millisecond</span>
-     <li><span class="dfn-paneled" id="term-for-minute">minute</span>
-     <li><span class="dfn-paneled" id="term-for-radian">radian</span>
-     <li><span class="dfn-paneled" id="term-for-revolution">revolution</span>
-     <li><span class="dfn-paneled" id="term-for-second">second</span>
+     <li><span class="dfn-paneled" id="term-for-gram">gram</span>
+     <li><span class="dfn-paneled" id="term-for-kilogram">kilogram</span>
+     <li><span class="dfn-paneled" id="term-for-kilogram-metre-per-second">kilogram-metre-per-second</span>
+     <li><span class="dfn-paneled" id="term-for-newton">newton</span>
+     <li><span class="dfn-paneled" id="term-for-newton-second">newton-second</span>
+     <li><span class="dfn-paneled" id="term-for-watt">watt</span>
     </ul>
    <li>
-    <a data-link-type="biblio">[http://iso.org/80000-3-units]</a> defines the following terms:
+    <a data-link-type="biblio">[http://iso.org/80000-4-units]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="term-for-angularmeasuremagnitude">angularmeasuremagnitude</span>
-     <li><span class="dfn-paneled" id="term-for-frequencymagnitude">frequencymagnitude</span>
-     <li><span class="dfn-paneled" id="term-for-lengthmagnitude">lengthmagnitude</span>
-     <li><span class="dfn-paneled" id="term-for-rotationmagnitude">rotationmagnitude</span>
-     <li><span class="dfn-paneled" id="term-for-timemagnitude">timemagnitude</span>
-     <li><span class="dfn-paneled" id="term-for-velocitymagnitude">velocitymagnitude</span>
+     <li><span class="dfn-paneled" id="term-for-forcemagnitude">forcemagnitude</span>
+     <li><span class="dfn-paneled" id="term-for-impulsemagnitude">impulsemagnitude</span>
+     <li><span class="dfn-paneled" id="term-for-massmagnitude">massmagnitude</span>
+     <li><span class="dfn-paneled" id="term-for-momentummagnitude">momentummagnitude</span>
+     <li><span class="dfn-paneled" id="term-for-powermagnitude">powermagnitude</span>
     </ul>
    <li>
     <a data-link-type="biblio">[http://iupac.org/metrology]</a> defines the following terms:

@@ -1,7 +1,7 @@
 <!doctype html><html lang="en">
  <head>
   <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-  <title>80000-5-magnitudes1</title>
+  <title>Special Publication 811 Magnitudes-1</title>
   <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
 <style data-fill-with="stylesheet">/******************************************************************************
  *                   Style sheet for the W3C specifications                   *
@@ -1485,8 +1485,8 @@ Possible extra rowspan handling
 	}
 </style>
   <meta content="Bikeshed version c5172e83, updated Fri Nov 20 15:35:20 2020 -0800" name="generator">
-  <link href="https://opencaesar.github.io/core-vocabularies//src/oml/iso.org/80000-5-magnitudes1" rel="canonical">
-  <meta content="174f68ba843989f4f5c4c339e20918ccbaca026a" name="document-revision">
+  <link href="https://opencaesar.github.io/core-vocabularies//src/oml/nist.gov/pml/special-publication-811-magnitudes-1" rel="canonical">
+  <meta content="fdbf7c86712e057d3602237617c70a9e9c8ae152" name="document-revision">
 <style>
 a[data-link-type=biblio] {
     white-space: pre-wrap;
@@ -1935,16 +1935,16 @@ dfn > a.self-link::before      { content: "#"; }
  <body class="h-entry">
   <div class="head">
    <p data-fill-with="logo"><a class="logo" href="https://www.openapis.org/"><img alt="OpenAPI Initiative" height="48" src="https://opencaesar.github.io/oml/images/oml.svg"></a></p>
-   <h1 class="p-name no-ref" id="title">80000-5-magnitudes1</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2020-12-13">13 December 2020</time></span></h2>
+   <h1 class="p-name no-ref" id="title">Special Publication 811 Magnitudes-1</h1>
+   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2020-12-14">14 December 2020</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
-     <dd><a class="u-url" href="https://opencaesar.github.io/core-vocabularies//src/oml/iso.org/80000-5-magnitudes1">https://opencaesar.github.io/core-vocabularies//src/oml/iso.org/80000-5-magnitudes1</a>
+     <dd><a class="u-url" href="https://opencaesar.github.io/core-vocabularies//src/oml/nist.gov/pml/special-publication-811-magnitudes-1">https://opencaesar.github.io/core-vocabularies//src/oml/nist.gov/pml/special-publication-811-magnitudes-1</a>
      <dt class="editor">Editor:
-     <dd class="editor p-author h-card vcard"><span class="p-name fn">Unknown</span>
+     <dd class="editor p-author h-card vcard"><span class="p-name fn">Jet Propulsion Laboratory</span>
      <dt>Copyright:
-     <dd>
+     <dd>Copyright 2010-2020, by the California Institute of Technology. ALL RIGHTS RESERVED. United States Government Sponsorship acknowledged. Any commercial use must be negotiated with the Office of Technology Transfer at the California Institute of Technology. This software may be subject to U.S. export control laws. By accepting this software, the user agrees to comply with all applicable U.S. export laws and regulations. User has the responsibility to obtain export licenses, or other export authority as may be required before exporting such information to foreign countries or providing access to foreign persons.
     </dl>
    </div>
    <div data-fill-with="warning"></div>
@@ -1952,10 +1952,7 @@ dfn > a.self-link::before      { content: "#"; }
   </div>
   <div class="p-summary" data-fill-with="abstract">
    <h2 class="no-num no-toc no-ref heading settled" id="abstract"><span class="content">Abstract</span></h2>
-   <p>This vocabulary provides convenience specializations of every metrology:Magnitude
-
- defined in http://iso.org/80000-5-units.</p>
-   <p>Note that this vocabulary is an alternative to http://iso.org/80000-5-magnitudes2.</p>
+   <p>English Engineering Units defined in NIST PML Special Publication 811, Appendix B.8. Note that this vocabulary is an alternative to http://nist.gov/pml/special-publication-811-magnitudes-2.</p>
   </div>
   <div data-fill-with="at-risk"></div>
   <nav data-fill-with="table-of-contents" id="toc">
@@ -1965,8 +1962,12 @@ dfn > a.self-link::before      { content: "#"; }
     <li>
      <a href="#concepts"><span class="secno">2</span> <span class="content">Concepts</span></a>
      <ol class="toc">
-      <li><a href="#DegreeCelcius-magnitude"><span class="secno">2.1</span> <span class="content"><span>degreeCelcius-magnitude</span></span></a>
-      <li><a href="#Kelvin-magnitude"><span class="secno">2.2</span> <span class="content"><span>kelvin-magnitude</span></span></a>
+      <li><a href="#DegreeFahrenheit-magnitude"><span class="secno">2.1</span> <span class="content"><span>degreeFahrenheit-magnitude</span></span></a>
+      <li><a href="#DegreeRankine-magnitude"><span class="secno">2.2</span> <span class="content"><span>degreeRankine-magnitude</span></span></a>
+      <li><a href="#Foot-magnitude"><span class="secno">2.3</span> <span class="content"><span>foot-magnitude</span></span></a>
+      <li><a href="#Pound-force-magnitude"><span class="secno">2.4</span> <span class="content"><span>pound-force-magnitude</span></span></a>
+      <li><a href="#Pound-force-second-magnitude"><span class="secno">2.5</span> <span class="content"><span>pound-force-second-magnitude</span></span></a>
+      <li><a href="#Pound-mass-magnitude"><span class="secno">2.6</span> <span class="content"><span>pound-mass-magnitude</span></span></a>
      </ol>
     <li>
      <a href="#index"><span class="secno"></span> <span class="content">Index</span></a>
@@ -1981,39 +1982,103 @@ dfn > a.self-link::before      { content: "#"; }
     <h2 class="heading settled" data-level="1" id="Namespace"><span class="secno">1. </span><span class="content">Namespace</span><a class="self-link" href="#Namespace"></a></h2>
     <ul>
      <li data-md>
-      <p>80000-5-magnitudes1: <a href="80000-5-magnitudes1.html">http://iso.org/80000-5-magnitudes1</a></p>
+      <p>special-publication-811-magnitudes-1: <a href="special-publication-811-magnitudes-1.html">http://nist.gov/pml/special-publication-811-magnitudes-1</a></p>
     </ul>
     <h2 class="heading settled" data-level="2" id="concepts"><span class="secno">2. </span><span class="content">Concepts</span><a class="self-link" href="#concepts"></a></h2>
-    <h3 class="heading settled" data-level="2.1" id="DegreeCelcius-magnitude"><span class="secno">2.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="degreecelcius-magnitude">degreeCelcius-magnitude<a class="self-link" href="#degreecelcius-magnitude"></a></dfn></span><a class="self-link" href="#DegreeCelcius-magnitude"></a></h3>
+    <h3 class="heading settled" data-level="2.1" id="DegreeFahrenheit-magnitude"><span class="secno">2.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="degreefahrenheit-magnitude">degreeFahrenheit-magnitude<a class="self-link" href="#degreefahrenheit-magnitude"></a></dfn></span><a class="self-link" href="#DegreeFahrenheit-magnitude"></a></h3>
     <table class="def">
      <tbody>
       <tr>
        <th>Supertypes
        <td>
         <ul>
-         <li><a data-link-type="dfn" href="80000-5-units.html#celciustemperaturemagnitude" id="ref-for-celciustemperaturemagnitude">80000-5-units:CelciusTemperatureMagnitude</a>
+         <li><a data-link-type="dfn" href="../../iso.org/80000-5-units.html#celciustemperaturemagnitude" id="ref-for-celciustemperaturemagnitude">80000-5-units:CelciusTemperatureMagnitude</a>
         </ul>
       <tr>
        <th>Relations with source
        <td>
         <ul>
-         <li>degreeCelcius-magnitude ← <a data-link-type="dfn" href="../iupac.org/metrology.html#hasreference" id="ref-for-hasreference">metrology:HasReference</a> → <a data-link-type="dfn" href="../iupac.org/metrology.html#reference" id="ref-for-reference">metrology:Reference</a> (range restricted to instance <a data-link-type="dfn" href="80000-5-instances.html#degreecelcius" id="ref-for-degreecelcius">80000-5-instances:degreeCelcius</a>) 
+         <li>degreeFahrenheit-magnitude ← <a data-link-type="dfn" href="../../iupac.org/metrology.html#hasreference" id="ref-for-hasreference">metrology:HasReference</a> → <a data-link-type="dfn" href="../../iupac.org/metrology.html#reference" id="ref-for-reference">metrology:Reference</a> (range restricted to instance <a data-link-type="dfn" href="special-publication-811-instances.html#degreefahrenheit" id="ref-for-degreefahrenheit">special-publication-811-instances:degreeFahrenheit</a>) 
         </ul>
     </table>
-    <h3 class="heading settled" data-level="2.2" id="Kelvin-magnitude"><span class="secno">2.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="kelvin-magnitude">kelvin-magnitude<a class="self-link" href="#kelvin-magnitude"></a></dfn></span><a class="self-link" href="#Kelvin-magnitude"></a></h3>
+    <h3 class="heading settled" data-level="2.2" id="DegreeRankine-magnitude"><span class="secno">2.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="degreerankine-magnitude">degreeRankine-magnitude<a class="self-link" href="#degreerankine-magnitude"></a></dfn></span><a class="self-link" href="#DegreeRankine-magnitude"></a></h3>
     <table class="def">
      <tbody>
       <tr>
        <th>Supertypes
        <td>
         <ul>
-         <li><a data-link-type="dfn" href="80000-5-units.html#thermodynamictemperaturemagnitude" id="ref-for-thermodynamictemperaturemagnitude">80000-5-units:ThermodynamicTemperatureMagnitude</a>
+         <li><a data-link-type="dfn" href="../../iso.org/80000-5-units.html#thermodynamictemperaturemagnitude" id="ref-for-thermodynamictemperaturemagnitude">80000-5-units:ThermodynamicTemperatureMagnitude</a>
         </ul>
       <tr>
        <th>Relations with source
        <td>
         <ul>
-         <li>kelvin-magnitude ← <a data-link-type="dfn" href="../iupac.org/metrology.html#hasreference" id="ref-for-hasreference①">metrology:HasReference</a> → <a data-link-type="dfn" href="../iupac.org/metrology.html#reference" id="ref-for-reference①">metrology:Reference</a> (range restricted to instance <a data-link-type="dfn" href="80000-5-instances.html#kelvin" id="ref-for-kelvin">80000-5-instances:kelvin</a>) 
+         <li>degreeRankine-magnitude ← <a data-link-type="dfn" href="../../iupac.org/metrology.html#hasreference" id="ref-for-hasreference①">metrology:HasReference</a> → <a data-link-type="dfn" href="../../iupac.org/metrology.html#reference" id="ref-for-reference①">metrology:Reference</a> (range restricted to instance <a data-link-type="dfn" href="special-publication-811-instances.html#degreerankine" id="ref-for-degreerankine">special-publication-811-instances:degreeRankine</a>) 
+        </ul>
+    </table>
+    <h3 class="heading settled" data-level="2.3" id="Foot-magnitude"><span class="secno">2.3. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="foot-magnitude">foot-magnitude<a class="self-link" href="#foot-magnitude"></a></dfn></span><a class="self-link" href="#Foot-magnitude"></a></h3>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Supertypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="../../iso.org/80000-3-units.html#lengthmagnitude" id="ref-for-lengthmagnitude">80000-3-units:LengthMagnitude</a>
+        </ul>
+      <tr>
+       <th>Relations with source
+       <td>
+        <ul>
+         <li>foot-magnitude ← <a data-link-type="dfn" href="../../iupac.org/metrology.html#hasreference" id="ref-for-hasreference②">metrology:HasReference</a> → <a data-link-type="dfn" href="../../iupac.org/metrology.html#reference" id="ref-for-reference②">metrology:Reference</a> (range restricted to instance <a data-link-type="dfn" href="special-publication-811-instances.html#foot" id="ref-for-foot">special-publication-811-instances:foot</a>) 
+        </ul>
+    </table>
+    <h3 class="heading settled" data-level="2.4" id="Pound-force-magnitude"><span class="secno">2.4. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="pound-force-magnitude">pound-force-magnitude<a class="self-link" href="#pound-force-magnitude"></a></dfn></span><a class="self-link" href="#Pound-force-magnitude"></a></h3>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Supertypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="../../iso.org/80000-4-units.html#forcemagnitude" id="ref-for-forcemagnitude">80000-4-units:ForceMagnitude</a>
+        </ul>
+      <tr>
+       <th>Relations with source
+       <td>
+        <ul>
+         <li>pound-force-magnitude ← <a data-link-type="dfn" href="../../iupac.org/metrology.html#hasreference" id="ref-for-hasreference③">metrology:HasReference</a> → <a data-link-type="dfn" href="../../iupac.org/metrology.html#reference" id="ref-for-reference③">metrology:Reference</a> (range restricted to instance <a data-link-type="dfn" href="special-publication-811-instances.html#pound-force" id="ref-for-pound-force">special-publication-811-instances:pound-force</a>) 
+        </ul>
+    </table>
+    <h3 class="heading settled" data-level="2.5" id="Pound-force-second-magnitude"><span class="secno">2.5. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="pound-force-second-magnitude">pound-force-second-magnitude<a class="self-link" href="#pound-force-second-magnitude"></a></dfn></span><a class="self-link" href="#Pound-force-second-magnitude"></a></h3>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Supertypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="../../iso.org/80000-4-units.html#impulsemagnitude" id="ref-for-impulsemagnitude">80000-4-units:ImpulseMagnitude</a>
+        </ul>
+      <tr>
+       <th>Relations with source
+       <td>
+        <ul>
+         <li>pound-force-second-magnitude ← <a data-link-type="dfn" href="../../iupac.org/metrology.html#hasreference" id="ref-for-hasreference④">metrology:HasReference</a> → <a data-link-type="dfn" href="../../iupac.org/metrology.html#reference" id="ref-for-reference④">metrology:Reference</a> (range restricted to instance <a data-link-type="dfn" href="special-publication-811-instances.html#pound-force-second" id="ref-for-pound-force-second">special-publication-811-instances:pound-force-second</a>) 
+        </ul>
+    </table>
+    <h3 class="heading settled" data-level="2.6" id="Pound-mass-magnitude"><span class="secno">2.6. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="pound-mass-magnitude">pound-mass-magnitude<a class="self-link" href="#pound-mass-magnitude"></a></dfn></span><a class="self-link" href="#Pound-mass-magnitude"></a></h3>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Supertypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="../../iso.org/80000-4-units.html#massmagnitude" id="ref-for-massmagnitude">80000-4-units:MassMagnitude</a>
+        </ul>
+      <tr>
+       <th>Relations with source
+       <td>
+        <ul>
+         <li>pound-mass-magnitude ← <a data-link-type="dfn" href="../../iupac.org/metrology.html#hasreference" id="ref-for-hasreference⑤">metrology:HasReference</a> → <a data-link-type="dfn" href="../../iupac.org/metrology.html#reference" id="ref-for-reference⑤">metrology:Reference</a> (range restricted to instance <a data-link-type="dfn" href="special-publication-811-instances.html#pound-mass" id="ref-for-pound-mass">special-publication-811-instances:pound-mass</a>) 
         </ul>
     </table>
    </div>
@@ -2150,54 +2215,120 @@ dfn > a.self-link::before      { content: "#"; }
   <h2 class="no-num no-ref heading settled" id="index"><span class="content">Index</span><a class="self-link" href="#index"></a></h2>
   <h3 class="no-num no-ref heading settled" id="index-defined-here"><span class="content">Terms defined by this specification</span><a class="self-link" href="#index-defined-here"></a></h3>
   <ul class="index">
-   <li><a href="#degreecelcius-magnitude">degreeCelcius-magnitude</a><span>, in §2.1</span>
-   <li><a href="#kelvin-magnitude">kelvin-magnitude</a><span>, in §2.2</span>
+   <li><a href="#degreefahrenheit-magnitude">degreeFahrenheit-magnitude</a><span>, in §2.1</span>
+   <li><a href="#degreerankine-magnitude">degreeRankine-magnitude</a><span>, in §2.2</span>
+   <li><a href="#foot-magnitude">foot-magnitude</a><span>, in §2.3</span>
+   <li><a href="#pound-force-magnitude">pound-force-magnitude</a><span>, in §2.4</span>
+   <li><a href="#pound-force-second-magnitude">pound-force-second-magnitude</a><span>, in §2.5</span>
+   <li><a href="#pound-mass-magnitude">pound-mass-magnitude</a><span>, in §2.6</span>
   </ul>
-  <aside class="dfn-panel" data-for="term-for-degreecelcius">
-   <a href="80000-5-instances.html#degreecelcius">80000-5-instances.html#degreecelcius</a><b>Referenced in:</b>
+  <aside class="dfn-panel" data-for="term-for-lengthmagnitude">
+   <a href="../../iso.org/80000-3-units.html#lengthmagnitude">../../iso.org/80000-3-units.html#lengthmagnitude</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-degreecelcius">2.1. degreeCelcius-magnitude</a>
+    <li><a href="#ref-for-lengthmagnitude">2.3. foot-magnitude</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-kelvin">
-   <a href="80000-5-instances.html#kelvin">80000-5-instances.html#kelvin</a><b>Referenced in:</b>
+  <aside class="dfn-panel" data-for="term-for-forcemagnitude">
+   <a href="../../iso.org/80000-4-units.html#forcemagnitude">../../iso.org/80000-4-units.html#forcemagnitude</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-kelvin">2.2. kelvin-magnitude</a>
+    <li><a href="#ref-for-forcemagnitude">2.4. pound-force-magnitude</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-impulsemagnitude">
+   <a href="../../iso.org/80000-4-units.html#impulsemagnitude">../../iso.org/80000-4-units.html#impulsemagnitude</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-impulsemagnitude">2.5. pound-force-second-magnitude</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-massmagnitude">
+   <a href="../../iso.org/80000-4-units.html#massmagnitude">../../iso.org/80000-4-units.html#massmagnitude</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-massmagnitude">2.6. pound-mass-magnitude</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-celciustemperaturemagnitude">
-   <a href="80000-5-units.html#celciustemperaturemagnitude">80000-5-units.html#celciustemperaturemagnitude</a><b>Referenced in:</b>
+   <a href="../../iso.org/80000-5-units.html#celciustemperaturemagnitude">../../iso.org/80000-5-units.html#celciustemperaturemagnitude</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-celciustemperaturemagnitude">2.1. degreeCelcius-magnitude</a>
+    <li><a href="#ref-for-celciustemperaturemagnitude">2.1. degreeFahrenheit-magnitude</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-thermodynamictemperaturemagnitude">
-   <a href="80000-5-units.html#thermodynamictemperaturemagnitude">80000-5-units.html#thermodynamictemperaturemagnitude</a><b>Referenced in:</b>
+   <a href="../../iso.org/80000-5-units.html#thermodynamictemperaturemagnitude">../../iso.org/80000-5-units.html#thermodynamictemperaturemagnitude</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-thermodynamictemperaturemagnitude">2.2. kelvin-magnitude</a>
+    <li><a href="#ref-for-thermodynamictemperaturemagnitude">2.2. degreeRankine-magnitude</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-hasreference">
-   <a href="../iupac.org/metrology.html#hasreference">../iupac.org/metrology.html#hasreference</a><b>Referenced in:</b>
+   <a href="../../iupac.org/metrology.html#hasreference">../../iupac.org/metrology.html#hasreference</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-hasreference">2.1. degreeCelcius-magnitude</a>
-    <li><a href="#ref-for-hasreference①">2.2. kelvin-magnitude</a>
+    <li><a href="#ref-for-hasreference">2.1. degreeFahrenheit-magnitude</a>
+    <li><a href="#ref-for-hasreference①">2.2. degreeRankine-magnitude</a>
+    <li><a href="#ref-for-hasreference②">2.3. foot-magnitude</a>
+    <li><a href="#ref-for-hasreference③">2.4. pound-force-magnitude</a>
+    <li><a href="#ref-for-hasreference④">2.5. pound-force-second-magnitude</a>
+    <li><a href="#ref-for-hasreference⑤">2.6. pound-mass-magnitude</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-reference">
-   <a href="../iupac.org/metrology.html#reference">../iupac.org/metrology.html#reference</a><b>Referenced in:</b>
+   <a href="../../iupac.org/metrology.html#reference">../../iupac.org/metrology.html#reference</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-reference">2.1. degreeCelcius-magnitude</a>
-    <li><a href="#ref-for-reference①">2.2. kelvin-magnitude</a>
+    <li><a href="#ref-for-reference">2.1. degreeFahrenheit-magnitude</a>
+    <li><a href="#ref-for-reference①">2.2. degreeRankine-magnitude</a>
+    <li><a href="#ref-for-reference②">2.3. foot-magnitude</a>
+    <li><a href="#ref-for-reference③">2.4. pound-force-magnitude</a>
+    <li><a href="#ref-for-reference④">2.5. pound-force-second-magnitude</a>
+    <li><a href="#ref-for-reference⑤">2.6. pound-mass-magnitude</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-degreefahrenheit">
+   <a href="special-publication-811-instances.html#degreefahrenheit">special-publication-811-instances.html#degreefahrenheit</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-degreefahrenheit">2.1. degreeFahrenheit-magnitude</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-degreerankine">
+   <a href="special-publication-811-instances.html#degreerankine">special-publication-811-instances.html#degreerankine</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-degreerankine">2.2. degreeRankine-magnitude</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-foot">
+   <a href="special-publication-811-instances.html#foot">special-publication-811-instances.html#foot</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-foot">2.3. foot-magnitude</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-pound-force">
+   <a href="special-publication-811-instances.html#pound-force">special-publication-811-instances.html#pound-force</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-pound-force">2.4. pound-force-magnitude</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-pound-force-second">
+   <a href="special-publication-811-instances.html#pound-force-second">special-publication-811-instances.html#pound-force-second</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-pound-force-second">2.5. pound-force-second-magnitude</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-pound-mass">
+   <a href="special-publication-811-instances.html#pound-mass">special-publication-811-instances.html#pound-mass</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-pound-mass">2.6. pound-mass-magnitude</a>
    </ul>
   </aside>
   <h3 class="no-num no-ref heading settled" id="index-defined-elsewhere"><span class="content">Terms defined by reference</span><a class="self-link" href="#index-defined-elsewhere"></a></h3>
   <ul class="index">
    <li>
-    <a data-link-type="biblio">[http://iso.org/80000-5-instances]</a> defines the following terms:
+    <a data-link-type="biblio">[http://iso.org/80000-3-units]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="term-for-degreecelcius">degreecelcius</span>
-     <li><span class="dfn-paneled" id="term-for-kelvin">kelvin</span>
+     <li><span class="dfn-paneled" id="term-for-lengthmagnitude">lengthmagnitude</span>
+    </ul>
+   <li>
+    <a data-link-type="biblio">[http://iso.org/80000-4-units]</a> defines the following terms:
+    <ul>
+     <li><span class="dfn-paneled" id="term-for-forcemagnitude">forcemagnitude</span>
+     <li><span class="dfn-paneled" id="term-for-impulsemagnitude">impulsemagnitude</span>
+     <li><span class="dfn-paneled" id="term-for-massmagnitude">massmagnitude</span>
     </ul>
    <li>
     <a data-link-type="biblio">[http://iso.org/80000-5-units]</a> defines the following terms:
@@ -2210,6 +2341,16 @@ dfn > a.self-link::before      { content: "#"; }
     <ul>
      <li><span class="dfn-paneled" id="term-for-hasreference">hasreference</span>
      <li><span class="dfn-paneled" id="term-for-reference">reference</span>
+    </ul>
+   <li>
+    <a data-link-type="biblio">[http://nist.gov/pml/special-publication-811-instances]</a> defines the following terms:
+    <ul>
+     <li><span class="dfn-paneled" id="term-for-degreefahrenheit">degreefahrenheit</span>
+     <li><span class="dfn-paneled" id="term-for-degreerankine">degreerankine</span>
+     <li><span class="dfn-paneled" id="term-for-foot">foot</span>
+     <li><span class="dfn-paneled" id="term-for-pound-force">pound-force</span>
+     <li><span class="dfn-paneled" id="term-for-pound-force-second">pound-force-second</span>
+     <li><span class="dfn-paneled" id="term-for-pound-mass">pound-mass</span>
     </ul>
   </ul>
 <script>/* script-dfn-panel */

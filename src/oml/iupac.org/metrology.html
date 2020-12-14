@@ -1,7 +1,7 @@
 <!doctype html><html lang="en">
  <head>
   <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-  <title>Metrology vocabulary adapted from iupac.org</title>
+  <title>Metrology</title>
   <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
 <style data-fill-with="stylesheet">/******************************************************************************
  *                   Style sheet for the W3C specifications                   *
@@ -1486,7 +1486,7 @@ Possible extra rowspan handling
 </style>
   <meta content="Bikeshed version c5172e83, updated Fri Nov 20 15:35:20 2020 -0800" name="generator">
   <link href="https://opencaesar.github.io/core-vocabularies//src/oml/iupac.org/metrology" rel="canonical">
-  <meta content="174f68ba843989f4f5c4c339e20918ccbaca026a" name="document-revision">
+  <meta content="fdbf7c86712e057d3602237617c70a9e9c8ae152" name="document-revision">
 <style>
 a[data-link-type=biblio] {
     white-space: pre-wrap;
@@ -1935,16 +1935,16 @@ dfn > a.self-link::before      { content: "#"; }
  <body class="h-entry">
   <div class="head">
    <p data-fill-with="logo"><a class="logo" href="https://www.openapis.org/"><img alt="OpenAPI Initiative" height="48" src="https://opencaesar.github.io/oml/images/oml.svg"></a></p>
-   <h1 class="p-name no-ref" id="title">Metrology vocabulary adapted from iupac.org</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2020-12-13">13 December 2020</time></span></h2>
+   <h1 class="p-name no-ref" id="title">Metrology</h1>
+   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2020-12-14">14 December 2020</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
      <dd><a class="u-url" href="https://opencaesar.github.io/core-vocabularies//src/oml/iupac.org/metrology">https://opencaesar.github.io/core-vocabularies//src/oml/iupac.org/metrology</a>
      <dt class="editor">Editor:
-     <dd class="editor p-author h-card vcard"><span class="p-name fn">Jet Propulsion Laboratory California Institute of Technology</span>
+     <dd class="editor p-author h-card vcard"><span class="p-name fn">Jet Propulsion Laboratory</span>
      <dt>Copyright:
-     <dd>Copyright 2019, by the California Institute of Technology. ALL RIGHTS RESERVED.United States Government Sponsorship acknowledged. Any commercial use must be negotiated with the Office of Technology Transfer at the California Institute of Technology.This software may be subject to U.S. export control laws. By accepting this software, the user agrees to comply with all applicable U.S. export laws and regulations. User has the responsibility to obtain export licenses, or other export authority as may be required before exporting such information to foreign countries or providing access to foreign persons.
+     <dd>Copyright 2010-2020, by the California Institute of Technology. ALL RIGHTS RESERVED. United States Government Sponsorship acknowledged. Any commercial use must be negotiated with the Office of Technology Transfer at the California Institute of Technology. This software may be subject to U.S. export control laws. By accepting this software, the user agrees to comply with all applicable U.S. export laws and regulations. User has the responsibility to obtain export licenses, or other export authority as may be required before exporting such information to foreign countries or providing access to foreign persons.
     </dl>
    </div>
    <div data-fill-with="warning"></div>
@@ -2120,8 +2120,8 @@ dfn > a.self-link::before      { content: "#"; }
     </table>
     <h3 class="heading settled" data-level="3.4" id="MeasurementUnit"><span class="secno">3.4. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="measurementunit">MeasurementUnit<a class="self-link" href="#measurementunit"></a></dfn></span><a class="self-link" href="#MeasurementUnit"></a></h3>
     <p>Defining metrology:MeasurementUnit as an OML Concept instead of an OML Aspect or Relation, enables the bundle closure
-		algorithm to infer disjunctions for specializations of metrology:MeasurementUnit such as the ISO 80000 libraries
-		or user-defined vocabularies.</p>
+			algorithm to infer disjunctions for specializations of metrology:MeasurementUnit such as the ISO 80000 libraries
+			or user-defined vocabularies.</p>
     <table class="def">
      <tbody>
       <tr>
@@ -2167,7 +2167,7 @@ dfn > a.self-link::before      { content: "#"; }
     </table>
     <h3 class="heading settled" data-level="3.5" id="MetrologicalEntity"><span class="secno">3.5. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="metrologicalentity">MetrologicalEntity<a class="self-link" href="#metrologicalentity"></a></dfn></span><a class="self-link" href="#MetrologicalEntity"></a></h3>
     <p>metrology:MetrologicalEntity is the root of the taxonomy of OML entities involved in the vocabulary
-	    for metrological characterization of an object.</p>
+		    for metrological characterization of an object.</p>
     <table class="def">
      <tbody>
       <tr>
@@ -2191,12 +2191,12 @@ dfn > a.self-link::before      { content: "#"; }
     <h3 class="heading settled" data-level="3.6" id="Object"><span class="secno">3.6. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="object">Object<a class="self-link" href="#object"></a></dfn></span><a class="self-link" href="#Object"></a></h3>
     <p>A metrology:Object is anything perceivable or conceivable.</p>
     <p>A metrology:Object serves two purposes:
-	    1) Specify the subject of a metrology:isQuantityOf for a given metrology:Quantity.
-	    2) Provide a reference for elaborating a rich description elsewhere using an appropriate vocabulary.</p>
+		    1) Specify the subject of a metrology:isQuantityOf for a given metrology:Quantity.
+		    2) Provide a reference for elaborating a rich description elsewhere using an appropriate vocabulary.</p>
     <p class="note" role="note"><span>Note:</span> Dybkaer’s ontology defines additional vocabulary about <em>object</em> (S.2.24) with the subconcepts of <em>system</em> (S.3.3) and <em>component</em> (S.3.4), which are further divided in terms of <em>element</em>, <em>relationship</em>,  and <em>process</em> (see Figure 3.5, p. 41).</p>
     <p>Since none of the subconcepts of <em>object</em> (S.2.23) provide any additional semantics to the metrology vocabulary,
-	    they are omitted here. This ommision simplifies the task of establishing correspondences between metrology:Object
-	    in this vocabulary and rich descriptions elsewhere constructed using an appropriate vocabulary.</p>
+		    they are omitted here. This ommision simplifies the task of establishing correspondences between metrology:Object
+		    in this vocabulary and rich descriptions elsewhere constructed using an appropriate vocabulary.</p>
     <table class="def">
      <tbody>
       <tr>
@@ -2230,9 +2230,9 @@ dfn > a.self-link::before      { content: "#"; }
     </table>
     <h3 class="heading settled" data-level="3.8" id="Prefix"><span class="secno">3.8. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="prefix">Prefix<a class="self-link" href="#prefix"></a></dfn></span><a class="self-link" href="#Prefix"></a></h3>
     <p>A metrology:Prefix is an opaque representation of a multiplier used for defining a metrology:PrefixedMeasurementUnit.
-	    This representation facilitates dimensional analysis of a metrology:SystemOfMetrologicalUnits as a logical analysis since prefixes are individuals.
-	    Had the prefix multipler been defined as a scalar property typed by a datatype, dimensional analysis would be a 
-	    more complicated analysis involving a combination of logical and numerical analysis techniques.</p>
+		    This representation facilitates dimensional analysis of a metrology:SystemOfMetrologicalUnits as a logical analysis since prefixes are individuals.
+		    Had the prefix multipler been defined as a scalar property typed by a datatype, dimensional analysis would be a 
+		    more complicated analysis involving a combination of logical and numerical analysis techniques.</p>
     <table class="def">
      <tbody>
       <tr>
@@ -2256,7 +2256,7 @@ dfn > a.self-link::before      { content: "#"; }
     </table>
     <h3 class="heading settled" data-level="3.9" id="PrefixedMeasurementUnit"><span class="secno">3.9. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="prefixedmeasurementunit">PrefixedMeasurementUnit<a class="self-link" href="#prefixedmeasurementunit"></a></dfn></span><a class="self-link" href="#PrefixedMeasurementUnit"></a></h3>
     <p>A metrology:PrefixedMeasurementUnit is a metrology:MeasurementUnit defined by multiplication of another metrology:MeasurementUnit (via metrology:PrefixesMeasurementUnit) and a prefix.
-	  	Note that a PrefixedMeasurementUnit may also be a metrology:CoherentMeasurementUnit or not according to its membership in a system of units.</p>
+	  		Note that a PrefixedMeasurementUnit may also be a metrology:CoherentMeasurementUnit or not according to its membership in a system of units.</p>
     <table class="def">
      <tbody>
       <tr>
@@ -2318,7 +2318,7 @@ dfn > a.self-link::before      { content: "#"; }
     </table>
     <h3 class="heading settled" data-level="3.12" id="Thing"><span class="secno">3.12. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="thing">Thing<a class="self-link" href="#thing"></a></dfn></span><a class="self-link" href="#Thing"></a></h3>
     <p>metrology:Thing is the root of the taxonomy of OML entities involved in metrological modeling either as an object
-	    or a metrological characterization of an object.</p>
+		    or a metrological characterization of an object.</p>
     <table class="def">
      <tbody>
       <tr>
@@ -2413,8 +2413,8 @@ dfn > a.self-link::before      { content: "#"; }
     </table>
     <h3 class="heading settled" data-level="4.2" id="DerivedMeasurementUnit"><span class="secno">4.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="derivedmeasurementunit">DerivedMeasurementUnit<a class="self-link" href="#derivedmeasurementunit"></a></dfn></span><a class="self-link" href="#DerivedMeasurementUnit"></a></h3>
     <p>A metrology:DerivedMeasurementUnit is a metrology:CoherentMeasurementUnit defined as the product of powers of other metrology:MeasurementUnit(s).
-	    If a metrology:DerivedMeasurementUnit has dimension '1', then the factors simplify to one but must retain the provenance of the derived unit
-	    to other metrology:MeasurementUnits.</p>
+		    If a metrology:DerivedMeasurementUnit has dimension '1', then the factors simplify to one but must retain the provenance of the derived unit
+		    to other metrology:MeasurementUnits.</p>
     <table class="def">
      <tbody>
       <tr>
@@ -2531,7 +2531,7 @@ dfn > a.self-link::before      { content: "#"; }
     </table>
     <h3 class="heading settled" data-level="4.6" id="NonCoherentDerivedMeasurementUnit"><span class="secno">4.6. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="noncoherentderivedmeasurementunit">NonCoherentDerivedMeasurementUnit<a class="self-link" href="#noncoherentderivedmeasurementunit"></a></dfn></span><a class="self-link" href="#NonCoherentDerivedMeasurementUnit"></a></h3>
     <p>A metrology:NonCoherentDerivedMeasurementUnit is a metrology:MeasurementUnit
-		that has a proportionality factor different than one with respect to another metrology:MeasurementUnit.</p>
+			that has a proportionality factor different than one with respect to another metrology:MeasurementUnit.</p>
     <table class="def">
      <tbody>
       <tr>
@@ -2568,7 +2568,7 @@ dfn > a.self-link::before      { content: "#"; }
     </table>
     <h3 class="heading settled" data-level="4.7" id="OrdinalQuantity"><span class="secno">4.7. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="ordinalquantity">OrdinalQuantity<a class="self-link" href="#ordinalquantity"></a></dfn></span><a class="self-link" href="#OrdinalQuantity"></a></h3>
     <p>An instance of metrology:OrdinalQuantity is a metrology:Quantity defined by a measurement procedure (S.14.4.4)
-	    that can be stated only to be lesser than, equal to, or greater than another quantity of the same metrology:KindOfQuantity.</p>
+		    that can be stated only to be lesser than, equal to, or greater than another quantity of the same metrology:KindOfQuantity.</p>
     <p>As a class, metrology:OrdinalQuantity classifies metrology:Quantity(ies) that are rankable by magnitude, but are neither subtractive nor divisible (S.13.3.2).</p>
     <table class="def">
      <tbody>
@@ -2587,17 +2587,17 @@ dfn > a.self-link::before      { content: "#"; }
     </table>
     <h3 class="heading settled" data-level="4.8" id="Quantity"><span class="secno">4.8. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="quantity">Quantity<a class="self-link" href="#quantity"></a></dfn></span><a class="self-link" href="#Quantity"></a></h3>
     <p>A metrology:Quantity is an inherent state- or process-descriptive feature
-	    of a metrological:Object that has a magnitude expressed as a metrological:Magnitude.</p>
+		    of a metrological:Object that has a magnitude expressed as a metrological:Magnitude.</p>
     <p>This definition is adapted from the expanded definition of 'quantity' (S.12.13, S.12.14).</p>
     <p>Dybkaer’s ontology, makes a distinction between Quantity (S.12.13) and KindOfQuantity (S.13.3.1)
-		where the latter is defined as the 'common defining aspect of mutually comparable properties having a magnitude'.</p>
+			where the latter is defined as the 'common defining aspect of mutually comparable properties having a magnitude'.</p>
     <p>In this vocabulary, a specialization of metrology:Quantity corresponds to Dybkaer’s KindOfQuantity per S.13.3.1 and S.13.4.1
-		whereas an instance of metrology:Quantity corresponds to Dybkaer’s Quantity per S.12.13 and S.12.14.</p>
+			whereas an instance of metrology:Quantity corresponds to Dybkaer’s Quantity per S.12.13 and S.12.14.</p>
     <p>Note that Dybkaer’s associative relation between Quantity and KindOfQuantity corresponds to the classification
-		relationship between, respectively, an instance of metrology:Quantity and a specialization of metrology:Quantity.</p>
+			relationship between, respectively, an instance of metrology:Quantity and a specialization of metrology:Quantity.</p>
     <p>Defining metrology:Quantity as an OML Concept instead of an OML Aspect or Relation, enables the bundle closure
-		algorithm to infer disjunctions for specializations of metrology:Quantity such as the ISO 80000 libraries
-		or user-defined vocabularies.</p>
+			algorithm to infer disjunctions for specializations of metrology:Quantity such as the ISO 80000 libraries
+			or user-defined vocabularies.</p>
     <table class="def">
      <tbody>
       <tr>
@@ -2629,8 +2629,8 @@ dfn > a.self-link::before      { content: "#"; }
     </table>
     <h3 class="heading settled" data-level="4.9" id="SystemOfMetrologicalUnits"><span class="secno">4.9. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="systemofmetrologicalunits">SystemOfMetrologicalUnits<a class="self-link" href="#systemofmetrologicalunits"></a></dfn></span><a class="self-link" href="#SystemOfMetrologicalUnits"></a></h3>
     <p>A metrology:SystemOfMetrologicalUnits is a collection of metrology:MeasurementUnit(s) that can be partitioned into two groups:
-	    base and derived. Note that this partitioning is independent of how the algebraic definition of each metrology:MeasurementUnit
-	    (i.e metrology:NonCoherentDerivedMeasurementUnit, metrology:IndependentMeasurementUnit, metrology:DerivedMeasurementUnit or metrology:PrefixedMeasurementUnit).</p>
+		    base and derived. Note that this partitioning is independent of how the algebraic definition of each metrology:MeasurementUnit
+		    (i.e metrology:NonCoherentDerivedMeasurementUnit, metrology:IndependentMeasurementUnit, metrology:DerivedMeasurementUnit or metrology:PrefixedMeasurementUnit).</p>
     <table class="def">
      <tbody>
       <tr>
@@ -2648,10 +2648,10 @@ dfn > a.self-link::before      { content: "#"; }
     </table>
     <h3 class="heading settled" data-level="4.10" id="SystemOfUnitaryQuantities"><span class="secno">4.10. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="systemofunitaryquantities">SystemOfUnitaryQuantities<a class="self-link" href="#systemofunitaryquantities"></a></dfn></span><a class="self-link" href="#SystemOfUnitaryQuantities"></a></h3>
     <p>A metrology:SystemOfUnitaryQuantities is a collection of metrology:UnitaryQuantity(ies) that can be partitioned into two groups:
-	    base and derived. Note that this partitioning is independent of how the algebraic definition of each metrology:UnitaryQuantity
-	    (i.e metrology:IndependentUnitaryQuantity or metrology:DerivedUnitaryQuantity).</p>
+		    base and derived. Note that this partitioning is independent of how the algebraic definition of each metrology:UnitaryQuantity
+		    (i.e metrology:IndependentUnitaryQuantity or metrology:DerivedUnitaryQuantity).</p>
     <p>Applying dimensional analysis to a metrology:SystemOfUnitaryQuantities means applying the rules of dimensional calculus to the alegbraic definitions
-	    required for expressing each derived metrology:UnitaryQuantity of the system as a product of powers involving only the base metrology:UnitaryQuantity of the system.</p>
+		    required for expressing each derived metrology:UnitaryQuantity of the system as a product of powers involving only the base metrology:UnitaryQuantity of the system.</p>
     <table class="def">
      <tbody>
       <tr>
@@ -2669,7 +2669,7 @@ dfn > a.self-link::before      { content: "#"; }
     </table>
     <h3 class="heading settled" data-level="4.11" id="UnitaryQuantity"><span class="secno">4.11. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="unitaryquantity">UnitaryQuantity<a class="self-link" href="#unitaryquantity"></a></dfn></span><a class="self-link" href="#UnitaryQuantity"></a></h3>
     <p>An instance of metrology:UnitaryQuantity is a metrology:Quantity with a magnitude expressed as a reference quantity
-	    multiplied by a number (S.12.17).</p>
+		    multiplied by a number (S.12.17).</p>
     <p>As a class, of metrology:UnitaryQuantity classifies metrology:Quantity(ies) with magnitudes expressed as a measurement unit multiplied by a number (S.13.3.3).</p>
     <table class="def">
      <tbody>
@@ -2699,37 +2699,37 @@ dfn > a.self-link::before      { content: "#"; }
          <li><a data-link-type="dfn" href="metrology.html#derivedunitaryquantity" id="ref-for-derivedunitaryquantity①">DerivedUnitaryQuantity</a> ← <a data-link-type="dfn" href="metrology.html#hasfactorforunitaryquantity" id="ref-for-hasfactorforunitaryquantity②">HasFactorForUnitaryQuantity</a> → UnitaryQuantity 
          <li><a data-link-type="dfn" href="metrology.html#unitarymagnitude" id="ref-for-unitarymagnitude①">UnitaryMagnitude</a> ← <a data-link-type="dfn" href="metrology.html#ismagnitudeof" id="ref-for-ismagnitudeof③">IsMagnitudeOf</a> → UnitaryQuantity 
          <li><a data-link-type="dfn" href="metrology.html#systemofunitaryquantities" id="ref-for-systemofunitaryquantities①">SystemOfUnitaryQuantities</a> ← <a data-link-type="dfn" href="metrology.html#systemhasunitaryquantity" id="ref-for-systemhasunitaryquantity①">SystemHasUnitaryQuantity</a> → UnitaryQuantity 
-         <li><a data-link-type="dfn" href="../iso.org/80000-6-magnitudes2.html#ampere-magnitude" id="ref-for-ampere-magnitude">80000-6-magnitudes2:ampere-magnitude</a> ← <a data-link-type="dfn" href="../iso.org/80000-6-magnitudes2.html#ampere-magnitude" id="ref-for-ampere-magnitude①">80000-6-magnitudes2:ampere-magnitude</a> → UnitaryQuantity 
-         <li><a data-link-type="dfn" href="../iso.org/80000-6-magnitudes2.html#coulomb-magnitude" id="ref-for-coulomb-magnitude">80000-6-magnitudes2:coulomb-magnitude</a> ← <a data-link-type="dfn" href="../iso.org/80000-6-magnitudes2.html#coulomb-magnitude" id="ref-for-coulomb-magnitude①">80000-6-magnitudes2:coulomb-magnitude</a> → UnitaryQuantity 
-         <li><a data-link-type="dfn" href="../iso.org/80000-5-magnitudes2.html#degreecelcius-magnitude" id="ref-for-degreecelcius-magnitude">80000-5-magnitudes2:degreeCelcius-magnitude</a> ← <a data-link-type="dfn" href="../iso.org/80000-5-magnitudes2.html#degreecelcius-magnitude" id="ref-for-degreecelcius-magnitude①">80000-5-magnitudes2:degreeCelcius-magnitude</a> → UnitaryQuantity 
-         <li><a data-link-type="dfn" href="../nist.gov/pml/special-publication-811-magnitudes2.html#degreefahrenheit-magnitude" id="ref-for-degreefahrenheit-magnitude">special-publication-811-magnitudes2:degreeFahrenheit-magnitude</a> ← <a data-link-type="dfn" href="../nist.gov/pml/special-publication-811-magnitudes2.html#degreefahrenheit-magnitude" id="ref-for-degreefahrenheit-magnitude①">special-publication-811-magnitudes2:degreeFahrenheit-magnitude</a> → UnitaryQuantity 
-         <li><a data-link-type="dfn" href="../nist.gov/pml/special-publication-811-magnitudes2.html#degreerankine-magnitude" id="ref-for-degreerankine-magnitude">special-publication-811-magnitudes2:degreeRankine-magnitude</a> ← <a data-link-type="dfn" href="../nist.gov/pml/special-publication-811-magnitudes2.html#degreerankine-magnitude" id="ref-for-degreerankine-magnitude①">special-publication-811-magnitudes2:degreeRankine-magnitude</a> → UnitaryQuantity 
-         <li><a data-link-type="dfn" href="../nist.gov/pml/special-publication-811-magnitudes2.html#foot-magnitude" id="ref-for-foot-magnitude">special-publication-811-magnitudes2:foot-magnitude</a> ← <a data-link-type="dfn" href="../nist.gov/pml/special-publication-811-magnitudes2.html#foot-magnitude" id="ref-for-foot-magnitude①">special-publication-811-magnitudes2:foot-magnitude</a> → UnitaryQuantity 
-         <li><a data-link-type="dfn" href="../iso.org/80000-4-magnitudes2.html#gram-magnitude" id="ref-for-gram-magnitude">80000-4-magnitudes2:gram-magnitude</a> ← <a data-link-type="dfn" href="../iso.org/80000-4-magnitudes2.html#gram-magnitude" id="ref-for-gram-magnitude①">80000-4-magnitudes2:gram-magnitude</a> → UnitaryQuantity 
-         <li><a data-link-type="dfn" href="../iso.org/80000-3-magnitudes2.html#hertz-magnitude" id="ref-for-hertz-magnitude">80000-3-magnitudes:hertz-magnitude</a> ← <a data-link-type="dfn" href="../iso.org/80000-3-magnitudes2.html#hertz-magnitude" id="ref-for-hertz-magnitude①">80000-3-magnitudes:hertz-magnitude</a> → UnitaryQuantity 
-         <li><a data-link-type="dfn" href="../iso.org/80000-3-magnitudes2.html#hour-magnitude" id="ref-for-hour-magnitude">80000-3-magnitudes:hour-magnitude</a> ← <a data-link-type="dfn" href="../iso.org/80000-3-magnitudes2.html#hour-magnitude" id="ref-for-hour-magnitude①">80000-3-magnitudes:hour-magnitude</a> → UnitaryQuantity 
-         <li><a data-link-type="dfn" href="../iso.org/80000-5-magnitudes2.html#kelvin-magnitude" id="ref-for-kelvin-magnitude">80000-5-magnitudes2:kelvin-magnitude</a> ← <a data-link-type="dfn" href="../iso.org/80000-5-magnitudes2.html#kelvin-magnitude" id="ref-for-kelvin-magnitude①">80000-5-magnitudes2:kelvin-magnitude</a> → UnitaryQuantity 
-         <li><a data-link-type="dfn" href="../iso.org/80000-4-magnitudes2.html#kilogram-magnitude" id="ref-for-kilogram-magnitude">80000-4-magnitudes2:kilogram-magnitude</a> ← <a data-link-type="dfn" href="../iso.org/80000-4-magnitudes2.html#kilogram-magnitude" id="ref-for-kilogram-magnitude①">80000-4-magnitudes2:kilogram-magnitude</a> → UnitaryQuantity 
-         <li><a data-link-type="dfn" href="../iso.org/80000-4-magnitudes2.html#kilogram-metre-per-second-magnitude" id="ref-for-kilogram-metre-per-second-magnitude">80000-4-magnitudes2:kilogram-metre-per-second-magnitude</a> ← <a data-link-type="dfn" href="../iso.org/80000-4-magnitudes2.html#kilogram-metre-per-second-magnitude" id="ref-for-kilogram-metre-per-second-magnitude①">80000-4-magnitudes2:kilogram-metre-per-second-magnitude</a> → UnitaryQuantity 
-         <li><a data-link-type="dfn" href="../iso.org/80000-3-magnitudes2.html#kilometre-magnitude" id="ref-for-kilometre-magnitude">80000-3-magnitudes:kilometre-magnitude</a> ← <a data-link-type="dfn" href="../iso.org/80000-3-magnitudes2.html#kilometre-magnitude" id="ref-for-kilometre-magnitude①">80000-3-magnitudes:kilometre-magnitude</a> → UnitaryQuantity 
-         <li><a data-link-type="dfn" href="../iso.org/80000-3-magnitudes2.html#kilometre-per-second-magnitude" id="ref-for-kilometre-per-second-magnitude">80000-3-magnitudes:kilometre-per-second-magnitude</a> ← <a data-link-type="dfn" href="../iso.org/80000-3-magnitudes2.html#kilometre-per-second-magnitude" id="ref-for-kilometre-per-second-magnitude①">80000-3-magnitudes:kilometre-per-second-magnitude</a> → UnitaryQuantity 
-         <li><a data-link-type="dfn" href="../iso.org/80000-3-magnitudes2.html#metre-magnitude" id="ref-for-metre-magnitude">80000-3-magnitudes:metre-magnitude</a> ← <a data-link-type="dfn" href="../iso.org/80000-3-magnitudes2.html#metre-magnitude" id="ref-for-metre-magnitude①">80000-3-magnitudes:metre-magnitude</a> → UnitaryQuantity 
-         <li><a data-link-type="dfn" href="../iso.org/80000-3-magnitudes2.html#metre-per-second-magnitude" id="ref-for-metre-per-second-magnitude">80000-3-magnitudes:metre-per-second-magnitude</a> ← <a data-link-type="dfn" href="../iso.org/80000-3-magnitudes2.html#metre-per-second-magnitude" id="ref-for-metre-per-second-magnitude①">80000-3-magnitudes:metre-per-second-magnitude</a> → UnitaryQuantity 
-         <li><a data-link-type="dfn" href="../iso.org/80000-3-magnitudes2.html#millisecond-magnitude" id="ref-for-millisecond-magnitude">80000-3-magnitudes:millisecond-magnitude</a> ← <a data-link-type="dfn" href="../iso.org/80000-3-magnitudes2.html#millisecond-magnitude" id="ref-for-millisecond-magnitude①">80000-3-magnitudes:millisecond-magnitude</a> → UnitaryQuantity 
-         <li><a data-link-type="dfn" href="../iso.org/80000-3-magnitudes2.html#minute-magnitude" id="ref-for-minute-magnitude">80000-3-magnitudes:minute-magnitude</a> ← <a data-link-type="dfn" href="../iso.org/80000-3-magnitudes2.html#minute-magnitude" id="ref-for-minute-magnitude①">80000-3-magnitudes:minute-magnitude</a> → UnitaryQuantity 
-         <li><a data-link-type="dfn" href="../iso.org/80000-4-magnitudes2.html#newton-magnitude" id="ref-for-newton-magnitude">80000-4-magnitudes2:newton-magnitude</a> ← <a data-link-type="dfn" href="../iso.org/80000-4-magnitudes2.html#newton-magnitude" id="ref-for-newton-magnitude①">80000-4-magnitudes2:newton-magnitude</a> → UnitaryQuantity 
-         <li><a data-link-type="dfn" href="../iso.org/80000-4-magnitudes2.html#newton-millisecond-magnitude" id="ref-for-newton-millisecond-magnitude">80000-4-magnitudes2:newton-millisecond-magnitude</a> ← <a data-link-type="dfn" href="../iso.org/80000-4-magnitudes2.html#newton-millisecond-magnitude" id="ref-for-newton-millisecond-magnitude①">80000-4-magnitudes2:newton-millisecond-magnitude</a> → UnitaryQuantity 
-         <li><a data-link-type="dfn" href="../iso.org/80000-6-magnitudes2.html#newton-per-coulomb-magnitude" id="ref-for-newton-per-coulomb-magnitude">80000-6-magnitudes2:newton-per-coulomb-magnitude</a> ← <a data-link-type="dfn" href="../iso.org/80000-6-magnitudes2.html#newton-per-coulomb-magnitude" id="ref-for-newton-per-coulomb-magnitude①">80000-6-magnitudes2:newton-per-coulomb-magnitude</a> → UnitaryQuantity 
-         <li><a data-link-type="dfn" href="../iso.org/80000-4-magnitudes2.html#newton-second-magnitude" id="ref-for-newton-second-magnitude">80000-4-magnitudes2:newton-second-magnitude</a> ← <a data-link-type="dfn" href="../iso.org/80000-4-magnitudes2.html#newton-second-magnitude" id="ref-for-newton-second-magnitude①">80000-4-magnitudes2:newton-second-magnitude</a> → UnitaryQuantity 
-         <li><a data-link-type="dfn" href="../iso.org/80000-6-magnitudes2.html#ohm-magnitude" id="ref-for-ohm-magnitude">80000-6-magnitudes2:ohm-magnitude</a> ← <a data-link-type="dfn" href="../iso.org/80000-6-magnitudes2.html#ohm-magnitude" id="ref-for-ohm-magnitude①">80000-6-magnitudes2:ohm-magnitude</a> → UnitaryQuantity 
-         <li><a data-link-type="dfn" href="../nist.gov/pml/special-publication-811-magnitudes2.html#pound-force-magnitude" id="ref-for-pound-force-magnitude">special-publication-811-magnitudes2:pound-force-magnitude</a> ← <a data-link-type="dfn" href="../nist.gov/pml/special-publication-811-magnitudes2.html#pound-force-magnitude" id="ref-for-pound-force-magnitude①">special-publication-811-magnitudes2:pound-force-magnitude</a> → UnitaryQuantity 
-         <li><a data-link-type="dfn" href="../nist.gov/pml/special-publication-811-magnitudes2.html#pound-force-second-magnitude" id="ref-for-pound-force-second-magnitude">special-publication-811-magnitudes2:pound-force-second-magnitude</a> ← <a data-link-type="dfn" href="../nist.gov/pml/special-publication-811-magnitudes2.html#pound-force-second-magnitude" id="ref-for-pound-force-second-magnitude①">special-publication-811-magnitudes2:pound-force-second-magnitude</a> → UnitaryQuantity 
-         <li><a data-link-type="dfn" href="../nist.gov/pml/special-publication-811-magnitudes2.html#pound-mass-magnitude" id="ref-for-pound-mass-magnitude">special-publication-811-magnitudes2:pound-mass-magnitude</a> ← <a data-link-type="dfn" href="../nist.gov/pml/special-publication-811-magnitudes2.html#pound-mass-magnitude" id="ref-for-pound-mass-magnitude①">special-publication-811-magnitudes2:pound-mass-magnitude</a> → UnitaryQuantity 
-         <li><a data-link-type="dfn" href="../iso.org/80000-3-magnitudes2.html#radian-magnitude" id="ref-for-radian-magnitude">80000-3-magnitudes:radian-magnitude</a> ← <a data-link-type="dfn" href="../iso.org/80000-3-magnitudes2.html#radian-magnitude" id="ref-for-radian-magnitude①">80000-3-magnitudes:radian-magnitude</a> → UnitaryQuantity 
-         <li><a data-link-type="dfn" href="../iso.org/80000-3-magnitudes2.html#revolution-magnitude" id="ref-for-revolution-magnitude">80000-3-magnitudes:revolution-magnitude</a> ← <a data-link-type="dfn" href="../iso.org/80000-3-magnitudes2.html#revolution-magnitude" id="ref-for-revolution-magnitude①">80000-3-magnitudes:revolution-magnitude</a> → UnitaryQuantity 
-         <li><a data-link-type="dfn" href="../iso.org/80000-3-magnitudes2.html#second-magnitude" id="ref-for-second-magnitude">80000-3-magnitudes:second-magnitude</a> ← <a data-link-type="dfn" href="../iso.org/80000-3-magnitudes2.html#second-magnitude" id="ref-for-second-magnitude①">80000-3-magnitudes:second-magnitude</a> → UnitaryQuantity 
-         <li><a data-link-type="dfn" href="../iso.org/80000-6-magnitudes2.html#volt-magnitude" id="ref-for-volt-magnitude">80000-6-magnitudes2:volt-magnitude</a> ← <a data-link-type="dfn" href="../iso.org/80000-6-magnitudes2.html#volt-magnitude" id="ref-for-volt-magnitude①">80000-6-magnitudes2:volt-magnitude</a> → UnitaryQuantity 
-         <li><a data-link-type="dfn" href="../iso.org/80000-4-magnitudes2.html#watt-magnitude" id="ref-for-watt-magnitude">80000-4-magnitudes2:watt-magnitude</a> ← <a data-link-type="dfn" href="../iso.org/80000-4-magnitudes2.html#watt-magnitude" id="ref-for-watt-magnitude①">80000-4-magnitudes2:watt-magnitude</a> → UnitaryQuantity 
+         <li><a data-link-type="dfn" href="../iso.org/80000-6-magnitudes-2.html#ampere-magnitude" id="ref-for-ampere-magnitude">80000-6-magnitudes-2:ampere-magnitude</a> ← <a data-link-type="dfn" href="../iso.org/80000-6-magnitudes-2.html#ampere-magnitude" id="ref-for-ampere-magnitude①">80000-6-magnitudes-2:ampere-magnitude</a> → UnitaryQuantity 
+         <li><a data-link-type="dfn" href="../iso.org/80000-6-magnitudes-2.html#coulomb-magnitude" id="ref-for-coulomb-magnitude">80000-6-magnitudes-2:coulomb-magnitude</a> ← <a data-link-type="dfn" href="../iso.org/80000-6-magnitudes-2.html#coulomb-magnitude" id="ref-for-coulomb-magnitude①">80000-6-magnitudes-2:coulomb-magnitude</a> → UnitaryQuantity 
+         <li><a data-link-type="dfn" href="../iso.org/80000-5-magnitudes-2.html#degreecelcius-magnitude" id="ref-for-degreecelcius-magnitude">80000-5-magnitudes-2:degreeCelcius-magnitude</a> ← <a data-link-type="dfn" href="../iso.org/80000-5-magnitudes-2.html#degreecelcius-magnitude" id="ref-for-degreecelcius-magnitude①">80000-5-magnitudes-2:degreeCelcius-magnitude</a> → UnitaryQuantity 
+         <li><a data-link-type="dfn" href="../nist.gov/pml/special-publication-811-magnitudes-2.html#degreefahrenheit-magnitude" id="ref-for-degreefahrenheit-magnitude">special-publication-811-magnitudes2:degreeFahrenheit-magnitude</a> ← <a data-link-type="dfn" href="../nist.gov/pml/special-publication-811-magnitudes-2.html#degreefahrenheit-magnitude" id="ref-for-degreefahrenheit-magnitude①">special-publication-811-magnitudes2:degreeFahrenheit-magnitude</a> → UnitaryQuantity 
+         <li><a data-link-type="dfn" href="../nist.gov/pml/special-publication-811-magnitudes-2.html#degreerankine-magnitude" id="ref-for-degreerankine-magnitude">special-publication-811-magnitudes2:degreeRankine-magnitude</a> ← <a data-link-type="dfn" href="../nist.gov/pml/special-publication-811-magnitudes-2.html#degreerankine-magnitude" id="ref-for-degreerankine-magnitude①">special-publication-811-magnitudes2:degreeRankine-magnitude</a> → UnitaryQuantity 
+         <li><a data-link-type="dfn" href="../nist.gov/pml/special-publication-811-magnitudes-2.html#foot-magnitude" id="ref-for-foot-magnitude">special-publication-811-magnitudes2:foot-magnitude</a> ← <a data-link-type="dfn" href="../nist.gov/pml/special-publication-811-magnitudes-2.html#foot-magnitude" id="ref-for-foot-magnitude①">special-publication-811-magnitudes2:foot-magnitude</a> → UnitaryQuantity 
+         <li><a data-link-type="dfn" href="../iso.org/80000-4-magnitudes-2.html#gram-magnitude" id="ref-for-gram-magnitude">80000-4-magnitudes-2:gram-magnitude</a> ← <a data-link-type="dfn" href="../iso.org/80000-4-magnitudes-2.html#gram-magnitude" id="ref-for-gram-magnitude①">80000-4-magnitudes-2:gram-magnitude</a> → UnitaryQuantity 
+         <li><a data-link-type="dfn" href="../iso.org/80000-3-magnitudes-2.html#hertz-magnitude" id="ref-for-hertz-magnitude">80000-3-magnitudes-2:hertz-magnitude</a> ← <a data-link-type="dfn" href="../iso.org/80000-3-magnitudes-2.html#hertz-magnitude" id="ref-for-hertz-magnitude①">80000-3-magnitudes-2:hertz-magnitude</a> → UnitaryQuantity 
+         <li><a data-link-type="dfn" href="../iso.org/80000-3-magnitudes-2.html#hour-magnitude" id="ref-for-hour-magnitude">80000-3-magnitudes-2:hour-magnitude</a> ← <a data-link-type="dfn" href="../iso.org/80000-3-magnitudes-2.html#hour-magnitude" id="ref-for-hour-magnitude①">80000-3-magnitudes-2:hour-magnitude</a> → UnitaryQuantity 
+         <li><a data-link-type="dfn" href="../iso.org/80000-5-magnitudes-2.html#kelvin-magnitude" id="ref-for-kelvin-magnitude">80000-5-magnitudes-2:kelvin-magnitude</a> ← <a data-link-type="dfn" href="../iso.org/80000-5-magnitudes-2.html#kelvin-magnitude" id="ref-for-kelvin-magnitude①">80000-5-magnitudes-2:kelvin-magnitude</a> → UnitaryQuantity 
+         <li><a data-link-type="dfn" href="../iso.org/80000-4-magnitudes-2.html#kilogram-magnitude" id="ref-for-kilogram-magnitude">80000-4-magnitudes-2:kilogram-magnitude</a> ← <a data-link-type="dfn" href="../iso.org/80000-4-magnitudes-2.html#kilogram-magnitude" id="ref-for-kilogram-magnitude①">80000-4-magnitudes-2:kilogram-magnitude</a> → UnitaryQuantity 
+         <li><a data-link-type="dfn" href="../iso.org/80000-4-magnitudes-2.html#kilogram-metre-per-second-magnitude" id="ref-for-kilogram-metre-per-second-magnitude">80000-4-magnitudes-2:kilogram-metre-per-second-magnitude</a> ← <a data-link-type="dfn" href="../iso.org/80000-4-magnitudes-2.html#kilogram-metre-per-second-magnitude" id="ref-for-kilogram-metre-per-second-magnitude①">80000-4-magnitudes-2:kilogram-metre-per-second-magnitude</a> → UnitaryQuantity 
+         <li><a data-link-type="dfn" href="../iso.org/80000-3-magnitudes-2.html#kilometre-magnitude" id="ref-for-kilometre-magnitude">80000-3-magnitudes-2:kilometre-magnitude</a> ← <a data-link-type="dfn" href="../iso.org/80000-3-magnitudes-2.html#kilometre-magnitude" id="ref-for-kilometre-magnitude①">80000-3-magnitudes-2:kilometre-magnitude</a> → UnitaryQuantity 
+         <li><a data-link-type="dfn" href="../iso.org/80000-3-magnitudes-2.html#kilometre-per-second-magnitude" id="ref-for-kilometre-per-second-magnitude">80000-3-magnitudes-2:kilometre-per-second-magnitude</a> ← <a data-link-type="dfn" href="../iso.org/80000-3-magnitudes-2.html#kilometre-per-second-magnitude" id="ref-for-kilometre-per-second-magnitude①">80000-3-magnitudes-2:kilometre-per-second-magnitude</a> → UnitaryQuantity 
+         <li><a data-link-type="dfn" href="../iso.org/80000-3-magnitudes-2.html#metre-magnitude" id="ref-for-metre-magnitude">80000-3-magnitudes-2:metre-magnitude</a> ← <a data-link-type="dfn" href="../iso.org/80000-3-magnitudes-2.html#metre-magnitude" id="ref-for-metre-magnitude①">80000-3-magnitudes-2:metre-magnitude</a> → UnitaryQuantity 
+         <li><a data-link-type="dfn" href="../iso.org/80000-3-magnitudes-2.html#metre-per-second-magnitude" id="ref-for-metre-per-second-magnitude">80000-3-magnitudes-2:metre-per-second-magnitude</a> ← <a data-link-type="dfn" href="../iso.org/80000-3-magnitudes-2.html#metre-per-second-magnitude" id="ref-for-metre-per-second-magnitude①">80000-3-magnitudes-2:metre-per-second-magnitude</a> → UnitaryQuantity 
+         <li><a data-link-type="dfn" href="../iso.org/80000-3-magnitudes-2.html#millisecond-magnitude" id="ref-for-millisecond-magnitude">80000-3-magnitudes-2:millisecond-magnitude</a> ← <a data-link-type="dfn" href="../iso.org/80000-3-magnitudes-2.html#millisecond-magnitude" id="ref-for-millisecond-magnitude①">80000-3-magnitudes-2:millisecond-magnitude</a> → UnitaryQuantity 
+         <li><a data-link-type="dfn" href="../iso.org/80000-3-magnitudes-2.html#minute-magnitude" id="ref-for-minute-magnitude">80000-3-magnitudes-2:minute-magnitude</a> ← <a data-link-type="dfn" href="../iso.org/80000-3-magnitudes-2.html#minute-magnitude" id="ref-for-minute-magnitude①">80000-3-magnitudes-2:minute-magnitude</a> → UnitaryQuantity 
+         <li><a data-link-type="dfn" href="../iso.org/80000-4-magnitudes-2.html#newton-magnitude" id="ref-for-newton-magnitude">80000-4-magnitudes-2:newton-magnitude</a> ← <a data-link-type="dfn" href="../iso.org/80000-4-magnitudes-2.html#newton-magnitude" id="ref-for-newton-magnitude①">80000-4-magnitudes-2:newton-magnitude</a> → UnitaryQuantity 
+         <li><a data-link-type="dfn" href="../iso.org/80000-4-magnitudes-2.html#newton-millisecond-magnitude" id="ref-for-newton-millisecond-magnitude">80000-4-magnitudes-2:newton-millisecond-magnitude</a> ← <a data-link-type="dfn" href="../iso.org/80000-4-magnitudes-2.html#newton-millisecond-magnitude" id="ref-for-newton-millisecond-magnitude①">80000-4-magnitudes-2:newton-millisecond-magnitude</a> → UnitaryQuantity 
+         <li><a data-link-type="dfn" href="../iso.org/80000-6-magnitudes-2.html#newton-per-coulomb-magnitude" id="ref-for-newton-per-coulomb-magnitude">80000-6-magnitudes-2:newton-per-coulomb-magnitude</a> ← <a data-link-type="dfn" href="../iso.org/80000-6-magnitudes-2.html#newton-per-coulomb-magnitude" id="ref-for-newton-per-coulomb-magnitude①">80000-6-magnitudes-2:newton-per-coulomb-magnitude</a> → UnitaryQuantity 
+         <li><a data-link-type="dfn" href="../iso.org/80000-4-magnitudes-2.html#newton-second-magnitude" id="ref-for-newton-second-magnitude">80000-4-magnitudes-2:newton-second-magnitude</a> ← <a data-link-type="dfn" href="../iso.org/80000-4-magnitudes-2.html#newton-second-magnitude" id="ref-for-newton-second-magnitude①">80000-4-magnitudes-2:newton-second-magnitude</a> → UnitaryQuantity 
+         <li><a data-link-type="dfn" href="../iso.org/80000-6-magnitudes-2.html#ohm-magnitude" id="ref-for-ohm-magnitude">80000-6-magnitudes-2:ohm-magnitude</a> ← <a data-link-type="dfn" href="../iso.org/80000-6-magnitudes-2.html#ohm-magnitude" id="ref-for-ohm-magnitude①">80000-6-magnitudes-2:ohm-magnitude</a> → UnitaryQuantity 
+         <li><a data-link-type="dfn" href="../nist.gov/pml/special-publication-811-magnitudes-2.html#pound-force-magnitude" id="ref-for-pound-force-magnitude">special-publication-811-magnitudes2:pound-force-magnitude</a> ← <a data-link-type="dfn" href="../nist.gov/pml/special-publication-811-magnitudes-2.html#pound-force-magnitude" id="ref-for-pound-force-magnitude①">special-publication-811-magnitudes2:pound-force-magnitude</a> → UnitaryQuantity 
+         <li><a data-link-type="dfn" href="../nist.gov/pml/special-publication-811-magnitudes-2.html#pound-force-second-magnitude" id="ref-for-pound-force-second-magnitude">special-publication-811-magnitudes2:pound-force-second-magnitude</a> ← <a data-link-type="dfn" href="../nist.gov/pml/special-publication-811-magnitudes-2.html#pound-force-second-magnitude" id="ref-for-pound-force-second-magnitude①">special-publication-811-magnitudes2:pound-force-second-magnitude</a> → UnitaryQuantity 
+         <li><a data-link-type="dfn" href="../nist.gov/pml/special-publication-811-magnitudes-2.html#pound-mass-magnitude" id="ref-for-pound-mass-magnitude">special-publication-811-magnitudes2:pound-mass-magnitude</a> ← <a data-link-type="dfn" href="../nist.gov/pml/special-publication-811-magnitudes-2.html#pound-mass-magnitude" id="ref-for-pound-mass-magnitude①">special-publication-811-magnitudes2:pound-mass-magnitude</a> → UnitaryQuantity 
+         <li><a data-link-type="dfn" href="../iso.org/80000-3-magnitudes-2.html#radian-magnitude" id="ref-for-radian-magnitude">80000-3-magnitudes-2:radian-magnitude</a> ← <a data-link-type="dfn" href="../iso.org/80000-3-magnitudes-2.html#radian-magnitude" id="ref-for-radian-magnitude①">80000-3-magnitudes-2:radian-magnitude</a> → UnitaryQuantity 
+         <li><a data-link-type="dfn" href="../iso.org/80000-3-magnitudes-2.html#revolution-magnitude" id="ref-for-revolution-magnitude">80000-3-magnitudes-2:revolution-magnitude</a> ← <a data-link-type="dfn" href="../iso.org/80000-3-magnitudes-2.html#revolution-magnitude" id="ref-for-revolution-magnitude①">80000-3-magnitudes-2:revolution-magnitude</a> → UnitaryQuantity 
+         <li><a data-link-type="dfn" href="../iso.org/80000-3-magnitudes-2.html#second-magnitude" id="ref-for-second-magnitude">80000-3-magnitudes-2:second-magnitude</a> ← <a data-link-type="dfn" href="../iso.org/80000-3-magnitudes-2.html#second-magnitude" id="ref-for-second-magnitude①">80000-3-magnitudes-2:second-magnitude</a> → UnitaryQuantity 
+         <li><a data-link-type="dfn" href="../iso.org/80000-6-magnitudes-2.html#volt-magnitude" id="ref-for-volt-magnitude">80000-6-magnitudes-2:volt-magnitude</a> ← <a data-link-type="dfn" href="../iso.org/80000-6-magnitudes-2.html#volt-magnitude" id="ref-for-volt-magnitude①">80000-6-magnitudes-2:volt-magnitude</a> → UnitaryQuantity 
+         <li><a data-link-type="dfn" href="../iso.org/80000-4-magnitudes-2.html#watt-magnitude" id="ref-for-watt-magnitude">80000-4-magnitudes-2:watt-magnitude</a> ← <a data-link-type="dfn" href="../iso.org/80000-4-magnitudes-2.html#watt-magnitude" id="ref-for-watt-magnitude①">80000-4-magnitudes-2:watt-magnitude</a> → UnitaryQuantity 
         </ul>
     </table>
     <h2 class="heading settled" data-level="5" id="Relations"><span class="secno">5. </span><span class="content">Relation Entities</span><a class="self-link" href="#Relations"></a></h2>
@@ -2891,9 +2891,9 @@ dfn > a.self-link::before      { content: "#"; }
     </table>
     <h3 class="heading settled" data-level="5.5" id="IsMagnitudeOf"><span class="secno">5.5. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="ismagnitudeof">IsMagnitudeOf<a class="self-link" href="#ismagnitudeof"></a></dfn></span><a class="self-link" href="#IsMagnitudeOf"></a></h3>
     <p>Specifies the metrology:Magnitude that is the magnitude of a metrology:Quantity.
-	    This relationship can be specified either explicitly as an asserted axiom
-	    or implicitly as a constraint such as a range restriction or an inference rule
-		involving the foward or reverse property.</p>
+		    This relationship can be specified either explicitly as an asserted axiom
+		    or implicitly as a constraint such as a range restriction or an inference rule
+			involving the foward or reverse property.</p>
     <table class="def">
      <tbody>
       <tr>
@@ -2921,9 +2921,9 @@ dfn > a.self-link::before      { content: "#"; }
     </table>
     <h3 class="heading settled" data-level="5.6" id="IsQuantityOf"><span class="secno">5.6. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="isquantityof">IsQuantityOf<a class="self-link" href="#isquantityof"></a></dfn></span><a class="self-link" href="#IsQuantityOf"></a></h3>
     <p>Specifies the metrology:Object that the metrology:Quantity is a feature of.
-	    Although every metrology:Quantity must have exactly one metrology:Object as its metrology:isQuantityOf,
-	    this relationship, metrology:isQuantityOf, can be specified either explicitly as an asserted axiom
-	    or implicitly as a constraint such as a range restriction or an inference rule.</p>
+		    Although every metrology:Quantity must have exactly one metrology:Object as its metrology:isQuantityOf,
+		    this relationship, metrology:isQuantityOf, can be specified either explicitly as an asserted axiom
+		    or implicitly as a constraint such as a range restriction or an inference rule.</p>
     <table class="def">
      <tbody>
       <tr>
@@ -2969,37 +2969,37 @@ dfn > a.self-link::before      { content: "#"; }
        <th>Subtypes
        <td>
         <ul>
-         <li><a data-link-type="dfn" href="../iso.org/80000-6-magnitudes2.html#ampere-magnitude" id="ref-for-ampere-magnitude②">80000-6-magnitudes2:ampere-magnitude</a>
-         <li><a data-link-type="dfn" href="../iso.org/80000-6-magnitudes2.html#coulomb-magnitude" id="ref-for-coulomb-magnitude②">80000-6-magnitudes2:coulomb-magnitude</a>
-         <li><a data-link-type="dfn" href="../iso.org/80000-5-magnitudes2.html#degreecelcius-magnitude" id="ref-for-degreecelcius-magnitude②">80000-5-magnitudes2:degreeCelcius-magnitude</a>
-         <li><a data-link-type="dfn" href="../nist.gov/pml/special-publication-811-magnitudes2.html#degreefahrenheit-magnitude" id="ref-for-degreefahrenheit-magnitude②">special-publication-811-magnitudes2:degreeFahrenheit-magnitude</a>
-         <li><a data-link-type="dfn" href="../nist.gov/pml/special-publication-811-magnitudes2.html#degreerankine-magnitude" id="ref-for-degreerankine-magnitude②">special-publication-811-magnitudes2:degreeRankine-magnitude</a>
-         <li><a data-link-type="dfn" href="../nist.gov/pml/special-publication-811-magnitudes2.html#foot-magnitude" id="ref-for-foot-magnitude②">special-publication-811-magnitudes2:foot-magnitude</a>
-         <li><a data-link-type="dfn" href="../iso.org/80000-4-magnitudes2.html#gram-magnitude" id="ref-for-gram-magnitude②">80000-4-magnitudes2:gram-magnitude</a>
-         <li><a data-link-type="dfn" href="../iso.org/80000-3-magnitudes2.html#hertz-magnitude" id="ref-for-hertz-magnitude②">80000-3-magnitudes:hertz-magnitude</a>
-         <li><a data-link-type="dfn" href="../iso.org/80000-3-magnitudes2.html#hour-magnitude" id="ref-for-hour-magnitude②">80000-3-magnitudes:hour-magnitude</a>
-         <li><a data-link-type="dfn" href="../iso.org/80000-5-magnitudes2.html#kelvin-magnitude" id="ref-for-kelvin-magnitude②">80000-5-magnitudes2:kelvin-magnitude</a>
-         <li><a data-link-type="dfn" href="../iso.org/80000-4-magnitudes2.html#kilogram-magnitude" id="ref-for-kilogram-magnitude②">80000-4-magnitudes2:kilogram-magnitude</a>
-         <li><a data-link-type="dfn" href="../iso.org/80000-4-magnitudes2.html#kilogram-metre-per-second-magnitude" id="ref-for-kilogram-metre-per-second-magnitude②">80000-4-magnitudes2:kilogram-metre-per-second-magnitude</a>
-         <li><a data-link-type="dfn" href="../iso.org/80000-3-magnitudes2.html#kilometre-magnitude" id="ref-for-kilometre-magnitude②">80000-3-magnitudes:kilometre-magnitude</a>
-         <li><a data-link-type="dfn" href="../iso.org/80000-3-magnitudes2.html#kilometre-per-second-magnitude" id="ref-for-kilometre-per-second-magnitude②">80000-3-magnitudes:kilometre-per-second-magnitude</a>
-         <li><a data-link-type="dfn" href="../iso.org/80000-3-magnitudes2.html#metre-magnitude" id="ref-for-metre-magnitude②">80000-3-magnitudes:metre-magnitude</a>
-         <li><a data-link-type="dfn" href="../iso.org/80000-3-magnitudes2.html#metre-per-second-magnitude" id="ref-for-metre-per-second-magnitude②">80000-3-magnitudes:metre-per-second-magnitude</a>
-         <li><a data-link-type="dfn" href="../iso.org/80000-3-magnitudes2.html#millisecond-magnitude" id="ref-for-millisecond-magnitude②">80000-3-magnitudes:millisecond-magnitude</a>
-         <li><a data-link-type="dfn" href="../iso.org/80000-3-magnitudes2.html#minute-magnitude" id="ref-for-minute-magnitude②">80000-3-magnitudes:minute-magnitude</a>
-         <li><a data-link-type="dfn" href="../iso.org/80000-4-magnitudes2.html#newton-magnitude" id="ref-for-newton-magnitude②">80000-4-magnitudes2:newton-magnitude</a>
-         <li><a data-link-type="dfn" href="../iso.org/80000-4-magnitudes2.html#newton-millisecond-magnitude" id="ref-for-newton-millisecond-magnitude②">80000-4-magnitudes2:newton-millisecond-magnitude</a>
-         <li><a data-link-type="dfn" href="../iso.org/80000-6-magnitudes2.html#newton-per-coulomb-magnitude" id="ref-for-newton-per-coulomb-magnitude②">80000-6-magnitudes2:newton-per-coulomb-magnitude</a>
-         <li><a data-link-type="dfn" href="../iso.org/80000-4-magnitudes2.html#newton-second-magnitude" id="ref-for-newton-second-magnitude②">80000-4-magnitudes2:newton-second-magnitude</a>
-         <li><a data-link-type="dfn" href="../iso.org/80000-6-magnitudes2.html#ohm-magnitude" id="ref-for-ohm-magnitude②">80000-6-magnitudes2:ohm-magnitude</a>
-         <li><a data-link-type="dfn" href="../nist.gov/pml/special-publication-811-magnitudes2.html#pound-force-magnitude" id="ref-for-pound-force-magnitude②">special-publication-811-magnitudes2:pound-force-magnitude</a>
-         <li><a data-link-type="dfn" href="../nist.gov/pml/special-publication-811-magnitudes2.html#pound-force-second-magnitude" id="ref-for-pound-force-second-magnitude②">special-publication-811-magnitudes2:pound-force-second-magnitude</a>
-         <li><a data-link-type="dfn" href="../nist.gov/pml/special-publication-811-magnitudes2.html#pound-mass-magnitude" id="ref-for-pound-mass-magnitude②">special-publication-811-magnitudes2:pound-mass-magnitude</a>
-         <li><a data-link-type="dfn" href="../iso.org/80000-3-magnitudes2.html#radian-magnitude" id="ref-for-radian-magnitude②">80000-3-magnitudes:radian-magnitude</a>
-         <li><a data-link-type="dfn" href="../iso.org/80000-3-magnitudes2.html#revolution-magnitude" id="ref-for-revolution-magnitude②">80000-3-magnitudes:revolution-magnitude</a>
-         <li><a data-link-type="dfn" href="../iso.org/80000-3-magnitudes2.html#second-magnitude" id="ref-for-second-magnitude②">80000-3-magnitudes:second-magnitude</a>
-         <li><a data-link-type="dfn" href="../iso.org/80000-6-magnitudes2.html#volt-magnitude" id="ref-for-volt-magnitude②">80000-6-magnitudes2:volt-magnitude</a>
-         <li><a data-link-type="dfn" href="../iso.org/80000-4-magnitudes2.html#watt-magnitude" id="ref-for-watt-magnitude②">80000-4-magnitudes2:watt-magnitude</a>
+         <li><a data-link-type="dfn" href="../iso.org/80000-6-magnitudes-2.html#ampere-magnitude" id="ref-for-ampere-magnitude②">80000-6-magnitudes-2:ampere-magnitude</a>
+         <li><a data-link-type="dfn" href="../iso.org/80000-6-magnitudes-2.html#coulomb-magnitude" id="ref-for-coulomb-magnitude②">80000-6-magnitudes-2:coulomb-magnitude</a>
+         <li><a data-link-type="dfn" href="../iso.org/80000-5-magnitudes-2.html#degreecelcius-magnitude" id="ref-for-degreecelcius-magnitude②">80000-5-magnitudes-2:degreeCelcius-magnitude</a>
+         <li><a data-link-type="dfn" href="../nist.gov/pml/special-publication-811-magnitudes-2.html#degreefahrenheit-magnitude" id="ref-for-degreefahrenheit-magnitude②">special-publication-811-magnitudes2:degreeFahrenheit-magnitude</a>
+         <li><a data-link-type="dfn" href="../nist.gov/pml/special-publication-811-magnitudes-2.html#degreerankine-magnitude" id="ref-for-degreerankine-magnitude②">special-publication-811-magnitudes2:degreeRankine-magnitude</a>
+         <li><a data-link-type="dfn" href="../nist.gov/pml/special-publication-811-magnitudes-2.html#foot-magnitude" id="ref-for-foot-magnitude②">special-publication-811-magnitudes2:foot-magnitude</a>
+         <li><a data-link-type="dfn" href="../iso.org/80000-4-magnitudes-2.html#gram-magnitude" id="ref-for-gram-magnitude②">80000-4-magnitudes-2:gram-magnitude</a>
+         <li><a data-link-type="dfn" href="../iso.org/80000-3-magnitudes-2.html#hertz-magnitude" id="ref-for-hertz-magnitude②">80000-3-magnitudes-2:hertz-magnitude</a>
+         <li><a data-link-type="dfn" href="../iso.org/80000-3-magnitudes-2.html#hour-magnitude" id="ref-for-hour-magnitude②">80000-3-magnitudes-2:hour-magnitude</a>
+         <li><a data-link-type="dfn" href="../iso.org/80000-5-magnitudes-2.html#kelvin-magnitude" id="ref-for-kelvin-magnitude②">80000-5-magnitudes-2:kelvin-magnitude</a>
+         <li><a data-link-type="dfn" href="../iso.org/80000-4-magnitudes-2.html#kilogram-magnitude" id="ref-for-kilogram-magnitude②">80000-4-magnitudes-2:kilogram-magnitude</a>
+         <li><a data-link-type="dfn" href="../iso.org/80000-4-magnitudes-2.html#kilogram-metre-per-second-magnitude" id="ref-for-kilogram-metre-per-second-magnitude②">80000-4-magnitudes-2:kilogram-metre-per-second-magnitude</a>
+         <li><a data-link-type="dfn" href="../iso.org/80000-3-magnitudes-2.html#kilometre-magnitude" id="ref-for-kilometre-magnitude②">80000-3-magnitudes-2:kilometre-magnitude</a>
+         <li><a data-link-type="dfn" href="../iso.org/80000-3-magnitudes-2.html#kilometre-per-second-magnitude" id="ref-for-kilometre-per-second-magnitude②">80000-3-magnitudes-2:kilometre-per-second-magnitude</a>
+         <li><a data-link-type="dfn" href="../iso.org/80000-3-magnitudes-2.html#metre-magnitude" id="ref-for-metre-magnitude②">80000-3-magnitudes-2:metre-magnitude</a>
+         <li><a data-link-type="dfn" href="../iso.org/80000-3-magnitudes-2.html#metre-per-second-magnitude" id="ref-for-metre-per-second-magnitude②">80000-3-magnitudes-2:metre-per-second-magnitude</a>
+         <li><a data-link-type="dfn" href="../iso.org/80000-3-magnitudes-2.html#millisecond-magnitude" id="ref-for-millisecond-magnitude②">80000-3-magnitudes-2:millisecond-magnitude</a>
+         <li><a data-link-type="dfn" href="../iso.org/80000-3-magnitudes-2.html#minute-magnitude" id="ref-for-minute-magnitude②">80000-3-magnitudes-2:minute-magnitude</a>
+         <li><a data-link-type="dfn" href="../iso.org/80000-4-magnitudes-2.html#newton-magnitude" id="ref-for-newton-magnitude②">80000-4-magnitudes-2:newton-magnitude</a>
+         <li><a data-link-type="dfn" href="../iso.org/80000-4-magnitudes-2.html#newton-millisecond-magnitude" id="ref-for-newton-millisecond-magnitude②">80000-4-magnitudes-2:newton-millisecond-magnitude</a>
+         <li><a data-link-type="dfn" href="../iso.org/80000-6-magnitudes-2.html#newton-per-coulomb-magnitude" id="ref-for-newton-per-coulomb-magnitude②">80000-6-magnitudes-2:newton-per-coulomb-magnitude</a>
+         <li><a data-link-type="dfn" href="../iso.org/80000-4-magnitudes-2.html#newton-second-magnitude" id="ref-for-newton-second-magnitude②">80000-4-magnitudes-2:newton-second-magnitude</a>
+         <li><a data-link-type="dfn" href="../iso.org/80000-6-magnitudes-2.html#ohm-magnitude" id="ref-for-ohm-magnitude②">80000-6-magnitudes-2:ohm-magnitude</a>
+         <li><a data-link-type="dfn" href="../nist.gov/pml/special-publication-811-magnitudes-2.html#pound-force-magnitude" id="ref-for-pound-force-magnitude②">special-publication-811-magnitudes2:pound-force-magnitude</a>
+         <li><a data-link-type="dfn" href="../nist.gov/pml/special-publication-811-magnitudes-2.html#pound-force-second-magnitude" id="ref-for-pound-force-second-magnitude②">special-publication-811-magnitudes2:pound-force-second-magnitude</a>
+         <li><a data-link-type="dfn" href="../nist.gov/pml/special-publication-811-magnitudes-2.html#pound-mass-magnitude" id="ref-for-pound-mass-magnitude②">special-publication-811-magnitudes2:pound-mass-magnitude</a>
+         <li><a data-link-type="dfn" href="../iso.org/80000-3-magnitudes-2.html#radian-magnitude" id="ref-for-radian-magnitude②">80000-3-magnitudes-2:radian-magnitude</a>
+         <li><a data-link-type="dfn" href="../iso.org/80000-3-magnitudes-2.html#revolution-magnitude" id="ref-for-revolution-magnitude②">80000-3-magnitudes-2:revolution-magnitude</a>
+         <li><a data-link-type="dfn" href="../iso.org/80000-3-magnitudes-2.html#second-magnitude" id="ref-for-second-magnitude②">80000-3-magnitudes-2:second-magnitude</a>
+         <li><a data-link-type="dfn" href="../iso.org/80000-6-magnitudes-2.html#volt-magnitude" id="ref-for-volt-magnitude②">80000-6-magnitudes-2:volt-magnitude</a>
+         <li><a data-link-type="dfn" href="../iso.org/80000-4-magnitudes-2.html#watt-magnitude" id="ref-for-watt-magnitude②">80000-4-magnitudes-2:watt-magnitude</a>
         </ul>
       <tr>
        <th>Forward Relation
@@ -3135,10 +3135,10 @@ dfn > a.self-link::before      { content: "#"; }
     </table>
     <h3 class="heading settled" data-level="6.3" id="IsBaseMetrologicalUnit"><span class="secno">6.3. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="isbasemetrologicalunit">isBaseMetrologicalUnit<a class="self-link" href="#isbasemetrologicalunit"></a></dfn></span><a class="self-link" href="#IsBaseMetrologicalUnit"></a></h3>
     <p>It is a property of a metrology:SystemOfMetrologicalUnits to select of a subset of metrology:MeasurementUnit
-		as being functionally independent of each other as its base metrology:MeasurementUnit(s)
-		such that the other metrology:MeasurementUnit(s) in the system can be algebraically derived from the base metrology:MeasurementUnit(s).</p>
+			as being functionally independent of each other as its base metrology:MeasurementUnit(s)
+			such that the other metrology:MeasurementUnit(s) in the system can be algebraically derived from the base metrology:MeasurementUnit(s).</p>
     <p>Note that selecting a metrology:MeasurementUnit as a base or derived for a given system is unrelated to its definition
-		(i.e metrology:NonCoherentDerivedMeasurementUnit, metrology:IndependentMeasurementUnit, metrology:DerivedMeasurementUnit or metrology:PrefixedMeasurementUnit).</p>
+			(i.e metrology:NonCoherentDerivedMeasurementUnit, metrology:IndependentMeasurementUnit, metrology:DerivedMeasurementUnit or metrology:PrefixedMeasurementUnit).</p>
     <table class="def">
      <tbody>
       <tr>
@@ -3153,10 +3153,10 @@ dfn > a.self-link::before      { content: "#"; }
     </table>
     <h3 class="heading settled" data-level="6.4" id="IsBaseQuantity"><span class="secno">6.4. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="isbasequantity">isBaseQuantity<a class="self-link" href="#isbasequantity"></a></dfn></span><a class="self-link" href="#IsBaseQuantity"></a></h3>
     <p>It is a property of a metrology:SystemOfUnitaryQuantities to select of a subset of metrology:UnitaryQuantity
-		as being functionally independent of each other as its base metrology:UnitaryQuantity
-		such that the other metrology:UnitaryQuantity in the system can be algebraically derived from the base metrology:UnitaryQuantity.</p>
+			as being functionally independent of each other as its base metrology:UnitaryQuantity
+			such that the other metrology:UnitaryQuantity in the system can be algebraically derived from the base metrology:UnitaryQuantity.</p>
     <p>Note that selecting a metrology:UnitaryQuantity as a base or derived for a given system is unrelated to its definition
-		(i.e metrology:IndependentUnitaryQuantity or metrology:DerivedUnitaryQuantity).</p>
+			(i.e metrology:IndependentUnitaryQuantity or metrology:DerivedUnitaryQuantity).</p>
     <table class="def">
      <tbody>
       <tr>
@@ -3171,11 +3171,11 @@ dfn > a.self-link::before      { content: "#"; }
     </table>
     <h3 class="heading settled" data-level="6.5" id="IsDimensionlessMeasurementUnit"><span class="secno">6.5. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="isdimensionlessmeasurementunit">isDimensionlessMeasurementUnit<a class="self-link" href="#isdimensionlessmeasurementunit"></a></dfn></span><a class="self-link" href="#IsDimensionlessMeasurementUnit"></a></h3>
     <p>metrology:isDimensionlessMeasurementUnit specifies whether the definition of a metrology:CoherentMeasurementUnit has dimension 'one',
-	    either intrisically as an metrology:IndependentMeasurementUnit or extrinsically as a metrology:DerivedMeasurementUnit where the product factors of other 
-		metrology:MeasurementUnit(s) could be algebraically reduced to 'one'.</p>
+		    either intrisically as an metrology:IndependentMeasurementUnit or extrinsically as a metrology:DerivedMeasurementUnit where the product factors of other 
+			metrology:MeasurementUnit(s) could be algebraically reduced to 'one'.</p>
     <p>Note when defining a metrology:DerivedMeasurementUnit with metrology:isDimensionlessMeasurementUnit=true,
-	    it is important to retain the non-simplified product factors in order to preserve the metrological provenance of the metrology:DerivedMeasurementUnit
-	    with respect to other metrology:MeasurementUnit(same).</p>
+		    it is important to retain the non-simplified product factors in order to preserve the metrological provenance of the metrology:DerivedMeasurementUnit
+		    with respect to other metrology:MeasurementUnit(same).</p>
     <table class="def">
      <tbody>
       <tr>
@@ -3190,11 +3190,11 @@ dfn > a.self-link::before      { content: "#"; }
     </table>
     <h3 class="heading settled" data-level="6.6" id="IsDimensionlessQuantity"><span class="secno">6.6. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="isdimensionlessquantity">isDimensionlessQuantity<a class="self-link" href="#isdimensionlessquantity"></a></dfn></span><a class="self-link" href="#IsDimensionlessQuantity"></a></h3>
     <p>metrology:isDimensionlessQuantity specifies whether the definition of a metrology:UnitaryQuantity has dimension 'one',
-	    either intrisically as an metrology:IndependentUnitaryQuantity 
-	    or extrinsically as a metrology:DerivedUnitaryQuantity where the product factors of other metrology:UnitaryQuantity(ies) could be algebraically reduced to 'one'.</p>
+		    either intrisically as an metrology:IndependentUnitaryQuantity 
+		    or extrinsically as a metrology:DerivedUnitaryQuantity where the product factors of other metrology:UnitaryQuantity(ies) could be algebraically reduced to 'one'.</p>
     <p>Note when defining a metrology:DerivedUnitaryQuantity with metrology:isDimensionlessQuantity=true,
-	    it is important to retain the non-simplified product factors in order to preserve the metrological provenance of the metrology:DerivedUnitaryQuantity
-	    with respect to other metrology:UnitaryQuantity(ies).</p>
+		    it is important to retain the non-simplified product factors in order to preserve the metrological provenance of the metrology:DerivedUnitaryQuantity
+		    with respect to other metrology:UnitaryQuantity(ies).</p>
     <table class="def">
      <tbody>
       <tr>
@@ -3209,7 +3209,7 @@ dfn > a.self-link::before      { content: "#"; }
     </table>
     <h3 class="heading settled" data-level="6.7" id="NonCoherentRelationship"><span class="secno">6.7. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="noncoherentrelationship">nonCoherentRelationship<a class="self-link" href="#noncoherentrelationship"></a></dfn></span><a class="self-link" href="#NonCoherentRelationship"></a></h3>
     <p>metrology:nonCoherentRelationship specifies the non-coherent derivation relationship between a metrology:NonCoherentDerivedMeasurementUnit
-		and a metrology:MeasurementUnit that it is a metrology:nonCoherentDerivedMeasurementUnitOf</p>
+			and a metrology:MeasurementUnit that it is a metrology:nonCoherentDerivedMeasurementUnitOf</p>
     <table class="def">
      <tbody>
       <tr>
@@ -3419,77 +3419,77 @@ dfn > a.self-link::before      { content: "#"; }
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-hertz-magnitude">
-   <a href="../iso.org/80000-3-magnitudes2.html#hertz-magnitude">../iso.org/80000-3-magnitudes2.html#hertz-magnitude</a><b>Referenced in:</b>
+   <a href="../iso.org/80000-3-magnitudes-2.html#hertz-magnitude">../iso.org/80000-3-magnitudes-2.html#hertz-magnitude</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-hertz-magnitude">4.11. UnitaryQuantity</a> <a href="#ref-for-hertz-magnitude①">(2)</a>
     <li><a href="#ref-for-hertz-magnitude②">5.7. IsReflexiveMagnitudeOf</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-hour-magnitude">
-   <a href="../iso.org/80000-3-magnitudes2.html#hour-magnitude">../iso.org/80000-3-magnitudes2.html#hour-magnitude</a><b>Referenced in:</b>
+   <a href="../iso.org/80000-3-magnitudes-2.html#hour-magnitude">../iso.org/80000-3-magnitudes-2.html#hour-magnitude</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-hour-magnitude">4.11. UnitaryQuantity</a> <a href="#ref-for-hour-magnitude①">(2)</a>
     <li><a href="#ref-for-hour-magnitude②">5.7. IsReflexiveMagnitudeOf</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-kilometre-magnitude">
-   <a href="../iso.org/80000-3-magnitudes2.html#kilometre-magnitude">../iso.org/80000-3-magnitudes2.html#kilometre-magnitude</a><b>Referenced in:</b>
+   <a href="../iso.org/80000-3-magnitudes-2.html#kilometre-magnitude">../iso.org/80000-3-magnitudes-2.html#kilometre-magnitude</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-kilometre-magnitude">4.11. UnitaryQuantity</a> <a href="#ref-for-kilometre-magnitude①">(2)</a>
     <li><a href="#ref-for-kilometre-magnitude②">5.7. IsReflexiveMagnitudeOf</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-kilometre-per-second-magnitude">
-   <a href="../iso.org/80000-3-magnitudes2.html#kilometre-per-second-magnitude">../iso.org/80000-3-magnitudes2.html#kilometre-per-second-magnitude</a><b>Referenced in:</b>
+   <a href="../iso.org/80000-3-magnitudes-2.html#kilometre-per-second-magnitude">../iso.org/80000-3-magnitudes-2.html#kilometre-per-second-magnitude</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-kilometre-per-second-magnitude">4.11. UnitaryQuantity</a> <a href="#ref-for-kilometre-per-second-magnitude①">(2)</a>
     <li><a href="#ref-for-kilometre-per-second-magnitude②">5.7. IsReflexiveMagnitudeOf</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-metre-magnitude">
-   <a href="../iso.org/80000-3-magnitudes2.html#metre-magnitude">../iso.org/80000-3-magnitudes2.html#metre-magnitude</a><b>Referenced in:</b>
+   <a href="../iso.org/80000-3-magnitudes-2.html#metre-magnitude">../iso.org/80000-3-magnitudes-2.html#metre-magnitude</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-metre-magnitude">4.11. UnitaryQuantity</a> <a href="#ref-for-metre-magnitude①">(2)</a>
     <li><a href="#ref-for-metre-magnitude②">5.7. IsReflexiveMagnitudeOf</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-metre-per-second-magnitude">
-   <a href="../iso.org/80000-3-magnitudes2.html#metre-per-second-magnitude">../iso.org/80000-3-magnitudes2.html#metre-per-second-magnitude</a><b>Referenced in:</b>
+   <a href="../iso.org/80000-3-magnitudes-2.html#metre-per-second-magnitude">../iso.org/80000-3-magnitudes-2.html#metre-per-second-magnitude</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-metre-per-second-magnitude">4.11. UnitaryQuantity</a> <a href="#ref-for-metre-per-second-magnitude①">(2)</a>
     <li><a href="#ref-for-metre-per-second-magnitude②">5.7. IsReflexiveMagnitudeOf</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-millisecond-magnitude">
-   <a href="../iso.org/80000-3-magnitudes2.html#millisecond-magnitude">../iso.org/80000-3-magnitudes2.html#millisecond-magnitude</a><b>Referenced in:</b>
+   <a href="../iso.org/80000-3-magnitudes-2.html#millisecond-magnitude">../iso.org/80000-3-magnitudes-2.html#millisecond-magnitude</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-millisecond-magnitude">4.11. UnitaryQuantity</a> <a href="#ref-for-millisecond-magnitude①">(2)</a>
     <li><a href="#ref-for-millisecond-magnitude②">5.7. IsReflexiveMagnitudeOf</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-minute-magnitude">
-   <a href="../iso.org/80000-3-magnitudes2.html#minute-magnitude">../iso.org/80000-3-magnitudes2.html#minute-magnitude</a><b>Referenced in:</b>
+   <a href="../iso.org/80000-3-magnitudes-2.html#minute-magnitude">../iso.org/80000-3-magnitudes-2.html#minute-magnitude</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-minute-magnitude">4.11. UnitaryQuantity</a> <a href="#ref-for-minute-magnitude①">(2)</a>
     <li><a href="#ref-for-minute-magnitude②">5.7. IsReflexiveMagnitudeOf</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-radian-magnitude">
-   <a href="../iso.org/80000-3-magnitudes2.html#radian-magnitude">../iso.org/80000-3-magnitudes2.html#radian-magnitude</a><b>Referenced in:</b>
+   <a href="../iso.org/80000-3-magnitudes-2.html#radian-magnitude">../iso.org/80000-3-magnitudes-2.html#radian-magnitude</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-radian-magnitude">4.11. UnitaryQuantity</a> <a href="#ref-for-radian-magnitude①">(2)</a>
     <li><a href="#ref-for-radian-magnitude②">5.7. IsReflexiveMagnitudeOf</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-revolution-magnitude">
-   <a href="../iso.org/80000-3-magnitudes2.html#revolution-magnitude">../iso.org/80000-3-magnitudes2.html#revolution-magnitude</a><b>Referenced in:</b>
+   <a href="../iso.org/80000-3-magnitudes-2.html#revolution-magnitude">../iso.org/80000-3-magnitudes-2.html#revolution-magnitude</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-revolution-magnitude">4.11. UnitaryQuantity</a> <a href="#ref-for-revolution-magnitude①">(2)</a>
     <li><a href="#ref-for-revolution-magnitude②">5.7. IsReflexiveMagnitudeOf</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-second-magnitude">
-   <a href="../iso.org/80000-3-magnitudes2.html#second-magnitude">../iso.org/80000-3-magnitudes2.html#second-magnitude</a><b>Referenced in:</b>
+   <a href="../iso.org/80000-3-magnitudes-2.html#second-magnitude">../iso.org/80000-3-magnitudes-2.html#second-magnitude</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-second-magnitude">4.11. UnitaryQuantity</a> <a href="#ref-for-second-magnitude①">(2)</a>
     <li><a href="#ref-for-second-magnitude②">5.7. IsReflexiveMagnitudeOf</a>
@@ -3820,49 +3820,49 @@ dfn > a.self-link::before      { content: "#"; }
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-gram-magnitude">
-   <a href="../iso.org/80000-4-magnitudes2.html#gram-magnitude">../iso.org/80000-4-magnitudes2.html#gram-magnitude</a><b>Referenced in:</b>
+   <a href="../iso.org/80000-4-magnitudes-2.html#gram-magnitude">../iso.org/80000-4-magnitudes-2.html#gram-magnitude</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-gram-magnitude">4.11. UnitaryQuantity</a> <a href="#ref-for-gram-magnitude①">(2)</a>
     <li><a href="#ref-for-gram-magnitude②">5.7. IsReflexiveMagnitudeOf</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-kilogram-magnitude">
-   <a href="../iso.org/80000-4-magnitudes2.html#kilogram-magnitude">../iso.org/80000-4-magnitudes2.html#kilogram-magnitude</a><b>Referenced in:</b>
+   <a href="../iso.org/80000-4-magnitudes-2.html#kilogram-magnitude">../iso.org/80000-4-magnitudes-2.html#kilogram-magnitude</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-kilogram-magnitude">4.11. UnitaryQuantity</a> <a href="#ref-for-kilogram-magnitude①">(2)</a>
     <li><a href="#ref-for-kilogram-magnitude②">5.7. IsReflexiveMagnitudeOf</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-kilogram-metre-per-second-magnitude">
-   <a href="../iso.org/80000-4-magnitudes2.html#kilogram-metre-per-second-magnitude">../iso.org/80000-4-magnitudes2.html#kilogram-metre-per-second-magnitude</a><b>Referenced in:</b>
+   <a href="../iso.org/80000-4-magnitudes-2.html#kilogram-metre-per-second-magnitude">../iso.org/80000-4-magnitudes-2.html#kilogram-metre-per-second-magnitude</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-kilogram-metre-per-second-magnitude">4.11. UnitaryQuantity</a> <a href="#ref-for-kilogram-metre-per-second-magnitude①">(2)</a>
     <li><a href="#ref-for-kilogram-metre-per-second-magnitude②">5.7. IsReflexiveMagnitudeOf</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-newton-magnitude">
-   <a href="../iso.org/80000-4-magnitudes2.html#newton-magnitude">../iso.org/80000-4-magnitudes2.html#newton-magnitude</a><b>Referenced in:</b>
+   <a href="../iso.org/80000-4-magnitudes-2.html#newton-magnitude">../iso.org/80000-4-magnitudes-2.html#newton-magnitude</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-newton-magnitude">4.11. UnitaryQuantity</a> <a href="#ref-for-newton-magnitude①">(2)</a>
     <li><a href="#ref-for-newton-magnitude②">5.7. IsReflexiveMagnitudeOf</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-newton-millisecond-magnitude">
-   <a href="../iso.org/80000-4-magnitudes2.html#newton-millisecond-magnitude">../iso.org/80000-4-magnitudes2.html#newton-millisecond-magnitude</a><b>Referenced in:</b>
+   <a href="../iso.org/80000-4-magnitudes-2.html#newton-millisecond-magnitude">../iso.org/80000-4-magnitudes-2.html#newton-millisecond-magnitude</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-newton-millisecond-magnitude">4.11. UnitaryQuantity</a> <a href="#ref-for-newton-millisecond-magnitude①">(2)</a>
     <li><a href="#ref-for-newton-millisecond-magnitude②">5.7. IsReflexiveMagnitudeOf</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-newton-second-magnitude">
-   <a href="../iso.org/80000-4-magnitudes2.html#newton-second-magnitude">../iso.org/80000-4-magnitudes2.html#newton-second-magnitude</a><b>Referenced in:</b>
+   <a href="../iso.org/80000-4-magnitudes-2.html#newton-second-magnitude">../iso.org/80000-4-magnitudes-2.html#newton-second-magnitude</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-newton-second-magnitude">4.11. UnitaryQuantity</a> <a href="#ref-for-newton-second-magnitude①">(2)</a>
     <li><a href="#ref-for-newton-second-magnitude②">5.7. IsReflexiveMagnitudeOf</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-watt-magnitude">
-   <a href="../iso.org/80000-4-magnitudes2.html#watt-magnitude">../iso.org/80000-4-magnitudes2.html#watt-magnitude</a><b>Referenced in:</b>
+   <a href="../iso.org/80000-4-magnitudes-2.html#watt-magnitude">../iso.org/80000-4-magnitudes-2.html#watt-magnitude</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-watt-magnitude">4.11. UnitaryQuantity</a> <a href="#ref-for-watt-magnitude①">(2)</a>
     <li><a href="#ref-for-watt-magnitude②">5.7. IsReflexiveMagnitudeOf</a>
@@ -4139,14 +4139,14 @@ dfn > a.self-link::before      { content: "#"; }
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-degreecelcius-magnitude">
-   <a href="../iso.org/80000-5-magnitudes2.html#degreecelcius-magnitude">../iso.org/80000-5-magnitudes2.html#degreecelcius-magnitude</a><b>Referenced in:</b>
+   <a href="../iso.org/80000-5-magnitudes-2.html#degreecelcius-magnitude">../iso.org/80000-5-magnitudes-2.html#degreecelcius-magnitude</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-degreecelcius-magnitude">4.11. UnitaryQuantity</a> <a href="#ref-for-degreecelcius-magnitude①">(2)</a>
     <li><a href="#ref-for-degreecelcius-magnitude②">5.7. IsReflexiveMagnitudeOf</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-kelvin-magnitude">
-   <a href="../iso.org/80000-5-magnitudes2.html#kelvin-magnitude">../iso.org/80000-5-magnitudes2.html#kelvin-magnitude</a><b>Referenced in:</b>
+   <a href="../iso.org/80000-5-magnitudes-2.html#kelvin-magnitude">../iso.org/80000-5-magnitudes-2.html#kelvin-magnitude</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-kelvin-magnitude">4.11. UnitaryQuantity</a> <a href="#ref-for-kelvin-magnitude①">(2)</a>
     <li><a href="#ref-for-kelvin-magnitude②">5.7. IsReflexiveMagnitudeOf</a>
@@ -4213,35 +4213,35 @@ dfn > a.self-link::before      { content: "#"; }
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-ampere-magnitude">
-   <a href="../iso.org/80000-6-magnitudes2.html#ampere-magnitude">../iso.org/80000-6-magnitudes2.html#ampere-magnitude</a><b>Referenced in:</b>
+   <a href="../iso.org/80000-6-magnitudes-2.html#ampere-magnitude">../iso.org/80000-6-magnitudes-2.html#ampere-magnitude</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-ampere-magnitude">4.11. UnitaryQuantity</a> <a href="#ref-for-ampere-magnitude①">(2)</a>
     <li><a href="#ref-for-ampere-magnitude②">5.7. IsReflexiveMagnitudeOf</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-coulomb-magnitude">
-   <a href="../iso.org/80000-6-magnitudes2.html#coulomb-magnitude">../iso.org/80000-6-magnitudes2.html#coulomb-magnitude</a><b>Referenced in:</b>
+   <a href="../iso.org/80000-6-magnitudes-2.html#coulomb-magnitude">../iso.org/80000-6-magnitudes-2.html#coulomb-magnitude</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-coulomb-magnitude">4.11. UnitaryQuantity</a> <a href="#ref-for-coulomb-magnitude①">(2)</a>
     <li><a href="#ref-for-coulomb-magnitude②">5.7. IsReflexiveMagnitudeOf</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-newton-per-coulomb-magnitude">
-   <a href="../iso.org/80000-6-magnitudes2.html#newton-per-coulomb-magnitude">../iso.org/80000-6-magnitudes2.html#newton-per-coulomb-magnitude</a><b>Referenced in:</b>
+   <a href="../iso.org/80000-6-magnitudes-2.html#newton-per-coulomb-magnitude">../iso.org/80000-6-magnitudes-2.html#newton-per-coulomb-magnitude</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-newton-per-coulomb-magnitude">4.11. UnitaryQuantity</a> <a href="#ref-for-newton-per-coulomb-magnitude①">(2)</a>
     <li><a href="#ref-for-newton-per-coulomb-magnitude②">5.7. IsReflexiveMagnitudeOf</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-ohm-magnitude">
-   <a href="../iso.org/80000-6-magnitudes2.html#ohm-magnitude">../iso.org/80000-6-magnitudes2.html#ohm-magnitude</a><b>Referenced in:</b>
+   <a href="../iso.org/80000-6-magnitudes-2.html#ohm-magnitude">../iso.org/80000-6-magnitudes-2.html#ohm-magnitude</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-ohm-magnitude">4.11. UnitaryQuantity</a> <a href="#ref-for-ohm-magnitude①">(2)</a>
     <li><a href="#ref-for-ohm-magnitude②">5.7. IsReflexiveMagnitudeOf</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-volt-magnitude">
-   <a href="../iso.org/80000-6-magnitudes2.html#volt-magnitude">../iso.org/80000-6-magnitudes2.html#volt-magnitude</a><b>Referenced in:</b>
+   <a href="../iso.org/80000-6-magnitudes-2.html#volt-magnitude">../iso.org/80000-6-magnitudes-2.html#volt-magnitude</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-volt-magnitude">4.11. UnitaryQuantity</a> <a href="#ref-for-volt-magnitude①">(2)</a>
     <li><a href="#ref-for-volt-magnitude②">5.7. IsReflexiveMagnitudeOf</a>
@@ -4837,42 +4837,42 @@ dfn > a.self-link::before      { content: "#"; }
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-degreefahrenheit-magnitude">
-   <a href="../nist.gov/pml/special-publication-811-magnitudes2.html#degreefahrenheit-magnitude">../nist.gov/pml/special-publication-811-magnitudes2.html#degreefahrenheit-magnitude</a><b>Referenced in:</b>
+   <a href="../nist.gov/pml/special-publication-811-magnitudes-2.html#degreefahrenheit-magnitude">../nist.gov/pml/special-publication-811-magnitudes-2.html#degreefahrenheit-magnitude</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-degreefahrenheit-magnitude">4.11. UnitaryQuantity</a> <a href="#ref-for-degreefahrenheit-magnitude①">(2)</a>
     <li><a href="#ref-for-degreefahrenheit-magnitude②">5.7. IsReflexiveMagnitudeOf</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-degreerankine-magnitude">
-   <a href="../nist.gov/pml/special-publication-811-magnitudes2.html#degreerankine-magnitude">../nist.gov/pml/special-publication-811-magnitudes2.html#degreerankine-magnitude</a><b>Referenced in:</b>
+   <a href="../nist.gov/pml/special-publication-811-magnitudes-2.html#degreerankine-magnitude">../nist.gov/pml/special-publication-811-magnitudes-2.html#degreerankine-magnitude</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-degreerankine-magnitude">4.11. UnitaryQuantity</a> <a href="#ref-for-degreerankine-magnitude①">(2)</a>
     <li><a href="#ref-for-degreerankine-magnitude②">5.7. IsReflexiveMagnitudeOf</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-foot-magnitude">
-   <a href="../nist.gov/pml/special-publication-811-magnitudes2.html#foot-magnitude">../nist.gov/pml/special-publication-811-magnitudes2.html#foot-magnitude</a><b>Referenced in:</b>
+   <a href="../nist.gov/pml/special-publication-811-magnitudes-2.html#foot-magnitude">../nist.gov/pml/special-publication-811-magnitudes-2.html#foot-magnitude</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-foot-magnitude">4.11. UnitaryQuantity</a> <a href="#ref-for-foot-magnitude①">(2)</a>
     <li><a href="#ref-for-foot-magnitude②">5.7. IsReflexiveMagnitudeOf</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-pound-force-magnitude">
-   <a href="../nist.gov/pml/special-publication-811-magnitudes2.html#pound-force-magnitude">../nist.gov/pml/special-publication-811-magnitudes2.html#pound-force-magnitude</a><b>Referenced in:</b>
+   <a href="../nist.gov/pml/special-publication-811-magnitudes-2.html#pound-force-magnitude">../nist.gov/pml/special-publication-811-magnitudes-2.html#pound-force-magnitude</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-pound-force-magnitude">4.11. UnitaryQuantity</a> <a href="#ref-for-pound-force-magnitude①">(2)</a>
     <li><a href="#ref-for-pound-force-magnitude②">5.7. IsReflexiveMagnitudeOf</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-pound-force-second-magnitude">
-   <a href="../nist.gov/pml/special-publication-811-magnitudes2.html#pound-force-second-magnitude">../nist.gov/pml/special-publication-811-magnitudes2.html#pound-force-second-magnitude</a><b>Referenced in:</b>
+   <a href="../nist.gov/pml/special-publication-811-magnitudes-2.html#pound-force-second-magnitude">../nist.gov/pml/special-publication-811-magnitudes-2.html#pound-force-second-magnitude</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-pound-force-second-magnitude">4.11. UnitaryQuantity</a> <a href="#ref-for-pound-force-second-magnitude①">(2)</a>
     <li><a href="#ref-for-pound-force-second-magnitude②">5.7. IsReflexiveMagnitudeOf</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-pound-mass-magnitude">
-   <a href="../nist.gov/pml/special-publication-811-magnitudes2.html#pound-mass-magnitude">../nist.gov/pml/special-publication-811-magnitudes2.html#pound-mass-magnitude</a><b>Referenced in:</b>
+   <a href="../nist.gov/pml/special-publication-811-magnitudes-2.html#pound-mass-magnitude">../nist.gov/pml/special-publication-811-magnitudes-2.html#pound-mass-magnitude</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-pound-mass-magnitude">4.11. UnitaryQuantity</a> <a href="#ref-for-pound-mass-magnitude①">(2)</a>
     <li><a href="#ref-for-pound-mass-magnitude②">5.7. IsReflexiveMagnitudeOf</a>
@@ -4961,7 +4961,7 @@ dfn > a.self-link::before      { content: "#"; }
      <li><span class="dfn-paneled" id="term-for-decimalprefix">decimalprefix</span>
     </ul>
    <li>
-    <a data-link-type="biblio">[http://iso.org/80000-3-magnitudes]</a> defines the following terms:
+    <a data-link-type="biblio">[http://iso.org/80000-3-magnitudes-2]</a> defines the following terms:
     <ul>
      <li><span class="dfn-paneled" id="term-for-hertz-magnitude">hertz-magnitude</span>
      <li><span class="dfn-paneled" id="term-for-hour-magnitude">hour-magnitude</span>
@@ -5038,7 +5038,7 @@ dfn > a.self-link::before      { content: "#"; }
      <li><span class="dfn-paneled" id="term-for-velocityunit">velocityunit</span>
     </ul>
    <li>
-    <a data-link-type="biblio">[http://iso.org/80000-4-magnitudes2]</a> defines the following terms:
+    <a data-link-type="biblio">[http://iso.org/80000-4-magnitudes-2]</a> defines the following terms:
     <ul>
      <li><span class="dfn-paneled" id="term-for-gram-magnitude">gram-magnitude</span>
      <li><span class="dfn-paneled" id="term-for-kilogram-magnitude">kilogram-magnitude</span>
@@ -5102,7 +5102,7 @@ dfn > a.self-link::before      { content: "#"; }
      <li><span class="dfn-paneled" id="term-for-watt-has-newton">watt-has-newton</span>
     </ul>
    <li>
-    <a data-link-type="biblio">[http://iso.org/80000-5-magnitudes2]</a> defines the following terms:
+    <a data-link-type="biblio">[http://iso.org/80000-5-magnitudes-2]</a> defines the following terms:
     <ul>
      <li><span class="dfn-paneled" id="term-for-degreecelcius-magnitude">degreecelcius-magnitude</span>
      <li><span class="dfn-paneled" id="term-for-kelvin-magnitude">kelvin-magnitude</span>
@@ -5126,7 +5126,7 @@ dfn > a.self-link::before      { content: "#"; }
      <li><span class="dfn-paneled" id="term-for-thermodynamictemperatureunit">thermodynamictemperatureunit</span>
     </ul>
    <li>
-    <a data-link-type="biblio">[http://iso.org/80000-6-magnitudes2]</a> defines the following terms:
+    <a data-link-type="biblio">[http://iso.org/80000-6-magnitudes-2]</a> defines the following terms:
     <ul>
      <li><span class="dfn-paneled" id="term-for-ampere-magnitude">ampere-magnitude</span>
      <li><span class="dfn-paneled" id="term-for-coulomb-magnitude">coulomb-magnitude</span>
