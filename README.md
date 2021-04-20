@@ -1,9 +1,9 @@
 # Core Vocabularies
 
-[![Gitpod](https://img.shields.io/badge/gitpod-open-blue?logo=gitpod)](https://gitpod.io/#https://github.com/opencaesar/core-vocabularies) 
 [![Build Status](https://travis-ci.org/opencaesar/core-vocabularies.svg?branch=master)](https://travis-ci.org/opencaesar/core-vocabularies)
-[![Release](https://img.shields.io/github/v/release/opencaesar/core-vocabularies?label=download)](https://github.com/opencaesar/core-vocabularies/releases/latest)
+[![Release](https://img.shields.io/github/v/tag/opencaesar/core-vocabularies?label=download)](https://github.com/opencaesar/core-vocabularies/releases/latest)
 [![Documentation](https://img.shields.io/badge/Documentation-HTML-orange)](https://opencaesar.github.io/core-vocabularies/) 
+[![Gitpod](https://img.shields.io/badge/gitpod-open-blue?logo=gitpod)](https://gitpod.io/#https://github.com/opencaesar/core-vocabularies) 
 
 This is a set of vocabulary ontologies from various authorities expressed in [OML](https://github.com/opencaesar/oml)
 
