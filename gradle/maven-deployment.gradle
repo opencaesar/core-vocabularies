@@ -16,7 +16,6 @@ def pomConfig = {
             email "melaasar@gmail.com"
         }
     }
-
     scm {
         url 'https://github.com/opencaesar/'+rootProject.name
     }
