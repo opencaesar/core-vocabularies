@@ -368,8 +368,8 @@
 /** Subheadings ***************************************************************/
 
 	h1 + h2,
-	#subtitle {
-		/* #subtitle is a subtitle in an H2 under the H1 */
+	#profile-and-date {
+		/* #profile-and-date is a subtitle in an H2 under the H1 */
 		margin-top: 0;
 	}
 	h2 + h3,
@@ -583,34 +583,28 @@
 	a[href] {
 		color: #034575;
 		color: var(--a-normal-text);
-		text-decoration: none;
-		border-bottom: 1px solid #707070;
-		border-bottom: 1px solid var(--a-normal-underline);
-		/* Need a bit of extending for it to look okay */
-		padding: 0 1px 0;
-		margin: 0 -1px 0;
+		text-decoration: underline #707070;
+		text-decoration: underline var(--a-normal-underline);
+		text-decoration-skip-ink: none;
 	}
 	a:visited {
 		color: #034575;
 		color: var(--a-visited-text);
-		border-bottom-color: #bbb;
-		border-bottom-color: var(--a-visited-underline);
+		text-decoration-color: #bbb;
+		text-decoration-color: var(--a-visited-underline);
 	}
 
-	/* Use distinguishing colors when user is interacting with the link */
+	/* Indicate interaction with the link */
 	a[href]:focus,
 	a[href]:hover {
-		background: #f8f8f8;
-		background: rgba(75%, 75%, 75%, .25);
-		background: var(--a-hover-bg);
-		border-bottom-width: 3px;
-		margin-bottom: -2px;
+		text-decoration-thickness: 2px;
+		text-decoratin
 	}
 	a[href]:active {
 		color: #c00;
 		color: var(--a-active-text);
-		border-color: #c00;
-		border-color: var(--a-active-underline);
+		text-decoration-color: #c00;
+		text-decoration-color: var(--a-active-underline);
 	}
 
 	/* Backout above styling for W3C logo */
@@ -1116,9 +1110,12 @@ Possible extra rowspan handling
 
 	.toc a {
 		/* More spacing; use padding to make it part of the click target. */
-		padding-top: 0.1rem;
+		padding: 0.1rem 1px 0;
 		/* Larger, more consistently-sized click target */
 		display: block;
+		/* Switch to using border-bottom for underlines */
+		text-decoration: none;
+		border-bottom: 1px solid;
 		/* Reverse color scheme */
 		color: black;
 		color: var(--toclink-text);
@@ -1130,6 +1127,13 @@ Possible extra rowspan handling
 		color: var(--toclink-visited-text);
 		border-color: #054572;
 		border-color: var(--toclink-visited-underline);
+	}
+	.toc a:focus,
+	.toc a:hover {
+		background: rgba(75%, 75%, 75%, .25);
+		background: var(--a-hover-bg);
+		border-bottom-width: 3px;
+		margin-bottom: -2px;
 	}
 	.toc a:not(:focus):not(:hover) {
 		/* Allow colors to cascade through from link styling */
@@ -1484,9 +1488,9 @@ Possible extra rowspan handling
 		}
 	}
 </style>
-  <meta content="Bikeshed version c5172e83, updated Fri Nov 20 15:35:20 2020 -0800" name="generator">
+  <meta content="Bikeshed version c6f50773a, updated Fri Apr 16 16:45:47 2021 -0700" name="generator">
   <link href="https://opencaesar.github.io/core-vocabularies//src/oml/iso.org/80000-3-units" rel="canonical">
-  <meta content="fdbf7c86712e057d3602237617c70a9e9c8ae152" name="document-revision">
+  <meta content="aeef9d97fc6126f6640270aed6724849710b6621" name="document-revision">
 <style>
 a[data-link-type=biblio] {
     white-space: pre-wrap;
@@ -1608,9 +1612,9 @@ pre .property::before, pre .property::after {
     --ins-bg: transparent;
 
     --a-normal-text: #034575;
-    --a-normal-underline: #707070;
+    --a-normal-underline: #bbb;
     --a-visited-text: var(--a-normal-text);
-    --a-visited-underline: #bbb;
+    --a-visited-underline: #707070;
     --a-hover-bg: rgba(75%, 75%, 75%, .25);
     --a-active-text: #c00;
     --a-active-underline: #c00;
@@ -1936,7 +1940,7 @@ dfn > a.self-link::before      { content: "#"; }
   <div class="head">
    <p data-fill-with="logo"><a class="logo" href="https://www.openapis.org/"><img alt="OpenAPI Initiative" height="48" src="https://opencaesar.github.io/oml/images/oml.svg"></a></p>
    <h1 class="p-name no-ref" id="title">ISO 80000-3 Units</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2020-12-14">14 December 2020</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2021-04-20">20 April 2021</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -2042,8 +2046,8 @@ dfn > a.self-link::before      { content: "#"; }
        <th>Subtypes
        <td>
         <ul>
-         <li><a data-link-type="dfn" href="80000-3-magnitudes-1.html#radian-magnitude" id="ref-for-radian-magnitude">80000-3-magnitudes-1:radian-magnitude</a>
-         <li><a data-link-type="dfn" href="80000-3-magnitudes-2.html#radian-magnitude" id="ref-for-radian-magnitude①">80000-3-magnitudes-2:radian-magnitude</a>
+         <li><a data-link-type="dfn" href="80000-3-magnitudes-2.html#radian-magnitude" id="ref-for-radian-magnitude">80000-3-magnitudes-2:radian-magnitude</a>
+         <li><a data-link-type="dfn" href="80000-3-magnitudes-1.html#radian-magnitude" id="ref-for-radian-magnitude①">80000-3-magnitudes-1:radian-magnitude</a>
         </ul>
       <tr>
        <th>Relations with source
@@ -2088,10 +2092,10 @@ dfn > a.self-link::before      { content: "#"; }
        <th>Subtypes
        <td>
         <ul>
-         <li><a data-link-type="dfn" href="../nist.gov/pml/special-publication-811-magnitudes-1.html#foot-magnitude" id="ref-for-foot-magnitude">special-publication-811-magnitudes-1:foot-magnitude</a>
-         <li><a data-link-type="dfn" href="../nist.gov/pml/special-publication-811-magnitudes-2.html#foot-magnitude" id="ref-for-foot-magnitude①">special-publication-811-magnitudes2:foot-magnitude</a>
-         <li><a data-link-type="dfn" href="80000-3-magnitudes-2.html#kilometre-magnitude" id="ref-for-kilometre-magnitude">80000-3-magnitudes-2:kilometre-magnitude</a>
-         <li><a data-link-type="dfn" href="80000-3-magnitudes-1.html#kilometre-magnitude" id="ref-for-kilometre-magnitude①">80000-3-magnitudes-1:kilometre-magnitude</a>
+         <li><a data-link-type="dfn" href="../nist.gov/pml/special-publication-811-magnitudes-2.html#foot-magnitude" id="ref-for-foot-magnitude">special-publication-811-magnitudes2:foot-magnitude</a>
+         <li><a data-link-type="dfn" href="../nist.gov/pml/special-publication-811-magnitudes-1.html#foot-magnitude" id="ref-for-foot-magnitude①">special-publication-811-magnitudes-1:foot-magnitude</a>
+         <li><a data-link-type="dfn" href="80000-3-magnitudes-1.html#kilometre-magnitude" id="ref-for-kilometre-magnitude">80000-3-magnitudes-1:kilometre-magnitude</a>
+         <li><a data-link-type="dfn" href="80000-3-magnitudes-2.html#kilometre-magnitude" id="ref-for-kilometre-magnitude①">80000-3-magnitudes-2:kilometre-magnitude</a>
          <li><a data-link-type="dfn" href="80000-3-magnitudes-1.html#metre-magnitude" id="ref-for-metre-magnitude">80000-3-magnitudes-1:metre-magnitude</a>
          <li><a data-link-type="dfn" href="80000-3-magnitudes-2.html#metre-magnitude" id="ref-for-metre-magnitude①">80000-3-magnitudes-2:metre-magnitude</a>
         </ul>
@@ -2115,8 +2119,8 @@ dfn > a.self-link::before      { content: "#"; }
        <th>Subtypes
        <td>
         <ul>
-         <li><a data-link-type="dfn" href="80000-3-magnitudes-2.html#revolution-magnitude" id="ref-for-revolution-magnitude">80000-3-magnitudes-2:revolution-magnitude</a>
-         <li><a data-link-type="dfn" href="80000-3-magnitudes-1.html#revolution-magnitude" id="ref-for-revolution-magnitude①">80000-3-magnitudes-1:revolution-magnitude</a>
+         <li><a data-link-type="dfn" href="80000-3-magnitudes-1.html#revolution-magnitude" id="ref-for-revolution-magnitude">80000-3-magnitudes-1:revolution-magnitude</a>
+         <li><a data-link-type="dfn" href="80000-3-magnitudes-2.html#revolution-magnitude" id="ref-for-revolution-magnitude①">80000-3-magnitudes-2:revolution-magnitude</a>
         </ul>
       <tr>
        <th>Relations with source
@@ -2140,12 +2144,12 @@ dfn > a.self-link::before      { content: "#"; }
         <ul>
          <li><a data-link-type="dfn" href="80000-3-magnitudes-2.html#hour-magnitude" id="ref-for-hour-magnitude">80000-3-magnitudes-2:hour-magnitude</a>
          <li><a data-link-type="dfn" href="80000-3-magnitudes-1.html#hour-magnitude" id="ref-for-hour-magnitude①">80000-3-magnitudes-1:hour-magnitude</a>
-         <li><a data-link-type="dfn" href="80000-3-magnitudes-1.html#millisecond-magnitude" id="ref-for-millisecond-magnitude">80000-3-magnitudes-1:millisecond-magnitude</a>
-         <li><a data-link-type="dfn" href="80000-3-magnitudes-2.html#millisecond-magnitude" id="ref-for-millisecond-magnitude①">80000-3-magnitudes-2:millisecond-magnitude</a>
+         <li><a data-link-type="dfn" href="80000-3-magnitudes-2.html#millisecond-magnitude" id="ref-for-millisecond-magnitude">80000-3-magnitudes-2:millisecond-magnitude</a>
+         <li><a data-link-type="dfn" href="80000-3-magnitudes-1.html#millisecond-magnitude" id="ref-for-millisecond-magnitude①">80000-3-magnitudes-1:millisecond-magnitude</a>
          <li><a data-link-type="dfn" href="80000-3-magnitudes-2.html#minute-magnitude" id="ref-for-minute-magnitude">80000-3-magnitudes-2:minute-magnitude</a>
          <li><a data-link-type="dfn" href="80000-3-magnitudes-1.html#minute-magnitude" id="ref-for-minute-magnitude①">80000-3-magnitudes-1:minute-magnitude</a>
-         <li><a data-link-type="dfn" href="80000-3-magnitudes-1.html#second-magnitude" id="ref-for-second-magnitude">80000-3-magnitudes-1:second-magnitude</a>
-         <li><a data-link-type="dfn" href="80000-3-magnitudes-2.html#second-magnitude" id="ref-for-second-magnitude①">80000-3-magnitudes-2:second-magnitude</a>
+         <li><a data-link-type="dfn" href="80000-3-magnitudes-2.html#second-magnitude" id="ref-for-second-magnitude">80000-3-magnitudes-2:second-magnitude</a>
+         <li><a data-link-type="dfn" href="80000-3-magnitudes-1.html#second-magnitude" id="ref-for-second-magnitude①">80000-3-magnitudes-1:second-magnitude</a>
         </ul>
       <tr>
        <th>Relations with source
@@ -2167,8 +2171,8 @@ dfn > a.self-link::before      { content: "#"; }
        <th>Subtypes
        <td>
         <ul>
-         <li><a data-link-type="dfn" href="80000-3-magnitudes-1.html#kilometre-per-second-magnitude" id="ref-for-kilometre-per-second-magnitude">80000-3-magnitudes-1:kilometre-per-second-magnitude</a>
-         <li><a data-link-type="dfn" href="80000-3-magnitudes-2.html#kilometre-per-second-magnitude" id="ref-for-kilometre-per-second-magnitude①">80000-3-magnitudes-2:kilometre-per-second-magnitude</a>
+         <li><a data-link-type="dfn" href="80000-3-magnitudes-2.html#kilometre-per-second-magnitude" id="ref-for-kilometre-per-second-magnitude">80000-3-magnitudes-2:kilometre-per-second-magnitude</a>
+         <li><a data-link-type="dfn" href="80000-3-magnitudes-1.html#kilometre-per-second-magnitude" id="ref-for-kilometre-per-second-magnitude①">80000-3-magnitudes-1:kilometre-per-second-magnitude</a>
          <li><a data-link-type="dfn" href="80000-3-magnitudes-2.html#metre-per-second-magnitude" id="ref-for-metre-per-second-magnitude">80000-3-magnitudes-2:metre-per-second-magnitude</a>
          <li><a data-link-type="dfn" href="80000-3-magnitudes-1.html#metre-per-second-magnitude" id="ref-for-metre-per-second-magnitude①">80000-3-magnitudes-1:metre-per-second-magnitude</a>
         </ul>
@@ -3099,13 +3103,13 @@ dfn > a.self-link::before      { content: "#"; }
   <aside class="dfn-panel" data-for="term-for-kilometre-magnitude">
    <a href="80000-3-magnitudes-1.html#kilometre-magnitude">80000-3-magnitudes-1.html#kilometre-magnitude</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-kilometre-magnitude①">3.3. LengthMagnitude</a>
+    <li><a href="#ref-for-kilometre-magnitude">3.3. LengthMagnitude</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-kilometre-per-second-magnitude">
    <a href="80000-3-magnitudes-1.html#kilometre-per-second-magnitude">80000-3-magnitudes-1.html#kilometre-per-second-magnitude</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-kilometre-per-second-magnitude">3.6. VelocityMagnitude</a>
+    <li><a href="#ref-for-kilometre-per-second-magnitude①">3.6. VelocityMagnitude</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-metre-magnitude">
@@ -3123,7 +3127,7 @@ dfn > a.self-link::before      { content: "#"; }
   <aside class="dfn-panel" data-for="term-for-millisecond-magnitude">
    <a href="80000-3-magnitudes-1.html#millisecond-magnitude">80000-3-magnitudes-1.html#millisecond-magnitude</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-millisecond-magnitude">3.5. TimeMagnitude</a>
+    <li><a href="#ref-for-millisecond-magnitude①">3.5. TimeMagnitude</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-minute-magnitude">
@@ -3135,19 +3139,19 @@ dfn > a.self-link::before      { content: "#"; }
   <aside class="dfn-panel" data-for="term-for-radian-magnitude">
    <a href="80000-3-magnitudes-1.html#radian-magnitude">80000-3-magnitudes-1.html#radian-magnitude</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-radian-magnitude">3.1. AngularMeasureMagnitude</a>
+    <li><a href="#ref-for-radian-magnitude①">3.1. AngularMeasureMagnitude</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-revolution-magnitude">
    <a href="80000-3-magnitudes-1.html#revolution-magnitude">80000-3-magnitudes-1.html#revolution-magnitude</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-revolution-magnitude①">3.4. RotationMagnitude</a>
+    <li><a href="#ref-for-revolution-magnitude">3.4. RotationMagnitude</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-second-magnitude">
    <a href="80000-3-magnitudes-1.html#second-magnitude">80000-3-magnitudes-1.html#second-magnitude</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-second-magnitude">3.5. TimeMagnitude</a>
+    <li><a href="#ref-for-second-magnitude①">3.5. TimeMagnitude</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-hertz-magnitude">
@@ -3165,13 +3169,13 @@ dfn > a.self-link::before      { content: "#"; }
   <aside class="dfn-panel" data-for="term-for-kilometre-magnitude">
    <a href="80000-3-magnitudes-2.html#kilometre-magnitude">80000-3-magnitudes-2.html#kilometre-magnitude</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-kilometre-magnitude">3.3. LengthMagnitude</a>
+    <li><a href="#ref-for-kilometre-magnitude①">3.3. LengthMagnitude</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-kilometre-per-second-magnitude">
    <a href="80000-3-magnitudes-2.html#kilometre-per-second-magnitude">80000-3-magnitudes-2.html#kilometre-per-second-magnitude</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-kilometre-per-second-magnitude①">3.6. VelocityMagnitude</a>
+    <li><a href="#ref-for-kilometre-per-second-magnitude">3.6. VelocityMagnitude</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-metre-magnitude">
@@ -3189,7 +3193,7 @@ dfn > a.self-link::before      { content: "#"; }
   <aside class="dfn-panel" data-for="term-for-millisecond-magnitude">
    <a href="80000-3-magnitudes-2.html#millisecond-magnitude">80000-3-magnitudes-2.html#millisecond-magnitude</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-millisecond-magnitude①">3.5. TimeMagnitude</a>
+    <li><a href="#ref-for-millisecond-magnitude">3.5. TimeMagnitude</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-minute-magnitude">
@@ -3201,19 +3205,19 @@ dfn > a.self-link::before      { content: "#"; }
   <aside class="dfn-panel" data-for="term-for-radian-magnitude">
    <a href="80000-3-magnitudes-2.html#radian-magnitude">80000-3-magnitudes-2.html#radian-magnitude</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-radian-magnitude①">3.1. AngularMeasureMagnitude</a>
+    <li><a href="#ref-for-radian-magnitude">3.1. AngularMeasureMagnitude</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-revolution-magnitude">
    <a href="80000-3-magnitudes-2.html#revolution-magnitude">80000-3-magnitudes-2.html#revolution-magnitude</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-revolution-magnitude">3.4. RotationMagnitude</a>
+    <li><a href="#ref-for-revolution-magnitude①">3.4. RotationMagnitude</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-second-magnitude">
    <a href="80000-3-magnitudes-2.html#second-magnitude">80000-3-magnitudes-2.html#second-magnitude</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-second-magnitude①">3.5. TimeMagnitude</a>
+    <li><a href="#ref-for-second-magnitude">3.5. TimeMagnitude</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-angularmeasureunit">
@@ -3687,13 +3691,13 @@ dfn > a.self-link::before      { content: "#"; }
   <aside class="dfn-panel" data-for="term-for-foot-magnitude">
    <a href="../nist.gov/pml/special-publication-811-magnitudes-1.html#foot-magnitude">../nist.gov/pml/special-publication-811-magnitudes-1.html#foot-magnitude</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-foot-magnitude">3.3. LengthMagnitude</a>
+    <li><a href="#ref-for-foot-magnitude①">3.3. LengthMagnitude</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-foot-magnitude">
    <a href="../nist.gov/pml/special-publication-811-magnitudes-2.html#foot-magnitude">../nist.gov/pml/special-publication-811-magnitudes-2.html#foot-magnitude</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-foot-magnitude①">3.3. LengthMagnitude</a>
+    <li><a href="#ref-for-foot-magnitude">3.3. LengthMagnitude</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-foot">
