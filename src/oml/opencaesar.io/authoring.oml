@@ -1,0 +1,26 @@
+vocabulary <http://opencaesar.io/authoring> with # as authoring {
+	
+	// When applied to an "includes" import from a reachable vocabulary bundle, indicates
+	// all the properties directly defined or referenced in the imported vocabulary
+	// should be editable in the given property group.
+	annotation property includePropertiesInGroup
+	
+	// When applied to a scalar property or scalar property reference in a vocabulary
+	// directly imported from a reachable vocabulary bundle, indicates that the
+	// property should be editable in the given property group
+	annotation property includePropertyInGroup
+	
+	// When applied to an "includes" import from a reachable vocabulary bundle, indicates
+	// all the properties directly defined or referenced in the imported vocabulary
+	// should be excluded from the property sheet where they have been previously included.
+	annotation property excludeProperties
+	
+	// When applied to a scalar property or scalar property reference in a vocabulary
+	// directly imported from a reachable vocabulary bundle, indicates that the
+	// property should be excluded from the property sheet where it has been previously included.
+	annotation property excludeProperty
+	
+	// When applied to a "
+	annotation property includePrototypes
+	
+}
