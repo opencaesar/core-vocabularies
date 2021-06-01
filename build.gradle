@@ -4,7 +4,7 @@
 ext.title = "Core Vocabularies"
 description='The set of core vocabularies'
 group = 'io.opencaesar.ontologies'
-version = '2.4.0'
+version = '2.4.1'
 
 apply from: "${rootDir}/gradle/maven-deployment.gradle"
 
