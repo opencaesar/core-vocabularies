@@ -1,7 +1,7 @@
 <!doctype html><html lang="en">
  <head>
   <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-  <title>OML Ontologies Index</title>
+  <title>ISO 80000-6 Instances</title>
   <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
 <style data-fill-with="stylesheet">/******************************************************************************
  *                   Style sheet for the W3C specifications                   *
@@ -1488,9 +1488,23 @@ Possible extra rowspan handling
 	}
 </style>
   <meta content="Bikeshed version 3d6a6fcbb, updated Wed Jun 16 16:19:39 2021 -0700" name="generator">
-  <link href="https://opencaesar.github.io/core-vocabularies/" rel="canonical">
-  <link href="https://opencaesar.github.io/assets/img/oml.png" rel="icon">
+  <link href="https://opencaesar.github.io/core-vocabularies//iso.org/80000-6-instances" rel="canonical">
   <meta content="5b354532f3cc5b99d875658309f47b5cb52e5401" name="document-revision">
+<style>
+a[data-link-type=biblio] {
+    white-space: pre-wrap;
+}
+table.def th {
+	white-space: nowrap;
+}
+table.def ul {
+	padding-left: 1em;
+}
+table.def dfn code {
+	font-family: sans-serif;
+	color: #005A9C;
+}
+</style>
 <style>/* style-autolinks */
 
 .css.css, .property.property, .descriptor.descriptor {
@@ -1691,6 +1705,47 @@ figcaption {
 figcaption:not(.no-marker)::before {
     content: "Figure " counter(figure) " ";
 }</style>
+<style>/* style-dfn-panel */
+
+:root {
+    --dfnpanel-bg: #ddd;
+    --dfnpanel-text: var(--text);
+}
+.dfn-panel {
+    position: absolute;
+    z-index: 35;
+    height: auto;
+    width: -webkit-fit-content;
+    width: fit-content;
+    max-width: 300px;
+    max-height: 500px;
+    overflow: auto;
+    padding: 0.5em 0.75em;
+    font: small Helvetica Neue, sans-serif, Droid Sans Fallback;
+    background: var(--dfnpanel-bg);
+    color: var(--dfnpanel-text);
+    border: outset 0.2em;
+}
+.dfn-panel:not(.on) { display: none; }
+.dfn-panel * { margin: 0; padding: 0; text-indent: 0; }
+.dfn-panel > b { display: block; }
+.dfn-panel a { color: var(--dfnpanel-text); }
+.dfn-panel a:not(:hover) { text-decoration: none !important; border-bottom: none !important; }
+.dfn-panel > b + b { margin-top: 0.25em; }
+.dfn-panel ul { padding: 0; }
+.dfn-panel li { list-style: inside; }
+.dfn-panel.activated {
+    display: inline-block;
+    position: fixed;
+    left: .5em;
+    bottom: 2em;
+    margin: 0 auto;
+    max-width: calc(100vw - 1.5em - .4em - .5em);
+    max-height: 30vh;
+}
+
+.dfn-paneled { cursor: pointer; }
+</style>
 <style>/* style-md-lists */
 
 /* This is a weird hack for me not yet following the commonmark spec
@@ -1873,20 +1928,26 @@ dfn > a.self-link::before      { content: "#"; }
         --selflink-hover-text: white;
     }
 }
-</style>
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --dfnpanel-bg: #222;
+        --dfnpanel-text: var(--text);
+    }
+}</style>
  <body class="h-entry">
   <div class="head">
    <p data-fill-with="logo"><a class="logo" href="http://www.opencaesar.io/oml/"><img alt="OML Specification" height="48" src="https://opencaesar.github.io/oml/images/oml.svg"></a></p>
-   <h1 class="p-name no-ref" id="title">OML Ontologies Index</h1>
+   <h1 class="p-name no-ref" id="title">ISO 80000-6 Instances</h1>
    <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2021-07-09">9 July 2021</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
-     <dd><a class="u-url" href="https://opencaesar.github.io/core-vocabularies/">https://opencaesar.github.io/core-vocabularies/</a>
+     <dd><a class="u-url" href="https://opencaesar.github.io/core-vocabularies//iso.org/80000-6-instances">https://opencaesar.github.io/core-vocabularies//iso.org/80000-6-instances</a>
      <dt class="editor">Editor:
-     <dd class="editor p-author h-card vcard"><span class="p-name fn">(see individual ontologies)</span>
+     <dd class="editor p-author h-card vcard"><span class="p-name fn">Jet Propulsion Laboratory</span>
      <dt>Copyright:
-     <dd>(see individual ontologies)
+     <dd>Copyright 2010-2020, by the California Institute of Technology. ALL RIGHTS RESERVED. United States Government Sponsorship acknowledged. Any commercial use must be negotiated with the Office of Technology Transfer at the California Institute of Technology. This software may be subject to U.S. export control laws. By accepting this software, the user agrees to comply with all applicable U.S. export laws and regulations. User has the responsibility to obtain export licenses, or other export authority as may be required before exporting such information to foreign countries or providing access to foreign persons.
     </dl>
    </div>
    <div data-fill-with="warning"></div>
@@ -1894,181 +1955,451 @@ dfn > a.self-link::before      { content: "#"; }
   </div>
   <div class="p-summary" data-fill-with="abstract">
    <h2 class="no-num no-toc no-ref heading settled" id="abstract"><span class="content">Abstract</span></h2>
-   <p>Documentation generated from OML ontologies</p>
+   <p>The ISO 80000-6 instances library.</p>
   </div>
   <div data-fill-with="at-risk"></div>
   <nav data-fill-with="table-of-contents" id="toc">
    <h2 class="no-num no-toc no-ref" id="contents">Table of Contents</h2>
    <ol class="toc" role="directory">
+    <li><a href="#Namespace"><span class="secno">1</span> <span class="content">Namespace</span></a>
+    <li><a href="#Extensions"><span class="secno">2</span> <span class="content">Extensions</span></a>
+    <li><a href="#Iclusions"><span class="secno">3</span> <span class="content">Usages</span></a>
     <li>
-     <a href="#heading-domain-iso.org"><span class="secno">1</span> <span class="content">iso.org</span></a>
+     <a href="#ConceptInstances"><span class="secno">4</span> <span class="content">Concept Instances</span></a>
      <ol class="toc">
-      <li><a href="#heading-80000-1-1"><span class="secno">1.1</span> <span class="content"><span>ISO 80000-1</span></span></a>
-      <li><a href="#heading-80000-1-decimalPrefix-2"><span class="secno">1.2</span> <span class="content"><span>ISO 80000-1 Decimal Prefix</span></span></a>
-      <li><a href="#heading-80000-3-instances-3"><span class="secno">1.3</span> <span class="content"><span>ISO 80000-3 Instances</span></span></a>
-      <li><a href="#heading-80000-3-magnitudes-1-4"><span class="secno">1.4</span> <span class="content"><span>ISO 80000-3 Magnitudes-1</span></span></a>
-      <li><a href="#heading-80000-3-magnitudes-2-5"><span class="secno">1.5</span> <span class="content"><span>ISO 80000-3 Magnitudes-2</span></span></a>
-      <li><a href="#heading-80000-3-quantities-6"><span class="secno">1.6</span> <span class="content"><span>ISO 80000-3 Quantities</span></span></a>
-      <li><a href="#heading-80000-3-rules-7"><span class="secno">1.7</span> <span class="content"><span>ISO 80000-3 Rules</span></span></a>
-      <li><a href="#heading-80000-3-units-8"><span class="secno">1.8</span> <span class="content"><span>ISO 80000-3 Units</span></span></a>
-      <li><a href="#heading-80000-4-instances-9"><span class="secno">1.9</span> <span class="content"><span>ISO 80000-4 Instances</span></span></a>
-      <li><a href="#heading-80000-4-magnitudes-1-10"><span class="secno">1.10</span> <span class="content"><span>ISO 80000-4 Magnitudes-1</span></span></a>
-      <li><a href="#heading-80000-4-magnitudes-2-11"><span class="secno">1.11</span> <span class="content"><span>ISO 80000-4 Magnitudes-2</span></span></a>
-      <li><a href="#heading-80000-4-quantities-12"><span class="secno">1.12</span> <span class="content"><span>ISO 80000-4 Quantities</span></span></a>
-      <li><a href="#heading-80000-4-rules-13"><span class="secno">1.13</span> <span class="content"><span>ISO 80000-4 Rules</span></span></a>
-      <li><a href="#heading-80000-4-units-14"><span class="secno">1.14</span> <span class="content"><span>ISO 80000-4 Units</span></span></a>
-      <li><a href="#heading-80000-5-instances-15"><span class="secno">1.15</span> <span class="content"><span>ISO 80000-5 Instances</span></span></a>
-      <li><a href="#heading-80000-5-magnitudes-1-16"><span class="secno">1.16</span> <span class="content"><span>ISO 80000-5 Magnitudes-1</span></span></a>
-      <li><a href="#heading-80000-5-magnitudes-2-17"><span class="secno">1.17</span> <span class="content"><span>ISO 80000-5 Magnitudes-2</span></span></a>
-      <li><a href="#heading-80000-5-quantities-18"><span class="secno">1.18</span> <span class="content"><span>ISO 80000-5 Quantities</span></span></a>
-      <li><a href="#heading-80000-5-rules-19"><span class="secno">1.19</span> <span class="content"><span>ISO 80000-5 Rules</span></span></a>
-      <li><a href="#heading-80000-5-units-20"><span class="secno">1.20</span> <span class="content"><span>ISO 80000-5 Units</span></span></a>
-      <li><a href="#heading-80000-6-instances-21"><span class="secno">1.21</span> <span class="content"><span>ISO 80000-6 Instances</span></span></a>
-      <li><a href="#heading-80000-6-magnitudes-1-22"><span class="secno">1.22</span> <span class="content"><span>ISO 80000-6 Magnitudes-1</span></span></a>
-      <li><a href="#heading-80000-6-magnitudes-2-23"><span class="secno">1.23</span> <span class="content"><span>ISO 80000-6 Magnitudes-2</span></span></a>
-      <li><a href="#heading-80000-6-quantities-24"><span class="secno">1.24</span> <span class="content"><span>ISO 80000-6 Quantities</span></span></a>
-      <li><a href="#heading-80000-6-rules-25"><span class="secno">1.25</span> <span class="content"><span>ISO 80000-6 Rules</span></span></a>
-      <li><a href="#heading-80000-6-units-26"><span class="secno">1.26</span> <span class="content"><span>ISO 80000-6 Units</span></span></a>
-      <li><a href="#heading-80000-instances-27"><span class="secno">1.27</span> <span class="content"><span>ISO 80000 Instances</span></span></a>
+      <li><a href="#Ampere"><span class="secno">4.1</span> <span class="content"><span>ampere</span></span></a>
+      <li><a href="#Coulomb"><span class="secno">4.2</span> <span class="content"><span>coulomb</span></span></a>
+      <li><a href="#Electric-charge"><span class="secno">4.3</span> <span class="content"><span>electric-charge</span></span></a>
+      <li><a href="#Electric-current"><span class="secno">4.4</span> <span class="content"><span>electric-current</span></span></a>
+      <li><a href="#Electric-field-strength"><span class="secno">4.5</span> <span class="content"><span>electric-field-strength</span></span></a>
+      <li><a href="#Electric-potential"><span class="secno">4.6</span> <span class="content"><span>electric-potential</span></span></a>
+      <li><a href="#Newton-per-coulomb"><span class="secno">4.7</span> <span class="content"><span>newton-per-coulomb</span></span></a>
+      <li><a href="#Ohm"><span class="secno">4.8</span> <span class="content"><span>ohm</span></span></a>
+      <li><a href="#Resistance"><span class="secno">4.9</span> <span class="content"><span>resistance</span></span></a>
+      <li><a href="#Volt"><span class="secno">4.10</span> <span class="content"><span>volt</span></span></a>
      </ol>
     <li>
-     <a href="#heading-domain-iupac.org"><span class="secno">2</span> <span class="content">iupac.org</span></a>
+     <a href="#RelationInstances"><span class="secno">5</span> <span class="content">Relation Instances</span></a>
      <ol class="toc">
-      <li><a href="#heading-metrology-28"><span class="secno">2.1</span> <span class="content"><span>Metrology</span></span></a>
+      <li><a href="#SystemOfQuantities-electric-charge"><span class="secno">5.1</span> <span class="content"><span>systemOfQuantities-electric-charge</span></span></a>
+      <li><a href="#SystemOfQuantities-electric-current"><span class="secno">5.2</span> <span class="content"><span>systemOfQuantities-electric-current</span></span></a>
+      <li><a href="#SystemOfQuantities-electric-field-strength"><span class="secno">5.3</span> <span class="content"><span>systemOfQuantities-electric-field-strength</span></span></a>
+      <li><a href="#SystemOfQuantities-electric-potential"><span class="secno">5.4</span> <span class="content"><span>systemOfQuantities-electric-potential</span></span></a>
+      <li><a href="#SystemOfQuantities-resistance"><span class="secno">5.5</span> <span class="content"><span>systemOfQuantities-resistance</span></span></a>
+      <li><a href="#SystemOfUnits-ampere"><span class="secno">5.6</span> <span class="content"><span>systemOfUnits-ampere</span></span></a>
+      <li><a href="#SystemOfUnits-coulomb"><span class="secno">5.7</span> <span class="content"><span>systemOfUnits-coulomb</span></span></a>
+      <li><a href="#SystemOfUnits-newton-per-coulomb"><span class="secno">5.8</span> <span class="content"><span>systemOfUnits-newton-per-coulomb</span></span></a>
+      <li><a href="#SystemOfUnits-ohm"><span class="secno">5.9</span> <span class="content"><span>systemOfUnits-ohm</span></span></a>
+      <li><a href="#SystemOfUnits-volt"><span class="secno">5.10</span> <span class="content"><span>systemOfUnits-volt</span></span></a>
      </ol>
     <li>
-     <a href="#heading-domain-nist.gov"><span class="secno">3</span> <span class="content">nist.gov</span></a>
+     <a href="#index"><span class="secno"></span> <span class="content">Index</span></a>
      <ol class="toc">
-      <li><a href="#heading-special-publication-811-instances-29"><span class="secno">3.1</span> <span class="content"><span>Special Publication 811 Instances</span></span></a>
-      <li><a href="#heading-special-publication-811-magnitudes-1-30"><span class="secno">3.2</span> <span class="content"><span>Special Publication 811 Magnitudes-1</span></span></a>
-      <li><a href="#heading-special-publication-811-magnitudes2-31"><span class="secno">3.3</span> <span class="content"><span>Special Publication 811 Magnitudes-2</span></span></a>
-      <li><a href="#heading-special-publication-811-units-32"><span class="secno">3.4</span> <span class="content"><span>Special Publication 811 Units</span></span></a>
-     </ol>
-    <li>
-     <a href="#heading-domain-opencaesar.io"><span class="secno">4</span> <span class="content">opencaesar.io</span></a>
-     <ol class="toc">
-      <li><a href="#heading-diagram-33"><span class="secno">4.1</span> <span class="content"><span>Diagram</span></span></a>
-      <li><a href="#heading-viewpoint-34"><span class="secno">4.2</span> <span class="content"><span>Viewpoint</span></span></a>
-     </ol>
-    <li>
-     <a href="#heading-domain-purl.org"><span class="secno">5</span> <span class="content">purl.org</span></a>
-     <ol class="toc">
-      <li><a href="#heading-dc-35"><span class="secno">5.1</span> <span class="content"><span>DC</span></span></a>
-     </ol>
-    <li>
-     <a href="#heading-domain-www.w3.org"><span class="secno">6</span> <span class="content">www.w3.org</span></a>
-     <ol class="toc">
-      <li><a href="#heading-rdf-36"><span class="secno">6.1</span> <span class="content"><span>RDF</span></span></a>
-      <li><a href="#heading-rdfs-37"><span class="secno">6.2</span> <span class="content"><span>RDFS</span></span></a>
-      <li><a href="#heading-xsd-38"><span class="secno">6.3</span> <span class="content"><span>XSD</span></span></a>
-      <li><a href="#heading-owl-39"><span class="secno">6.4</span> <span class="content"><span>OWL2</span></span></a>
+      <li><a href="#index-defined-here"><span class="secno"></span> <span class="content">Terms defined by this specification</span></a>
+      <li><a href="#index-defined-elsewhere"><span class="secno"></span> <span class="content">Terms defined by reference</span></a>
      </ol>
    </ol>
   </nav>
   <main>
-   <h2 class="heading settled" data-level="1" id="heading-domain-iso.org"><span class="secno">1. </span><span class="content">iso.org</span><a class="self-link" href="#heading-domain-iso.org"></a></h2>
-   <h3 class="heading settled" data-level="1.1" id="heading-80000-1-1"><span class="secno">1.1. </span><span class="content"><a href="./iso.org/80000-1.html">ISO 80000-1</a></span><a class="self-link" href="#heading-80000-1-1"></a></h3>
-    The ISO 80000-1 library. 
-   <h3 class="heading settled" data-level="1.2" id="heading-80000-1-decimalPrefix-2"><span class="secno">1.2. </span><span class="content"><a href="./iso.org/80000-1-decimalPrefix.html">ISO 80000-1 Decimal Prefix</a></span><a class="self-link" href="#heading-80000-1-decimalPrefix-2"></a></h3>
-    The ISO 80000-1 decimal prefix vocabulary. 
-   <h3 class="heading settled" data-level="1.3" id="heading-80000-3-instances-3"><span class="secno">1.3. </span><span class="content"><a href="./iso.org/80000-3-instances.html">ISO 80000-3 Instances</a></span><a class="self-link" href="#heading-80000-3-instances-3"></a></h3>
-    The ISO 80000-3 instances library. 
-   <h3 class="heading settled" data-level="1.4" id="heading-80000-3-magnitudes-1-4"><span class="secno">1.4. </span><span class="content"><a href="./iso.org/80000-3-magnitudes-1.html">ISO 80000-3 Magnitudes-1</a></span><a class="self-link" href="#heading-80000-3-magnitudes-1-4"></a></h3>
-    The ISO 80000-3 magnitudes-1 vocabulary. It provides convenience specializations of every metrology:Magnitude defined in http://iso.org/80000-3-units. 
-Note that this vocabulary is an alternative to http://iso.org/80000-3-magnitudes-2. 
-   <h3 class="heading settled" data-level="1.5" id="heading-80000-3-magnitudes-2-5"><span class="secno">1.5. </span><span class="content"><a href="./iso.org/80000-3-magnitudes-2.html">ISO 80000-3 Magnitudes-2</a></span><a class="self-link" href="#heading-80000-3-magnitudes-2-5"></a></h3>
-    The ISO 80000-3 magnitudes-2 vocabulary. It provides convenience specializations of every metrology:IsReflexiveMagnitudeOf as relation entities for every metrology:MeasurementUnit defined in http://iso.org/80000-3-unit. 
-Note that this vocabulary is an alternative to http://iso.org/80000-3-magnitudes-1. 
-   <h3 class="heading settled" data-level="1.6" id="heading-80000-3-quantities-6"><span class="secno">1.6. </span><span class="content"><a href="./iso.org/80000-3-quantities.html">ISO 80000-3 Quantities</a></span><a class="self-link" href="#heading-80000-3-quantities-6"></a></h3>
-    The ISO 80000-3 quantities vocabulary. 
-   <h3 class="heading settled" data-level="1.7" id="heading-80000-3-rules-7"><span class="secno">1.7. </span><span class="content"><a href="./iso.org/80000-3-rules.html">ISO 80000-3 Rules</a></span><a class="self-link" href="#heading-80000-3-rules-7"></a></h3>
-    Optional consistency rules for 80000-3-quantities to enforce that derived quantities are about the same object as the objects of their quantity factors. 
-   <h3 class="heading settled" data-level="1.8" id="heading-80000-3-units-8"><span class="secno">1.8. </span><span class="content"><a href="./iso.org/80000-3-units.html">ISO 80000-3 Units</a></span><a class="self-link" href="#heading-80000-3-units-8"></a></h3>
-    The ISO 80000-3 units vocabulary. 
-   <h3 class="heading settled" data-level="1.9" id="heading-80000-4-instances-9"><span class="secno">1.9. </span><span class="content"><a href="./iso.org/80000-4-instances.html">ISO 80000-4 Instances</a></span><a class="self-link" href="#heading-80000-4-instances-9"></a></h3>
-    The ISO 80000-4 instances library. 
-   <h3 class="heading settled" data-level="1.10" id="heading-80000-4-magnitudes-1-10"><span class="secno">1.10. </span><span class="content"><a href="./iso.org/80000-4-magnitudes-1.html">ISO 80000-4 Magnitudes-1</a></span><a class="self-link" href="#heading-80000-4-magnitudes-1-10"></a></h3>
-    The ISO 80000-4 magnitudes-1 vocabulary. It provides convenience specializations of every metrology:Magnitude defined in http://iso.org/80000-4-units. 
-Note that this vocabulary is an alternative to http://iso.org/80000-4-magnitudes-2. 
-   <h3 class="heading settled" data-level="1.11" id="heading-80000-4-magnitudes-2-11"><span class="secno">1.11. </span><span class="content"><a href="./iso.org/80000-4-magnitudes-2.html">ISO 80000-4 Magnitudes-2</a></span><a class="self-link" href="#heading-80000-4-magnitudes-2-11"></a></h3>
-    The ISO 80000-4 magnitudes-2 vocabulary. It provides convenience specializations of every metrology:IsReflexiveMagnitudeOf as relation entities for every metrology:MeasurementUnit defined in http://iso.org/80000-4-unit. 
-Note that this vocabulary is an alternative to http://iso.org/80000-4-magnitudes-1. 
-   <h3 class="heading settled" data-level="1.12" id="heading-80000-4-quantities-12"><span class="secno">1.12. </span><span class="content"><a href="./iso.org/80000-4-quantities.html">ISO 80000-4 Quantities</a></span><a class="self-link" href="#heading-80000-4-quantities-12"></a></h3>
-    The ISO 80000-4 quantities vocabulary. 
-   <h3 class="heading settled" data-level="1.13" id="heading-80000-4-rules-13"><span class="secno">1.13. </span><span class="content"><a href="./iso.org/80000-4-rules.html">ISO 80000-4 Rules</a></span><a class="self-link" href="#heading-80000-4-rules-13"></a></h3>
-    Optional consistency rules for 80000-4-quantities to enforce that derived quantities are about the same object as the objects of their quantity factors. 
-   <h3 class="heading settled" data-level="1.14" id="heading-80000-4-units-14"><span class="secno">1.14. </span><span class="content"><a href="./iso.org/80000-4-units.html">ISO 80000-4 Units</a></span><a class="self-link" href="#heading-80000-4-units-14"></a></h3>
-    The ISO 80000-4 units vocabulary. 
-   <h3 class="heading settled" data-level="1.15" id="heading-80000-5-instances-15"><span class="secno">1.15. </span><span class="content"><a href="./iso.org/80000-5-instances.html">ISO 80000-5 Instances</a></span><a class="self-link" href="#heading-80000-5-instances-15"></a></h3>
-    The ISO 80000-5 instances library. 
-   <h3 class="heading settled" data-level="1.16" id="heading-80000-5-magnitudes-1-16"><span class="secno">1.16. </span><span class="content"><a href="./iso.org/80000-5-magnitudes-1.html">ISO 80000-5 Magnitudes-1</a></span><a class="self-link" href="#heading-80000-5-magnitudes-1-16"></a></h3>
-    The ISO 80000-5 magnitudes-1 vocabulary. It provides convenience specializations of every metrology:Magnitude defined in http://iso.org/80000-5-units. 
-Note that this vocabulary is an alternative to http://iso.org/80000-5-magnitudes-2. 
-   <h3 class="heading settled" data-level="1.17" id="heading-80000-5-magnitudes-2-17"><span class="secno">1.17. </span><span class="content"><a href="./iso.org/80000-5-magnitudes-2.html">ISO 80000-5 Magnitudes-2</a></span><a class="self-link" href="#heading-80000-5-magnitudes-2-17"></a></h3>
-    The ISO 80000-5 magnitudes-2 vocabulary. It provides convenience specializations of every metrology:IsReflexiveMagnitudeOf as relation entities for every metrology:MeasurementUnit defined in http://iso.org/80000-5-unit. 
-Note that this vocabulary is an alternative to http://iso.org/80000-5-magnitudes-1. 
-   <h3 class="heading settled" data-level="1.18" id="heading-80000-5-quantities-18"><span class="secno">1.18. </span><span class="content"><a href="./iso.org/80000-5-quantities.html">ISO 80000-5 Quantities</a></span><a class="self-link" href="#heading-80000-5-quantities-18"></a></h3>
-    The ISO 80000-5 quantities vocabulary. 
-   <h3 class="heading settled" data-level="1.19" id="heading-80000-5-rules-19"><span class="secno">1.19. </span><span class="content"><a href="./iso.org/80000-5-rules.html">ISO 80000-5 Rules</a></span><a class="self-link" href="#heading-80000-5-rules-19"></a></h3>
-    Optional consistency rules for 80000-5-quantities to enforce that derived quantities are about the same object as the objects of their quantity factors. 
-   <h3 class="heading settled" data-level="1.20" id="heading-80000-5-units-20"><span class="secno">1.20. </span><span class="content"><a href="./iso.org/80000-5-units.html">ISO 80000-5 Units</a></span><a class="self-link" href="#heading-80000-5-units-20"></a></h3>
-    The ISO 80000-5 units vocabulary. 
-   <h3 class="heading settled" data-level="1.21" id="heading-80000-6-instances-21"><span class="secno">1.21. </span><span class="content"><a href="./iso.org/80000-6-instances.html">ISO 80000-6 Instances</a></span><a class="self-link" href="#heading-80000-6-instances-21"></a></h3>
-    The ISO 80000-6 instances library. 
-   <h3 class="heading settled" data-level="1.22" id="heading-80000-6-magnitudes-1-22"><span class="secno">1.22. </span><span class="content"><a href="./iso.org/80000-6-magnitudes-1.html">ISO 80000-6 Magnitudes-1</a></span><a class="self-link" href="#heading-80000-6-magnitudes-1-22"></a></h3>
-    The ISO 80000-6 magnitudes-1 vocabulary. It provides convenience specializations of every metrology:Magnitude defined in http://iso.org/80000-6-units. 
-Note that this vocabulary is an alternative to http://iso.org/80000-6-magnitudes-2. 
-   <h3 class="heading settled" data-level="1.23" id="heading-80000-6-magnitudes-2-23"><span class="secno">1.23. </span><span class="content"><a href="./iso.org/80000-6-magnitudes-2.html">ISO 80000-6 Magnitudes-2</a></span><a class="self-link" href="#heading-80000-6-magnitudes-2-23"></a></h3>
-    The ISO 80000-6 magnitudes-2 vocabulary. It provides convenience specializations of every metrology:IsReflexiveMagnitudeOf as relation entities for every metrology:MeasurementUnit defined in http://iso.org/80000-6-unit. 
-Note that this vocabulary is an alternative to http://iso.org/80000-6-magnitudes-1. 
-   <h3 class="heading settled" data-level="1.24" id="heading-80000-6-quantities-24"><span class="secno">1.24. </span><span class="content"><a href="./iso.org/80000-6-quantities.html">ISO 80000-6 Quantities</a></span><a class="self-link" href="#heading-80000-6-quantities-24"></a></h3>
-    The ISO 80000-6 quantities vocabulary. 
-   <h3 class="heading settled" data-level="1.25" id="heading-80000-6-rules-25"><span class="secno">1.25. </span><span class="content"><a href="./iso.org/80000-6-rules.html">ISO 80000-6 Rules</a></span><a class="self-link" href="#heading-80000-6-rules-25"></a></h3>
-    Optional consistency rules for 80000-6-quantities to enforce that derived quantities are about the same object as the objects of their quantity factors. 
-   <h3 class="heading settled" data-level="1.26" id="heading-80000-6-units-26"><span class="secno">1.26. </span><span class="content"><a href="./iso.org/80000-6-units.html">ISO 80000-6 Units</a></span><a class="self-link" href="#heading-80000-6-units-26"></a></h3>
-    The ISO 80000-6 units vocabulary. 
-   <h3 class="heading settled" data-level="1.27" id="heading-80000-instances-27"><span class="secno">1.27. </span><span class="content"><a href="./iso.org/80000-instances.html">ISO 80000 Instances</a></span><a class="self-link" href="#heading-80000-instances-27"></a></h3>
-    The ISO 80000 instances library. 
-   <h2 class="heading settled" data-level="2" id="heading-domain-iupac.org"><span class="secno">2. </span><span class="content">iupac.org</span><a class="self-link" href="#heading-domain-iupac.org"></a></h2>
-   <h3 class="heading settled" data-level="2.1" id="heading-metrology-28"><span class="secno">2.1. </span><span class="content"><a href="./iupac.org/metrology.html">Metrology</a></span><a class="self-link" href="#heading-metrology-28"></a></h3>
-    This vocabulary is a partial account of Prof. Rene Dybkaer’s 'An Ontology of Property' 
-focused on the concepts necessary for dimensional analysis of systems of metrological units and
-of systems of quantities based on the algebraic relationships involved in the
-definitions of the metrological units and the kinds of quantities in these respective systems. 
-   <p>See the rationale behind the 3rd revision of the Vocabulary of International Metrology, VIM3,
-for references to Prof. Dybkaer’s influential work: https://www.bipm.org/en/publications/guides/rationale-vim3.html</p>
-   <p>Where possible, correspondences to VIM3 definitions will be referenced from https://jcgm.bipm.org/vim/en/index.html
-The VIM3 is available in document PDF here: https://www.bipm.org/utils/common/documents/jcgm/JCGM_200_2012.pdf</p>
-   <p>References to definitions in the ontology are indicated via a reference
-in parentheses with a chapter and section and a page number;
-for example, (S.2.23, p. 33) refers to the definition of 'object' on page 33.</p>
-   <h2 class="heading settled" data-level="3" id="heading-domain-nist.gov"><span class="secno">3. </span><span class="content">nist.gov</span><a class="self-link" href="#heading-domain-nist.gov"></a></h2>
-   <h3 class="heading settled" data-level="3.1" id="heading-special-publication-811-instances-29"><span class="secno">3.1. </span><span class="content"><a href="./nist.gov/pml/special-publication-811-instances.html">Special Publication 811 Instances</a></span><a class="self-link" href="#heading-special-publication-811-instances-29"></a></h3>
-    English Engineering Units defined in NIST PML Special Publication 811, Appendix B.8 
-   <h3 class="heading settled" data-level="3.2" id="heading-special-publication-811-magnitudes-1-30"><span class="secno">3.2. </span><span class="content"><a href="./nist.gov/pml/special-publication-811-magnitudes-1.html">Special Publication 811 Magnitudes-1</a></span><a class="self-link" href="#heading-special-publication-811-magnitudes-1-30"></a></h3>
-    English Engineering Units defined in NIST PML Special Publication 811, Appendix B.8. Note that this vocabulary is an alternative to http://nist.gov/pml/special-publication-811-magnitudes-2. 
-   <h3 class="heading settled" data-level="3.3" id="heading-special-publication-811-magnitudes2-31"><span class="secno">3.3. </span><span class="content"><a href="./nist.gov/pml/special-publication-811-magnitudes2.html">Special Publication 811 Magnitudes-2</a></span><a class="self-link" href="#heading-special-publication-811-magnitudes2-31"></a></h3>
-    English Engineering Units defined in NIST PML Special Publication 811, Appendix B.8. Note that this vocabulary is an alternative to http://nist.gov/pml/special-publication-811-magnitudes-1. 
-   <h3 class="heading settled" data-level="3.4" id="heading-special-publication-811-units-32"><span class="secno">3.4. </span><span class="content"><a href="./nist.gov/pml/special-publication-811-units.html">Special Publication 811 Units</a></span><a class="self-link" href="#heading-special-publication-811-units-32"></a></h3>
-    English Engineering Units defined in NIST PML Special Publication 811, Appendix B.8 
-   <h2 class="heading settled" data-level="4" id="heading-domain-opencaesar.io"><span class="secno">4. </span><span class="content">opencaesar.io</span><a class="self-link" href="#heading-domain-opencaesar.io"></a></h2>
-   <h3 class="heading settled" data-level="4.1" id="heading-diagram-33"><span class="secno">4.1. </span><span class="content"><a href="./opencaesar.io/diagram.html">Diagram</a></span><a class="self-link" href="#heading-diagram-33"></a></h3>
-    The Diagram vocabulary defines a set of annotations that control the visualization of OML diagrams. 
-   <div class="note" role="note"> This ontology has been deprecated </div>
-   <h3 class="heading settled" data-level="4.2" id="heading-viewpoint-34"><span class="secno">4.2. </span><span class="content"><a href="./opencaesar.io/viewpoint.html">Viewpoint</a></span><a class="self-link" href="#heading-viewpoint-34"></a></h3>
-    A vocabulary for defining common terms used in defining viewpoints 
-   <h2 class="heading settled" data-level="5" id="heading-domain-purl.org"><span class="secno">5. </span><span class="content">purl.org</span><a class="self-link" href="#heading-domain-purl.org"></a></h2>
-   <h3 class="heading settled" data-level="5.1" id="heading-dc-35"><span class="secno">5.1. </span><span class="content"><a href="./purl.org/dc/elements/1.1.html">DC</a></span><a class="self-link" href="#heading-dc-35"></a></h3>
-    The DC vocabulary is a subset of the vocabulary maintained by the Dublin Core Metadata Initiative. 
-   <h2 class="heading settled" data-level="6" id="heading-domain-www.w3.org"><span class="secno">6. </span><span class="content">www.w3.org</span><a class="self-link" href="#heading-domain-www.w3.org"></a></h2>
-   <h3 class="heading settled" data-level="6.1" id="heading-rdf-36"><span class="secno">6.1. </span><span class="content"><a href="./www.w3.org/1999/02/22-rdf-syntax-ns.html">RDF</a></span><a class="self-link" href="#heading-rdf-36"></a></h3>
-    The RDF vocabulary is a subset of the vocabulary maintained by the W3C. 
-   <h3 class="heading settled" data-level="6.2" id="heading-rdfs-37"><span class="secno">6.2. </span><span class="content"><a href="./www.w3.org/2000/01/rdf-schema.html">RDFS</a></span><a class="self-link" href="#heading-rdfs-37"></a></h3>
-    The RDFS vocabulary is a subset of the vocabulary maintained by the W3C. 
-   <h3 class="heading settled" data-level="6.3" id="heading-xsd-38"><span class="secno">6.3. </span><span class="content"><a href="./www.w3.org/2001/XMLSchema.html">XSD</a></span><a class="self-link" href="#heading-xsd-38"></a></h3>
-    The XSD vocabulary is a subset of the corresponding vocabulary maintained by the W3C. 
-   <h3 class="heading settled" data-level="6.4" id="heading-owl-39"><span class="secno">6.4. </span><span class="content"><a href="./www.w3.org/2002/07/owl.html">OWL2</a></span><a class="self-link" href="#heading-owl-39"></a></h3>
-    The OWL2 vocabulary is a subset of the vocabulary maintained by the W3C. 
+   <div>
+    <h2 class="heading settled" data-level="1" id="Namespace"><span class="secno">1. </span><span class="content">Namespace</span><a class="self-link" href="#Namespace"></a></h2>
+    <ul>
+     <li data-md>
+      <p>80000-6-instances: <a href="80000-6-instances.html">http://iso.org/80000-6-instances</a></p>
+    </ul>
+    <h2 class="heading settled" data-level="2" id="Extensions"><span class="secno">2. </span><span class="content">Extensions</span><a class="self-link" href="#Extensions"></a></h2>
+    <ul>
+     <li data-md>
+      <p>80000-instances: <a href="http://iso.org/80000-instances.html">http://iso.org/80000-instances</a></p>
+    </ul>
+    <h2 class="heading settled" data-level="3" id="Iclusions"><span class="secno">3. </span><span class="content">Usages</span><a class="self-link" href="#Iclusions"></a></h2>
+    <ul>
+     <li data-md>
+      <p>80000-6-quantities: <a href="http://iso.org/80000-6-quantities.html">http://iso.org/80000-6-quantities</a></p>
+    </ul>
+    <h2 class="heading settled" data-level="4" id="ConceptInstances"><span class="secno">4. </span><span class="content">Concept Instances</span><a class="self-link" href="#ConceptInstances"></a></h2>
+    <h3 class="heading settled" data-level="4.1" id="Ampere"><span class="secno">4.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="ampere">ampere<a class="self-link" href="#ampere"></a></dfn></span><a class="self-link" href="#Ampere"></a></h3>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Types
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="80000-6-units.html#ampere" id="ref-for-ampere">80000-6-units:ampere</a>
+        </ul>
+    </table>
+    <h3 class="heading settled" data-level="4.2" id="Coulomb"><span class="secno">4.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="coulomb">coulomb<a class="self-link" href="#coulomb"></a></dfn></span><a class="self-link" href="#Coulomb"></a></h3>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Types
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="80000-6-units.html#coulomb" id="ref-for-coulomb">80000-6-units:coulomb</a>
+        </ul>
+    </table>
+    <h3 class="heading settled" data-level="4.3" id="Electric-charge"><span class="secno">4.3. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="electric-charge">electric-charge<a class="self-link" href="#electric-charge"></a></dfn></span><a class="self-link" href="#Electric-charge"></a></h3>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Types
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="80000-6-quantities.html#electric-charge" id="ref-for-electric-charge">80000-6-quantities:electric-charge</a>
+        </ul>
+    </table>
+    <h3 class="heading settled" data-level="4.4" id="Electric-current"><span class="secno">4.4. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="electric-current">electric-current<a class="self-link" href="#electric-current"></a></dfn></span><a class="self-link" href="#Electric-current"></a></h3>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Types
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="80000-6-quantities.html#electric-current" id="ref-for-electric-current">80000-6-quantities:electric-current</a>
+        </ul>
+    </table>
+    <h3 class="heading settled" data-level="4.5" id="Electric-field-strength"><span class="secno">4.5. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="electric-field-strength">electric-field-strength<a class="self-link" href="#electric-field-strength"></a></dfn></span><a class="self-link" href="#Electric-field-strength"></a></h3>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Types
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="80000-6-quantities.html#electric-field-strength" id="ref-for-electric-field-strength">80000-6-quantities:electric-field-strength</a>
+        </ul>
+    </table>
+    <h3 class="heading settled" data-level="4.6" id="Electric-potential"><span class="secno">4.6. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="electric-potential">electric-potential<a class="self-link" href="#electric-potential"></a></dfn></span><a class="self-link" href="#Electric-potential"></a></h3>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Types
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="80000-6-quantities.html#electric-potential" id="ref-for-electric-potential">80000-6-quantities:electric-potential</a>
+        </ul>
+    </table>
+    <h3 class="heading settled" data-level="4.7" id="Newton-per-coulomb"><span class="secno">4.7. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="newton-per-coulomb">newton-per-coulomb<a class="self-link" href="#newton-per-coulomb"></a></dfn></span><a class="self-link" href="#Newton-per-coulomb"></a></h3>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Types
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="80000-6-units.html#newton-per-coulomb" id="ref-for-newton-per-coulomb">80000-6-units:newton-per-coulomb</a>
+        </ul>
+    </table>
+    <h3 class="heading settled" data-level="4.8" id="Ohm"><span class="secno">4.8. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="ohm">ohm<a class="self-link" href="#ohm"></a></dfn></span><a class="self-link" href="#Ohm"></a></h3>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Types
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="80000-6-units.html#ohm" id="ref-for-ohm">80000-6-units:ohm</a>
+        </ul>
+    </table>
+    <h3 class="heading settled" data-level="4.9" id="Resistance"><span class="secno">4.9. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="resistance">resistance<a class="self-link" href="#resistance"></a></dfn></span><a class="self-link" href="#Resistance"></a></h3>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Types
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="80000-6-quantities.html#resistance" id="ref-for-resistance">80000-6-quantities:resistance</a>
+        </ul>
+    </table>
+    <h3 class="heading settled" data-level="4.10" id="Volt"><span class="secno">4.10. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="volt">volt<a class="self-link" href="#volt"></a></dfn></span><a class="self-link" href="#Volt"></a></h3>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Types
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="80000-6-units.html#volt" id="ref-for-volt">80000-6-units:volt</a>
+        </ul>
+    </table>
+    <h2 class="heading settled" data-level="5" id="RelationInstances"><span class="secno">5. </span><span class="content">Relation Instances</span><a class="self-link" href="#RelationInstances"></a></h2>
+    <h3 class="heading settled" data-level="5.1" id="SystemOfQuantities-electric-charge"><span class="secno">5.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="systemofquantities-electric-charge">systemOfQuantities-electric-charge<a class="self-link" href="#systemofquantities-electric-charge"></a></dfn></span><a class="self-link" href="#SystemOfQuantities-electric-charge"></a></h3>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Types
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="../iupac.org/metrology.html#systemhasunitaryquantity" id="ref-for-systemhasunitaryquantity">metrology:SystemHasUnitaryQuantity</a>
+        </ul>
+      <tr>
+       <th>Source
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="80000-instances.html#systemofquantities" id="ref-for-systemofquantities">80000-instances:systemOfQuantities</a>
+        </ul>
+      <tr>
+       <th>Target
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="80000-6-instances.html#electric-charge" id="ref-for-electric-charge①">electric-charge</a>
+        </ul>
+      <tr>
+       <th>Properties
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="../iupac.org/metrology.html#isbasequantity" id="ref-for-isbasequantity">metrology:isBaseQuantity</a> false
+        </ul>
+    </table>
+    <h3 class="heading settled" data-level="5.2" id="SystemOfQuantities-electric-current"><span class="secno">5.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="systemofquantities-electric-current">systemOfQuantities-electric-current<a class="self-link" href="#systemofquantities-electric-current"></a></dfn></span><a class="self-link" href="#SystemOfQuantities-electric-current"></a></h3>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Types
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="../iupac.org/metrology.html#systemhasunitaryquantity" id="ref-for-systemhasunitaryquantity①">metrology:SystemHasUnitaryQuantity</a>
+        </ul>
+      <tr>
+       <th>Source
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="80000-instances.html#systemofquantities" id="ref-for-systemofquantities①">80000-instances:systemOfQuantities</a>
+        </ul>
+      <tr>
+       <th>Target
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="80000-6-instances.html#electric-current" id="ref-for-electric-current①">electric-current</a>
+        </ul>
+      <tr>
+       <th>Properties
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="../iupac.org/metrology.html#isbasequantity" id="ref-for-isbasequantity①">metrology:isBaseQuantity</a> true
+        </ul>
+    </table>
+    <h3 class="heading settled" data-level="5.3" id="SystemOfQuantities-electric-field-strength"><span class="secno">5.3. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="systemofquantities-electric-field-strength">systemOfQuantities-electric-field-strength<a class="self-link" href="#systemofquantities-electric-field-strength"></a></dfn></span><a class="self-link" href="#SystemOfQuantities-electric-field-strength"></a></h3>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Types
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="../iupac.org/metrology.html#systemhasunitaryquantity" id="ref-for-systemhasunitaryquantity②">metrology:SystemHasUnitaryQuantity</a>
+        </ul>
+      <tr>
+       <th>Source
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="80000-instances.html#systemofquantities" id="ref-for-systemofquantities②">80000-instances:systemOfQuantities</a>
+        </ul>
+      <tr>
+       <th>Target
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="80000-6-instances.html#electric-field-strength" id="ref-for-electric-field-strength①">electric-field-strength</a>
+        </ul>
+      <tr>
+       <th>Properties
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="../iupac.org/metrology.html#isbasequantity" id="ref-for-isbasequantity②">metrology:isBaseQuantity</a> false
+        </ul>
+    </table>
+    <h3 class="heading settled" data-level="5.4" id="SystemOfQuantities-electric-potential"><span class="secno">5.4. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="systemofquantities-electric-potential">systemOfQuantities-electric-potential<a class="self-link" href="#systemofquantities-electric-potential"></a></dfn></span><a class="self-link" href="#SystemOfQuantities-electric-potential"></a></h3>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Types
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="../iupac.org/metrology.html#systemhasunitaryquantity" id="ref-for-systemhasunitaryquantity③">metrology:SystemHasUnitaryQuantity</a>
+        </ul>
+      <tr>
+       <th>Source
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="80000-instances.html#systemofquantities" id="ref-for-systemofquantities③">80000-instances:systemOfQuantities</a>
+        </ul>
+      <tr>
+       <th>Target
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="80000-6-instances.html#electric-potential" id="ref-for-electric-potential①">electric-potential</a>
+        </ul>
+      <tr>
+       <th>Properties
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="../iupac.org/metrology.html#isbasequantity" id="ref-for-isbasequantity③">metrology:isBaseQuantity</a> false
+        </ul>
+    </table>
+    <h3 class="heading settled" data-level="5.5" id="SystemOfQuantities-resistance"><span class="secno">5.5. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="systemofquantities-resistance">systemOfQuantities-resistance<a class="self-link" href="#systemofquantities-resistance"></a></dfn></span><a class="self-link" href="#SystemOfQuantities-resistance"></a></h3>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Types
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="../iupac.org/metrology.html#systemhasunitaryquantity" id="ref-for-systemhasunitaryquantity④">metrology:SystemHasUnitaryQuantity</a>
+        </ul>
+      <tr>
+       <th>Source
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="80000-instances.html#systemofquantities" id="ref-for-systemofquantities④">80000-instances:systemOfQuantities</a>
+        </ul>
+      <tr>
+       <th>Target
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="80000-6-instances.html#resistance" id="ref-for-resistance①">resistance</a>
+        </ul>
+      <tr>
+       <th>Properties
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="../iupac.org/metrology.html#isbasequantity" id="ref-for-isbasequantity④">metrology:isBaseQuantity</a> false
+        </ul>
+    </table>
+    <h3 class="heading settled" data-level="5.6" id="SystemOfUnits-ampere"><span class="secno">5.6. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="systemofunits-ampere">systemOfUnits-ampere<a class="self-link" href="#systemofunits-ampere"></a></dfn></span><a class="self-link" href="#SystemOfUnits-ampere"></a></h3>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Types
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="../iupac.org/metrology.html#systemhasmetrologicalunit" id="ref-for-systemhasmetrologicalunit">metrology:SystemHasMetrologicalUnit</a>
+        </ul>
+      <tr>
+       <th>Source
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="80000-instances.html#systemofunits" id="ref-for-systemofunits">80000-instances:systemOfUnits</a>
+        </ul>
+      <tr>
+       <th>Target
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="80000-6-instances.html#ampere" id="ref-for-ampere①">ampere</a>
+        </ul>
+      <tr>
+       <th>Properties
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="../iupac.org/metrology.html#isbasemetrologicalunit" id="ref-for-isbasemetrologicalunit">metrology:isBaseMetrologicalUnit</a> true
+        </ul>
+    </table>
+    <h3 class="heading settled" data-level="5.7" id="SystemOfUnits-coulomb"><span class="secno">5.7. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="systemofunits-coulomb">systemOfUnits-coulomb<a class="self-link" href="#systemofunits-coulomb"></a></dfn></span><a class="self-link" href="#SystemOfUnits-coulomb"></a></h3>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Types
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="../iupac.org/metrology.html#systemhasmetrologicalunit" id="ref-for-systemhasmetrologicalunit①">metrology:SystemHasMetrologicalUnit</a>
+        </ul>
+      <tr>
+       <th>Source
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="80000-instances.html#systemofunits" id="ref-for-systemofunits①">80000-instances:systemOfUnits</a>
+        </ul>
+      <tr>
+       <th>Target
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="80000-6-instances.html#coulomb" id="ref-for-coulomb①">coulomb</a>
+        </ul>
+      <tr>
+       <th>Properties
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="../iupac.org/metrology.html#isbasemetrologicalunit" id="ref-for-isbasemetrologicalunit①">metrology:isBaseMetrologicalUnit</a> false
+        </ul>
+    </table>
+    <h3 class="heading settled" data-level="5.8" id="SystemOfUnits-newton-per-coulomb"><span class="secno">5.8. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="systemofunits-newton-per-coulomb">systemOfUnits-newton-per-coulomb<a class="self-link" href="#systemofunits-newton-per-coulomb"></a></dfn></span><a class="self-link" href="#SystemOfUnits-newton-per-coulomb"></a></h3>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Types
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="../iupac.org/metrology.html#systemhasmetrologicalunit" id="ref-for-systemhasmetrologicalunit②">metrology:SystemHasMetrologicalUnit</a>
+        </ul>
+      <tr>
+       <th>Source
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="80000-instances.html#systemofunits" id="ref-for-systemofunits②">80000-instances:systemOfUnits</a>
+        </ul>
+      <tr>
+       <th>Target
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="80000-6-instances.html#newton-per-coulomb" id="ref-for-newton-per-coulomb①">newton-per-coulomb</a>
+        </ul>
+      <tr>
+       <th>Properties
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="../iupac.org/metrology.html#isbasemetrologicalunit" id="ref-for-isbasemetrologicalunit②">metrology:isBaseMetrologicalUnit</a> false
+        </ul>
+    </table>
+    <h3 class="heading settled" data-level="5.9" id="SystemOfUnits-ohm"><span class="secno">5.9. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="systemofunits-ohm">systemOfUnits-ohm<a class="self-link" href="#systemofunits-ohm"></a></dfn></span><a class="self-link" href="#SystemOfUnits-ohm"></a></h3>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Types
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="../iupac.org/metrology.html#systemhasmetrologicalunit" id="ref-for-systemhasmetrologicalunit③">metrology:SystemHasMetrologicalUnit</a>
+        </ul>
+      <tr>
+       <th>Source
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="80000-instances.html#systemofunits" id="ref-for-systemofunits③">80000-instances:systemOfUnits</a>
+        </ul>
+      <tr>
+       <th>Target
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="80000-6-instances.html#ohm" id="ref-for-ohm①">ohm</a>
+        </ul>
+      <tr>
+       <th>Properties
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="../iupac.org/metrology.html#isbasemetrologicalunit" id="ref-for-isbasemetrologicalunit③">metrology:isBaseMetrologicalUnit</a> false
+        </ul>
+    </table>
+    <h3 class="heading settled" data-level="5.10" id="SystemOfUnits-volt"><span class="secno">5.10. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="systemofunits-volt">systemOfUnits-volt<a class="self-link" href="#systemofunits-volt"></a></dfn></span><a class="self-link" href="#SystemOfUnits-volt"></a></h3>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Types
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="../iupac.org/metrology.html#systemhasmetrologicalunit" id="ref-for-systemhasmetrologicalunit④">metrology:SystemHasMetrologicalUnit</a>
+        </ul>
+      <tr>
+       <th>Source
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="80000-instances.html#systemofunits" id="ref-for-systemofunits④">80000-instances:systemOfUnits</a>
+        </ul>
+      <tr>
+       <th>Target
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="80000-6-instances.html#volt" id="ref-for-volt①">volt</a>
+        </ul>
+      <tr>
+       <th>Properties
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="../iupac.org/metrology.html#isbasemetrologicalunit" id="ref-for-isbasemetrologicalunit④">metrology:isBaseMetrologicalUnit</a> false
+        </ul>
+    </table>
+   </div>
   </main>
 <script>
 (function() {
@@ -2198,4 +2529,313 @@ for example, (S.2.23, p. 33) refers to the definition of 'object' on page 33.</p
   }
 
 })();
+</script>
+  <h2 class="no-num no-ref heading settled" id="index"><span class="content">Index</span><a class="self-link" href="#index"></a></h2>
+  <h3 class="no-num no-ref heading settled" id="index-defined-here"><span class="content">Terms defined by this specification</span><a class="self-link" href="#index-defined-here"></a></h3>
+  <ul class="index">
+   <li><a href="#ampere">ampere</a><span>, in §4.1</span>
+   <li><a href="#coulomb">coulomb</a><span>, in §4.2</span>
+   <li><a href="#electric-charge">electric-charge</a><span>, in §4.3</span>
+   <li><a href="#electric-current">electric-current</a><span>, in §4.4</span>
+   <li><a href="#electric-field-strength">electric-field-strength</a><span>, in §4.5</span>
+   <li><a href="#electric-potential">electric-potential</a><span>, in §4.6</span>
+   <li><a href="#newton-per-coulomb">newton-per-coulomb</a><span>, in §4.7</span>
+   <li><a href="#ohm">ohm</a><span>, in §4.8</span>
+   <li><a href="#resistance">resistance</a><span>, in §4.9</span>
+   <li><a href="#systemofquantities-electric-charge">systemOfQuantities-electric-charge</a><span>, in §5.1</span>
+   <li><a href="#systemofquantities-electric-current">systemOfQuantities-electric-current</a><span>, in §5.2</span>
+   <li><a href="#systemofquantities-electric-field-strength">systemOfQuantities-electric-field-strength</a><span>, in §5.3</span>
+   <li><a href="#systemofquantities-electric-potential">systemOfQuantities-electric-potential</a><span>, in §5.4</span>
+   <li><a href="#systemofquantities-resistance">systemOfQuantities-resistance</a><span>, in §5.5</span>
+   <li><a href="#systemofunits-ampere">systemOfUnits-ampere</a><span>, in §5.6</span>
+   <li><a href="#systemofunits-coulomb">systemOfUnits-coulomb</a><span>, in §5.7</span>
+   <li><a href="#systemofunits-newton-per-coulomb">systemOfUnits-newton-per-coulomb</a><span>, in §5.8</span>
+   <li><a href="#systemofunits-ohm">systemOfUnits-ohm</a><span>, in §5.9</span>
+   <li><a href="#systemofunits-volt">systemOfUnits-volt</a><span>, in §5.10</span>
+   <li><a href="#volt">volt</a><span>, in §4.10</span>
+  </ul>
+  <aside class="dfn-panel" data-for="term-for-ampere">
+   <a href="80000-6-instances.html#ampere">80000-6-instances.html#ampere</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-ampere①">5.6. systemOfUnits-ampere</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-coulomb">
+   <a href="80000-6-instances.html#coulomb">80000-6-instances.html#coulomb</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-coulomb①">5.7. systemOfUnits-coulomb</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-electric-charge">
+   <a href="80000-6-instances.html#electric-charge">80000-6-instances.html#electric-charge</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-electric-charge①">5.1. systemOfQuantities-electric-charge</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-electric-current">
+   <a href="80000-6-instances.html#electric-current">80000-6-instances.html#electric-current</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-electric-current①">5.2. systemOfQuantities-electric-current</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-electric-field-strength">
+   <a href="80000-6-instances.html#electric-field-strength">80000-6-instances.html#electric-field-strength</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-electric-field-strength①">5.3. systemOfQuantities-electric-field-strength</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-electric-potential">
+   <a href="80000-6-instances.html#electric-potential">80000-6-instances.html#electric-potential</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-electric-potential①">5.4. systemOfQuantities-electric-potential</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-newton-per-coulomb">
+   <a href="80000-6-instances.html#newton-per-coulomb">80000-6-instances.html#newton-per-coulomb</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-newton-per-coulomb①">5.8. systemOfUnits-newton-per-coulomb</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-ohm">
+   <a href="80000-6-instances.html#ohm">80000-6-instances.html#ohm</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-ohm①">5.9. systemOfUnits-ohm</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-resistance">
+   <a href="80000-6-instances.html#resistance">80000-6-instances.html#resistance</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-resistance①">5.5. systemOfQuantities-resistance</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-volt">
+   <a href="80000-6-instances.html#volt">80000-6-instances.html#volt</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-volt①">5.10. systemOfUnits-volt</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-electric-charge">
+   <a href="80000-6-quantities.html#electric-charge">80000-6-quantities.html#electric-charge</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-electric-charge">4.3. electric-charge</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-electric-current">
+   <a href="80000-6-quantities.html#electric-current">80000-6-quantities.html#electric-current</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-electric-current">4.4. electric-current</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-electric-field-strength">
+   <a href="80000-6-quantities.html#electric-field-strength">80000-6-quantities.html#electric-field-strength</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-electric-field-strength">4.5. electric-field-strength</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-electric-potential">
+   <a href="80000-6-quantities.html#electric-potential">80000-6-quantities.html#electric-potential</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-electric-potential">4.6. electric-potential</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-resistance">
+   <a href="80000-6-quantities.html#resistance">80000-6-quantities.html#resistance</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-resistance">4.9. resistance</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-ampere">
+   <a href="80000-6-units.html#ampere">80000-6-units.html#ampere</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-ampere">4.1. ampere</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-coulomb">
+   <a href="80000-6-units.html#coulomb">80000-6-units.html#coulomb</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-coulomb">4.2. coulomb</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-newton-per-coulomb">
+   <a href="80000-6-units.html#newton-per-coulomb">80000-6-units.html#newton-per-coulomb</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-newton-per-coulomb">4.7. newton-per-coulomb</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-ohm">
+   <a href="80000-6-units.html#ohm">80000-6-units.html#ohm</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-ohm">4.8. ohm</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-volt">
+   <a href="80000-6-units.html#volt">80000-6-units.html#volt</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-volt">4.10. volt</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-systemofquantities">
+   <a href="80000-instances.html#systemofquantities">80000-instances.html#systemofquantities</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-systemofquantities">5.1. systemOfQuantities-electric-charge</a>
+    <li><a href="#ref-for-systemofquantities①">5.2. systemOfQuantities-electric-current</a>
+    <li><a href="#ref-for-systemofquantities②">5.3. systemOfQuantities-electric-field-strength</a>
+    <li><a href="#ref-for-systemofquantities③">5.4. systemOfQuantities-electric-potential</a>
+    <li><a href="#ref-for-systemofquantities④">5.5. systemOfQuantities-resistance</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-systemofunits">
+   <a href="80000-instances.html#systemofunits">80000-instances.html#systemofunits</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-systemofunits">5.6. systemOfUnits-ampere</a>
+    <li><a href="#ref-for-systemofunits①">5.7. systemOfUnits-coulomb</a>
+    <li><a href="#ref-for-systemofunits②">5.8. systemOfUnits-newton-per-coulomb</a>
+    <li><a href="#ref-for-systemofunits③">5.9. systemOfUnits-ohm</a>
+    <li><a href="#ref-for-systemofunits④">5.10. systemOfUnits-volt</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-isbasemetrologicalunit">
+   <a href="../iupac.org/metrology.html#isbasemetrologicalunit">../iupac.org/metrology.html#isbasemetrologicalunit</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-isbasemetrologicalunit">5.6. systemOfUnits-ampere</a>
+    <li><a href="#ref-for-isbasemetrologicalunit①">5.7. systemOfUnits-coulomb</a>
+    <li><a href="#ref-for-isbasemetrologicalunit②">5.8. systemOfUnits-newton-per-coulomb</a>
+    <li><a href="#ref-for-isbasemetrologicalunit③">5.9. systemOfUnits-ohm</a>
+    <li><a href="#ref-for-isbasemetrologicalunit④">5.10. systemOfUnits-volt</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-isbasequantity">
+   <a href="../iupac.org/metrology.html#isbasequantity">../iupac.org/metrology.html#isbasequantity</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-isbasequantity">5.1. systemOfQuantities-electric-charge</a>
+    <li><a href="#ref-for-isbasequantity①">5.2. systemOfQuantities-electric-current</a>
+    <li><a href="#ref-for-isbasequantity②">5.3. systemOfQuantities-electric-field-strength</a>
+    <li><a href="#ref-for-isbasequantity③">5.4. systemOfQuantities-electric-potential</a>
+    <li><a href="#ref-for-isbasequantity④">5.5. systemOfQuantities-resistance</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-systemhasmetrologicalunit">
+   <a href="../iupac.org/metrology.html#systemhasmetrologicalunit">../iupac.org/metrology.html#systemhasmetrologicalunit</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-systemhasmetrologicalunit">5.6. systemOfUnits-ampere</a>
+    <li><a href="#ref-for-systemhasmetrologicalunit①">5.7. systemOfUnits-coulomb</a>
+    <li><a href="#ref-for-systemhasmetrologicalunit②">5.8. systemOfUnits-newton-per-coulomb</a>
+    <li><a href="#ref-for-systemhasmetrologicalunit③">5.9. systemOfUnits-ohm</a>
+    <li><a href="#ref-for-systemhasmetrologicalunit④">5.10. systemOfUnits-volt</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-systemhasunitaryquantity">
+   <a href="../iupac.org/metrology.html#systemhasunitaryquantity">../iupac.org/metrology.html#systemhasunitaryquantity</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-systemhasunitaryquantity">5.1. systemOfQuantities-electric-charge</a>
+    <li><a href="#ref-for-systemhasunitaryquantity①">5.2. systemOfQuantities-electric-current</a>
+    <li><a href="#ref-for-systemhasunitaryquantity②">5.3. systemOfQuantities-electric-field-strength</a>
+    <li><a href="#ref-for-systemhasunitaryquantity③">5.4. systemOfQuantities-electric-potential</a>
+    <li><a href="#ref-for-systemhasunitaryquantity④">5.5. systemOfQuantities-resistance</a>
+   </ul>
+  </aside>
+  <h3 class="no-num no-ref heading settled" id="index-defined-elsewhere"><span class="content">Terms defined by reference</span><a class="self-link" href="#index-defined-elsewhere"></a></h3>
+  <ul class="index">
+   <li>
+    <a data-link-type="biblio">[http://iso.org/80000-6-instances]</a> defines the following terms:
+    <ul>
+     <li><span class="dfn-paneled" id="term-for-ampere">ampere</span>
+     <li><span class="dfn-paneled" id="term-for-coulomb">coulomb</span>
+     <li><span class="dfn-paneled" id="term-for-electric-charge">electric-charge</span>
+     <li><span class="dfn-paneled" id="term-for-electric-current">electric-current</span>
+     <li><span class="dfn-paneled" id="term-for-electric-field-strength">electric-field-strength</span>
+     <li><span class="dfn-paneled" id="term-for-electric-potential">electric-potential</span>
+     <li><span class="dfn-paneled" id="term-for-newton-per-coulomb">newton-per-coulomb</span>
+     <li><span class="dfn-paneled" id="term-for-ohm">ohm</span>
+     <li><span class="dfn-paneled" id="term-for-resistance">resistance</span>
+     <li><span class="dfn-paneled" id="term-for-volt">volt</span>
+    </ul>
+   <li>
+    <a data-link-type="biblio">[http://iso.org/80000-6-quantities]</a> defines the following terms:
+    <ul>
+     <li><span class="dfn-paneled" id="term-for-electric-charge①">electric-charge</span>
+     <li><span class="dfn-paneled" id="term-for-electric-current①">electric-current</span>
+     <li><span class="dfn-paneled" id="term-for-electric-field-strength①">electric-field-strength</span>
+     <li><span class="dfn-paneled" id="term-for-electric-potential①">electric-potential</span>
+     <li><span class="dfn-paneled" id="term-for-resistance①">resistance</span>
+    </ul>
+   <li>
+    <a data-link-type="biblio">[http://iso.org/80000-6-units]</a> defines the following terms:
+    <ul>
+     <li><span class="dfn-paneled" id="term-for-ampere①">ampere</span>
+     <li><span class="dfn-paneled" id="term-for-coulomb①">coulomb</span>
+     <li><span class="dfn-paneled" id="term-for-newton-per-coulomb①">newton-per-coulomb</span>
+     <li><span class="dfn-paneled" id="term-for-ohm①">ohm</span>
+     <li><span class="dfn-paneled" id="term-for-volt①">volt</span>
+    </ul>
+   <li>
+    <a data-link-type="biblio">[http://iso.org/80000-instances]</a> defines the following terms:
+    <ul>
+     <li><span class="dfn-paneled" id="term-for-systemofquantities">systemofquantities</span>
+     <li><span class="dfn-paneled" id="term-for-systemofunits">systemofunits</span>
+    </ul>
+   <li>
+    <a data-link-type="biblio">[http://iupac.org/metrology]</a> defines the following terms:
+    <ul>
+     <li><span class="dfn-paneled" id="term-for-isbasemetrologicalunit">isbasemetrologicalunit</span>
+     <li><span class="dfn-paneled" id="term-for-isbasequantity">isbasequantity</span>
+     <li><span class="dfn-paneled" id="term-for-systemhasmetrologicalunit">systemhasmetrologicalunit</span>
+     <li><span class="dfn-paneled" id="term-for-systemhasunitaryquantity">systemhasunitaryquantity</span>
+    </ul>
+  </ul>
+<script>/* script-dfn-panel */
+
+document.body.addEventListener("click", function(e) {
+    var queryAll = function(sel) { return [].slice.call(document.querySelectorAll(sel)); }
+    // Find the dfn element or panel, if any, that was clicked on.
+    var el = e.target;
+    var target;
+    var hitALink = false;
+    while(el.parentElement) {
+        if(el.tagName == "A") {
+            // Clicking on a link in a <dfn> shouldn't summon the panel
+            hitALink = true;
+        }
+        if(el.classList.contains("dfn-paneled")) {
+            target = "dfn";
+            break;
+        }
+        if(el.classList.contains("dfn-panel")) {
+            target = "dfn-panel";
+            break;
+        }
+        el = el.parentElement;
+    }
+    if(target != "dfn-panel") {
+        // Turn off any currently "on" or "activated" panels.
+        queryAll(".dfn-panel.on, .dfn-panel.activated").forEach(function(el){
+            el.classList.remove("on");
+            el.classList.remove("activated");
+        });
+    }
+    if(target == "dfn" && !hitALink) {
+        // open the panel
+        var dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
+        if(dfnPanel) {
+            dfnPanel.classList.add("on");
+            var rect = el.getBoundingClientRect();
+            dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
+            dfnPanel.style.top = window.scrollY + rect.top + "px";
+            var panelRect = dfnPanel.getBoundingClientRect();
+            var panelWidth = panelRect.right - panelRect.left;
+            if(panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
+                // Reposition, because the panel is overflowing
+                dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
+            }
+        } else {
+            console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
+        }
+    } else if(target == "dfn-panel") {
+        // Switch it to "activated" state, which pins it.
+        el.classList.add("activated");
+        el.style.left = null;
+        el.style.top = null;
+    }
+
+});
 </script>

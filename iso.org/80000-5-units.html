@@ -1,7 +1,7 @@
 <!doctype html><html lang="en">
  <head>
   <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-  <title>OML Ontologies Index</title>
+  <title>ISO 80000-5 Units</title>
   <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
 <style data-fill-with="stylesheet">/******************************************************************************
  *                   Style sheet for the W3C specifications                   *
@@ -1488,9 +1488,23 @@ Possible extra rowspan handling
 	}
 </style>
   <meta content="Bikeshed version 3d6a6fcbb, updated Wed Jun 16 16:19:39 2021 -0700" name="generator">
-  <link href="https://opencaesar.github.io/core-vocabularies/" rel="canonical">
-  <link href="https://opencaesar.github.io/assets/img/oml.png" rel="icon">
+  <link href="https://opencaesar.github.io/core-vocabularies//iso.org/80000-5-units" rel="canonical">
   <meta content="5b354532f3cc5b99d875658309f47b5cb52e5401" name="document-revision">
+<style>
+a[data-link-type=biblio] {
+    white-space: pre-wrap;
+}
+table.def th {
+	white-space: nowrap;
+}
+table.def ul {
+	padding-left: 1em;
+}
+table.def dfn code {
+	font-family: sans-serif;
+	color: #005A9C;
+}
+</style>
 <style>/* style-autolinks */
 
 .css.css, .property.property, .descriptor.descriptor {
@@ -1691,6 +1705,47 @@ figcaption {
 figcaption:not(.no-marker)::before {
     content: "Figure " counter(figure) " ";
 }</style>
+<style>/* style-dfn-panel */
+
+:root {
+    --dfnpanel-bg: #ddd;
+    --dfnpanel-text: var(--text);
+}
+.dfn-panel {
+    position: absolute;
+    z-index: 35;
+    height: auto;
+    width: -webkit-fit-content;
+    width: fit-content;
+    max-width: 300px;
+    max-height: 500px;
+    overflow: auto;
+    padding: 0.5em 0.75em;
+    font: small Helvetica Neue, sans-serif, Droid Sans Fallback;
+    background: var(--dfnpanel-bg);
+    color: var(--dfnpanel-text);
+    border: outset 0.2em;
+}
+.dfn-panel:not(.on) { display: none; }
+.dfn-panel * { margin: 0; padding: 0; text-indent: 0; }
+.dfn-panel > b { display: block; }
+.dfn-panel a { color: var(--dfnpanel-text); }
+.dfn-panel a:not(:hover) { text-decoration: none !important; border-bottom: none !important; }
+.dfn-panel > b + b { margin-top: 0.25em; }
+.dfn-panel ul { padding: 0; }
+.dfn-panel li { list-style: inside; }
+.dfn-panel.activated {
+    display: inline-block;
+    position: fixed;
+    left: .5em;
+    bottom: 2em;
+    margin: 0 auto;
+    max-width: calc(100vw - 1.5em - .4em - .5em);
+    max-height: 30vh;
+}
+
+.dfn-paneled { cursor: pointer; }
+</style>
 <style>/* style-md-lists */
 
 /* This is a weird hack for me not yet following the commonmark spec
@@ -1873,20 +1928,26 @@ dfn > a.self-link::before      { content: "#"; }
         --selflink-hover-text: white;
     }
 }
-</style>
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --dfnpanel-bg: #222;
+        --dfnpanel-text: var(--text);
+    }
+}</style>
  <body class="h-entry">
   <div class="head">
    <p data-fill-with="logo"><a class="logo" href="http://www.opencaesar.io/oml/"><img alt="OML Specification" height="48" src="https://opencaesar.github.io/oml/images/oml.svg"></a></p>
-   <h1 class="p-name no-ref" id="title">OML Ontologies Index</h1>
+   <h1 class="p-name no-ref" id="title">ISO 80000-5 Units</h1>
    <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2021-07-09">9 July 2021</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
-     <dd><a class="u-url" href="https://opencaesar.github.io/core-vocabularies/">https://opencaesar.github.io/core-vocabularies/</a>
+     <dd><a class="u-url" href="https://opencaesar.github.io/core-vocabularies//iso.org/80000-5-units">https://opencaesar.github.io/core-vocabularies//iso.org/80000-5-units</a>
      <dt class="editor">Editor:
-     <dd class="editor p-author h-card vcard"><span class="p-name fn">(see individual ontologies)</span>
+     <dd class="editor p-author h-card vcard"><span class="p-name fn">Jet Propulsion Laboratory</span>
      <dt>Copyright:
-     <dd>(see individual ontologies)
+     <dd>Copyright 2010-2020, by the California Institute of Technology. ALL RIGHTS RESERVED. United States Government Sponsorship acknowledged. Any commercial use must be negotiated with the Office of Technology Transfer at the California Institute of Technology. This software may be subject to U.S. export control laws. By accepting this software, the user agrees to comply with all applicable U.S. export laws and regulations. User has the responsibility to obtain export licenses, or other export authority as may be required before exporting such information to foreign countries or providing access to foreign persons.
     </dl>
    </div>
    <div data-fill-with="warning"></div>
@@ -1894,181 +1955,191 @@ dfn > a.self-link::before      { content: "#"; }
   </div>
   <div class="p-summary" data-fill-with="abstract">
    <h2 class="no-num no-toc no-ref heading settled" id="abstract"><span class="content">Abstract</span></h2>
-   <p>Documentation generated from OML ontologies</p>
+   <p>The ISO 80000-5 units vocabulary.</p>
   </div>
   <div data-fill-with="at-risk"></div>
   <nav data-fill-with="table-of-contents" id="toc">
    <h2 class="no-num no-toc no-ref" id="contents">Table of Contents</h2>
    <ol class="toc" role="directory">
+    <li><a href="#Namespace"><span class="secno">1</span> <span class="content">Namespace</span></a>
+    <li><a href="#Extensions"><span class="secno">2</span> <span class="content">Imports</span></a>
     <li>
-     <a href="#heading-domain-iso.org"><span class="secno">1</span> <span class="content">iso.org</span></a>
+     <a href="#Aspects"><span class="secno">3</span> <span class="content">Aspects</span></a>
      <ol class="toc">
-      <li><a href="#heading-80000-1-1"><span class="secno">1.1</span> <span class="content"><span>ISO 80000-1</span></span></a>
-      <li><a href="#heading-80000-1-decimalPrefix-2"><span class="secno">1.2</span> <span class="content"><span>ISO 80000-1 Decimal Prefix</span></span></a>
-      <li><a href="#heading-80000-3-instances-3"><span class="secno">1.3</span> <span class="content"><span>ISO 80000-3 Instances</span></span></a>
-      <li><a href="#heading-80000-3-magnitudes-1-4"><span class="secno">1.4</span> <span class="content"><span>ISO 80000-3 Magnitudes-1</span></span></a>
-      <li><a href="#heading-80000-3-magnitudes-2-5"><span class="secno">1.5</span> <span class="content"><span>ISO 80000-3 Magnitudes-2</span></span></a>
-      <li><a href="#heading-80000-3-quantities-6"><span class="secno">1.6</span> <span class="content"><span>ISO 80000-3 Quantities</span></span></a>
-      <li><a href="#heading-80000-3-rules-7"><span class="secno">1.7</span> <span class="content"><span>ISO 80000-3 Rules</span></span></a>
-      <li><a href="#heading-80000-3-units-8"><span class="secno">1.8</span> <span class="content"><span>ISO 80000-3 Units</span></span></a>
-      <li><a href="#heading-80000-4-instances-9"><span class="secno">1.9</span> <span class="content"><span>ISO 80000-4 Instances</span></span></a>
-      <li><a href="#heading-80000-4-magnitudes-1-10"><span class="secno">1.10</span> <span class="content"><span>ISO 80000-4 Magnitudes-1</span></span></a>
-      <li><a href="#heading-80000-4-magnitudes-2-11"><span class="secno">1.11</span> <span class="content"><span>ISO 80000-4 Magnitudes-2</span></span></a>
-      <li><a href="#heading-80000-4-quantities-12"><span class="secno">1.12</span> <span class="content"><span>ISO 80000-4 Quantities</span></span></a>
-      <li><a href="#heading-80000-4-rules-13"><span class="secno">1.13</span> <span class="content"><span>ISO 80000-4 Rules</span></span></a>
-      <li><a href="#heading-80000-4-units-14"><span class="secno">1.14</span> <span class="content"><span>ISO 80000-4 Units</span></span></a>
-      <li><a href="#heading-80000-5-instances-15"><span class="secno">1.15</span> <span class="content"><span>ISO 80000-5 Instances</span></span></a>
-      <li><a href="#heading-80000-5-magnitudes-1-16"><span class="secno">1.16</span> <span class="content"><span>ISO 80000-5 Magnitudes-1</span></span></a>
-      <li><a href="#heading-80000-5-magnitudes-2-17"><span class="secno">1.17</span> <span class="content"><span>ISO 80000-5 Magnitudes-2</span></span></a>
-      <li><a href="#heading-80000-5-quantities-18"><span class="secno">1.18</span> <span class="content"><span>ISO 80000-5 Quantities</span></span></a>
-      <li><a href="#heading-80000-5-rules-19"><span class="secno">1.19</span> <span class="content"><span>ISO 80000-5 Rules</span></span></a>
-      <li><a href="#heading-80000-5-units-20"><span class="secno">1.20</span> <span class="content"><span>ISO 80000-5 Units</span></span></a>
-      <li><a href="#heading-80000-6-instances-21"><span class="secno">1.21</span> <span class="content"><span>ISO 80000-6 Instances</span></span></a>
-      <li><a href="#heading-80000-6-magnitudes-1-22"><span class="secno">1.22</span> <span class="content"><span>ISO 80000-6 Magnitudes-1</span></span></a>
-      <li><a href="#heading-80000-6-magnitudes-2-23"><span class="secno">1.23</span> <span class="content"><span>ISO 80000-6 Magnitudes-2</span></span></a>
-      <li><a href="#heading-80000-6-quantities-24"><span class="secno">1.24</span> <span class="content"><span>ISO 80000-6 Quantities</span></span></a>
-      <li><a href="#heading-80000-6-rules-25"><span class="secno">1.25</span> <span class="content"><span>ISO 80000-6 Rules</span></span></a>
-      <li><a href="#heading-80000-6-units-26"><span class="secno">1.26</span> <span class="content"><span>ISO 80000-6 Units</span></span></a>
-      <li><a href="#heading-80000-instances-27"><span class="secno">1.27</span> <span class="content"><span>ISO 80000 Instances</span></span></a>
+      <li><a href="#CelciusTemperatureMagnitude"><span class="secno">3.1</span> <span class="content"><span>CelciusTemperatureMagnitude</span></span></a>
+      <li><a href="#ThermodynamicTemperatureMagnitude"><span class="secno">3.2</span> <span class="content"><span>ThermodynamicTemperatureMagnitude</span></span></a>
      </ol>
     <li>
-     <a href="#heading-domain-iupac.org"><span class="secno">2</span> <span class="content">iupac.org</span></a>
+     <a href="#concepts"><span class="secno">4</span> <span class="content">Concepts</span></a>
      <ol class="toc">
-      <li><a href="#heading-metrology-28"><span class="secno">2.1</span> <span class="content"><span>Metrology</span></span></a>
+      <li><a href="#CelciusTemperatureUnit"><span class="secno">4.1</span> <span class="content"><span>CelciusTemperatureUnit</span></span></a>
+      <li><a href="#CoherentThermodynamicTemperatureUnit"><span class="secno">4.2</span> <span class="content"><span>CoherentThermodynamicTemperatureUnit</span></span></a>
+      <li><a href="#ThermodynamicTemperatureUnit"><span class="secno">4.3</span> <span class="content"><span>ThermodynamicTemperatureUnit</span></span></a>
+      <li><a href="#DegreeCelcius"><span class="secno">4.4</span> <span class="content"><span>degreeCelcius</span></span></a>
+      <li><a href="#Kelvin"><span class="secno">4.5</span> <span class="content"><span>kelvin</span></span></a>
      </ol>
     <li>
-     <a href="#heading-domain-nist.gov"><span class="secno">3</span> <span class="content">nist.gov</span></a>
+     <a href="#index"><span class="secno"></span> <span class="content">Index</span></a>
      <ol class="toc">
-      <li><a href="#heading-special-publication-811-instances-29"><span class="secno">3.1</span> <span class="content"><span>Special Publication 811 Instances</span></span></a>
-      <li><a href="#heading-special-publication-811-magnitudes-1-30"><span class="secno">3.2</span> <span class="content"><span>Special Publication 811 Magnitudes-1</span></span></a>
-      <li><a href="#heading-special-publication-811-magnitudes2-31"><span class="secno">3.3</span> <span class="content"><span>Special Publication 811 Magnitudes-2</span></span></a>
-      <li><a href="#heading-special-publication-811-units-32"><span class="secno">3.4</span> <span class="content"><span>Special Publication 811 Units</span></span></a>
-     </ol>
-    <li>
-     <a href="#heading-domain-opencaesar.io"><span class="secno">4</span> <span class="content">opencaesar.io</span></a>
-     <ol class="toc">
-      <li><a href="#heading-diagram-33"><span class="secno">4.1</span> <span class="content"><span>Diagram</span></span></a>
-      <li><a href="#heading-viewpoint-34"><span class="secno">4.2</span> <span class="content"><span>Viewpoint</span></span></a>
-     </ol>
-    <li>
-     <a href="#heading-domain-purl.org"><span class="secno">5</span> <span class="content">purl.org</span></a>
-     <ol class="toc">
-      <li><a href="#heading-dc-35"><span class="secno">5.1</span> <span class="content"><span>DC</span></span></a>
-     </ol>
-    <li>
-     <a href="#heading-domain-www.w3.org"><span class="secno">6</span> <span class="content">www.w3.org</span></a>
-     <ol class="toc">
-      <li><a href="#heading-rdf-36"><span class="secno">6.1</span> <span class="content"><span>RDF</span></span></a>
-      <li><a href="#heading-rdfs-37"><span class="secno">6.2</span> <span class="content"><span>RDFS</span></span></a>
-      <li><a href="#heading-xsd-38"><span class="secno">6.3</span> <span class="content"><span>XSD</span></span></a>
-      <li><a href="#heading-owl-39"><span class="secno">6.4</span> <span class="content"><span>OWL2</span></span></a>
+      <li><a href="#index-defined-here"><span class="secno"></span> <span class="content">Terms defined by this specification</span></a>
+      <li><a href="#index-defined-elsewhere"><span class="secno"></span> <span class="content">Terms defined by reference</span></a>
      </ol>
    </ol>
   </nav>
   <main>
-   <h2 class="heading settled" data-level="1" id="heading-domain-iso.org"><span class="secno">1. </span><span class="content">iso.org</span><a class="self-link" href="#heading-domain-iso.org"></a></h2>
-   <h3 class="heading settled" data-level="1.1" id="heading-80000-1-1"><span class="secno">1.1. </span><span class="content"><a href="./iso.org/80000-1.html">ISO 80000-1</a></span><a class="self-link" href="#heading-80000-1-1"></a></h3>
-    The ISO 80000-1 library. 
-   <h3 class="heading settled" data-level="1.2" id="heading-80000-1-decimalPrefix-2"><span class="secno">1.2. </span><span class="content"><a href="./iso.org/80000-1-decimalPrefix.html">ISO 80000-1 Decimal Prefix</a></span><a class="self-link" href="#heading-80000-1-decimalPrefix-2"></a></h3>
-    The ISO 80000-1 decimal prefix vocabulary. 
-   <h3 class="heading settled" data-level="1.3" id="heading-80000-3-instances-3"><span class="secno">1.3. </span><span class="content"><a href="./iso.org/80000-3-instances.html">ISO 80000-3 Instances</a></span><a class="self-link" href="#heading-80000-3-instances-3"></a></h3>
-    The ISO 80000-3 instances library. 
-   <h3 class="heading settled" data-level="1.4" id="heading-80000-3-magnitudes-1-4"><span class="secno">1.4. </span><span class="content"><a href="./iso.org/80000-3-magnitudes-1.html">ISO 80000-3 Magnitudes-1</a></span><a class="self-link" href="#heading-80000-3-magnitudes-1-4"></a></h3>
-    The ISO 80000-3 magnitudes-1 vocabulary. It provides convenience specializations of every metrology:Magnitude defined in http://iso.org/80000-3-units. 
-Note that this vocabulary is an alternative to http://iso.org/80000-3-magnitudes-2. 
-   <h3 class="heading settled" data-level="1.5" id="heading-80000-3-magnitudes-2-5"><span class="secno">1.5. </span><span class="content"><a href="./iso.org/80000-3-magnitudes-2.html">ISO 80000-3 Magnitudes-2</a></span><a class="self-link" href="#heading-80000-3-magnitudes-2-5"></a></h3>
-    The ISO 80000-3 magnitudes-2 vocabulary. It provides convenience specializations of every metrology:IsReflexiveMagnitudeOf as relation entities for every metrology:MeasurementUnit defined in http://iso.org/80000-3-unit. 
-Note that this vocabulary is an alternative to http://iso.org/80000-3-magnitudes-1. 
-   <h3 class="heading settled" data-level="1.6" id="heading-80000-3-quantities-6"><span class="secno">1.6. </span><span class="content"><a href="./iso.org/80000-3-quantities.html">ISO 80000-3 Quantities</a></span><a class="self-link" href="#heading-80000-3-quantities-6"></a></h3>
-    The ISO 80000-3 quantities vocabulary. 
-   <h3 class="heading settled" data-level="1.7" id="heading-80000-3-rules-7"><span class="secno">1.7. </span><span class="content"><a href="./iso.org/80000-3-rules.html">ISO 80000-3 Rules</a></span><a class="self-link" href="#heading-80000-3-rules-7"></a></h3>
-    Optional consistency rules for 80000-3-quantities to enforce that derived quantities are about the same object as the objects of their quantity factors. 
-   <h3 class="heading settled" data-level="1.8" id="heading-80000-3-units-8"><span class="secno">1.8. </span><span class="content"><a href="./iso.org/80000-3-units.html">ISO 80000-3 Units</a></span><a class="self-link" href="#heading-80000-3-units-8"></a></h3>
-    The ISO 80000-3 units vocabulary. 
-   <h3 class="heading settled" data-level="1.9" id="heading-80000-4-instances-9"><span class="secno">1.9. </span><span class="content"><a href="./iso.org/80000-4-instances.html">ISO 80000-4 Instances</a></span><a class="self-link" href="#heading-80000-4-instances-9"></a></h3>
-    The ISO 80000-4 instances library. 
-   <h3 class="heading settled" data-level="1.10" id="heading-80000-4-magnitudes-1-10"><span class="secno">1.10. </span><span class="content"><a href="./iso.org/80000-4-magnitudes-1.html">ISO 80000-4 Magnitudes-1</a></span><a class="self-link" href="#heading-80000-4-magnitudes-1-10"></a></h3>
-    The ISO 80000-4 magnitudes-1 vocabulary. It provides convenience specializations of every metrology:Magnitude defined in http://iso.org/80000-4-units. 
-Note that this vocabulary is an alternative to http://iso.org/80000-4-magnitudes-2. 
-   <h3 class="heading settled" data-level="1.11" id="heading-80000-4-magnitudes-2-11"><span class="secno">1.11. </span><span class="content"><a href="./iso.org/80000-4-magnitudes-2.html">ISO 80000-4 Magnitudes-2</a></span><a class="self-link" href="#heading-80000-4-magnitudes-2-11"></a></h3>
-    The ISO 80000-4 magnitudes-2 vocabulary. It provides convenience specializations of every metrology:IsReflexiveMagnitudeOf as relation entities for every metrology:MeasurementUnit defined in http://iso.org/80000-4-unit. 
-Note that this vocabulary is an alternative to http://iso.org/80000-4-magnitudes-1. 
-   <h3 class="heading settled" data-level="1.12" id="heading-80000-4-quantities-12"><span class="secno">1.12. </span><span class="content"><a href="./iso.org/80000-4-quantities.html">ISO 80000-4 Quantities</a></span><a class="self-link" href="#heading-80000-4-quantities-12"></a></h3>
-    The ISO 80000-4 quantities vocabulary. 
-   <h3 class="heading settled" data-level="1.13" id="heading-80000-4-rules-13"><span class="secno">1.13. </span><span class="content"><a href="./iso.org/80000-4-rules.html">ISO 80000-4 Rules</a></span><a class="self-link" href="#heading-80000-4-rules-13"></a></h3>
-    Optional consistency rules for 80000-4-quantities to enforce that derived quantities are about the same object as the objects of their quantity factors. 
-   <h3 class="heading settled" data-level="1.14" id="heading-80000-4-units-14"><span class="secno">1.14. </span><span class="content"><a href="./iso.org/80000-4-units.html">ISO 80000-4 Units</a></span><a class="self-link" href="#heading-80000-4-units-14"></a></h3>
-    The ISO 80000-4 units vocabulary. 
-   <h3 class="heading settled" data-level="1.15" id="heading-80000-5-instances-15"><span class="secno">1.15. </span><span class="content"><a href="./iso.org/80000-5-instances.html">ISO 80000-5 Instances</a></span><a class="self-link" href="#heading-80000-5-instances-15"></a></h3>
-    The ISO 80000-5 instances library. 
-   <h3 class="heading settled" data-level="1.16" id="heading-80000-5-magnitudes-1-16"><span class="secno">1.16. </span><span class="content"><a href="./iso.org/80000-5-magnitudes-1.html">ISO 80000-5 Magnitudes-1</a></span><a class="self-link" href="#heading-80000-5-magnitudes-1-16"></a></h3>
-    The ISO 80000-5 magnitudes-1 vocabulary. It provides convenience specializations of every metrology:Magnitude defined in http://iso.org/80000-5-units. 
-Note that this vocabulary is an alternative to http://iso.org/80000-5-magnitudes-2. 
-   <h3 class="heading settled" data-level="1.17" id="heading-80000-5-magnitudes-2-17"><span class="secno">1.17. </span><span class="content"><a href="./iso.org/80000-5-magnitudes-2.html">ISO 80000-5 Magnitudes-2</a></span><a class="self-link" href="#heading-80000-5-magnitudes-2-17"></a></h3>
-    The ISO 80000-5 magnitudes-2 vocabulary. It provides convenience specializations of every metrology:IsReflexiveMagnitudeOf as relation entities for every metrology:MeasurementUnit defined in http://iso.org/80000-5-unit. 
-Note that this vocabulary is an alternative to http://iso.org/80000-5-magnitudes-1. 
-   <h3 class="heading settled" data-level="1.18" id="heading-80000-5-quantities-18"><span class="secno">1.18. </span><span class="content"><a href="./iso.org/80000-5-quantities.html">ISO 80000-5 Quantities</a></span><a class="self-link" href="#heading-80000-5-quantities-18"></a></h3>
-    The ISO 80000-5 quantities vocabulary. 
-   <h3 class="heading settled" data-level="1.19" id="heading-80000-5-rules-19"><span class="secno">1.19. </span><span class="content"><a href="./iso.org/80000-5-rules.html">ISO 80000-5 Rules</a></span><a class="self-link" href="#heading-80000-5-rules-19"></a></h3>
-    Optional consistency rules for 80000-5-quantities to enforce that derived quantities are about the same object as the objects of their quantity factors. 
-   <h3 class="heading settled" data-level="1.20" id="heading-80000-5-units-20"><span class="secno">1.20. </span><span class="content"><a href="./iso.org/80000-5-units.html">ISO 80000-5 Units</a></span><a class="self-link" href="#heading-80000-5-units-20"></a></h3>
-    The ISO 80000-5 units vocabulary. 
-   <h3 class="heading settled" data-level="1.21" id="heading-80000-6-instances-21"><span class="secno">1.21. </span><span class="content"><a href="./iso.org/80000-6-instances.html">ISO 80000-6 Instances</a></span><a class="self-link" href="#heading-80000-6-instances-21"></a></h3>
-    The ISO 80000-6 instances library. 
-   <h3 class="heading settled" data-level="1.22" id="heading-80000-6-magnitudes-1-22"><span class="secno">1.22. </span><span class="content"><a href="./iso.org/80000-6-magnitudes-1.html">ISO 80000-6 Magnitudes-1</a></span><a class="self-link" href="#heading-80000-6-magnitudes-1-22"></a></h3>
-    The ISO 80000-6 magnitudes-1 vocabulary. It provides convenience specializations of every metrology:Magnitude defined in http://iso.org/80000-6-units. 
-Note that this vocabulary is an alternative to http://iso.org/80000-6-magnitudes-2. 
-   <h3 class="heading settled" data-level="1.23" id="heading-80000-6-magnitudes-2-23"><span class="secno">1.23. </span><span class="content"><a href="./iso.org/80000-6-magnitudes-2.html">ISO 80000-6 Magnitudes-2</a></span><a class="self-link" href="#heading-80000-6-magnitudes-2-23"></a></h3>
-    The ISO 80000-6 magnitudes-2 vocabulary. It provides convenience specializations of every metrology:IsReflexiveMagnitudeOf as relation entities for every metrology:MeasurementUnit defined in http://iso.org/80000-6-unit. 
-Note that this vocabulary is an alternative to http://iso.org/80000-6-magnitudes-1. 
-   <h3 class="heading settled" data-level="1.24" id="heading-80000-6-quantities-24"><span class="secno">1.24. </span><span class="content"><a href="./iso.org/80000-6-quantities.html">ISO 80000-6 Quantities</a></span><a class="self-link" href="#heading-80000-6-quantities-24"></a></h3>
-    The ISO 80000-6 quantities vocabulary. 
-   <h3 class="heading settled" data-level="1.25" id="heading-80000-6-rules-25"><span class="secno">1.25. </span><span class="content"><a href="./iso.org/80000-6-rules.html">ISO 80000-6 Rules</a></span><a class="self-link" href="#heading-80000-6-rules-25"></a></h3>
-    Optional consistency rules for 80000-6-quantities to enforce that derived quantities are about the same object as the objects of their quantity factors. 
-   <h3 class="heading settled" data-level="1.26" id="heading-80000-6-units-26"><span class="secno">1.26. </span><span class="content"><a href="./iso.org/80000-6-units.html">ISO 80000-6 Units</a></span><a class="self-link" href="#heading-80000-6-units-26"></a></h3>
-    The ISO 80000-6 units vocabulary. 
-   <h3 class="heading settled" data-level="1.27" id="heading-80000-instances-27"><span class="secno">1.27. </span><span class="content"><a href="./iso.org/80000-instances.html">ISO 80000 Instances</a></span><a class="self-link" href="#heading-80000-instances-27"></a></h3>
-    The ISO 80000 instances library. 
-   <h2 class="heading settled" data-level="2" id="heading-domain-iupac.org"><span class="secno">2. </span><span class="content">iupac.org</span><a class="self-link" href="#heading-domain-iupac.org"></a></h2>
-   <h3 class="heading settled" data-level="2.1" id="heading-metrology-28"><span class="secno">2.1. </span><span class="content"><a href="./iupac.org/metrology.html">Metrology</a></span><a class="self-link" href="#heading-metrology-28"></a></h3>
-    This vocabulary is a partial account of Prof. Rene Dybkaer’s 'An Ontology of Property' 
-focused on the concepts necessary for dimensional analysis of systems of metrological units and
-of systems of quantities based on the algebraic relationships involved in the
-definitions of the metrological units and the kinds of quantities in these respective systems. 
-   <p>See the rationale behind the 3rd revision of the Vocabulary of International Metrology, VIM3,
-for references to Prof. Dybkaer’s influential work: https://www.bipm.org/en/publications/guides/rationale-vim3.html</p>
-   <p>Where possible, correspondences to VIM3 definitions will be referenced from https://jcgm.bipm.org/vim/en/index.html
-The VIM3 is available in document PDF here: https://www.bipm.org/utils/common/documents/jcgm/JCGM_200_2012.pdf</p>
-   <p>References to definitions in the ontology are indicated via a reference
-in parentheses with a chapter and section and a page number;
-for example, (S.2.23, p. 33) refers to the definition of 'object' on page 33.</p>
-   <h2 class="heading settled" data-level="3" id="heading-domain-nist.gov"><span class="secno">3. </span><span class="content">nist.gov</span><a class="self-link" href="#heading-domain-nist.gov"></a></h2>
-   <h3 class="heading settled" data-level="3.1" id="heading-special-publication-811-instances-29"><span class="secno">3.1. </span><span class="content"><a href="./nist.gov/pml/special-publication-811-instances.html">Special Publication 811 Instances</a></span><a class="self-link" href="#heading-special-publication-811-instances-29"></a></h3>
-    English Engineering Units defined in NIST PML Special Publication 811, Appendix B.8 
-   <h3 class="heading settled" data-level="3.2" id="heading-special-publication-811-magnitudes-1-30"><span class="secno">3.2. </span><span class="content"><a href="./nist.gov/pml/special-publication-811-magnitudes-1.html">Special Publication 811 Magnitudes-1</a></span><a class="self-link" href="#heading-special-publication-811-magnitudes-1-30"></a></h3>
-    English Engineering Units defined in NIST PML Special Publication 811, Appendix B.8. Note that this vocabulary is an alternative to http://nist.gov/pml/special-publication-811-magnitudes-2. 
-   <h3 class="heading settled" data-level="3.3" id="heading-special-publication-811-magnitudes2-31"><span class="secno">3.3. </span><span class="content"><a href="./nist.gov/pml/special-publication-811-magnitudes2.html">Special Publication 811 Magnitudes-2</a></span><a class="self-link" href="#heading-special-publication-811-magnitudes2-31"></a></h3>
-    English Engineering Units defined in NIST PML Special Publication 811, Appendix B.8. Note that this vocabulary is an alternative to http://nist.gov/pml/special-publication-811-magnitudes-1. 
-   <h3 class="heading settled" data-level="3.4" id="heading-special-publication-811-units-32"><span class="secno">3.4. </span><span class="content"><a href="./nist.gov/pml/special-publication-811-units.html">Special Publication 811 Units</a></span><a class="self-link" href="#heading-special-publication-811-units-32"></a></h3>
-    English Engineering Units defined in NIST PML Special Publication 811, Appendix B.8 
-   <h2 class="heading settled" data-level="4" id="heading-domain-opencaesar.io"><span class="secno">4. </span><span class="content">opencaesar.io</span><a class="self-link" href="#heading-domain-opencaesar.io"></a></h2>
-   <h3 class="heading settled" data-level="4.1" id="heading-diagram-33"><span class="secno">4.1. </span><span class="content"><a href="./opencaesar.io/diagram.html">Diagram</a></span><a class="self-link" href="#heading-diagram-33"></a></h3>
-    The Diagram vocabulary defines a set of annotations that control the visualization of OML diagrams. 
-   <div class="note" role="note"> This ontology has been deprecated </div>
-   <h3 class="heading settled" data-level="4.2" id="heading-viewpoint-34"><span class="secno">4.2. </span><span class="content"><a href="./opencaesar.io/viewpoint.html">Viewpoint</a></span><a class="self-link" href="#heading-viewpoint-34"></a></h3>
-    A vocabulary for defining common terms used in defining viewpoints 
-   <h2 class="heading settled" data-level="5" id="heading-domain-purl.org"><span class="secno">5. </span><span class="content">purl.org</span><a class="self-link" href="#heading-domain-purl.org"></a></h2>
-   <h3 class="heading settled" data-level="5.1" id="heading-dc-35"><span class="secno">5.1. </span><span class="content"><a href="./purl.org/dc/elements/1.1.html">DC</a></span><a class="self-link" href="#heading-dc-35"></a></h3>
-    The DC vocabulary is a subset of the vocabulary maintained by the Dublin Core Metadata Initiative. 
-   <h2 class="heading settled" data-level="6" id="heading-domain-www.w3.org"><span class="secno">6. </span><span class="content">www.w3.org</span><a class="self-link" href="#heading-domain-www.w3.org"></a></h2>
-   <h3 class="heading settled" data-level="6.1" id="heading-rdf-36"><span class="secno">6.1. </span><span class="content"><a href="./www.w3.org/1999/02/22-rdf-syntax-ns.html">RDF</a></span><a class="self-link" href="#heading-rdf-36"></a></h3>
-    The RDF vocabulary is a subset of the vocabulary maintained by the W3C. 
-   <h3 class="heading settled" data-level="6.2" id="heading-rdfs-37"><span class="secno">6.2. </span><span class="content"><a href="./www.w3.org/2000/01/rdf-schema.html">RDFS</a></span><a class="self-link" href="#heading-rdfs-37"></a></h3>
-    The RDFS vocabulary is a subset of the vocabulary maintained by the W3C. 
-   <h3 class="heading settled" data-level="6.3" id="heading-xsd-38"><span class="secno">6.3. </span><span class="content"><a href="./www.w3.org/2001/XMLSchema.html">XSD</a></span><a class="self-link" href="#heading-xsd-38"></a></h3>
-    The XSD vocabulary is a subset of the corresponding vocabulary maintained by the W3C. 
-   <h3 class="heading settled" data-level="6.4" id="heading-owl-39"><span class="secno">6.4. </span><span class="content"><a href="./www.w3.org/2002/07/owl.html">OWL2</a></span><a class="self-link" href="#heading-owl-39"></a></h3>
-    The OWL2 vocabulary is a subset of the vocabulary maintained by the W3C. 
+   <div>
+    <h2 class="heading settled" data-level="1" id="Namespace"><span class="secno">1. </span><span class="content">Namespace</span><a class="self-link" href="#Namespace"></a></h2>
+    <ul>
+     <li data-md>
+      <p>80000-5-units: <a href="80000-5-units.html">http://iso.org/80000-5-units</a></p>
+    </ul>
+    <h2 class="heading settled" data-level="2" id="Extensions"><span class="secno">2. </span><span class="content">Imports</span><a class="self-link" href="#Extensions"></a></h2>
+    <ul>
+     <li data-md>
+      <p>80000-4-units: <a href="http://iso.org/80000-4-units.html">http://iso.org/80000-4-units</a></p>
+    </ul>
+    <h2 class="heading settled" data-level="3" id="Aspects"><span class="secno">3. </span><span class="content">Aspects</span><a class="self-link" href="#Aspects"></a></h2>
+    <h3 class="heading settled" data-level="3.1" id="CelciusTemperatureMagnitude"><span class="secno">3.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="celciustemperaturemagnitude">CelciusTemperatureMagnitude<a class="self-link" href="#celciustemperaturemagnitude"></a></dfn></span><a class="self-link" href="#CelciusTemperatureMagnitude"></a></h3>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Supertypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="../iupac.org/metrology.html#unitarymagnitude" id="ref-for-unitarymagnitude">metrology:UnitaryMagnitude</a>
+        </ul>
+      <tr>
+       <th>Subtypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="80000-5-magnitudes-1.html#degreecelcius-magnitude" id="ref-for-degreecelcius-magnitude">80000-5-magnitudes-1:degreeCelcius-magnitude</a>
+         <li><a data-link-type="dfn" href="80000-5-magnitudes-2.html#degreecelcius-magnitude" id="ref-for-degreecelcius-magnitude①">80000-5-magnitudes-2:degreeCelcius-magnitude</a>
+         <li><a data-link-type="dfn" href="../nist.gov/pml/special-publication-811-magnitudes2.html#degreefahrenheit-magnitude" id="ref-for-degreefahrenheit-magnitude">special-publication-811-magnitudes2:degreeFahrenheit-magnitude</a>
+         <li><a data-link-type="dfn" href="../nist.gov/pml/special-publication-811-magnitudes-1.html#degreefahrenheit-magnitude" id="ref-for-degreefahrenheit-magnitude①">special-publication-811-magnitudes-1:degreeFahrenheit-magnitude</a>
+        </ul>
+      <tr>
+       <th>Relations with source
+       <td>
+        <ul>
+         <li>CelciusTemperatureMagnitude ← <a data-link-type="dfn" href="../iupac.org/metrology.html#hasreference" id="ref-for-hasreference">metrology:HasReference</a> → <a data-link-type="dfn" href="80000-5-units.html#celciustemperatureunit" id="ref-for-celciustemperatureunit">CelciusTemperatureUnit</a> 
+        </ul>
+    </table>
+    <h3 class="heading settled" data-level="3.2" id="ThermodynamicTemperatureMagnitude"><span class="secno">3.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="thermodynamictemperaturemagnitude">ThermodynamicTemperatureMagnitude<a class="self-link" href="#thermodynamictemperaturemagnitude"></a></dfn></span><a class="self-link" href="#ThermodynamicTemperatureMagnitude"></a></h3>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Supertypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="../iupac.org/metrology.html#unitarymagnitude" id="ref-for-unitarymagnitude①">metrology:UnitaryMagnitude</a>
+        </ul>
+      <tr>
+       <th>Subtypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="../nist.gov/pml/special-publication-811-magnitudes2.html#degreerankine-magnitude" id="ref-for-degreerankine-magnitude">special-publication-811-magnitudes2:degreeRankine-magnitude</a>
+         <li><a data-link-type="dfn" href="../nist.gov/pml/special-publication-811-magnitudes-1.html#degreerankine-magnitude" id="ref-for-degreerankine-magnitude①">special-publication-811-magnitudes-1:degreeRankine-magnitude</a>
+         <li><a data-link-type="dfn" href="80000-5-magnitudes-1.html#kelvin-magnitude" id="ref-for-kelvin-magnitude">80000-5-magnitudes-1:kelvin-magnitude</a>
+         <li><a data-link-type="dfn" href="80000-5-magnitudes-2.html#kelvin-magnitude" id="ref-for-kelvin-magnitude①">80000-5-magnitudes-2:kelvin-magnitude</a>
+        </ul>
+      <tr>
+       <th>Relations with source
+       <td>
+        <ul>
+         <li>ThermodynamicTemperatureMagnitude ← <a data-link-type="dfn" href="../iupac.org/metrology.html#hasreference" id="ref-for-hasreference①">metrology:HasReference</a> → <a data-link-type="dfn" href="80000-5-units.html#thermodynamictemperatureunit" id="ref-for-thermodynamictemperatureunit">ThermodynamicTemperatureUnit</a> 
+        </ul>
+    </table>
+    <h2 class="heading settled" data-level="4" id="concepts"><span class="secno">4. </span><span class="content">Concepts</span><a class="self-link" href="#concepts"></a></h2>
+    <h3 class="heading settled" data-level="4.1" id="CelciusTemperatureUnit"><span class="secno">4.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="celciustemperatureunit">CelciusTemperatureUnit<a class="self-link" href="#celciustemperatureunit"></a></dfn></span><a class="self-link" href="#CelciusTemperatureUnit"></a></h3>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Supertypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="../iupac.org/metrology.html#measurementunit" id="ref-for-measurementunit">metrology:MeasurementUnit</a>
+        </ul>
+      <tr>
+       <th>Subtypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="80000-5-units.html#degreecelcius" id="ref-for-degreecelcius">degreeCelcius</a>
+        </ul>
+    </table>
+    <h3 class="heading settled" data-level="4.2" id="CoherentThermodynamicTemperatureUnit"><span class="secno">4.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="coherentthermodynamictemperatureunit">CoherentThermodynamicTemperatureUnit<a class="self-link" href="#coherentthermodynamictemperatureunit"></a></dfn></span><a class="self-link" href="#CoherentThermodynamicTemperatureUnit"></a></h3>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Supertypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="../iupac.org/metrology.html#coherentmeasurementunit" id="ref-for-coherentmeasurementunit">metrology:CoherentMeasurementUnit</a>
+         <li><a data-link-type="dfn" href="80000-5-units.html#thermodynamictemperatureunit" id="ref-for-thermodynamictemperatureunit①">ThermodynamicTemperatureUnit</a>
+        </ul>
+      <tr>
+       <th>Subtypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="80000-5-units.html#kelvin" id="ref-for-kelvin">kelvin</a>
+        </ul>
+      <tr>
+       <th>Properties
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="../iupac.org/metrology.html#isdimensionlessmeasurementunit" id="ref-for-isdimensionlessmeasurementunit">metrology:isDimensionlessMeasurementUnit</a> (must have value false)
+        </ul>
+    </table>
+    <h3 class="heading settled" data-level="4.3" id="ThermodynamicTemperatureUnit"><span class="secno">4.3. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="thermodynamictemperatureunit">ThermodynamicTemperatureUnit<a class="self-link" href="#thermodynamictemperatureunit"></a></dfn></span><a class="self-link" href="#ThermodynamicTemperatureUnit"></a></h3>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Supertypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="../iupac.org/metrology.html#measurementunit" id="ref-for-measurementunit①">metrology:MeasurementUnit</a>
+        </ul>
+      <tr>
+       <th>Subtypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="80000-5-units.html#coherentthermodynamictemperatureunit" id="ref-for-coherentthermodynamictemperatureunit">CoherentThermodynamicTemperatureUnit</a>
+        </ul>
+    </table>
+    <h3 class="heading settled" data-level="4.4" id="DegreeCelcius"><span class="secno">4.4. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="degreecelcius">degreeCelcius<a class="self-link" href="#degreecelcius"></a></dfn></span><a class="self-link" href="#DegreeCelcius"></a></h3>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Supertypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="80000-5-units.html#celciustemperatureunit" id="ref-for-celciustemperatureunit①">CelciusTemperatureUnit</a>
+         <li><a data-link-type="dfn" href="../iupac.org/metrology.html#noncoherentderivedmeasurementunit" id="ref-for-noncoherentderivedmeasurementunit">metrology:NonCoherentDerivedMeasurementUnit</a>
+        </ul>
+      <tr>
+       <th>Properties
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="../iupac.org/metrology.html#noncoherentrelationship" id="ref-for-noncoherentrelationship">metrology:nonCoherentRelationship</a> (must have value 0 °C = 273,15 kelvin)
+        </ul>
+      <tr>
+       <th>Relations with source
+       <td>
+        <ul>
+         <li>degreeCelcius ← <a data-link-type="dfn" href="../iupac.org/metrology.html#noncoherentderivedmeasurementunitof" id="ref-for-noncoherentderivedmeasurementunitof">metrology:NonCoherentDerivedMeasurementUnitOf</a> → <a data-link-type="dfn" href="../iupac.org/metrology.html#measurementunit" id="ref-for-measurementunit②">metrology:MeasurementUnit</a> (range restricted to instance <a data-link-type="dfn" href="80000-5-instances.html#kelvin" id="ref-for-kelvin①">80000-5-instances:kelvin</a>) 
+        </ul>
+    </table>
+    <h3 class="heading settled" data-level="4.5" id="Kelvin"><span class="secno">4.5. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="kelvin">kelvin<a class="self-link" href="#kelvin"></a></dfn></span><a class="self-link" href="#Kelvin"></a></h3>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Supertypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="80000-5-units.html#coherentthermodynamictemperatureunit" id="ref-for-coherentthermodynamictemperatureunit①">CoherentThermodynamicTemperatureUnit</a>
+         <li><a data-link-type="dfn" href="../iupac.org/metrology.html#independentmeasurementunit" id="ref-for-independentmeasurementunit">metrology:IndependentMeasurementUnit</a>
+        </ul>
+    </table>
+   </div>
   </main>
 <script>
 (function() {
@@ -2198,4 +2269,270 @@ for example, (S.2.23, p. 33) refers to the definition of 'object' on page 33.</p
   }
 
 })();
+</script>
+  <h2 class="no-num no-ref heading settled" id="index"><span class="content">Index</span><a class="self-link" href="#index"></a></h2>
+  <h3 class="no-num no-ref heading settled" id="index-defined-here"><span class="content">Terms defined by this specification</span><a class="self-link" href="#index-defined-here"></a></h3>
+  <ul class="index">
+   <li><a href="#celciustemperaturemagnitude">CelciusTemperatureMagnitude</a><span>, in §3.1</span>
+   <li><a href="#celciustemperatureunit">CelciusTemperatureUnit</a><span>, in §4.1</span>
+   <li><a href="#coherentthermodynamictemperatureunit">CoherentThermodynamicTemperatureUnit</a><span>, in §4.2</span>
+   <li><a href="#degreecelcius">degreeCelcius</a><span>, in §4.4</span>
+   <li><a href="#kelvin">kelvin</a><span>, in §4.5</span>
+   <li><a href="#thermodynamictemperaturemagnitude">ThermodynamicTemperatureMagnitude</a><span>, in §3.2</span>
+   <li><a href="#thermodynamictemperatureunit">ThermodynamicTemperatureUnit</a><span>, in §4.3</span>
+  </ul>
+  <aside class="dfn-panel" data-for="term-for-kelvin">
+   <a href="80000-5-instances.html#kelvin">80000-5-instances.html#kelvin</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-kelvin①">4.4. degreeCelcius</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-degreecelcius-magnitude">
+   <a href="80000-5-magnitudes-1.html#degreecelcius-magnitude">80000-5-magnitudes-1.html#degreecelcius-magnitude</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-degreecelcius-magnitude">3.1. CelciusTemperatureMagnitude</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-kelvin-magnitude">
+   <a href="80000-5-magnitudes-1.html#kelvin-magnitude">80000-5-magnitudes-1.html#kelvin-magnitude</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-kelvin-magnitude">3.2. ThermodynamicTemperatureMagnitude</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-degreecelcius-magnitude">
+   <a href="80000-5-magnitudes-2.html#degreecelcius-magnitude">80000-5-magnitudes-2.html#degreecelcius-magnitude</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-degreecelcius-magnitude①">3.1. CelciusTemperatureMagnitude</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-kelvin-magnitude">
+   <a href="80000-5-magnitudes-2.html#kelvin-magnitude">80000-5-magnitudes-2.html#kelvin-magnitude</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-kelvin-magnitude①">3.2. ThermodynamicTemperatureMagnitude</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-celciustemperatureunit">
+   <a href="80000-5-units.html#celciustemperatureunit">80000-5-units.html#celciustemperatureunit</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-celciustemperatureunit">3.1. CelciusTemperatureMagnitude</a>
+    <li><a href="#ref-for-celciustemperatureunit①">4.4. degreeCelcius</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-coherentthermodynamictemperatureunit">
+   <a href="80000-5-units.html#coherentthermodynamictemperatureunit">80000-5-units.html#coherentthermodynamictemperatureunit</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-coherentthermodynamictemperatureunit">4.3. ThermodynamicTemperatureUnit</a>
+    <li><a href="#ref-for-coherentthermodynamictemperatureunit①">4.5. kelvin</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-degreecelcius">
+   <a href="80000-5-units.html#degreecelcius">80000-5-units.html#degreecelcius</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-degreecelcius">4.1. CelciusTemperatureUnit</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-kelvin">
+   <a href="80000-5-units.html#kelvin">80000-5-units.html#kelvin</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-kelvin">4.2. CoherentThermodynamicTemperatureUnit</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-thermodynamictemperatureunit">
+   <a href="80000-5-units.html#thermodynamictemperatureunit">80000-5-units.html#thermodynamictemperatureunit</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-thermodynamictemperatureunit">3.2. ThermodynamicTemperatureMagnitude</a>
+    <li><a href="#ref-for-thermodynamictemperatureunit①">4.2. CoherentThermodynamicTemperatureUnit</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-coherentmeasurementunit">
+   <a href="../iupac.org/metrology.html#coherentmeasurementunit">../iupac.org/metrology.html#coherentmeasurementunit</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-coherentmeasurementunit">4.2. CoherentThermodynamicTemperatureUnit</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-hasreference">
+   <a href="../iupac.org/metrology.html#hasreference">../iupac.org/metrology.html#hasreference</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-hasreference">3.1. CelciusTemperatureMagnitude</a>
+    <li><a href="#ref-for-hasreference①">3.2. ThermodynamicTemperatureMagnitude</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-independentmeasurementunit">
+   <a href="../iupac.org/metrology.html#independentmeasurementunit">../iupac.org/metrology.html#independentmeasurementunit</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-independentmeasurementunit">4.5. kelvin</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-isdimensionlessmeasurementunit">
+   <a href="../iupac.org/metrology.html#isdimensionlessmeasurementunit">../iupac.org/metrology.html#isdimensionlessmeasurementunit</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-isdimensionlessmeasurementunit">4.2. CoherentThermodynamicTemperatureUnit</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-measurementunit">
+   <a href="../iupac.org/metrology.html#measurementunit">../iupac.org/metrology.html#measurementunit</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-measurementunit">4.1. CelciusTemperatureUnit</a>
+    <li><a href="#ref-for-measurementunit①">4.3. ThermodynamicTemperatureUnit</a>
+    <li><a href="#ref-for-measurementunit②">4.4. degreeCelcius</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-noncoherentderivedmeasurementunit">
+   <a href="../iupac.org/metrology.html#noncoherentderivedmeasurementunit">../iupac.org/metrology.html#noncoherentderivedmeasurementunit</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-noncoherentderivedmeasurementunit">4.4. degreeCelcius</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-noncoherentderivedmeasurementunitof">
+   <a href="../iupac.org/metrology.html#noncoherentderivedmeasurementunitof">../iupac.org/metrology.html#noncoherentderivedmeasurementunitof</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-noncoherentderivedmeasurementunitof">4.4. degreeCelcius</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-noncoherentrelationship">
+   <a href="../iupac.org/metrology.html#noncoherentrelationship">../iupac.org/metrology.html#noncoherentrelationship</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-noncoherentrelationship">4.4. degreeCelcius</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-unitarymagnitude">
+   <a href="../iupac.org/metrology.html#unitarymagnitude">../iupac.org/metrology.html#unitarymagnitude</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-unitarymagnitude">3.1. CelciusTemperatureMagnitude</a>
+    <li><a href="#ref-for-unitarymagnitude①">3.2. ThermodynamicTemperatureMagnitude</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-degreefahrenheit-magnitude">
+   <a href="../nist.gov/pml/special-publication-811-magnitudes-1.html#degreefahrenheit-magnitude">../nist.gov/pml/special-publication-811-magnitudes-1.html#degreefahrenheit-magnitude</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-degreefahrenheit-magnitude①">3.1. CelciusTemperatureMagnitude</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-degreerankine-magnitude">
+   <a href="../nist.gov/pml/special-publication-811-magnitudes-1.html#degreerankine-magnitude">../nist.gov/pml/special-publication-811-magnitudes-1.html#degreerankine-magnitude</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-degreerankine-magnitude①">3.2. ThermodynamicTemperatureMagnitude</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-degreefahrenheit-magnitude">
+   <a href="../nist.gov/pml/special-publication-811-magnitudes2.html#degreefahrenheit-magnitude">../nist.gov/pml/special-publication-811-magnitudes2.html#degreefahrenheit-magnitude</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-degreefahrenheit-magnitude">3.1. CelciusTemperatureMagnitude</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-degreerankine-magnitude">
+   <a href="../nist.gov/pml/special-publication-811-magnitudes2.html#degreerankine-magnitude">../nist.gov/pml/special-publication-811-magnitudes2.html#degreerankine-magnitude</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-degreerankine-magnitude">3.2. ThermodynamicTemperatureMagnitude</a>
+   </ul>
+  </aside>
+  <h3 class="no-num no-ref heading settled" id="index-defined-elsewhere"><span class="content">Terms defined by reference</span><a class="self-link" href="#index-defined-elsewhere"></a></h3>
+  <ul class="index">
+   <li>
+    <a data-link-type="biblio">[http://iso.org/80000-5-instances]</a> defines the following terms:
+    <ul>
+     <li><span class="dfn-paneled" id="term-for-kelvin">kelvin</span>
+    </ul>
+   <li>
+    <a data-link-type="biblio">[http://iso.org/80000-5-magnitudes-1]</a> defines the following terms:
+    <ul>
+     <li><span class="dfn-paneled" id="term-for-degreecelcius-magnitude">degreecelcius-magnitude</span>
+     <li><span class="dfn-paneled" id="term-for-kelvin-magnitude">kelvin-magnitude</span>
+    </ul>
+   <li>
+    <a data-link-type="biblio">[http://iso.org/80000-5-magnitudes-2]</a> defines the following terms:
+    <ul>
+     <li><span class="dfn-paneled" id="term-for-degreecelcius-magnitude①">degreecelcius-magnitude</span>
+     <li><span class="dfn-paneled" id="term-for-kelvin-magnitude①">kelvin-magnitude</span>
+    </ul>
+   <li>
+    <a data-link-type="biblio">[http://iso.org/80000-5-units]</a> defines the following terms:
+    <ul>
+     <li><span class="dfn-paneled" id="term-for-celciustemperatureunit">celciustemperatureunit</span>
+     <li><span class="dfn-paneled" id="term-for-coherentthermodynamictemperatureunit">coherentthermodynamictemperatureunit</span>
+     <li><span class="dfn-paneled" id="term-for-degreecelcius">degreecelcius</span>
+     <li><span class="dfn-paneled" id="term-for-kelvin①">kelvin</span>
+     <li><span class="dfn-paneled" id="term-for-thermodynamictemperatureunit">thermodynamictemperatureunit</span>
+    </ul>
+   <li>
+    <a data-link-type="biblio">[http://iupac.org/metrology]</a> defines the following terms:
+    <ul>
+     <li><span class="dfn-paneled" id="term-for-coherentmeasurementunit">coherentmeasurementunit</span>
+     <li><span class="dfn-paneled" id="term-for-hasreference">hasreference</span>
+     <li><span class="dfn-paneled" id="term-for-independentmeasurementunit">independentmeasurementunit</span>
+     <li><span class="dfn-paneled" id="term-for-isdimensionlessmeasurementunit">isdimensionlessmeasurementunit</span>
+     <li><span class="dfn-paneled" id="term-for-measurementunit">measurementunit</span>
+     <li><span class="dfn-paneled" id="term-for-noncoherentderivedmeasurementunit">noncoherentderivedmeasurementunit</span>
+     <li><span class="dfn-paneled" id="term-for-noncoherentderivedmeasurementunitof">noncoherentderivedmeasurementunitof</span>
+     <li><span class="dfn-paneled" id="term-for-noncoherentrelationship">noncoherentrelationship</span>
+     <li><span class="dfn-paneled" id="term-for-unitarymagnitude">unitarymagnitude</span>
+    </ul>
+   <li>
+    <a data-link-type="biblio">[http://nist.gov/pml/special-publication-811-magnitudes-1]</a> defines the following terms:
+    <ul>
+     <li><span class="dfn-paneled" id="term-for-degreefahrenheit-magnitude">degreefahrenheit-magnitude</span>
+     <li><span class="dfn-paneled" id="term-for-degreerankine-magnitude">degreerankine-magnitude</span>
+    </ul>
+   <li>
+    <a data-link-type="biblio">[http://nist.gov/pml/special-publication-811-magnitudes2]</a> defines the following terms:
+    <ul>
+     <li><span class="dfn-paneled" id="term-for-degreefahrenheit-magnitude①">degreefahrenheit-magnitude</span>
+     <li><span class="dfn-paneled" id="term-for-degreerankine-magnitude①">degreerankine-magnitude</span>
+    </ul>
+  </ul>
+<script>/* script-dfn-panel */
+
+document.body.addEventListener("click", function(e) {
+    var queryAll = function(sel) { return [].slice.call(document.querySelectorAll(sel)); }
+    // Find the dfn element or panel, if any, that was clicked on.
+    var el = e.target;
+    var target;
+    var hitALink = false;
+    while(el.parentElement) {
+        if(el.tagName == "A") {
+            // Clicking on a link in a <dfn> shouldn't summon the panel
+            hitALink = true;
+        }
+        if(el.classList.contains("dfn-paneled")) {
+            target = "dfn";
+            break;
+        }
+        if(el.classList.contains("dfn-panel")) {
+            target = "dfn-panel";
+            break;
+        }
+        el = el.parentElement;
+    }
+    if(target != "dfn-panel") {
+        // Turn off any currently "on" or "activated" panels.
+        queryAll(".dfn-panel.on, .dfn-panel.activated").forEach(function(el){
+            el.classList.remove("on");
+            el.classList.remove("activated");
+        });
+    }
+    if(target == "dfn" && !hitALink) {
+        // open the panel
+        var dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
+        if(dfnPanel) {
+            dfnPanel.classList.add("on");
+            var rect = el.getBoundingClientRect();
+            dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
+            dfnPanel.style.top = window.scrollY + rect.top + "px";
+            var panelRect = dfnPanel.getBoundingClientRect();
+            var panelWidth = panelRect.right - panelRect.left;
+            if(panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
+                // Reposition, because the panel is overflowing
+                dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
+            }
+        } else {
+            console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
+        }
+    } else if(target == "dfn-panel") {
+        // Switch it to "activated" state, which pins it.
+        el.classList.add("activated");
+        el.style.left = null;
+        el.style.top = null;
+    }
+
+});
 </script>
