@@ -28,6 +28,10 @@ buildscript {
 task omlToBikeshed(type: io.opencaesar.oml.bikeshed.Oml2BikeshedTask) {
     // OML catalog
     inputCatalogPath = file('catalog.xml')
+    // OML catalog title
+    inputCatalogTitle = project.title
+    // OML catalog version
+    inputCatalogVersion = project.version
     // OWL folder
     outputFolderPath = file('build/bikeshed')
     // Publish URL
