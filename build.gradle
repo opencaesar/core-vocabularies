@@ -99,9 +99,9 @@ task owlLoad(type:io.opencaesar.owl.load.OwlLoadTask, dependsOn: owlReason) {
 	endpointURL = "http://localhost:3030/$fusekiDataset"
     fileExtensions = ['trig', 'ttl']
 	iris = [
-		'http://srl.jpl.nasa.gov/efse/bundle/classes',
-	    'http://srl.jpl.nasa.gov/efse/bundle/properties',
-	    'http://srl.jpl.nasa.gov/efse/bundle/individuals'
+		'http://opencaesar.io/bundle1/classes',
+	    'http://opencaesar.io/bundle1/properties',
+	    'http://opencaesar.io/bundle1/individuals'
 	]
 }
 
