@@ -69,7 +69,7 @@ task omlToOwl(type:io.opencaesar.oml2owl.Oml2OwlTask) {
     inputCatalogPath = file('catalog.xml')
     // OWL catalog
     outputCatalogPath = file('build/owl/catalog.xml')
-    outputFileExtension = 'trig'
+    outputFileExtension = 'rj'
 }
 
 /*
@@ -79,13 +79,13 @@ task owlReason(type:io.opencaesar.owl.reason.OwlReasonTask, dependsOn: omlToOwl)
 	// OWL catalog
 	catalogPath = file('build/owl/catalog.xml')
 	// Input ontology IRI to reason on
-	inputOntologyIri = 'http://opencaesar.io/bundle1'
-    inputFileExtensions = ['trig']
+	inputOntologyIri = 'http://opencaesar.io/bundle'
+    inputFileExtensions = ['rj']
 	// Entailment statements to generate and the ontologies to persist them in
 	specs = [
-		'http://opencaesar.io/bundle1/classes = ALL_SUBCLASS',
-		'http://opencaesar.io/bundle1/properties = INVERSE_PROPERTY | ALL_SUBPROPERTY',
-		'http://opencaesar.io/bundle1/individuals = ALL_INSTANCE | DATA_PROPERTY_VALUE | OBJECT_PROPERTY_VALUE | SAME_AS'
+		'http://opencaesar.io/bundle/classes = ALL_SUBCLASS',
+		'http://opencaesar.io/bundle/properties = INVERSE_PROPERTY | ALL_SUBPROPERTY',
+		'http://opencaesar.io/bundle/individuals = ALL_INSTANCE | DATA_PROPERTY_VALUE | OBJECT_PROPERTY_VALUE | SAME_AS'
 	]
 	// Junit error report
 	reportPath = file('build/reports/reasoning.xml')
@@ -97,11 +97,11 @@ task owlReason(type:io.opencaesar.owl.reason.OwlReasonTask, dependsOn: omlToOwl)
 task owlLoad(type:io.opencaesar.owl.load.OwlLoadTask, dependsOn: owlReason) {
 	catalogPath = file('build/owl/catalog.xml')
 	endpointURL = "http://localhost:3030/$fusekiDataset"
-    fileExtensions = ['trig', 'ttl']
+    fileExtensions = ['rj', 'ttl']
 	iris = [
-		'http://opencaesar.io/bundle1/classes',
-	    'http://opencaesar.io/bundle1/properties',
-	    'http://opencaesar.io/bundle1/individuals'
+		'http://opencaesar.io/bundle/classes',
+	    'http://opencaesar.io/bundle/properties',
+	    'http://opencaesar.io/bundle/individuals'
 	]
 }
 
@@ -128,6 +128,22 @@ task owlClasses(type:io.opencaesar.owl.query.OwlQueryTask, dependsOn: owlLoad, g
 	outputs.files('build/frames/classes.csv')
 }
 
+task owlObjectProperties(type:io.opencaesar.owl.query.OwlQueryTask, dependsOn: owlLoad, group: 'oml') {
+	endpointURL = "http://localhost:3030/$fusekiDataset"
+	queryPath = file('src/sparql/object-properties.sparql')
+	resultPath = file('build/frames')
+	format = 'csv'
+	outputs.files('build/frames/object-properties.csv')
+}
+
+task owlDataProperties(type:io.opencaesar.owl.query.OwlQueryTask, dependsOn: owlLoad, group: 'oml') {
+	endpointURL = "http://localhost:3030/$fusekiDataset"
+	queryPath = file('src/sparql/data-properties.sparql')
+	resultPath = file('build/frames')
+	format = 'csv'
+	outputs.files('build/frames/data-properties.csv')
+}
+
 /*
  * A task to build the project, which executes several tasks together
  */
@@ -148,7 +164,7 @@ task omlZip(type:Zip, dependsOn: build, group: 'publishing') {
 
 task owlZip(type: Zip, dependsOn: build, group: 'publishing') {
   from file('build/owl')
-	include "**/*.trig"
+	include "**/*.rj"
 	include "**/*.ttl"
 	destinationDirectory = file('build/libs')
 	archiveBaseName = project.name

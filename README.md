@@ -19,6 +19,11 @@ Convert to owl
 ./gradlew build
 ```
 
+Run queries and create Zip archives:
+```
+./gradlew clean startFuseki
+./gradlew owlClasses owlObjectProperties owlDataProperties omlZip owlZip
+
 ## Generate Docs
 ```
 ./gradlew generateDocs
