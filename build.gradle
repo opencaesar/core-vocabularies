@@ -120,7 +120,23 @@ task stopFuseki(type: io.opencaesar.owl.fuseki.StopFusekiTask, group: 'fuseki') 
 /*
  * Tasks to run a SPARQL query on a Fuseki dataset endpoint
  */
-task owlClasses(type:io.opencaesar.owl.query.OwlQueryTask, dependsOn: owlLoad, group: 'oml') {
+task qGraphs(type:io.opencaesar.owl.query.OwlQueryTask, dependsOn: owlLoad, group: 'query') {
+	endpointURL = "http://localhost:3030/$fusekiDataset"
+	queryPath = file('src/sparql/graphs.sparql')
+	resultPath = file('build/frames')
+	format = 'csv'
+	outputs.files('build/frames/graphs.csv')
+}
+
+task qOntologies(type:io.opencaesar.owl.query.OwlQueryTask, dependsOn: owlLoad, group: 'query') {
+	endpointURL = "http://localhost:3030/$fusekiDataset"
+	queryPath = file('src/sparql/ontologies.sparql')
+	resultPath = file('build/frames')
+	format = 'csv'
+	outputs.files('build/frames/ontologies.csv')
+}
+
+task qClasses(type:io.opencaesar.owl.query.OwlQueryTask, dependsOn: owlLoad, group: 'query') {
 	endpointURL = "http://localhost:3030/$fusekiDataset"
 	queryPath = file('src/sparql/classes.sparql')
 	resultPath = file('build/frames')
@@ -128,7 +144,7 @@ task owlClasses(type:io.opencaesar.owl.query.OwlQueryTask, dependsOn: owlLoad, g
 	outputs.files('build/frames/classes.csv')
 }
 
-task owlObjectProperties(type:io.opencaesar.owl.query.OwlQueryTask, dependsOn: owlLoad, group: 'oml') {
+task qObjectProperties(type:io.opencaesar.owl.query.OwlQueryTask, dependsOn: owlLoad, group: 'query') {
 	endpointURL = "http://localhost:3030/$fusekiDataset"
 	queryPath = file('src/sparql/object-properties.sparql')
 	resultPath = file('build/frames')
@@ -136,7 +152,7 @@ task owlObjectProperties(type:io.opencaesar.owl.query.OwlQueryTask, dependsOn: o
 	outputs.files('build/frames/object-properties.csv')
 }
 
-task owlDataProperties(type:io.opencaesar.owl.query.OwlQueryTask, dependsOn: owlLoad, group: 'oml') {
+task qDataProperties(type:io.opencaesar.owl.query.OwlQueryTask, dependsOn: owlLoad, group: 'query') {
 	endpointURL = "http://localhost:3030/$fusekiDataset"
 	queryPath = file('src/sparql/data-properties.sparql')
 	resultPath = file('build/frames')

@@ -22,7 +22,7 @@ Convert to owl
 Run queries and create Zip archives:
 ```
 ./gradlew clean startFuseki
-./gradlew owlClasses owlObjectProperties owlDataProperties omlZip owlZip
+./gradlew qGraphs qOntologies qClasses qObjectProperties qDataProperties omlZip owlZip
 
 ## Generate Docs
 ```
