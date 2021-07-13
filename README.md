@@ -30,4 +30,7 @@ P.S.: You must first have Bikeshed (the app itself) installed from [here](https:
 ./gradlew publishToMavenLocal
 ```
 
+## Versioning
+
+The gradle script uses the [palantir gradle-git-version plugin](https://github.com/palantir/gradle-git-version) to generate a semantic version based on GIT tag (e.g. 2.4.0) and git commits ()
 ## [Metrology vocabulary](doc/README.metrology.md)
