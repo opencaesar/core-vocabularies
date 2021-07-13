@@ -43,16 +43,16 @@ vocabulary <http://nist.gov/pml/special-publication-811-units> with # as special
 		forward pound-force-second-has-second
 		restricts scalar property metrology:exponent to "1/1"^^owl:rational
 	]
-
-	@dc:^description "t/°C = (t/°F - 32)/1.8"
+ 
 	@dc:^source "https://en.wikipedia.org/wiki/Fahrenheit"
-	concept degreeFahrenheit :> metrology:NonCoherentDerivedMeasurementUnit [
-		restricts all relation metrology:nonCoherentDerivedMeasurementUnitOf to 80000-5-units:degreeCelcius
+	concept degreeFahrenheit :> 80000-5-units:CelciusTemperatureUnit [
+		restricts scalar property metrology:nonCoherentRelationship to "t/°C = (t/°F - 32)/1.8"^^xsd:string 
+		restricts relation metrology:nonCoherentDerivedMeasurementUnitOf to 80000-5-instances:degreeCelcius
 	]
-
-	@dc:^description "T/K = (T/°R)/1.8"
+ 
 	@dc:^source "https://en.wikipedia.org/wiki/Rankine_scale"
 	concept degreeRankine :> metrology:NonCoherentDerivedMeasurementUnit [
-		restricts all relation metrology:nonCoherentDerivedMeasurementUnitOf to 80000-5-units:kelvin
+		restricts scalar property metrology:nonCoherentRelationship to "T/K = (T/°R)/1.8"^^xsd:string 
+		restricts relation metrology:nonCoherentDerivedMeasurementUnitOf to 80000-5-instances:kelvin
 	]
 }

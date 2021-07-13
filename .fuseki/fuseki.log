@@ -1,0 +1,13 @@
+[2021-07-13 13:45:36] riot       WARN  [line: 6, col: 9 ] Bad IRI: <C:\opt\local\github.opencaesar\core-vocabularies\.fuseki.ttl#> Code: 4/UNWISE_CHARACTER in PATH: The character matches no grammar rules of URIs/IRIs. These characters are permitted in RDF URI References, XML system identifiers, and XML Schema anyURIs.
+[2021-07-13 13:45:36] riot       WARN  [line: 10, col: 1 ] Bad IRI: <C:\opt\local\github.opencaesar\core-vocabularies\.fuseki.ttl#service> Code: 4/UNWISE_CHARACTER in PATH: The character matches no grammar rules of URIs/IRIs. These characters are permitted in RDF URI References, XML system identifiers, and XML Schema anyURIs.
+[2021-07-13 13:45:36] riot       WARN  [line: 16, col: 25] Bad IRI: <C:\opt\local\github.opencaesar\core-vocabularies\.fuseki.ttl#dataset> Code: 4/UNWISE_CHARACTER in PATH: The character matches no grammar rules of URIs/IRIs. These characters are permitted in RDF URI References, XML system identifiers, and XML Schema anyURIs.
+[2021-07-13 13:45:36] riot       WARN  [line: 19, col: 1 ] Bad IRI: <C:\opt\local\github.opencaesar\core-vocabularies\.fuseki.ttl#dataset> Code: 4/UNWISE_CHARACTER in PATH: The character matches no grammar rules of URIs/IRIs. These characters are permitted in RDF URI References, XML system identifiers, and XML Schema anyURIs.
+[2021-07-13 13:45:37] Server     INFO  Apache Jena Fuseki 3.16.0
+[2021-07-13 13:45:37] Server     INFO  Configuration file: C:\opt\local\github.opencaesar\core-vocabularies\.fuseki.ttl
+[2021-07-13 13:45:37] Server     INFO  Path = /msr-fse-demo2
+[2021-07-13 13:45:37] Server     INFO  System
+[2021-07-13 13:45:37] Server     INFO    Memory: 30.0 GiB
+[2021-07-13 13:45:37] Server     INFO    Java:   11.0.11
+[2021-07-13 13:45:37] Server     INFO    OS:     Windows 10 10.0 amd64
+[2021-07-13 13:45:37] Server     INFO    PID:    49068
+[2021-07-13 13:45:37] Server     INFO  Start Fuseki (port=3030)

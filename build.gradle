@@ -80,6 +80,7 @@ task owlReason(type:io.opencaesar.owl.reason.OwlReasonTask, dependsOn: omlToOwl)
 	catalogPath = file('build/owl/catalog.xml')
 	// Input ontology IRI to reason on
 	inputOntologyIri = 'http://opencaesar.io/bundle1'
+    inputFileExtensions = ['trig']
 	// Entailment statements to generate and the ontologies to persist them in
 	specs = [
 		'http://opencaesar.io/bundle1/classes = ALL_SUBCLASS',
@@ -93,7 +94,7 @@ task owlReason(type:io.opencaesar.owl.reason.OwlReasonTask, dependsOn: omlToOwl)
 /*
  * A task to load an OWL catalog to a Fuseki dataset endpoint
  */
-task owlLoad(type:io.opencaesar.owl.load.OwlLoadTask, dependsOn: omlToOwl) {
+task owlLoad(type:io.opencaesar.owl.load.OwlLoadTask, dependsOn: owlReason) {
 	catalogPath = file('build/owl/catalog.xml')
 	endpointURL = "http://localhost:3030/$fusekiDataset"
     fileExtensions = ['trig', 'ttl']

@@ -29,10 +29,10 @@ vocabulary <http://iso.org/80000-5-units> with # as 80000-5-units {
 		restricts all relation metrology:hasReference to CelciusTemperatureUnit
 	]
 
-	concept CelciusTemperatureUnit :> metrology:MeasurementUnit
+	concept CelciusTemperatureUnit :> ThermodynamicTemperatureUnit, metrology:NonCoherentDerivedMeasurementUnit
 
-	concept degreeCelcius :> CelciusTemperatureUnit, metrology:NonCoherentDerivedMeasurementUnit [
-		restricts scalar property metrology:nonCoherentRelationship to "0 °C = 273,15 kelvin"^^xsd:string
+	concept degreeCelcius :> CelciusTemperatureUnit [
+		restricts scalar property metrology:nonCoherentRelationship to "0 °C = 273,15 kelvin"^^xsd:string 
 		restricts relation metrology:nonCoherentDerivedMeasurementUnitOf to 80000-5-instances:kelvin
 	]
 }
