@@ -9,7 +9,7 @@
 
 <#service> rdf:type fuseki:Service ;
     rdfs:label          "Dataset with SHACL validation" ;
-    fuseki:name         "msr-fse-demo2" ;														# See the endpoint url in build.gradle
+    fuseki:name         "core-vocabularies" ;												# See the endpoint url in build.gradle
     fuseki:serviceReadWriteGraphStore "data" ;											# SPARQL Graph store protocol (read and write)
     fuseki:endpoint 	[ fuseki:operation fuseki:query ;	fuseki:name "sparql"  ] ;	# SPARQL query service
     fuseki:endpoint 	[ fuseki:operation fuseki:shacl ;	fuseki:name "shacl" ] ;		# SHACL query service
