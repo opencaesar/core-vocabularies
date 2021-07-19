@@ -3,19 +3,26 @@
  * The Gradle task dependencies 
  */
 buildscript {
-    repositories {
-        mavenLocal()
-        mavenCentral()
-    }
-    dependencies {
-        classpath 'io.opencaesar.adapters:oml2owl-gradle:+'
+	repositories {
+		mavenLocal()
+		mavenCentral()
+		maven { url 'https://jitpack.io' }
+	}
+	dependencies {
+		// Workaround to an OWLAPI bug
+		// see https://github.com/owlcs/owlapi/issues/1002
+		// see https://github.com/owlcs/owlapi/pull/1003 
+		// use: https://github.com/opencaesar/owl-adapter/pull/48
+		// see: https://jitpack.io/#NicolasRouquette/owl-adapter/0.9.4
+		classpath 'com.github.NicolasRouquette:owl-adapter:0.9.4'
+		//classpath 'io.opencaesar.adapters:oml2owl-gradle:+'
 		classpath 'io.opencaesar.owl:owl-load-gradle:+'
+		classpath 'io.opencaesar.owl:owl-reason-gradle:+'
 		classpath 'io.opencaesar.owl:owl-fuseki:+'
 		classpath 'io.opencaesar.owl:owl-fuseki-gradle:+'
 		classpath 'io.opencaesar.owl:owl-query-gradle:+'
-		classpath 'io.opencaesar.owl:owl-reason-gradle:+'
-        classpath 'io.opencaesar.oml:oml-bikeshed-gradle:+'
-    }
+		classpath 'io.opencaesar.oml:oml-bikeshed-gradle:+'
+	}
 }
 
 plugins {
@@ -64,23 +71,32 @@ task generateDocs(dependsOn: omlToBikeshed) {
 /*
  * A task to convert the OML catalog to OWL catalog
  */
-task omlToOwl(type:io.opencaesar.oml2owl.Oml2OwlTask) {
-    // OML catalog
-    inputCatalogPath = file('catalog.xml')
-    // OWL catalog
-    outputCatalogPath = file('build/owl/catalog.xml')
-    outputFileExtension = 'rj'
+task omlToOwlRdf(type:io.opencaesar.oml2owl.Oml2OwlTask) {
+  // OML catalog
+  inputCatalogPath = file('catalog.xml')
+  // OWL catalog
+  outputCatalogPath = file('build/rdf/catalog.xml')
+  outputFileExtension = 'rdf'
+}
+
+task omlToOwlTrig(type:io.opencaesar.oml2owl.Oml2OwlTask) {
+  // OML catalog
+  inputCatalogPath = file('catalog.xml')
+  // OWL catalog
+  outputCatalogPath = file('build/trig/catalog.xml')
+   outputFileExtension = 'trig'
 }
 
 /*
  * A task to run the Openllet reasoner on the OWL catalog
  */
-task owlReason(type:io.opencaesar.owl.reason.OwlReasonTask, dependsOn: omlToOwl) {
+task owlReasonRdf(type:io.opencaesar.owl.reason.OwlReasonTask, dependsOn: omlToOwlRdf) {
 	// OWL catalog
-	catalogPath = file('build/owl/catalog.xml')
+	catalogPath = file('build/rdf/catalog.xml')
 	// Input ontology IRI to reason on
 	inputOntologyIri = 'http://opencaesar.io/bundle'
-    inputFileExtensions = ['rj']
+  inputFileExtensions = ['rdf']
+	outputFileExtension = 'rdf'
 	// Entailment statements to generate and the ontologies to persist them in
 	specs = [
 		'http://opencaesar.io/bundle/classes = ALL_SUBCLASS',
@@ -88,20 +104,37 @@ task owlReason(type:io.opencaesar.owl.reason.OwlReasonTask, dependsOn: omlToOwl)
 		'http://opencaesar.io/bundle/individuals = ALL_INSTANCE | DATA_PROPERTY_VALUE | OBJECT_PROPERTY_VALUE | SAME_AS'
 	]
 	// Junit error report
-	reportPath = file('build/reports/reasoning.xml')
+	reportPath = file('build/reports/rdf/reasoning.xml')
+}
+
+task owlReasonTrig(type:io.opencaesar.owl.reason.OwlReasonTask, dependsOn: omlToOwlTrig) {
+	// OWL catalog
+	catalogPath = file('build/trig/catalog.xml')
+	// Input ontology IRI to reason on
+	inputOntologyIri = 'http://opencaesar.io/bundle'
+  inputFileExtensions = ['trig']
+	outputFileExtension = 'trig'
+	// Entailment statements to generate and the ontologies to persist them in
+	specs = [
+		'http://opencaesar.io/bundle/classes = ALL_SUBCLASS',
+		'http://opencaesar.io/bundle/properties = INVERSE_PROPERTY | ALL_SUBPROPERTY',
+		'http://opencaesar.io/bundle/individuals = ALL_INSTANCE | DATA_PROPERTY_VALUE | OBJECT_PROPERTY_VALUE | SAME_AS'
+	]
+	// Junit error report
+	reportPath = file('build/reports/trig/reasoning.xml')
 }
 
 /*
  * A task to load an OWL catalog to a Fuseki dataset endpoint
  */
-task owlLoad(type:io.opencaesar.owl.load.OwlLoadTask, dependsOn: owlReason) {
-	catalogPath = file('build/owl/catalog.xml')
+task owlLoadRdf(type:io.opencaesar.owl.load.OwlLoadTask, dependsOn: owlReasonRdf) {
+	catalogPath = file('build/rdf/catalog.xml')
 	endpointURL = "http://localhost:3030/$fusekiDataset"
-    fileExtensions = ['rj', 'ttl']
+  fileExtensions = ['rdf']
 	iris = [
 		'http://opencaesar.io/bundle/classes',
-	    'http://opencaesar.io/bundle/properties',
-	    'http://opencaesar.io/bundle/individuals'
+	  'http://opencaesar.io/bundle/properties',
+	  'http://opencaesar.io/bundle/individuals'
 	]
 }
 
@@ -120,7 +153,7 @@ task stopFuseki(type: io.opencaesar.owl.fuseki.StopFusekiTask, group: 'fuseki') 
 /*
  * Tasks to run a SPARQL query on a Fuseki dataset endpoint
  */
-task qGraphs(type:io.opencaesar.owl.query.OwlQueryTask, dependsOn: owlLoad, group: 'query') {
+task qGraphs(type:io.opencaesar.owl.query.OwlQueryTask, dependsOn: owlLoadRdf, group: 'query') {
 	endpointURL = "http://localhost:3030/$fusekiDataset"
 	queryPath = file('src/sparql/graphs.sparql')
 	resultPath = file('build/frames')
@@ -128,7 +161,7 @@ task qGraphs(type:io.opencaesar.owl.query.OwlQueryTask, dependsOn: owlLoad, grou
 	outputs.files('build/frames/graphs.csv')
 }
 
-task qOntologies(type:io.opencaesar.owl.query.OwlQueryTask, dependsOn: owlLoad, group: 'query') {
+task qOntologies(type:io.opencaesar.owl.query.OwlQueryTask, dependsOn: owlLoadRdf, group: 'query') {
 	endpointURL = "http://localhost:3030/$fusekiDataset"
 	queryPath = file('src/sparql/ontologies.sparql')
 	resultPath = file('build/frames')
@@ -136,7 +169,7 @@ task qOntologies(type:io.opencaesar.owl.query.OwlQueryTask, dependsOn: owlLoad, 
 	outputs.files('build/frames/ontologies.csv')
 }
 
-task qClasses(type:io.opencaesar.owl.query.OwlQueryTask, dependsOn: owlLoad, group: 'query') {
+task qClasses(type:io.opencaesar.owl.query.OwlQueryTask, dependsOn: owlLoadRdf, group: 'query') {
 	endpointURL = "http://localhost:3030/$fusekiDataset"
 	queryPath = file('src/sparql/classes.sparql')
 	resultPath = file('build/frames')
@@ -144,7 +177,7 @@ task qClasses(type:io.opencaesar.owl.query.OwlQueryTask, dependsOn: owlLoad, gro
 	outputs.files('build/frames/classes.csv')
 }
 
-task qObjectProperties(type:io.opencaesar.owl.query.OwlQueryTask, dependsOn: owlLoad, group: 'query') {
+task qObjectProperties(type:io.opencaesar.owl.query.OwlQueryTask, dependsOn: owlLoadRdf, group: 'query') {
 	endpointURL = "http://localhost:3030/$fusekiDataset"
 	queryPath = file('src/sparql/object-properties.sparql')
 	resultPath = file('build/frames')
@@ -152,7 +185,7 @@ task qObjectProperties(type:io.opencaesar.owl.query.OwlQueryTask, dependsOn: owl
 	outputs.files('build/frames/object-properties.csv')
 }
 
-task qDataProperties(type:io.opencaesar.owl.query.OwlQueryTask, dependsOn: owlLoad, group: 'query') {
+task qDataProperties(type:io.opencaesar.owl.query.OwlQueryTask, dependsOn: owlLoadRdf, group: 'query') {
 	endpointURL = "http://localhost:3030/$fusekiDataset"
 	queryPath = file('src/sparql/data-properties.sparql')
 	resultPath = file('build/frames')
@@ -164,7 +197,8 @@ task qDataProperties(type:io.opencaesar.owl.query.OwlQueryTask, dependsOn: owlLo
  * A task to build the project, which executes several tasks together
  */
 tasks.named('build') {
-    dependsOn owlReason
+    dependsOn owlReasonRdf
+    dependsOn owlReasonTrig
 }
 
 /*
@@ -178,15 +212,24 @@ task omlZip(type:Zip, dependsOn: build, group: 'publishing') {
     archiveVersion = project.version
 }
 
-task owlZip(type: Zip, dependsOn: build, group: 'publishing') {
-  from file('build/owl')
-	include "**/*.rj"
-	include "**/*.ttl"
+task owlZipRdf(type: Zip, dependsOn: build, group: 'publishing') {
+  from file('build/rdf')
+	include "**/*.rdf"
 	destinationDirectory = file('build/libs')
 	archiveBaseName = project.name
 	archiveVersion = project.version
-  archiveExtension = 'owl.zip'
+  archiveExtension = 'rdf.zip'
+}
+
+task owlZipTrig(type: Zip, dependsOn: build, group: 'publishing') {
+  from file('build/trig')
+	include "**/*.trig"
+	destinationDirectory = file('build/libs')
+	archiveBaseName = project.name
+	archiveVersion = project.version
+  archiveExtension = 'trig.zip'
 }
 
 publishing.publications.maven.artifact omlZip
-publishing.publications.maven.artifact owlZip
+publishing.publications.maven.artifact owlZipRdf
+publishing.publications.maven.artifact owlZipTrig

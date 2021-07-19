@@ -13,6 +13,14 @@ A core set of building block vocabularies from various authorities expressed in 
   cd core-vocabularies
 ```
 
+## Datasets
+
+The vocabularies are available in two formats:
+- RDF/XML files (see the `owlZipRdf` task)
+- Trig files (see the `owlZipTrig` task) -- these specify named graphs except that reasoning entailments do not belong to any named graph.
+
+With the [owl-load task](https://github.com/opencaesar/owl-tools/blob/master/owl-load/README.md), Apache Jena accepts RDF/XML files but not Trig files.
+
 ## Build
 Convert to owl
 ```
@@ -22,7 +30,7 @@ Convert to owl
 Run queries and create Zip archives:
 ```
 ./gradlew clean startFuseki
-./gradlew qGraphs qOntologies qClasses qObjectProperties qDataProperties omlZip owlZip
+./gradlew qGraphs qOntologies qClasses qObjectProperties qDataProperties omlZip owlZipRdf owlZipTrig
 
 ## Generate Docs
 ```
