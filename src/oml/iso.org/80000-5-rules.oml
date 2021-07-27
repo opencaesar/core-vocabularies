@@ -10,19 +10,19 @@ vocabulary <http://iso.org/80000-5-rules> with # as 80000-5-rules {
 	extends <http://iso.org/80000-4-rules>
 
 	@dc:^description "
-	If a celcius-temperature, x, is derived from a thermodynamic-temperature, y,
+	If a celsius-temperature, x, is derived from a thermodynamic-temperature, y,
 	then x, y must be quantities of the same object."
-	rule celcius-temperature-derivation-consistency [
-		// x is the celcius-temperature quantity of an object, xo.
+	rule celsius-temperature-derivation-consistency [
+		// x is the celsius-temperature quantity of an object, xo.
 		metrology:isQuantityOf(x,xo) ^
-		80000-5-quantities:celcius-temperature(x) ^
+		80000-5-quantities:celsius-temperature(x) ^
 
 		// y is the thermodynamic-temperature quantity of an object, yo.
 		metrology:isQuantityOf(y,yo) ^
 		80000-5-quantities:thermodynamic-temperature(y) ^
 
 		// if there is a dimensional calculus constraint relating x as a derived from y
-		80000-5-quantities:celcius-temperature-has-thermodynamic-temperature(x,y) 
+		80000-5-quantities:celsius-temperature-has-thermodynamic-temperature(x,y) 
 	
 		->
 

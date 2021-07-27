@@ -23,7 +23,7 @@ vocabulary <http://nist.gov/pml/special-publication-811-magnitudes-1> with # as 
 		restricts relation metrology:hasReference to special-publication-811-instances:pound-force-second
 	]
 
-	concept degreeFahrenheit-magnitude :> 80000-5-units:CelciusTemperatureMagnitude [
+	concept degreeFahrenheit-magnitude :> 80000-5-units:CelsiusTemperatureMagnitude [
 		restricts relation metrology:hasReference to special-publication-811-instances:degreeFahrenheit
 	]
 

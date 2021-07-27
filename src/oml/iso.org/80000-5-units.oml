@@ -25,13 +25,13 @@ vocabulary <http://iso.org/80000-5-units> with # as 80000-5-units {
 	concept kelvin :> CoherentThermodynamicTemperatureUnit, metrology:IndependentMeasurementUnit
 
 	@dc:^source "5-2"
-	aspect CelciusTemperatureMagnitude :> metrology:UnitaryMagnitude [
-		restricts all relation metrology:hasReference to CelciusTemperatureUnit
+	aspect CelsiusTemperatureMagnitude :> metrology:UnitaryMagnitude [
+		restricts all relation metrology:hasReference to CelsiusTemperatureUnit
 	]
 
-	concept CelciusTemperatureUnit :> ThermodynamicTemperatureUnit, metrology:NonCoherentDerivedMeasurementUnit
+	concept CelsiusTemperatureUnit :> ThermodynamicTemperatureUnit, metrology:NonCoherentDerivedMeasurementUnit
 
-	concept degreeCelcius :> CelciusTemperatureUnit [
+	concept degreeCelsius :> CelsiusTemperatureUnit [
 		restricts scalar property metrology:nonCoherentRelationship to "0 °C = 273,15 kelvin"^^xsd:string 
 		restricts relation metrology:nonCoherentDerivedMeasurementUnitOf to 80000-5-instances:kelvin
 	]

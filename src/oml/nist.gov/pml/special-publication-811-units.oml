@@ -45,13 +45,13 @@ vocabulary <http://nist.gov/pml/special-publication-811-units> with # as special
 	]
  
 	@dc:^source "https://en.wikipedia.org/wiki/Fahrenheit"
-	concept degreeFahrenheit :> 80000-5-units:CelciusTemperatureUnit [
+	concept degreeFahrenheit :> 80000-5-units:CelsiusTemperatureUnit [
 		restricts scalar property metrology:nonCoherentRelationship to "t/°C = (t/°F - 32)/1.8"^^xsd:string 
-		restricts relation metrology:nonCoherentDerivedMeasurementUnitOf to 80000-5-instances:degreeCelcius
+		restricts relation metrology:nonCoherentDerivedMeasurementUnitOf to 80000-5-instances:degreeCelsius
 	]
  
 	@dc:^source "https://en.wikipedia.org/wiki/Rankine_scale"
-	concept degreeRankine :> metrology:NonCoherentDerivedMeasurementUnit [
+	concept degreeRankine :> 80000-5-units:ThermodynamicTemperatureUnit, metrology:NonCoherentDerivedMeasurementUnit [
 		restricts scalar property metrology:nonCoherentRelationship to "T/K = (T/°R)/1.8"^^xsd:string 
 		restricts relation metrology:nonCoherentDerivedMeasurementUnitOf to 80000-5-instances:kelvin
 	]

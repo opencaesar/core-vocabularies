@@ -13,11 +13,15 @@ A core set of building block vocabularies from various authorities expressed in 
   cd core-vocabularies
 ```
 
-## Datasets
+## Data Products
 
-The vocabularies are available in two formats:
-- RDF/XML files (see the `owlZipRdf` task)
-- Trig files (see the `owlZipTrig` task) -- these specify named graphs except that reasoning entailments do not belong to any named graph.
+Publishing products 3 zip archives:
+
+| File | Description |
+|------|-------------|
+| `core-vocabularies-<version>.zip` | Archive of OML source files |
+| `core-vocabularies-<version>.sparql.zip` | Archive of SPARQL source files |
+| `core-vocabularies-<version>.rdf.zip` | Archive of OWL files in RDF/XML format |
 
 With the [owl-load task](https://github.com/opencaesar/owl-tools/blob/master/owl-load/README.md), Apache Jena accepts RDF/XML files but not Trig files.
 
@@ -30,7 +34,7 @@ Convert to owl
 Run queries and create Zip archives:
 ```
 ./gradlew clean startFuseki
-./gradlew qGraphs qOntologies qClasses qObjectProperties qDataProperties omlZip owlZipRdf owlZipTrig
+./gradlew qGraphs qOntologies qClasses qObjectProperties qDataProperties omlZip sparqlZip owlZip
 
 ## Generate Docs
 ```
@@ -45,5 +49,6 @@ P.S.: You must first have Bikeshed (the app itself) installed from [here](https:
 
 ## Versioning
 
-The gradle script uses the [palantir gradle-git-version plugin](https://github.com/palantir/gradle-git-version) to generate a semantic version based on GIT tag (e.g. 2.4.0) and git commits ()
+The gradle script uses the [palantir gradle-git-version plugin](https://github.com/palantir/gradle-git-version) to generate a semantic version based on GIT tag (e.g. 2.4.0) and git commits.
+
 ## [Metrology vocabulary](doc/README.metrology.md)

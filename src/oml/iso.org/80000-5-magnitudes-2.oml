@@ -19,10 +19,10 @@ vocabulary <http://iso.org/80000-5-magnitudes-2> with # as 80000-5-magnitudes-2 
 
 	// 5-2
 
-	relation entity degreeCelcius-magnitude :> metrology:IsReflexiveMagnitudeOf, 80000-5-units:CelciusTemperatureMagnitude [
-		from degreeCelcius-magnitude
+	relation entity degreeCelsius-magnitude :> metrology:IsReflexiveMagnitudeOf, 80000-5-units:CelsiusTemperatureMagnitude [
+		from degreeCelsius-magnitude
 		to metrology:UnitaryQuantity
-		forward isDegreeCelciusMagnitudeOf
-		restricts relation metrology:hasReference to 80000-5-instances:degreeCelcius
+		forward isDegreeCelsiusMagnitudeOf
+		restricts relation metrology:hasReference to 80000-5-instances:degreeCelsius
 	]
 }

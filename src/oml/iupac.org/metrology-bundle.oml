@@ -1,0 +1,3 @@
+vocabulary bundle <http://iupac.org/metrology-bundle> with # as metrology-bundle {
+  includes <http://iupac.org/metrology>
+}

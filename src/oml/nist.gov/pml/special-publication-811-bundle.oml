@@ -1,8 +1,9 @@
-vocabulary bundle <http://opencaesar.io/bundle> with # as ^bundle {
+vocabulary bundle <http://nist.gov/pml/special-publication-811-bundle> with # as special-publication-811-bundle {
 
-  includes <http://opencaesar.io/diagram>
-  includes <http://opencaesar.io/viewpoint>
-
+  // Cannot extend the ISO80000 bundle because it makes <http://iso.org/80000-4-units#ForceUnit> and <http://iupac.org/metrology#NonCoherentDerivedMeasurementUnit> disjoint.
+  // This prevents defining <http://nist.gov/pml/special-publication-811-units#pound-force> as a specialization of both.
+  // extends <http://iso.org/80000-bundle>
+  
   includes <http://iso.org/80000-6-magnitudes-1>
   includes <http://iso.org/80000-5-magnitudes-1>
   includes <http://iso.org/80000-4-magnitudes-1>
@@ -13,11 +14,7 @@ vocabulary bundle <http://opencaesar.io/bundle> with # as ^bundle {
   includes <http://iso.org/80000-4-magnitudes-2>
   includes <http://iso.org/80000-3-magnitudes-2>
 
-  includes <http://iso.org/80000-6-rules>
-  includes <http://iso.org/80000-5-rules>
-  includes <http://iso.org/80000-4-rules>
-  includes <http://iso.org/80000-3-rules>
-
   includes <http://nist.gov/pml/special-publication-811-magnitudes-1>
   includes <http://nist.gov/pml/special-publication-811-magnitudes-2>
+
 }

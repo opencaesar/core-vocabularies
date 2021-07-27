@@ -16,7 +16,7 @@ vocabulary <http://iso.org/80000-5-magnitudes-1> with # as 80000-5-magnitudes-1 
 
 	// 5-2
 
-	concept degreeCelcius-magnitude :> 80000-5-units:CelciusTemperatureMagnitude [
-		restricts relation metrology:hasReference to 80000-5-instances:degreeCelcius
+	concept degreeCelsius-magnitude :> 80000-5-units:CelsiusTemperatureMagnitude [
+		restricts relation metrology:hasReference to 80000-5-instances:degreeCelsius
 	]
 }

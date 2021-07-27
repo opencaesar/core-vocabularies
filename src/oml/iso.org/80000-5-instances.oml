@@ -28,20 +28,20 @@ description <http://iso.org/80000-5-instances> with # as 80000-5-instances {
 	]
 
 	@dc:^source "5-2"
-	ci celcius-temperature : 80000-5-quantities:celcius-temperature
+	ci celsius-temperature : 80000-5-quantities:celsius-temperature
 
-	ri systemOfQuantities-celcius-temperature : metrology:SystemHasUnitaryQuantity [
+	ri systemOfQuantities-celsius-temperature : metrology:SystemHasUnitaryQuantity [
 		from 80000-instances:systemOfQuantities
-		to celcius-temperature
+		to celsius-temperature
 		metrology:isBaseQuantity "false"^^xsd:boolean
 	]
 
 	@dc:^source "5-2"
-	ci degreeCelcius : 80000-5-units:degreeCelcius
+	ci degreeCelsius : 80000-5-units:degreeCelsius
 
-	ri systemOfUnits-degreeCelcius : metrology:SystemHasMetrologicalUnit [
+	ri systemOfUnits-degreeCelsius : metrology:SystemHasMetrologicalUnit [
 		from 80000-instances:systemOfUnits
-		to degreeCelcius
+		to degreeCelsius
 		metrology:isBaseMetrologicalUnit "false"^^xsd:boolean
 	]
 }

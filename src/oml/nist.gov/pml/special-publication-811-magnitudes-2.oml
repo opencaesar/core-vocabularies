@@ -35,7 +35,7 @@ vocabulary <http://nist.gov/pml/special-publication-811-magnitudes2> with # as s
 		restricts relation metrology:hasReference to special-publication-811-instances:pound-force-second
 	]
 
-	relation entity degreeFahrenheit-magnitude :> metrology:IsReflexiveMagnitudeOf, 80000-5-units:CelciusTemperatureMagnitude [
+	relation entity degreeFahrenheit-magnitude :> metrology:IsReflexiveMagnitudeOf, 80000-5-units:CelsiusTemperatureMagnitude [
 		from degreeFahrenheit-magnitude
 		to metrology:UnitaryQuantity
 		forward isDegreeFahrenheitMagnitudeOf

@@ -18,15 +18,15 @@ vocabulary <http://iso.org/80000-5-quantities> with # as 80000-5-quantities {
     ]
 
     @dc:^source "5-2"
-    concept celcius-temperature :> metrology:DerivedUnitaryQuantity [
+    concept celsius-temperature :> metrology:DerivedUnitaryQuantity [
         restricts scalar property metrology:isDimensionlessQuantity to "false"^^xsd:boolean
-        restricts all relation  metrology:hasMagnitude to 80000-5-units:CelciusTemperatureMagnitude
+        restricts all relation  metrology:hasMagnitude to 80000-5-units:CelsiusTemperatureMagnitude
     ]
 
-    relation entity Celcius-Temperature-Has-Thermodynamic-Temperature :> metrology:HasFactorForUnitaryQuantity [
-        from celcius-temperature
+    relation entity Celsius-Temperature-Has-Thermodynamic-Temperature :> metrology:HasFactorForUnitaryQuantity [
+        from celsius-temperature
         to thermodynamic-temperature
-        forward celcius-temperature-has-thermodynamic-temperature
+        forward celsius-temperature-has-thermodynamic-temperature
         functional
         restricts scalar property metrology:exponent to "1/1"^^owl:rational
     ]
