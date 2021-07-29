@@ -19,11 +19,7 @@ Publishing products 3 zip archives:
 
 | File | Description |
 |------|-------------|
-| `core-vocabularies-<version>.zip` | Archive of OML source files |
-| `core-vocabularies-<version>.sparql.zip` | Archive of SPARQL source files |
-| `core-vocabularies-<version>.rdf.zip` | Archive of OWL files in RDF/XML format |
-
-With the [owl-load task](https://github.com/opencaesar/owl-tools/blob/master/owl-load/README.md), Apache Jena accepts RDF/XML files but not Trig files.
+| `core-vocabularies-<version>.oml.zip` | Archive of OML source files |
 
 ## Build
 Convert to owl
@@ -50,5 +46,3 @@ P.S.: You must first have Bikeshed (the app itself) installed from [here](https:
 ## Versioning
 
 The gradle script uses the [palantir gradle-git-version plugin](https://github.com/palantir/gradle-git-version) to generate a semantic version based on GIT tag (e.g. 2.4.0) and git commits.
-
-## [Metrology vocabulary](doc/README.metrology.md)

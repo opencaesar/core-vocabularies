@@ -72,79 +72,6 @@ task omlToOwl(type:io.opencaesar.oml2owl.Oml2OwlTask) {
   outputFileExtension = 'rdf'
 }
 
-/*
- * A task to run the Openllet reasoner on the OWL catalog
- */
-task owlReasonMetrology(type:io.opencaesar.owl.reason.OwlReasonTask, dependsOn: omlToOwl) {
-	// OWL catalog
-	catalogPath = file('build/rdf/catalog.xml')
-	// Input ontology IRI to reason on
-	inputOntologyIri = 'http://iupac.org/metrology-bundle'
-  inputFileExtensions = ['rdf']
-	outputFileExtension = 'rdf'
-	// Entailment statements to generate and the ontologies to persist them in
-	specs = [
-		'http://iupac.org/metrology-bundle/classes = ALL_SUBCLASS',
-		'http://iupac.org/metrology-bundle/properties = INVERSE_PROPERTY | ALL_SUBPROPERTY',
-		'http://iupac.org/metrology-bundle/individuals = ALL_INSTANCE | DATA_PROPERTY_VALUE | OBJECT_PROPERTY_VALUE | SAME_AS'
-	]
-	// Junit error report
-	reportPath = file('build/reports/metrology-bundle/reasoning.xml')
-}
-
-task owlReasonISO80000(type:io.opencaesar.owl.reason.OwlReasonTask, dependsOn: omlToOwl) {
-	// OWL catalog
-	catalogPath = file('build/rdf/catalog.xml')
-	// Input ontology IRI to reason on
-	inputOntologyIri = 'http://iso.org/80000-bundle'
-  inputFileExtensions = ['rdf']
-	outputFileExtension = 'rdf'
-	// Entailment statements to generate and the ontologies to persist them in
-	specs = [
-		'http://iso.org/80000-bundle/classes = ALL_SUBCLASS',
-		'http://iso.org/80000-bundle/properties = INVERSE_PROPERTY | ALL_SUBPROPERTY',
-		'http://iso.org/80000-bundle/individuals = ALL_INSTANCE | DATA_PROPERTY_VALUE | OBJECT_PROPERTY_VALUE | SAME_AS'
-	]
-	// Junit error report
-	reportPath = file('build/reports/80000-bundle/reasoning.xml')
-}
-
-task owlReasonNistSP811(type:io.opencaesar.owl.reason.OwlReasonTask, dependsOn: omlToOwl) {
-	// OWL catalog
-	catalogPath = file('build/rdf/catalog.xml')
-	// Input ontology IRI to reason on
-	inputOntologyIri = 'http://nist.gov/pml/special-publication-811-bundle'
-  inputFileExtensions = ['rdf']
-	outputFileExtension = 'rdf'
-	// Entailment statements to generate and the ontologies to persist them in
-	specs = [
-		'http://nist.gov/pml/special-publication-811-bundle/classes = ALL_SUBCLASS',
-		'http://nist.gov/pml/special-publication-811-bundle/properties = INVERSE_PROPERTY | ALL_SUBPROPERTY',
-		'http://nist.gov/pml/special-publication-811-bundle/individuals = ALL_INSTANCE | DATA_PROPERTY_VALUE | OBJECT_PROPERTY_VALUE | SAME_AS'
-	]
-	// Junit error report
-	reportPath = file('build/reports/special-publication-811-bundle/reasoning.xml')
-}
-
-/*
- * A task to load an OWL catalog to a Fuseki dataset endpoint
- */
-task owlLoad(type:io.opencaesar.owl.load.OwlLoadTask, dependsOn: [owlReasonMetrology, owlReasonISO80000, owlReasonNistSP811]) {
-	catalogPath = file('build/rdf/catalog.xml')
-	endpointURL = "http://localhost:3030/$fusekiDataset"
-  fileExtensions = ['rdf']
-	iris = [
-		'http://iupac.org/metrology-bundle/classes',
-		'http://iupac.org/metrology-bundle/properties',
-		'http://iupac.org/metrology-bundle/individuals',
-		'http://iso.org/80000-bundle/classes',
-		'http://iso.org/80000-bundle/properties',
-		'http://iso.org/80000-bundle/individuals',
-		'http://nist.gov/pml/special-publication-811-bundle/classes',
-	  'http://nist.gov/pml/special-publication-811-bundle/properties',
-	  'http://nist.gov/pml/special-publication-811-bundle/individuals'
-	]
-}
 
 /*
  * Start and stop the Fuseki server
@@ -159,86 +86,23 @@ task stopFuseki(type: io.opencaesar.owl.fuseki.StopFusekiTask, group: 'fuseki') 
 }
 
 /*
- * Census query tasks to run a SPARQL query on a Fuseki dataset endpoint
- */
-task qGraphs(type:io.opencaesar.owl.query.OwlQueryTask, dependsOn: owlLoad, group: 'query') {
-	endpointURL = "http://localhost:3030/$fusekiDataset"
-	queryPath = file('src/sparql/graphs.sparql')
-	resultPath = file('build/frames')
-	format = 'csv'
-	outputs.files('build/frames/graphs.csv')
-}
-
-task qOntologies(type:io.opencaesar.owl.query.OwlQueryTask, dependsOn: owlLoad, group: 'query') {
-	endpointURL = "http://localhost:3030/$fusekiDataset"
-	queryPath = file('src/sparql/ontologies.sparql')
-	resultPath = file('build/frames')
-	format = 'csv'
-	outputs.files('build/frames/ontologies.csv')
-}
-
-task qClasses(type:io.opencaesar.owl.query.OwlQueryTask, dependsOn: owlLoad, group: 'query') {
-	endpointURL = "http://localhost:3030/$fusekiDataset"
-	queryPath = file('src/sparql/classes.sparql')
-	resultPath = file('build/frames')
-	format = 'csv'
-	outputs.files('build/frames/classes.csv')
-}
-
-task qObjectProperties(type:io.opencaesar.owl.query.OwlQueryTask, dependsOn: owlLoad, group: 'query') {
-	endpointURL = "http://localhost:3030/$fusekiDataset"
-	queryPath = file('src/sparql/object-properties.sparql')
-	resultPath = file('build/frames')
-	format = 'csv'
-	outputs.files('build/frames/object-properties.csv')
-}
-
-task qDataProperties(type:io.opencaesar.owl.query.OwlQueryTask, dependsOn: owlLoad, group: 'query') {
-	endpointURL = "http://localhost:3030/$fusekiDataset"
-	queryPath = file('src/sparql/data-properties.sparql')
-	resultPath = file('build/frames')
-	format = 'csv'
-	outputs.files('build/frames/data-properties.csv')
-}
-
-/*
  * A task to build the project, which executes several tasks together
  */
 tasks.named('build') {
-    dependsOn owlReasonMetrology
-    dependsOn owlReasonISO80000
-		dependsOn owlReasonNistSP811
+    dependsOn omlToOwl
 }
 
 /*
  * Publish artifacts
  */
 task omlZip(type:Zip, dependsOn: build, group: 'publishing') {
-    from file('src/oml')
-    include "**/*.oml"
-    destinationDirectory = file('build/libs')
-    archiveBaseName = project.name
-    archiveVersion = project.version
-}
-
-task owlZip(type: Zip, dependsOn: build, group: 'publishing') {
-  from file('build/rdf')
-	include "**/*.rdf"
+	from file('src/oml')
+	include "**/*.oml"
 	destinationDirectory = file('build/libs')
 	archiveBaseName = project.name
 	archiveVersion = project.version
-  archiveExtension = 'rdf.zip'
-}
-
-task sparqlZip(type: Zip, dependsOn: build, group: 'publishing') {
-  from file('src/sparql')
-	include "**/*.sparql"
-	destinationDirectory = file('build/libs')
-	archiveBaseName = project.name
-	archiveVersion = project.version
-  archiveExtension = 'sparql.zip'
+	archiveExtension = 'zip'
+	classifier 'oml'
 }
 
 publishing.publications.maven.artifact omlZip
-publishing.publications.maven.artifact owlZip
-publishing.publications.maven.artifact sparqlZip
