@@ -102,7 +102,8 @@ task omlZip(type:Zip, dependsOn: build, group: 'publishing') {
 	archiveBaseName = project.name
 	archiveVersion = project.version
 	archiveExtension = 'zip'
-	classifier 'oml'
+	// Dropping classifiers since resolution fails.
+	// classifier 'oml'
 }
 
 publishing.publications.maven.artifact omlZip
