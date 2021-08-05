@@ -14,7 +14,7 @@ Until this branch is merged into https://github.com/opencaesar/core-vocabularies
 - Via https://jitpack.io/#NicolasRouquette/core-vocabularies
 
   See the instructions on that page to add `https://jitpack.io` as a Maven resolver for resolving the dependency: 
-  `com.github.NicolasRouquette:core-vocabularies:3.0.1`
+  `com.github.NicolasRouquette:core-vocabularies:3.+`
 
 - Locally
 
