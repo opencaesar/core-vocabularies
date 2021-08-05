@@ -7,6 +7,20 @@
 
 A core set of building block vocabularies from various authorities expressed in [OML](https://github.com/opencaesar/oml)
 
+## Important note about this fork
+
+Until this branch is merged into https://github.com/opencaesar/core-vocabularies, you can use the artifacts in one of two ways:
+
+- Via https://jitpack.io/#NicolasRouquette/core-vocabularies
+
+  See the instructions on that page to add `https://jitpack.io` as a Maven resolver for resolving the dependency: 
+  `com.github.NicolasRouquette:core-vocabularies:3.0.1`
+
+- Locally
+
+  - Clone the branch `rj-format` of this fork: https://github.com/NicolasRouquette/core-vocabularies
+  - Assuming that AdoptOpenJdk 11 is installed, execute: `./gradlew clean publishToMavenLocal`
+
 ## Clone
 ```
   git clone https://github.com/opencaesar/core-vocabularies.git
