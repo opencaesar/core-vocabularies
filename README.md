@@ -18,7 +18,7 @@ Until this branch is merged into https://github.com/opencaesar/core-vocabularies
 
 - Locally
 
-  - Clone the branch `rj-format` of this fork: https://github.com/NicolasRouquette/core-vocabularies
+  - Clone the branch `trig-format` of this fork: https://github.com/NicolasRouquette/core-vocabularies
   - Assuming that AdoptOpenJdk 11 is installed, execute: `./gradlew clean publishToMavenLocal`
 
 ## Clone
