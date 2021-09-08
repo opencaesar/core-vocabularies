@@ -2,9 +2,9 @@
  * The Maven coordinates for the project artifact
  */
 ext.title = "Core Vocabularies"
-description='The set of core vocabularies'
+description ='The set of core vocabularies'
 group = 'io.opencaesar.ontologies'
-version = '2.5.0'
+version = '3.0.0'
 
 apply from: "${rootDir}/gradle/maven-deployment.gradle"
 
@@ -17,8 +17,8 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath 'io.opencaesar.adapters:oml2owl-gradle:0.9.+'
-        classpath 'io.opencaesar.oml:oml-bikeshed-gradle:0.9.+'
+        classpath 'io.opencaesar.adapters:oml2owl-gradle:1.0.+'
+        classpath 'io.opencaesar.oml:oml-bikeshed-gradle:1.0.+'
     }
 }
 

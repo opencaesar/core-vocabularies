@@ -19,7 +19,7 @@ Organizing a vocabulary of quantities and units involves several OML files as de
    Note that typically, a vocabulary of quantities depends on other vocabularies of quantities.
    For example, ISO 80000-4 depends on ISO 80000-3. This dependence is reflected in OML as extensions.
 
-   Example: [src/oml/iso.org/80000-4-units.oml](../src/oml/iso.org/80000-4-units.oml)
+   Example: [src/oml/iso.org/iso-80000-4-units.oml](../src/oml/iso.org/iso-80000-4-units.oml)
 
    For guidance, see Steps 1-4 in [Defining units](#defining-units).
 
@@ -28,7 +28,7 @@ Organizing a vocabulary of quantities and units involves several OML files as de
    Note that typically, a vocabulary of quantities depends on other vocabularies of quantities.
    For example, ISO 80000-4 depends on ISO 80000-3. This dependence is reflected in OML as extensions.
 
-   Example: [src/oml/iso.org/80000-4-quantities.oml](../src/oml/iso.org/80000-4-quantities.oml)
+   Example: [src/oml/iso.org/iso-80000-4-quantities.oml](../src/oml/iso.org/iso-80000-4-quantities.oml)
 
    For guidance, see Step 1 in [Defining quantities](#defining-quantities).
 
@@ -38,19 +38,19 @@ Organizing a vocabulary of quantities and units involves several OML files as de
    then there should be an extension to the other vocabulary
    of quantity derivation consistency rules.
 
-   Example: [src/oml/iso.org/80000-4-derivation-consistency.oml](../src/oml/iso.org/80000-4-derivation-consistency.oml)
+   Example: [src/oml/iso.org/iso-80000-4-derivation-consistency.oml](../src/oml/iso.org/iso-80000-4-derivation-consistency.oml)
 
    For guidance, see Step 2 in [Defining quantities](#defining-quantities).
 
 4) Defining an OML description for instances of the quantities, units and additions to the international systems of quantities and units, as applicable.
    
-   Example: [src/oml/iso.org/80000-4-instances.oml](../src/oml/iso.org/80000-4-instances.oml)
+   Example: [src/oml/iso.org/iso-80000-4-instances.oml](../src/oml/iso.org/iso-80000-4-instances.oml)
 
    For guidance, see Step 3 in [Defining quantities](#defining-quantities) and Step 5 in [Defining units](#defining-units).
 
 5) Defining an OML vocabulary of quantity values extending the vocabulary of units and the description of instances.
 
-   Example: [src/oml/iso.org/80000-4-magnitudes.oml](../src/oml/iso.org/80000-4-magnitudes.oml)
+   Example: [src/oml/iso.org/iso-80000-4-magnitudes.oml](../src/oml/iso.org/iso-80000-4-magnitudes.oml)
 
    For guidance, see Step 6 [Defining units](#defining-units).
 
@@ -84,7 +84,7 @@ the ISO 80000 system of quantities. See [ISO-80000-1:2009 section 3.7](https://w
 Note that, by definition, every base quantity has a dimension different than 1;
 this is conveyed in the metrology vocabulary with the boolean property `metrology:isDimensionlessQuantity`.
 
-Use the following as an example from [src/oml/iso.org/80000-3-quantities.oml](../src/oml/iso.org/80000-3-quantities.oml).
+Use the following as an example from [src/oml/iso.org/iso-80000-3-quantities.oml](../src/oml/iso.org/iso-80000-3-quantities.oml).
 
 Given the following definition from [ISO 80000-3:2019](https://www.iso.org/obp/ui/#iso:std:iso:80000:-3:ed-2:v1:en):
 
@@ -93,11 +93,11 @@ Given the following definition from [ISO 80000-3:2019](https://www.iso.org/obp/u
 Here is the corresponding definition using the metrology vocabulary:
 
 ```oml
-@dc:^source "https://www.iso.org/obp/ui/#iso:std:iso:80000:-3:ed-2:v1:en"
-vocabulary <http://iso.org/80000-3-quantities> with # as 80000-3-quantities {
-    extends <http://iso.org/80000-3-units>
+@dc:source "https://www.iso.org/obp/ui/#iso:std:iso:80000:-3:ed-2:v1:en"
+vocabulary <http://iso.org/iso-80000-3-quantities> with # as 80000-3-quantities {
+    extends <http://iso.org/iso-80000-3-units>
 
-    @dc:^source "3-1.1"
+    @dc:source "3-1.1"
     concept ^length :> metrology:IndependentUnitaryQuantity [
         restricts scalar property metrology:isDimensionlessQuantity to "false"^^xsd:boolean
         restricts all relation metrology:hasMagnitude to 80000-3-units:LengthMagnitude 
@@ -133,7 +133,7 @@ which is absurd in metrology. Consider for example, efficiency in mechanics (ISO
 relative humidity in thermodynamics (ISO 80000-5:2019, 5.33) are both dimensionless quantities but they 
 are clearly not equivalent to each other.
 
-Use the following as an example from [src/oml/iso.org/80000-4-quantities.oml](../src/oml/iso.org/80000-4-quantities.oml).
+Use the following as an example from [src/oml/iso.org/iso-80000-4-quantities.oml](../src/oml/iso.org/iso-80000-4-quantities.oml).
 
 Given the following definition from [ISO 80000-4:2019](https://www.iso.org/obp/ui/#iso:std:iso:80000:-4:ed-2:v1:en):
 
@@ -146,14 +146,14 @@ It is unfortunate that the ISO 80000 standards lack clear guidance about convert
 mathematical formulas into corresponding dimension formulas.
 
 ```oml
-@dc:^source "https://www.iso.org/obp/ui/#iso:std:iso:80000:-4:ed-2:v1:en"
-vocabulary <http://iso.org/80000-4-quantities> with # as 80000-4-quantities {
-    extends <http://iso.org/80000-4-units>
-    extends <http://iso.org/80000-3-quantities>
+@dc:source "https://www.iso.org/obp/ui/#iso:std:iso:80000:-4:ed-2:v1:en"
+vocabulary <http://iso.org/iso-80000-4-quantities> with # as 80000-4-quantities {
+    extends <http://iso.org/iso-80000-4-units>
+    extends <http://iso.org/iso-80000-3-quantities>
   
     ...
 
-    @dc:^source "4-10"
+    @dc:source "4-10"
     concept impulse :> metrology:DerivedUnitaryQuantity [
         restricts scalar property metrology:isDimensionlessQuantity to "false"^^xsd:boolean
         restricts all relation  metrology:hasMagnitude to 80000-4-units:ForceMagnitude
@@ -188,16 +188,16 @@ derived quantities with respect to its dependency on other quantities.
 
 For example, deriving the velocity of a vehicle based on the position-vector of something else.
 
-Use the following as an example from [src/oml/iso.org/80000-3-derivation-consistency.oml](../src/oml/iso.org/80000-3-derivation-consistency.oml).
+Use the following as an example from [src/oml/iso.org/iso-80000-3-derivation-consistency.oml](../src/oml/iso.org/iso-80000-3-derivation-consistency.oml).
 
 ```oml
-@dc:^description "Optional consistency rules to enforce that derived quantities are about the same object as the objects of their quantity factors."
-vocabulary <http://iso.org/80000-3-derivation-consistency> with # as 80000-3-derivation-consistency {
-  extends <http://iso.org/80000-3-quantities>
+@dc:description "Optional consistency rules to enforce that derived quantities are about the same object as the objects of their quantity factors."
+vocabulary <http://iso.org/iso-80000-3-derivation-consistency> with # as 80000-3-derivation-consistency {
+  extends <http://iso.org/iso-80000-3-quantities>
 
   ...
 
-  @dc:^description "
+  @dc:description "
   If a velocity, x, is derived from a position-vector, y, and a duration, z,
   then x, y, and z must be quantities of the same object."
   rule velocity-derivation-consistency [
@@ -246,14 +246,14 @@ Where applicable, it is important to record whether a quantity is included in th
 <details>
 <summary>Details</summary>
 
-Use the following as an example from [src/oml/iso.org/80000-3-instances.oml](../src/oml/iso.org/80000-3-instances.oml).
+Use the following as an example from [src/oml/iso.org/iso-80000-3-instances.oml](../src/oml/iso.org/iso-80000-3-instances.oml).
 
 ```oml
-description <http://iso.org/80000-3-instances> with # as 80000-3-instances {
-  uses <http://iso.org/80000-3-quantities>
+description <http://iso.org/iso-80000-3-instances> with # as 80000-3-instances {
+  uses <http://iso.org/iso-80000-3-quantities>
 
-  @dc:^source "3-1"
-  ci ^length : 80000-3-quantities:^length
+  @dc:source "3-1"
+  ci ^length : 80000-3-quantities:length
 
   ri systemOfQuantities-length : metrology:SystemHasUnitaryQuantity [
     from 80000-instances:systemOfQuantities
@@ -263,7 +263,7 @@ description <http://iso.org/80000-3-instances> with # as 80000-3-instances {
 
   ...
 
-  @dc:^source "3-10"
+  @dc:source "3-10"
   ci velocity : 80000-3-quantities:velocity
 
   ri systemOfQuantities-velocity : metrology:SystemHasUnitaryQuantity [
@@ -303,7 +303,7 @@ Defining a unit involves the following:
 <details>
 <summary>Details</summary>
 
-Use the following as an example from [src/oml/iso.org/80000-3-units.oml](../src/oml/iso.org/80000-3-units.oml).
+Use the following as an example from [src/oml/iso.org/iso-80000-3-units.oml](../src/oml/iso.org/iso-80000-3-units.oml).
 
 Given the following definition from [ISO 80000-3:2019](https://www.iso.org/obp/ui/#iso:std:iso:80000:-3:ed-2:v1:en):
 
@@ -312,10 +312,10 @@ Given the following definition from [ISO 80000-3:2019](https://www.iso.org/obp/u
 Here is the corresponding definition using the metrology vocabulary:
 
 ```oml
-@dc:^source "https://www.iso.org/obp/ui/#iso:std:iso:80000:-3:ed-2:v1:en"
-vocabulary <http://iso.org/80000-3-units> with # as 80000-3-units {
+@dc:source "https://www.iso.org/obp/ui/#iso:std:iso:80000:-3:ed-2:v1:en"
+vocabulary <http://iso.org/iso-80000-3-units> with # as 80000-3-units {
     extends <http://iupac.org/metrology>
-    uses <http://iso.org/80000-1>
+    uses <http://iso.org/iso-80000-1>
 
     -- step 1
     aspect LengthMagnitude :> metrology:UnitaryMagnitude [
@@ -323,7 +323,7 @@ vocabulary <http://iso.org/80000-3-units> with # as 80000-3-units {
     ]
     
     -- step 2
-    @dc:^source "3-1"
+    @dc:source "3-1"
     concept UnitOfLength :> metrology:CoherentMeasurementUnit [
         restricts scalar property metrology:isDimensionlessMeasurementUnit to "false"^^xsd:boolean
     ]
@@ -345,7 +345,7 @@ vocabulary <http://iso.org/80000-3-units> with # as 80000-3-units {
 <details>
 <summary>Details</summary>
 
-Use the following as an example from [src/oml/iso.org/80000-4-units.oml](../src/oml/iso.org/80000-4-units.oml).
+Use the following as an example from [src/oml/iso.org/iso-80000-4-units.oml](../src/oml/iso.org/iso-80000-4-units.oml).
 
 
 Given the following definition from [ISO 80000-4:2019](https://www.iso.org/obp/ui/#iso:std:iso:80000:-4:ed-2:v1:en):
@@ -355,10 +355,10 @@ Given the following definition from [ISO 80000-4:2019](https://www.iso.org/obp/u
 Here is the corresponding definition using the metrology vocabulary:
 
 ```oml
-@dc:^source "https://www.iso.org/obp/ui/#iso:std:iso:80000:-4:ed-2:v1:en"
-vocabulary <http://iso.org/80000-4-units> with # as 80000-4-units {
-    extends <http://iso.org/80000-3-units>
-    uses <http://iso.org/80000-1>
+@dc:source "https://www.iso.org/obp/ui/#iso:std:iso:80000:-4:ed-2:v1:en"
+vocabulary <http://iso.org/iso-80000-4-units> with # as 80000-4-units {
+    extends <http://iso.org/iso-80000-3-units>
+    uses <http://iso.org/iso-80000-1>
   
     ...
 
@@ -368,7 +368,7 @@ vocabulary <http://iso.org/80000-4-units> with # as 80000-4-units {
     ]
 
     -- step 2
-    @dc:^source "4-10"
+    @dc:source "4-10"
     concept UnitOfImpulse :> metrology:CoherentMeasurementUnit [
         restricts scalar property metrology:isDimensionlessMeasurementUnit to "false"^^xsd:boolean
     ]
@@ -418,20 +418,20 @@ vocabulary <http://iso.org/80000-4-units> with # as 80000-4-units {
 <details>
 <summary>Details</summary>
 
-Use the following as an example from [src/oml/iso.org/80000-3-instances.oml](../src/oml/iso.org/80000-3-instances.oml).
+Use the following as an example from [src/oml/iso.org/iso-80000-3-instances.oml](../src/oml/iso.org/iso-80000-3-instances.oml).
 
 
 ```oml
-description <http://iso.org/80000-3-instances> with # as 80000-3-instances {
-  uses <http://iso.org/80000-3-quantities>
+description <http://iso.org/iso-80000-3-instances> with # as 80000-3-instances {
+  uses <http://iso.org/iso-80000-3-quantities>
 
-  @dc:^source "3-1"
+  @dc:source "3-1"
   ci metre : 80000-3-units:metre
  
   ci kilometre : 80000-3-units:kilometre
 
 
-  @dc:^source "3-10"
+  @dc:source "3-10"
   ci metre-per-second : 80000-3-units:metre-per-second
 
   ci kilometre-per-second : 80000-3-units:kilometre-per-second
@@ -444,18 +444,18 @@ description <http://iso.org/80000-3-instances> with # as 80000-3-instances {
 <details>
 <summary>Details</summary>
 
-Use the following as an example from [src/oml/iso.org/80000-3-magnitudes.oml](../src/oml/iso.org/80000-3-magnitudes.oml).
+Use the following as an example from [src/oml/iso.org/iso-80000-3-magnitudes.oml](../src/oml/iso.org/iso-80000-3-magnitudes.oml).
 
 ```oml
-@dc:^description "This vocabulary provides convenience specializations of metrology:UnitaryMagnitude
-as concepts for every metrology:MeasurementUnit defined in http://iso.org/80000-3-units.
+@dc:description "This vocabulary provides convenience specializations of metrology:UnitaryMagnitude
+as concepts for every metrology:MeasurementUnit defined in http://iso.org/iso-80000-3-units.
 
 Note that this vocabulary reflects an opinionated usage of metrology:UnitaryMagnitude
 as an OML concept and does not exclude in any way other possible usages."
-vocabulary <http://iso.org/80000-3-magnitudes> with # as 80000-3-magnitudes {
+vocabulary <http://iso.org/iso-80000-3-magnitudes> with # as 80000-3-magnitudes {
   extends <http://iupac.org/metrology>
-  extends <http://iso.org/80000-3-units>
-  uses <http://iso.org/80000-3-instances>
+  extends <http://iso.org/iso-80000-3-units>
+  uses <http://iso.org/iso-80000-3-instances>
 
   relation entity metre-magnitude :> metrology:IsMagnitudeOfQuantity, 80000-3-units:LengthMagnitude [
      from metrology:UnitaryQuantity
@@ -504,42 +504,42 @@ However, each prefix is defined as an instance that could be linked to an extern
 <details>
 <summary>Details</summary>
 
-Use the following as an example from [src/oml/iso.org/80000-1-decimalPrefix.oml](../src/oml/iso.org/80000-1-decimalPrefix.oml):
+Use the following as an example from [src/oml/iso.org/iso-80000-1-decimalPrefix.oml](../src/oml/iso.org/iso-80000-1-decimalPrefix.oml):
 
 ```oml
-vocabulary <http://iso.org/80000-1-decimalPrefix> with # as 80000-1-decimalPrefix {
+vocabulary <http://iso.org/iso-80000-1-decimalPrefix> with # as 80000-1-decimalPrefix {
     extends <http://iupac.org/metrology>
 
     concept DecimalPrefix :> metrology:Prefix
 }
 ```
 
-and from [src/oml/iso.org/80000-1.oml](../src/oml/iso.org/80000-1.oml):
+and from [src/oml/iso.org/iso-80000-1.oml](../src/oml/iso.org/iso-80000-1.oml):
 
 ```oml
-description <http://iso.org/80000-1> with # as 80000-1 {
-    uses <http://iso.org/80000-1-decimalPrefix>
+description <http://iso.org/iso-80000-1> with # as 80000-1 {
+    uses <http://iso.org/iso-80000-1-decimalPrefix>
 
-    @dc:^description "10^24"
+    @dc:description "10^24"
     ci yotta : 80000-1-decimalPrefix:DecimalPrefix
 
     ...
 
-    @dc:^description "10^3"
+    @dc:description "10^3"
     ci kilo : 80000-1-decimalPrefix:DecimalPrefix
 
-    @dc:^description "10^2"
+    @dc:description "10^2"
     ci hecto : 80000-1-decimalPrefix:DecimalPrefix
 
-    @dc:^description "10^1"
+    @dc:description "10^1"
     ci deca : 80000-1-decimalPrefix:DecimalPrefix
 
-    @dc:^description "10^-1"
+    @dc:description "10^-1"
     ci deci : 80000-1-decimalPrefix:DecimalPrefix
 
     ...
 
-    @dc:^description "10^-24"
+    @dc:description "10^-24"
     ci yocto : 80000-1-decimalPrefix:DecimalPrefix
 
 }

@@ -1,6 +1,6 @@
 # Core Vocabularies
 
-[![Build Status](https://travis-ci.com/opencaesar/core-vocabularies.svg?branch=master)](https://travis-ci.com/opencaesar/core-vocabularies)
+[![Build Status](https://app.travis-ci.com/opencaesar/core-vocabularies.svg?branch=master)](https://app.travis-ci.com/github/opencaesar/core-vocabularies)
 [![Release](https://img.shields.io/github/v/tag/opencaesar/core-vocabularies?label=download)](https://github.com/opencaesar/core-vocabularies/releases/latest)
 [![Documentation](https://img.shields.io/badge/Documentation-HTML-orange)](https://opencaesar.github.io/core-vocabularies/) 
 [![Gitpod](https://img.shields.io/badge/gitpod-open-blue?logo=gitpod)](https://gitpod.io/#https://github.com/opencaesar/core-vocabularies) 
