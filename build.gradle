@@ -18,8 +18,15 @@ buildscript {
     }
     dependencies {
         classpath 'io.opencaesar.adapters:oml2owl-gradle:1.0.+'
-        classpath 'io.opencaesar.oml:oml-bikeshed-gradle:1.0.+'
+        classpath 'io.opencaesar.oml:oml-bikeshed-gradle:1.1.+'
     }
+}
+
+/*
+ * Bikeshed folder
+ */
+ext {
+	bikeshed = 'build/bikeshed'
 }
 
 /*
@@ -33,22 +40,23 @@ task omlToBikeshed(type: io.opencaesar.oml.bikeshed.Oml2BikeshedTask) {
     // OML catalog version
     inputCatalogVersion = project.version
     // OWL folder
-    outputFolderPath = file('build/bikeshed')
+    outputFolderPath = file("$bikeshed")
     // Publish URL
     publishUrl = 'https://opencaesar.github.io/core-vocabularies/'
 }
 
 /*
- * A task to generate the Bikeshed documentations in HTML
+ * A task to generate the model documentation in HTML
  */
 import org.gradle.internal.os.OperatingSystem
 task generateDocs(dependsOn: omlToBikeshed) {
+	inputs.files(fileTree("$bikeshed").include('**/*.bs'))
+	outputs.files(fileTree("$bikeshed").include('**/*.html'))
     doLast {
         if (OperatingSystem.current().isWindows()) {
-            exec { commandLine 'build/bikeshed/publish.bat' }
+            exec { commandLine "$bikeshed/publish.bat" }
         } else {
-            exec { commandLine 'chmod', '+x', 'build/bikeshed/publish.sh' }
-            exec { commandLine 'build/bikeshed/publish.sh' }
+            exec { commandLine "$bikeshed/publish.sh" }
         }
     }
 }
