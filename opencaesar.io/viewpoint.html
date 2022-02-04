@@ -1489,7 +1489,7 @@ Possible extra rowspan handling
 </style>
   <meta content="Bikeshed version 2e3c4c68b, updated Fri Jan 14 14:49:00 2022 -0800" name="generator">
   <link href="https://opencaesar.github.io/core-vocabularies//opencaesar.io/viewpoint" rel="canonical">
-  <meta content="6a674d20182c786d0d43f2ba6fbb86be3d79444d" name="document-revision">
+  <meta content="b62fb86b0af2f7205f0b3b2db7a59e7a6ccd7533" name="document-revision">
 <style>
 a[data-link-type=biblio] {
     white-space: pre-wrap;
@@ -1902,7 +1902,7 @@ dfn > a.self-link::before      { content: "#"; }
   <div class="head">
    <p data-fill-with="logo"><a class="logo" href="http://www.opencaesar.io/oml/"><img alt="OML Specification" height="48" src="https://opencaesar.github.io/oml/images/oml.svg"></a></p>
    <h1 class="p-name no-ref" id="title">Viewpoint</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2022-01-24">24 January 2022</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2022-02-04">4 February 2022</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -1929,11 +1929,20 @@ dfn > a.self-link::before      { content: "#"; }
     <li>
      <a href="#AnnotationProperties"><span class="secno">3</span> <span class="content">Annotation Properties</span></a>
      <ol class="toc">
-      <li><a href="#Group"><span class="secno">3.1</span> <span class="content"><span>group</span></span></a>
-      <li><a href="#Hide"><span class="secno">3.2</span> <span class="content"><span>hide</span></span></a>
-      <li><a href="#Image"><span class="secno">3.3</span> <span class="content"><span>image</span></span></a>
-      <li><a href="#Show"><span class="secno">3.4</span> <span class="content"><span>show</span></span></a>
-      <li><a href="#Type"><span class="secno">3.5</span> <span class="content"><span>type</span></span></a>
+      <li><a href="#Decoration-c"><span class="secno">3.1</span> <span class="content"><span>decoration-c</span></span></a>
+      <li><a href="#Decoration-e"><span class="secno">3.2</span> <span class="content"><span>decoration-e</span></span></a>
+      <li><a href="#Decoration-n"><span class="secno">3.3</span> <span class="content"><span>decoration-n</span></span></a>
+      <li><a href="#Decoration-ne"><span class="secno">3.4</span> <span class="content"><span>decoration-ne</span></span></a>
+      <li><a href="#Decoration-nw"><span class="secno">3.5</span> <span class="content"><span>decoration-nw</span></span></a>
+      <li><a href="#Decoration-s"><span class="secno">3.6</span> <span class="content"><span>decoration-s</span></span></a>
+      <li><a href="#Decoration-se"><span class="secno">3.7</span> <span class="content"><span>decoration-se</span></span></a>
+      <li><a href="#Decoration-sw"><span class="secno">3.8</span> <span class="content"><span>decoration-sw</span></span></a>
+      <li><a href="#Decoration-w"><span class="secno">3.9</span> <span class="content"><span>decoration-w</span></span></a>
+      <li><a href="#Group"><span class="secno">3.10</span> <span class="content"><span>group</span></span></a>
+      <li><a href="#Hide"><span class="secno">3.11</span> <span class="content"><span>hide</span></span></a>
+      <li><a href="#Image"><span class="secno">3.12</span> <span class="content"><span>image</span></span></a>
+      <li><a href="#Show"><span class="secno">3.13</span> <span class="content"><span>show</span></span></a>
+      <li><a href="#Type"><span class="secno">3.14</span> <span class="content"><span>type</span></span></a>
      </ol>
     <li>
      <a href="#index"><span class="secno"></span> <span class="content">Index</span></a>
@@ -1957,15 +1966,33 @@ dfn > a.self-link::before      { content: "#"; }
       <p><a href="http://purl.org/dc/elements/1.html">http://purl.org/dc/elements/1.1</a> [dc]</p>
     </ul>
     <h2 class="heading settled" data-level="3" id="AnnotationProperties"><span class="secno">3. </span><span class="content">Annotation Properties</span><a class="self-link" href="#AnnotationProperties"></a></h2>
-    <h3 class="heading settled" data-level="3.1" id="Group"><span class="secno">3.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="group">group<a class="self-link" href="#group"></a></dfn></span><a class="self-link" href="#Group"></a></h3>
+    <h3 class="heading settled" data-level="3.1" id="Decoration-c"><span class="secno">3.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="decoration-c">decoration-c<a class="self-link" href="#decoration-c"></a></dfn></span><a class="self-link" href="#Decoration-c"></a></h3>
+    <p>A property that represents a path to an image for an element in a viewpoint shown as a Center decoration.</p>
+    <h3 class="heading settled" data-level="3.2" id="Decoration-e"><span class="secno">3.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="decoration-e">decoration-e<a class="self-link" href="#decoration-e"></a></dfn></span><a class="self-link" href="#Decoration-e"></a></h3>
+    <p>A property that represents a path to an image for an element in a viewpoint shown as an East decoration.</p>
+    <h3 class="heading settled" data-level="3.3" id="Decoration-n"><span class="secno">3.3. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="decoration-n">decoration-n<a class="self-link" href="#decoration-n"></a></dfn></span><a class="self-link" href="#Decoration-n"></a></h3>
+    <p>A property that represents a path to an image for an element in a viewpoint shown as a North decoration.</p>
+    <h3 class="heading settled" data-level="3.4" id="Decoration-ne"><span class="secno">3.4. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="decoration-ne">decoration-ne<a class="self-link" href="#decoration-ne"></a></dfn></span><a class="self-link" href="#Decoration-ne"></a></h3>
+    <p>A property that represents a path to an image for an element in a viewpoint shown as a North-East decoration.</p>
+    <h3 class="heading settled" data-level="3.5" id="Decoration-nw"><span class="secno">3.5. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="decoration-nw">decoration-nw<a class="self-link" href="#decoration-nw"></a></dfn></span><a class="self-link" href="#Decoration-nw"></a></h3>
+    <p>A property that represents a path to an image for an element in a viewpoint shown as a North-West decoration.</p>
+    <h3 class="heading settled" data-level="3.6" id="Decoration-s"><span class="secno">3.6. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="decoration-s">decoration-s<a class="self-link" href="#decoration-s"></a></dfn></span><a class="self-link" href="#Decoration-s"></a></h3>
+    <p>A property that represents a path to an image for an element in a viewpoint shown as a South decoration.</p>
+    <h3 class="heading settled" data-level="3.7" id="Decoration-se"><span class="secno">3.7. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="decoration-se">decoration-se<a class="self-link" href="#decoration-se"></a></dfn></span><a class="self-link" href="#Decoration-se"></a></h3>
+    <p>A property that represents a path to an image for an element in a viewpoint shown as a South-East decoration.</p>
+    <h3 class="heading settled" data-level="3.8" id="Decoration-sw"><span class="secno">3.8. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="decoration-sw">decoration-sw<a class="self-link" href="#decoration-sw"></a></dfn></span><a class="self-link" href="#Decoration-sw"></a></h3>
+    <p>A property that represents a path to an image for an element in a viewpoint shown as a South-West decoration.</p>
+    <h3 class="heading settled" data-level="3.9" id="Decoration-w"><span class="secno">3.9. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="decoration-w">decoration-w<a class="self-link" href="#decoration-w"></a></dfn></span><a class="self-link" href="#Decoration-w"></a></h3>
+    <p>A property that represents a path to an image for an element in a viewpoint shown as a West decoration.</p>
+    <h3 class="heading settled" data-level="3.10" id="Group"><span class="secno">3.10. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="group">group<a class="self-link" href="#group"></a></dfn></span><a class="self-link" href="#Group"></a></h3>
     <p>A property that represents a group that an element belongs to in a viewpoint.</p>
-    <h3 class="heading settled" data-level="3.2" id="Hide"><span class="secno">3.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="hide">hide<a class="self-link" href="#hide"></a></dfn></span><a class="self-link" href="#Hide"></a></h3>
+    <h3 class="heading settled" data-level="3.11" id="Hide"><span class="secno">3.11. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="hide">hide<a class="self-link" href="#hide"></a></dfn></span><a class="self-link" href="#Hide"></a></h3>
     <p>A property that indicates that an element is hidden in a viewpoint</p>
-    <h3 class="heading settled" data-level="3.3" id="Image"><span class="secno">3.3. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="image">image<a class="self-link" href="#image"></a></dfn></span><a class="self-link" href="#Image"></a></h3>
+    <h3 class="heading settled" data-level="3.12" id="Image"><span class="secno">3.12. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="image">image<a class="self-link" href="#image"></a></dfn></span><a class="self-link" href="#Image"></a></h3>
     <p>A property that represents a path to an image for an element in a viewpoint.</p>
-    <h3 class="heading settled" data-level="3.4" id="Show"><span class="secno">3.4. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="show">show<a class="self-link" href="#show"></a></dfn></span><a class="self-link" href="#Show"></a></h3>
+    <h3 class="heading settled" data-level="3.13" id="Show"><span class="secno">3.13. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="show">show<a class="self-link" href="#show"></a></dfn></span><a class="self-link" href="#Show"></a></h3>
     <p>A property that indicates that an element is shown in a viewpoint</p>
-    <h3 class="heading settled" data-level="3.5" id="Type"><span class="secno">3.5. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="type">type<a class="self-link" href="#type"></a></dfn></span><a class="self-link" href="#Type"></a></h3>
+    <h3 class="heading settled" data-level="3.14" id="Type"><span class="secno">3.14. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="type">type<a class="self-link" href="#type"></a></dfn></span><a class="self-link" href="#Type"></a></h3>
     <p>A property that represents a notational type for an element in a viewpoint.</p>
    </div>
   </main>
@@ -2101,9 +2128,18 @@ dfn > a.self-link::before      { content: "#"; }
   <h2 class="no-num no-ref heading settled" id="index"><span class="content">Index</span><a class="self-link" href="#index"></a></h2>
   <h3 class="no-num no-ref heading settled" id="index-defined-here"><span class="content">Terms defined by this specification</span><a class="self-link" href="#index-defined-here"></a></h3>
   <ul class="index">
-   <li><a href="#group">group</a><span>, in § 3.1</span>
-   <li><a href="#hide">hide</a><span>, in § 3.2</span>
-   <li><a href="#image">image</a><span>, in § 3.3</span>
-   <li><a href="#show">show</a><span>, in § 3.4</span>
-   <li><a href="#type">type</a><span>, in § 3.5</span>
+   <li><a href="#decoration-c">decoration-c</a><span>, in § 3.1</span>
+   <li><a href="#decoration-e">decoration-e</a><span>, in § 3.2</span>
+   <li><a href="#decoration-n">decoration-n</a><span>, in § 3.3</span>
+   <li><a href="#decoration-ne">decoration-ne</a><span>, in § 3.4</span>
+   <li><a href="#decoration-nw">decoration-nw</a><span>, in § 3.5</span>
+   <li><a href="#decoration-s">decoration-s</a><span>, in § 3.6</span>
+   <li><a href="#decoration-se">decoration-se</a><span>, in § 3.7</span>
+   <li><a href="#decoration-sw">decoration-sw</a><span>, in § 3.8</span>
+   <li><a href="#decoration-w">decoration-w</a><span>, in § 3.9</span>
+   <li><a href="#group">group</a><span>, in § 3.10</span>
+   <li><a href="#hide">hide</a><span>, in § 3.11</span>
+   <li><a href="#image">image</a><span>, in § 3.12</span>
+   <li><a href="#show">show</a><span>, in § 3.13</span>
+   <li><a href="#type">type</a><span>, in § 3.14</span>
   </ul>
