@@ -29,4 +29,39 @@ vocabulary <http://opencaesar.io/viewpoint#> as viewpoint {
 	@dc:description "A property that indicates that an element is hidden in a viewpoint"
 	annotation property hide
 	
+	@rdfs:label "N decoration"
+	@dc:^description "A property that represents a path to an image for an element in a viewpoint shown as a North decoration."
+	annotation property decoration-n
+	
+	@rdfs:label "S decoration"
+	@dc:^description "A property that represents a path to an image for an element in a viewpoint shown as a South decoration."
+	annotation property decoration-s
+	
+	@rdfs:label "E decoration"
+	@dc:^description "A property that represents a path to an image for an element in a viewpoint shown as an East decoration."
+	annotation property decoration-e
+	
+	@rdfs:label "W decoration"
+	@dc:^description "A property that represents a path to an image for an element in a viewpoint shown as a West decoration."
+	annotation property decoration-w
+	
+	@rdfs:label "C decoration"
+	@dc:^description "A property that represents a path to an image for an element in a viewpoint shown as a Center decoration."
+	annotation property decoration-c
+	
+	@rdfs:label "NW decoration"
+	@dc:^description "A property that represents a path to an image for an element in a viewpoint shown as a North-West decoration."
+	annotation property decoration-nw
+	
+	@rdfs:label "NE decoration"
+	@dc:^description "A property that represents a path to an image for an element in a viewpoint shown as a North-East decoration."
+	annotation property decoration-ne
+	
+	@rdfs:label "SW decoration"
+	@dc:^description "A property that represents a path to an image for an element in a viewpoint shown as a South-West decoration."
+	annotation property decoration-sw
+	
+	@rdfs:label "SE decoration"
+	@dc:^description "A property that represents a path to an image for an element in a viewpoint shown as a South-East decoration."
+	annotation property decoration-se
 }
