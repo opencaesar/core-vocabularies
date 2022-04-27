@@ -17,8 +17,8 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath 'io.opencaesar.adapters:oml2owl-gradle:1.0.+'
-        classpath 'io.opencaesar.oml:oml-bikeshed-gradle:1.1.+'
+        classpath 'io.opencaesar.adapters:oml2owl-gradle:1.+'
+        classpath 'io.opencaesar.oml:oml-bikeshed-gradle:1.+'
     }
 }
 
