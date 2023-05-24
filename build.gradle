@@ -17,45 +17,9 @@ buildscript {
         mavenCentral()
     }
     dependencies {
+        classpath 'io.opencaesar.owl:owl-doc-gradle:2.+'
         classpath 'io.opencaesar.adapters:oml2owl-gradle:2.+'
-        classpath 'io.opencaesar.oml:oml-bikeshed-gradle:2.+'
     }
-}
-
-/*
- * Bikeshed folder
- */
-ext {
-	bikeshed = 'build/bikeshed'
-}
-
-/*
- * A task to generate Bikeshed specification for the OML catalog
- */
-task omlToBikeshed(type: io.opencaesar.oml.bikeshed.Oml2BikeshedTask) {
-    // OML catalog
-    inputCatalogPath = file('catalog.xml')
-    // OML catalog title
-    inputCatalogTitle = project.title
-    // OML catalog version
-    inputCatalogVersion = project.version
-    // OWL folder
-    outputFolderPath = file("$bikeshed")
-    // Publish URL
-    publishUrl = 'https://opencaesar.github.io/core-vocabularies/'
-}
-
-/*
- * A task to generate the model documentation in HTML
- */
-task generateDocs(type: Exec, dependsOn: omlToBikeshed) {
-	inputs.files(fileTree("$bikeshed").include('**/*.bs'))
-	outputs.files(fileTree("$bikeshed").include('**/*.html'))
-	if (org.gradle.internal.os.OperatingSystem.current().isWindows()) {
-		commandLine "$bikeshed/publish.bat"
-	} else {
-		commandLine "$bikeshed/publish.sh"
-	}
 }
 
 /*
@@ -66,6 +30,22 @@ task omlToOwl(type:io.opencaesar.oml2owl.Oml2OwlTask) {
     inputCatalogPath = file('catalog.xml')
     // OWL catalog
     outputCatalogPath = file('build/owl/catalog.xml')
+}
+
+/*
+ * A task to generate documentation for the OWL catalog
+ */
+task generateDocs (type: io.opencaesar.owl.doc.OwlDocTask, dependsOn: omlToOwl) {
+    // OML catalog
+    inputCatalogPath = file('build/owl/catalog.xml')
+    // OML catalog title
+    inputCatalogTitle = project.title
+    // OML catalog version
+    inputCatalogVersion = project.version
+    // Output folder
+    outputFolderPath = file('build/doc')
+    // Output case sensitivie path
+    outputCaseSensitive = org.gradle.internal.os.OperatingSystem.current().isLinux()
 }
 
 /*
