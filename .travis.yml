@@ -8,7 +8,7 @@ cache:
     - $HOME/.gradle
     
 script:
-  - ./gradlew build generateDocs
+  - ./gradlew build generateDocs --refresh-dependencies
 
 env:
   global:
