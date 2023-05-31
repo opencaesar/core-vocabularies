@@ -20,6 +20,7 @@ deploy:
     script: .deploy/deploy.sh
     skip_cleanup: true
     on:
+      tags: true
       branch: master
   - provider: script
     script: ./gradlew publish
