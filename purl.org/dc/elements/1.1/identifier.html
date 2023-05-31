@@ -3,8 +3,14 @@
       <title>dc:identifier</title>
       <link rel="stylesheet" href="../../../../main.css">
    </head>
+   <script>
+   function Copy() {
+      navigator.clipboard.writeText(document.location.href)
+   }
+   </script>
    <body>
-         <h3><font size="-1">http://purl.org/dc/elements/1.1/identifier</font><br>Property dc:identifier</h3>
+	  <button onclick="Copy()">URL</button>
+         <h2><font size="-1">http://purl.org/dc/elements/1.1/identifier</font><br>Property dc:identifier</h2>
          <hr>
          <h3>rdf:type</h3>
 <dl>
@@ -16,7 +22,7 @@
                <img border="0" src="https://help.eclipse.org/latest/topic/org.eclipse.jdt.doc.user/images/org.eclipse.jdt.ui/obj16/methdef_obj.svg" width="16" height="16">
             </td>
             <td>
-              owl:AnnotationProperty
+              <a href="http://www.w3.org/2002/07/owl#AnnotationProperty">owl:AnnotationProperty</a>
             </td>
          </tr>
 
