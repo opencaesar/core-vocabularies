@@ -5,13 +5,13 @@
 @dc:title "SWRL Built-Ins"
 vocabulary <http://www.w3.org/2003/11/swrlb#> as swrlb {
 
-	extends <http://purl.org/dc/elements/1.1/> as dc
+    extends <http://purl.org/dc/elements/1.1/> as dc
 
-	extends <http://www.w3.org/2000/01/rdf-schema#> as rdfs
+    extends <http://www.w3.org/2000/01/rdf-schema#> as rdfs
 
-	// Comparison Built-Ins
+    // Comparison Built-Ins
 
-	@rdfs:comment "Satisfied iff the first argument and the second argument are the same."
+    @rdfs:comment "Satisfied iff the first argument and the second argument are the same."
     builtin equal
     
     @rdfs:comment  "The negation of swrlb:equal."
@@ -29,7 +29,7 @@ vocabulary <http://www.w3.org/2003/11/swrlb#> as swrlb {
     @rdfs:comment  "Similarly to swrlb:lessThanOrEqual."
     builtin greaterThanOrEqual
  
- 	// Comparison Built-Ins
+    // Numeric Built-Ins
      
     @rdfs:comment "Satisfied iff the first argument is equal to the arithmetic sum of the second argument through the last argument."
     builtin add
@@ -87,6 +87,8 @@ vocabulary <http://www.w3.org/2003/11/swrlb#> as swrlb {
     @rdfs:comment "Satisfied iff the first argument is true and the second argument is false, or vice versa."
     builtin booleanNot
     
+    // String Built-Ins
+
     @rdfs:comment "Satisfied iff the first argument is the same as the second argument (upper/lower case ignored)"
     builtin stringEqualIgnoreCase
     
@@ -138,7 +140,7 @@ vocabulary <http://www.w3.org/2003/11/swrlb#> as swrlb {
     @rdfs:comment "Satisfied iff the first argument is a sequence of one or more strings whose values are substrings of the second argument separated by substrings that match the regular expression the third argument."
     builtin tokenize
 
-	// Date, Time, and Duration Built-Ins
+    // DateTime Built-Ins
 
     @rdfs:comment "Satisfied iff the first argument is the xsd:duration representation consisting of the year the second argument and month the third argument."
     builtin yearMonthDuration
@@ -221,7 +223,7 @@ vocabulary <http://www.w3.org/2003/11/swrlb#> as swrlb {
     @rdfs:comment "Satisfied iff the dayTimeDuration the first argument is equal to the arithmetic difference of the xsd:dateTime the second argument minus the xsd:dateTime the third argument."
     builtin subtractDateTimesYieldingDayTimeDuration
 
-	// Urelation instance Built-Ins
+    // URI Built-Ins
 	
     @rdfs:comment "Satisfied iff the Urelation instance reference the first argument is equal to the value of the Urelation instance reference the second argument resolved relative to the base Urelation instance the third argument."
     builtin resolveURI
