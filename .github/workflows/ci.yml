@@ -27,3 +27,27 @@ jobs:
 
     - name: Build with Gradle Wrapper
       run: ./gradlew build
+
+    - name: Generate Docs with Gradle Wrapper
+      run: ./gradlew generateDocs
+
+    - name: Publish Spec
+      uses: actions/upload-pages-artifact@v1
+      with:
+        path: build/docs
+
+  deploy:
+
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Deploy Spec
+        id: deployment
+        uses: actions/deploy-pages@v1
