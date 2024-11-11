@@ -43,7 +43,7 @@ task generateDocs (type: io.opencaesar.owl.doc.OwlDocTask, dependsOn: omlToOwl) 
     // OML catalog version
     inputCatalogVersion = project.version
     // Output folder
-    outputFolderPath = file('build/doc')
+    outputFolderPath = file('build/docs')
     // Output case sensitivie path
     outputCaseSensitive = org.gradle.internal.os.OperatingSystem.current().isLinux()
 }
