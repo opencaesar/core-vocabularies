@@ -7,6 +7,8 @@ vocabulary <http://www.w3.org/1999/02/22-rdf-syntax-ns#> as rdf {
 
 	extends <http://purl.org/dc/elements/1.1/> as dc
 
+	extends <http://www.w3.org/2000/01/rdf-schema#> as rdfs
+
 	annotation property about
 
 	@dc:source "https://www.w3.org/TR/rdf-plain-literal/"
@@ -14,5 +16,26 @@ vocabulary <http://www.w3.org/1999/02/22-rdf-syntax-ns#> as rdf {
 
 	@dc:source "https://www.w3.org/TR/rdf11-concepts/#section-XMLLiteral"
 	scalar XMLLiteral
+
+	@dc:source "https://www.w3.org/TR/rdf-schema/#ch_statement"
+	concept Statement
+
+	@dc:source "https://www.w3.org/TR/rdf-schema/#ch_subject"
+	relation subject [
+		from Statement
+		to rdfs:Resource
+	]
+
+	@dc:source "https://www.w3.org/TR/rdf-schema/#ch_predicate"
+	relation predicate [
+		from Statement
+		to rdfs:Resource
+	]
+
+	@dc:source "https://www.w3.org/TR/rdf-schema/#ch_object"
+	relation object [
+		from Statement
+		to rdfs:Resource
+	]
 
 }

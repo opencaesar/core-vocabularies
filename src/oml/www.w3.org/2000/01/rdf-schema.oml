@@ -16,4 +16,7 @@ vocabulary <http://www.w3.org/2000/01/rdf-schema#> as rdfs {
 	
 	@dc:source "https://www.w3.org/TR/owl2-syntax/#Datatypes"
 	scalar Literal
+
+	aspect Resource
+	
 }
