@@ -41,7 +41,7 @@ jobs:
 
   deploy:
 
-    needs: build
+    needs: publish
     runs-on: ubuntu-latest
     permissions:
       pages: write
